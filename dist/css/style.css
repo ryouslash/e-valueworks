@@ -215,5 +215,8 @@ body {
 /*
  * object
  */
+.p-gnav {
+  display: flex;
+}
 
 /*# sourceMappingURL=style.css.map*/
