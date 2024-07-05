@@ -70,5 +70,6 @@ module.exports = {
   //webpack-dev-server の設定
   devServer: {
     static: './',  //静的ファイルの場所
+    open: true, // ブラウザを自動的に開く
   },
 };
