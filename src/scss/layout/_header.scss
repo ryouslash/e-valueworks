@@ -1,3 +1,10 @@
-.l-header__inner {
-  display: flex;
+.l-header {
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__logo {
+    max-width: 180px;
+  }
 }
