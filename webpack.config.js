@@ -10,7 +10,7 @@ module.exports = {
     filename: 'js/main.js',
     path: path.resolve(__dirname, 'dist'),
     //Asset Modules の出力先の指定
-    assetModuleFilename: 'images/[name][ext][query]'
+    assetModuleFilename: 'img/[name][ext][query]'
   },
   watchOptions: {
     ignored: /node_modules/  //正規表現で指定（node_modules を除外）
@@ -47,6 +47,13 @@ module.exports = {
           // Sass をコンパイルするローダー（ソースマップを有効に）
           { loader: 'sass-loader', options: { sourceMap: true } },
         ],
+      },
+      //Asset Modules
+      {
+        //対象とするアセットファイルの拡張子を正規表現で指定
+        test: /\.(png|jpe?g|gif|svg|eot|ttf|woff|woff2)$/i,
+        //いずれかの type を指定
+        type: 'asset/resource'
       },
       {
         // Babel 用のローダー

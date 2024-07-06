@@ -1,0 +1,10 @@
+.c-button {
+  display: block;
+  width: calc(100% - 15px);
+  padding: 20px 0;
+  text-align: center;
+
+  &.chatwork {
+    background-color: red;
+  }
+}

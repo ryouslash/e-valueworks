@@ -1,8 +1,12 @@
+@charset "utf-8";
+
 /*
  * foundation
  */
 @use "foundation/_reset";
 @use "foundation/_base";
+@use "foundation/_system";
+@use "foundation/_variables";
 
 /*
  * layout

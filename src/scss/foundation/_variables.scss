@@ -1,0 +1,2 @@
+/*最小値:2.4rem → 可変（2.2rem + 0.625vw（画面幅320px:2px, 640px:4px, 960px:6px））→ 最大値:2.8rem*/
+$fontL: clamp(2.4rem, calc(2.2rem + 0.625vw), 2.8rem);
