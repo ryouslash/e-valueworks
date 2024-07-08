@@ -10,7 +10,16 @@ module.exports = {
     filename: 'js/main.js',
     path: path.resolve(__dirname, 'dist'),
     //Asset Modules の出力先の指定
-    assetModuleFilename: 'img/[name][ext][query]'
+    assetModuleFilename: (pathData) => {
+      const ext = path.extname(pathData.filename).replace('.', '');
+      if (/png|jpe?g|gif|svg/.test(ext)) {
+        return 'img/[name][ext][query]';
+      }
+      if (/eot|ttf|woff|woff2/.test(ext)) {
+        return 'fonts/[name][ext][query]';
+      }
+      return '[name][ext][query]';
+    }
   },
   watchOptions: {
     ignored: /node_modules/  //正規表現で指定（node_modules を除外）
