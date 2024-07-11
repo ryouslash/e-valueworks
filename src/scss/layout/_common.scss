@@ -1,9 +1,13 @@
 .l-container {
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 30px;
 }
 
 .l-sectionPadding {
-  padding: 80px 0;
+  padding: 80px 0 120px;
+}
+
+.l-sectionPadding--bottom {
+  padding: 0 0 120px;
 }
