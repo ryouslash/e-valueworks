@@ -22,22 +22,13 @@
  */
 // Component
 @use "object/component/_button";
-@use "object/component/_grid";
-@use "object/component/_media";
 @use "object/component/_title";
 
 // Project
-@use "object/project/_articles";
-@use "object/project/_comments";
-@use "object/project/_contact";
-@use "object/project/_gallery";
+@use "object/project/_mainvisual";
+@use "object/project/_trouble";
+@use "object/project/_about";
 @use "object/project/_gnavi.scss";
 @use "object/project/_hamburger";
-@use "object/project/_profile";
-@use "object/project/_section";
 
 // Utility
-@use "object/utility/_align";
-@use "object/utility/_clearfix";
-@use "object/utility/_margin";
-@use "object/utility/_typography";

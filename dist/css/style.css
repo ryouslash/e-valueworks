@@ -279,33 +279,7 @@ body {
 .c-h2Title {
   font-size: clamp(2.4rem, 2.2rem + 0.625vw, 3rem);
   text-align: center;
-}
-
-.p-gnav {
-  display: flex;
-}
-.p-gnav__item a {
-  display: block;
-  padding: 20px 15px;
-}
-.p-gnav__item a::after {
-  font-size: 11px;
-  color: #777777;
-  text-align: center;
-  display: block;
-  margin-top: 5px;
-}
-.p-gnav__item.home a::after {
-  content: "HOME";
-}
-.p-gnav__item.news a::after {
-  content: "NEWS";
-}
-.p-gnav__item.service a::after {
-  content: "SERVICE";
-}
-.p-gnav__item.contact a::after {
-  content: "CONTACT";
+  font-weight: 700;
 }
 
 .p-mainVisual {
@@ -322,7 +296,7 @@ body {
 }
 .p-mainVisual__title {
   font-size: clamp(2.4rem, 2.2rem + 0.625vw, 3rem);
-  font-weight: bolder;
+  font-weight: 700;
   margin-bottom: 30px;
 }
 .p-mainVisual__button {
@@ -536,6 +510,38 @@ body {
 .p-about__photo {
   grid-column: 7/10;
   grid-row: 1/3;
+}
+.p-about__itemTitle {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.p-gnav {
+  display: flex;
+}
+.p-gnav__item a {
+  display: block;
+  padding: 20px 15px;
+}
+.p-gnav__item a::after {
+  font-size: 11px;
+  color: #777777;
+  text-align: center;
+  display: block;
+  margin-top: 5px;
+}
+.p-gnav__item.home a::after {
+  content: "HOME";
+}
+.p-gnav__item.news a::after {
+  content: "NEWS";
+}
+.p-gnav__item.service a::after {
+  content: "SERVICE";
+}
+.p-gnav__item.contact a::after {
+  content: "CONTACT";
 }
 
 /*# sourceMappingURL=style.css.map*/

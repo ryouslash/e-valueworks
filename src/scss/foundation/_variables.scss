@@ -2,3 +2,16 @@
 $fontL: clamp(2.4rem, calc(2.2rem + 0.625vw), 3rem);
 $keyColor: #18c1f0;
 $subColor: #73be60;
+
+@mixin breakpoint($point) {
+  @if $point == sp {
+    @media (max-width: 600px) {
+      @content;
+    }
+  }
+  @if $point == tablet {
+    @media (max-width: 960px) {
+      @content;
+    }
+  }
+}
