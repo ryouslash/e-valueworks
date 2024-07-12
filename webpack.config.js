@@ -24,6 +24,7 @@ module.exports = {
   watchOptions: {
     ignored: /node_modules/  //正規表現で指定（node_modules を除外）
   },
+
   //プラグインの設定（plugins プロパティの配列に追加）
   plugins: [
     new MiniCssExtractPlugin({

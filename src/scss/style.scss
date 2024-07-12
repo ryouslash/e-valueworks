@@ -5,7 +5,6 @@
  */
 @use "foundation/_reset";
 @use "foundation/_base";
-@use "foundation/_system";
 @use "foundation/_variables";
 
 /*
@@ -23,12 +22,15 @@
 // Component
 @use "object/component/_button";
 @use "object/component/_title";
+@use "object/component/_snslink";
 
 // Project
+@use "object/project/_gnavi.scss";
+@use "object/project/_hamburger";
 @use "object/project/_mainvisual";
 @use "object/project/_trouble";
 @use "object/project/_about";
-@use "object/project/_gnavi.scss";
-@use "object/project/_hamburger";
+@use "object/project/_promise";
 
 // Utility
+@use "object/utility/_display";

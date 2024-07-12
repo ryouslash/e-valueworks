@@ -1,0 +1,59 @@
+@use "../../foundation/variables" as *;
+
+.p-promise {
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(235, 235, 235, 1) 49%
+  );
+  &__items {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+    position: relative;
+  }
+
+  &__item {
+    margin-bottom: 30px;
+
+    &.is-active {
+      .p-promise__detail {
+        display: block;
+      }
+    }
+  }
+
+  &__fixed {
+    position: sticky;
+    top: 0;
+  }
+
+  &__title {
+    color: $accentColor;
+    font-size: $fontM;
+    font-weight: 600;
+  }
+
+  &__title span {
+    background-color: $accentColor;
+    color: #ffffff;
+    padding: 0px 5px;
+    border-radius: 3px;
+    display: inline-block;
+  }
+
+  &__detail {
+    display: none;
+    padding: 30px;
+    background: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    margin-left: 1em;
+  }
+
+  &__img {
+    margin-bottom: 120px;
+  }
+}

@@ -1,8 +1,15 @@
-/*最小値:2.4rem → 可変（2.2rem + 0.625vw（画面幅320px:2px, 640px:4px, 960px:6px,1280px:8px））→ 最大値:3.0rem*/
-$fontL: clamp(2.4rem, calc(2.2rem + 0.625vw), 3rem);
-$keyColor: #18c1f0;
-$subColor: #73be60;
+// フォント
+/* 0.9375vw（画面幅320px:3px, 640px:6px, 960px:9px,1280px:12px・・・・）*/
+/* 0.625vw（画面幅320px:2px, 640px:4px, 960px:6px,1280px:8px・・・・）*/
+$fontL: clamp(2rem, calc(1.6rem + 0.9375vw), 3.2rem);
+$fontM: clamp(2rem, calc(1.6rem + 0.625vw), 2.6rem);
 
+// カラー
+$keyColor: #73be60;
+$subColor: #18c1f0;
+$accentColor: #733c3c;
+
+// ブレイクポイント
 @mixin breakpoint($point) {
   @if $point == sp {
     @media (max-width: 600px) {

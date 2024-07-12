@@ -2,6 +2,8 @@
 
 // お悩み
 .p-troubles {
+  overflow: hidden;
+  background-color: #ffffff;
   &__circle {
     position: relative;
     margin: 150px auto 60px;
