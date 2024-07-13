@@ -543,6 +543,9 @@ body {
   grid-column: 2/3;
   grid-row: 2/3;
 }
+.p-about__skills .p-about__itemDetail p {
+  margin-bottom: 10px;
+}
 .p-about__photo {
   grid-column: 3/4;
   grid-row: 1/3;
@@ -572,11 +575,12 @@ body {
   margin-bottom: 30px;
 }
 .p-promise__item.is-active .p-promise__detail {
-  display: block;
+  grid-template-rows: 1fr;
+  padding: 30px;
 }
 .p-promise__fixed {
   position: sticky;
-  top: 0;
+  top: 60px;
 }
 .p-promise__title {
   color: #733c3c;
@@ -591,11 +595,17 @@ body {
   display: inline-block;
 }
 .p-promise__detail {
-  display: none;
-  padding: 30px;
   background: #ffffff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
   margin-left: 1em;
+  margin-top: 1em;
+  display: grid;
+  grid-template-rows: 0fr;
+  border-radius: 3px;
+  transition: 0.3s ease-out;
+}
+.p-promise__detail p {
+  overflow-y: hidden;
 }
 .p-promise__img {
   margin-bottom: 120px;
@@ -603,6 +613,14 @@ body {
 
 .u-inline-block {
   display: inline-block;
+}
+
+.u-mb0 {
+  margin-bottom: 0;
+}
+
+.u-textLeft {
+  text-align: left;
 }
 
 /*# sourceMappingURL=style.css.map*/

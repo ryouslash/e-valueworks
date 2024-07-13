@@ -47,6 +47,10 @@
   &__skills {
     grid-column: 2/3;
     grid-row: 2/3;
+
+    .p-about__itemDetail p {
+      margin-bottom: 10px;
+    }
   }
 
   &__photo {

@@ -10807,6 +10807,7 @@ var __webpack_exports__ = {};
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
+// jQuery読み込み
 
 jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
   // ウィンドウがスクロールされるたびに実行される関数
@@ -10819,11 +10820,30 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
       var windowTop = jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).scrollTop();
       var windowBottom = windowTop + jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).height();
 
-      // 画像がウィンドウの上部に到達したかどうかを確認
-      if (imgTop <= windowTop && imgBottom >= windowTop) {
-        jquery__WEBPACK_IMPORTED_MODULE_0___default()('.p-promise__item').eq(index).addClass('is-active');
-      } else {
-        jquery__WEBPACK_IMPORTED_MODULE_0___default()('.p-promise__item').eq(index).removeClass('is-active');
+      // 1番目の要素の特別扱い
+      if (index === 0) {
+        if (imgBottom <= windowTop) {
+          jquery__WEBPACK_IMPORTED_MODULE_0___default()('.p-promise__item').eq(index).removeClass('is-active');
+        } else {
+          jquery__WEBPACK_IMPORTED_MODULE_0___default()('.p-promise__item').eq(index).addClass('is-active');
+        }
+      }
+      // 3番目の要素の特別扱い
+      else if (index === 3) {
+        if (imgTop <= windowTop) {
+          jquery__WEBPACK_IMPORTED_MODULE_0___default()('.p-promise__item').eq(index).addClass('is-active');
+        } else {
+          jquery__WEBPACK_IMPORTED_MODULE_0___default()('.p-promise__item').eq(index).removeClass('is-active');
+        }
+      }
+      // 他の要素の通常の条件
+      else {
+        // 画像がウィンドウの表示範囲内にあるかどうかを確認
+        if (imgTop <= windowTop && imgBottom >= windowTop) {
+          jquery__WEBPACK_IMPORTED_MODULE_0___default()('.p-promise__item').eq(index).addClass('is-active');
+        } else {
+          jquery__WEBPACK_IMPORTED_MODULE_0___default()('.p-promise__item').eq(index).removeClass('is-active');
+        }
       }
     });
   });

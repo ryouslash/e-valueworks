@@ -21,14 +21,15 @@
 
     &.is-active {
       .p-promise__detail {
-        display: block;
+        grid-template-rows: 1fr;
+        padding: 30px;
       }
     }
   }
 
   &__fixed {
     position: sticky;
-    top: 0;
+    top: 60px;
   }
 
   &__title {
@@ -46,11 +47,19 @@
   }
 
   &__detail {
-    display: none;
-    padding: 30px;
     background: #ffffff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
     margin-left: 1em;
+    margin-top: 1em;
+    display: grid;
+    grid-template-rows: 0fr;
+    border-radius: 3px;
+
+    transition: 0.3s ease-out;
+
+    p {
+      overflow-y: hidden;
+    }
   }
 
   &__img {
