@@ -1,8 +1,9 @@
 // フォント
 /* 0.9375vw（画面幅320px:3px, 640px:6px, 960px:9px,1280px:12px・・・・）*/
 /* 0.625vw（画面幅320px:2px, 640px:4px, 960px:6px,1280px:8px・・・・）*/
-$fontL: clamp(2rem, calc(1.6rem + 0.9375vw), 3.2rem);
-$fontM: clamp(2rem, calc(1.6rem + 0.625vw), 2.6rem);
+$fontXL: clamp(2rem, calc(1.8rem + 0.9375vw), 3.2rem);
+$fontL: clamp(2rem, calc(1.8rem + 0.625vw), 2.6rem);
+$fontM: clamp(1.8rem, calc(1.6rem + 0.625vw), 2rem);
 
 // カラー
 $keyColor: #73be60;

@@ -1,0 +1,21 @@
+@use "../../foundation/variables" as *;
+
+.p-price {
+  background-color: #64ceeb;
+  color: #ffffff;
+
+  & .c-h2Title {
+    margin-bottom: 30px;
+  }
+
+  &__inner {
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr;
+    gap: 20px;
+  }
+
+  &__planTitle {
+    font-size: $fontM;
+    text-align: center;
+  }
+}

@@ -15,19 +15,23 @@
       margin-top: 5px;
     }
 
-    &.home a::after {
+    &-home a::after {
       content: "HOME";
     }
 
-    &.news a::after {
+    &-about a::after {
+      content: "ABOUt";
+    }
+
+    &-news a::after {
       content: "NEWS";
     }
 
-    &.service a::after {
+    &-service a::after {
       content: "SERVICE";
     }
 
-    &.contact a::after {
+    &-contact a::after {
       content: "CONTACT";
     }
   }

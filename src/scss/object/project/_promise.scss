@@ -1,19 +1,24 @@
 @use "../../foundation/variables" as *;
 
 .p-promise {
-  background: rgb(255, 255, 255);
+  background: rgb(240, 240, 240);
   background: linear-gradient(
-    90deg,
-    rgba(255, 255, 255, 1) 0%,
-    rgba(235, 235, 235, 1) 49%
+    82deg,
+    rgba(240, 240, 240, 1) 0%,
+    rgba(239, 239, 239, 1) 57%
   );
-  &__items {
+
+  &__inner {
     display: grid;
     grid-template-columns: 3fr 2fr;
     align-items: flex-start;
     justify-content: space-between;
     gap: 20px;
     position: relative;
+  }
+
+  &__items {
+    margin-top: 60px;
   }
 
   &__item {
@@ -34,7 +39,7 @@
 
   &__title {
     color: $accentColor;
-    font-size: $fontM;
+    font-size: $fontL;
     font-weight: 600;
   }
 
@@ -54,6 +59,7 @@
     display: grid;
     grid-template-rows: 0fr;
     border-radius: 3px;
+    font-size: $fontM;
 
     transition: 0.3s ease-out;
 

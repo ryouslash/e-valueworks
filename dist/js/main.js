@@ -1,6 +1,100 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./src/js/modules/promise.js":
+/*!***********************************!*\
+  !*** ./src/js/modules/promise.js ***!
+  \***********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   bgChange: () => (/* binding */ bgChange),
+/* harmony export */   initPromise: () => (/* binding */ initPromise)
+/* harmony export */ });
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
+// modules/promise.js
+
+function bgChange() {
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('.js-promise__img').each(function (index) {
+    // 画像の位置を取得
+    var imgTop = jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).offset().top;
+    var imgBottom = imgTop + jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).outerHeight();
+    // ウィンドウのスクロール位置を取得
+    var windowTop = jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).scrollTop();
+    var windowBottom = windowTop + jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).height();
+
+    // 1番目の要素
+    if (index === 0) {
+      // 要素がウィンドウと重なり終わって上部に隠れたとき（ここで背景色を変更）
+      if (imgBottom < windowTop) {
+        jquery__WEBPACK_IMPORTED_MODULE_0___default()('.p-promise__item').eq(index).removeClass('is-active');
+        // $('.p-promise').addClass('is-bg2');
+        // $('.p-promise').removeClass('is-bg1');
+      } else {
+        // 要素がウィンドウと重なる前、要素がウィンドウと重なっているとき
+        jquery__WEBPACK_IMPORTED_MODULE_0___default()('.p-promise__item').eq(index).addClass('is-active');
+        // $('.p-promise').addClass('is-bg1');
+        // $('.p-promise').removeClass('is-bg2');
+      }
+    }
+
+    // 2番目の要素
+    if (index === 1) {
+      if (imgTop > windowTop) {
+        // 要素がウィンドウと重なる前
+        jquery__WEBPACK_IMPORTED_MODULE_0___default()('.p-promise__item').eq(index).removeClass('is-active');
+      } else if (imgBottom < windowTop) {
+        // 要素がウィンドウと重なり終わって上部に隠れたとき（ここで背景色を変更）
+        jquery__WEBPACK_IMPORTED_MODULE_0___default()('.p-promise__item').eq(index).removeClass('is-active');
+        // $('.p-promise').addClass('is-bg3').removeClass('is-bg2');
+      } else {
+        // 要素がウィンドウと重なっているとき
+        jquery__WEBPACK_IMPORTED_MODULE_0___default()('.p-promise__item').eq(index).addClass('is-active');
+        // $('.p-promise').removeClass('is-bg3');
+      }
+    }
+
+    // 3番目の要素
+    if (index === 2) {
+      if (imgTop > windowTop) {
+        // 要素がウィンドウと重なる前
+        jquery__WEBPACK_IMPORTED_MODULE_0___default()('.p-promise__item').eq(index).removeClass('is-active');
+      } else if (imgBottom < windowTop) {
+        // 要素がウィンドウと重なり終わって上部に隠れたとき（ここで背景色を変更）
+        jquery__WEBPACK_IMPORTED_MODULE_0___default()('.p-promise__item').eq(index).removeClass('is-active');
+        // $('.p-promise').addClass('is-bg4').removeClass('is-bg3');
+      } else {
+        // 要素がウィンドウと重なっているとき
+        jquery__WEBPACK_IMPORTED_MODULE_0___default()('.p-promise__item').eq(index).addClass('is-active');
+        // $('.p-promise').removeClass('is-bg4');
+      }
+    }
+
+    // 4番目の要素の特別扱い
+    if (index === 3) {
+      // 要素がウィンドウと重なっているとき、要素がウィンドウと重なり終わって上部に隠れたとき
+      if (imgTop <= windowTop) {
+        jquery__WEBPACK_IMPORTED_MODULE_0___default()('.p-promise__item').eq(index).addClass('is-active');
+      } else {
+        // 要素がウィンドウと重なる前
+        jquery__WEBPACK_IMPORTED_MODULE_0___default()('.p-promise__item').eq(index).removeClass('is-active');
+      }
+    }
+  });
+}
+function initPromise() {
+  // ページロード時に実行
+  bgChange();
+
+  // スクロール時に実行
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).on('scroll', bgChange);
+}
+
+/***/ }),
+
 /***/ "./node_modules/jquery/dist/jquery.js":
 /*!********************************************!*\
   !*** ./node_modules/jquery/dist/jquery.js ***!
@@ -10807,46 +10901,11 @@ var __webpack_exports__ = {};
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
-// jQuery読み込み
+/* harmony import */ var _modules_promise_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/promise.js */ "./src/js/modules/promise.js");
+
 
 jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
-  // ウィンドウがスクロールされるたびに実行される関数
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).on('scroll', function () {
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()('.js-promise__img').each(function (index) {
-      // 画像の位置を取得
-      var imgTop = jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).offset().top;
-      var imgBottom = imgTop + jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).outerHeight();
-      // ウィンドウのスクロール位置を取得
-      var windowTop = jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).scrollTop();
-      var windowBottom = windowTop + jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).height();
-
-      // 1番目の要素の特別扱い
-      if (index === 0) {
-        if (imgBottom <= windowTop) {
-          jquery__WEBPACK_IMPORTED_MODULE_0___default()('.p-promise__item').eq(index).removeClass('is-active');
-        } else {
-          jquery__WEBPACK_IMPORTED_MODULE_0___default()('.p-promise__item').eq(index).addClass('is-active');
-        }
-      }
-      // 3番目の要素の特別扱い
-      else if (index === 3) {
-        if (imgTop <= windowTop) {
-          jquery__WEBPACK_IMPORTED_MODULE_0___default()('.p-promise__item').eq(index).addClass('is-active');
-        } else {
-          jquery__WEBPACK_IMPORTED_MODULE_0___default()('.p-promise__item').eq(index).removeClass('is-active');
-        }
-      }
-      // 他の要素の通常の条件
-      else {
-        // 画像がウィンドウの表示範囲内にあるかどうかを確認
-        if (imgTop <= windowTop && imgBottom >= windowTop) {
-          jquery__WEBPACK_IMPORTED_MODULE_0___default()('.p-promise__item').eq(index).addClass('is-active');
-        } else {
-          jquery__WEBPACK_IMPORTED_MODULE_0___default()('.p-promise__item').eq(index).removeClass('is-active');
-        }
-      }
-    });
-  });
+  (0,_modules_promise_js__WEBPACK_IMPORTED_MODULE_1__.initPromise)();
 });
 })();
 

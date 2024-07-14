@@ -17,10 +17,11 @@
         </h1>
         <nav class="l-header__nav">
           <ul class="p-gnav">
-            <li class="p-gnav__item home"><a href="#">ホーム</a></li>
-            <li class="p-gnav__item service"><a href="#">サービス</a></li>
-            <li class="p-gnav__item news"><a href="#">お知らせ</a></li>
-            <li class="p-gnav__item contact"><a href="#">お問い合わせ</a></li>
+            <li class="p-gnav__item p-gnav__item-home"><a href="#">ホーム</a></li>
+            <li class="p-gnav__item p-gnav__item-about"><a href="#">アバウト</a></li>
+            <li class="p-gnav__item p-gnav__item-service"><a href="#">サービス</a></li>
+            <li class="p-gnav__item p-gnav__item-news"><a href="#">お知らせ</a></li>
+            <li class="p-gnav__item p-gnav__item-contact"><a href="#">お問い合わせ</a></li>
           </ul>
         </nav>
       </div>
@@ -94,7 +95,7 @@
                 <p>
                   初めまして。<br />
                   WordPress・SEOが大好きなフリーランスWeb制作者の池田と申します。<br />
-                  2024年から居住地を東欧の国ジョージアに移し、完全リモートで働いています。<br />
+                  現在は居住地を東欧の国ジョージアに移し、完全リモートで働いています。<br />
                 </p>
                 <div class="c-snslinks p-about__sns">
                   <a href="#" class="c-snslinks__link c-snslinks__blog"
@@ -113,9 +114,10 @@
               <dt class="p-about__itemTitle">History</dt>
               <dd class="p-about__itemDetail">
                 <p>
+                  2013/4：中央大学 入学<br />
                   2018/3：中央大学 卒業<br />
-                  2018/10-2020/3：フィリピン・マニラにて日本人講師<br />
-                  2020年4月〜：個人事業主 開業
+                  2018/10-2020/3：<br>フィリピンにて日本人講師<br />
+                  2020/4〜：Web系フリーランスとして開業<br />
                 </p>
                 <div class="p-snslinks"></div>
               </dd>
@@ -146,11 +148,12 @@
           </div>
         </div>
       </section>
-      <section class="p-promise l-sectionPadding">
+      <section class="p-promise l-sectionPadding is-bg1">
         <div class="l-container">
-          <div class="p-promise__items">
+          <div class="p-promise__inner">
             <div class="p-promise__fixed">
               <h2 class="c-h2Title u-textLeft">お客様への4つのお約束_</h2>
+              <div class="p-promise__items">
               <dl class="p-promise__item is-active">
                 <dt class="p-promise__title">
                   <span>お約束1</span>
@@ -158,7 +161,7 @@
                 </dt>
                 <dd class="p-promise__detail">
                   <p>
-                    フリーランスとして組織から独立してはいるものの、社員と同様の熱意と責任感を持って仕事に取り組んでいます。
+                    フリーランスとして組織から独立してはいるものの、社員と同様の熱意と責任感を持って仕事に取り組みます。
                   </p>
                 </dd>
               </dl>
@@ -177,7 +180,7 @@
                   思いやりの気持ちを大切にします
                 </dt>
                 <dd class="p-promise__detail">
-                <p>技術的な面よりもまず、「この人と働きたい」と思ってもらえるよう、誠実な態度と思いやりの気持ちを大切にします。</p>
+                <p>「この人と働きたい」と思ってもらえるような、誠実な態度と思いやりの気持ちを何よりも大切にします。</p>
                 </dd>
               </dl>
               <dl class="p-promise__item">
@@ -191,6 +194,8 @@
                   継続的に自己研鑽に励み、守備範囲を広げていくことで、より良いサービス提供ができるよう努めて参ります。</p>
                 </dd>
               </dl>
+            </div>
+              <!-- <img src="dist/img/partner.png" alt=""> -->
             </div>
             <div class="p-promise__scroll">
               <div class="p-promise__img js-promise__img">
@@ -209,7 +214,24 @@
           </div>
         </div>
       </section>
-      <div style="height: 3000px;"></div>
+      <section class="p-price l-sectionPadding">
+        <div class="l-container p-price__inner">
+            <div class="p-price__left">
+              <h2 class="c-h2Title u-textLeft">料金プラン_</h2>
+              <p>ここにテキストが入ります。</p>
+            </div>
+            <div class="p-price__center p-price__plan p-price__coding">
+              <h3 class="p-price__planTitle">新規コーディングプラン</h3>
+              <p>低価格・高品質なコーデイングをお願いしたい方向け</p>
+              <ul class="p-price__codingPrice">
+                <li></li>
+              </ul>
+            </div>
+            <div class="p-price__right p-price__plan p-price__management">
+              <h3 class="p-price__planTitle">保守・管理プラン</h3>
+            </div>
+          </div>
+      </section>
     </div>
     <script src="dist/js/main.js"></script>
   </body>
