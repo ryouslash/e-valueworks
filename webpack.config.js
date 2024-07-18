@@ -89,4 +89,7 @@ module.exports = {
     static: './',  //静的ファイルの場所
     open: true, // ブラウザを自動的に開く
   },
+  cache: {
+    type: 'filesystem', // キャッシュをファイルシステムに保存
+  },
 };

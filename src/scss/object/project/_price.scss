@@ -51,6 +51,7 @@
   &__samples {
     font-size: $fontL;
     margin: 30px 0;
+    font-weight: 600;
   }
 
   &__sampleTitle {
@@ -90,7 +91,7 @@
 
   &__bg2 {
     background-color: #ffffff;
-    bottom: 50px;
+    top: 50px;
     right: 50px;
   }
 }
