@@ -9,6 +9,8 @@
     rgba(157, 220, 237, 1) 100%
   );
   color: #ffffff;
+  position: relative;
+  overflow: hidden;
 
   &__plans {
     display: grid;
@@ -23,6 +25,10 @@
     padding: 60px 30px;
     border-radius: 10px;
     box-shadow: 2px 4px 5px #3f9ab3;
+    transition: box-shadow 0.3s;
+    &:hover {
+      box-shadow: 4px 6px 5px #3f9ab3;
+    }
   }
 
   &__planTitle {
@@ -43,7 +49,49 @@
   }
 
   &__samples {
-    font-size: $fontM;
+    font-size: $fontL;
+    margin: 30px 0;
+  }
+
+  &__sampleTitle {
+    background-color: #eeeeee;
+    text-align: center;
+    padding: 5px 0;
+  }
+
+  &__sampleDetail {
+    text-align: center;
+  }
+
+  &__managementPrice {
+    font-size: $fontL;
+    margin: 30px 0;
+  }
+
+  &__hosoku {
+    margin-bottom: 30px;
+    font-size: $fontS;
+    color: #666666;
+  }
+
+  &__bg {
+    position: absolute;
+    z-index: 1;
+    width: 50px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+  }
+
+  &__bg1 {
+    background-color: #3f9ab3;
+    top: 50px;
+    left: 50px;
+  }
+
+  &__bg2 {
+    background-color: #ffffff;
+    bottom: 50px;
+    right: 50px;
   }
 }
 
