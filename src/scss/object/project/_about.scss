@@ -2,6 +2,8 @@
 
 // アバウト
 .p-about {
+  background-image: url("../img/pattern-bg.png");
+
   & .c-h2Title {
     color: #ffffff;
     background-color: $keyColor;
@@ -56,6 +58,11 @@
   &__photo {
     grid-column: 3/4;
     grid-row: 1/3;
+
+    img {
+      height: 100%;
+      object-fit: cover;
+    }
   }
 
   &__itemTitle {
