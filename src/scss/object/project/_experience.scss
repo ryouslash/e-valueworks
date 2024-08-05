@@ -1,0 +1,15 @@
+.p-experience {
+  background-color: #ffffff;
+
+  &__slider {
+    margin-top: 60px;
+
+    .slick-slide {
+      margin: 0 15px;
+    }
+
+    .slick-dots {
+      bottom: -50px;
+    }
+  }
+}

@@ -6,6 +6,7 @@
 @use "foundation/_reset";
 @use "foundation/_base";
 @use "foundation/_variables";
+@use "foundation/library/slick";
 
 /*
  * layout
@@ -30,9 +31,13 @@
 @use "object/project/_mainvisual";
 @use "object/project/_trouble";
 @use "object/project/_about";
+@use "object/project/_experience";
 @use "object/project/_promise";
 @use "object/project/_price";
 @use "object/project/_flow";
 
 // Utility
 @use "object/utility/_utilities";
+
+// Pages
+@use "pages/top/news";

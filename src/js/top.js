@@ -1,7 +1,36 @@
-// modules/promise.js
 import $ from 'jquery';
+import 'slick-carousel/slick/slick.min.js';
 
-export function bgChange() {
+// お知らせ 箇所
+$(document).ready(function() {
+  let items = $('.p-top-news__item');
+  console.log(items);
+  let nextItem = 1;
+
+  function showNextItem() {
+    items.removeClass('is-show');  // 全てのアイテムからクラスを削除
+    items.eq(nextItem).addClass('is-show');  // 現在のアイテムにクラスを追加
+
+    nextItem = (nextItem + 1) % items.length;  // インデックスを更新（循環）
+  }
+  
+  setInterval(showNextItem, 8000);  // 8秒ごとにshowNextItemを実行
+});
+
+// 制作実績 箇所
+$(document).ready(function(){
+  $('.p-experience__slider').slick({
+    // オプションをここに設定
+    autoplay: true,
+    dots: true,
+    infinite: true,
+    speed: 300,
+    slidesToShow: 3,
+  });
+});
+
+// お客様への4つのお約束 箇所
+function promise() {
   $('.js-promise__img').each(function(index) {
     // 画像の位置を取得
     var imgTop = $(this).offset().top;
@@ -70,10 +99,9 @@ export function bgChange() {
   });
 }
 
-export function initPromise() {
-  // ページロード時に実行
-  bgChange();
+// ページロード時に実行
+promise();
 
-  // スクロール時に実行
-  $(window).on('scroll', bgChange);
-}
+// スクロール時に実行
+$(window).on('scroll', promise);
+

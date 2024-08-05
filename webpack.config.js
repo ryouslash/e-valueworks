@@ -5,9 +5,13 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 
 module.exports = {
-  entry: ['./src/js/index.js', './src/scss/style.scss'],
+  entry: {
+    main: ["./src/js/index.js", "./src/scss/style.scss"],
+    top: "./src/js/top.js",
+    firstview: "./src/js/firstview.js"
+  },
   output: {  //出力先
-    filename: 'js/main.js',
+    filename: 'js/[name].js',
     path: path.resolve(__dirname, 'dist'),
     //Asset Modules の出力先の指定
     assetModuleFilename: (pathData) => {
@@ -21,6 +25,9 @@ module.exports = {
       return '[name][ext][query]';
     }
   },
+  // externals: {
+  //   jquery: 'jQuery'
+  // },
   watchOptions: {
     ignored: /node_modules/  //正規表現で指定（node_modules を除外）
   },
