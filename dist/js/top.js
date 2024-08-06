@@ -10926,6 +10926,11 @@ promise();
 
 // スクロール時に実行
 jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).on('scroll', promise);
+jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('.p-faq__list').on('click', function () {
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).toggleClass('is-open');
+  });
+});
 })();
 
 /******/ })()

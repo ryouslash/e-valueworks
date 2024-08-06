@@ -105,3 +105,10 @@ promise();
 // スクロール時に実行
 $(window).on('scroll', promise);
 
+
+$(document).ready(function() {
+  $('.p-faq__list').on('click', function() {
+    $(this).toggleClass('is-open');
+  });
+});
+
