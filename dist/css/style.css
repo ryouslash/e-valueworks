@@ -1213,6 +1213,7 @@ body {
 }
 .p-faq__question::before {
   content: "Q. ";
+  color: #18c1f0;
 }
 .p-faq__answer {
   display: grid;
@@ -1226,6 +1227,8 @@ body {
 }
 .p-faq__answer p::before {
   content: "A. ";
+  font-weight: 600;
+  color: #f29949;
 }
 
 .p-faq__list.is-open .p-faq__answer {

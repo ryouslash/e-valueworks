@@ -37,6 +37,7 @@
 
     &::before {
       content: "Q. ";
+      color: $subColor;
     }
   }
 
@@ -52,6 +53,8 @@
 
       &::before {
         content: "A. ";
+        font-weight: 600;
+        color: #f29949;
       }
     }
   }
