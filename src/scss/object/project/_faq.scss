@@ -34,10 +34,24 @@
 
   &__question {
     font-weight: 600;
+    position: relative;
+    padding: 0 2.6em 0 1.3em;
 
     &::before {
       content: "Q. ";
       color: $subColor;
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    svg {
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      transition: 0.3s;
     }
   }
 
@@ -46,7 +60,9 @@
     grid-template-rows: 0fr;
     transition: 0.3s ease-out;
     background-color: #eeeeee;
-    padding: 0 10px;
+    padding: 0 10px 0 calc(1.3em + 10px);
+    position: relative;
+    overflow-x: hidden;
 
     p {
       overflow-y: hidden;
@@ -55,15 +71,32 @@
         content: "A. ";
         font-weight: 600;
         color: #f29949;
+        position: absolute;
+        left: -100px;
+        top: 50%;
+        transform: translateY(-50%);
+        transition: left 0.3s ease-out;
       }
     }
   }
 }
 
 .p-faq__list.is-open {
+  .p-faq__question {
+    svg {
+      transform: rotate(180deg);
+    }
+  }
+
   .p-faq__answer {
-    margin-top: 10px;
+    margin-top: 1em;
     grid-template-rows: 1fr;
-    padding: 10px;
+    padding: 10px 10px 10px calc(1.3em + 10px);
+    p {
+      &::before {
+        display: block;
+        left: 10px;
+      }
+    }
   }
 }
