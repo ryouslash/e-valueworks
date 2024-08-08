@@ -1,3 +1,39 @@
+@use "../../foundation/variables" as *;
+
 .p-cta {
   background-color: #ffffff;
+
+  &__inner {
+    clip-path: inset(0);
+    &::before {
+      content: "";
+      display: block;
+      background-image: url(../img/contact.jpg);
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      z-index: -1;
+    }
+  }
+
+  .c-h2Title {
+    color: #ffffff;
+    background-color: $keyColor;
+    padding: 30px 0;
+    position: relative;
+
+    &::after {
+      content: "";
+      border-top: 40px solid $keyColor;
+      border-left: 60px solid transparent;
+      border-right: 60px solid transparent;
+      position: absolute;
+      left: 50%;
+      bottom: 1px;
+      transform: translateX(-50%) translateY(100%);
+      z-index: 1;
+    }
+  }
 }
