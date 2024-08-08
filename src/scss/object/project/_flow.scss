@@ -46,32 +46,41 @@
     justify-content: center;
     align-items: center;
 
-    i::after {
+    div::after {
       font-size: $fontM;
       text-align: center;
       display: block;
       font-family: "Roboto", "Noto Sans JP", sans-serif;
       font-weight: 600;
-      margin-top: 0.5em;
     }
+  }
 
-    .fa-envelope::after {
+  &__icon1 {
+    div::after {
       content: "STEP. 1";
     }
+  }
 
-    .fa-handshake::after {
+  &__icon2 {
+    div::after {
       content: "STEP. 2";
     }
+  }
 
-    .fa-pen-nib::after {
+  &__icon3 {
+    div::after {
       content: "STEP. 3";
     }
+  }
 
-    .fa-code::after {
+  &__icon4 {
+    div::after {
       content: "STEP. 4";
     }
+  }
 
-    .fa-server:after {
+  &__icon5 {
+    div::after {
       content: "STEP. 5";
     }
   }
