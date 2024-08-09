@@ -1,6 +1,41 @@
 import $ from 'jquery';
 import 'slick-carousel/slick/slick.min.js';
 
+// メインビジュアル箇所
+const typing = (el, sentence) => {
+  // 文字列を1文字ずつ取り出して処理を実行する
+  [...sentence].forEach((char, index) => {
+    // 0.1秒ごとに文字を出力する
+    setTimeout(() => {
+      if (char === '\n') {
+        document.querySelector(el).innerHTML += '<br>';
+      } else {
+        document.querySelector(el).innerHTML += char; // innerHTMLを使用
+      }
+    }, 100 * index);
+  });
+}
+
+
+// タイピングの開始を1秒遅らせる
+setTimeout(() => {
+  typing('.js-typing', '「早さ・正確さ・親身さ」が揃った\nコーディング代行事務所');
+}, 1000); // 1秒（1000ミリ秒）遅延させる
+
+// メインビジュアルのテキスト、ボタン要素を取得
+const mainText = document.querySelector('.p-mainVisual__text');
+const mainButton = document.querySelector('.p-mainVisual__button');
+
+setTimeout(() => {
+  mainText.classList.add('is-show');
+}, 4300);
+
+setTimeout(() => {
+  mainButton.classList.add('is-show');
+}, 4800);
+
+
+
 // お知らせ 箇所
 $(document).ready(function() {
   let items = $('.p-top-news__item');

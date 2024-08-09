@@ -532,6 +532,19 @@ body {
   min-width: 1300px;
 }
 
+.js-fadeIn {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: 0.3s;
+}
+
+.js-fadeIn.is-show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
 /*
  * layout
  */
@@ -574,6 +587,10 @@ body {
 .l-header__logo {
   max-width: 180px;
   padding: 20px 0;
+  transition: opacity 0.3s;
+}
+.l-header__logo:hover {
+  opacity: 0.7;
 }
 
 .l-container {
@@ -609,6 +626,14 @@ body {
   justify-content: center;
   align-items: center;
   box-shadow: 2px 2px 6px #aaaaaa;
+  position: relative;
+  top: 0;
+  left: 0;
+  transition: 0.3s;
+}
+.c-button:hover {
+  top: 2px;
+  left: 2px;
 }
 .c-button.chatwork {
   background-color: #dcdcdc;
@@ -618,7 +643,7 @@ body {
   margin-right: 10px;
 }
 .c-button.contact {
-  background-color: #18c1f0;
+  background: #18c1f0;
   color: #ffffff;
 }
 .c-button.contact svg {
@@ -697,6 +722,26 @@ body {
 .p-gnav__item a {
   display: block;
   padding: 20px 15px;
+  position: relative;
+  transition: opacity 0.3s;
+}
+.p-gnav__item a:before {
+  content: "";
+  height: 2px;
+  background-color: #aaaaaa;
+  display: block;
+  width: 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transition: width 0.3s;
+}
+.p-gnav__item a:hover {
+  opacity: 0.7;
+}
+.p-gnav__item a:hover::before {
+  content: "";
+  width: 100%;
 }
 .p-gnav__item a::after {
   font-size: 11px;
@@ -722,12 +767,27 @@ body {
 }
 
 .p-mainVisual {
-  background-image: url(../img/website-thumbnail.jpg);
-  background-size: cover;
+  position: relative;
+  min-height: calc(400px + 5vw);
   display: flex;
   align-items: center;
-  justify-content: left;
-  min-height: calc(400px + 5vw);
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.p-mainVisual__bg {
+  width: 100%;
+  height: 100%;
+  background-image: url(../img/website-thumbnail.jpg);
+  background-size: cover;
+  position: absolute;
+  z-index: -1;
+  animation: fadeIn 3s ease-in-out forwards;
 }
 .p-mainVisual__inner {
   width: 100%;
@@ -737,6 +797,32 @@ body {
   font-size: clamp(2rem, 1.8rem + 0.9375vw, 3.2rem);
   font-weight: 700;
   margin-bottom: 30px;
+}
+.p-mainVisual__title::after {
+  content: "";
+  border-right: 10px solid #333;
+  margin-left: 0.5em;
+  animation: flashing 1s linear infinite;
+  opacity: 0;
+}
+@keyframes flashing {
+  0%, 100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+.p-mainVisual__text, .p-mainVisual__button {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: 0.3s;
+}
+.p-mainVisual__text.is-show, .p-mainVisual__button.is-show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
 }
 .p-mainVisual__button {
   display: flex;
@@ -1366,9 +1452,9 @@ body {
 }
 .p-contact-form button {
   position: relative;
-  /*ボタンの形状*/
-  color: #333;
-  border: 1px solid #333;
+  color: #fff;
+  background-color: #f29949;
+  border: 1px solid #f29949;
   padding: 20px 0;
   display: block;
   font-weight: bolder;
@@ -1380,9 +1466,9 @@ body {
   cursor: pointer;
 }
 .p-contact-form button:hover {
-  background: #333;
-  color: #fff;
-  border-color: transparent;
+  background: #ffffff;
+  color: #333;
+  border-color: #666;
 }
 .p-contact-form button:hover::before, .p-contact-form button:hover::after {
   width: calc(100% + 11px);
@@ -1393,7 +1479,7 @@ body {
   content: "";
   /*絶対配置で線の位置を決める*/
   position: absolute;
-  border: solid #333;
+  border: solid #f29949;
   width: 30px;
   height: 30px;
   /*アニメーションの指定*/

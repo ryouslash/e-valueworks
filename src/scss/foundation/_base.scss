@@ -6,3 +6,16 @@ body {
   font-family: "Roboto", "Noto Sans JP", sans-serif;
   min-width: 1300px;
 }
+
+.js-fadeIn {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: 0.3s;
+}
+
+.js-fadeIn.is-show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}

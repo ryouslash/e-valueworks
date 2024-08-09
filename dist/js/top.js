@@ -10822,8 +10822,44 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var slick_carousel_slick_slick_min_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! slick-carousel/slick/slick.min.js */ "./node_modules/slick-carousel/slick/slick.min.js");
 /* harmony import */ var slick_carousel_slick_slick_min_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(slick_carousel_slick_slick_min_js__WEBPACK_IMPORTED_MODULE_1__);
+function _toConsumableArray(r) { return _arrayWithoutHoles(r) || _iterableToArray(r) || _unsupportedIterableToArray(r) || _nonIterableSpread(); }
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
+function _iterableToArray(r) { if ("undefined" != typeof Symbol && null != r[Symbol.iterator] || null != r["@@iterator"]) return Array.from(r); }
+function _arrayWithoutHoles(r) { if (Array.isArray(r)) return _arrayLikeToArray(r); }
+function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
 
 
+
+// メインビジュアル箇所
+var typing = function typing(el, sentence) {
+  // 文字列を1文字ずつ取り出して処理を実行する
+  _toConsumableArray(sentence).forEach(function (_char, index) {
+    // 0.1秒ごとに文字を出力する
+    setTimeout(function () {
+      if (_char === '\n') {
+        document.querySelector(el).innerHTML += '<br>';
+      } else {
+        document.querySelector(el).innerHTML += _char; // innerHTMLを使用
+      }
+    }, 100 * index);
+  });
+};
+
+// タイピングの開始を1秒遅らせる
+setTimeout(function () {
+  typing('.js-typing', '「早さ・正確さ・親身さ」が揃った\nコーディング代行事務所');
+}, 1000); // 1秒（1000ミリ秒）遅延させる
+
+// メインビジュアルのテキスト、ボタン要素を取得
+var mainText = document.querySelector('.p-mainVisual__text');
+var mainButton = document.querySelector('.p-mainVisual__button');
+setTimeout(function () {
+  mainText.classList.add('is-show');
+}, 4300);
+setTimeout(function () {
+  mainButton.classList.add('is-show');
+}, 4800);
 
 // お知らせ 箇所
 jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {

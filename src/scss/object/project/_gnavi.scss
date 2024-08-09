@@ -1,3 +1,5 @@
+@use "../../foundation/variables" as *;
+
 .p-gnav {
   display: flex;
 
@@ -5,14 +7,36 @@
     & a {
       display: block;
       padding: 20px 15px;
-    }
+      position: relative;
+      transition: opacity 0.3s;
 
-    & a::after {
-      font-size: 11px;
-      color: #777777;
-      text-align: center;
-      display: block;
-      margin-top: 5px;
+      &:before {
+        content: "";
+        height: 2px;
+        background-color: #aaaaaa;
+        display: block;
+        width: 0;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        transition: width 0.3s;
+      }
+
+      &:hover {
+        opacity: 0.7;
+        &::before {
+          content: "";
+          width: 100%;
+        }
+      }
+
+      &::after {
+        font-size: 11px;
+        color: #777777;
+        text-align: center;
+        display: block;
+        margin-top: 5px;
+      }
     }
 
     &-home a::after {

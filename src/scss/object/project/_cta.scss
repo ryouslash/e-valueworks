@@ -86,9 +86,9 @@
 
   button {
     position: relative;
-    /*ボタンの形状*/
-    color: #333;
-    border: 1px solid #333;
+    color: #fff;
+    background-color: #f29949;
+    border: 1px solid #f29949;
     padding: 20px 0;
     display: block;
     font-weight: bolder;
@@ -100,9 +100,9 @@
     cursor: pointer;
 
     &:hover {
-      background: #333;
-      color: #fff;
-      border-color: transparent;
+      background: #ffffff;
+      color: #333;
+      border-color: #666;
 
       &::before,
       &::after {
@@ -117,7 +117,7 @@
       content: "";
       /*絶対配置で線の位置を決める*/
       position: absolute;
-      border: solid #333;
+      border: solid #f29949;
       width: 30px;
       height: 30px;
       /*アニメーションの指定*/

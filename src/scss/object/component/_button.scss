@@ -8,18 +8,27 @@
   justify-content: center;
   align-items: center;
   box-shadow: 2px 2px 6px #aaaaaa;
+  position: relative;
+  top: 0;
+  left: 0;
+  transition: 0.3s;
+
+  &:hover {
+    top: 2px;
+    left: 2px;
+  }
 
   &.chatwork {
     background-color: #dcdcdc;
 
-    & img {
+    img {
       width: 20px;
       margin-right: 10px;
     }
   }
 
   &.contact {
-    background-color: $subColor;
+    background: $subColor;
     color: #ffffff;
   }
 
