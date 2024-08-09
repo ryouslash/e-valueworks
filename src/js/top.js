@@ -1,6 +1,11 @@
 import $ from 'jquery';
 import 'slick-carousel/slick/slick.min.js';
 
+const header = document.querySelector('header');
+const headerHeight = header.offsetHeight; // 数値として保持
+
+document.documentElement.style.setProperty('--headerHeight', headerHeight + 'px');
+
 // メインビジュアル箇所
 const typing = (el, sentence) => {
   // 文字列を1文字ずつ取り出して処理を実行する
@@ -60,7 +65,6 @@ $(document).ready(function() {
     // p-troubles要素の位置を取得
     var offsetTop = $troublesElement.offset().top;
     var windowTop = $(window).scrollTop();
-    var headerHeight = $('.l-header').outerHeight();
 
     // p-troublesがウィンドウのトップに来たら
     if (windowTop > offsetTop - headerHeight) {
@@ -129,7 +133,7 @@ function promise() {
     // 1番目の要素
     if (index === 0) {
       // 要素がウィンドウと重なり終わって上部に隠れたとき（ここで背景色を変更）
-      if (imgBottom < windowTop) {
+      if (imgBottom < windowTop + headerHeight) {
         $('.p-promise__item').eq(index).removeClass('is-active');
         // $('.p-promise').addClass('is-bg2');
         // $('.p-promise').removeClass('is-bg1');
@@ -143,10 +147,10 @@ function promise() {
 
     // 2番目の要素
     if (index === 1) {
-      if (imgTop > windowTop) {
+      if (imgTop > windowTop + headerHeight) {
         // 要素がウィンドウと重なる前
         $('.p-promise__item').eq(index).removeClass('is-active');
-      } else if (imgBottom < windowTop) {
+      } else if (imgBottom < windowTop + headerHeight) {
         // 要素がウィンドウと重なり終わって上部に隠れたとき（ここで背景色を変更）
         $('.p-promise__item').eq(index).removeClass('is-active');
         // $('.p-promise').addClass('is-bg3').removeClass('is-bg2');
@@ -159,10 +163,10 @@ function promise() {
 
     // 3番目の要素
     if (index === 2) {
-      if (imgTop > windowTop) {
+      if (imgTop > windowTop + headerHeight) {
         // 要素がウィンドウと重なる前
         $('.p-promise__item').eq(index).removeClass('is-active');
-      } else if (imgBottom < windowTop) {
+      } else if (imgBottom < windowTop + headerHeight) {
         // 要素がウィンドウと重なり終わって上部に隠れたとき（ここで背景色を変更）
         $('.p-promise__item').eq(index).removeClass('is-active');
         // $('.p-promise').addClass('is-bg4').removeClass('is-bg3');
@@ -176,7 +180,7 @@ function promise() {
     // 4番目の要素の特別扱い
     if (index === 3) {
       // 要素がウィンドウと重なっているとき、要素がウィンドウと重なり終わって上部に隠れたとき
-      if (imgTop <= windowTop) {
+      if (imgTop <= windowTop + headerHeight) {
         $('.p-promise__item').eq(index).addClass('is-active');
       } else {
         // 要素がウィンドウと重なる前

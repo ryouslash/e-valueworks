@@ -1119,7 +1119,7 @@ body {
 }
 .p-promise__fixed {
   position: sticky;
-  top: 60px;
+  top: calc(60px + var(--headerHeight));
 }
 .p-promise__title {
   color: #733c3c;

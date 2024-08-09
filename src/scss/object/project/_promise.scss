@@ -34,7 +34,7 @@
 
   &__fixed {
     position: sticky;
-    top: 60px;
+    top: calc(60px + var(--headerHeight));
   }
 
   &__title {

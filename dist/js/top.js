@@ -10830,6 +10830,10 @@ function _arrayWithoutHoles(r) { if (Array.isArray(r)) return _arrayLikeToArray(
 function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
 
 
+var header = document.querySelector('header');
+var headerHeight = header.offsetHeight; // 数値として保持
+
+document.documentElement.style.setProperty('--headerHeight', headerHeight + 'px');
 
 // メインビジュアル箇所
 var typing = function typing(el, sentence) {
@@ -10885,7 +10889,6 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
     // p-troubles要素の位置を取得
     var offsetTop = $troublesElement.offset().top;
     var windowTop = jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).scrollTop();
-    var headerHeight = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.l-header').outerHeight();
 
     // p-troublesがウィンドウのトップに来たら
     if (windowTop > offsetTop - headerHeight) {
@@ -10954,7 +10957,7 @@ function promise() {
     // 1番目の要素
     if (index === 0) {
       // 要素がウィンドウと重なり終わって上部に隠れたとき（ここで背景色を変更）
-      if (imgBottom < windowTop) {
+      if (imgBottom < windowTop + headerHeight) {
         jquery__WEBPACK_IMPORTED_MODULE_0___default()('.p-promise__item').eq(index).removeClass('is-active');
         // $('.p-promise').addClass('is-bg2');
         // $('.p-promise').removeClass('is-bg1');
@@ -10968,10 +10971,10 @@ function promise() {
 
     // 2番目の要素
     if (index === 1) {
-      if (imgTop > windowTop) {
+      if (imgTop > windowTop + headerHeight) {
         // 要素がウィンドウと重なる前
         jquery__WEBPACK_IMPORTED_MODULE_0___default()('.p-promise__item').eq(index).removeClass('is-active');
-      } else if (imgBottom < windowTop) {
+      } else if (imgBottom < windowTop + headerHeight) {
         // 要素がウィンドウと重なり終わって上部に隠れたとき（ここで背景色を変更）
         jquery__WEBPACK_IMPORTED_MODULE_0___default()('.p-promise__item').eq(index).removeClass('is-active');
         // $('.p-promise').addClass('is-bg3').removeClass('is-bg2');
@@ -10984,10 +10987,10 @@ function promise() {
 
     // 3番目の要素
     if (index === 2) {
-      if (imgTop > windowTop) {
+      if (imgTop > windowTop + headerHeight) {
         // 要素がウィンドウと重なる前
         jquery__WEBPACK_IMPORTED_MODULE_0___default()('.p-promise__item').eq(index).removeClass('is-active');
-      } else if (imgBottom < windowTop) {
+      } else if (imgBottom < windowTop + headerHeight) {
         // 要素がウィンドウと重なり終わって上部に隠れたとき（ここで背景色を変更）
         jquery__WEBPACK_IMPORTED_MODULE_0___default()('.p-promise__item').eq(index).removeClass('is-active');
         // $('.p-promise').addClass('is-bg4').removeClass('is-bg3');
@@ -11001,7 +11004,7 @@ function promise() {
     // 4番目の要素の特別扱い
     if (index === 3) {
       // 要素がウィンドウと重なっているとき、要素がウィンドウと重なり終わって上部に隠れたとき
-      if (imgTop <= windowTop) {
+      if (imgTop <= windowTop + headerHeight) {
         jquery__WEBPACK_IMPORTED_MODULE_0___default()('.p-promise__item').eq(index).addClass('is-active');
       } else {
         // 要素がウィンドウと重なる前
