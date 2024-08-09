@@ -10896,9 +10896,34 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
           $item.addClass('is-fadeIn');
         }, index * 200); // 0.3秒毎にクラスを追加
       });
+    }
+  });
+});
 
-      // 一度だけクラスを追加するためにイベントリスナーをオフにする
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).off('scroll');
+// アバウト 箇所
+jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
+  // スクロールイベントを監視
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).on('scroll', function () {
+    // p-about__items要素を取得
+    var $profileElement = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.p-about__items');
+
+    // p-about__items要素の位置を取得
+    var offsetTop = $profileElement.offset().top;
+    var elementHeight = $profileElement.outerHeight();
+    var windowTop = jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).scrollTop();
+    var windowHeight = jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).height();
+
+    // ウィンドウの中央位置を計算
+    var windowCenter = windowTop + windowHeight / 2;
+    console.log(windowCenter);
+
+    // p-about__itemsの中央位置を計算
+    var elementCenter = offsetTop + elementHeight / 2;
+    console.log(elementCenter);
+
+    // p-about__itemsがウィンドウの中央部に来たら
+    if (windowCenter > elementCenter) {
+      $profileElement.addClass('is-active');
     }
   });
 });
@@ -10908,6 +10933,7 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
   jquery__WEBPACK_IMPORTED_MODULE_0___default()('.p-experience__slider').slick({
     // オプションをここに設定
     autoplay: true,
+    autoplaySpeed: 3000,
     dots: true,
     infinite: true,
     speed: 300,

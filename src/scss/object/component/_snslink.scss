@@ -1,7 +1,14 @@
 .c-snslinks {
   display: flex;
-  gap: 6px;
+  gap: 0.7em;
   &__link {
     font-size: 2.2rem;
+  }
+
+  svg {
+    transition: transform 0.3s;
+    &:hover {
+      transform: scale(1.1);
+    }
   }
 }

@@ -71,20 +71,44 @@ $(document).ready(function() {
           $item.addClass('is-fadeIn');
         }, index * 200); // 0.3秒毎にクラスを追加
       });
-
-      // 一度だけクラスを追加するためにイベントリスナーをオフにする
-      $(window).off('scroll');
     }
   });
 });
 
+// アバウト 箇所
+$(document).ready(function() {
+  // スクロールイベントを監視
+  $(window).on('scroll', function() {
+    // p-about__items要素を取得
+    var $profileElement = $('.p-about__items');
 
+    // p-about__items要素の位置を取得
+    var offsetTop = $profileElement.offset().top;
+    var elementHeight = $profileElement.outerHeight();
+    var windowTop = $(window).scrollTop();
+    var windowHeight = $(window).height();
+
+    // ウィンドウの中央位置を計算
+    var windowCenter = windowTop + (windowHeight / 2);
+    console.log(windowCenter);
+
+    // p-about__itemsの中央位置を計算
+    var elementCenter = offsetTop + (elementHeight / 2);
+    console.log(elementCenter);
+
+    // p-about__itemsがウィンドウの中央部に来たら
+    if (windowCenter > elementCenter) {
+      $profileElement.addClass('is-active');
+    }
+  });
+});
 
 // 制作実績 箇所
 $(document).ready(function(){
   $('.p-experience__slider').slick({
     // オプションをここに設定
     autoplay: true,
+    autoplaySpeed: 3000,
     dots: true,
     infinite: true,
     speed: 300,
