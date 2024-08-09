@@ -587,7 +587,7 @@ body {
   background-color: #18c1f0;
   color: #ffffff;
 }
-.c-button.contact i {
+.c-button.contact svg {
   font-size: 2rem;
   margin-right: 10px;
 }
