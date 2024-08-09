@@ -535,6 +535,32 @@ body {
 /*
  * layout
  */
+.l-footer {
+  background-color: #eeeeee;
+}
+.l-footer__inner {
+  padding: 30px 0;
+}
+.l-footer__navi-items {
+  display: flex;
+}
+.l-footer__navi-item {
+  padding: 0 1em;
+  border-left: 1px solid #333333;
+}
+.l-footer__navi-item:last-of-type {
+  border-right: 1px solid #333333;
+}
+.l-footer__navi-item a {
+  text-decoration: underline;
+}
+.l-footer__copyright {
+  text-align: center;
+  background-color: #333333;
+  color: #ffffff;
+  padding: 10px 0;
+}
+
 .l-header {
   background-color: #ffffff;
   box-shadow: 0 3px 5px rgba(109, 109, 109, 0.2509803922);

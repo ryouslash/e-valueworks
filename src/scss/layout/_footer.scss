@@ -1,0 +1,31 @@
+.l-footer {
+  background-color: #eeeeee;
+
+  &__inner {
+    padding: 30px 0;
+  }
+
+  &__navi-items {
+    display: flex;
+  }
+
+  &__navi-item {
+    padding: 0 1em;
+    border-left: 1px solid #333333;
+
+    &:last-of-type {
+      border-right: 1px solid #333333;
+    }
+
+    a {
+      text-decoration: underline;
+    }
+  }
+
+  &__copyright {
+    text-align: center;
+    background-color: #333333;
+    color: #ffffff;
+    padding: 10px 0;
+  }
+}
