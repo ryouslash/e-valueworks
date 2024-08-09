@@ -34,8 +34,6 @@ setTimeout(() => {
   mainButton.classList.add('is-show');
 }, 4800);
 
-
-
 // お知らせ 箇所
 $(document).ready(function() {
   let items = $('.p-top-news__item');
@@ -43,14 +41,44 @@ $(document).ready(function() {
   let nextItem = 1;
 
   function showNextItem() {
-    items.removeClass('is-show');  // 全てのアイテムからクラスを削除
-    items.eq(nextItem).addClass('is-show');  // 現在のアイテムにクラスを追加
+    items.removeClass('is-slideIn');  // 全てのアイテムからクラスを削除
+    items.eq(nextItem).addClass('is-slideIn');  // 現在のアイテムにクラスを追加
 
     nextItem = (nextItem + 1) % items.length;  // インデックスを更新（循環）
   }
   
   setInterval(showNextItem, 8000);  // 8秒ごとにshowNextItemを実行
 });
+
+// お悩みはこちら 箇所
+$(document).ready(function() {
+  // スクロールイベントを監視
+  $(window).on('scroll', function() {
+    // p-troubles要素を取得
+    var $troublesElement = $('.p-troubles');
+
+    // p-troubles要素の位置を取得
+    var offsetTop = $troublesElement.offset().top;
+    var windowTop = $(window).scrollTop();
+    var headerHeight = $('.l-header').outerHeight();
+
+    // p-troublesがウィンドウのトップに来たら
+    if (windowTop > offsetTop - headerHeight) {
+      // p-troubles__itemの子要素にis-fadeInクラスを追加
+      $troublesElement.find('.p-troubles__item').each(function(index) {
+        var $item = $(this);
+        setTimeout(function() {
+          $item.addClass('is-fadeIn');
+        }, index * 200); // 0.3秒毎にクラスを追加
+      });
+
+      // 一度だけクラスを追加するためにイベントリスナーをオフにする
+      $(window).off('scroll');
+    }
+  });
+});
+
+
 
 // 制作実績 箇所
 $(document).ready(function(){
