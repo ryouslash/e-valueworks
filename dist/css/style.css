@@ -1170,6 +1170,7 @@ body {
 
 .p-faq {
   font-size: clamp(1.8rem, 1.6rem + 0.625vw, 2rem);
+  background-color: #ffffff;
 }
 .p-faq__inner {
   display: grid;
