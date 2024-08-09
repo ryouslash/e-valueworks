@@ -527,7 +527,7 @@ img {
 }
 
 body {
-  font-size: 16px;
+  font-size: 1.6rem;
   font-family: "Roboto", "Noto Sans JP", sans-serif;
   min-width: 1300px;
 }
@@ -551,9 +551,17 @@ body {
 }
 
 .l-container {
-  max-width: 1300px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 30px;
+  box-sizing: content-box;
+}
+
+.l-slim-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 30px;
+  box-sizing: content-box;
 }
 
 .l-sectionPadding {
@@ -1256,6 +1264,7 @@ body {
   background-color: #ffffff;
 }
 .p-cta__inner {
+  padding: 100px 0 120px;
   clip-path: inset(0);
 }
 .p-cta__inner::before {
@@ -1285,6 +1294,100 @@ body {
   bottom: 1px;
   transform: translateX(-50%) translateY(100%);
   z-index: 1;
+}
+
+.p-contact-form {
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.3);
+  padding: 60px;
+  border-radius: 10px;
+}
+.p-contact-form label {
+  display: block;
+  font-weight: bolder;
+  margin-bottom: 0.3em;
+  font-size: clamp(1.8rem, 1.6rem + 0.625vw, 2rem);
+}
+.p-contact-form input[type=text],
+.p-contact-form input[type=email],
+.p-contact-form select,
+.p-contact-form textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+  border-radius: 3px;
+  border: 1px solid #aaaaaa;
+}
+.p-contact-form input[type=text]:focus,
+.p-contact-form input[type=email]:focus,
+.p-contact-form select:focus,
+.p-contact-form textarea:focus {
+  outline: 1px solid #18c1f0;
+}
+.p-contact-form input[type=text]::placeholder,
+.p-contact-form input[type=email]::placeholder,
+.p-contact-form select::placeholder,
+.p-contact-form textarea::placeholder {
+  font-family: "Roboto", "Noto Sans JP", sans-serif;
+  color: #aaaaaa;
+}
+.p-contact-form textarea {
+  height: calc(12em + 20px);
+  line-height: 1.5;
+}
+.p-contact-form__item:not(:last-of-type) {
+  margin-bottom: 20px;
+}
+.p-contact-form button {
+  position: relative;
+  /*ボタンの形状*/
+  color: #333;
+  border: 1px solid #333;
+  padding: 20px 0;
+  display: block;
+  font-weight: bolder;
+  font-size: clamp(1.8rem, 1.6rem + 0.625vw, 2rem);
+  width: 100%;
+  max-width: 300px;
+  margin: 60px auto 40px;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+.p-contact-form button:hover {
+  background: #333;
+  color: #fff;
+  border-color: transparent;
+}
+.p-contact-form button:hover::before, .p-contact-form button:hover::after {
+  width: calc(100% + 11px);
+  height: calc(100% + 11px);
+  border-color: #666;
+}
+.p-contact-form button::before, .p-contact-form button::after {
+  content: "";
+  /*絶対配置で線の位置を決める*/
+  position: absolute;
+  border: solid #333;
+  width: 30px;
+  height: 30px;
+  /*アニメーションの指定*/
+  transition: all 0.3s ease-in-out;
+}
+.p-contact-form button::before {
+  top: -6px;
+  left: -6px;
+  border-width: 1px 0 0 1px;
+}
+.p-contact-form button::after {
+  bottom: -6px;
+  right: -6px;
+  border-width: 0 1px 1px 0;
+}
+.p-contact-form__hosoku {
+  text-align: center;
+}
+.p-contact-form__hosoku a {
+  text-decoration: underline;
 }
 
 .u-inline-block {
