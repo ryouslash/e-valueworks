@@ -22,13 +22,13 @@
 
   .c-h2Title {
     color: #ffffff;
-    background-color: $keyColor;
+    background-color: $subColor;
     padding: 30px 0;
     position: relative;
 
     &::after {
       content: "";
-      border-top: 40px solid $keyColor;
+      border-top: 40px solid $subColor;
       border-left: 60px solid transparent;
       border-right: 60px solid transparent;
       position: absolute;

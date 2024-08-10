@@ -33,13 +33,13 @@
     a {
       padding: 0.1em 0.6em;
       transition: color 0.5s, background-color 0.5s;
-      border: 1px solid $keyColor;
+      border: 1px solid $subColor;
       color: #ffffff;
-      background-color: $keyColor;
+      background-color: $subColor;
 
       &:hover {
-        color: $keyColor;
-        border: 1px solid $keyColor;
+        color: $subColor;
+        border: 1px solid $subColor;
         background-color: #ffffff;
       }
     }

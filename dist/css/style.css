@@ -1517,7 +1517,7 @@ body {
 .p-contact-form input[type=email]:focus,
 .p-contact-form select:focus,
 .p-contact-form textarea:focus {
-  outline: 1px solid #18c1f0;
+  outline: 1px solid #73be60;
 }
 .p-contact-form input[type=text]::placeholder,
 .p-contact-form input[type=email]::placeholder,

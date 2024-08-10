@@ -5,9 +5,8 @@ $fontM: clamp(1.8rem, calc(1.6rem + 0.625vw), 2rem);
 $fontS: 1.4rem;
 
 // カラー
-$keyColor: #73be60;
-$subColor: #18c1f0;
-$accentColor: #733c3c;
+$keyColor: #18c1f0;
+$subColor: #73be60;
 
 // ブレイクポイント
 @mixin breakpoint($point) {
@@ -16,7 +15,7 @@ $accentColor: #733c3c;
       @content;
     }
   }
-  
+
   @if $point == tablet {
     @media (max-width: 960px) {
       @content;
