@@ -16,6 +16,7 @@ $accentColor: #733c3c;
       @content;
     }
   }
+  
   @if $point == tablet {
     @media (max-width: 960px) {
       @content;
