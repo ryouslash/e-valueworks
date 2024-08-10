@@ -1,0 +1,19 @@
+@use "../../foundation/variables" as *;
+
+.c-pageTop {
+  cursor: pointer;
+  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+  background-color: $keyColor;
+  color: #ffffff;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 10;
+  box-shadow: 0 0 6px rgba(204, 204, 204, 0.2509803922);
+}
