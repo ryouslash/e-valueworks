@@ -15,6 +15,49 @@
       border-top: 1px dotted #aaaaaa;
       padding-top: 0.5em;
     }
+
+    a {
+      position: relative;
+      &::after {
+        display: block;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        transform: translateX(calc(100% + 20px));
+        color: #777777;
+        font-size: 1.1rem;
+      }
+    }
+  }
+
+  &__home a {
+    &::after {
+      content: "HOME";
+    }
+  }
+
+  &__about a {
+    &::after {
+      content: "ABOUT";
+    }
+  }
+
+  &__service a {
+    &::after {
+      content: "SERVICE";
+    }
+  }
+
+  &__news a {
+    &::after {
+      content: "NEWS";
+    }
+  }
+
+  &__contact a {
+    &::after {
+      content: "CONTACT";
+    }
   }
 
   .l-container {

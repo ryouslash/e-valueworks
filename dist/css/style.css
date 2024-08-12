@@ -577,6 +577,7 @@ body {
   background-color: #ffffff;
   box-shadow: 0 3px 5px rgba(109, 109, 109, 0.2509803922);
   position: sticky;
+  width: 100%;
   top: 0;
   left: 0;
   z-index: 99;
@@ -594,7 +595,7 @@ body {
 .l-header__logo:hover {
   opacity: 0.7;
 }
-@media screen and (max-width: 399px) {
+@media screen and (max-width: 419px) {
   .l-header__logo {
     max-width: 150px;
   }
@@ -649,6 +650,11 @@ body {
   padding: 0 30px;
   box-sizing: content-box;
 }
+@media screen and (max-width: 575px) {
+  .l-container {
+    padding: 0 20px;
+  }
+}
 
 .l-slim-container {
   max-width: 800px;
@@ -670,7 +676,6 @@ body {
  */
 .c-button {
   display: flex;
-  width: calc(50% - 5px);
   padding: 20px 0;
   font-weight: bolder;
   justify-content: center;
@@ -853,6 +858,33 @@ body {
   border-top: 1px dotted #aaaaaa;
   padding-top: 0.5em;
 }
+.p-drawerMenu__item a {
+  position: relative;
+}
+.p-drawerMenu__item a::after {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  transform: translateX(calc(100% + 20px));
+  color: #777777;
+  font-size: 1.1rem;
+}
+.p-drawerMenu__home a::after {
+  content: "HOME";
+}
+.p-drawerMenu__about a::after {
+  content: "ABOUT";
+}
+.p-drawerMenu__service a::after {
+  content: "SERVICE";
+}
+.p-drawerMenu__news a::after {
+  content: "NEWS";
+}
+.p-drawerMenu__contact a::after {
+  content: "CONTACT";
+}
 .p-drawerMenu .l-container {
   display: grid;
   grid-template-rows: 0fr;
@@ -872,7 +904,7 @@ body {
 
 .p-mainVisual {
   position: relative;
-  min-height: calc(400px + 5vw);
+  min-height: calc(420px + 5vw);
   display: flex;
   align-items: center;
 }
@@ -901,6 +933,15 @@ body {
   font-size: clamp(2rem, 1.8rem + 0.9375vw, 3.2rem);
   font-weight: 700;
   margin-bottom: 30px;
+  text-shadow: 0 0 4px rgba(255, 255, 255, 0.5);
+}
+@keyframes flashing {
+  0%, 100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
 }
 .p-mainVisual__title::after {
   content: "";
@@ -909,12 +950,9 @@ body {
   animation: flashing 1s linear infinite;
   opacity: 0;
 }
-@keyframes flashing {
-  0%, 100% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
+@media screen and (max-width: 767px) {
+  .p-mainVisual__title {
+    text-align: center;
   }
 }
 .p-mainVisual__text, .p-mainVisual__button {
@@ -928,12 +966,39 @@ body {
   visibility: visible;
   transform: translateY(0);
 }
+.p-mainVisual__text {
+  text-shadow: 0 0 4px rgba(255, 255, 255, 0.5);
+}
+@media screen and (max-width: 767px) {
+  .p-mainVisual__text {
+    text-align: center;
+  }
+}
 .p-mainVisual__button {
   display: flex;
   width: 100%;
   max-width: 500px;
   justify-content: space-between;
   margin-top: 15px;
+  gap: 10px;
+}
+@media screen and (max-width: 767px) {
+  .p-mainVisual__button {
+    max-width: initial;
+  }
+}
+@media screen and (max-width: 575px) {
+  .p-mainVisual__button {
+    flex-direction: column;
+  }
+}
+.p-mainVisual .c-button {
+  width: 50%;
+}
+@media screen and (max-width: 575px) {
+  .p-mainVisual .c-button {
+    width: 100%;
+  }
 }
 
 .p-troubles {
@@ -1684,6 +1749,15 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+.u-br-xs {
+  display: none;
+}
+@media screen and (max-width: 419px) {
+  .u-br-xs {
+    display: block;
+  }
 }
 
 .p-top-news {

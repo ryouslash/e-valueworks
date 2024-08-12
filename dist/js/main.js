@@ -30428,7 +30428,7 @@ function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length)
 
 _fortawesome_fontawesome_svg_core__WEBPACK_IMPORTED_MODULE_2__.library.add(_fortawesome_free_regular_svg_icons__WEBPACK_IMPORTED_MODULE_3__.faEnvelope, _fortawesome_free_regular_svg_icons__WEBPACK_IMPORTED_MODULE_3__.faHandshake, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_4__.faPenNib, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_4__.faCode, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_4__.faServer, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_4__.faChevronDown, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_4__.faLink, _fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_5__.faInstagram, _fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_5__.faFacebook, _fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_5__.faGithub, _fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_5__.faLinkedin, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_4__.faChevronUp, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_4__.faBars, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_4__.faXmark);
 _fortawesome_fontawesome_svg_core__WEBPACK_IMPORTED_MODULE_2__.dom.i2svg();
-var header = document.querySelector('header');
+var header = document.querySelector('.l-header');
 var headerHeight = header.offsetHeight; // 数値として保持
 
 document.documentElement.style.setProperty('--headerHeight', headerHeight + 'px');
@@ -30464,7 +30464,13 @@ var typing = function typing(el, sentence) {
 
 // タイピングの開始を1秒遅らせる
 setTimeout(function () {
-  typing('.js-typing', '「早さ・正確さ・親身さ」が揃った\nコーディング代行事務所');
+  if (window.innerWidth <= 419) {
+    // 画面幅が419px以下の場合の処理
+    typing('.js-typing', '「早さ・正確さ・親身さ」\nが揃った\nコーディング代行事務所');
+  } else {
+    // 画面幅が419pxを超える場合の処理
+    typing('.js-typing', '「早さ・正確さ・親身さ」が揃った\nコーディング代行事務所');
+  }
 }, 1000); // 1秒（1000ミリ秒）遅延させる
 
 // メインビジュアルのテキスト、ボタン要素を取得

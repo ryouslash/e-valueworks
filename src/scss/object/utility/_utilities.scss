@@ -1,3 +1,5 @@
+@use "../../foundation/variables" as *;
+
 .u-inline-block {
   display: inline-block;
 }
@@ -18,4 +20,11 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+.u-br-xs {
+  display: none;
+  @include mq-down(xs) {
+    display: block;
+  }
 }

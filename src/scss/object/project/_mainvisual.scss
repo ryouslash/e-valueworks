@@ -3,7 +3,7 @@
 // メインビジュアル
 .p-mainVisual {
   position: relative;
-  min-height: calc(400px + 5vw);
+  min-height: calc(420px + 5vw);
   display: flex;
   align-items: center;
 
@@ -35,14 +35,7 @@
     font-size: $fontXL;
     font-weight: 700;
     margin-bottom: 30px;
-
-    &::after {
-      content: "";
-      border-right: 10px solid #333;
-      margin-left: 0.5em;
-      animation: flashing 1s linear infinite;
-      opacity: 0;
-    }
+    text-shadow: 0 0 4px rgba(255, 255, 255, 0.5);
 
     @keyframes flashing {
       0%,
@@ -52,6 +45,18 @@
       50% {
         opacity: 1;
       }
+    }
+
+    &::after {
+      content: "";
+      border-right: 10px solid #333;
+      margin-left: 0.5em;
+      animation: flashing 1s linear infinite;
+      opacity: 0;
+    }
+
+    @include mq-down() {
+      text-align: center;
     }
   }
 
@@ -68,11 +73,34 @@
     }
   }
 
+  &__text {
+    text-shadow: 0 0 4px rgba(255, 255, 255, 0.5);
+    @include mq-down() {
+      text-align: center;
+    }
+  }
+
   &__button {
     display: flex;
     width: 100%;
     max-width: 500px;
     justify-content: space-between;
     margin-top: 15px;
+    gap: 10px;
+
+    @include mq-down() {
+      max-width: initial;
+    }
+
+    @include mq-down(sm) {
+      flex-direction: column;
+    }
+  }
+
+  .c-button {
+    width: 50%;
+    @include mq-down(sm) {
+      width: 100%;
+    }
   }
 }

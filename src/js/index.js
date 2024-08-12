@@ -11,7 +11,7 @@ library.add(faEnvelope, faHandshake, faPenNib, faCode, faServer,faChevronDown, f
 
 dom.i2svg();
 
-const header = document.querySelector('header');
+const header = document.querySelector('.l-header');
 const headerHeight = header.offsetHeight; // 数値として保持
 
 document.documentElement.style.setProperty('--headerHeight', headerHeight + 'px');
@@ -47,8 +47,15 @@ const typing = (el, sentence) => {
 
 // タイピングの開始を1秒遅らせる
 setTimeout(() => {
-  typing('.js-typing', '「早さ・正確さ・親身さ」が揃った\nコーディング代行事務所');
+  if (window.innerWidth <= 419) {
+    // 画面幅が419px以下の場合の処理
+    typing('.js-typing', '「早さ・正確さ・親身さ」\nが揃った\nコーディング代行事務所');
+  } else {
+    // 画面幅が419pxを超える場合の処理
+    typing('.js-typing', '「早さ・正確さ・親身さ」が揃った\nコーディング代行事務所');
+  }
 }, 1000); // 1秒（1000ミリ秒）遅延させる
+
 
 // メインビジュアルのテキスト、ボタン要素を取得
 const mainText = document.querySelector('.p-mainVisual__text');
