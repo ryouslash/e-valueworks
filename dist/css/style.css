@@ -582,6 +582,11 @@ body {
   left: 0;
   z-index: 99;
 }
+@media screen and (max-width: 767px) {
+  .l-header {
+    position: fixed;
+  }
+}
 .l-header__inner {
   display: flex;
   justify-content: space-between;
@@ -642,6 +647,12 @@ body {
   transform: translateX(-50%) translateY(-50%) rotate(720deg);
   z-index: 2;
   opacity: 1;
+}
+
+@media screen and (max-width: 767px) {
+  .l-main {
+    margin-top: var(--headerHeight);
+  }
 }
 
 .l-container {

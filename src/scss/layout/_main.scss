@@ -1,0 +1,7 @@
+@use "../foundation/variables" as *;
+
+.l-main {
+  @include mq-down() {
+    margin-top: var(--headerHeight);
+  }
+}
