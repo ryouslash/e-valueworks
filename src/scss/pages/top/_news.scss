@@ -29,7 +29,19 @@
     }
   }
 
+  &__time {
+    grid-column: 1/2;
+    grid-row: 1/2;
+  }
+
   &__category {
+    grid-column: 2/3;
+    grid-row: 1/2;
+
+    @include mq-down(sm) {
+      grid-column: 2/4;
+    }
+
     a {
       padding: 0.1em 0.6em;
       transition: color 0.5s, background-color 0.5s;
@@ -47,6 +59,14 @@
 
   &__title {
     line-height: 1;
+    grid-column: 3/4;
+    grid-row: 1/2;
+
+    @include mq-down(sm) {
+      grid-column: 1/4;
+      grid-row: 2/3;
+    }
+
     a {
       text-decoration: underline;
       &:hover {
