@@ -258,6 +258,8 @@
     @include mq-down(xl) {
       position: static;
       margin: 0 0 10px;
+      border-radius: 15px;
+      padding: 20px;
     }
 
     &.is-fadeIn {

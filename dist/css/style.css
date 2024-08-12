@@ -651,7 +651,7 @@ body {
 
 @media screen and (max-width: 767px) {
   .l-main {
-    margin-top: var(--headerHeight);
+    margin-top: 59px;
   }
 }
 
@@ -1240,6 +1240,8 @@ body {
   .p-troubles__item {
     position: static;
     margin: 0 0 10px;
+    border-radius: 15px;
+    padding: 20px;
   }
 }
 .p-troubles__item.is-fadeIn {

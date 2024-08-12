@@ -2,6 +2,6 @@
 
 .l-main {
   @include mq-down() {
-    margin-top: var(--headerHeight);
+    margin-top: 59px;
   }
 }
