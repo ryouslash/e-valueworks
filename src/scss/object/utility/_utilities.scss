@@ -8,11 +8,11 @@
   margin-bottom: 0;
 }
 
-.u-text-left {
+.u-text--left {
   text-align: left;
 }
 
-.u-text-center {
+.u-text--center {
   text-align: center;
 }
 
@@ -22,9 +22,17 @@
   justify-content: space-between;
 }
 
-.u-br-xs {
+.u-xs--show {
   display: none;
   @include mq-down(xs) {
     display: block;
+  }
+}
+
+.u-md--hide {
+  display: block;
+
+  @include mq-down() {
+    display: none;
   }
 }
