@@ -2,12 +2,12 @@ import $ from 'jquery';
 import 'slick-carousel/slick/slick.min.js';
 
 import { config, dom, library } from '@fortawesome/fontawesome-svg-core';
-import {faPenNib, faCode, faServer,faChevronDown, faLink, faChevronUp} from '@fortawesome/free-solid-svg-icons';
+import {faPenNib, faCode, faServer,faChevronDown, faLink, faChevronUp, faBars, faXmark} from '@fortawesome/free-solid-svg-icons';
 import { faEnvelope, faHandshake } from '@fortawesome/free-regular-svg-icons';
 import {faInstagram, faFacebook, faGithub, faLinkedin} from '@fortawesome/free-brands-svg-icons';
 
 
-library.add(faEnvelope, faHandshake, faPenNib, faCode, faServer,faChevronDown, faLink,faInstagram, faFacebook, faGithub, faLinkedin,faChevronUp);
+library.add(faEnvelope, faHandshake, faPenNib, faCode, faServer,faChevronDown, faLink,faInstagram, faFacebook, faGithub, faLinkedin, faChevronUp, faBars, faXmark);
 
 dom.i2svg();
 
@@ -15,6 +15,20 @@ const header = document.querySelector('header');
 const headerHeight = header.offsetHeight; // 数値として保持
 
 document.documentElement.style.setProperty('--headerHeight', headerHeight + 'px');
+
+// ヘッダー箇所
+document.addEventListener('DOMContentLoaded', function () {
+  // .l-header__nav 要素を取得
+  const drawerBtn = document.querySelector('.l-header__drawerBtn');
+  const drawerMenu = document.querySelector('.p-drawerMenu');
+
+  // クリックイベントのリスナーを追加
+  drawerBtn.addEventListener('click', function () {
+    // クラス名 'is-open' をトグルする
+    drawerBtn.classList.toggle('is-open');
+    drawerMenu.classList.toggle('is-show');
+  });
+});
 
 // メインビジュアル箇所
 const typing = (el, sentence) => {

@@ -98,38 +98,3 @@ module.exports = {
     type: 'filesystem', // キャッシュをファイルシステムに保存
   },
 };
-
-// スムーススクロール
-$(function () {
-  $('a[href^="#"]').click(function (e) {
-    e.preventDefault(); // デフォルトのアンカー動作を停止
-
-    var speed = 2000;
-    var href = $(this).attr("href");
-    var target = $(href == "#" || href == "" ? "html" : href);
-    var position = target.offset().top;
-
-    $("html, body").animate(
-      {
-        scrollTop: position,
-      },
-      speed,
-      "swing"
-    );
-  });
-});
-
-// ページトップボタン 1000pxをスクロールしたところで表示
-$(function () {
-  var pagetop = $(".js-pageTop");
-  // ボタン非表示
-  pagetop.hide();
-
-  $(window).scroll(function () {
-    if ($(this).scrollTop() > 1000) {
-      pagetop.fadeIn();
-    } else {
-      pagetop.fadeOut();
-    }
-  });
-});

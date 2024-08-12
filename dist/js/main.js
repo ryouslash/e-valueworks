@@ -30426,12 +30426,26 @@ function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length)
 
 
 
-_fortawesome_fontawesome_svg_core__WEBPACK_IMPORTED_MODULE_2__.library.add(_fortawesome_free_regular_svg_icons__WEBPACK_IMPORTED_MODULE_3__.faEnvelope, _fortawesome_free_regular_svg_icons__WEBPACK_IMPORTED_MODULE_3__.faHandshake, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_4__.faPenNib, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_4__.faCode, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_4__.faServer, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_4__.faChevronDown, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_4__.faLink, _fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_5__.faInstagram, _fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_5__.faFacebook, _fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_5__.faGithub, _fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_5__.faLinkedin, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_4__.faChevronUp);
+_fortawesome_fontawesome_svg_core__WEBPACK_IMPORTED_MODULE_2__.library.add(_fortawesome_free_regular_svg_icons__WEBPACK_IMPORTED_MODULE_3__.faEnvelope, _fortawesome_free_regular_svg_icons__WEBPACK_IMPORTED_MODULE_3__.faHandshake, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_4__.faPenNib, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_4__.faCode, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_4__.faServer, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_4__.faChevronDown, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_4__.faLink, _fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_5__.faInstagram, _fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_5__.faFacebook, _fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_5__.faGithub, _fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_5__.faLinkedin, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_4__.faChevronUp, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_4__.faBars, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_4__.faXmark);
 _fortawesome_fontawesome_svg_core__WEBPACK_IMPORTED_MODULE_2__.dom.i2svg();
 var header = document.querySelector('header');
 var headerHeight = header.offsetHeight; // 数値として保持
 
 document.documentElement.style.setProperty('--headerHeight', headerHeight + 'px');
+
+// ヘッダー箇所
+document.addEventListener('DOMContentLoaded', function () {
+  // .l-header__nav 要素を取得
+  var drawerBtn = document.querySelector('.l-header__drawerBtn');
+  var drawerMenu = document.querySelector('.p-drawerMenu');
+
+  // クリックイベントのリスナーを追加
+  drawerBtn.addEventListener('click', function () {
+    // クラス名 'is-open' をトグルする
+    drawerBtn.classList.toggle('is-open');
+    drawerMenu.classList.toggle('is-show');
+  });
+});
 
 // メインビジュアル箇所
 var typing = function typing(el, sentence) {

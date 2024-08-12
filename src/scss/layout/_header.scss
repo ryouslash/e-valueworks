@@ -1,3 +1,5 @@
+@use "../foundation/variables.scss" as *;
+
 .l-header {
   background-color: #ffffff;
   box-shadow: 0 3px 5px #6d6d6d40;
@@ -20,5 +22,59 @@
     &:hover {
       opacity: 0.7;
     }
+
+    @include mq-down(xs) {
+      max-width: 150px;
+    }
+  }
+
+  &__nav {
+    @include mq-down() {
+      display: none;
+    }
+  }
+
+  &__drawerBtn {
+    display: none;
+    position: relative;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+
+    @include mq-down {
+      display: block;
+    }
+
+    svg {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%);
+      font-size: $fontM;
+      transition: 0.3s;
+    }
+
+    .fa-bars {
+      z-index: 2;
+    }
+
+    .fa-xmark {
+      z-index: 1;
+      opacity: 0;
+    }
+  }
+}
+
+.l-header__drawerBtn.is-open {
+  .fa-bars {
+    transform: translateX(-50%) translateY(-50%) rotate(720deg);
+    opacity: 0;
+    z-index: 1;
+  }
+
+  .fa-xmark {
+    transform: translateX(-50%) translateY(-50%) rotate(720deg);
+    z-index: 2;
+    opacity: 1;
   }
 }
