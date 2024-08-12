@@ -82,7 +82,7 @@ $(document).ready(function() {
     nextItem = (nextItem + 1) % items.length;  // インデックスを更新（循環）
   }
   
-  setInterval(showNextItem, 8000);  // 8秒ごとにshowNextItemを実行
+  setInterval(showNextItem, 5000);  // 5秒ごとにshowNextItemを実行
 });
 
 // お悩みはこちら 箇所
