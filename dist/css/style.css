@@ -954,7 +954,7 @@ body {
 .p-mainVisual__title {
   font-size: clamp(2rem, 1.8rem + 0.9375vw, 3.2rem);
   font-weight: 700;
-  margin-bottom: 30px;
+  margin-bottom: 0.8em;
 }
 @keyframes flashing {
   0%, 100% {
