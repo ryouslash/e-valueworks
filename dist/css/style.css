@@ -936,6 +936,17 @@ body {
   z-index: -1;
   animation: fadeIn 3s ease-in-out forwards;
 }
+@media screen and (max-width: 767px) {
+  .p-mainVisual__bg::after {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    content: "";
+    z-index: 1;
+    background: rgba(51, 51, 51, 0.5019607843);
+  }
+}
 .p-mainVisual__inner {
   width: 100%;
   height: 100%;
@@ -944,7 +955,6 @@ body {
   font-size: clamp(2rem, 1.8rem + 0.9375vw, 3.2rem);
   font-weight: 700;
   margin-bottom: 30px;
-  text-shadow: 0 0 4px rgba(255, 255, 255, 0.5);
 }
 @keyframes flashing {
   0%, 100% {
@@ -962,8 +972,14 @@ body {
   opacity: 0;
 }
 @media screen and (max-width: 767px) {
+  .p-mainVisual__title::after {
+    border-right: 10px solid #ffffff;
+  }
+}
+@media screen and (max-width: 767px) {
   .p-mainVisual__title {
     text-align: center;
+    color: #ffffff;
   }
 }
 .p-mainVisual__text, .p-mainVisual__button {
@@ -977,12 +993,10 @@ body {
   visibility: visible;
   transform: translateY(0);
 }
-.p-mainVisual__text {
-  text-shadow: 0 0 4px rgba(255, 255, 255, 0.5);
-}
 @media screen and (max-width: 767px) {
   .p-mainVisual__text {
     text-align: center;
+    color: #ffffff;
   }
 }
 .p-mainVisual__button {
