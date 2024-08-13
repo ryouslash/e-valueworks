@@ -1,24 +1,30 @@
 @use "../foundation/variables" as *;
 
+.l-pageContent {
+  @include mq-down() {
+    margin-top: 59px;
+  }
+}
+
 // 投稿、固定ページのスタイル調整
-.l-mainContent {
+.p-mainContent {
   margin: 60px 0;
 }
 
 // ブロック間の余白調整
-.l-mainContent__inner > * {
+.p-mainContent__inner > * {
   clear: both;
   margin-bottom: 1em;
 }
 
-.l-mainContent__inner dd > :last-child,
-.l-mainContent__inner div > :last-child,
-.l-mainContent__inner > :last-child {
+.p-mainContent__inner dd > :last-child,
+.p-mainContent__inner div > :last-child,
+.p-mainContent__inner > :last-child {
   margin-bottom: 0 !important;
 }
 
 // 見出しのサイズ調整
-.l-mainContent__inner {
+.p-mainContent__inner {
   h2 {
     font-size: $fontL;
     background-color: #d5f3fd;

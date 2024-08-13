@@ -19,6 +19,14 @@
     padding: 0 1em;
     border-left: 1px solid #333333;
 
+    @include mq-down() {
+      font-size: $fontS;
+    }
+
+    @include mq-down(xs) {
+      font-size: 1.1rem;
+    }
+
     &:last-of-type {
       border-right: 1px solid #333333;
     }

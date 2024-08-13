@@ -1,8 +1,0 @@
-@use "../foundation/variables" as *;
-
-.l-main {
-  @include mq-down() {
-    margin-top: 59px;
-  }
-}
-
