@@ -16,6 +16,7 @@
 @use "layout/_main";
 @use "layout/_sidebar";
 @use "layout/_common";
+@use "layout/_blockeditor";
 
 /*
  * object
@@ -25,6 +26,8 @@
 @use "object/component/_title";
 @use "object/component/_snslink";
 @use "object/component/_pagetop";
+@use "object/component/_pageheader";
+@use "object/component/breadcrumb";
 
 // Project
 @use "object/project/_gnavi.scss";
@@ -43,4 +46,5 @@
 @use "object/utility/_utilities";
 
 // Pages
-@use "pages/top/news";
+@use "pages/top/style" as topPage;
+@use "pages/page/style" as page;
