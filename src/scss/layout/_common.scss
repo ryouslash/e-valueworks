@@ -16,12 +16,16 @@
   margin: 0 auto;
   padding: 0 30px;
   box-sizing: content-box;
+
+  @include mq-down(sm) {
+    padding: 0 20px;
+  }
 }
 
 .l-sectionPadding {
   padding: 80px 0 120px;
 
-  @include mq-down {
+  @include mq-down(sm) {
     padding: 60px 0 100px;
   }
 }
@@ -29,7 +33,7 @@
 .l-sectionPaddingBottom {
   padding: 0 0 120px;
 
-  @include mq-down {
+  @include mq-down(sm) {
     padding: 0 0 100px;
   }
 }

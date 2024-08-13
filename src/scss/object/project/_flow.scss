@@ -29,6 +29,10 @@
     @include mq-down() {
       padding: 30px;
     }
+
+    @include mq-down(sm) {
+      padding: 20px;
+    }
   }
 
   &__step {
@@ -74,7 +78,7 @@
       grid-row: 1/2;
       max-width: 300px;
       width: 100%;
-      margin: 0 auto;
+      margin: 0 auto 20px;
     }
 
     div::after {
@@ -83,6 +87,16 @@
       display: block;
       font-family: "Roboto", "Noto Sans JP", sans-serif;
       font-weight: 600;
+
+      @include mq-down(sm) {
+        font-size: $fontXL;
+      }
+    }
+
+    svg {
+      @include mq-down(sm) {
+        font-size: 12rem;
+      }
     }
   }
 

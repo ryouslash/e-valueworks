@@ -553,6 +553,11 @@ body {
 .l-footer__inner {
   padding: 30px 0;
 }
+@media screen and (max-width: 575px) {
+  .l-footer__inner {
+    padding: 20px 0;
+  }
+}
 .l-footer__navi-items {
   display: flex;
 }
@@ -673,11 +678,16 @@ body {
   padding: 0 30px;
   box-sizing: content-box;
 }
+@media screen and (max-width: 575px) {
+  .l-slim-container {
+    padding: 0 20px;
+  }
+}
 
 .l-sectionPadding {
   padding: 80px 0 120px;
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 575px) {
   .l-sectionPadding {
     padding: 60px 0 100px;
   }
@@ -686,7 +696,7 @@ body {
 .l-sectionPaddingBottom {
   padding: 0 0 120px;
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 575px) {
   .l-sectionPaddingBottom {
     padding: 0 0 100px;
   }
@@ -1314,7 +1324,7 @@ body {
 .p-about .c-h2Title {
   color: #ffffff;
   background-color: #73be60;
-  padding: 30px 0;
+  padding: 30px 20px;
   position: relative;
 }
 .p-about .c-h2Title::after {
@@ -1715,6 +1725,11 @@ body {
     padding: 30px;
   }
 }
+@media screen and (max-width: 575px) {
+  .p-flow__steps {
+    padding: 20px;
+  }
+}
 .p-flow__step {
   display: grid;
   grid-template-columns: 200px 1fr;
@@ -1760,7 +1775,7 @@ body {
     grid-row: 1/2;
     max-width: 300px;
     width: 100%;
-    margin: 0 auto;
+    margin: 0 auto 20px;
   }
 }
 .p-flow__icon div::after {
@@ -1769,6 +1784,16 @@ body {
   display: block;
   font-family: "Roboto", "Noto Sans JP", sans-serif;
   font-weight: 600;
+}
+@media screen and (max-width: 575px) {
+  .p-flow__icon div::after {
+    font-size: clamp(2rem, 1.8rem + 0.9375vw, 3.2rem);
+  }
+}
+@media screen and (max-width: 575px) {
+  .p-flow__icon svg {
+    font-size: 12rem;
+  }
 }
 .p-flow__icon1 div::after {
   content: "STEP. 1";
@@ -1828,9 +1853,24 @@ body {
   align-items: center;
   margin-top: 60px;
 }
+@media screen and (max-width: 1024px) {
+  .p-faq__inner {
+    gap: 30px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .p-faq__inner {
+    display: block;
+  }
+}
 .p-faq__left {
   grid-column: 1/2;
   grid-row: 1/2;
+}
+@media screen and (max-width: 767px) {
+  .p-faq__left {
+    display: none;
+  }
 }
 .p-faq__right {
   grid-column: 2/3;
@@ -1848,7 +1888,7 @@ body {
 .p-faq__question {
   font-weight: 600;
   position: relative;
-  padding: 0 2.6em 0 1.3em;
+  padding: 0 1.5em 0 1.5em;
 }
 .p-faq__question::before {
   content: "Q. ";
@@ -1860,7 +1900,7 @@ body {
 }
 .p-faq__question svg {
   position: absolute;
-  right: 20px;
+  right: 0;
   top: 50%;
   transform: translateY(-50%);
   transition: 0.3s;
@@ -1887,6 +1927,33 @@ body {
   transform: translateY(-50%);
   transition: left 0.3s ease-out;
 }
+@media screen and (max-width: 767px) {
+  .p-faq .c-h2Title {
+    display: inline-block;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .p-faq .c-h2Title::before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateX(-100%) translateY(-50%);
+    width: 100px;
+    height: 100px;
+    background-image: url(../img/man-with-green-tie.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+}
+@media screen and (max-width: 575px) {
+  .p-faq .c-h2Title::before {
+    width: 80px;
+    height: 80px;
+  }
+}
 
 .p-faq__list.is-open .p-faq__question svg {
   transform: rotate(180deg);
@@ -1908,6 +1975,11 @@ body {
   padding: 100px 0 120px;
   clip-path: inset(0);
 }
+@media screen and (max-width: 575px) {
+  .p-cta__inner {
+    padding: 80px 0 100px;
+  }
+}
 .p-cta__inner::before {
   content: "";
   display: block;
@@ -1922,7 +1994,7 @@ body {
 .p-cta .c-h2Title {
   color: #ffffff;
   background-color: #73be60;
-  padding: 30px 0;
+  padding: 30px 20px;
   position: relative;
 }
 .p-cta .c-h2Title::after {
@@ -1942,6 +2014,16 @@ body {
   box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.3);
   padding: 60px;
   border-radius: 10px;
+}
+@media screen and (max-width: 767px) {
+  .p-contact-form {
+    padding: 40px;
+  }
+}
+@media screen and (max-width: 575px) {
+  .p-contact-form {
+    padding: 20px;
+  }
 }
 .p-contact-form label {
   display: block;

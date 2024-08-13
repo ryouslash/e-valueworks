@@ -10,11 +10,22 @@
     grid-template-columns: 1fr 3fr;
     align-items: center;
     margin-top: 60px;
+
+    @include mq-down(lg) {
+      gap: 30px;
+    }
+
+    @include mq-down() {
+      display: block;
+    }
   }
 
   &__left {
     grid-column: 1/2;
     grid-row: 1/2;
+    @include mq-down() {
+      display: none;
+    }
   }
 
   &__right {
@@ -36,7 +47,7 @@
   &__question {
     font-weight: 600;
     position: relative;
-    padding: 0 2.6em 0 1.3em;
+    padding: 0 1.5em 0 1.5em;
 
     &::before {
       content: "Q. ";
@@ -49,7 +60,7 @@
 
     svg {
       position: absolute;
-      right: 20px;
+      right: 0;
       top: 50%;
       transform: translateY(-50%);
       transition: 0.3s;
@@ -77,6 +88,36 @@
         top: 50%;
         transform: translateY(-50%);
         transition: left 0.3s ease-out;
+      }
+    }
+  }
+
+  .c-h2Title {
+    @include mq-down() {
+      display: inline-block;
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
+
+      &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateX(-100%) translateY(-50%);
+        width: 100px;
+        height: 100px;
+        background-image: url(../img/man-with-green-tie.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+    }
+
+    @include mq-down(sm) {
+      &::before {
+        width: 80px;
+        height: 80px;
       }
     }
   }
