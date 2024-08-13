@@ -30542,17 +30542,30 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
 // 制作実績 箇所
 jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
   jquery__WEBPACK_IMPORTED_MODULE_0___default()('.p-experience__slider').slick({
-    // オプションをここに設定
-
     dots: true,
     infinite: true,
     speed: 300,
-    slidesToShow: 3
+    slidesToShow: 3,
+    responsive: [{
+      breakpoint: 768,
+      // 767px以下に適用するブレイクポイント
+      settings: {
+        slidesToShow: 1 // スライドを1つに設定
+      }
+    }]
   });
 });
 
 // お客様への4つのお約束 箇所
+
 function promise() {
+  // 画面幅を取得
+  var windowWidth = jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).width();
+
+  // 画面幅が1024px以下の場合、処理を中断
+  if (windowWidth <= 1024) {
+    return;
+  }
   jquery__WEBPACK_IMPORTED_MODULE_0___default()('.js-promise__img').each(function (index) {
     // 画像の位置を取得
     var imgTop = jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).offset().top;

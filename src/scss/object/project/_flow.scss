@@ -7,7 +7,8 @@
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    gap: 30px;
+    column-gap: 30px;
+    row-gap: 1em;
 
     p {
       font-size: 2rem;
@@ -20,13 +21,31 @@
     padding: 60px;
     background-color: #ffffff;
     box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.3);
+
+    @include mq-down(lg) {
+      padding: 40px;
+    }
+
+    @include mq-down() {
+      padding: 30px;
+    }
   }
 
   &__step {
     display: grid;
-    grid-template-columns: 200px 2fr;
+    grid-template-columns: 200px 1fr;
     grid-template-rows: auto 1fr;
     column-gap: 30px;
+
+    @include mq-down(lg) {
+      grid-template-columns: 180px 1fr;
+    }
+
+    @include mq-down() {
+      grid-template-columns: 150px 1fr;
+      column-gap: 20px;
+    }
+
     &:not(:last-of-type) {
       margin-bottom: 30px;
       padding-bottom: 30px;
@@ -45,6 +64,18 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
+    @include mq-down() {
+      font-size: 5.5rem;
+    }
+
+    @include mq-down(sm) {
+      grid-column: 1/3;
+      grid-row: 1/2;
+      max-width: 300px;
+      width: 100%;
+      margin: 0 auto;
+    }
 
     div::after {
       font-size: $fontM;
@@ -91,11 +122,25 @@
     font-size: $fontL;
     font-weight: bold;
     margin-bottom: 1em;
+
+    @include mq-down() {
+      margin-bottom: 0.5em;
+    }
+
+    @include mq-down(sm) {
+      grid-column: 1/3;
+      grid-row: 2/3;
+    }
   }
 
   &__text {
     grid-column: 2/3;
     grid-row: 2/3;
+
+    @include mq-down(sm) {
+      grid-column: 1/3;
+      grid-row: 3/4;
+    }
 
     p {
       &:not(:last-of-type) {

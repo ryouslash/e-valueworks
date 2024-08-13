@@ -17,6 +17,10 @@
     grid-template-columns: 1fr 1fr;
     gap: 20px;
     margin-top: 60px;
+
+    @include mq-down() {
+      display: block;
+    }
   }
 
   &__plan {
@@ -30,6 +34,17 @@
     left: -10px;
     box-shadow: 2px 4px 5px #3f9ab3;
     transition: 0.3s;
+
+    @include mq-down(lg) {
+      padding: 40px 20px;
+    }
+
+    @include mq-down() {
+      &:not(:last-of-type) {
+        margin-bottom: 20px;
+      }
+    }
+
     &:hover {
       box-shadow: 4px 6px 5px #3f9ab3;
     }

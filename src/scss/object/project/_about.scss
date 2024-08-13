@@ -33,6 +33,10 @@
     transform: scale(1.2);
     transition: 0.5s;
 
+    @include mq-down(lg) {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
     &.is-active {
       opacity: 1;
       visibility: visible;
@@ -50,16 +54,35 @@
   &__profile {
     grid-column: 1/3;
     grid-row: 1/2;
+
+    @include mq-down(lg) {
+      grid-column: 1/5;
+      grid-row: 2/3;
+    }
   }
 
   &__history {
     grid-column: 1/2;
     grid-row: 2/3;
+
+    @include mq-down(lg) {
+      grid-column: 1/5;
+      grid-row: 3/4;
+    }
+
+    .p-about__itemDetail p {
+      margin-bottom: 10px;
+    }
   }
 
   &__skills {
     grid-column: 2/3;
     grid-row: 2/3;
+
+    @include mq-down(lg) {
+      grid-column: 1/5;
+      grid-row: 4/5;
+    }
 
     .p-about__itemDetail p {
       margin-bottom: 10px;
@@ -69,6 +92,15 @@
   &__photo {
     grid-column: 3/4;
     grid-row: 1/3;
+
+    @include mq-down(lg) {
+      grid-column: 2/4;
+      grid-row: 1/2;
+    }
+
+    @include mq-down() {
+      grid-column: 1/5;
+    }
 
     img {
       height: 100%;

@@ -20,8 +20,16 @@
 
 .l-sectionPadding {
   padding: 80px 0 120px;
+
+  @include mq-down {
+    padding: 60px 0 100px;
+  }
 }
 
 .l-sectionPaddingBottom {
   padding: 0 0 120px;
+
+  @include mq-down {
+    padding: 0 0 100px;
+  }
 }
