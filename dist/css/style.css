@@ -664,6 +664,14 @@ body {
   opacity: 1;
 }
 
+.l-sidebar__title {
+  font-size: clamp(1.8rem, 1.6rem + 0.625vw, 2rem);
+  font-weight: bolder;
+  border-bottom: 2px solid #18c1f0;
+  padding-bottom: 0.3em;
+  margin-bottom: 0.3em;
+}
+
 .l-container {
   max-width: 1200px;
   margin: 0 auto;
@@ -707,41 +715,45 @@ body {
 }
 
 @media screen and (max-width: 767px) {
-  .l-pageContent {
+  .l-pageContent,
+  .l-postContent {
     margin-top: 59px;
   }
 }
 
-.p-mainContent {
-  margin: 60px 0;
+.l-content {
+  margin: 60px auto;
 }
 
-.p-mainContent__inner > * {
+.l-mainContent__inner > * {
   clear: both;
   margin-bottom: 1em;
 }
 
-.p-mainContent__inner dd > :last-child,
-.p-mainContent__inner div > :last-child,
-.p-mainContent__inner > :last-child {
+.l-mainContent__inner dd > :last-child,
+.l-mainContent__inner div > :last-child,
+.l-mainContent__inner > :last-child {
   margin-bottom: 0 !important;
 }
 
-.p-mainContent__inner h2 {
+.l-mainContent__inner > :first-child {
+  margin-top: 0 !important;
+}
+.l-mainContent__inner h2 {
   font-size: clamp(2rem, 1.8rem + 0.625vw, 2.6rem);
   background-color: #d5f3fd;
   border-left: 3px solid #18c1f0;
   padding: 0.3em 0.5em;
   margin: 2em 0 0.8em;
 }
-.p-mainContent__inner h3 {
+.l-mainContent__inner h3 {
   font-size: clamp(1.8rem, 1.6rem + 0.625vw, 2rem);
   border-bottom: 3px solid #18c1f0;
   padding-bottom: 0.3em;
   border-radius: 1px;
   margin: 2em 0 0.8em;
 }
-.p-mainContent__inner h4 {
+.l-mainContent__inner h4 {
   border-left: 3px solid #18c1f0;
   padding: 0 0.5em;
   margin: 2em 0 0.8em;
@@ -875,8 +887,11 @@ body {
 .c-pageHeader {
   padding: 60px 0;
   background-color: #eeeeee;
+}
+.c-pageHeader h1,
+.c-pageHeader div {
   font-size: clamp(2rem, 1.8rem + 0.625vw, 2.6rem);
-  text-align: center;
+  font-weight: 600;
 }
 
 .p-gnav {
@@ -988,9 +1003,10 @@ body {
 
 .p-mainVisual {
   position: relative;
-  min-height: calc(420px + 5vw);
+  min-height: calc(400px + 5vw);
   display: flex;
   align-items: center;
+  padding: 30px 0;
 }
 @media screen and (max-width: 767px) {
   .p-mainVisual {
@@ -1073,9 +1089,22 @@ body {
 }
 @media screen and (max-width: 767px) {
   .p-mainVisual__text {
-    text-align: center;
     color: #ffffff;
   }
+}
+.p-mainVisual__text li {
+  position: relative;
+  padding-left: 1.2em;
+}
+.p-mainVisual__text svg {
+  color: #73be60;
+  position: absolute;
+  top: 8%;
+  left: 0;
+}
+.p-mainVisual__text p {
+  margin-top: 0.3em;
+  padding-left: 1.2em;
 }
 .p-mainVisual__button {
   display: flex;
@@ -2277,6 +2306,24 @@ body {
 }
 .p-top-news__title a:hover {
   text-decoration: none;
+}
+
+.l-postContent .c-pageHeader {
+  background-image: url(../img/column.jpg);
+  background-size: cover;
+  background-position: center;
+}
+.l-postContent .l-content {
+  display: flex;
+  gap: 30px;
+}
+.l-postContent .l-mainContent {
+  flex: 1;
+}
+.l-postContent .l-sidebar {
+  width: 100%;
+  max-width: 300px;
+  flex-shrink: 0;
 }
 
 /*# sourceMappingURL=style.css.map*/

@@ -1,0 +1,23 @@
+// 投稿のみ
+.l-postContent {
+  .c-pageHeader {
+    background-image: url("../img/column.jpg");
+    background-size: cover;
+    background-position: center;
+  }
+
+  .l-content {
+    display: flex;
+    gap: 30px;
+  }
+
+  .l-mainContent {
+    flex: 1;
+  }
+
+  .l-sidebar {
+    width: 100%;
+    max-width: 300px;
+    flex-shrink: 0;
+  }
+}

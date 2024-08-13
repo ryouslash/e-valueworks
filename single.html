@@ -61,14 +61,24 @@
       </div>
     </header>
 
-    <div class="l-pageContent">
+    <div class="l-postContent">
       <div class="c-pageHeader">
         <div class="l-container">
-          <h1>ここにページタイトルが入ります</h1>
+          <div>お役立ちコラム</div>
         </div>
       </div>
       <div class="l-container l-content">
         <main class="l-mainContent">
+          <div class="c-postMetas">
+            <h1 class="c-postMetas__title">ここにタイトルが入ります</h1>
+            <div class="c-post__thumbnail"></div>
+            <div class="c-postMetas__time"><time>2024.08.13</time></div>
+            <div class="c-postMetas__categories">
+              <ul>
+                <li><a href="#">お知らせ</a></li>
+              </ul>
+            </div>
+          </div>
           <div class="l-mainContent__inner">
             <h2>見出し2</h2>
             <p>ここにテキストが入ります。</p>
@@ -82,7 +92,23 @@
             <p>ここにテキストが入ります。</p>
           </div>
         </main>
-        <!-- サイドバーなし -->
+        <aside class="l-sidebar">
+          <div class="l-sidebar__item l-sidebar__latest">
+            <div class="l-sidebar__title">最新の投稿</div>
+          </div>
+
+          <div class="l-sidebar__item l-sidebar__categories">
+            <div class="l-sidebar__title">カテゴリー</div>
+          </div>
+
+          <div class="l-sidebar__item l-sidebar__tags">
+            <div class="l-sidebar__title">タグ</div>
+          </div>
+
+          <div class="l-sidebar__item l-sidebar__search">
+            <div class="l-sidebar__title">記事を検索</div>
+          </div>
+        </aside>
       </div>
     </div>
 
