@@ -65,3 +65,9 @@
 // Archive
 @use "pages/archive/style" as archive;
 @use "pages/archive/project/postlist";
+
+// Home
+@use "pages/home/style" as home;
+
+// 404
+@use "pages/404/style" as error;

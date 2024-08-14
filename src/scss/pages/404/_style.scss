@@ -1,0 +1,17 @@
+.l-404Content {
+  .c-pageHeader {
+    background-image: url("../img/search.jpg");
+    background-size: cover;
+    background-position: center;
+  }
+
+  &__inner {
+    a {
+      text-decoration: underline;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+}

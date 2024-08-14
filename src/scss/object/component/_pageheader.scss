@@ -5,9 +5,24 @@
   background-color: #eeeeee;
   margin-left: calc(-50 * var(--vw) + 50%);
   margin-right: calc(-50 * var(--vw) + 50%);
+  position: relative;
 
   &__title {
     font-size: $fontL;
     font-weight: 600;
+    position: relative;
+    z-index: 2;
+    color: #ffffff;
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(51, 51, 51, 0.5019607843);
+    z-index: 1;
   }
 }
