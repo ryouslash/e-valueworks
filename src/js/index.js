@@ -2,12 +2,12 @@ import $ from 'jquery';
 import 'slick-carousel/slick/slick.min.js';
 
 import { config, dom, library } from '@fortawesome/fontawesome-svg-core';
-import {faPenNib, faCode, faServer,faChevronDown, faLink, faChevronUp, faBars, faXmark, faCheck} from '@fortawesome/free-solid-svg-icons';
+import {faPenNib, faCode, faServer ,faChevronDown, faLink, faChevronUp, faBars, faXmark, faCheck, faTag, faChevronLeft, faChevronRight} from '@fortawesome/free-solid-svg-icons';
 import { faEnvelope, faHandshake } from '@fortawesome/free-regular-svg-icons';
 import {faInstagram, faFacebook, faGithub, faLinkedin} from '@fortawesome/free-brands-svg-icons';
 
 // Font awesome 読み込み
-library.add(faEnvelope, faHandshake, faPenNib, faCode, faServer,faChevronDown, faLink,faInstagram, faFacebook, faGithub, faLinkedin, faChevronUp, faBars, faXmark, faCheck);
+library.add(faEnvelope, faHandshake, faPenNib, faCode, faServer,faChevronDown, faLink,faInstagram, faFacebook, faGithub, faLinkedin, faChevronUp, faBars, faXmark, faCheck, faTag, faChevronLeft, faChevronRight);
 
 dom.i2svg();
 
@@ -88,7 +88,7 @@ setTimeout(() => {
 
 // お知らせ 箇所
 $(document).ready(function() {
-  let items = $('.p-top-news__item');
+  let items = $('.p-news__item');
   console.log(items);
   let nextItem = 1;
 

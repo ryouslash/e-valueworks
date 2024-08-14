@@ -69,17 +69,41 @@
       </div>
       <div class="l-container l-content">
         <main class="l-mainContent">
-          <div class="c-postMetas">
-            <h1 class="c-postMetas__title">ここにタイトルが入ります</h1>
-            <div class="c-post__thumbnail"></div>
-            <div class="c-postMetas__time"><time>2024.08.13</time></div>
-            <div class="c-postMetas__categories">
-              <ul>
-                <li><a href="#">お知らせ</a></li>
-              </ul>
+          <div class="p-postHead">
+            <h1 class="p-postHead__title">
+              Webサイトにカレンダーを実装する方法
+            </h1>
+            <div class="c-postMetas">
+              <div class="c-postMetas__time"><time>2024.08.13</time></div>
+              <div class="c-postMetas__categoryWrap">
+                <!-- 2つまで -->
+                <ul class="c-postMetas__categories">
+                  <li class="c-postMetas__category"><a href="#">Web制作</a></li>
+                </ul>
+              </div>
+              <div class="c-postMetas__tagWrap">
+                <!-- 2つまで -->
+                <ul class="c-postMetas__tags">
+                  <li class="c-postMetas__tag">
+                    <a href="#"><i class="fa-solid fa-tag"></i> HTML</a>
+                  </li>
+                  <li class="c-postMetas__tag">
+                    <a href="#"><i class="fa-solid fa-tag"></i> CSS</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="p-postHead__thumbnail">
+              <img src="dist/img/noimg.jpg" />
             </div>
           </div>
           <div class="l-mainContent__inner">
+            <p>ここにテキストが入ります。</p>
+            <p>ここにテキストが入ります。</p>
+            <p>ここにテキストが入ります。</p>
+            <p>ここにテキストが入ります。</p>
+
+            [toc]
             <h2>見出し2</h2>
             <p>ここにテキストが入ります。</p>
             <p>ここにテキストが入ります。</p>
@@ -91,22 +115,208 @@
             <p>ここにテキストが入ります。</p>
             <p>ここにテキストが入ります。</p>
           </div>
+          <div class="c-prev-next-nav">
+            <div class="c-prev-next-nav__item c-prev-next-nav__prev">
+              <a href="#"
+                ><i class="fa-solid fa-chevron-left"></i> 前の投稿へ</a
+              >
+            </div>
+            <div class="c-prev-next-nav__item c-prev-next-nav__next">
+              <a href="#"
+                >次の投稿へ <i class="fa-solid fa-chevron-right"></i
+              ></a>
+            </div>
+          </div>
+          <div class="p-relatedPosts">
+            <h2>同じカテゴリーの記事を読む</h2>
+            <ul class="p-relatedPosts__items">
+              <li class="p-relatedPosts__item">
+                <a href="#">
+                  <div class="p-relatedPosts__itemLeft">
+                    <div class="p-relatedPosts__thumbnail">
+                      <img src="dist/img/noimg.jpg" />
+                    </div>
+                  </div>
+                  <div class="p-relatedPosts__itemRight">
+                    <div class="p-relatedPosts__title">
+                      【初心者向け5ステップ】Webサイトにカレンダーを実装する方法
+                    </div>
+                    <time class="p-relatedPosts__time">2024.08.13</time>
+                  </div>
+                </a>
+              </li>
+              <li class="p-relatedPosts__item">
+                <a href="#">
+                  <div class="p-relatedPosts__itemLeft">
+                    <div class="p-relatedPosts__thumbnail">
+                      <img src="dist/img/noimg.jpg" />
+                    </div>
+                  </div>
+                  <div class="p-relatedPosts__itemRight">
+                    <div class="p-relatedPosts__title">
+                      Webサイトにカレンダーを実装する方法
+                    </div>
+                    <time class="p-relatedPosts__time">2024.08.13</time>
+                  </div>
+                </a>
+              </li>
+              <li class="p-relatedPosts__item">
+                <a href="#">
+                  <div class="p-relatedPosts__itemLeft">
+                    <div class="p-relatedPosts__thumbnail">
+                      <img src="dist/img/noimg.jpg" />
+                    </div>
+                  </div>
+                  <div class="p-relatedPosts__itemRight">
+                    <div class="p-relatedPosts__title">
+                      Webサイトにカレンダーを実装する方法
+                    </div>
+                    <time class="p-relatedPosts__time">2024.08.13</time>
+                  </div>
+                </a>
+              </li>
+              <li class="p-relatedPosts__item">
+                <a href="#">
+                  <div class="p-relatedPosts__itemLeft">
+                    <div class="p-relatedPosts__thumbnail">
+                      <img src="dist/img/noimg.jpg" />
+                    </div>
+                  </div>
+                  <div class="p-relatedPosts__itemRight">
+                    <div class="p-relatedPosts__title">
+                      Webサイトにカレンダーを実装する方法
+                    </div>
+                    <time class="p-relatedPosts__time">2024.08.13</time>
+                  </div>
+                </a>
+              </li>
+              <li class="p-relatedPosts__item">
+                <a href="#">
+                  <div class="p-relatedPosts__itemLeft">
+                    <div class="p-relatedPosts__thumbnail">
+                      <img src="dist/img/noimg.jpg" />
+                    </div>
+                  </div>
+                  <div class="p-relatedPosts__itemRight">
+                    <div class="p-relatedPosts__title">
+                      Webサイトにカレンダーを実装する方法
+                    </div>
+                    <time class="p-relatedPosts__time">2024.08.13</time>
+                  </div>
+                </a>
+              </li>
+              <li class="p-relatedPosts__item">
+                <a href="#">
+                  <div class="p-relatedPosts__itemLeft">
+                    <div class="p-relatedPosts__thumbnail">
+                      <img src="dist/img/noimg.jpg" />
+                    </div>
+                  </div>
+                  <div class="p-relatedPosts__itemRight">
+                    <div class="p-relatedPosts__title">
+                      Webサイトにカレンダーを実装する方法
+                    </div>
+                    <time class="p-relatedPosts__time">2024.08.13</time>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>
         </main>
         <aside class="l-sidebar">
           <div class="l-sidebar__item l-sidebar__latest">
             <div class="l-sidebar__title">最新の投稿</div>
+            <ul class="l-sidebar__latestItems">
+              <li class="l-sidebar__latestItem">
+                <a href="#">
+                  <div class="l-sidebar__latestThumbnail">
+                    <img src="dist/img/noimg.jpg" />
+                  </div>
+                  <div class="l-sidebar__latestTitle">
+                    Webサイトにカレンダーを実装する方法
+                  </div></a
+                >
+              </li>
+              <li class="l-sidebar__latestItem">
+                <a href="#">
+                  <div class="l-sidebar__latestThumbnail">
+                    <img src="dist/img/noimg.jpg" />
+                  </div>
+                  <div class="l-sidebar__latestTitle">
+                    Webサイトにカレンダーを実装する方法
+                  </div></a
+                >
+              </li>
+              <li class="l-sidebar__latestItem">
+                <a href="#">
+                  <div class="l-sidebar__latestThumbnail">
+                    <img src="dist/img/noimg.jpg" />
+                  </div>
+                  <div class="l-sidebar__latestTitle">
+                    Webサイトにカレンダーを実装する方法
+                  </div></a
+                >
+              </li>
+              <li class="l-sidebar__latestItem">
+                <a href="#">
+                  <div class="l-sidebar__latestThumbnail">
+                    <img src="dist/img/noimg.jpg" />
+                  </div>
+                  <div class="l-sidebar__latestTitle">
+                    Webサイトにカレンダーを実装する方法
+                  </div></a
+                >
+              </li>
+              <li class="l-sidebar__latestItem">
+                <a href="#">
+                  <div class="l-sidebar__latestThumbnail">
+                    <img src="dist/img/noimg.jpg" />
+                  </div>
+                  <div class="l-sidebar__latestTitle">
+                    Webサイトにカレンダーを実装する方法
+                  </div></a
+                >
+              </li>
+            </ul>
           </div>
 
           <div class="l-sidebar__item l-sidebar__categories">
             <div class="l-sidebar__title">カテゴリー</div>
+            <ul class="l-sidebar__cagtegoryItems">
+              <li class="l-sidebar__categoryItem">
+                <a href="#">Web制作</a>
+              </li>
+              <li class="l-sidebar__categoryItem">
+                <a href="#">WordPress</a>
+              </li>
+            </ul>
           </div>
 
           <div class="l-sidebar__item l-sidebar__tags">
             <div class="l-sidebar__title">タグ</div>
+            <ul class="l-sidebar__tagItems">
+              <li class="l-sidebar__tagItem">
+                <a href="#"><i class="fa-solid fa-tag"></i> HTML</a>
+              </li>
+              <li class="l-sidebar__tagItem">
+                <a href="#"><i class="fa-solid fa-tag"></i> CSS</a>
+              </li>
+            </ul>
           </div>
 
           <div class="l-sidebar__item l-sidebar__search">
             <div class="l-sidebar__title">記事を検索</div>
+            <div class="l-sidebar__searchForm">
+              <form action="#" method="get">
+                <input
+                  type="text"
+                  name="s"
+                  value=""
+                  placeholder="キーワードを入力"
+                />
+                <button type="submit">検索</button>
+              </form>
+            </div>
           </div>
         </aside>
       </div>

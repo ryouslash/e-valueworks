@@ -1,0 +1,7 @@
+@use "../../../foundation/variables" as *;
+
+.p-postHead {
+  &__title {
+    font-size: $fontL;
+  }
+}

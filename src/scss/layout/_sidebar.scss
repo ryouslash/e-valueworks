@@ -1,11 +1,136 @@
 @use "../foundation/variables.scss" as *;
 
 .l-sidebar {
+  &__item {
+    background-color: #eeeeee;
+    padding: 20px;
+
+    &:not(:last-of-type) {
+      margin-bottom: 30px;
+    }
+  }
+
   &__title {
     font-size: $fontM;
-    font-weight: bolder;
-    border-bottom: 2px solid $keyColor;
-    padding-bottom: 0.3em;
-    margin-bottom: 0.3em;
+    text-align: center;
+    font-weight: 500;
+    margin-bottom: 20px;
+
+    &::before {
+      content: "";
+      display: block;
+      width: 30px;
+      height: 10px;
+      margin-left: auto;
+      border-right: 1px solid #aaaaaa;
+      border-top: 1px solid #aaaaaa;
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      width: 30px;
+      height: 10px;
+      border-left: 1px solid #aaaaaa;
+      border-bottom: 1px solid #aaaaaa;
+    }
+  }
+
+  &__latestItem {
+    &:not(:last-of-type) {
+      margin-bottom: 20px;
+    }
+
+    &:hover {
+      .l-sidebar__latestThumbnail img {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  &__latestThumbnail {
+    overflow: hidden;
+    aspect-ratio: 3/2;
+
+    img {
+      object-fit: cover;
+      height: 100%;
+      transition: transform 0.3s;
+    }
+  }
+
+  &__latestTitle {
+    font-weight: 500;
+    margin-top: 0.3em;
+  }
+
+  &__categoryItem {
+    padding-bottom: 0.5em;
+    border-bottom: 1px solid #aaaaaa;
+
+    &:not(:last-of-type) {
+      margin-bottom: 0.5em;
+    }
+
+    a {
+      transition: color 0.3s;
+      &:hover {
+        color: #aaaaaa;
+      }
+    }
+  }
+
+  &__tagItems {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8em;
+  }
+
+  &__tagItem {
+    a {
+      transition: color 0.3s;
+      &:hover {
+        color: #aaaaaa;
+      }
+    }
+  }
+
+  &__searchForm {
+    form {
+      display: flex;
+      gap: 3px;
+
+      input[type="text"] {
+        box-sizing: border-box;
+        flex: 1;
+        padding: 10px;
+        border-radius: 3px;
+        border: 1px solid #aaaaaa;
+
+        &:focus {
+          outline: 1px solid $keyColor;
+        }
+
+        &::placeholder {
+          font-family: "Roboto", "Noto Sans JP", sans-serif;
+          color: #aaaaaa;
+        }
+      }
+
+      button {
+        flex-shrink: 0;
+        background-color: $keyColor;
+        color: #ffffff;
+        border: none;
+        padding: 0 10px;
+        border-radius: 3px;
+        transition: opacity 0.3s;
+        cursor: pointer;
+
+        &:hover {
+          opacity: 0.7;
+        }
+      }
+    }
   }
 }

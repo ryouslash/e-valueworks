@@ -13,9 +13,12 @@
 }
 
 // ブロック間の余白調整
-.l-mainContent__inner > * {
-  clear: both;
-  margin-bottom: 1em;
+.l-mainContent__inner {
+  margin: 60px 0;
+  & > * {
+    clear: both;
+    margin-bottom: 1em;
+  }
 }
 
 .l-mainContent__inner dd > :last-child,

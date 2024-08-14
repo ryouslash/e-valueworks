@@ -1,0 +1,77 @@
+@use "../../../foundation/variables" as *;
+
+.p-news {
+  background-color: #eeeeee;
+
+  &__items {
+    position: relative;
+    overflow: hidden;
+  }
+
+  &__item {
+    display: grid;
+    grid-template-columns: auto auto 1fr;
+    align-items: center;
+    gap: 0.8em;
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+    top: 100%;
+    left: 0;
+    opacity: 0;
+    padding: 10px 0;
+    transition: top 1s, opacity 1s;
+
+    &.is-slideIn {
+      position: sticky;
+      top: 0;
+      opacity: 1;
+    }
+  }
+
+  &__time {
+    grid-column: 1/2;
+    grid-row: 1/2;
+  }
+
+  &__category {
+    grid-column: 2/3;
+    grid-row: 1/2;
+
+    @include mq-down(sm) {
+      grid-column: 2/4;
+    }
+
+    a {
+      padding: 0.1em 0.6em;
+      transition: color 0.5s, background-color 0.5s;
+      border: 1px solid $subColor;
+      color: #ffffff;
+      background-color: $subColor;
+
+      &:hover {
+        color: $subColor;
+        border: 1px solid $subColor;
+        background-color: #ffffff;
+      }
+    }
+  }
+
+  &__title {
+    line-height: 1;
+    grid-column: 3/4;
+    grid-row: 1/2;
+
+    @include mq-down(sm) {
+      grid-column: 1/4;
+      grid-row: 2/3;
+    }
+
+    a {
+      text-decoration: underline;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+}

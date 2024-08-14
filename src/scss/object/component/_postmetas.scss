@@ -1,0 +1,53 @@
+@use "../../foundation/variables" as *;
+
+.c-postMetas {
+  margin: 0.8em 0;
+
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  column-gap: 1em;
+
+  &__time {
+    font-size: $fontS;
+  }
+
+  &__categories {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    font-size: $fontS;
+    column-gap: 0.3em;
+  }
+
+  &__category {
+    a {
+      padding: 0.1em 0.6em;
+      transition: color 0.5s, background-color 0.5s;
+      border: 1px solid $subColor;
+      color: $subColor;
+
+      &:hover {
+        color: #ffffff;
+        background-color: $subColor;
+      }
+    }
+  }
+
+  &__tags {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    font-size: $fontS;
+    column-gap: 0.3em;
+  }
+
+  &__tag {
+    a {
+      transition: opacity 0.5s;
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+}
