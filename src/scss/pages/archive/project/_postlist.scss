@@ -1,0 +1,79 @@
+@use "../../../foundation/variables" as *;
+
+.p-postList {
+  &__item {
+    &:not(:last-of-type) {
+      a {
+        margin-bottom: 10px;
+      }
+    }
+
+    a {
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+      padding: 20px;
+      transition: background-color 0.5s;
+
+      @include mq-down(sm) {
+        display: block;
+      }
+
+      @include mq-down(xs) {
+        padding: 10px;
+      }
+
+      &:hover {
+        background-color: #eeeeee;
+
+        .p-postList__thumbnail img {
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
+
+  &__left {
+    width: 30%;
+    min-width: 180px;
+
+    @include mq-down(sm) {
+      width: 100%;
+      min-width: initial;
+      margin-bottom: 0.5em;
+    }
+  }
+
+  &__thumbnail {
+    overflow: hidden;
+    aspect-ratio: 3/2;
+
+    img {
+      transition: transform 0.3s;
+    }
+  }
+
+  &__right {
+    flex: 1;
+  }
+
+  &__title {
+    font-size: $fontM;
+  }
+
+  &__metas {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    column-gap: 1em;
+    font-size: 1.4rem;
+    margin: 0.5em 0;
+  }
+
+  &__category {
+    padding: 0.1em 0.6em;
+    transition: color 0.5s, background-color 0.5s;
+    border: 1px solid #73be60;
+    color: #73be60;
+  }
+}

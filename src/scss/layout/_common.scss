@@ -29,11 +29,3 @@
     padding: 60px 0 100px;
   }
 }
-
-.l-sectionPaddingBottom {
-  padding: 0 0 120px;
-
-  @include mq-down(sm) {
-    padding: 0 0 100px;
-  }
-}

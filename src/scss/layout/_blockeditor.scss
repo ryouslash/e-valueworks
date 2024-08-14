@@ -1,58 +1,44 @@
 @use "../foundation/variables" as *;
 
-// 投稿、固定ページ共通
-.l-pageContent,
-.l-postContent {
-  @include mq-down() {
-    margin-top: 59px;
-  }
-}
-
-.l-content {
-  margin: 60px auto;
-}
-
 // ブロック間の余白調整
-.l-mainContent__inner {
-  margin: 60px 0;
-  & > * {
-    clear: both;
-    margin-bottom: 1em;
-  }
-}
+.l-mainContent {
+  &__inner {
+    > * {
+      clear: both;
+      margin-bottom: 1em;
+    }
 
-.l-mainContent__inner dd > :last-child,
-.l-mainContent__inner div > :last-child,
-.l-mainContent__inner > :last-child {
-  margin-bottom: 0 !important;
-}
+    > :first-child {
+      margin-top: 0 !important;
+    }
 
-// 見出しのサイズ調整
-.l-mainContent__inner {
-  & > :first-child {
-    margin-top: 0 !important;
-  }
+    > :last-child,
+    dd > :last-child,
+    div > :last-child {
+      margin-bottom: 0 !important;
+    }
 
-  h2 {
-    font-size: $fontL;
-    background-color: #d5f3fd;
-    border-left: 3px solid $keyColor;
-    padding: 0.3em 0.5em;
+    h2 {
+      font-size: $fontL;
+      background-color: #d5f3fd;
+      border-left: 3px solid $keyColor;
+      padding: 0.3em 0.5em;
 
-    margin: 2em 0 0.8em;
-  }
+      margin: 2em 0 0.8em;
+    }
 
-  h3 {
-    font-size: $fontM;
-    border-bottom: 3px solid $keyColor;
-    padding-bottom: 0.3em;
-    border-radius: 1px;
-    margin: 2em 0 0.8em;
-  }
+    h3 {
+      font-size: $fontM;
+      border-bottom: 3px solid $keyColor;
+      padding-bottom: 0.3em;
+      border-radius: 1px;
+      margin: 2em 0 0.8em;
+    }
 
-  h4 {
-    border-left: 3px solid $keyColor;
-    padding: 0 0.5em;
-    margin: 2em 0 0.8em;
+    h4 {
+      border-left: 3px solid $keyColor;
+      padding: 0 0.5em;
+      margin: 2em 0 0.8em;
+    }
   }
 }

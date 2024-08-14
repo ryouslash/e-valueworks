@@ -16,6 +16,7 @@
 @use "layout/_sidebar";
 @use "layout/_common";
 @use "layout/_blockeditor";
+@use "layout/_content";
 
 /*
  * object
@@ -30,6 +31,7 @@
 @use "object/component/_breadcrumb";
 @use "object/component/_postmetas";
 @use "object/component/_prevnextnavi";
+@use "object/component/_pagination";
 
 // Project（全ページ共通）
 @use "object/project/_gnavi.scss";
@@ -59,3 +61,7 @@
 @use "pages/single/style" as single;
 @use "pages/single/project/posthead";
 @use "pages/single/project/relatedpost";
+
+// Archive
+@use "pages/archive/style" as archive;
+@use "pages/archive/project/postlist";

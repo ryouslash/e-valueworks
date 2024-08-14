@@ -1,0 +1,32 @@
+@use "../foundation/variables" as *;
+
+.l-content {
+  @include mq-down() {
+    margin-top: 59px;
+  }
+
+  &__inner {
+    display: flex;
+    gap: 30px;
+    margin: 60px 0;
+
+    @include mq-down(lg) {
+      display: block;
+    }
+
+    .l-mainContent {
+      flex: 1;
+    }
+
+    .l-sidebar {
+      width: 100%;
+      max-width: 300px;
+      flex-shrink: 0;
+
+      @include mq-down(lg) {
+        margin-top: 30px;
+        max-width: initial;
+      }
+    }
+  }
+}

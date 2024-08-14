@@ -1,0 +1,17 @@
+.c-pagination {
+  margin-top: 60px;
+
+  &__items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+  }
+
+  a {
+    text-decoration: underline;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
