@@ -9,7 +9,7 @@
   left: 0;
   z-index: 99;
 
-  @include mq-down(){
+  @include mq-down() {
     position: fixed;
   }
 
@@ -34,7 +34,7 @@
   }
 
   &__nav {
-    @include mq-down() {
+    @include mq-down(lg) {
       display: none;
     }
   }
@@ -46,7 +46,7 @@
     height: 30px;
     cursor: pointer;
 
-    @include mq-down {
+    @include mq-down(lg) {
       display: block;
     }
 

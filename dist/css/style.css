@@ -623,7 +623,7 @@ body {
     max-width: 150px;
   }
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 1024px) {
   .l-header__nav {
     display: none;
   }
@@ -635,7 +635,7 @@ body {
   height: 30px;
   cursor: pointer;
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 1024px) {
   .l-header__drawerBtn {
     display: block;
   }
@@ -1124,6 +1124,9 @@ body {
 .p-gnav__item-about a::after {
   content: "ABOUT";
 }
+.p-gnav__item-work a::after {
+  content: "WORK";
+}
 .p-gnav__item-news a::after {
   content: "NEWS";
 }
@@ -1165,6 +1168,9 @@ body {
 .p-drawerMenu__about a::after {
   content: "ABOUT";
 }
+.p-drawerMenu__work a::after {
+  content: "WORK";
+}
 .p-drawerMenu__service a::after {
   content: "SERVICE";
 }
@@ -1185,7 +1191,7 @@ body {
 .p-drawerMenu.is-show .l-container .p-drawerMenu__items {
   padding: 30px 0;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1025px) {
   .p-drawerMenu.is-show {
     display: none;
   }

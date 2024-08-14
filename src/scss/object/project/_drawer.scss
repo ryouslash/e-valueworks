@@ -42,6 +42,12 @@
     }
   }
 
+  &__work a {
+    &::after {
+      content: "WORK";
+    }
+  }
+
   &__service a {
     &::after {
       content: "SERVICE";
@@ -75,7 +81,7 @@
       }
     }
 
-    @include mq-up() {
+    @include mq-up(lg) {
       display: none;
     }
   }

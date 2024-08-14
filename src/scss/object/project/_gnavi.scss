@@ -47,6 +47,10 @@
       content: "ABOUT";
     }
 
+    &-work a::after {
+      content: "WORK";
+    }
+
     &-news a::after {
       content: "NEWS";
     }
