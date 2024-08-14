@@ -146,7 +146,7 @@ $(document).ready(function() {
 
 // 制作実績 箇所
 $(document).ready(function(){
-  $('.p-experience__slider').slick({
+  $('.p-work__slider').slick({
     dots: true,
     infinite: true,
     speed: 300,

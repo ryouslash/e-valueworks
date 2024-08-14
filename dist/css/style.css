@@ -1807,17 +1807,17 @@ body {
   margin-top: 10px;
 }
 
-.p-experience {
+.p-work {
   background-color: #ffffff;
   overflow: hidden;
 }
-.p-experience__slider {
+.p-work__slider {
   margin-top: 60px;
 }
-.p-experience__slider .slick-slide {
+.p-work__slider .slick-slide {
   margin: 0 15px;
 }
-.p-experience__slider .slick-dots {
+.p-work__slider .slick-dots {
   bottom: -50px;
 }
 

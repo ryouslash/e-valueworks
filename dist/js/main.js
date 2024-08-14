@@ -30559,7 +30559,7 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
 
 // 制作実績 箇所
 jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()('.p-experience__slider').slick({
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('.p-work__slider').slick({
     dots: true,
     infinite: true,
     speed: 300,
