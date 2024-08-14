@@ -713,15 +713,14 @@ body {
   font-weight: 500;
   margin-top: 0.3em;
 }
-.l-sidebar__categoryItem {
-  padding-bottom: 0.5em;
-  border-bottom: 1px solid #aaaaaa;
-}
-.l-sidebar__categoryItem:not(:last-of-type) {
+.l-sidebar__categoryItem:not(:last-of-type) a {
   margin-bottom: 0.5em;
 }
 .l-sidebar__categoryItem a {
   transition: color 0.3s;
+  display: block;
+  padding-bottom: 0.5em;
+  border-bottom: 1px solid #aaaaaa;
 }
 .l-sidebar__categoryItem a:hover {
   color: #aaaaaa;

@@ -65,15 +65,18 @@
   }
 
   &__categoryItem {
-    padding-bottom: 0.5em;
-    border-bottom: 1px solid #aaaaaa;
-
     &:not(:last-of-type) {
-      margin-bottom: 0.5em;
+      a {
+        margin-bottom: 0.5em;
+      }
     }
 
     a {
       transition: color 0.3s;
+      display: block;
+      padding-bottom: 0.5em;
+      border-bottom: 1px solid #aaaaaa;
+
       &:hover {
         color: #aaaaaa;
       }
