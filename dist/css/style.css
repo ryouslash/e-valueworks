@@ -1826,6 +1826,19 @@ body {
 .p-work__slider .slick-dots {
   bottom: -50px;
 }
+.p-work__slider-item:hover .p-work__title {
+  color: #18c1f0;
+}
+.p-work__text {
+  text-align: center;
+  margin-top: 30px;
+}
+.p-work__title {
+  text-align: center;
+  margin-top: 1em;
+  font-weight: 500;
+  transition: color 0.5s;
+}
 
 .p-promise {
   background: rgb(240, 240, 240);

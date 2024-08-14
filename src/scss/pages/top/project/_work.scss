@@ -1,3 +1,5 @@
+@use "../../../foundation/variables" as *;
+
 .p-work {
   background-color: #ffffff;
   overflow: hidden;
@@ -12,5 +14,25 @@
     .slick-dots {
       bottom: -50px;
     }
+  }
+
+  &__slider-item {
+    &:hover {
+      .p-work__title {
+        color: $keyColor;
+      }
+    }
+  }
+
+  &__text {
+    text-align: center;
+    margin-top: 30px;
+  }
+
+  &__title {
+    text-align: center;
+    margin-top: 1em;
+    font-weight: 500;
+    transition: color 0.5s;
   }
 }
