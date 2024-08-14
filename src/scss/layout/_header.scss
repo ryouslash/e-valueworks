@@ -9,7 +9,7 @@
   left: 0;
   z-index: 99;
 
-  @include mq-down() {
+  @include mq-down(lg) {
     position: fixed;
   }
 

@@ -1,14 +1,14 @@
 @use "../foundation/variables" as *;
 
 .l-content {
-  @include mq-down() {
+  @include mq-down(lg) {
     margin-top: 59px;
   }
 
   &__inner {
     display: flex;
     gap: 30px;
-    margin: 60px 0;
+    padding: 60px 0;
 
     @include mq-down(lg) {
       display: block;

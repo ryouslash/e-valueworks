@@ -1,0 +1,27 @@
+@use "../../foundation/variables" as *;
+
+.p-single-work {
+  &__inner {
+    padding: 60px 0;
+  }
+
+  &__title {
+    font-size: $fontXL;
+    border-bottom: 2px solid #cccccc;
+    margin: 60px 0 1em;
+    padding-bottom: 1em;
+  }
+
+  &__detail {
+    display: flex;
+    gap: 60px;
+  }
+
+  &__left {
+    flex: 1;
+  }
+
+  &__right {
+    flex: 1;
+  }
+}
