@@ -6,7 +6,9 @@ const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 
 module.exports = {
   entry: {
-    main: ["./src/js/index.js", "./src/scss/style.scss"],
+    common: ['./src/js/common.js', './src/scss/style.scss'],
+    top: './src/js/top.js',
+    work: './src/js/work.js',
   },
   output: {  //出力先
     filename: 'js/[name].js',
@@ -45,6 +47,22 @@ module.exports = {
         parallel: true,  //ビルド速度を向上
       }),
     ],
+    splitChunks: {
+      chunks: 'all',
+      minSize: 1000,
+      minChunks: 2,
+      maxAsyncRequests: 30,
+      maxInitialRequests: 30,
+      enforceSizeThreshold: 50000,
+      cacheGroups: {
+        defaultVendors: {
+          test: /[\\/]node_modules[\\/]/,
+          priority: -10,
+          reuseExistingChunk: true,
+          name: 'vendors',  // vendor.js として出力
+        },
+      },
+    },
   },
   module: {
     rules: [

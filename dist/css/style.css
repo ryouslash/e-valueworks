@@ -870,7 +870,7 @@ body {
 .c-button {
   display: flex;
   padding: 20px 0;
-  font-weight: bolder;
+  font-weight: 700;
   justify-content: center;
   align-items: center;
   box-shadow: 2px 2px 6px #aaaaaa;
@@ -2510,6 +2510,9 @@ body {
 .p-contact-form__hosoku a {
   text-decoration: underline;
 }
+.p-contact-form__hosoku a:hover {
+  text-decoration: none;
+}
 
 .p-single .c-pageHeader {
   background-image: url(../img/column.jpg);
@@ -2706,11 +2709,115 @@ body {
   display: flex;
   gap: 60px;
 }
+@media screen and (max-width: 1024px) {
+  .p-single-work__detail {
+    flex-direction: column-reverse;
+  }
+}
 .p-single-work__left {
   flex: 1;
 }
 .p-single-work__right {
   flex: 1;
+}
+.p-single-work__info {
+  margin-top: 60px;
+  position: relative;
+  padding: 30px 0;
+}
+.p-single-work__infoItem {
+  display: flex;
+  gap: 10px;
+  font-size: 1.4rem;
+}
+@media screen and (max-width: 419px) {
+  .p-single-work__infoItem {
+    display: block;
+  }
+}
+.p-single-work__infoItem:not(:last-of-type) {
+  margin-bottom: 0.5em;
+}
+.p-single-work__infoItem dt {
+  width: 100%;
+  max-width: 100px;
+  flex-shrink: 0;
+  font-weight: 600;
+}
+@media screen and (max-width: 419px) {
+  .p-single-work__infoItem dt {
+    max-width: initial;
+  }
+  .p-single-work__infoItem dt:before {
+    content: "◾️";
+  }
+}
+.p-single-work__infoItem dd {
+  flex: 1;
+}
+.p-single-work__url a {
+  transition: color 0.3s;
+}
+.p-single-work__url a:hover {
+  color: #18c1f0;
+}
+.p-single-work__infoBg {
+  position: absolute;
+  width: calc(var(--vw) * 100);
+  height: 100%;
+  left: calc(var(--vw) * -50 + 100% + 30px);
+  top: 0;
+  background-color: #eeeeee;
+  z-index: -1;
+}
+@media screen and (max-width: 1024px) {
+  .p-single-work__infoBg {
+    left: -30px;
+  }
+}
+@media screen and (max-width: 575px) {
+  .p-single-work__infoBg {
+    left: -20px;
+  }
+}
+.p-single-work__photo {
+  opacity: 0;
+  transition: opacity 0.5s, transform 0.5s;
+  transform: translateY(20px);
+  transition-delay: 0.5s;
+}
+.p-single-work__photo.is-show {
+  opacity: 1;
+  transform: translateY(0);
+}
+.p-single-work__toArchive {
+  position: relative;
+  padding: 0 0 0 50px;
+  margin-top: 60px;
+}
+.p-single-work__toArchive:before {
+  content: "";
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  background-image: url(../img/button-arrow.svg);
+  background-size: cover;
+  background-position: right;
+  transform: translateY(-50%) scale(-1, 1);
+  display: block;
+  width: 30px;
+  height: 10px;
+  transition: 0.5s;
+}
+.p-single-work__toArchive:hover:before {
+  left: 0;
+  background-image: url(../img/button-arrow-blue.svg);
+}
+.p-single-work__toArchive a {
+  transition: color 0.5s;
+}
+.p-single-work__toArchive a:hover {
+  color: #18c1f0;
 }
 
 /*# sourceMappingURL=style.css.map*/
