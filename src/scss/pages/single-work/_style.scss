@@ -83,7 +83,12 @@
     height: 100%;
     left: calc(var(--vw) * -50 + 100% + 30px);
     top: 0;
-    background-color: #eeeeee;
+    background: rgb(240, 240, 240);
+    background: linear-gradient(
+      82deg,
+      rgb(240, 240, 240) 0%,
+      rgb(239, 239, 239) 57%
+    );
     z-index: -1;
 
     @include mq-down(lg) {
