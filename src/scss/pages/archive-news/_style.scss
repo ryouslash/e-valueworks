@@ -1,6 +1,6 @@
 @use "../../foundation/variables" as *;
 
-.p-single-news {
+.p-archive-news {
   .l-content__inner {
     align-items: flex-start;
     gap: 60px;
@@ -54,18 +54,5 @@
         border-bottom: 1px solid #cccccc;
       }
     }
-  }
-
-  .p-postHead__thumbnail {
-    margin-top: 0.8em;
-  }
-
-  &__taxnomy {
-    font-size: $fontL;
-    font-weight: 700;
-  }
-
-  &__time {
-    margin-top: 0.5em;
   }
 }

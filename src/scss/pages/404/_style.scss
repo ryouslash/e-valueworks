@@ -1,17 +1,16 @@
 .p-404 {
-  .c-pageHeader {
-    background-image: url("../img/search.jpg");
-    background-size: cover;
-    background-position: center;
-  }
-
   &__inner {
+    padding: 60px 0;
     a {
       text-decoration: underline;
 
       &:hover {
         text-decoration: none;
       }
+    }
+
+    p {
+      margin-top: 60px;
     }
   }
 }

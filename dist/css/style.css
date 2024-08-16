@@ -996,6 +996,18 @@ body {
   margin-right: calc(-50 * var(--vw) + 50%);
   position: relative;
 }
+@media screen and (max-width: 575px) {
+  .c-pageHeader {
+    text-align: center;
+  }
+}
+.c-pageHeader__subTitle {
+  position: relative;
+  z-index: 2;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #ffffff;
+}
 .c-pageHeader__title {
   font-size: clamp(2rem, 1.8rem + 0.625vw, 2.6rem);
   font-weight: 700;
@@ -2694,16 +2706,17 @@ body {
   background-position: center;
 }
 
-.p-404 .c-pageHeader {
-  background-image: url(../img/search.jpg);
-  background-size: cover;
-  background-position: center;
+.p-404__inner {
+  padding: 60px 0;
 }
 .p-404__inner a {
   text-decoration: underline;
 }
 .p-404__inner a:hover {
   text-decoration: none;
+}
+.p-404__inner p {
+  margin-top: 60px;
 }
 
 .p-single-work__inner {
@@ -2936,9 +2949,6 @@ body {
     margin-top: 0;
   }
 }
-.p-single-news .l-sidebar__inner {
-  padding: 10px 0;
-}
 @media screen and (max-width: 1024px) {
   .p-single-news .l-sidebar__inner {
     border-bottom: 1px solid #cccccc;
@@ -2953,6 +2963,59 @@ body {
 }
 .p-single-news__time {
   margin-top: 0.5em;
+}
+
+.p-archive-news .l-content__inner {
+  align-items: flex-start;
+  gap: 60px;
+}
+@media screen and (max-width: 1024px) {
+  .p-archive-news .l-content__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+}
+.p-archive-news .l-mainContent {
+  order: 2;
+  position: relative;
+}
+@media screen and (max-width: 1024px) {
+  .p-archive-news .l-mainContent {
+    width: 100%;
+  }
+  .p-archive-news .l-mainContent::before {
+    display: none;
+  }
+}
+.p-archive-news .l-mainContent::before {
+  content: "";
+  position: absolute;
+  width: 1px;
+  height: 100%;
+  background-color: #cccccc;
+  left: -50px;
+  top: 0;
+}
+.p-archive-news .l-mainContent__inner {
+  margin: 60px 0;
+}
+.p-archive-news .l-sidebar {
+  order: 1;
+  position: sticky;
+  top: calc(var(--headerHeight) + 60px);
+  left: 0;
+}
+@media screen and (max-width: 1024px) {
+  .p-archive-news .l-sidebar {
+    position: static;
+    margin-top: 0;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .p-archive-news .l-sidebar__inner {
+    border-bottom: 1px solid #cccccc;
+  }
 }
 
 /*# sourceMappingURL=style.css.map*/

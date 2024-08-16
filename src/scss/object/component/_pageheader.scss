@@ -7,6 +7,18 @@
   margin-right: calc(-50 * var(--vw) + 50%);
   position: relative;
 
+  @include mq-down(sm) {
+    text-align: center;
+  }
+
+  &__subTitle {
+    position: relative;
+    z-index: 2;
+    font-size: $fontS;
+    font-weight: 700;
+    color: #ffffff;
+  }
+
   &__title {
     font-size: $fontL;
     font-weight: 700;
