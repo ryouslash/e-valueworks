@@ -46,6 +46,10 @@
 
     &:not(:last-of-type) {
       margin-bottom: 0.5em;
+
+      @include mq-down(xs) {
+        margin-bottom: 1em;
+      }
     }
 
     dt {
@@ -56,10 +60,9 @@
 
       @include mq-down(xs) {
         max-width: initial;
-
-        &:before {
-          content: "◾️";
-        }
+        border-bottom: 1px solid #aaaaaa;
+        padding-bottom: 0.3em;
+        margin-bottom: 0.3em;
       }
     }
 
@@ -75,6 +78,14 @@
         color: $keyColor;
       }
     }
+  }
+
+  &__industry {
+    display: inline-block;
+    margin-top: 1em;
+    color: $keyColor;
+    border: 1px solid $keyColor;
+    padding: 3px 5px;
   }
 
   &__infoBg {
