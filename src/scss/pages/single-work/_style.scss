@@ -122,40 +122,4 @@
       transform: translateY(0);
     }
   }
-
-  &__toArchive {
-    position: relative;
-    padding: 0 0 0 50px;
-    margin-top: 60px;
-
-    &:before {
-      content: "";
-      position: absolute;
-      left: 10px;
-      top: 50%;
-      background-image: url("../img/button-arrow.svg");
-      background-size: cover;
-      background-position: right;
-      transform: translateY(-50%) scale(-1, 1);
-      display: block;
-      width: 30px;
-      height: 10px;
-      transition: 0.5s;
-    }
-
-    &:hover {
-      &:before {
-        left: 0;
-        background-image: url("../img/button-arrow-blue.svg");
-      }
-    }
-
-    a {
-      transition: color 0.5s;
-
-      &:hover {
-        color: $keyColor;
-      }
-    }
-  }
 }
