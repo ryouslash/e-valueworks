@@ -63,7 +63,8 @@
     margin-top: 0.3em;
   }
 
-  &__categoryItem {
+  &__categoryItem,
+  &__taxnomyItem {
     &:not(:last-of-type) {
       a {
         margin-bottom: 0.5em;
