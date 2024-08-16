@@ -1,4 +1,4 @@
-@use "../../../foundation/variables" as *;
+@use "../../foundation/variables" as *;
 
 .p-postList {
   &__item {
@@ -71,7 +71,8 @@
     margin: 0.5em 0;
   }
 
-  &__category {
+  &__category,
+  &__taxonomy {
     padding: 0.1em 0.6em;
     transition: color 0.5s, background-color 0.5s;
     border: 1px solid #73be60;

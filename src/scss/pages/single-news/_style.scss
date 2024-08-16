@@ -1,6 +1,8 @@
 @use "../../foundation/variables" as *;
 
-.p-single-news {
+.p-single-news,
+.p-archive-news,
+.p-news-taxonomy {
   .l-content__inner {
     align-items: flex-start;
     gap: 60px;
@@ -51,21 +53,33 @@
 
     &__inner {
       @include mq-down(lg) {
+        padding-bottom: 0.3em;
         border-bottom: 1px solid #cccccc;
       }
     }
   }
+}
 
+.p-single-news,
+.p-news-taxonomy {
   .p-postHead__thumbnail {
     margin-top: 0.8em;
   }
 
-  &__taxnomy {
+  &__taxonomy {
     font-size: $fontL;
     font-weight: 700;
+
+    @include mq-down(sm) {
+      text-align: center;
+    }
   }
 
-  &__time {
-    margin-top: 0.5em;
+  &__taxonomyEn {
+    color: #aaaaaa;
+    margin-top: 0.3em;
+    @include mq-down(sm) {
+      text-align: center;
+    }
   }
 }

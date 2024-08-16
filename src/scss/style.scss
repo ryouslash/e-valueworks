@@ -36,6 +36,7 @@
 // project（全ページ共通）
 @use "object/project/_gnavi.scss";
 @use "object/project/_drawer";
+@use "object/project/postlist";
 
 // utility
 @use "object/utility/_utilities";
@@ -64,7 +65,6 @@
 
 // archive
 @use "pages/archive/style" as archive;
-@use "pages/archive/project/postlist";
 
 // home
 @use "pages/home/style" as home;
@@ -83,3 +83,6 @@
 
 // archive-news
 @use "pages/archive-news/style" as archiveNews;
+
+// news-taxonomy
+@use "pages/news-taxonomy/style" as newsTaxonomy;
