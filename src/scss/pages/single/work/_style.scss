@@ -40,14 +40,14 @@
     gap: 10px;
     font-size: $fontS;
 
-    @include mq-down(xs) {
+    @include mq-down(sm) {
       display: block;
     }
 
     &:not(:last-of-type) {
       margin-bottom: 0.5em;
 
-      @include mq-down(xs) {
+      @include mq-down(sm) {
         margin-bottom: 1em;
       }
     }
@@ -58,7 +58,7 @@
       flex-shrink: 0;
       font-weight: 600;
 
-      @include mq-down(xs) {
+      @include mq-down(sm) {
         max-width: initial;
         border-bottom: 1px solid #aaaaaa;
         padding-bottom: 0.3em;
@@ -83,8 +83,8 @@
   &__industry {
     display: inline-block;
     margin-top: 1em;
-    color: $keyColor;
-    border: 1px solid $keyColor;
+    color: $subColor;
+    border: 1px solid $subColor;
     padding: 3px 5px;
   }
 
