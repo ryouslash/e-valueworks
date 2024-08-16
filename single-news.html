@@ -11,9 +11,9 @@
   <body>
     <header class="l-header">
       <div class="l-header__inner l-container">
-        <h1 class="l-header__logo">
+        <div class="l-header__logo">
           <a href="#"><img src="dist/img/logo.svg" /></a>
-        </h1>
+        </div>
         <nav class="l-header__nav">
           <ul class="p-gnav">
             <li class="p-gnav__item p-gnav__item-home">
@@ -74,17 +74,8 @@
             <h1 class="p-postHead__title">
               ホームページをリニューアルしました。
             </h1>
-            <div class="c-postMetas">
-              <div class="c-postMetas__time"><time>2024.08.13</time></div>
-              <div class="c-postMetas__categoryWrap">
-                <!-- 2つまで -->
-                <ul class="c-postMetas__categories">
-                  <li class="c-postMetas__category"><a href="#">Web制作</a></li>
-                </ul>
-              </div>
-            </div>
             <div class="p-postHead__thumbnail">
-              <img src="dist/img/noimg.jpg" />
+              <!-- <img src="dist/img/noimg.jpg" /> -->
             </div>
           </div>
           <div class="l-mainContent__inner">
@@ -119,72 +110,10 @@
           </div>
         </main>
         <aside class="l-sidebar">
-          <div class="l-sidebar__item l-sidebar__latest">
-            <div class="l-sidebar__title">最新の投稿</div>
-            <ul class="l-sidebar__latestItems">
-              <li class="l-sidebar__latestItem">
-                <a href="#">
-                  <div class="l-sidebar__latestThumbnail">
-                    <img src="dist/img/noimg.jpg" />
-                  </div>
-                  <div class="l-sidebar__latestTitle">
-                    Webサイトにカレンダーを実装する方法
-                  </div></a
-                >
-              </li>
-              <li class="l-sidebar__latestItem">
-                <a href="#">
-                  <div class="l-sidebar__latestThumbnail">
-                    <img src="dist/img/noimg.jpg" />
-                  </div>
-                  <div class="l-sidebar__latestTitle">
-                    Webサイトにカレンダーを実装する方法
-                  </div></a
-                >
-              </li>
-              <li class="l-sidebar__latestItem">
-                <a href="#">
-                  <div class="l-sidebar__latestThumbnail">
-                    <img src="dist/img/noimg.jpg" />
-                  </div>
-                  <div class="l-sidebar__latestTitle">
-                    Webサイトにカレンダーを実装する方法
-                  </div></a
-                >
-              </li>
-              <li class="l-sidebar__latestItem">
-                <a href="#">
-                  <div class="l-sidebar__latestThumbnail">
-                    <img src="dist/img/noimg.jpg" />
-                  </div>
-                  <div class="l-sidebar__latestTitle">
-                    Webサイトにカレンダーを実装する方法
-                  </div></a
-                >
-              </li>
-              <li class="l-sidebar__latestItem">
-                <a href="#">
-                  <div class="l-sidebar__latestThumbnail">
-                    <img src="dist/img/noimg.jpg" />
-                  </div>
-                  <div class="l-sidebar__latestTitle">
-                    Webサイトにカレンダーを実装する方法
-                  </div></a
-                >
-              </li>
-            </ul>
-          </div>
-
-          <div class="l-sidebar__item l-sidebar__taxnomy">
-            <div class="l-sidebar__title">カテゴリー</div>
-            <ul class="l-sidebar__taxnomyItems">
-              <li class="l-sidebar__taxnomyItem">
-                <a href="#">お知らせ</a>
-              </li>
-              <li class="l-sidebar__categoryItem">
-                <a href="#">メディア掲載</a>
-              </li>
-            </ul>
+          <!-- 1つまで -->
+          <div class="l-sidebar__inner">
+            <div class="p-single-news__taxnomy">メディア掲載</div>
+            <div class="p-single-news__time"><time>2024.08.13</time></div>
           </div>
         </aside>
       </div>

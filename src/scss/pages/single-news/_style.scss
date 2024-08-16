@@ -1,7 +1,73 @@
+@use "../../foundation/variables" as *;
+
 .p-single-news {
+  .l-content__inner {
+    align-items: flex-start;
+    gap: 60px;
+
+    @include mq-down(lg) {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+  }
+
   .l-mainContent {
+    order: 2;
+    position: relative;
+
+    @include mq-down(lg) {
+      width: 100%;
+      &::before {
+        display: none;
+      }
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 1px;
+      height: 100%;
+      background-color: #cccccc;
+      left: -50px;
+      top: 0;
+    }
+
     &__inner {
       margin: 60px 0;
     }
+  }
+
+  .l-sidebar {
+    order: 1;
+    position: sticky;
+    top: calc(var(--headerHeight) + 60px);
+    left: 0;
+
+    @include mq-down(lg) {
+      position: static;
+      margin-top: 0;
+    }
+
+    &__inner {
+      padding: 10px 0;
+
+      @include mq-down(lg) {
+        border-bottom: 1px solid #cccccc;
+      }
+    }
+  }
+
+  .p-postHead__thumbnail {
+    margin-top: 0.8em;
+  }
+
+  &__taxnomy {
+    font-size: $fontL;
+    font-weight: 700;
+  }
+
+  &__time {
+    margin-top: 0.5em;
   }
 }
