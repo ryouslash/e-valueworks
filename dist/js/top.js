@@ -51,8 +51,8 @@ setTimeout(function () {
 }, 1000); // 1秒（1000ミリ秒）遅延させる
 
 // メインビジュアルのテキスト、ボタン要素を取得
-var mainVisualText = document.querySelector('.p-mainVisual__text');
-var mainVisualButton = document.querySelector('.p-mainVisual__button');
+var mainVisualText = document.querySelector('.p-top-mainVisual__text');
+var mainVisualButton = document.querySelector('.p-top-mainVisual__button');
 setTimeout(function () {
   mainVisualText.classList.add('is-show');
 }, 4300);
@@ -62,7 +62,7 @@ setTimeout(function () {
 
 // お知らせ 箇所
 jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
-  var items = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.p-news__item');
+  var items = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.p-top-news__item');
   console.log(items);
   var nextItem = 1;
   function showNextItem() {
@@ -78,17 +78,17 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
 jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
   // スクロールイベントを監視
   jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).on('scroll', function () {
-    // p-troubles要素を取得
-    var $troublesElement = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.p-troubles');
+    // p-top-troubles要素を取得
+    var $troublesElement = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.p-top-troubles');
 
-    // p-troubles要素の位置を取得
+    // p-top-troubles要素の位置を取得
     var offsetTop = $troublesElement.offset().top;
     var windowTop = jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).scrollTop();
 
-    // p-troublesがウィンドウのトップに来たら
+    // p-top-troublesがウィンドウのトップに来たら
     if (windowTop > offsetTop - headerHeight) {
-      // p-troubles__itemの子要素にis-fadeInクラスを追加
-      $troublesElement.find('.p-troubles__item').each(function (index) {
+      // p-top-troubles__itemの子要素にis-fadeInクラスを追加
+      $troublesElement.find('.p-top-troubles__item').each(function (index) {
         var $item = jquery__WEBPACK_IMPORTED_MODULE_0___default()(this);
         setTimeout(function () {
           $item.addClass('is-fadeIn');
@@ -102,23 +102,18 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
 jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
   // スクロールイベントを監視
   jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).on('scroll', function () {
-    // p-about__items要素を取得
-    var $aboutElement = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.p-about');
-
-    // p-about__items要素の位置を取得
+    var $aboutElement = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.p-top-about');
     var offsetTop = $aboutElement.offset().top;
     var windowTop = jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).scrollTop();
-
-    // p-about__itemsがウィンドウの中央部に来たら
     if (windowTop > offsetTop - headerHeight) {
-      $aboutElement.find('.p-about__items').addClass('is-active');
+      $aboutElement.find('.p-top-about__items').addClass('is-active');
     }
   });
 });
 
 // 制作実績 箇所
 jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()('.p-work__slider').slick({
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('.p-top-work__slider').slick({
     dots: true,
     infinite: true,
     speed: 300,
@@ -143,7 +138,7 @@ function topPromise() {
   if (windowWidth <= 1024) {
     return;
   }
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()('.js-promise__img').each(function (index) {
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('.p-top-promise__img').each(function (index) {
     // 画像の位置を取得
     var imgTop = jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).offset().top;
     var imgBottom = imgTop + jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).outerHeight();
@@ -155,14 +150,10 @@ function topPromise() {
     if (index === 0) {
       // 要素がウィンドウと重なり終わって上部に隠れたとき（ここで背景色を変更）
       if (imgBottom < windowTop + headerHeight) {
-        jquery__WEBPACK_IMPORTED_MODULE_0___default()('.p-promise__item').eq(index).removeClass('is-active');
-        // $('.p-promise').addClass('is-bg2');
-        // $('.p-promise').removeClass('is-bg1');
+        jquery__WEBPACK_IMPORTED_MODULE_0___default()('.p-top-promise__item').eq(index).removeClass('is-active');
       } else {
         // 要素がウィンドウと重なる前、要素がウィンドウと重なっているとき
-        jquery__WEBPACK_IMPORTED_MODULE_0___default()('.p-promise__item').eq(index).addClass('is-active');
-        // $('.p-promise').addClass('is-bg1');
-        // $('.p-promise').removeClass('is-bg2');
+        jquery__WEBPACK_IMPORTED_MODULE_0___default()('.p-top-promise__item').eq(index).addClass('is-active');
       }
     }
 
@@ -170,15 +161,13 @@ function topPromise() {
     if (index === 1) {
       if (imgTop > windowTop + headerHeight) {
         // 要素がウィンドウと重なる前
-        jquery__WEBPACK_IMPORTED_MODULE_0___default()('.p-promise__item').eq(index).removeClass('is-active');
+        jquery__WEBPACK_IMPORTED_MODULE_0___default()('.p-top-promise__item').eq(index).removeClass('is-active');
       } else if (imgBottom < windowTop + headerHeight) {
         // 要素がウィンドウと重なり終わって上部に隠れたとき（ここで背景色を変更）
-        jquery__WEBPACK_IMPORTED_MODULE_0___default()('.p-promise__item').eq(index).removeClass('is-active');
-        // $('.p-promise').addClass('is-bg3').removeClass('is-bg2');
+        jquery__WEBPACK_IMPORTED_MODULE_0___default()('.p-top-promise__item').eq(index).removeClass('is-active');
       } else {
         // 要素がウィンドウと重なっているとき
-        jquery__WEBPACK_IMPORTED_MODULE_0___default()('.p-promise__item').eq(index).addClass('is-active');
-        // $('.p-promise').removeClass('is-bg3');
+        jquery__WEBPACK_IMPORTED_MODULE_0___default()('.p-top-promise__item').eq(index).addClass('is-active');
       }
     }
 
@@ -186,15 +175,13 @@ function topPromise() {
     if (index === 2) {
       if (imgTop > windowTop + headerHeight) {
         // 要素がウィンドウと重なる前
-        jquery__WEBPACK_IMPORTED_MODULE_0___default()('.p-promise__item').eq(index).removeClass('is-active');
+        jquery__WEBPACK_IMPORTED_MODULE_0___default()('.p-top-promise__item').eq(index).removeClass('is-active');
       } else if (imgBottom < windowTop + headerHeight) {
         // 要素がウィンドウと重なり終わって上部に隠れたとき（ここで背景色を変更）
-        jquery__WEBPACK_IMPORTED_MODULE_0___default()('.p-promise__item').eq(index).removeClass('is-active');
-        // $('.p-promise').addClass('is-bg4').removeClass('is-bg3');
+        jquery__WEBPACK_IMPORTED_MODULE_0___default()('.p-top-promise__item').eq(index).removeClass('is-active');
       } else {
         // 要素がウィンドウと重なっているとき
-        jquery__WEBPACK_IMPORTED_MODULE_0___default()('.p-promise__item').eq(index).addClass('is-active');
-        // $('.p-promise').removeClass('is-bg4');
+        jquery__WEBPACK_IMPORTED_MODULE_0___default()('.p-top-promise__item').eq(index).addClass('is-active');
       }
     }
 
@@ -202,10 +189,10 @@ function topPromise() {
     if (index === 3) {
       // 要素がウィンドウと重なっているとき、要素がウィンドウと重なり終わって上部に隠れたとき
       if (imgTop <= windowTop + headerHeight) {
-        jquery__WEBPACK_IMPORTED_MODULE_0___default()('.p-promise__item').eq(index).addClass('is-active');
+        jquery__WEBPACK_IMPORTED_MODULE_0___default()('.p-top-promise__item').eq(index).addClass('is-active');
       } else {
         // 要素がウィンドウと重なる前
-        jquery__WEBPACK_IMPORTED_MODULE_0___default()('.p-promise__item').eq(index).removeClass('is-active');
+        jquery__WEBPACK_IMPORTED_MODULE_0___default()('.p-top-promise__item').eq(index).removeClass('is-active');
       }
     }
   });
@@ -221,7 +208,7 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).on('scroll', topPromise);
 jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
   // スクロールイベントを監視
   jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).on('scroll', function () {
-    var $priceElement = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.p-price__plans');
+    var $priceElement = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.p-top-price__plans');
     var offsetTop = $priceElement.offset().top;
     var windowTop = jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).scrollTop();
     var windowHeight = jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).outerHeight();
@@ -229,14 +216,14 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
 
     // p-about__itemsがウィンドウの中央部に来たら
     if (windowCenter > offsetTop) {
-      $priceElement.find('.p-price__plan').addClass('is-active');
+      $priceElement.find('.p-top-price__plan').addClass('is-active');
     }
   });
 });
 
 // よくある質問箇所
 jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()('.p-faq__list').on('click', function () {
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('.p-top-faq__list').on('click', function () {
     jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).toggleClass('is-open');
   });
 });

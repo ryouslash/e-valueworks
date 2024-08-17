@@ -1,6 +1,6 @@
 @use "../../../foundation/variables" as *;
 
-.p-faq {
+.p-top-faq {
   font-size: $fontM;
   background-color: #ffffff;
 
@@ -123,14 +123,14 @@
   }
 }
 
-.p-faq__list.is-open {
-  .p-faq__question {
+.p-top-faq__list.is-open {
+  .p-top-faq__question {
     svg {
       transform: rotate(180deg);
     }
   }
 
-  .p-faq__answer {
+  .p-top-faq__answer {
     margin-top: 1em;
     grid-template-rows: 1fr;
     padding: 10px 10px 10px calc(1.3em + 10px);

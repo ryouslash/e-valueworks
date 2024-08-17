@@ -1,6 +1,6 @@
 @use "../../../foundation/variables" as *;
 
-.p-price {
+.p-top-price {
   background: rgb(129, 209, 230);
   background: linear-gradient(
     0deg,
@@ -108,8 +108,8 @@
   }
 }
 
-.p-price__coding {
-  .p-price__planTitle {
+.p-top-price__coding {
+  .p-top-price__planTitle {
     background-color: #ffffff;
     color: #64ceeb;
     border: 1px solid #64ceeb;
@@ -119,8 +119,8 @@
   }
 }
 
-.p-price__maintenance {
-  .p-price__planTitle {
+.p-top-price__maintenance {
+  .p-top-price__planTitle {
     background-color: #64ceeb;
     color: #ffffff;
     border-radius: 25px;

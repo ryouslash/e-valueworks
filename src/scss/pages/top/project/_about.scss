@@ -1,7 +1,7 @@
 @use "../../../foundation/variables" as *;
 
 // アバウト
-.p-about {
+.p-top-about {
   background-image: url("../img/pattern-bg.png");
   overflow: hidden;
 
@@ -70,7 +70,7 @@
       grid-row: 3/4;
     }
 
-    .p-about__itemDetail p {
+    .p-top-about__itemDetail p {
       margin-bottom: 10px;
     }
   }
@@ -84,7 +84,7 @@
       grid-row: 4/5;
     }
 
-    .p-about__itemDetail p {
+    .p-top-about__itemDetail p {
       margin-bottom: 10px;
     }
   }

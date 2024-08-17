@@ -10,8 +10,11 @@ CSS 設計：ベースとして FLOCSS を採用
 ◾️layout→header、footer などレイアウトに関連するもの。container などは common.scss に記述。ブロックエディターのコンテンツ部分の余白デザイン調整は、blockeditor.scss に記述。
 
 ◾️object ＞ component→2 ページ以上で共通のコンポーネント要素。
+
 ◾️object ＞ project→2 ページ以上で共通のプロジェクト要素。
+
 ◾️object ＞ utility→utility 要素。
 
 ◾️pages→ 各ページのみの要素。各ページフォルダには project フォルダも含み、各ページ固有のセクションに関してはこの中に SCSS ファイルを追加。
+
 ※異なるページ間で同じセクションが存在する場合、トップページでは「p-セクション名」、下層ページでは「p-ページ名-セクション名」とする。

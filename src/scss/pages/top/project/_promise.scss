@@ -1,6 +1,6 @@
 @use "../../../foundation/variables" as *;
 
-.p-promise {
+.p-top-promise {
   background: rgb(240, 240, 240);
   background: linear-gradient(
     82deg,
@@ -33,7 +33,7 @@
     margin-bottom: 45px;
 
     &.is-active {
-      .p-promise__detail {
+      .p-top-promise__detail {
         grid-template-rows: 1fr;
         padding: 30px;
         margin-top: 1em;
@@ -57,7 +57,7 @@
       }
     }
 
-    .p-promise__title {
+    .p-top-promise__title {
       color: #733c3c;
       font-size: $fontL;
       font-weight: 600;
@@ -66,7 +66,7 @@
       gap: 0.3em;
     }
 
-    .p-promise__title > span {
+    .p-top-promise__title > span {
       background-color: #733c3c;
       color: #ffffff;
       padding: 0px 5px;
@@ -74,7 +74,7 @@
       flex-shrink: 0;
     }
 
-    .p-promise__detail {
+    .p-top-promise__detail {
       background: #ffffff;
       box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.3);
       margin-left: 1em;
@@ -92,7 +92,7 @@
   }
 
   &__scroll {
-    .p-promise__title {
+    .p-top-promise__title {
       color: #733c3c;
       font-size: $fontL;
       font-weight: 600;
@@ -102,7 +102,7 @@
       flex-wrap: wrap;
     }
 
-    .p-promise__title > span {
+    .p-top-promise__title > span {
       background-color: #733c3c;
       color: #ffffff;
       padding: 0px 5px;
@@ -110,7 +110,7 @@
       flex-shrink: 0;
     }
 
-    .p-promise__detail {
+    .p-top-promise__detail {
       background: #ffffff;
       box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.3);
       display: grid;

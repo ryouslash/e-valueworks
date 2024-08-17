@@ -39,27 +39,27 @@
       }
     }
 
-    &-home a::after {
+    &--home a::after {
       content: "HOME";
     }
 
-    &-about a::after {
+    &--about a::after {
       content: "ABOUT";
     }
 
-    &-work a::after {
+    &--work a::after {
       content: "WORK";
     }
 
-    &-news a::after {
+    &--news a::after {
       content: "NEWS";
     }
 
-    &-price a::after {
+    &--price a::after {
       content: "PRICE";
     }
 
-    &-contact a::after {
+    &--contact a::after {
       content: "CONTACT";
     }
   }

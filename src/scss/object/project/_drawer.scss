@@ -28,41 +28,41 @@
         font-size: 1.1rem;
       }
     }
-  }
 
-  &__home a {
-    &::after {
-      content: "HOME";
+    &--home a {
+      &::after {
+        content: "HOME";
+      }
     }
-  }
 
-  &__about a {
-    &::after {
-      content: "ABOUT";
+    &--about a {
+      &::after {
+        content: "ABOUT";
+      }
     }
-  }
 
-  &__work a {
-    &::after {
-      content: "WORK";
+    &--work a {
+      &::after {
+        content: "WORK";
+      }
     }
-  }
 
-  &__price a {
-    &::after {
-      content: "PRICE";
+    &--price a {
+      &::after {
+        content: "PRICE";
+      }
     }
-  }
 
-  &__news a {
-    &::after {
-      content: "NEWS";
+    &--news a {
+      &::after {
+        content: "NEWS";
+      }
     }
-  }
 
-  &__contact a {
-    &::after {
-      content: "CONTACT";
+    &--contact a {
+      &::after {
+        content: "CONTACT";
+      }
     }
   }
 

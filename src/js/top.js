@@ -32,8 +32,8 @@ setTimeout(() => {
 
 
 // メインビジュアルのテキスト、ボタン要素を取得
-const mainVisualText = document.querySelector('.p-mainVisual__text');
-const mainVisualButton = document.querySelector('.p-mainVisual__button');
+const mainVisualText = document.querySelector('.p-top-mainVisual__text');
+const mainVisualButton = document.querySelector('.p-top-mainVisual__button');
 
 setTimeout(() => {
   mainVisualText.classList.add('is-show');
@@ -45,7 +45,7 @@ setTimeout(() => {
 
 // お知らせ 箇所
 $(document).ready(function() {
-  let items = $('.p-news__item');
+  let items = $('.p-top-news__item');
   console.log(items);
   let nextItem = 1;
 
@@ -63,17 +63,17 @@ $(document).ready(function() {
 $(document).ready(function() {
   // スクロールイベントを監視
   $(window).on('scroll', function() {
-    // p-troubles要素を取得
-    var $troublesElement = $('.p-troubles');
+    // p-top-troubles要素を取得
+    var $troublesElement = $('.p-top-troubles');
 
-    // p-troubles要素の位置を取得
+    // p-top-troubles要素の位置を取得
     var offsetTop = $troublesElement.offset().top;
     var windowTop = $(window).scrollTop();
 
-    // p-troublesがウィンドウのトップに来たら
+    // p-top-troublesがウィンドウのトップに来たら
     if (windowTop > offsetTop - headerHeight) {
-      // p-troubles__itemの子要素にis-fadeInクラスを追加
-      $troublesElement.find('.p-troubles__item').each(function(index) {
+      // p-top-troubles__itemの子要素にis-fadeInクラスを追加
+      $troublesElement.find('.p-top-troubles__item').each(function(index) {
         var $item = $(this);
         setTimeout(function() {
           $item.addClass('is-fadeIn');
@@ -87,23 +87,20 @@ $(document).ready(function() {
 $(document).ready(function() {
   // スクロールイベントを監視
   $(window).on('scroll', function() {
-    // p-about__items要素を取得
-    var $aboutElement = $('.p-about');
+    var $aboutElement = $('.p-top-about');
 
-    // p-about__items要素の位置を取得
     var offsetTop = $aboutElement.offset().top;
     var windowTop = $(window).scrollTop();
 
-    // p-about__itemsがウィンドウの中央部に来たら
     if (windowTop > offsetTop - headerHeight) {
-      $aboutElement.find('.p-about__items').addClass('is-active');
+      $aboutElement.find('.p-top-about__items').addClass('is-active');
     }
   });
 });
 
 // 制作実績 箇所
 $(document).ready(function(){
-  $('.p-work__slider').slick({
+  $('.p-top-work__slider').slick({
     dots: true,
     infinite: true,
     speed: 300,
@@ -131,7 +128,7 @@ function topPromise() {
       return;
     }
   
-  $('.js-promise__img').each(function(index) {
+  $('.p-top-promise__img').each(function(index) {
     // 画像の位置を取得
     var imgTop = $(this).offset().top;
     var imgBottom = imgTop + $(this).outerHeight();
@@ -143,14 +140,12 @@ function topPromise() {
     if (index === 0) {
       // 要素がウィンドウと重なり終わって上部に隠れたとき（ここで背景色を変更）
       if (imgBottom < windowTop + headerHeight) {
-        $('.p-promise__item').eq(index).removeClass('is-active');
-        // $('.p-promise').addClass('is-bg2');
-        // $('.p-promise').removeClass('is-bg1');
+        $('.p-top-promise__item').eq(index).removeClass('is-active');
+   
       } else {
         // 要素がウィンドウと重なる前、要素がウィンドウと重なっているとき
-        $('.p-promise__item').eq(index).addClass('is-active');
-        // $('.p-promise').addClass('is-bg1');
-        // $('.p-promise').removeClass('is-bg2');
+        $('.p-top-promise__item').eq(index).addClass('is-active');
+   
       }
     }
 
@@ -158,15 +153,13 @@ function topPromise() {
     if (index === 1) {
       if (imgTop > windowTop + headerHeight) {
         // 要素がウィンドウと重なる前
-        $('.p-promise__item').eq(index).removeClass('is-active');
+        $('.p-top-promise__item').eq(index).removeClass('is-active');
       } else if (imgBottom < windowTop + headerHeight) {
         // 要素がウィンドウと重なり終わって上部に隠れたとき（ここで背景色を変更）
-        $('.p-promise__item').eq(index).removeClass('is-active');
-        // $('.p-promise').addClass('is-bg3').removeClass('is-bg2');
+        $('.p-top-promise__item').eq(index).removeClass('is-active');
       } else {
         // 要素がウィンドウと重なっているとき
-        $('.p-promise__item').eq(index).addClass('is-active');
-        // $('.p-promise').removeClass('is-bg3');
+        $('.p-top-promise__item').eq(index).addClass('is-active');
       }
     }
 
@@ -174,15 +167,13 @@ function topPromise() {
     if (index === 2) {
       if (imgTop > windowTop + headerHeight) {
         // 要素がウィンドウと重なる前
-        $('.p-promise__item').eq(index).removeClass('is-active');
+        $('.p-top-promise__item').eq(index).removeClass('is-active');
       } else if (imgBottom < windowTop + headerHeight) {
         // 要素がウィンドウと重なり終わって上部に隠れたとき（ここで背景色を変更）
-        $('.p-promise__item').eq(index).removeClass('is-active');
-        // $('.p-promise').addClass('is-bg4').removeClass('is-bg3');
+        $('.p-top-promise__item').eq(index).removeClass('is-active');
       } else {
         // 要素がウィンドウと重なっているとき
-        $('.p-promise__item').eq(index).addClass('is-active');
-        // $('.p-promise').removeClass('is-bg4');
+        $('.p-top-promise__item').eq(index).addClass('is-active');
       }
     }
 
@@ -190,10 +181,10 @@ function topPromise() {
     if (index === 3) {
       // 要素がウィンドウと重なっているとき、要素がウィンドウと重なり終わって上部に隠れたとき
       if (imgTop <= windowTop + headerHeight) {
-        $('.p-promise__item').eq(index).addClass('is-active');
+        $('.p-top-promise__item').eq(index).addClass('is-active');
       } else {
         // 要素がウィンドウと重なる前
-        $('.p-promise__item').eq(index).removeClass('is-active');
+        $('.p-top-promise__item').eq(index).removeClass('is-active');
       }
     }
   });
@@ -209,7 +200,7 @@ $(window).on('scroll', topPromise);
 $(document).ready(function() {
   // スクロールイベントを監視
   $(window).on('scroll', function() {
-    var $priceElement = $('.p-price__plans');
+    var $priceElement = $('.p-top-price__plans');
 
     var offsetTop = $priceElement.offset().top;
     var windowTop = $(window).scrollTop();
@@ -219,14 +210,14 @@ $(document).ready(function() {
 
     // p-about__itemsがウィンドウの中央部に来たら
     if (windowCenter > offsetTop) {
-      $priceElement.find('.p-price__plan').addClass('is-active');
+      $priceElement.find('.p-top-price__plan').addClass('is-active');
     }
   });
 });
 
 // よくある質問箇所
 $(document).ready(function() {
-  $('.p-faq__list').on('click', function() {
+  $('.p-top-faq__list').on('click', function() {
     $(this).toggleClass('is-open');
   });
 });
