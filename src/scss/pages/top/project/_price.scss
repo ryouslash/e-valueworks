@@ -56,7 +56,7 @@
     }
   }
 
-  &__management {
+  &__maintenance {
     transition-delay: 0.3s;
   }
 
@@ -93,11 +93,6 @@
     text-align: center;
   }
 
-  &__managementPrice {
-    font-size: $fontL;
-    margin: 30px 0;
-  }
-
   &__hosoku {
     margin-bottom: 30px;
     font-size: $fontS;
@@ -124,7 +119,7 @@
   }
 }
 
-.p-price__management {
+.p-price__maintenance {
   .p-price__planTitle {
     background-color: #64ceeb;
     color: #ffffff;

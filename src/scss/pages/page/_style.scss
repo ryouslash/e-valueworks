@@ -1,1 +1,8 @@
 // 固定ページのみ
+.p-page.-template2 {
+  .l-mainContent {
+    &__inner {
+      margin-top: 60px;
+    }
+  }
+}

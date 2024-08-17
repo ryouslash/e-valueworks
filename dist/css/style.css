@@ -1176,8 +1176,8 @@ body {
 .p-gnav__item-news a::after {
   content: "NEWS";
 }
-.p-gnav__item-service a::after {
-  content: "SERVICE";
+.p-gnav__item-price a::after {
+  content: "PRICE";
 }
 .p-gnav__item-contact a::after {
   content: "CONTACT";
@@ -1217,8 +1217,8 @@ body {
 .p-drawerMenu__work a::after {
   content: "WORK";
 }
-.p-drawerMenu__service a::after {
-  content: "SERVICE";
+.p-drawerMenu__price a::after {
+  content: "PRICE";
 }
 .p-drawerMenu__news a::after {
   content: "NEWS";
@@ -1350,11 +1350,6 @@ body {
   display: flex;
   align-items: center;
   padding: 30px 0;
-}
-@media screen and (max-width: 767px) {
-  .p-mainVisual {
-    margin-top: 59px;
-  }
 }
 @keyframes fadeIn {
   0% {
@@ -2153,7 +2148,7 @@ body {
   top: 0;
   left: 0;
 }
-.p-price__management {
+.p-price__maintenance {
   transition-delay: 0.3s;
 }
 .p-price__planTitle {
@@ -2183,10 +2178,6 @@ body {
 .p-price__sampleDetail {
   text-align: center;
 }
-.p-price__managementPrice {
-  font-size: clamp(2rem, 1.8rem + 0.625vw, 2.6rem);
-  margin: 30px 0;
-}
 .p-price__hosoku {
   margin-bottom: 30px;
   font-size: 1.4rem;
@@ -2209,7 +2200,7 @@ body {
   padding: 8px 20px;
 }
 
-.p-price__management .p-price__planTitle {
+.p-price__maintenance .p-price__planTitle {
   background-color: #64ceeb;
   color: #ffffff;
   border-radius: 25px;
@@ -2635,6 +2626,23 @@ body {
 }
 .p-contact-form__hosoku a:hover {
   text-decoration: none;
+}
+
+.p-page.-template2 .l-mainContent__inner {
+  margin-top: 60px;
+}
+
+.p-page-price__inner {
+  margin-top: 60px;
+}
+.p-page-price__plans {
+  margin: 60px 0;
+}
+.p-page-price__plan:not(:last-of-type) {
+  margin-bottom: 60px;
+}
+.p-page-price__planTItle {
+  font-size: clamp(2rem, 1.8rem + 0.625vw, 2.6rem);
 }
 
 .p-single .c-pageHeader {

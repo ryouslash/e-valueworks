@@ -48,9 +48,9 @@
     }
   }
 
-  &__service a {
+  &__price a {
     &::after {
-      content: "SERVICE";
+      content: "PRICE";
     }
   }
 
