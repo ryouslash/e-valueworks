@@ -981,7 +981,7 @@ body {
   color: #18c1f0;
 }
 
-.c-h2Title {
+.c-title1 {
   font-size: clamp(2rem, 1.8rem + 0.9375vw, 3.2rem);
   text-align: center;
   font-weight: 700;
@@ -1329,12 +1329,6 @@ body {
   text-align: center;
 }
 
-.u-flex--column {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
 .u-md--hide {
   display: block;
 }
@@ -1501,23 +1495,23 @@ body {
   grid-column: 1/2;
   grid-row: 1/2;
 }
-.p-top-news__category {
+.p-top-news__taxonomy {
   grid-column: 2/3;
   grid-row: 1/2;
 }
 @media screen and (max-width: 575px) {
-  .p-top-news__category {
+  .p-top-news__taxonomy {
     grid-column: 2/4;
   }
 }
-.p-top-news__category a {
+.p-top-news__taxonomy a {
   padding: 0.1em 0.6em;
   transition: color 0.5s, background-color 0.5s;
   border: 1px solid #73be60;
   color: #ffffff;
   background-color: #73be60;
 }
-.p-top-news__category a:hover {
+.p-top-news__taxonomy a:hover {
   color: #73be60;
   border: 1px solid #73be60;
   background-color: #ffffff;
@@ -1814,13 +1808,13 @@ body {
   background-image: url(../img/pattern-bg.png);
   overflow: hidden;
 }
-.p-top-about .c-h2Title {
+.p-top-about .c-title1 {
   color: #ffffff;
   background-color: #73be60;
   padding: 30px 20px;
   position: relative;
 }
-.p-top-about .c-h2Title::after {
+.p-top-about .c-title1::after {
   content: "";
   border-top: 40px solid #73be60;
   border-left: 60px solid transparent;
@@ -1856,58 +1850,58 @@ body {
   border-radius: 10px;
   box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.3);
 }
-.p-top-about__profile {
+.p-top-about__item--profile {
   grid-column: 1/3;
   grid-row: 1/2;
 }
 @media screen and (max-width: 1024px) {
-  .p-top-about__profile {
+  .p-top-about__item--profile {
     grid-column: 1/5;
     grid-row: 2/3;
   }
 }
-.p-top-about__history {
+.p-top-about__item--history {
   grid-column: 1/2;
   grid-row: 2/3;
 }
 @media screen and (max-width: 1024px) {
-  .p-top-about__history {
+  .p-top-about__item--history {
     grid-column: 1/5;
     grid-row: 3/4;
   }
 }
-.p-top-about__history .p-top-about__itemDetail p {
+.p-top-about__item--history .p-top-about__itemDetail p {
   margin-bottom: 10px;
 }
-.p-top-about__skills {
+.p-top-about__item--skills {
   grid-column: 2/3;
   grid-row: 2/3;
 }
 @media screen and (max-width: 1024px) {
-  .p-top-about__skills {
+  .p-top-about__item--skills {
     grid-column: 1/5;
     grid-row: 4/5;
   }
 }
-.p-top-about__skills .p-top-about__itemDetail p {
+.p-top-about__item--skills .p-top-about__itemDetail p {
   margin-bottom: 10px;
 }
-.p-top-about__photo {
+.p-top-about__item--photo {
   grid-column: 3/4;
   grid-row: 1/3;
 }
 @media screen and (max-width: 1024px) {
-  .p-top-about__photo {
+  .p-top-about__item--photo {
     grid-column: 2/4;
     grid-row: 1/2;
   }
 }
 @media screen and (max-width: 767px) {
-  .p-top-about__photo {
+  .p-top-about__item--photo {
     grid-column: 1/5;
   }
 }
-.p-top-about__photo img {
+.p-top-about__item--photo img {
   height: 100%;
   object-fit: cover;
 }
@@ -1999,11 +1993,11 @@ body {
     position: static;
   }
 }
-.p-top-promise__fixed .c-h2Title {
+.p-top-promise__fixed .c-title1 {
   text-align: left;
 }
 @media screen and (max-width: 1024px) {
-  .p-top-promise__fixed .c-h2Title {
+  .p-top-promise__fixed .c-title1 {
     text-align: center;
   }
 }
@@ -2129,6 +2123,9 @@ body {
   left: -10px;
   box-shadow: 2px 4px 5px #3f9ab3;
   transition: 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 @media screen and (max-width: 1024px) {
   .p-top-price__plan {
@@ -2148,8 +2145,22 @@ body {
   top: 0;
   left: 0;
 }
-.p-top-price__maintenance {
+.p-top-price__plan--coding .p-top-price__planTitle {
+  background-color: #ffffff;
+  color: #64ceeb;
+  border: 1px solid #64ceeb;
+  box-sizing: border-box;
+  border-radius: 25px;
+  padding: 8px 20px;
+}
+.p-top-price__plan--maintenance {
   transition-delay: 0.3s;
+}
+.p-top-price__plan--maintenance .p-top-price__planTitle {
+  background-color: #64ceeb;
+  color: #ffffff;
+  border-radius: 25px;
+  padding: 8px 20px;
 }
 .p-top-price__planTitle {
   font-size: clamp(1.8rem, 1.6rem + 0.625vw, 2rem);
@@ -2189,22 +2200,6 @@ body {
   width: 50px;
   aspect-ratio: 1/1;
   border-radius: 50%;
-}
-
-.p-top-price__coding .p-top-price__planTitle {
-  background-color: #ffffff;
-  color: #64ceeb;
-  border: 1px solid #64ceeb;
-  box-sizing: border-box;
-  border-radius: 25px;
-  padding: 8px 20px;
-}
-
-.p-top-price__maintenance .p-top-price__planTitle {
-  background-color: #64ceeb;
-  color: #ffffff;
-  border-radius: 25px;
-  padding: 8px 20px;
 }
 
 .p-top-flow {
@@ -2440,13 +2435,13 @@ body {
   transition: left 0.3s ease-out;
 }
 @media screen and (max-width: 767px) {
-  .p-top-faq .c-h2Title {
+  .p-top-faq .c-title1 {
     display: inline-block;
     position: relative;
     left: 50%;
     transform: translateX(-50%);
   }
-  .p-top-faq .c-h2Title::before {
+  .p-top-faq .c-title1::before {
     content: "";
     display: block;
     position: absolute;
@@ -2461,7 +2456,7 @@ body {
   }
 }
 @media screen and (max-width: 575px) {
-  .p-top-faq .c-h2Title::before {
+  .p-top-faq .c-title1::before {
     width: 80px;
     height: 80px;
   }
@@ -2503,13 +2498,13 @@ body {
   height: 100vh;
   z-index: -1;
 }
-.p-top-contact .c-h2Title {
+.p-top-contact .c-title1 {
   color: #ffffff;
   background-color: #73be60;
   padding: 30px 20px;
   position: relative;
 }
-.p-top-contact .c-h2Title::after {
+.p-top-contact .c-title1::after {
   content: "";
   border-top: 40px solid #73be60;
   border-left: 60px solid transparent;
@@ -2521,59 +2516,59 @@ body {
   z-index: 1;
 }
 
-.p-contact-form {
+.p-contactForm {
   background-color: rgba(255, 255, 255, 0.8);
   box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.3);
   padding: 60px;
   border-radius: 10px;
 }
 @media screen and (max-width: 767px) {
-  .p-contact-form {
+  .p-contactForm {
     padding: 40px;
   }
 }
 @media screen and (max-width: 575px) {
-  .p-contact-form {
+  .p-contactForm {
     padding: 20px;
   }
 }
-.p-contact-form label {
+.p-contactForm label {
   display: block;
   font-weight: bolder;
   margin-bottom: 0.3em;
   font-size: clamp(1.8rem, 1.6rem + 0.625vw, 2rem);
 }
-.p-contact-form input[type=text],
-.p-contact-form input[type=email],
-.p-contact-form select,
-.p-contact-form textarea {
+.p-contactForm input[type=text],
+.p-contactForm input[type=email],
+.p-contactForm select,
+.p-contactForm textarea {
   width: 100%;
   box-sizing: border-box;
   padding: 10px;
   border-radius: 3px;
   border: 1px solid #aaaaaa;
 }
-.p-contact-form input[type=text]:focus,
-.p-contact-form input[type=email]:focus,
-.p-contact-form select:focus,
-.p-contact-form textarea:focus {
+.p-contactForm input[type=text]:focus,
+.p-contactForm input[type=email]:focus,
+.p-contactForm select:focus,
+.p-contactForm textarea:focus {
   outline: 1px solid #73be60;
 }
-.p-contact-form input[type=text]::placeholder,
-.p-contact-form input[type=email]::placeholder,
-.p-contact-form select::placeholder,
-.p-contact-form textarea::placeholder {
+.p-contactForm input[type=text]::placeholder,
+.p-contactForm input[type=email]::placeholder,
+.p-contactForm select::placeholder,
+.p-contactForm textarea::placeholder {
   font-family: "Roboto", "Noto Sans JP", sans-serif;
   color: #aaaaaa;
 }
-.p-contact-form textarea {
+.p-contactForm textarea {
   height: calc(12em + 20px);
   line-height: 1.5;
 }
-.p-contact-form__item:not(:last-of-type) {
+.p-contactForm__item:not(:last-of-type) {
   margin-bottom: 20px;
 }
-.p-contact-form button {
+.p-contactForm button {
   position: relative;
   color: #fff;
   background-color: #f29949;
@@ -2588,17 +2583,17 @@ body {
   transition: all 0.3s ease-in-out;
   cursor: pointer;
 }
-.p-contact-form button:hover {
+.p-contactForm button:hover {
   background: #ffffff;
   color: #333;
   border-color: #666;
 }
-.p-contact-form button:hover::before, .p-contact-form button:hover::after {
+.p-contactForm button:hover::before, .p-contactForm button:hover::after {
   width: calc(100% + 11px);
   height: calc(100% + 11px);
   border-color: #666;
 }
-.p-contact-form button::before, .p-contact-form button::after {
+.p-contactForm button::before, .p-contactForm button::after {
   content: "";
   /*絶対配置で線の位置を決める*/
   position: absolute;
@@ -2608,23 +2603,23 @@ body {
   /*アニメーションの指定*/
   transition: all 0.3s ease-in-out;
 }
-.p-contact-form button::before {
+.p-contactForm button::before {
   top: -6px;
   left: -6px;
   border-width: 1px 0 0 1px;
 }
-.p-contact-form button::after {
+.p-contactForm button::after {
   bottom: -6px;
   right: -6px;
   border-width: 0 1px 1px 0;
 }
-.p-contact-form__hosoku {
+.p-contactForm__hosoku {
   text-align: center;
 }
-.p-contact-form__hosoku a {
+.p-contactForm__hosoku a {
   text-decoration: underline;
 }
-.p-contact-form__hosoku a:hover {
+.p-contactForm__hosoku a:hover {
   text-decoration: none;
 }
 

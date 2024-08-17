@@ -66,6 +66,7 @@
         </div>
       </div>
     </header>
+
     <main class="l-content">
       <section class="p-top-mainVisual">
         <div class="p-top-mainVisual__bg"></div>
@@ -104,21 +105,21 @@
             <li class="p-top-news__item is-slideIn">
               <time class="p-top-news__time">2024/08/05</time>
               <!-- 1つまで -->
-              <div class="p-top-news__category"><a href="#">お知らせ</a></div>
+              <div class="p-top-news__taxonomy"><a href="#">お知らせ</a></div>
               <div class="p-top-news__title">
                 <a href="#">ここにタイトルが入ります。</a>
               </div>
             </li>
             <li class="p-top-news__item">
               <time class="p-top-news__time">2024/08/05</time>
-              <div class="p-top-news__category"><a href="#">お知らせ</a></div>
+              <div class="p-top-news__taxonomy"><a href="#">お知らせ</a></div>
               <div class="p-top-news__title">
                 <a href="#">ここにタイトルが入ります。</a>
               </div>
             </li>
             <li class="p-top-news__item">
               <time class="p-top-news__time">2024/08/05</time>
-              <div class="p-top-news__category"><a href="#">お知らせ</a></div>
+              <div class="p-top-news__taxonomy"><a href="#">お知らせ</a></div>
               <div class="p-top-news__title">
                 <a href="#">ここにタイトルが入ります。</a>
               </div>
@@ -130,7 +131,7 @@
       <section class="p-top-troubles">
         <div class="l-sectionPadding">
           <div class="l-container">
-            <h2 class="c-h2Title">こんなお悩みありませんか？</h2>
+            <h2 class="c-title1">こんなお悩みありませんか？</h2>
             <div class="p-top-troubles__circle">
               <div class="p-top-troubles__left">
                 <div class="p-top-troubles__item">
@@ -185,10 +186,10 @@
       </section>
 
       <section class="p-top-about l-sectionPadding u-pt0">
-        <h2 class="c-h2Title">そのお悩み私が解決します！</h2>
+        <h2 class="c-title1">そのお悩み私が解決します！</h2>
         <div class="l-container">
           <div class="p-top-about__items">
-            <dl class="p-top-about__profile p-top-about__item">
+            <dl class="p-top-about__item p-top-about__item--profile">
               <dt class="p-top-about__itemTitle">Profile</dt>
               <dd class="p-top-about__itemDetail">
                 <p>
@@ -230,7 +231,7 @@
                 </div>
               </dd>
             </dl>
-            <dl class="p-top-about__history p-top-about__item">
+            <dl class="p-top-about__item p-top-about__item--history">
               <dt class="p-top-about__itemTitle">History</dt>
               <dd class="p-top-about__itemDetail">
                 <p>
@@ -247,7 +248,7 @@
                 <div class="p-snslinks"></div>
               </dd>
             </dl>
-            <dl class="p-top-about__skills p-top-about__item">
+            <dl class="p-top-about__item p-top-about__item--skills">
               <dt class="p-top-about__itemTitle">Skills</dt>
               <dd class="p-top-about__itemDetail">
                 <p>
@@ -272,7 +273,7 @@
                 </p>
               </dd>
             </dl>
-            <div class="p-top-about__photo p-top-about__item">
+            <div class="p-top-about__item p-top-about__item--photo">
               <img src="dist/img/profile.jpg" alt="" />
             </div>
           </div>
@@ -281,7 +282,7 @@
 
       <section class="p-top-work l-sectionPadding">
         <div class="l-container">
-          <h2 class="c-h2Title">制作実績</h2>
+          <h2 class="c-title1">制作実績</h2>
           <div class="p-top-work__inner">
             <p class="p-top-work__text">※以下は実績の一部です。</p>
             <div class="p-top-work__slider">
@@ -348,7 +349,7 @@
         <div class="l-container">
           <div class="p-top-promise__inner">
             <div class="p-top-promise__fixed">
-              <h2 class="c-h2Title">お客様への4つのお約束</h2>
+              <h2 class="c-title1">お客様への4つのお約束</h2>
               <div class="p-top-promise__items">
                 <dl class="p-top-promise__item is-active">
                   <dt class="p-top-promise__title">
@@ -467,10 +468,10 @@
 
       <section class="p-top-price l-sectionPadding">
         <div class="l-container p-top-price__inner">
-          <h2 class="c-h2Title">料金プラン</h2>
+          <h2 class="c-title1">料金プラン</h2>
           <div class="p-top-price__plans">
-            <div class="p-top-price__plan p-top-price__coding u-flex--column">
-              <div class="u-flex__left">
+            <div class="p-top-price__plan p-top-price__plan--coding">
+              <div class="p-top-price__planUpper">
                 <div class="u-text--center">
                   <h3 class="p-top-price__planTitle">新規コーディングプラン</h3>
                 </div>
@@ -493,14 +494,12 @@
                   ※上記は全て税抜き料金です。<br />※完全レスポンシブ対応の料金です。
                 </p>
               </div>
-              <div class="u-flex__right">
+              <div class="p-top-price__planLower">
                 <a href="#" class="c-button2">詳細はこちら</a>
               </div>
             </div>
-            <div
-              class="p-top-price__plan p-top-price__maintenance u-flex--column"
-            >
-              <div class="u-flex__left">
+            <div class="p-top-price__plan p-top-price__plan--maintenance">
+              <div class="p-top-price__planUpper">
                 <div class="u-text--center">
                   <h3 class="p-top-price__planTitle">保守・管理プラン</h3>
                 </div>
@@ -524,7 +523,7 @@
                   ※上記は全て税抜き料金です。<br />※日給契約も可能です。
                 </p>
               </div>
-              <div class="u-flex__right">
+              <div class="p-top-price__planLower">
                 <a href="#" class="c-button2">詳細はこちら</a>
               </div>
             </div>
@@ -535,7 +534,7 @@
       <section class="p-top-flow l-sectionPadding">
         <div class="l-container">
           <div class="p-top-flow__header">
-            <h2 class="c-h2Title">サービスご利用の流れ</h2>
+            <h2 class="c-title1">サービスご利用の流れ</h2>
             <p>わかりやすい5 STEP。まずはお気軽にお問い合わせ下さい！</p>
           </div>
           <div class="p-top-flow__steps">
@@ -609,7 +608,7 @@
 
       <section class="p-top-faq l-sectionPadding">
         <div class="l-container">
-          <h2 class="c-h2Title">よくある質問</h2>
+          <h2 class="c-title1">よくある質問</h2>
           <div class="p-top-faq__inner">
             <div class="p-top-faq__left">
               <img src="dist/img/man-with-green-tie.png" />
@@ -691,19 +690,20 @@
           </div>
         </div>
       </section>
+
       <section class="p-top-contact" id="contact">
-        <h2 class="c-h2Title">
+        <h2 class="c-title1">
           <span class="u-inline-block">無料相談・お問い合わせは</span
           ><span class="u-inline-block">こちら</span>
         </h2>
         <div class="p-top-contact__inner">
           <div class="l-slim-container">
-            <form class="p-contact-form">
-              <div class="p-contact-form__item">
+            <form class="p-contactForm">
+              <div class="p-contactForm__item">
                 <label for="your-name">お名前</label>
                 <input type="text" id="your-name" placeholder="例）山田 太郎" />
               </div>
-              <div class="p-contact-form__item">
+              <div class="p-contactForm__item">
                 <label for="your-name">メールアドレス</label>
                 <input
                   type="email"
@@ -711,23 +711,23 @@
                   placeholder="例）xxxxx@xxxxx.com"
                 />
               </div>
-              <div class="p-contact-form__item">
+              <div class="p-contactForm__item">
                 <label for="your-name">題名</label>
                 <select>
                   <option>無料相談・お見積もり</option>
                   <option>その他</option>
                 </select>
               </div>
-              <div class="p-contact-form__item">
+              <div class="p-contactForm__item">
                 <label for="your-name">メッセージ</label>
                 <textarea
                   placeholder="プロジェクトの概要や予算、納期希望、特記事項等を詳しくお書き下さい。"
                 ></textarea>
               </div>
-              <div class="p-contact-form__item p-contact-form__submit">
+              <div class="p-contactForm__item p-contactForm__submit">
                 <button type="submit">確認画面へ</button>
               </div>
-              <p class="p-contact-form__hosoku">
+              <p class="p-contactForm__hosoku">
                 ※2営業日以内に返信させて頂きます。<br />お問い合わせは<a
                   href="https://www.chatwork.com/ryouslash"
                   target="_blank"
