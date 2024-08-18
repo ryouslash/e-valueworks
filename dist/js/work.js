@@ -17,7 +17,7 @@ var headerHeight = header.offsetHeight; // 数値として保持
 
 jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
   function workCheckVisibility() {
-    var $photoElement = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.p-single-work__photo');
+    var $photoElement = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.p-single-work-client__siteImg');
     var windowTop = jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).scrollTop();
     var windowBottom = windowTop + jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).height();
     $photoElement.each(function () {

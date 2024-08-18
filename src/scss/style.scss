@@ -89,6 +89,7 @@
 
 //single-work
 @use "templates/single-work/_style" as singleWorkTemplate;
+@use "templates/single-work/project/client";
 
 //archive-work
 @use "templates/archive-work/_style" as archiveWorkTemplate;

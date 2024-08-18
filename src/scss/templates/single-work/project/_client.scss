@@ -1,0 +1,125 @@
+@use "../../..//foundation/variables" as *;
+
+.p-single-work-client {
+  &__inner {
+    padding: 60px 0;
+  }
+
+  &__title {
+    font-size: $fontXL;
+    border-bottom: 2px solid #cccccc;
+    margin: 60px 0 1em;
+    padding-bottom: 1em;
+  }
+
+  &__detail {
+    display: flex;
+    gap: 60px;
+
+    @include mq-down(lg) {
+      flex-direction: column-reverse;
+    }
+  }
+
+  &__left {
+    flex: 1;
+  }
+
+  &__right {
+    flex: 1;
+  }
+
+  &__industry {
+    display: inline-block;
+    margin-top: 1em;
+    color: $subColor;
+    border: 1px solid $subColor;
+    padding: 3px 5px;
+  }
+
+  &__infoTable {
+    margin-top: 60px;
+    position: relative;
+    padding: 30px 0;
+  }
+
+  &__tableItem {
+    display: flex;
+    gap: 10px;
+    font-size: $fontS;
+
+    @include mq-down(sm) {
+      display: block;
+    }
+
+    &:not(:last-of-type) {
+      margin-bottom: 0.5em;
+
+      @include mq-down(sm) {
+        margin-bottom: 1em;
+      }
+    }
+
+    dt {
+      width: 100%;
+      max-width: 100px;
+      flex-shrink: 0;
+      font-weight: 600;
+
+      @include mq-down(sm) {
+        max-width: initial;
+        border-bottom: 1px solid #aaaaaa;
+        padding-bottom: 0.3em;
+        margin-bottom: 0.3em;
+      }
+    }
+
+    dd {
+      flex: 1;
+    }
+
+    &--url {
+      a {
+        transition: color 0.3s;
+        &:hover {
+          color: $keyColor;
+        }
+      }
+    }
+  }
+
+  &__tableBg {
+    position: absolute;
+    width: calc(var(--vw) * 100);
+    height: 100%;
+    left: calc(var(--vw) * -50 + 100% + 30px);
+    top: 0;
+    background: rgb(240, 240, 240);
+    background: linear-gradient(
+      82deg,
+      rgb(240, 240, 240) 0%,
+      rgb(239, 239, 239) 57%
+    );
+    z-index: -1;
+
+    @include mq-down(lg) {
+      left: -30px;
+    }
+
+    @include mq-down(sm) {
+      left: -20px;
+    }
+  }
+
+  &__siteImg {
+    opacity: 0;
+    transition: opacity 0.5s, transform 0.5s;
+    transform: translateY(20px);
+    transition-delay: 0.5s;
+
+    &.is-show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}

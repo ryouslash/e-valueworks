@@ -5,7 +5,7 @@ const headerHeight = header.offsetHeight; // 数値として保持
 
 $(document).ready(function() {
   function workCheckVisibility() {
-    var $photoElement = $('.p-single-work__photo');
+    var $photoElement = $('.p-single-work-client__siteImg');
     var windowTop = $(window).scrollTop();
     var windowBottom = windowTop + $(window).height();
 
