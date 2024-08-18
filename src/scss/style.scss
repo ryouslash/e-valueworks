@@ -60,6 +60,7 @@
 
 // 404
 @use "pages/404/style" as errorPage;
+@use "pages/404/project/error";
 
 // price
 @use "pages/price/style" as pricePage;
