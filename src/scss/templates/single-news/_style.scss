@@ -1,77 +1,52 @@
 @use "../../foundation/variables" as *;
 
-.l-content__inner.-single-news {
-  align-items: flex-start;
-  gap: 60px;
-
-  @include mq-down(lg) {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-  }
-
-  .l-mainContent {
-    order: 2;
-    position: relative;
+.t-single-news {
+  .l-content__inner {
+    align-items: flex-start;
+    gap: 60px;
 
     @include mq-down(lg) {
-      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
     }
 
-    &::before {
-      content: "";
-      position: absolute;
-      width: 1px;
-      height: 100%;
-      background-color: #cccccc;
-      left: -50px;
-      top: 0;
+    .l-mainContent {
+      order: 2;
+      position: relative;
+
       @include mq-down(lg) {
-        display: none;
+        width: 100%;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        width: 1px;
+        height: 100%;
+        background-color: #cccccc;
+        left: -50px;
+        top: 0;
+        @include mq-down(lg) {
+          display: none;
+        }
       }
     }
-  }
 
-  .l-sidebar {
-    order: 1;
-    position: sticky;
-    top: calc(var(--headerHeight) + 60px);
-    left: 0;
+    .l-sidebar {
+      order: 1;
+      position: sticky;
+      top: calc(var(--headerHeight) + 60px);
+      left: 0;
 
-    @include mq-down(lg) {
-      position: static;
-      margin-top: 0;
-    }
-
-    &__inner {
       @include mq-down(lg) {
-        padding-bottom: 0.3em;
-        border-bottom: 1px solid #cccccc;
-      }
-    }
-  }
-
-  .p-single-news,
-  .p-news-taxonomy {
-    .p-postHead__thumbnail {
-      margin-top: 0.8em;
-    }
-
-    &__taxonomy {
-      font-size: $fontL;
-      font-weight: 700;
-
-      @include mq-down(sm) {
-        text-align: center;
+        position: static;
+        margin-top: 0;
       }
     }
 
-    &__taxonomyEn {
-      color: #aaaaaa;
-      margin-top: 0.3em;
-      @include mq-down(sm) {
-        text-align: center;
-      }
+    .p-editorContent {
+      margin: 60px 0;
     }
   }
 }

@@ -35,6 +35,7 @@
 @use "object/project/_gnavi.scss";
 @use "object/project/_drawer";
 @use "object/project/_editorcontent";
+@use "object/project/_posthead";
 @use "object/project/_postlist";
 @use "object/project/sidebar/_sidebaritem";
 @use "object/project/sidebar/_lastestposts";
@@ -81,7 +82,6 @@
 
 // single
 @use "templates/single/_style" as singleTemplate;
-@use "templates/single/project/_posthead";
 @use "templates/single/project/_relatedpost";
 
 // archive
@@ -89,6 +89,7 @@
 
 //single-news
 @use "templates/single-news/_style" as singleNewsTemplate;
+@use "templates/single-news/project/title" as singleNewsTitle;
 
 //archive-news
 @use "templates/archive-news/_style" as archiveNewsTemplate;

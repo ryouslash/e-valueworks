@@ -1,11 +1,13 @@
 @use "../../foundation/variables" as *;
 
-.c-pageHeader.-single {
-  background-image: url("../img/column.jpg");
-  background-size: cover;
-  background-position: center;
-}
+.t-single {
+  .c-pageHeader {
+    background-image: url("../img/column.jpg");
+    background-size: cover;
+    background-position: center;
+  }
 
-.p-editorContent.-single {
-  margin: 60px 0;
+  .p-editorContent {
+    margin: 60px 0;
+  }
 }

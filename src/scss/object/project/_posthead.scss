@@ -1,6 +1,6 @@
-@use "../../../foundation/variables" as *;
+@use "../../foundation/variables" as *;
 
-.p-single-postHead {
+.p-postHead {
   &__title {
     font-size: $fontL;
     font-weight: 700;

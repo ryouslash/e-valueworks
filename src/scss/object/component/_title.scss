@@ -5,3 +5,11 @@
   text-align: center;
   font-weight: 700;
 }
+
+.c-subTitle {
+  color: #aaaaaa;
+  margin-top: 0.3em;
+  @include mq-down(sm) {
+    text-align: center;
+  }
+}
