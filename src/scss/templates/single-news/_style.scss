@@ -1,6 +1,8 @@
 @use "../../foundation/variables" as *;
 
-.t-single-news {
+.t-single-news,
+.t-archive-news,
+.t-taxonomy-archive-news {
   .l-content__inner {
     align-items: flex-start;
     gap: 60px;
