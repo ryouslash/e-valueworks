@@ -1199,7 +1199,7 @@ body {
   font-size: 1.4rem;
   margin: 0.5em 0;
 }
-.p-postList__category, .p-postList__taxonomy {
+.p-postList__taxonomy {
   padding: 0.1em 0.6em;
   transition: color 0.5s, background-color 0.5s;
   border: 1px solid #73be60;
@@ -2626,7 +2626,7 @@ body {
   text-decoration: none;
 }
 
-.l-homeContent .c-pageHeader {
+.c-pageHeader.-index {
   background-image: url(../img/column.jpg);
   background-size: cover;
   background-position: center;
@@ -2750,7 +2750,7 @@ body {
   font-size: 1.4rem;
 }
 
-.p-archive .c-pageHeader {
+.c-pageHeader.-archive {
   background-image: url(../img/column.jpg);
   background-size: cover;
   background-position: center;
