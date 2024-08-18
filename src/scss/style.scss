@@ -56,37 +56,38 @@
 @use "pages/top/project/_contact";
 
 // index
-@use "pages/index/style" as index;
+@use "pages/index/style" as indexPage;
 
 // 404
-@use "pages/404/style" as error;
+@use "pages/404/style" as errorPage;
 
 // price
 @use "pages/price/style" as pricePage;
+@use "pages/price/project/plans";
 
 // templates
 // page
-@use "templates/page/style" as page;
+@use "templates/page/style" as pageTemplate;
 
 // single
-@use "templates/single/style" as single;
+@use "templates/single/style" as singleTemplate;
 @use "templates/single/project/posthead";
 @use "templates/single/project/relatedpost";
 
 // archive
-@use "templates/archive/style" as archive;
+@use "templates/archive/style" as archiveTemplate;
 
 //single-news
-@use "templates/single-news/style" as singleNews;
+@use "templates/single-news/style" as singleNewsTemplate;
 
 //archive-news
-@use "templates/archive-news/style" as archiveNews;
+@use "templates/archive-news/style" as archiveNewsTemplate;
 
 //single-work
-@use "templates/single-work/style" as singleWork;
+@use "templates/single-work/style" as singleWorkTemplate;
 
 //archive-work
-@use "templates/archive-work/style" as archiveWork;
+@use "templates/archive-work/style" as archiveWorkTemplate;
 
 // taxonomy-archive-news
-@use "templates/taxonomy-archive-news/style" as newsTaxonomy;
+@use "templates/taxonomy-archive-news/style" as taxonomyArchiveNewsTemplate;

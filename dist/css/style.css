@@ -2642,16 +2642,13 @@ body {
   margin-top: 60px;
 }
 
-.p-page-price__inner {
+.p-price-plans {
   margin-top: 60px;
 }
-.p-page-price__plans {
-  margin: 60px 0;
-}
-.p-page-price__plan:not(:last-of-type) {
+.p-price-plans__item:not(:last-of-type) {
   margin-bottom: 60px;
 }
-.p-page-price__planTItle {
+.p-price-plans__title {
   font-size: clamp(2rem, 1.8rem + 0.625vw, 2.6rem);
 }
 
