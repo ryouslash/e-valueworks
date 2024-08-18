@@ -1,17 +1,13 @@
 @use "../../foundation/variables" as *;
 
-.p-single-news,
-.p-archive-news,
-.p-news-taxonomy {
-  .l-content__inner {
-    align-items: flex-start;
-    gap: 60px;
+.l-content__inner.-single-news {
+  align-items: flex-start;
+  gap: 60px;
 
-    @include mq-down(lg) {
-      display: flex;
-      flex-direction: column;
-      gap: 30px;
-    }
+  @include mq-down(lg) {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
   }
 
   .l-mainContent {
@@ -20,9 +16,6 @@
 
     @include mq-down(lg) {
       width: 100%;
-      &::before {
-        display: none;
-      }
     }
 
     &::before {
@@ -33,10 +26,9 @@
       background-color: #cccccc;
       left: -50px;
       top: 0;
-    }
-
-    &__inner {
-      margin: 60px 0;
+      @include mq-down(lg) {
+        display: none;
+      }
     }
   }
 
@@ -58,28 +50,28 @@
       }
     }
   }
-}
 
-.p-single-news,
-.p-news-taxonomy {
-  .p-postHead__thumbnail {
-    margin-top: 0.8em;
-  }
-
-  &__taxonomy {
-    font-size: $fontL;
-    font-weight: 700;
-
-    @include mq-down(sm) {
-      text-align: center;
+  .p-single-news,
+  .p-news-taxonomy {
+    .p-postHead__thumbnail {
+      margin-top: 0.8em;
     }
-  }
 
-  &__taxonomyEn {
-    color: #aaaaaa;
-    margin-top: 0.3em;
-    @include mq-down(sm) {
-      text-align: center;
+    &__taxonomy {
+      font-size: $fontL;
+      font-weight: 700;
+
+      @include mq-down(sm) {
+        text-align: center;
+      }
+    }
+
+    &__taxonomyEn {
+      color: #aaaaaa;
+      margin-top: 0.3em;
+      @include mq-down(sm) {
+        text-align: center;
+      }
     }
   }
 }
