@@ -1,6 +1,6 @@
 @use "../../../foundation/variables" as *;
 
-.p-relatedPosts {
+.p-single-relatedPosts {
   margin: 120px 0 0;
 
   & > h2 {
@@ -47,7 +47,7 @@
     }
 
     &:hover {
-      .p-relatedPosts__thumbnail img {
+      .p-single-relatedPosts__thumbnail img {
         transform: scale(1.2);
       }
     }

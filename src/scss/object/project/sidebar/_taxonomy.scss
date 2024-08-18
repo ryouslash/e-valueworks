@@ -1,0 +1,41 @@
+.l-sidebar {
+  // カテゴリー、カスタムタクソノミー
+  .p-sidebarTaxonomy {
+    &__item {
+      &:not(:last-of-type) {
+        a {
+          margin-bottom: 0.5em;
+        }
+      }
+
+      a {
+        transition: color 0.3s;
+        display: block;
+        padding-bottom: 0.5em;
+        border-bottom: 1px solid #aaaaaa;
+
+        &:hover {
+          color: #aaaaaa;
+        }
+      }
+    }
+  }
+
+  // タグ
+  .p-sidebarTag {
+    &__items {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8em;
+    }
+
+    &__item {
+      a {
+        transition: color 0.3s;
+        &:hover {
+          color: #aaaaaa;
+        }
+      }
+    }
+  }
+}

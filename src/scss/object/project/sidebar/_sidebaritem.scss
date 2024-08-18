@@ -1,0 +1,36 @@
+@use "../../../foundation/variables" as *;
+
+.p-sidebarItem {
+  background-color: #eeeeee;
+  padding: 20px;
+
+  &:not(:last-of-type) {
+    margin-bottom: 30px;
+  }
+
+  &__title {
+    font-size: $fontM;
+    text-align: center;
+    font-weight: 500;
+    margin-bottom: 20px;
+
+    &::before {
+      content: "";
+      display: block;
+      width: 30px;
+      height: 10px;
+      margin-left: auto;
+      border-right: 1px solid #aaaaaa;
+      border-top: 1px solid #aaaaaa;
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      width: 30px;
+      height: 10px;
+      border-left: 1px solid #aaaaaa;
+      border-bottom: 1px solid #aaaaaa;
+    }
+  }
+}

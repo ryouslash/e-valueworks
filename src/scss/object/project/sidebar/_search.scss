@@ -1,0 +1,40 @@
+@use "../../../foundation/variables" as *;
+
+.p-sidebarSearch {
+  form {
+    display: flex;
+    gap: 3px;
+
+    input[type="text"] {
+      box-sizing: border-box;
+      flex: 1;
+      padding: 10px;
+      border-radius: 3px;
+      border: 1px solid #aaaaaa;
+
+      &:focus {
+        outline: 1px solid $keyColor;
+      }
+
+      &::placeholder {
+        font-family: "Roboto", "Noto Sans JP", sans-serif;
+        color: #aaaaaa;
+      }
+    }
+
+    button {
+      flex-shrink: 0;
+      background-color: $keyColor;
+      color: #ffffff;
+      border: none;
+      padding: 0 10px;
+      border-radius: 3px;
+      transition: opacity 0.3s;
+      cursor: pointer;
+
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+}

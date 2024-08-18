@@ -13,9 +13,7 @@
  */
 @use "layout/_footer";
 @use "layout/_header";
-@use "layout/_sidebar";
 @use "layout/_common";
-@use "layout/_blockeditor";
 @use "layout/_content";
 
 /*
@@ -36,7 +34,12 @@
 // project（全ページ共通）
 @use "object/project/_gnavi.scss";
 @use "object/project/_drawer";
-@use "object/project/postlist";
+@use "object/project/_editorcontent";
+@use "object/project/_postlist";
+@use "object/project/sidebar/_sidebaritem";
+@use "object/project/sidebar/_lastestposts";
+@use "object/project/sidebar/_taxonomy";
+@use "object/project/sidebar/search";
 
 // utility
 @use "object/utility/_utilities";
@@ -56,39 +59,39 @@
 @use "pages/top/project/_contact";
 
 // index
-@use "pages/index/style" as indexPage;
+@use "pages/index/_style" as indexPage;
 
 // 404
-@use "pages/404/style" as errorPage;
-@use "pages/404/project/error";
+@use "pages/404/_style" as errorPage;
+@use "pages/404/project/_error";
 
 // price
-@use "pages/price/style" as pricePage;
-@use "pages/price/project/plans";
+@use "pages/price/_style" as pricePage;
+@use "pages/price/project/_plans";
 
 // templates
 // page
-@use "templates/page/style" as pageTemplate;
+@use "templates/page/_style" as pageTemplate;
 
 // single
-@use "templates/single/style" as singleTemplate;
-@use "templates/single/project/posthead";
-@use "templates/single/project/relatedpost";
+@use "templates/single/_style" as singleTemplate;
+@use "templates/single/project/_posthead";
+@use "templates/single/project/_relatedpost";
 
 // archive
-@use "templates/archive/style" as archiveTemplate;
+@use "templates/archive/_style" as archiveTemplate;
 
 //single-news
-@use "templates/single-news/style" as singleNewsTemplate;
+@use "templates/single-news/_style" as singleNewsTemplate;
 
 //archive-news
-@use "templates/archive-news/style" as archiveNewsTemplate;
+@use "templates/archive-news/_style" as archiveNewsTemplate;
 
 //single-work
-@use "templates/single-work/style" as singleWorkTemplate;
+@use "templates/single-work/_style" as singleWorkTemplate;
 
 //archive-work
-@use "templates/archive-work/style" as archiveWorkTemplate;
+@use "templates/archive-work/_style" as archiveWorkTemplate;
 
 // taxonomy-archive-news
-@use "templates/taxonomy-archive-news/style" as taxonomyArchiveNewsTemplate;
+@use "templates/taxonomy-archive-news/_style" as taxonomyArchiveNewsTemplate;
