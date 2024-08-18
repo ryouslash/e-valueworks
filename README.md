@@ -1,6 +1,6 @@
 E-VALUE WORKS Web サイト
 
-CSS 設計：ベースとして FLOCSS を採用
+CSS 設計：ベースとして基本は FLOCSS を採用
 
 ◾️foundation→ リセット系 CSS やベース CSS、変数やブレイクポイントなどを設定しているファイル類。
 
@@ -22,13 +22,14 @@ CSS 設計：ベースとして FLOCSS を採用
 
 ◾️templates > テンプレート名 > project→ 固定ページ、投稿、カスタム投稿でしか使わないプロジェクト要素を格納。
 
-クラス名は
+クラス名は以下のルールで接頭辞を付与するものとする。
 ・固定ページ「p-page-プロジェクト名」
 ・投稿詳細ページ「p-single-プロジェクト名」、投稿アーカイブ「p-archive-プロジェクト名」（Date、Category、Tag、Author を分けない場合）、「p-タクソノミー名-archive-プロジェクト名」（Date、Category、Tag、Author を分ける場合）Blog Posts Index ページ「p-index-archive」
 ・カスタム投稿詳細ページ「p-single-カスタム投稿名-プロジェクト名」、カスタム投稿アーカイブページ「p-archive-カスタム投稿名-プロジェクト名」、カスタムタクソノミーアーカイブページ「p-カスタムタクソノミー名-archive-カスタム投稿名-プロジェクト名」
-とする。
 
-※SCSS ファイル格納ディレクトリの「templates > テンプレート名 > project」のうち、テンプレート名の付け方は以下の通り。
+※「p-archve-work-work」（カスタム投稿「work」アーカイブテンプレート内の実績セクションの場合） などになる場合は、2 回繰り返さず「p-archive-work」で OK。
+
+また、SCSS ファイル格納ディレクトリの「templates > テンプレート名 > project」のうち、テンプレート名の付け方は以下の通り。
 
 ・投稿ページ「single」
 ・固定ページ「page」

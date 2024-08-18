@@ -29,13 +29,13 @@
     }
 
     &:hover {
-      .p-archive-work__photo {
+      .p-archive-work__siteImg {
         opacity: 0.7;
       }
     }
   }
 
-  &__photo {
+  &__siteImg {
     transition: opacity 0.5s;
   }
 

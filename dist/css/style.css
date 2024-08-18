@@ -3018,10 +3018,10 @@ body {
     width: 100%;
   }
 }
-.p-archive-work__item:hover .p-archive-work__photo {
+.p-archive-work__item:hover .p-archive-work__siteImg {
   opacity: 0.7;
 }
-.p-archive-work__photo {
+.p-archive-work__siteImg {
   transition: opacity 0.5s;
 }
 .p-archive-work__industry {
