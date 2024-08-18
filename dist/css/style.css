@@ -667,6 +667,36 @@ body {
   opacity: 1;
 }
 
+@media screen and (max-width: 1024px) {
+  .l-content {
+    margin-top: 59px;
+  }
+}
+.l-content__inner {
+  display: flex;
+  gap: 30px;
+  padding: 60px 0;
+}
+@media screen and (max-width: 1024px) {
+  .l-content__inner {
+    display: block;
+  }
+}
+.l-content__inner .l-mainContent {
+  flex: 1;
+}
+.l-content__inner .l-sidebar {
+  width: 100%;
+  max-width: 300px;
+  flex-shrink: 0;
+}
+@media screen and (max-width: 1024px) {
+  .l-content__inner .l-sidebar {
+    margin-top: 30px;
+    max-width: initial;
+  }
+}
+
 .l-container {
   max-width: 1200px;
   margin: 0 auto;
@@ -697,36 +727,6 @@ body {
 @media screen and (max-width: 575px) {
   .l-sectionPadding {
     padding: 60px 0 100px;
-  }
-}
-
-@media screen and (max-width: 1024px) {
-  .l-content {
-    margin-top: 59px;
-  }
-}
-.l-content__inner {
-  display: flex;
-  gap: 30px;
-  padding: 60px 0;
-}
-@media screen and (max-width: 1024px) {
-  .l-content__inner {
-    display: block;
-  }
-}
-.l-content__inner .l-mainContent {
-  flex: 1;
-}
-.l-content__inner .l-sidebar {
-  width: 100%;
-  max-width: 300px;
-  flex-shrink: 0;
-}
-@media screen and (max-width: 1024px) {
-  .l-content__inner .l-sidebar {
-    margin-top: 30px;
-    max-width: initial;
   }
 }
 
@@ -1341,6 +1341,9 @@ body {
   }
 }
 
+/*
+ * pages
+ */
 .p-top-mainVisual {
   position: relative;
   min-height: calc(400px + 5vw);
@@ -2652,6 +2655,9 @@ body {
   font-size: clamp(2rem, 1.8rem + 0.625vw, 2.6rem);
 }
 
+/*
+ * templates（固定ページ、投稿、カスタム投稿、アーカイブ）
+ */
 .p-editorContent,
 .-page-template2 {
   margin-top: 60px;

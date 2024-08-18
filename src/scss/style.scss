@@ -13,8 +13,8 @@
  */
 @use "layout/_footer";
 @use "layout/_header";
-@use "layout/_common";
 @use "layout/_content";
+@use "layout/_common";
 
 /*
  * object
@@ -44,7 +44,10 @@
 // utility
 @use "object/utility/_utilities";
 
-// pages
+/*
+ * pages
+ */
+
 // top
 @use "pages/top/style" as top;
 @use "pages/top/project/_mainvisual";
@@ -69,7 +72,10 @@
 @use "pages/price/_style" as pricePage;
 @use "pages/price/project/_plans";
 
-// templates
+/*
+ * templates（固定ページ、投稿、カスタム投稿、アーカイブ）
+ */
+
 // page
 @use "templates/page/_style" as pageTemplate;
 
