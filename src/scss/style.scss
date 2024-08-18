@@ -99,6 +99,7 @@
 
 //archive-work
 @use "templates/archive-work/_style" as archiveWorkTemplate;
+@use "templates/archive-work/project/work" as archiveWork;
 
 // taxonomy-archive-news
 @use "templates/taxonomy-archive-news/_style" as taxonomyArchiveNewsTemplate;
