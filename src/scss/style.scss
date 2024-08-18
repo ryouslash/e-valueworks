@@ -55,29 +55,38 @@
 @use "pages/top/project/_faq";
 @use "pages/top/project/_contact";
 
-// page
-@use "pages/page/style" as page;
-@use "pages/page/price/style" as pricePage;
-
-// single
-@use "pages/single/style" as single;
-@use "pages/single/project/posthead";
-@use "pages/single/project/relatedpost";
-@use "pages/single/work/style" as singleWork;
-@use "pages/single/news/style" as singleNews;
-
-// archive
-@use "pages/archive/style" as archive;
-
-// custom-post-archive
-@use "pages/custom-post-archive/work/style" as custom-post-archiveWork;
-@use "pages/custom-post-archive/news/style" as custom-post-archiveNews;
-
-// custom-taxonomy-archive
-@use "pages/custom-taxonomy-archive/news/style" as newsTaxonomy;
-
-// home
-@use "pages/home/style" as home;
+// index
+@use "pages/index/style" as index;
 
 // 404
 @use "pages/404/style" as error;
+
+// price
+@use "pages/price/style" as pricePage;
+
+// templates
+// page
+@use "templates/page/style" as page;
+
+// single
+@use "templates/single/style" as single;
+@use "templates/single/project/posthead";
+@use "templates/single/project/relatedpost";
+
+// archive
+@use "templates/archive/style" as archive;
+
+//single-news
+@use "templates/single-news/style" as singleNews;
+
+//archive-news
+@use "templates/archive-news/style" as archiveNews;
+
+//single-work
+@use "templates/single-work/style" as singleWork;
+
+//archive-work
+@use "templates/archive-work/style" as archiveWork;
+
+// taxonomy-archive-news
+@use "templates/taxonomy-archive-news/style" as newsTaxonomy;
