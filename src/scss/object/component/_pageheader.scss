@@ -3,8 +3,6 @@
 .c-pageHeader {
   padding: 60px 0;
   background-color: #eeeeee;
-  margin-left: calc(-50 * var(--vw) + 50%);
-  margin-right: calc(-50 * var(--vw) + 50%);
   position: relative;
 
   @include mq-down(sm) {

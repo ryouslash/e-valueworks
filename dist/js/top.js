@@ -52,7 +52,7 @@ setTimeout(function () {
 
 // メインビジュアルのテキスト、ボタン要素を取得
 var mainVisualText = document.querySelector('.p-top-mainVisual__text');
-var mainVisualButton = document.querySelector('.p-top-mainVisual__button');
+var mainVisualButton = document.querySelector('.p-top-mainVisual__buttons');
 setTimeout(function () {
   mainVisualText.classList.add('is-show');
 }, 4300);

@@ -1,0 +1,23 @@
+@use "../../../foundation/variables" as *;
+
+.p-price-maintenancePlan {
+  &__title {
+    font-size: $fontL;
+    font-weight: 700;
+    background-color: #98daec;
+    color: #ffffff;
+    padding: 15px 10px;
+    text-align: center;
+    border-radius: 5px;
+  }
+
+  &__detail {
+    margin-top: 60px;
+
+    p {
+      &:not(:last-of-type) {
+        margin-bottom: 1em;
+      }
+    }
+  }
+}

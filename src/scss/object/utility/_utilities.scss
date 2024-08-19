@@ -1,7 +1,14 @@
 @use "../../foundation/variables" as *;
-
 .u-inline-block {
   display: inline-block;
+}
+
+.u-md--hide {
+  display: block;
+
+  @include mq-down() {
+    display: none;
+  }
 }
 
 .u-mb0 {
@@ -20,10 +27,14 @@
   text-align: center;
 }
 
-.u-md--hide {
-  display: block;
-
-  @include mq-down() {
-    display: none;
-  }
+.u-emphasis--pink {
+  background-image: radial-gradient(
+    circle at center,
+    #e49cac 30%,
+    transparent 30%
+  );
+  background-position: top right;
+  background-repeat: repeat-x;
+  background-size: 1em 0.3em;
+  padding-top: 0.5em;
 }

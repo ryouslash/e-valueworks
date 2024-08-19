@@ -1,0 +1,21 @@
+@use "../../../foundation/variables" as *;
+
+.p-price-osusume {
+  margin-top: 60px;
+  &__inner {
+    display: flex;
+    gap: 30px;
+    padding: 30px 60px;
+    background-color: #eeeeee;
+  }
+
+  &__left {
+    width: 100%;
+    max-width: 120px;
+    flex-shrink: 0;
+  }
+
+  &__right {
+    flex: 1;
+  }
+}

@@ -33,7 +33,7 @@ setTimeout(() => {
 
 // メインビジュアルのテキスト、ボタン要素を取得
 const mainVisualText = document.querySelector('.p-top-mainVisual__text');
-const mainVisualButton = document.querySelector('.p-top-mainVisual__button');
+const mainVisualButton = document.querySelector('.p-top-mainVisual__buttons');
 
 setTimeout(() => {
   mainVisualText.classList.add('is-show');

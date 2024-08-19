@@ -78,7 +78,7 @@
   }
 
   &__text,
-  &__button {
+  &__buttons {
     opacity: 0;
     visibility: hidden;
     transform: translateY(20px);
@@ -113,7 +113,7 @@
     }
   }
 
-  &__button {
+  &__buttons {
     display: flex;
     width: 100%;
     max-width: 500px;
@@ -130,10 +130,45 @@
     }
   }
 
-  .c-button {
+  &__button {
+    display: flex;
+    padding: 20px 0;
+    font-weight: 700;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 2px 2px 6px #aaaaaa;
+    position: relative;
+    top: 0;
+    left: 0;
+    transition: 0.3s;
     width: 50%;
+
     @include mq-down(sm) {
       width: 100%;
+    }
+
+    &:hover {
+      top: 2px;
+      left: 2px;
+    }
+
+    &--chatwork {
+      background-color: #dcdcdc;
+
+      img {
+        width: 20px;
+        margin-right: 10px;
+      }
+    }
+
+    &--contact {
+      background: $keyColor;
+      color: #ffffff;
+    }
+
+    svg {
+      font-size: 2rem;
+      margin-right: 10px;
     }
   }
 }

@@ -1,0 +1,87 @@
+@use "../../../foundation/variables" as *;
+
+.p-price-codingPlan {
+  &__items {
+    margin-top: 60px;
+  }
+  &__item {
+    &:not(:last-of-type) {
+      margin-bottom: 60px;
+    }
+  }
+
+  &__h2Title {
+    font-size: $fontL;
+    font-weight: 700;
+    background-color: #98daec;
+    color: #ffffff;
+    padding: 15px 10px;
+    text-align: center;
+    border-radius: 5px;
+    text-shadow: 1px 2px 5px #70b4c77f;
+  }
+
+  &__h3Title {
+    font-size: $fontM;
+    font-weight: 600;
+    position: relative;
+    padding-left: 40px;
+
+    &::before {
+      content: "";
+      background-color: #98daec;
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      width: 30px;
+      height: 5px;
+    }
+  }
+
+  &__detail {
+    margin-top: 30px;
+  }
+
+  &__table {
+    margin-top: 30px;
+    font-weight: 500;
+
+    table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 2px 0;
+    }
+
+    tbody > tr {
+      padding: 10px;
+      &:nth-of-type(2n) {
+        background-color: #eeeeee;
+      }
+
+      td {
+        &:first-of-type,
+        &:nth-of-type(2) {
+          text-align: center;
+        }
+
+        &:nth-of-type(2) {
+          font-weight: 600;
+          font-size: $fontM;
+        }
+      }
+    }
+
+    th,
+    td {
+      padding: 10px;
+      vertical-align: middle;
+    }
+
+    th {
+      background-color: #c5ecf7;
+      text-align: center;
+    }
+  }
+}

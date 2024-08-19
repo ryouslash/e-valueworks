@@ -30,6 +30,7 @@
 @use "object/component/_postmetas";
 @use "object/component/_prevnextnavi";
 @use "object/component/_pagination";
+@use "object/component/_table";
 
 // project（全ページ共通）
 @use "object/project/_gnavi.scss";
@@ -71,7 +72,11 @@
 
 // price
 @use "pages/price/_style" as pricePage;
-@use "pages/price/project/_plans";
+@use "pages/price/project/_intro";
+@use "pages/price/project/_codingplan";
+@use "pages/price/project/_osusume";
+@use "pages/price/project/_estimate";
+@use "pages/price/project/_maintenanceplan";
 
 /*
  * templates（固定ページ、投稿、カスタム投稿、アーカイブ）
