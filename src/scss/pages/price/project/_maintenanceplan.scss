@@ -1,6 +1,8 @@
 @use "../../../foundation/variables" as *;
 
 .p-price-maintenancePlan {
+  margin-top: 90px;
+
   &__title {
     font-size: $fontL;
     font-weight: 700;
@@ -18,6 +20,44 @@
       &:not(:last-of-type) {
         margin-bottom: 1em;
       }
+    }
+  }
+
+  &__table {
+    margin-top: 30px;
+    font-weight: 500;
+
+    table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 2px 0;
+    }
+
+    tbody > tr {
+      padding: 10px;
+
+      td {
+        &:first-of-type,
+        &:nth-of-type(2) {
+          text-align: center;
+        }
+
+        &:nth-of-type(2) {
+          font-weight: 600;
+          font-size: $fontM;
+        }
+      }
+    }
+
+    th,
+    td {
+      padding: 10px;
+      vertical-align: middle;
+    }
+
+    th {
+      background-color: #c5ecf7;
+      text-align: center;
     }
   }
 }

@@ -2708,6 +2708,9 @@ body {
   margin-bottom: 1em;
 }
 
+.p-price-codingPlan {
+  margin-top: 90px;
+}
 .p-price-codingPlan__items {
   margin-top: 60px;
 }
@@ -2794,6 +2797,9 @@ body {
   flex: 1;
 }
 
+.p-price-maintenancePlan {
+  margin-top: 90px;
+}
 .p-price-maintenancePlan__title {
   font-size: clamp(2rem, 1.8rem + 0.625vw, 2.6rem);
   font-weight: 700;
@@ -2808,6 +2814,34 @@ body {
 }
 .p-price-maintenancePlan__detail p:not(:last-of-type) {
   margin-bottom: 1em;
+}
+.p-price-maintenancePlan__table {
+  margin-top: 30px;
+  font-weight: 500;
+}
+.p-price-maintenancePlan__table table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 2px 0;
+}
+.p-price-maintenancePlan__table tbody > tr {
+  padding: 10px;
+}
+.p-price-maintenancePlan__table tbody > tr td:first-of-type, .p-price-maintenancePlan__table tbody > tr td:nth-of-type(2) {
+  text-align: center;
+}
+.p-price-maintenancePlan__table tbody > tr td:nth-of-type(2) {
+  font-weight: 600;
+  font-size: clamp(1.8rem, 1.6rem + 0.625vw, 2rem);
+}
+.p-price-maintenancePlan__table th,
+.p-price-maintenancePlan__table td {
+  padding: 10px;
+  vertical-align: middle;
+}
+.p-price-maintenancePlan__table th {
+  background-color: #c5ecf7;
+  text-align: center;
 }
 
 /*
