@@ -44,6 +44,10 @@
     font-weight: 700;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); // ライン上に影をつける
 
+    @include mq-down(sm) {
+      padding: 15px;
+    }
+
     &:after {
       content: "";
       position: absolute;

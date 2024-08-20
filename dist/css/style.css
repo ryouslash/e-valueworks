@@ -1341,6 +1341,7 @@ body {
 .p-fixCta__left {
   writing-mode: vertical-rl;
   background-color: #18c1f0;
+  font-size: clamp(1.8rem, 1.6rem + 0.625vw, 2rem);
   line-height: 1;
   padding: 20px 10px;
   color: #ffffff;
@@ -2945,6 +2946,7 @@ body {
 @media screen and (max-width: 575px) {
   .p-price-intro__title {
     width: calc(100% - 40px);
+    padding: 15px;
   }
 }
 .p-price-intro__title:after {
@@ -3096,6 +3098,11 @@ body {
   font-size: clamp(1.8rem, 1.6rem + 0.625vw, 2rem);
   font-weight: 700;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+@media screen and (max-width: 575px) {
+  .p-price-osusume__title {
+    padding: 15px;
+  }
 }
 .p-price-osusume__title:after {
   content: "";
