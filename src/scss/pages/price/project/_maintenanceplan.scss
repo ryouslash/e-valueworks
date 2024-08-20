@@ -1,7 +1,7 @@
 @use "../../../foundation/variables" as *;
 
 .p-price-maintenancePlan {
-  margin-top: 90px;
+  margin: 90px 0 0;
 
   &__title {
     font-size: $fontL;
@@ -15,6 +15,9 @@
 
   &__detail {
     margin-top: 60px;
+    @include mq-down(sm) {
+      margin-top: 30px;
+    }
 
     p {
       &:not(:last-of-type) {
@@ -31,6 +34,7 @@
       width: 100%;
       border-collapse: separate;
       border-spacing: 2px 0;
+      white-space: nowrap;
     }
 
     tbody > tr {
@@ -59,5 +63,9 @@
       background-color: #c5ecf7;
       text-align: center;
     }
+  }
+
+  &__tableRes {
+    overflow-x: scroll;
   }
 }

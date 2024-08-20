@@ -9,6 +9,7 @@ module.exports = {
     common: ['./src/js/common.js', './src/scss/style.scss'],
     top: './src/js/top.js',
     work: './src/js/work.js',
+    price: './src/js/price.js',
   },
   output: {  //出力先
     filename: 'js/[name].js',

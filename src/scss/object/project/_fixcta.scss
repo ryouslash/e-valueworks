@@ -1,0 +1,100 @@
+@use "../../foundation/variables" as *;
+
+.p-fixCta {
+  position: fixed;
+  right: -240px;
+  transform: translateY(-50%);
+  top: 50%;
+  z-index: 10;
+  transition: right 0.5s;
+
+  &.is-active {
+    right: 0;
+  }
+
+  &__inner {
+    display: flex;
+  }
+
+  &__left {
+    writing-mode: vertical-rl;
+    background-color: $keyColor;
+    line-height: 1;
+    padding: 20px 10px;
+    color: #ffffff;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.5s;
+
+    &:hover {
+      background-color: #4ecff2;
+    }
+  }
+
+  &__right {
+    width: 240px;
+    padding: 20px;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    border-top: 3px solid $keyColor;
+    border-bottom: 3px solid $keyColor;
+    position: relative;
+  }
+
+  &__close {
+    position: absolute;
+    top: 0;
+    right: 20px;
+    transform: translateY(-50%);
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: $keyColor;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.5s;
+
+    &:hover {
+      background-color: #4ecff2;
+    }
+  }
+
+  &__naviItems {
+    width: 100%;
+  }
+
+  &__naviItem {
+    text-align: center;
+
+    &:not(:last-of-type) {
+      margin-bottom: 10px;
+    }
+
+    img {
+      width: 1em;
+      margin-right: 0.3em;
+    }
+
+    svg {
+      margin-right: 0.3em;
+    }
+
+    a {
+      display: block;
+      padding: 10px 20px;
+      font-weight: 600;
+      background-color: #eeeeee;
+      box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.3);
+      transition: background-color 0.3s, color 0.3s;
+
+      &:hover {
+        background-color: $keyColor;
+        color: #ffffff;
+      }
+    }
+  }
+}

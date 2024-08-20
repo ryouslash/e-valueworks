@@ -7,6 +7,7 @@
 @use "foundation/_base";
 @use "foundation/_variables";
 @use "foundation/library/_slick";
+@use "foundation/library/_scrollhint";
 
 /*
  * layout
@@ -38,10 +39,11 @@
 @use "object/project/_editorcontent";
 @use "object/project/_posthead";
 @use "object/project/_postlist";
+@use "object/project/_fixcta";
 @use "object/project/sidebar/_sidebaritem";
 @use "object/project/sidebar/_lastestposts";
 @use "object/project/sidebar/_taxonomy";
-@use "object/project/sidebar/search";
+@use "object/project/sidebar/_search";
 
 // utility
 @use "object/utility/_utilities";

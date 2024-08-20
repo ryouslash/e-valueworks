@@ -1,11 +1,11 @@
 import $ from 'jquery';
 import { config, dom, library } from '@fortawesome/fontawesome-svg-core';
-import {faPenNib, faCode, faServer ,faChevronDown, faLink, faChevronUp, faBars, faXmark, faCheck, faTag, faChevronLeft, faChevronRight} from '@fortawesome/free-solid-svg-icons';
+import {faPenNib, faCode, faServer ,faChevronDown, faLink, faChevronUp, faBars, faXmark, faCheck, faTag, faChevronLeft, faChevronRight, faSackDollar} from '@fortawesome/free-solid-svg-icons';
 import { faEnvelope, faHandshake } from '@fortawesome/free-regular-svg-icons';
 import {faInstagram, faFacebook, faGithub, faLinkedin} from '@fortawesome/free-brands-svg-icons';
 
 // Font awesome 読み込み
-library.add(faEnvelope, faHandshake, faPenNib, faCode, faServer,faChevronDown, faLink,faInstagram, faFacebook, faGithub, faLinkedin, faChevronUp, faBars, faXmark, faCheck, faTag, faChevronLeft, faChevronRight);
+library.add(faEnvelope, faHandshake, faPenNib, faCode, faServer,faChevronDown, faLink,faInstagram, faFacebook, faGithub, faLinkedin, faChevronUp, faBars, faXmark, faCheck, faTag, faChevronLeft, faChevronRight, faSackDollar);
 dom.i2svg();
 
 // 100vwの調整
@@ -65,17 +65,25 @@ $(function () {
   });
 });
 
-// ページトップボタン 1000pxをスクロールしたところで表示
+// ページトップボタンをスクロールしたところで表示
 $(function () {
-  var pagetop = $(".js-pageTop");
-  // ボタン非表示
-  pagetop.hide();
+  var pageTop = $(".c-pageTop");
 
   $(window).scroll(function () {
     if ($(this).scrollTop() > 1000) {
-      pagetop.fadeIn();
+      pageTop.addClass('is-show');
     } else {
-      pagetop.fadeOut();
+      pageTop.removeClass('is-show');
     }
   });
+});
+
+// p-ficCta__leftをクリックすると、p-ficCtaにis-activeがつく
+document.querySelector('.p-fixCta__left').addEventListener('click', function() {
+  document.querySelector('.p-fixCta').classList.toggle('is-active');
+});
+
+document.querySelector('.p-fixCta__close').addEventListener('click', function() {
+  const targetElement = document.querySelector('.p-fixCta');  
+  targetElement.classList.remove('is-active');
 });

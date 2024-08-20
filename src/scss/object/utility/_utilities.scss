@@ -19,6 +19,14 @@
   padding-top: 0 !important;
 }
 
+.u-text--bolder {
+  font-weight: bolder;
+}
+
+.u-text--bigger {
+  font-size: $fontM;
+}
+
 .u-text--left {
   text-align: left;
 }
@@ -37,4 +45,14 @@
   background-repeat: repeat-x;
   background-size: 1em 0.3em;
   padding-top: 0.5em;
+}
+
+.u-underline--yellow {
+  background: linear-gradient(transparent 60%, #ecce61 0%);
+  padding: 0 1px 0px;
+}
+
+.u-underline--orange {
+  background: linear-gradient(transparent 60%, #f29949 0%);
+  padding: 0 1px 0px;
 }

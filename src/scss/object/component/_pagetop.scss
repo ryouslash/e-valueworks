@@ -2,8 +2,7 @@
 
 .c-pageTop {
   cursor: pointer;
-  display: block;
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   width: 40px;
@@ -16,4 +15,24 @@
   right: 30px;
   z-index: 10;
   box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.4);
+  opacity: 0;
+
+  @include mq-down(sm) {
+    bottom: 20px;
+    right: 20px;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  &.is-show {
+    display: flex;
+    animation: fadeIn 0.5s ease-in-out forwards;
+  }
 }

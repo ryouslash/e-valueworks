@@ -22,7 +22,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 // Font awesome 読み込み
-_fortawesome_fontawesome_svg_core__WEBPACK_IMPORTED_MODULE_1__.library.add(_fortawesome_free_regular_svg_icons__WEBPACK_IMPORTED_MODULE_2__.faEnvelope, _fortawesome_free_regular_svg_icons__WEBPACK_IMPORTED_MODULE_2__.faHandshake, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__.faPenNib, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__.faCode, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__.faServer, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__.faChevronDown, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__.faLink, _fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_4__.faInstagram, _fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_4__.faFacebook, _fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_4__.faGithub, _fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_4__.faLinkedin, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__.faChevronUp, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__.faBars, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__.faXmark, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__.faCheck, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__.faTag, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__.faChevronLeft, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__.faChevronRight);
+_fortawesome_fontawesome_svg_core__WEBPACK_IMPORTED_MODULE_1__.library.add(_fortawesome_free_regular_svg_icons__WEBPACK_IMPORTED_MODULE_2__.faEnvelope, _fortawesome_free_regular_svg_icons__WEBPACK_IMPORTED_MODULE_2__.faHandshake, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__.faPenNib, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__.faCode, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__.faServer, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__.faChevronDown, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__.faLink, _fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_4__.faInstagram, _fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_4__.faFacebook, _fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_4__.faGithub, _fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_4__.faLinkedin, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__.faChevronUp, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__.faBars, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__.faXmark, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__.faCheck, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__.faTag, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__.faChevronLeft, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__.faChevronRight, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__.faSackDollar);
 _fortawesome_fontawesome_svg_core__WEBPACK_IMPORTED_MODULE_1__.dom.i2svg();
 
 // 100vwの調整
@@ -74,18 +74,25 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(function () {
   });
 });
 
-// ページトップボタン 1000pxをスクロールしたところで表示
+// ページトップボタンをスクロールしたところで表示
 jquery__WEBPACK_IMPORTED_MODULE_0___default()(function () {
-  var pagetop = jquery__WEBPACK_IMPORTED_MODULE_0___default()(".js-pageTop");
-  // ボタン非表示
-  pagetop.hide();
+  var pageTop = jquery__WEBPACK_IMPORTED_MODULE_0___default()(".c-pageTop");
   jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).scroll(function () {
     if (jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).scrollTop() > 1000) {
-      pagetop.fadeIn();
+      pageTop.addClass('is-show');
     } else {
-      pagetop.fadeOut();
+      pageTop.removeClass('is-show');
     }
   });
+});
+
+// p-ficCta__leftをクリックすると、p-ficCtaにis-activeがつく
+document.querySelector('.p-fixCta__left').addEventListener('click', function () {
+  document.querySelector('.p-fixCta').classList.toggle('is-active');
+});
+document.querySelector('.p-fixCta__close').addEventListener('click', function () {
+  var targetElement = document.querySelector('.p-fixCta');
+  targetElement.classList.remove('is-active');
 });
 
 /***/ }),
