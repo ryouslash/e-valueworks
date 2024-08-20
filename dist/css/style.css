@@ -1559,7 +1559,7 @@ body {
 }
 
 .u-emphasis--pink {
-  background-image: radial-gradient(circle at center, #e49cac 30%, transparent 30%);
+  background-image: radial-gradient(circle at center, #ffa7be 30%, transparent 30%);
   background-position: top right;
   background-repeat: repeat-x;
   background-size: 1em 0.3em;
@@ -2916,7 +2916,7 @@ body {
 
 .p-price-intro {
   margin-top: 97.5px;
-  padding: 97.5px 30px 60px;
+  padding: 97.5px 0 60px;
   background-color: #f9dee5;
   border-radius: 5px;
   margin-left: calc(-50 * var(--vw) + 50%);
@@ -2932,7 +2932,6 @@ body {
 }
 @media screen and (max-width: 575px) {
   .p-price-intro {
-    padding: 97.5px 20px 60px;
     margin-left: -20px;
     margin-right: -20px;
   }
@@ -3226,6 +3225,14 @@ body {
 }
 .p-price-maintenancePlan__tableRes {
   overflow-x: scroll;
+}
+
+.p-about-greeting__text {
+  margin-top: 30px;
+  text-align: center;
+}
+.p-about-greeting__text p:not(:last-of-type) {
+  margin-bottom: 1em;
 }
 
 /*
