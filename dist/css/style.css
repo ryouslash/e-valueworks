@@ -794,11 +794,16 @@ body {
 .l-content__inner {
   display: flex;
   gap: 30px;
-  padding: 60px 0;
+  padding: 60px 0 120px;
 }
 @media screen and (max-width: 1024px) {
   .l-content__inner {
     display: block;
+  }
+}
+@media screen and (max-width: 575px) {
+  .l-content__inner {
+    padding: 60px 0 100px;
   }
 }
 .l-content__inner .l-mainContent {
@@ -3410,6 +3415,7 @@ body {
   border-bottom: 2px solid #cccccc;
   margin: 60px 0 1em;
   padding-bottom: 1em;
+  font-weight: 700;
 }
 .p-single-work-client__detail {
   display: flex;

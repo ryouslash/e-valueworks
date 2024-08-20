@@ -8,10 +8,14 @@
   &__inner {
     display: flex;
     gap: 30px;
-    padding: 60px 0;
+    padding: 60px 0 120px;
 
     @include mq-down(lg) {
       display: block;
+    }
+
+    @include mq-down(sm) {
+      padding: 60px 0 100px;
     }
 
     .l-mainContent {

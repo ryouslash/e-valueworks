@@ -11,9 +11,9 @@
   <body>
     <header class="l-header">
       <div class="l-header__inner l-container">
-        <div class="l-header__logo">
+        <h1 class="l-header__logo">
           <a href="#"><img src="dist/img/logo.svg" /></a>
-        </div>
+        </h1>
         <nav class="l-header__nav">
           <ul class="p-gnav">
             <li class="p-gnav__item p-gnav__item--home">
@@ -71,7 +71,7 @@
       <div class="l-container">
         <div class="l-content__inner">
           <main class="l-mainContent">
-            <h1 class="c-title1">料金</h1>
+            <div class="c-title1">料金</div>
             <section class="p-price-intro">
               <div class="p-price-intro__title">
                 シンプルで<span class="u-emphasis--pink u-inline-block"
@@ -260,7 +260,10 @@
                 <div class="p-price-maintenancePlan__detail">
                   <p>細かな運用・保守業務を月額契約で外注頂けるプランです。</p>
                   <p>
-                    外注できるところは外注し、自社リソースを新規プロジェクトやクリエイティブな作業に集中させたい法人様におすすめです。
+                    外注できるところは外注し、<span
+                      class="u-underline--yellow u-text--bolder"
+                      >自社リソースを新規プロジェクトやクリエイティブな作業に集中させたい法人様</span
+                    >におすすめです。
                   </p>
                 </div>
                 <div class="p-price-maintenancePlan__table">
@@ -301,7 +304,7 @@
                     <div class="p-price-osusume__title">
                       <span class="u-inline-block">保守・管理プランだと</span
                       ><span class="u-inline-block"
-                        >こんなことまで外注できる</span
+                        >こんなことまで外注可能</span
                       >
                     </div>
                     <div class="p-price-osusume__left">
@@ -376,7 +379,7 @@
                         </p>
                         <p>
                           <span
-                            class="u-underline--orange u-text--bolder u-text--bigger"
+                            class="u-underline--yellow u-text--bolder u-text--bigger"
                             >余った時間は翌月に持ち越し</span
                           >てお使い頂けます。
                         </p>
@@ -441,7 +444,7 @@
     <a class="c-pageTop js-pageTop" href="#">
       <i class="fa-solid fa-chevron-up"></i>
     </a>
-    
+
     <script src="dist/js/vendors.js"></script>
     <script src="dist/js/common.js"></script>
     <script src="dist/js/price.js"></script>

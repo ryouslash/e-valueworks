@@ -80,6 +80,10 @@
 @use "pages/price/project/_estimate";
 @use "pages/price/project/_maintenanceplan";
 
+// about
+@use "pages/about/_style" as aboutPage;
+@use "pages/about/project/greeting";
+
 /*
  * templates（固定ページ、投稿、カスタム投稿、アーカイブ）
  */
