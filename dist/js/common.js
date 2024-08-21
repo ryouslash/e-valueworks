@@ -2,120 +2,13 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./src/js/common.js":
-/*!**************************!*\
-  !*** ./src/js/common.js ***!
-  \**************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ "jquery":
+/*!*************************!*\
+  !*** external "jQuery" ***!
+  \*************************/
+/***/ ((module) => {
 
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
-/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _fortawesome_fontawesome_svg_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @fortawesome/fontawesome-svg-core */ "./node_modules/@fortawesome/fontawesome-svg-core/index.mjs");
-/* harmony import */ var _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @fortawesome/free-solid-svg-icons */ "./node_modules/@fortawesome/free-solid-svg-icons/index.mjs");
-/* harmony import */ var _fortawesome_free_regular_svg_icons__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @fortawesome/free-regular-svg-icons */ "./node_modules/@fortawesome/free-regular-svg-icons/index.mjs");
-/* harmony import */ var _fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @fortawesome/free-brands-svg-icons */ "./node_modules/@fortawesome/free-brands-svg-icons/index.mjs");
-
-
-
-
-
-
-// Font awesome 読み込み
-_fortawesome_fontawesome_svg_core__WEBPACK_IMPORTED_MODULE_1__.library.add(_fortawesome_free_regular_svg_icons__WEBPACK_IMPORTED_MODULE_2__.faEnvelope, _fortawesome_free_regular_svg_icons__WEBPACK_IMPORTED_MODULE_2__.faHandshake, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__.faPenNib, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__.faCode, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__.faServer, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__.faChevronDown, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__.faLink, _fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_4__.faInstagram, _fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_4__.faFacebook, _fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_4__.faGithub, _fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_4__.faLinkedin, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__.faChevronUp, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__.faBars, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__.faXmark, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__.faCheck, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__.faTag, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__.faChevronLeft, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__.faChevronRight, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__.faSackDollar, _fortawesome_free_regular_svg_icons__WEBPACK_IMPORTED_MODULE_2__.faHandPointRight);
-_fortawesome_fontawesome_svg_core__WEBPACK_IMPORTED_MODULE_1__.dom.i2svg();
-
-// 100vwの調整
-function setVw() {
-  // --vwをセットする関数
-  var vw = jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).width() / 100 + "px";
-  // ブラウザ幅/100を取得し変数vwに格納
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()(":root").css("--vw", vw);
-  // :rootのカスタムプロパティ--vwにvwを代入させる。これで、スクロールバーの幅を除いた画面幅/100が--vwになる
-}
-jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).on("load resize", function () {
-  setVw();
-});
-// 画面を、読み込んだ時・サイズを変えた時  →  関数setVwが動作する
-
-// 初期ロード時にも関数を実行
-setVw();
-var header = document.querySelector('.l-header');
-var headerHeight = header.offsetHeight; // 数値として保持
-
-document.documentElement.style.setProperty('--headerHeight', headerHeight + 'px');
-
-// ヘッダー箇所
-document.addEventListener('DOMContentLoaded', function () {
-  // .l-header__nav 要素を取得
-  var drawerBtn = document.querySelector('.l-header__drawerBtn');
-  var drawerMenu = document.querySelector('.p-drawerMenu');
-
-  // クリックイベントのリスナーを追加
-  drawerBtn.addEventListener('click', function () {
-    // クラス名 'is-open' をトグルする
-    drawerBtn.classList.toggle('is-open');
-    drawerMenu.classList.toggle('is-show');
-  });
-});
-
-// スムーススクロール
-jquery__WEBPACK_IMPORTED_MODULE_0___default()(function () {
-  if (location.hash) {
-    var target = jquery__WEBPACK_IMPORTED_MODULE_0___default()(location.hash);
-    if (target.length) {
-      var position = target.offset().top - headerHeight;
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("html, body").animate({
-        scrollTop: position
-      }, 0 // ページ読み込み時のスクロールは即時
-      );
-    }
-  }
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()('a[href^="#"]').click(function (e) {
-    e.preventDefault(); // デフォルトのアンカー動作を停止
-
-    var speed = 2000;
-    var href = jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).attr("href");
-    var target = jquery__WEBPACK_IMPORTED_MODULE_0___default()(href == "#" || href == "" ? "html" : href);
-    var position = target.offset().top - headerHeight;
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()("html, body").animate({
-      scrollTop: position
-    }, speed, "swing");
-  });
-});
-
-// ページトップボタンをスクロールしたところで表示
-jquery__WEBPACK_IMPORTED_MODULE_0___default()(function () {
-  var pageTop = jquery__WEBPACK_IMPORTED_MODULE_0___default()(".c-pageTop");
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).scroll(function () {
-    if (jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).scrollTop() > 1000) {
-      pageTop.addClass('is-show');
-    } else {
-      pageTop.removeClass('is-show');
-    }
-  });
-});
-
-// p-ficCta__leftをクリックすると、p-ficCtaにis-activeがつく
-document.querySelector('.p-fixCta__left').addEventListener('click', function () {
-  document.querySelector('.p-fixCta').classList.toggle('is-active');
-});
-document.querySelector('.p-fixCta__close').addEventListener('click', function () {
-  var targetElement = document.querySelector('.p-fixCta');
-  targetElement.classList.remove('is-active');
-});
-
-/***/ }),
-
-/***/ "./src/scss/style.scss":
-/*!*****************************!*\
-  !*** ./src/scss/style.scss ***!
-  \*****************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-// extracted by mini-css-extract-plugin
-
+module.exports = jQuery;
 
 /***/ }),
 
@@ -19722,48 +19615,13 @@ var icons = {
 /******/ 		};
 /******/ 	
 /******/ 		// Execute the module function
-/******/ 		__webpack_modules__[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
 /******/ 	
 /******/ 		// Return the exports of the module
 /******/ 		return module.exports;
 /******/ 	}
 /******/ 	
-/******/ 	// expose the modules object (__webpack_modules__)
-/******/ 	__webpack_require__.m = __webpack_modules__;
-/******/ 	
 /************************************************************************/
-/******/ 	/* webpack/runtime/chunk loaded */
-/******/ 	(() => {
-/******/ 		var deferred = [];
-/******/ 		__webpack_require__.O = (result, chunkIds, fn, priority) => {
-/******/ 			if(chunkIds) {
-/******/ 				priority = priority || 0;
-/******/ 				for(var i = deferred.length; i > 0 && deferred[i - 1][2] > priority; i--) deferred[i] = deferred[i - 1];
-/******/ 				deferred[i] = [chunkIds, fn, priority];
-/******/ 				return;
-/******/ 			}
-/******/ 			var notFulfilled = Infinity;
-/******/ 			for (var i = 0; i < deferred.length; i++) {
-/******/ 				var [chunkIds, fn, priority] = deferred[i];
-/******/ 				var fulfilled = true;
-/******/ 				for (var j = 0; j < chunkIds.length; j++) {
-/******/ 					if ((priority & 1 === 0 || notFulfilled >= priority) && Object.keys(__webpack_require__.O).every((key) => (__webpack_require__.O[key](chunkIds[j])))) {
-/******/ 						chunkIds.splice(j--, 1);
-/******/ 					} else {
-/******/ 						fulfilled = false;
-/******/ 						if(priority < notFulfilled) notFulfilled = priority;
-/******/ 					}
-/******/ 				}
-/******/ 				if(fulfilled) {
-/******/ 					deferred.splice(i--, 1)
-/******/ 					var r = fn();
-/******/ 					if (r !== undefined) result = r;
-/******/ 				}
-/******/ 			}
-/******/ 			return result;
-/******/ 		};
-/******/ 	})();
-/******/ 	
 /******/ 	/* webpack/runtime/compat get default export */
 /******/ 	(() => {
 /******/ 		// getDefaultExport function for compatibility with non-harmony modules
@@ -19804,68 +19662,135 @@ var icons = {
 /******/ 		};
 /******/ 	})();
 /******/ 	
-/******/ 	/* webpack/runtime/jsonp chunk loading */
-/******/ 	(() => {
-/******/ 		// no baseURI
-/******/ 		
-/******/ 		// object to store loaded and loading chunks
-/******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
-/******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
-/******/ 		var installedChunks = {
-/******/ 			"common": 0
-/******/ 		};
-/******/ 		
-/******/ 		// no chunk on demand loading
-/******/ 		
-/******/ 		// no prefetching
-/******/ 		
-/******/ 		// no preloaded
-/******/ 		
-/******/ 		// no HMR
-/******/ 		
-/******/ 		// no HMR manifest
-/******/ 		
-/******/ 		__webpack_require__.O.j = (chunkId) => (installedChunks[chunkId] === 0);
-/******/ 		
-/******/ 		// install a JSONP callback for chunk loading
-/******/ 		var webpackJsonpCallback = (parentChunkLoadingFunction, data) => {
-/******/ 			var [chunkIds, moreModules, runtime] = data;
-/******/ 			// add "moreModules" to the modules object,
-/******/ 			// then flag all "chunkIds" as loaded and fire callback
-/******/ 			var moduleId, chunkId, i = 0;
-/******/ 			if(chunkIds.some((id) => (installedChunks[id] !== 0))) {
-/******/ 				for(moduleId in moreModules) {
-/******/ 					if(__webpack_require__.o(moreModules, moduleId)) {
-/******/ 						__webpack_require__.m[moduleId] = moreModules[moduleId];
-/******/ 					}
-/******/ 				}
-/******/ 				if(runtime) var result = runtime(__webpack_require__);
-/******/ 			}
-/******/ 			if(parentChunkLoadingFunction) parentChunkLoadingFunction(data);
-/******/ 			for(;i < chunkIds.length; i++) {
-/******/ 				chunkId = chunkIds[i];
-/******/ 				if(__webpack_require__.o(installedChunks, chunkId) && installedChunks[chunkId]) {
-/******/ 					installedChunks[chunkId][0]();
-/******/ 				}
-/******/ 				installedChunks[chunkId] = 0;
-/******/ 			}
-/******/ 			return __webpack_require__.O(result);
-/******/ 		}
-/******/ 		
-/******/ 		var chunkLoadingGlobal = self["webpackChunkmyproject"] = self["webpackChunkmyproject"] || [];
-/******/ 		chunkLoadingGlobal.forEach(webpackJsonpCallback.bind(null, 0));
-/******/ 		chunkLoadingGlobal.push = webpackJsonpCallback.bind(null, chunkLoadingGlobal.push.bind(chunkLoadingGlobal));
-/******/ 	})();
-/******/ 	
 /************************************************************************/
-/******/ 	
-/******/ 	// startup
-/******/ 	// Load entry module and return exports
-/******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	__webpack_require__.O(undefined, ["vendors"], () => (__webpack_require__("./src/js/common.js")))
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["vendors"], () => (__webpack_require__("./src/scss/style.scss")))
-/******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
-/******/ 	
+var __webpack_exports__ = {};
+// This entry need to be wrapped in an IIFE because it need to be isolated against other entry modules.
+(() => {
+var __webpack_exports__ = {};
+/*!**************************!*\
+  !*** ./src/js/common.js ***!
+  \**************************/
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "jquery");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _fortawesome_fontawesome_svg_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @fortawesome/fontawesome-svg-core */ "./node_modules/@fortawesome/fontawesome-svg-core/index.mjs");
+/* harmony import */ var _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @fortawesome/free-solid-svg-icons */ "./node_modules/@fortawesome/free-solid-svg-icons/index.mjs");
+/* harmony import */ var _fortawesome_free_regular_svg_icons__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @fortawesome/free-regular-svg-icons */ "./node_modules/@fortawesome/free-regular-svg-icons/index.mjs");
+/* harmony import */ var _fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @fortawesome/free-brands-svg-icons */ "./node_modules/@fortawesome/free-brands-svg-icons/index.mjs");
+
+
+
+
+
+
+// Font awesome 読み込み
+_fortawesome_fontawesome_svg_core__WEBPACK_IMPORTED_MODULE_1__.library.add(_fortawesome_free_regular_svg_icons__WEBPACK_IMPORTED_MODULE_2__.faEnvelope, _fortawesome_free_regular_svg_icons__WEBPACK_IMPORTED_MODULE_2__.faHandshake, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__.faPenNib, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__.faCode, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__.faServer, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__.faChevronDown, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__.faLink, _fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_4__.faInstagram, _fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_4__.faFacebook, _fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_4__.faGithub, _fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_4__.faLinkedin, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__.faChevronUp, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__.faBars, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__.faXmark, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__.faCheck, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__.faTag, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__.faChevronLeft, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__.faChevronRight, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__.faSackDollar, _fortawesome_free_regular_svg_icons__WEBPACK_IMPORTED_MODULE_2__.faHandPointRight);
+_fortawesome_fontawesome_svg_core__WEBPACK_IMPORTED_MODULE_1__.dom.i2svg();
+
+// 100vwの調整
+function setVw() {
+  // --vwをセットする関数
+  var vw = jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).width() / 100 + "px";
+  // ブラウザ幅/100を取得し変数vwに格納
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()(":root").css("--vw", vw);
+  // :rootのカスタムプロパティ--vwにvwを代入させる。これで、スクロールバーの幅を除いた画面幅/100が--vwになる
+}
+jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).on("load resize", function () {
+  setVw();
+});
+// 画面を、読み込んだ時・サイズを変えた時  →  関数setVwが動作する
+
+// 初期ロード時にも関数を実行
+setVw();
+var header = document.querySelector('.l-header');
+var headerHeight = header.offsetHeight; // 数値として保持
+
+document.documentElement.style.setProperty('--headerHeight', headerHeight + 'px');
+
+// ヘッダー箇所
+document.addEventListener('DOMContentLoaded', function () {
+  // .l-header__nav 要素を取得
+  var drawerBtn = document.querySelector('.l-header__drawerBtn');
+  var drawerMenu = document.querySelector('.p-drawerMenu');
+
+  // クリックイベントのリスナーを追加
+  drawerBtn.addEventListener('click', function () {
+    // クラス名 'is-open' をトグルする
+    drawerBtn.classList.toggle('is-open');
+    drawerMenu.classList.toggle('is-show');
+  });
+});
+
+// スムーススクロール
+jquery__WEBPACK_IMPORTED_MODULE_0___default()(function () {
+  if (location.hash) {
+    var target = jquery__WEBPACK_IMPORTED_MODULE_0___default()(location.hash);
+    if (target.length) {
+      var position = target.offset().top - headerHeight;
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("html, body").animate({
+        scrollTop: position
+      }, 0 // ページ読み込み時のスクロールは即時
+      );
+    }
+  }
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('a[href^="#"]').click(function (e) {
+    e.preventDefault(); // デフォルトのアンカー動作を停止
+
+    var speed = 2000;
+    var href = jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).attr("href");
+    var target = jquery__WEBPACK_IMPORTED_MODULE_0___default()(href == "#" || href == "" ? "html" : href);
+    var position = target.offset().top - headerHeight;
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()("html, body").animate({
+      scrollTop: position
+    }, speed, "swing");
+  });
+});
+
+// ページトップボタンをスクロールしたところで表示
+jquery__WEBPACK_IMPORTED_MODULE_0___default()(function () {
+  var pageTop = jquery__WEBPACK_IMPORTED_MODULE_0___default()(".c-pageTop");
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).scroll(function () {
+    if (jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).scrollTop() > 1000) {
+      pageTop.addClass('is-show');
+    } else {
+      pageTop.removeClass('is-show');
+    }
+  });
+});
+
+// p-ficCta__leftをクリックすると、p-ficCtaにis-activeがつく
+document.addEventListener('DOMContentLoaded', function () {
+  var fixCtaLeft = document.querySelector('.p-fixCta__left');
+  var fixCtaClose = document.querySelector('.p-fixCta__close');
+  if (fixCtaLeft) {
+    fixCtaLeft.addEventListener('click', function () {
+      var targetElement = document.querySelector('.p-fixCta');
+      if (targetElement) {
+        targetElement.classList.toggle('is-active');
+      }
+    });
+  }
+  if (fixCtaClose) {
+    fixCtaClose.addEventListener('click', function () {
+      var targetElement = document.querySelector('.p-fixCta');
+      if (targetElement) {
+        targetElement.classList.remove('is-active');
+      }
+    });
+  }
+});
+})();
+
+// This entry need to be wrapped in an IIFE because it need to be isolated against other entry modules.
+(() => {
+/*!*****************************!*\
+  !*** ./src/scss/style.scss ***!
+  \*****************************/
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+})();
+
 /******/ })()
 ;
 //# sourceMappingURL=common.js.map

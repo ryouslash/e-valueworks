@@ -26,9 +26,9 @@ module.exports = {
       return '[name][ext][query]';
     }
   },
-  // externals: {
-  //   jquery: 'jQuery'
-  // },
+  externals: {
+    jquery: 'jQuery'
+  },
   watchOptions: {
     ignored: /node_modules/  //正規表現で指定（node_modules を除外）
   },

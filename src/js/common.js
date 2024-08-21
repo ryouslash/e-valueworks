@@ -92,11 +92,26 @@ $(function () {
 });
 
 // p-ficCta__leftをクリックすると、p-ficCtaにis-activeがつく
-document.querySelector('.p-fixCta__left').addEventListener('click', function() {
-  document.querySelector('.p-fixCta').classList.toggle('is-active');
+document.addEventListener('DOMContentLoaded', function() {
+  var fixCtaLeft = document.querySelector('.p-fixCta__left');
+  var fixCtaClose = document.querySelector('.p-fixCta__close');
+
+  if (fixCtaLeft) {
+    fixCtaLeft.addEventListener('click', function() {
+      var targetElement = document.querySelector('.p-fixCta');
+      if (targetElement) {
+        targetElement.classList.toggle('is-active');
+      }
+    });
+  }
+
+  if (fixCtaClose) {
+    fixCtaClose.addEventListener('click', function() {
+      var targetElement = document.querySelector('.p-fixCta');
+      if (targetElement) {
+        targetElement.classList.remove('is-active');
+      }
+    });
+  }
 });
 
-document.querySelector('.p-fixCta__close').addEventListener('click', function() {
-  const targetElement = document.querySelector('.p-fixCta');  
-  targetElement.classList.remove('is-active');
-});
