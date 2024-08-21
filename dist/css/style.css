@@ -3234,6 +3234,11 @@ body {
   flex-shrink: 0;
   font-weight: 600;
 }
+@media screen and (max-width: 575px) {
+  .p-about__tableInner dt {
+    max-width: initial;
+  }
+}
 .p-about__tableInner dd {
   flex: 1;
 }
