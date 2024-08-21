@@ -1,14 +1,10 @@
 @use "../../../foundation/variables" as *;
 
 .p-price-codingPlan {
-  margin-top: 90px;
+  margin-top: 80px;
 
   &__items {
-    margin-top: 60px;
-
-    @include mq-down(sm) {
-      margin-top: 30px;
-    }
+    margin-top: 30px;
   }
 
   &__item {
@@ -83,7 +79,7 @@
 
     th,
     td {
-      padding: 10px;
+      padding: 10px 20px;
       vertical-align: middle;
     }
 

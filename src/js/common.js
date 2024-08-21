@@ -47,6 +47,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // スムーススクロール
 $(function () {
+  if (location.hash) {
+    var target = $(location.hash);
+    if (target.length) {
+      var position = target.offset().top - headerHeight;
+      $("html, body").animate(
+        {
+          scrollTop: position,
+        },
+        0 // ページ読み込み時のスクロールは即時
+      );
+    }
+  }
+  
   $('a[href^="#"]').click(function (e) {
     e.preventDefault(); // デフォルトのアンカー動作を停止
 

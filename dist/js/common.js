@@ -61,6 +61,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // スムーススクロール
 jquery__WEBPACK_IMPORTED_MODULE_0___default()(function () {
+  if (location.hash) {
+    var target = jquery__WEBPACK_IMPORTED_MODULE_0___default()(location.hash);
+    if (target.length) {
+      var position = target.offset().top - headerHeight;
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("html, body").animate({
+        scrollTop: position
+      }, 0 // ページ読み込み時のスクロールは即時
+      );
+    }
+  }
   jquery__WEBPACK_IMPORTED_MODULE_0___default()('a[href^="#"]').click(function (e) {
     e.preventDefault(); // デフォルトのアンカー動作を停止
 
