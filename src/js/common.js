@@ -1,11 +1,11 @@
 import $ from 'jquery';
 import { config, dom, library } from '@fortawesome/fontawesome-svg-core';
 import {faPenNib, faCode, faServer ,faChevronDown, faLink, faChevronUp, faBars, faXmark, faCheck, faTag, faChevronLeft, faChevronRight, faSackDollar} from '@fortawesome/free-solid-svg-icons';
-import { faEnvelope, faHandshake } from '@fortawesome/free-regular-svg-icons';
+import { faEnvelope, faHandshake,faHandPointRight } from '@fortawesome/free-regular-svg-icons';
 import {faInstagram, faFacebook, faGithub, faLinkedin} from '@fortawesome/free-brands-svg-icons';
 
 // Font awesome 読み込み
-library.add(faEnvelope, faHandshake, faPenNib, faCode, faServer,faChevronDown, faLink,faInstagram, faFacebook, faGithub, faLinkedin, faChevronUp, faBars, faXmark, faCheck, faTag, faChevronLeft, faChevronRight, faSackDollar);
+library.add(faEnvelope, faHandshake, faPenNib, faCode, faServer,faChevronDown, faLink,faInstagram, faFacebook, faGithub, faLinkedin, faChevronUp, faBars, faXmark, faCheck, faTag, faChevronLeft, faChevronRight, faSackDollar,faHandPointRight);
 dom.i2svg();
 
 // 100vwの調整
