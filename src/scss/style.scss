@@ -53,11 +53,11 @@
  */
 
 // top
-@use "pages/top/style" as top;
+@use "pages/top/style" as topPage;
 @use "pages/top/project/_mainvisual";
 @use "pages/top/project/_news";
 @use "pages/top/project/_trouble";
-@use "pages/top/project/_about";
+@use "pages/top/project/_about" as topAbout;
 @use "pages/top/project/_work";
 @use "pages/top/project/_promise";
 @use "pages/top/project/_price";
@@ -82,7 +82,8 @@
 
 // about
 @use "pages/about/_style" as aboutPage;
-@use "pages/about/project/greeting";
+@use "pages/about/project/_about";
+@use "pages/about/project/_profile";
 
 /*
  * templates（固定ページ、投稿、カスタム投稿、アーカイブ）

@@ -1,0 +1,44 @@
+@use "../../../foundation/variables" as *;
+
+.p-about-profile {
+  &__inner {
+    display: flex;
+    gap: 30px;
+    margin: 30px auto 0;
+    max-width: 800px;
+
+    @include mq-down(sm) {
+      flex-direction: column;
+    }
+  }
+
+  &__photo {
+    max-width: 200px;
+
+    @include mq-down(sm) {
+      align-self: center;
+    }
+
+    img {
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+  }
+
+  &__detail {
+    flex: 1;
+
+    .c-snslinks {
+      margin-top: 30px;
+    }
+  }
+
+  &__text {
+    p {
+      &:not(:last-of-type) {
+        margin-bottom: 1em;
+      }
+    }
+  }
+}
