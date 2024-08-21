@@ -33,8 +33,6 @@
     padding: 20px;
     font-size: $fontL;
     font-weight: 700;
-    box-shadow: 0 4px 3px rgba(202, 139, 157, 0.2);
-    border: 1px solid #f8e6eb;
 
     @include mq-down(sm) {
       width: calc(100% - 40px);
@@ -50,7 +48,6 @@
       border-top: 30px solid #ffffff;
       border-left: 30px solid transparent;
       border-right: 30px solid transparent;
-      filter: drop-shadow(0 4px 3px rgba(202, 139, 157, 0.2));
     }
   }
 

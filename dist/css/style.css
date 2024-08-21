@@ -2949,8 +2949,6 @@ body {
   padding: 20px;
   font-size: clamp(2rem, 1.8rem + 0.625vw, 2.6rem);
   font-weight: 700;
-  box-shadow: 0 4px 3px rgba(202, 139, 157, 0.2);
-  border: 1px solid #f8e6eb;
 }
 @media screen and (max-width: 575px) {
   .p-price-intro__title {
@@ -2967,7 +2965,6 @@ body {
   border-top: 30px solid #ffffff;
   border-left: 30px solid transparent;
   border-right: 30px solid transparent;
-  filter: drop-shadow(0 4px 3px rgba(202, 139, 157, 0.2));
 }
 .p-price-intro__text {
   text-align: center;
