@@ -666,23 +666,18 @@ body {
 /*
  * layout
  */
-.l-footer {
-  background-color: #eeeeee;
-}
-.l-footer__inner {
-  padding: 30px 0;
-}
-@media screen and (max-width: 575px) {
-  .l-footer__inner {
-    padding: 20px 0;
-  }
+.l-footer__navi {
+  background-color: #333333;
+  padding: 20px 0 10px;
 }
 .l-footer__navi-items {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 .l-footer__navi-item {
   padding: 0 1em;
-  border-left: 1px solid #333333;
+  border-left: 1px solid #ffffff;
 }
 @media screen and (max-width: 767px) {
   .l-footer__navi-item {
@@ -695,9 +690,10 @@ body {
   }
 }
 .l-footer__navi-item:last-of-type {
-  border-right: 1px solid #333333;
+  border-right: 1px solid #ffffff;
 }
 .l-footer__navi-item a {
+  color: #ffffff;
   text-decoration: underline;
 }
 .l-footer__navi-item a:hover {
@@ -707,7 +703,7 @@ body {
   text-align: center;
   background-color: #333333;
   color: #ffffff;
-  padding: 10px 0;
+  padding: 10px 0 20px;
 }
 
 .l-header {
@@ -1042,6 +1038,23 @@ body {
   z-index: 1;
 }
 
+.c-breadcrumb {
+  background-color: #eeeeee;
+  padding: 10px 0;
+}
+.c-breadcrumb__inner > span:first-of-type {
+  margin-right: 1em;
+}
+.c-breadcrumb__inner > span:not(:first-of-type) {
+  margin-left: 1em;
+}
+.c-breadcrumb__inner a {
+  transition: color 0.5s;
+}
+.c-breadcrumb__inner a:hover {
+  color: #18c1f0;
+}
+
 .c-postMetas {
   margin: 0.8em 0;
   display: flex;
@@ -1082,6 +1095,9 @@ body {
 .c-postMetas__tag a:hover {
   opacity: 0.7;
 }
+.c-postMetas__tag svg {
+  margin-right: 0.3em;
+}
 
 .c-prevNextNavi {
   display: flex;
@@ -1096,16 +1112,14 @@ body {
   opacity: 0.7;
 }
 
-.c-pagination {
+.c-pagination .wp-pagenavi {
   margin-top: 60px;
-}
-.c-pagination__items {
   display: flex;
   flex-wrap: wrap;
   gap: 1em;
 }
 @media screen and (max-width: 575px) {
-  .c-pagination__items {
+  .c-pagination .wp-pagenavi {
     justify-content: center;
   }
 }
@@ -1481,6 +1495,9 @@ body {
 }
 .l-sidebar .p-sidebarTag__item a:hover {
   color: #aaaaaa;
+}
+.l-sidebar .p-sidebarTag__item svg {
+  margin-right: 0.3em;
 }
 
 .p-sidebarSearch form {
@@ -2892,7 +2909,7 @@ body {
   text-decoration: none;
 }
 
-.c-pageHeader.-index {
+.c-pageHeader.t-index {
   background-image: url(../img/column.jpg);
   background-size: cover;
   background-position: center;
@@ -3397,6 +3414,9 @@ body {
 }
 .p-single-relatedPosts__time {
   font-size: 1.4rem;
+}
+.p-single-relatedPosts__noItem {
+  margin-top: 30px;
 }
 
 .t-archive .c-pageHeader {

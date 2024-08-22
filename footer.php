@@ -1,7 +1,11 @@
 <footer class="l-footer">
-  <div class="l-container">
-    <div class="l-footer__inner">
-      <nav class="l-footer__navi">
+  <div class="l-footer__inner">
+    <?php if (!is_front_page()): ?>
+      <?php get_template_part('template-parts/breadcrumb'); ?>
+    <?php endif; ?>
+
+    <nav class="l-footer__navi">
+      <div class="l-container">
         <?php
         // メニューIDを取得する
         $menu_name = 'footer_nav';
@@ -17,8 +21,8 @@
             </li>
           <?php endforeach; ?>
         </ul>
-      </nav>
-    </div>
+      </div>
+    </nav>
   </div>
   <div class="l-footer__copyright">
     <small>&copy; E-VALUE WORKS.</small>

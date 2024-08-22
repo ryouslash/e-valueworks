@@ -67,3 +67,15 @@ function custom_menu()
   ]);
 }
 add_action('init', 'custom_menu');
+
+/**
+ * サイト内検索の対象を投稿のみにする
+ */
+function custom_search_filter($query)
+{
+  if ($query->is_search) {
+    $query->set('post_type', 'post');
+  }
+  return $query;
+}
+add_filter('pre_get_posts', 'custom_search_filter');

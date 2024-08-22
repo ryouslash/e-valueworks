@@ -1,9 +1,9 @@
 @use "../../foundation/variables" as *;
 
 .c-pagination {
-  margin-top: 60px;
+  .wp-pagenavi {
+    margin-top: 60px;
 
-  &__items {
     display: flex;
     flex-wrap: wrap;
     gap: 1em;

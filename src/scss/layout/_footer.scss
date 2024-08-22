@@ -1,23 +1,20 @@
 @use "../foundation/variables" as *;
 
 .l-footer {
-  background-color: #eeeeee;
-
-  &__inner {
-    padding: 30px 0;
-
-    @include mq-down(sm) {
-      padding: 20px 0;
-    }
+  &__navi {
+    background-color: #333333;
+    padding: 20px 0 10px;
   }
 
   &__navi-items {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
   &__navi-item {
     padding: 0 1em;
-    border-left: 1px solid #333333;
+    border-left: 1px solid #ffffff;
 
     @include mq-down() {
       font-size: $fontS;
@@ -28,10 +25,11 @@
     }
 
     &:last-of-type {
-      border-right: 1px solid #333333;
+      border-right: 1px solid #ffffff;
     }
 
     a {
+      color: #ffffff;
       text-decoration: underline;
 
       &:hover {
@@ -44,6 +42,6 @@
     text-align: center;
     background-color: #333333;
     color: #ffffff;
-    padding: 10px 0;
+    padding: 10px 0 20px;
   }
 }

@@ -151,6 +151,9 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(function () {
   // お知らせ 箇所
   var items = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.p-top-news__item');
   var nextItem = 1;
+
+  // 初期状態で1つ目のアイテムにクラスを追加
+  items.eq(0).addClass('is-slideIn');
   function showNextItem() {
     items.removeClass('is-slideIn');
     items.eq(nextItem).addClass('is-slideIn');

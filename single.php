@@ -72,7 +72,7 @@
                       ?>
                         <li class="c-postMetas__tag">
                           <a href="<?php echo esc_url(get_tag_link($tag->term_id)); ?>">
-                            <i class="fa-solid fa-tag"></i> <?php echo esc_html($tag->name); ?>
+                            <i class="fa-solid fa-tag"></i><?php echo esc_html($tag->name); ?>
                           </a>
                         </li>
                       <?php
@@ -119,198 +119,66 @@
 
           <div class="p-single-relatedPosts">
             <h2>同じカテゴリーの記事を読む</h2>
-            <ul class="p-single-relatedPosts__items">
-              <li class="p-single-relatedPosts__item">
-                <a href="#">
-                  <div class="p-single-relatedPosts__itemLeft">
-                    <div class="p-single-relatedPosts__thumbnail">
-                      <img src="<?php echo esc_url(get_template_directory_uri()); ?>/dist/img/noimg.jpg" />
-                    </div>
-                  </div>
-                  <div class="p-single-relatedPosts__itemRight">
-                    <div class="p-single-relatedPosts__title">
-                      【初心者向け5ステップ】Webサイトにカレンダーを実装する方法
-                    </div>
-                    <time class="p-single-relatedPosts__time">2024.08.13</time>
-                  </div>
-                </a>
-              </li>
-              <li class="p-single-relatedPosts__item">
-                <a href="#">
-                  <div class="p-single-relatedPosts__itemLeft">
-                    <div class="p-single-relatedPosts__thumbnail">
-                      <img src="<?php echo esc_url(get_template_directory_uri()); ?>/dist/img/noimg.jpg" />
-                    </div>
-                  </div>
-                  <div class="p-single-relatedPosts__itemRight">
-                    <div class="p-single-relatedPosts__title">
-                      Webサイトにカレンダーを実装する方法
-                    </div>
-                    <time class="p-single-relatedPosts__time">2024.08.13</time>
-                  </div>
-                </a>
-              </li>
-              <li class="p-single-relatedPosts__item">
-                <a href="#">
-                  <div class="p-single-relatedPosts__itemLeft">
-                    <div class="p-single-relatedPosts__thumbnail">
-                      <img src="<?php echo esc_url(get_template_directory_uri()); ?>/dist/img/noimg.jpg" />
-                    </div>
-                  </div>
-                  <div class="p-single-relatedPosts__itemRight">
-                    <div class="p-single-relatedPosts__title">
-                      Webサイトにカレンダーを実装する方法
-                    </div>
-                    <time class="p-single-relatedPosts__time">2024.08.13</time>
-                  </div>
-                </a>
-              </li>
-              <li class="p-single-relatedPosts__item">
-                <a href="#">
-                  <div class="p-single-relatedPosts__itemLeft">
-                    <div class="p-single-relatedPosts__thumbnail">
-                      <img src="<?php echo esc_url(get_template_directory_uri()); ?>/dist/img/noimg.jpg" />
-                    </div>
-                  </div>
-                  <div class="p-single-relatedPosts__itemRight">
-                    <div class="p-single-relatedPosts__title">
-                      Webサイトにカレンダーを実装する方法
-                    </div>
-                    <time class="p-single-relatedPosts__time">2024.08.13</time>
-                  </div>
-                </a>
-              </li>
-              <li class="p-single-relatedPosts__item">
-                <a href="#">
-                  <div class="p-single-relatedPosts__itemLeft">
-                    <div class="p-single-relatedPosts__thumbnail">
-                      <img src="<?php echo esc_url(get_template_directory_uri()); ?>/dist/img/noimg.jpg" />
-                    </div>
-                  </div>
-                  <div class="p-single-relatedPosts__itemRight">
-                    <div class="p-single-relatedPosts__title">
-                      Webサイトにカレンダーを実装する方法
-                    </div>
-                    <time class="p-single-relatedPosts__time">2024.08.13</time>
-                  </div>
-                </a>
-              </li>
-              <li class="p-single-relatedPosts__item">
-                <a href="#">
-                  <div class="p-single-relatedPosts__itemLeft">
-                    <div class="p-single-relatedPosts__thumbnail">
-                      <img src="<?php echo esc_url(get_template_directory_uri()); ?>/dist/img/noimg.jpg" />
-                    </div>
-                  </div>
-                  <div class="p-single-relatedPosts__itemRight">
-                    <div class="p-single-relatedPosts__title">
-                      Webサイトにカレンダーを実装する方法
-                    </div>
-                    <time class="p-single-relatedPosts__time">2024.08.13</time>
-                  </div>
-                </a>
-              </li>
-            </ul>
+
+            <?php
+            // 現在の投稿IDを取得
+            $current_post_id = get_the_ID();
+
+            // 現在の投稿が属するカテゴリーを取得
+            $categories = wp_get_post_categories($current_post_id);
+
+            if ($categories) {
+              $args = array(
+                'category__in'   => $categories,   // 同じカテゴリーの投稿を取得
+                'post__not_in'   => array($current_post_id),   // 現在の投稿は除外
+                'posts_per_page' => 6,   // 表示する投稿数
+              );
+            }
+
+            $related_posts_query = new WP_Query($args);; ?>
+            <?php if ($related_posts_query->have_posts()): ?>
+              <ul class="p-single-relatedPosts__items">
+                <?php while ($related_posts_query->have_posts()): $related_posts_query->the_post(); ?>
+                  <li class="p-single-relatedPosts__item">
+                    <a href="<?php the_permalink(); ?>">
+                      <div class="p-single-relatedPosts__itemLeft">
+                        <div class="p-single-relatedPosts__thumbnail">
+                          <div class="p-postList__thumbnail">
+                            <?php if (has_post_thumbnail()): ?>
+                              <?php the_post_thumbnail('large'); ?>
+                            <?php else: ?>
+                              <img src="<?php echo esc_url(get_template_directory_uri()); ?>/dist/img/noimg.jpg" />
+                            <?php endif; ?>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="p-single-relatedPosts__itemRight">
+                        <div class="p-single-relatedPosts__title">
+                          <?php the_title(); ?> </div>
+                        <time class="p-single-relatedPosts__time" datetime="<?php the_time('Y-m-d'); ?>"><?php the_time('Y.m.d'); ?></time>
+                      </div>
+                    </a>
+                  </li>
+                <?php endwhile; ?>
+              </ul>
+            <?php else: ?>
+              <div class="p-single-relatedPosts__noItem">
+                <p>同じカテゴリーの記事がありません。</p>
+              </div>
+              <?php wp_reset_postdata(); ?>
+            <?php endif; ?>
           </div>
       </main>
 
       <aside class="l-sidebar">
-        <div class="p-sidebarItem p-sidebarLatestPosts">
-          <div class="p-sidebarItem__title">最新の投稿</div>
-          <ul class="p-sidebarLatestPosts__items">
-            <li class="p-sidebarLatestPosts__item">
-              <a href="#">
-                <div class="p-sidebarLatestPosts__thumbnail">
-                  <img src="<?php echo esc_url(get_template_directory_uri()); ?>/dist/img/noimg.jpg" />
-                </div>
-                <div class="p-sidebarLatestPosts__title">
-                  Webサイトにカレンダーを実装する方法
-                </div>
-              </a>
-            </li>
-            <li class="p-sidebarLatestPosts__item">
-              <a href="#">
-                <div class="p-sidebarLatestPosts__thumbnail">
-                  <img src="<?php echo esc_url(get_template_directory_uri()); ?>/dist/img/noimg.jpg" />
-                </div>
-                <div class="p-sidebarLatestPosts__title">
-                  Webサイトにカレンダーを実装する方法
-                </div>
-              </a>
-            </li>
-            <li class="p-sidebarLatestPosts__item">
-              <a href="#">
-                <div class="p-sidebarLatestPosts__thumbnail">
-                  <img src="<?php echo esc_url(get_template_directory_uri()); ?>/dist/img/noimg.jpg" />
-                </div>
-                <div class="p-sidebarLatestPosts__title">
-                  Webサイトにカレンダーを実装する方法
-                </div>
-              </a>
-            </li>
-            <li class="p-sidebarLatestPosts__item">
-              <a href="#">
-                <div class="p-sidebarLatestPosts__thumbnail">
-                  <img src="<?php echo esc_url(get_template_directory_uri()); ?>/dist/img/noimg.jpg" />
-                </div>
-                <div class="p-sidebarLatestPosts__title">
-                  Webサイトにカレンダーを実装する方法
-                </div>
-              </a>
-            </li>
-            <li class="p-sidebarLatestPosts__item">
-              <a href="#">
-                <div class="p-sidebarLatestPosts__thumbnail">
-                  <img src="<?php echo esc_url(get_template_directory_uri()); ?>/dist/img/noimg.jpg" />
-                </div>
-                <div class="p-sidebarLatestPosts__title">
-                  Webサイトにカレンダーを実装する方法
-                </div>
-              </a>
-            </li>
-          </ul>
-        </div>
-
-        <div class="p-sidebarItem p-sidebarTaxonomy">
-          <div class="p-sidebarItem__title">カテゴリー</div>
-          <ul class="p-sidebarTaxonomy__items">
-            <li class="p-sidebarTaxonomy__item">
-              <a href="#">Web制作</a>
-            </li>
-            <li class="p-sidebarTaxonomy__item">
-              <a href="#">WordPress</a>
-            </li>
-          </ul>
-        </div>
-
-        <div class="p-sidebarItem p-sidebarTag">
-          <div class="p-sidebarItem__title">タグ</div>
-          <ul class="p-sidebarTag__items">
-            <li class="p-sidebarTag__item">
-              <a href="#"><i class="fa-solid fa-tag"></i> HTML</a>
-            </li>
-            <li class="p-sidebarTag__item">
-              <a href="#"><i class="fa-solid fa-tag"></i> CSS</a>
-            </li>
-          </ul>
-        </div>
-
-        <div class="p-sidebarItem p-sidebarSearch">
-          <div class="p-sidebarItem__title">記事を検索</div>
-          <div class="p-sidebarSearch__form">
-            <form action="#" method="get">
-              <input
-                type="text"
-                name="s"
-                value=""
-                placeholder="キーワードを入力" />
-              <button type="submit">検索</button>
-            </form>
-          </div>
-        </div>
+        <?php get_template_part('template-parts/sidebar/latest-posts'); ?>
+        <?php get_template_part('template-parts/sidebar/category'); ?>
+        <?php get_template_part('template-parts/sidebar/tag'); ?>
+        <?php get_template_part('template-parts/sidebar/search'); ?>
       </aside>
     </div>
   </div>
+
 </div>
 
 <?php get_footer(); ?>

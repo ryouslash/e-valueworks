@@ -43,6 +43,9 @@ $(function() {
   let items = $('.p-top-news__item');
   let nextItem = 1;
 
+  // 初期状態で1つ目のアイテムにクラスを追加
+  items.eq(0).addClass('is-slideIn');
+
   function showNextItem() {
     items.removeClass('is-slideIn');
     items.eq(nextItem).addClass('is-slideIn');

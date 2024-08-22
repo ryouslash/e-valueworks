@@ -8,10 +8,13 @@
 <body>
   <?php get_template_part('template-parts/header1'); ?>
 
-  <div class="l-content">
-    <div class="c-pageHeader t-index">
+  <div class="l-content t-archive">
+    <div class="c-pageHeader">
       <div class="l-container">
-        <div class="c-pageHeader__title">お役立ちコラム</div>
+        <span class="c-pageHeader__subTitle">お役立ちコラム</span>
+        <div class="c-pageHeader__title">
+          検索ワード「<?php the_search_query(); ?>」
+        </div>
       </div>
     </div>
     <div class="l-container">

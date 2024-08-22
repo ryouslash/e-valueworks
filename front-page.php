@@ -36,34 +36,44 @@
     </div>
   </section>
 
-  <section class="p-top-news">
-    <div class="l-container">
-      <ul class="p-top-news__items">
-        <li class="p-top-news__item is-slideIn">
-          <time class="p-top-news__time">2024/08/05</time>
-          <!-- 1つまで -->
-          <div class="p-top-news__taxonomy"><a href="#">お知らせ</a></div>
-          <div class="p-top-news__title">
-            <a href="#">ここにタイトルが入ります。</a>
-          </div>
-        </li>
-        <li class="p-top-news__item">
-          <time class="p-top-news__time">2024/08/05</time>
-          <div class="p-top-news__taxonomy"><a href="#">お知らせ</a></div>
-          <div class="p-top-news__title">
-            <a href="#">ここにタイトルが入ります。</a>
-          </div>
-        </li>
-        <li class="p-top-news__item">
-          <time class="p-top-news__time">2024/08/05</time>
-          <div class="p-top-news__taxonomy"><a href="#">お知らせ</a></div>
-          <div class="p-top-news__title">
-            <a href="#">ここにタイトルが入ります。</a>
-          </div>
-        </li>
-      </ul>
-    </div>
-  </section>
+  <?php
+  $args = array(
+    'post_type' => 'news',
+    'posts_per_page' => 5,
+    array(
+      'inclusive' => true, // 1ヶ月前の日付を含む
+      'after' => date('Y/m/d 0:0:0', strtotime('-1 month')) // 1ヶ月前
+    ),
+  );
+  $the_latest_query = new WP_Query($args);
+  ?>
+
+  <?php if ($the_latest_query->have_posts()): ?>
+    <section class="p-top-news">
+      <div class="l-container">
+        <ul class="p-top-news__items">
+          <?php while ($the_latest_query->have_posts()): $the_latest_query->the_post(); ?>
+            <li class="p-top-news__item">
+              <time class="p-top-news__time" datetime="<?php the_time('Y-m-d'); ?>"><?php the_time('Y/m/d'); ?></time>
+              <!-- 1つまで -->
+              <?php
+              $categories = get_the_category();
+              if ($categories):
+              ?>
+                <div class="p-top-news__taxonomy">
+                  <a href="<?php echo esc_url(get_category_link($categories[0]->term_id)); ?>"><?php echo esc_html($categories[0]->name); ?></a>
+                </div>
+              <?php endif; ?>
+              <div class="p-top-news__title">
+                <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+              </div>
+            </li>
+          <?php endwhile; ?>
+        </ul>
+      </div>
+    </section>
+    <?php wp_reset_postdata(); ?>
+  <?php endif; ?>
 
   <section class="p-top-troubles">
     <div class="l-sectionPadding">
@@ -635,6 +645,8 @@
       </div>
     </div>
   </section>
+  <?php get_template_part('template-parts/fixcta'); ?>
+
 </main>
 
 <?php get_footer(); ?>
