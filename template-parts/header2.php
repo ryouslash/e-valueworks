@@ -21,6 +21,15 @@
               <a href="<?php echo $item->url; ?>"><?php echo $item->title; ?><span><?php echo $item->description; ?></span></a>
             </li>
           <?php endforeach; ?>
+          <?php if (is_front_page()): ?>
+            <li class="p-gnav__item">
+              <a href="#contact">お問い合わせ<span>CONTACT</span></a>
+            </li>
+          <?php else: ?>
+            <li class="p-gnav__item">
+              <a href="<?php esc_url(home_url()); ?>/#contact">お問い合わせ<span>CONTACT</span></a>
+            </li>
+          <?php endif; ?>
         </ul>
       </nav>
       <div class="l-header__drawerBtn">
