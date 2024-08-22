@@ -18,7 +18,8 @@
 
     a {
       position: relative;
-      &::after {
+      
+      span {
         display: block;
         position: absolute;
         bottom: 0;
@@ -26,42 +27,6 @@
         transform: translateX(calc(100% + 20px));
         color: #777777;
         font-size: 1.1rem;
-      }
-    }
-
-    &--home a {
-      &::after {
-        content: "HOME";
-      }
-    }
-
-    &--about a {
-      &::after {
-        content: "ABOUT";
-      }
-    }
-
-    &--work a {
-      &::after {
-        content: "WORK";
-      }
-    }
-
-    &--price a {
-      &::after {
-        content: "PRICE";
-      }
-    }
-
-    &--news a {
-      &::after {
-        content: "NEWS";
-      }
-    }
-
-    &--contact a {
-      &::after {
-        content: "CONTACT";
       }
     }
   }

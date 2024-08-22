@@ -7,25 +7,20 @@
         <a href="<?php echo esc_url(home_url()); ?>"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/dist/img/logo.svg" /></a>
       </div>
       <nav class="l-header__nav">
+        <?php
+        // メニューIDを取得する
+        $menu_name = 'global_nav';
+        $locations = get_nav_menu_locations();
+        $menu = wp_get_nav_menu_object($locations[$menu_name]);
+
+        $menu_items = wp_get_nav_menu_items($menu->term_id);
+        ?>
         <ul class="p-gnav">
-          <li class="p-gnav__item p-gnav__item--home">
-            <a href="<?php echo esc_url(home_url()); ?>">ホーム</a>
-          </li>
-          <li class="p-gnav__item p-gnav__item--about">
-            <a href="#">アバウト</a>
-          </li>
-          <li class="p-gnav__item p-gnav__item--work">
-            <a href="#">制作実績</a>
-          </li>
-          <li class="p-gnav__item p-gnav__item--price">
-            <a href="#">料金</a>
-          </li>
-          <li class="p-gnav__item p-gnav__item--news">
-            <a href="#">お知らせ</a>
-          </li>
-          <li class="p-gnav__item p-gnav__item--contact">
-            <a href="#contact">お問い合わせ</a>
-          </li>
+          <?php foreach ($menu_items as $item): ?>
+            <li class="p-gnav__item">
+              <a href="<?php echo $item->url; ?>"><?php echo $item->title; ?><span><?php echo $item->description; ?></span></a>
+            </li>
+          <?php endforeach; ?>
         </ul>
       </nav>
       <div class="l-header__drawerBtn">
@@ -36,24 +31,11 @@
     <div class="p-drawerMenu">
       <div class="l-container">
         <ul class="p-drawerMenu__items">
-          <li class="p-drawerMenu__item p-drawerMenu__item--home">
-            <a href="<?php echo esc_url(home_url()); ?>">ホーム</a>
-          </li>
-          <li class="p-drawerMenu__item p-drawerMenu__item--about">
-            <a href="#">アバウト</a>
-          </li>
-          <li class="p-drawerMenu__item p-drawerMenu__item--work">
-            <a href="#">制作実績</a>
-          </li>
-          <li class="p-drawerMenu__item p-drawerMenu__item--price">
-            <a href="#">料金</a>
-          </li>
-          <li class="p-drawerMenu__item p-drawerMenu__item--news">
-            <a href="#">お知らせ</a>
-          </li>
-          <li class="p-drawerMenu__item p-drawerMenu__item--contact">
-            <a href="#contact">お問い合わせ</a>
-          </li>
+          <?php foreach ($menu_items as $item): ?>
+            <li class="p-drawerMenu__item p-drawerMenu__item--home">
+              <a href="<?php echo $item->url; ?>"><?php echo $item->title; ?><span><?php echo $item->description; ?></span></a>
+            </li>
+          <?php endforeach; ?>
         </ul>
       </div>
     </div>

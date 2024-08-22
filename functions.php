@@ -8,12 +8,12 @@ add_theme_support('title-tag');
 /**
  * <title>の区切り文字を変更する
  */
-add_filter('document_title_separator', 'my_document_title_separator');
 function my_document_title_separator($separator)
 {
   $separator = '|';
   return $separator;
 }
+add_filter('document_title_separator', 'my_document_title_separator');
 
 /**
  * アイキャッチ画像を使用可能にする
@@ -50,3 +50,20 @@ function custom_excerpt_symbol($length)
   return '&hellip;';
 }
 add_filter('excerpt_more', 'custom_excerpt_symbol');
+
+/**
+ * カスタムメニュー機能を使用可能にする
+ */
+add_theme_support('menus');
+
+/**
+ * メニュー機能を有効化する
+ */
+function custom_menu()
+{
+  register_nav_menus([
+    'global_nav' => 'グローバルナビゲーション',
+    'footer_nav' => 'フッターナビゲーション',
+  ]);
+}
+add_action('init', 'custom_menu');

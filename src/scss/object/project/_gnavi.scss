@@ -30,37 +30,13 @@
         }
       }
 
-      &::after {
+      span {
         font-size: 11px;
         color: #777777;
         text-align: center;
         display: block;
         margin-top: 5px;
       }
-    }
-
-    &--home a::after {
-      content: "HOME";
-    }
-
-    &--about a::after {
-      content: "ABOUT";
-    }
-
-    &--work a::after {
-      content: "WORK";
-    }
-
-    &--news a::after {
-      content: "NEWS";
-    }
-
-    &--price a::after {
-      content: "PRICE";
-    }
-
-    &--contact a::after {
-      content: "CONTACT";
     }
   }
 }

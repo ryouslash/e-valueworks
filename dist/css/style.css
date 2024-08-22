@@ -1009,6 +1009,8 @@ body {
   padding: 60px 0;
   background-color: #eeeeee;
   position: relative;
+  background-size: cover;
+  background-position: center;
 }
 @media screen and (max-width: 575px) {
   .c-pageHeader {
@@ -1141,30 +1143,12 @@ body {
   content: "";
   width: 100%;
 }
-.p-gnav__item a::after {
+.p-gnav__item a span {
   font-size: 11px;
   color: #777777;
   text-align: center;
   display: block;
   margin-top: 5px;
-}
-.p-gnav__item--home a::after {
-  content: "HOME";
-}
-.p-gnav__item--about a::after {
-  content: "ABOUT";
-}
-.p-gnav__item--work a::after {
-  content: "WORK";
-}
-.p-gnav__item--news a::after {
-  content: "NEWS";
-}
-.p-gnav__item--price a::after {
-  content: "PRICE";
-}
-.p-gnav__item--contact a::after {
-  content: "CONTACT";
 }
 
 .p-drawerMenu__items {
@@ -1183,7 +1167,7 @@ body {
 .p-drawerMenu__item a {
   position: relative;
 }
-.p-drawerMenu__item a::after {
+.p-drawerMenu__item a span {
   display: block;
   position: absolute;
   bottom: 0;
@@ -1191,24 +1175,6 @@ body {
   transform: translateX(calc(100% + 20px));
   color: #777777;
   font-size: 1.1rem;
-}
-.p-drawerMenu__item--home a::after {
-  content: "HOME";
-}
-.p-drawerMenu__item--about a::after {
-  content: "ABOUT";
-}
-.p-drawerMenu__item--work a::after {
-  content: "WORK";
-}
-.p-drawerMenu__item--price a::after {
-  content: "PRICE";
-}
-.p-drawerMenu__item--news a::after {
-  content: "NEWS";
-}
-.p-drawerMenu__item--contact a::after {
-  content: "CONTACT";
 }
 .p-drawerMenu .l-container {
   display: grid;
@@ -3340,8 +3306,6 @@ body {
 
 .t-single .c-pageHeader {
   background-image: url(../img/column.jpg);
-  background-size: cover;
-  background-position: center;
 }
 .t-single .p-editorContent {
   margin: 60px 0 120px;

@@ -2,13 +2,20 @@
   <div class="l-container">
     <div class="l-footer__inner">
       <nav class="l-footer__navi">
+        <?php
+        // メニューIDを取得する
+        $menu_name = 'footer_nav';
+        $locations = get_nav_menu_locations();
+        $menu = wp_get_nav_menu_object($locations[$menu_name]);
+
+        $menu_items = wp_get_nav_menu_items($menu->term_id);
+        ?>
         <ul class="l-footer__navi-items">
-          <li class="l-footer__navi-item">
-            <a href="#">プライバシーポリシー</a>
-          </li>
-          <li class="l-footer__navi-item">
-            <a href="#">お役立ちコラム</a>
-          </li>
+          <?php foreach ($menu_items as $item): ?>
+            <li class="l-footer__navi-item">
+              <a href="<?php echo $item->url; ?>"><?php echo $item->title; ?></a>
+            </li>
+          <?php endforeach; ?>
         </ul>
       </nav>
     </div>
