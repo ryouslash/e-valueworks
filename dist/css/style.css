@@ -2272,7 +2272,7 @@ body {
 }
 .p-top-promise__fixed {
   position: sticky;
-  top: 140.5px;
+  top: 160.5px;
 }
 @media screen and (max-width: 1024px) {
   .p-top-promise__fixed {
@@ -3476,7 +3476,7 @@ body {
 .t-taxonomy-archive-news .l-content__inner .l-sidebar {
   order: 1;
   position: sticky;
-  top: 140.5px;
+  top: 160.5px;
   left: 0;
 }
 @media screen and (max-width: 1024px) {

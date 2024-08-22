@@ -43,7 +43,7 @@
 
   &__fixed {
     position: sticky;
-    top: 140.5px;
+    top: 160.5px;
 
     @include mq-down(lg) {
       position: static;
