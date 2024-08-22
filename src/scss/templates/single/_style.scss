@@ -8,6 +8,10 @@
   }
 
   .p-editorContent {
-    margin: 60px 0;
+    margin: 60px 0 120px;
+
+    @include mq-down(sm) {
+      margin: 60px 0 100px;
+    }
   }
 }

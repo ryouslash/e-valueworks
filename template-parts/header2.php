@@ -4,7 +4,7 @@
   <header class="l-header">
     <div class="l-header__inner l-container">
       <div class="l-header__logo">
-        <a href="<?php echo esc_url(home_url()); ?>"><img src="dist/img/logo.svg" /></a>
+        <a href="<?php echo esc_url(home_url()); ?>"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/dist/img/logo.svg" /></a>
       </div>
       <nav class="l-header__nav">
         <ul class="p-gnav">

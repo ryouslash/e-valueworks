@@ -31,14 +31,14 @@ import {
   faLinkedin
 } from '@fortawesome/free-brands-svg-icons';
 
-// Font awesome 読み込み
-library.add(faEnvelope, faHandshake, faPenNib, faCode, faServer, faChevronDown, faLink, faInstagram, faFacebook, faGithub, faLinkedin, faChevronUp, faBars, faXmark, faCheck, faTag, faChevronLeft, faChevronRight, faSackDollar, faHandPointRight);
-
-dom.i2svg();
-
-// 100vwの調整
 $(function() {
 
+  // Font awesome 読み込み
+  library.add(faEnvelope, faHandshake, faPenNib, faCode, faServer, faChevronDown, faLink, faInstagram, faFacebook, faGithub, faLinkedin, faChevronUp, faBars, faXmark, faCheck, faTag, faChevronLeft, faChevronRight, faSackDollar, faHandPointRight);
+
+  dom.i2svg();
+  
+  // 100vwの調整
   function setVw() {
     let vw = $(window).width() / 100 + "px";
     $(":root").css("--vw", vw);

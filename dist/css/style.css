@@ -1257,6 +1257,34 @@ body {
   padding: 0 0.5em;
   margin: 2em 0 0.8em;
 }
+.p-editorContent ul li,
+.p-editorContent ol li {
+  list-style-position: inside;
+  margin: 0.2em 0;
+}
+.p-editorContent ul li ul,
+.p-editorContent ul li ol,
+.p-editorContent ol li ul,
+.p-editorContent ol li ol {
+  margin-left: 1em;
+  margin-top: 0.2em;
+}
+.p-editorContent ul li ul li,
+.p-editorContent ol li ul li {
+  list-style-type: circle;
+}
+.p-editorContent ul li {
+  list-style-type: disc;
+}
+.p-editorContent ol li {
+  list-style-type: decimal;
+}
+.p-editorContent a {
+  text-decoration: underline;
+}
+.p-editorContent a:hover {
+  text-decoration: none;
+}
 
 .p-postHead__title {
   font-size: clamp(2rem, 1.8rem + 0.625vw, 2.6rem);
@@ -3306,7 +3334,7 @@ body {
 /*
  * templates（固定ページ、投稿、カスタム投稿、アーカイブ）
  */
-.p-editorContent.-page-template2 {
+.p-editorContent.-page-template-default {
   margin-top: 60px;
 }
 
@@ -3316,11 +3344,21 @@ body {
   background-position: center;
 }
 .t-single .p-editorContent {
-  margin: 60px 0;
+  margin: 60px 0 120px;
+}
+@media screen and (max-width: 575px) {
+  .t-single .p-editorContent {
+    margin: 60px 0 100px;
+  }
 }
 
 .p-single-relatedPosts {
   margin: 120px 0 0;
+}
+@media screen and (max-width: 575px) {
+  .p-single-relatedPosts {
+    margin: 100px 0 0;
+  }
 }
 .p-single-relatedPosts > h2 {
   font-size: clamp(2rem, 1.8rem + 0.625vw, 2.6rem);

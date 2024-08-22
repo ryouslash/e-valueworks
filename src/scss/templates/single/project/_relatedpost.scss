@@ -3,6 +3,10 @@
 .p-single-relatedPosts {
   margin: 120px 0 0;
 
+  @include mq-down(sm) {
+    margin: 100px 0 0;
+  }
+
   & > h2 {
     font-size: $fontL;
     background-color: #d5f3fd;

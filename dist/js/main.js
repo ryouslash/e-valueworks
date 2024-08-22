@@ -19667,9 +19667,9 @@ var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other entry modules.
 (() => {
 var __webpack_exports__ = {};
-/*!**************************!*\
-  !*** ./src/js/common.js ***!
-  \**************************/
+/*!************************!*\
+  !*** ./src/js/main.js ***!
+  \************************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "jquery");
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
@@ -19682,13 +19682,12 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
-// Font awesome 読み込み
-_fortawesome_fontawesome_svg_core__WEBPACK_IMPORTED_MODULE_1__.library.add(_fortawesome_free_regular_svg_icons__WEBPACK_IMPORTED_MODULE_2__.faEnvelope, _fortawesome_free_regular_svg_icons__WEBPACK_IMPORTED_MODULE_2__.faHandshake, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__.faPenNib, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__.faCode, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__.faServer, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__.faChevronDown, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__.faLink, _fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_4__.faInstagram, _fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_4__.faFacebook, _fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_4__.faGithub, _fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_4__.faLinkedin, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__.faChevronUp, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__.faBars, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__.faXmark, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__.faCheck, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__.faTag, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__.faChevronLeft, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__.faChevronRight, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__.faSackDollar, _fortawesome_free_regular_svg_icons__WEBPACK_IMPORTED_MODULE_2__.faHandPointRight);
-_fortawesome_fontawesome_svg_core__WEBPACK_IMPORTED_MODULE_1__.dom.i2svg();
-
-// 100vwの調整
 jquery__WEBPACK_IMPORTED_MODULE_0___default()(function () {
+  // Font awesome 読み込み
+  _fortawesome_fontawesome_svg_core__WEBPACK_IMPORTED_MODULE_1__.library.add(_fortawesome_free_regular_svg_icons__WEBPACK_IMPORTED_MODULE_2__.faEnvelope, _fortawesome_free_regular_svg_icons__WEBPACK_IMPORTED_MODULE_2__.faHandshake, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__.faPenNib, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__.faCode, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__.faServer, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__.faChevronDown, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__.faLink, _fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_4__.faInstagram, _fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_4__.faFacebook, _fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_4__.faGithub, _fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_4__.faLinkedin, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__.faChevronUp, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__.faBars, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__.faXmark, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__.faCheck, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__.faTag, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__.faChevronLeft, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__.faChevronRight, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_3__.faSackDollar, _fortawesome_free_regular_svg_icons__WEBPACK_IMPORTED_MODULE_2__.faHandPointRight);
+  _fortawesome_fontawesome_svg_core__WEBPACK_IMPORTED_MODULE_1__.dom.i2svg();
+
+  // 100vwの調整
   function setVw() {
     var vw = jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).width() / 100 + "px";
     jquery__WEBPACK_IMPORTED_MODULE_0___default()(":root").css("--vw", vw);
@@ -19779,4 +19778,4 @@ __webpack_require__.r(__webpack_exports__);
 
 /******/ })()
 ;
-//# sourceMappingURL=common.js.map
+//# sourceMappingURL=main.js.map

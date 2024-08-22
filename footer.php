@@ -20,4 +20,7 @@
 <a class="c-pageTop js-pageTop" href="#">
   <i class="fa-solid fa-chevron-up"></i>
 </a>
-<script src="<?php echo esc_url(get_template_directory_uri()); ?>/dist/js/common.js"></script>
+<?php wp_footer(); ?>
+</body>
+
+</html>

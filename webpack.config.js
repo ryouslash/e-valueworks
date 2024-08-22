@@ -6,7 +6,7 @@ const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 
 module.exports = {
   entry: {
-    common: ['./src/js/common.js', './src/scss/style.scss'],
+    main: ['./src/js/main.js', './src/scss/style.scss'],
     top: './src/js/top.js',
     work: './src/js/work.js',
     price: './src/js/price.js',
