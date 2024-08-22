@@ -19698,8 +19698,6 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(function () {
     // ロード時、resize時に関数を実行
     setVw();
   });
-  var header = document.querySelector('.l-header');
-  var headerHeight = header.offsetHeight;
   var drawerBtn = document.querySelector('.l-header__drawerBtn');
   var drawerMenu = document.querySelector('.p-drawerMenu');
   if (drawerBtn && drawerMenu) {
@@ -19708,27 +19706,34 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(function () {
       drawerMenu.classList.toggle('is-show');
     });
   }
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).on('load', function () {
+    var header = document.querySelector('.l-header');
+    var headerHeight = header.offsetHeight;
+    document.documentElement.style.setProperty('--headerHeight', "".concat(headerHeight, "px"));
 
-  // スムーススクロール
-  if (location.hash) {
-    var target = jquery__WEBPACK_IMPORTED_MODULE_0___default()(location.hash);
-    if (target.length) {
+    // スムーススクロール
+    if (location.hash) {
+      var target = jquery__WEBPACK_IMPORTED_MODULE_0___default()(location.hash);
+      if (target.length) {
+        var _header = document.querySelector('.l-header');
+        var _headerHeight = _header.offsetHeight;
+        var position = target.offset().top - _headerHeight;
+        jquery__WEBPACK_IMPORTED_MODULE_0___default()("html, body").animate({
+          scrollTop: position
+        }, 0 // ページ読み込み時のスクロールは即時
+        );
+      }
+    }
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()('a[href^="#"]').on('click', function (e) {
+      e.preventDefault();
+      var speed = 2000;
+      var href = jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).attr("href");
+      var target = jquery__WEBPACK_IMPORTED_MODULE_0___default()(href === "#" || href === "" ? "html" : href);
       var position = target.offset().top - headerHeight;
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("html, body").animate({
         scrollTop: position
-      }, 0 // ページ読み込み時のスクロールは即時
-      );
-    }
-  }
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()('a[href^="#"]').on('click', function (e) {
-    e.preventDefault();
-    var speed = 2000;
-    var href = jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).attr("href");
-    var target = jquery__WEBPACK_IMPORTED_MODULE_0___default()(href === "#" || href === "" ? "html" : href);
-    var position = target.offset().top - headerHeight;
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()("html, body").animate({
-      scrollTop: position
-    }, speed, "swing");
+      }, speed, "swing");
+    });
   });
 
   // ページトップボタンをスクロールしたところで表示

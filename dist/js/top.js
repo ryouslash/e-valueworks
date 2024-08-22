@@ -115,9 +115,6 @@ function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length)
 
 
 jquery__WEBPACK_IMPORTED_MODULE_0___default()(function () {
-  var header = document.querySelector('.l-header');
-  var headerHeight = header.offsetHeight; // 数値として保持
-
   // メインビジュアル箇所
   var typing = function typing(el, sentence) {
     _toConsumableArray(sentence).forEach(function (_char, index) {
@@ -162,7 +159,10 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(function () {
   setInterval(showNextItem, 5000);
 
   // スクロールイベントの監視
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).on('scroll', function () {
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).on('load scroll', function () {
+    var header = document.querySelector('.l-header');
+    var headerHeight = header.offsetHeight; // 数値として保持
+
     // お悩みはこちら 箇所
     var $troubleElement = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.p-top-troubles');
     var troubleOffsetTop = $troubleElement.offset().top;

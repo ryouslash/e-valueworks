@@ -3,9 +3,6 @@ import 'slick-carousel/slick/slick.min.js';
 
 $(function() {
 
-  const header = document.querySelector('.l-header');
-  const headerHeight = header.offsetHeight; // 数値として保持
-
   // メインビジュアル箇所
   const typing = (el, sentence) => {
     [...sentence].forEach((char, index) => {
@@ -55,8 +52,10 @@ $(function() {
   setInterval(showNextItem, 5000);
 
   // スクロールイベントの監視
-  $(window).on('scroll', function() {
-
+  $(window).on('load scroll', function () {
+    const header = document.querySelector('.l-header');
+    const headerHeight = header.offsetHeight; // 数値として保持
+    
     // お悩みはこちら 箇所
     let $troubleElement = $('.p-top-troubles');
     let troubleOffsetTop = $troubleElement.offset().top;

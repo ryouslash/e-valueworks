@@ -32,7 +32,6 @@ import {
 } from '@fortawesome/free-brands-svg-icons';
 
 $(function() {
-
   // Font awesome 読み込み
   library.add(faEnvelope, faHandshake, faPenNib, faCode, faServer, faChevronDown, faLink, faInstagram, faFacebook, faGithub, faLinkedin, faChevronUp, faBars, faXmark, faCheck, faTag, faChevronLeft, faChevronRight, faSackDollar, faHandPointRight);
 
@@ -50,8 +49,6 @@ $(function() {
     setVw();
   });
 
-  const header = document.querySelector('.l-header');
-  const headerHeight = header.offsetHeight;
   const drawerBtn = document.querySelector('.l-header__drawerBtn');
   const drawerMenu = document.querySelector('.p-drawerMenu');
 
@@ -62,32 +59,40 @@ $(function() {
     });
   }
 
-  // スムーススクロール
-  if (location.hash) {
-    let target = $(location.hash);
-    if (target.length) {
-      let position = target.offset().top - headerHeight;
-      $("html, body").animate({
+  $(window).on('load', function () {
+    const header = document.querySelector('.l-header');
+    const headerHeight = header.offsetHeight;
+    document.documentElement.style.setProperty('--headerHeight', `${headerHeight}px`);
+
+    // スムーススクロール
+    if (location.hash) {
+      let target = $(location.hash);
+      if (target.length) {
+        const header = document.querySelector('.l-header');
+        const headerHeight = header.offsetHeight;
+        let position = target.offset().top - headerHeight;
+        $("html, body").animate({
           scrollTop: position,
         },
-        0 // ページ読み込み時のスクロールは即時
-      );
+          0 // ページ読み込み時のスクロールは即時
+        );
+      }
     }
-  }
 
-  $('a[href^="#"]').on('click', function(e) {
-    e.preventDefault();
-    let speed = 2000;
-    let href = $(this).attr("href");
-    let target = $(href === "#" || href === "" ? "html" : href);
-    let position = target.offset().top - headerHeight;
+    $('a[href^="#"]').on('click', function (e) {
+      e.preventDefault();
+      let speed = 2000;
+      let href = $(this).attr("href");
+      let target = $(href === "#" || href === "" ? "html" : href);
+      let position = target.offset().top - headerHeight;
 
-    $("html, body").animate({
+      $("html, body").animate({
         scrollTop: position,
       },
-      speed,
-      "swing"
-    );
+        speed,
+        "swing"
+      );
+    });
   });
 
   // ページトップボタンをスクロールしたところで表示
