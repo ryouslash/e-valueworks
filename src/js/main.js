@@ -51,11 +51,7 @@ $(function() {
   });
 
   const header = document.querySelector('.l-header');
-  const headerHeight = header ? header.offsetHeight : 0;
-
-  document.documentElement.style.setProperty('--headerHeight', headerHeight + 'px');
-
-  // ヘッダー箇所
+  const headerHeight = header.offsetHeight;
   const drawerBtn = document.querySelector('.l-header__drawerBtn');
   const drawerMenu = document.querySelector('.p-drawerMenu');
 

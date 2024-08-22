@@ -38,7 +38,7 @@
     .l-sidebar {
       order: 1;
       position: sticky;
-      top: calc(var(--headerHeight) + 60px);
+      top: 140.5px;
       left: 0;
 
       @include mq-down(lg) {

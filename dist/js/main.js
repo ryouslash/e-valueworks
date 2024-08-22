@@ -19699,10 +19699,7 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(function () {
     setVw();
   });
   var header = document.querySelector('.l-header');
-  var headerHeight = header ? header.offsetHeight : 0;
-  document.documentElement.style.setProperty('--headerHeight', headerHeight + 'px');
-
-  // ヘッダー箇所
+  var headerHeight = header.offsetHeight;
   var drawerBtn = document.querySelector('.l-header__drawerBtn');
   var drawerMenu = document.querySelector('.p-drawerMenu');
   if (drawerBtn && drawerMenu) {

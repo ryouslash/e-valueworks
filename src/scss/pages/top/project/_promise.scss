@@ -43,7 +43,7 @@
 
   &__fixed {
     position: sticky;
-    top: calc(60px + var(--headerHeight));
+    top: 140.5px;
 
     @include mq-down(lg) {
       position: static;

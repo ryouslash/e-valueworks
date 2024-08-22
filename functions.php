@@ -43,18 +43,6 @@ add_filter('document_title_separator', 'my_document_title_separator');
  */
 add_theme_support('post-thumbnails');
 
-/**
- * 日付アーカイブページはトップページにリダイレクトさせる
- */
-function redirect_date_archives_to_home()
-{
-  if (is_date()) {
-    wp_redirect(home_url('/'));
-    exit;
-  }
-}
-
-add_action('template_redirect', 'redirect_date_archives_to_home');
 
 /**
  * 抜粋文の文字数を設定
@@ -102,3 +90,17 @@ function custom_search_filter($query)
   return $query;
 }
 add_filter('pre_get_posts', 'custom_search_filter');
+
+/**
+ * 日付アーカイブページはトップページにリダイレクトさせる
+ */
+function redirect_date_archives_to_home()
+{
+  if (is_date()) {
+    wp_redirect(home_url('/'));
+    exit;
+  }
+}
+add_action('template_redirect', 'redirect_date_archives_to_home');
+
+get_template_part('includes/custom-posts');
