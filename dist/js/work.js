@@ -88,30 +88,27 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "jquery");
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
 
-var header = document.querySelector('.l-header');
-var headerHeight = header.offsetHeight; // 数値として保持
-
-jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
+jquery__WEBPACK_IMPORTED_MODULE_0___default()(function () {
+  var header = document.querySelector('.l-header');
   function workCheckVisibility() {
     var $photoElement = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.p-single-work-client__siteImg');
     var windowTop = jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).scrollTop();
     var windowBottom = windowTop + jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).height();
     $photoElement.each(function () {
       var elementTop = jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).offset().top;
-      var elementBottom = elementTop + jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).outerHeight();
       if (elementTop < windowBottom) {
         jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).addClass('is-show');
       }
     });
   }
 
-  // スクロールとリサイズ時に処理を実行
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).on('scroll resize', function () {
-    workCheckVisibility();
-  });
-
   // ページロード時に一度実行
   workCheckVisibility();
+
+  // スクロール時に処理を実行
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).on('scroll', function () {
+    workCheckVisibility();
+  });
 });
 /******/ })()
 ;

@@ -19688,41 +19688,32 @@ _fortawesome_fontawesome_svg_core__WEBPACK_IMPORTED_MODULE_1__.library.add(_fort
 _fortawesome_fontawesome_svg_core__WEBPACK_IMPORTED_MODULE_1__.dom.i2svg();
 
 // 100vwの調整
-function setVw() {
-  // --vwをセットする関数
-  var vw = jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).width() / 100 + "px";
-  // ブラウザ幅/100を取得し変数vwに格納
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()(":root").css("--vw", vw);
-  // :rootのカスタムプロパティ--vwにvwを代入させる。これで、スクロールバーの幅を除いた画面幅/100が--vwになる
-}
-jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).on("load resize", function () {
-  setVw();
-});
-// 画面を、読み込んだ時・サイズを変えた時  →  関数setVwが動作する
+jquery__WEBPACK_IMPORTED_MODULE_0___default()(function () {
+  function setVw() {
+    var vw = jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).width() / 100 + "px";
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()(":root").css("--vw", vw);
+  }
+  setVw(); // 初期ロード時に関数を実行
 
-// 初期ロード時にも関数を実行
-setVw();
-var header = document.querySelector('.l-header');
-var headerHeight = header.offsetHeight; // 数値として保持
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).on("load resize", function () {
+    // ロード時、resize時に関数を実行
+    setVw();
+  });
+  var header = document.querySelector('.l-header');
+  var headerHeight = header ? header.offsetHeight : 0;
+  document.documentElement.style.setProperty('--headerHeight', headerHeight + 'px');
 
-document.documentElement.style.setProperty('--headerHeight', headerHeight + 'px');
-
-// ヘッダー箇所
-document.addEventListener('DOMContentLoaded', function () {
-  // .l-header__nav 要素を取得
+  // ヘッダー箇所
   var drawerBtn = document.querySelector('.l-header__drawerBtn');
   var drawerMenu = document.querySelector('.p-drawerMenu');
+  if (drawerBtn && drawerMenu) {
+    drawerBtn.addEventListener('click', function () {
+      drawerBtn.classList.toggle('is-open');
+      drawerMenu.classList.toggle('is-show');
+    });
+  }
 
-  // クリックイベントのリスナーを追加
-  drawerBtn.addEventListener('click', function () {
-    // クラス名 'is-open' をトグルする
-    drawerBtn.classList.toggle('is-open');
-    drawerMenu.classList.toggle('is-show');
-  });
-});
-
-// スムーススクロール
-jquery__WEBPACK_IMPORTED_MODULE_0___default()(function () {
+  // スムーススクロール
   if (location.hash) {
     var target = jquery__WEBPACK_IMPORTED_MODULE_0___default()(location.hash);
     if (target.length) {
@@ -19733,33 +19724,28 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(function () {
       );
     }
   }
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()('a[href^="#"]').click(function (e) {
-    e.preventDefault(); // デフォルトのアンカー動作を停止
-
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('a[href^="#"]').on('click', function (e) {
+    e.preventDefault();
     var speed = 2000;
     var href = jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).attr("href");
-    var target = jquery__WEBPACK_IMPORTED_MODULE_0___default()(href == "#" || href == "" ? "html" : href);
+    var target = jquery__WEBPACK_IMPORTED_MODULE_0___default()(href === "#" || href === "" ? "html" : href);
     var position = target.offset().top - headerHeight;
     jquery__WEBPACK_IMPORTED_MODULE_0___default()("html, body").animate({
       scrollTop: position
     }, speed, "swing");
   });
-});
 
-// ページトップボタンをスクロールしたところで表示
-jquery__WEBPACK_IMPORTED_MODULE_0___default()(function () {
+  // ページトップボタンをスクロールしたところで表示
   var pageTop = jquery__WEBPACK_IMPORTED_MODULE_0___default()(".c-pageTop");
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).scroll(function () {
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).on('scroll', function () {
     if (jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).scrollTop() > 1000) {
       pageTop.addClass('is-show');
     } else {
       pageTop.removeClass('is-show');
     }
   });
-});
 
-// p-ficCta__leftをクリックすると、p-ficCtaにis-activeがつく
-document.addEventListener('DOMContentLoaded', function () {
+  // p-ficCta__leftをクリックすると、p-ficCtaにis-activeがつく
   var fixCtaLeft = document.querySelector('.p-fixCta__left');
   var fixCtaClose = document.querySelector('.p-fixCta__close');
   if (fixCtaLeft) {
