@@ -1,6 +1,29 @@
 <?php
 
 /**
+ * CSSファイルのエンキュー
+ */
+function add_custom_styles()
+{
+  wp_enqueue_style('style', esc_url(get_template_directory_uri()) . '/dist/css/style.css', array(), '1.0.0',);
+}
+add_action('wp_enqueue_scripts', 'add_custom_styles');
+
+/**
+ * JSファイルのエンキュー
+ */
+function add_custom_scripts()
+{
+  wp_enqueue_script('jquery'); // jQuery のエンキュー
+  wp_enqueue_script('main', esc_url(get_template_directory_uri()) . '/dist/js/main.js', array('jquery'), '1.0.0', true); // 共通スクリプト
+
+  if (is_front_page()):
+    wp_enqueue_script('top', esc_url(get_template_directory_uri()) . '/dist/js/top.js', array('common'), '1.0.0', true); // トップページ用スクリプト
+  endif;
+}
+add_action('wp_enqueue_scripts', 'add_custom_scripts');
+
+/**
  * <title>タグを出力する
  */
 add_theme_support('title-tag');
