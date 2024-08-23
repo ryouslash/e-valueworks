@@ -19,6 +19,9 @@ function add_custom_scripts()
 
   if (is_front_page()):
     wp_enqueue_script('top', esc_url(get_template_directory_uri()) . '/dist/js/top.js', array('common'), '1.0.0', true); // トップページ用スクリプト
+
+  elseif (is_singular('work')):
+    wp_enqueue_script('work', esc_url(get_template_directory_uri()) . '/dist/js/work.js', array('common'), '1.0.0', true); // 制作実績用スクリプト
   endif;
 }
 add_action('wp_enqueue_scripts', 'add_custom_scripts');
@@ -97,10 +100,22 @@ add_filter('pre_get_posts', 'custom_search_filter');
 function redirect_date_archives_to_home()
 {
   if (is_date()) {
-    wp_redirect(home_url('/'));
+    wp_redirect(home_url('404'));
     exit;
   }
 }
 add_action('template_redirect', 'redirect_date_archives_to_home');
+
+/**
+ * 制作実績「業種」のターム一覧ページは404ページにリダイレクトさせる
+ */
+function disable_taxonomy_archive_redirect()
+{
+  if (is_tax('industry')) {
+    wp_redirect(home_url('404'));
+    exit;
+  }
+}
+add_action('template_redirect', 'disable_taxonomy_archive_redirect');
 
 get_template_part('includes/custom-posts');

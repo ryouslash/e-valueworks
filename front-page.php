@@ -420,7 +420,7 @@
             </p>
           </div>
           <div class="p-top-price__planLower">
-            <a href="#" class="c-button2">詳細はこちら</a>
+            <a href="<?php echo esc_url(home_url('price/#coding-plan')); ?>" class="c-button2">詳細はこちら</a>
           </div>
         </div>
         <div class="p-top-price__plan p-top-price__plan--maintenance">
@@ -448,7 +448,7 @@
             </p>
           </div>
           <div class="p-top-price__planLower">
-            <a href="#" class="c-button2">詳細はこちら</a>
+            <a href="<?php echo esc_url(home_url('price/#maintenance-plan')); ?>" class="c-button2">詳細はこちら</a>
           </div>
         </div>
       </div>

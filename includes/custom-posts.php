@@ -1,8 +1,9 @@
 <?php
-/**
- * カスタム投稿タイプ「お知らせ」を追加
- */
+
 add_action('init', function () {
+  /**
+   * カスタム投稿タイプ「お知らせ」を追加
+   */
   register_post_type('news', [
     'label' => 'お知らせ',
     'public' => true,
@@ -14,6 +15,24 @@ add_action('init', function () {
 
   register_taxonomy('news_category', 'news', [
     'label' => 'お知らせカテゴリー',
+    'hierarchical' => true,
+    'show_in_rest' => true,
+  ]);
+
+  /**
+   * カスタム投稿タイプ「制作実績」を追加
+   */
+  register_post_type('work', [
+    'label' => '制作実績',
+    'public' => true,
+    'menu_icon' => 'dashicons-cover-image',
+    'supports' => ['thumbnail', 'title', 'editor'],
+    'has_archive' => true, // アーカイブを有効化
+    'show_in_rest' => true,  // これでブロックエディターを有効化
+  ]);
+
+  register_taxonomy('industry', 'work', [
+    'label' => '業種',
     'hierarchical' => true,
     'show_in_rest' => true,
   ]);
