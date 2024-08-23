@@ -119,3 +119,12 @@ function disable_taxonomy_archive_redirect()
 add_action('template_redirect', 'disable_taxonomy_archive_redirect');
 
 get_template_part('includes/custom-posts');
+
+/**
+ * タイトルに改行を入れる
+ */
+function remove_br_tags_from_title($title)
+{
+  return str_replace(array('|br|', '<br/>', '<br />'), '', $title);
+}
+add_filter('the_title', 'remove_br_tags_from_title');

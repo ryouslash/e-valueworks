@@ -15,7 +15,11 @@
           <div class="c-title1">制作実績</div>
           <div class="p-single-work-client">
             <h1 class="p-single-work-client__title">
-              亀岡ゲストハウス 舞舟 様
+              <?php
+              $custom_title = get_the_title();
+              $custom_title = str_replace('|br|', '<br>', $custom_title);
+              echo $custom_title;
+              ?>
             </h1>
             <div class="p-single-work-client__detail">
               <div class="p-single-work-client__left">
