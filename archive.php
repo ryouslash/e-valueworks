@@ -21,7 +21,6 @@
       <div class="l-content__inner">
         <main class="l-mainContent">
           <?php get_template_part('template-parts/postlist'); ?>
-
           <?php get_template_part('template-parts/pagination'); ?>
 
 

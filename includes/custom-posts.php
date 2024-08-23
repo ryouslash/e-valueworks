@@ -12,3 +12,4 @@ add_action('init', function () {
     'show_in_rest' => true,  // これでブロックエディターを有効化
   ]);
 });
+

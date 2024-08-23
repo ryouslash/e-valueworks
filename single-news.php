@@ -8,10 +8,13 @@
 <body>
   <?php get_template_part('template-parts/header2'); ?>
 
+
   <div class="l-content t-single-news">
     <div class="l-container">
       <div class="l-content__inner">
         <main class="l-mainContent">
+        <?php if (have_posts()): ?>
+          <?php while (have_posts()) : the_post(); ?>
           <div class="p-postHead">
             <h1 class="p-postHead__title">
               ホームページをリニューアルしました。

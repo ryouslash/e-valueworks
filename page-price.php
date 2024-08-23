@@ -9,27 +9,28 @@
   <?php get_template_part('template-parts/header1'); ?>
 
   <div class="l-content">
-    <div class="l-container">
-      <div class="l-content__inner">
-        <main class="l-mainContent">
-          <div class="c-title1">料金</div>
-          <section class="p-price-intro">
-            <div class="l-container">
-              <div class="p-price-intro__title">
-                シンプルで<span class="u-emphasis--pink u-inline-block">わかりやすい</span><span class="u-inline-block">料金プラン</span>
-              </div>
-              <div class="p-price-intro__text">
-                <p>
-                  弊所では、お客様のニーズに合わせて、2つのプランを用意しています。
-                </p>
-                <p>
-                  シンプルな料金体系で「プロジェクト管理費」など<span
-                    class="u-underline--pink u-text--bolder u-text--bigger">隠れた費用は一切かからない</span>ため、安心してご依頼頂けます。
-                </p>
-              </div>
+    <div class="l-content__inner">
+      <main class="l-mainContent">
+        <div class="c-title1">料金</div>
+        <section class="p-price-intro">
+          <div class="l-container">
+            <div class="p-price-intro__title">
+              シンプルで<span class="u-emphasis--pink u-inline-block">わかりやすい</span><span class="u-inline-block">料金プラン</span>
             </div>
-          </section>
-          <section class="p-price-codingPlan" id="coding-plan">
+            <div class="p-price-intro__text">
+              <p>
+                弊所では、お客様のニーズに合わせて、2つのプランを用意しています。
+              </p>
+              <p>
+                シンプルな料金体系で「プロジェクト管理費」など<span
+                  class="u-underline--pink u-text--bolder u-text--bigger">隠れた費用は一切かからない</span>ため、安心してご依頼頂けます。
+              </p>
+            </div>
+          </div>
+        </section>
+        <section class="p-price-codingPlan" id="coding-plan">
+          <div class="l-container">
+
             <div class="p-price-codingPlan__inner">
               <h2 class="p-price-codingPlan__h2Title">
                 新規コーディングプラン
@@ -187,10 +188,13 @@
                 </li>
               </ul>
             </div>
-          </section>
-          <!-- <section class="p-section-estimate"></section> -->
+          </div>
+        </section>
+        <!-- <section class="p-section-estimate"></section> -->
 
-          <section class="p-price-maintenancePlan" id="maintenance-plan">
+        <section class="p-price-maintenancePlan" id="maintenance-plan">
+          <div class="l-container">
+
             <div class="p-price-maintenancePlan__inner">
               <h2 class="p-price-maintenancePlan__title">保守・管理プラン</h2>
               <div class="p-price-maintenancePlan__detail">
@@ -305,12 +309,12 @@
                 </div>
               </div>
             </div>
-          </section>
+          </div>
+        </section>
 
-          <?php get_template_part('template-parts/fixcta'); ?>
+        <?php get_template_part('template-parts/fixcta'); ?>
 
-        </main>
-      </div>
+      </main>
     </div>
   </div>
 

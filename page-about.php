@@ -10,71 +10,71 @@
 
   <div class="l-content page-about">
     <div class="l-content__inner">
-      <div class="l-container">
-        <main class="l-mainContent">
-          <section class="p-about l-sectionPadding">
-            <div class="l-container">
-              <h2 class="c-title1">弊所について</h2>
-              <div class="p-about__intro">
-                <p>
-                  弊所 E-VALUE WORKS
-                  は、2020年12月に開業した個人経営のWeb制作事務所です。
-                </p>
-                <p>
-                  インターネットを基盤とし、真に価値あるサービスの提供を志し、日々邁進を続けています。
-                </p>
-              </div>
-              <dl class="p-about__table">
-                <div class="p-about__tableInner">
-                  <dt>屋号</dt>
-                  <dd>E-VALUE WORKS</dd>
-                </div>
-                <div class="p-about__tableInner">
-                  <dt>事業形態</dt>
-                  <dd>フリーランス・個人事業主</dd>
-                </div>
-                <div class="p-about__tableInner">
-                  <dt>開業日</dt>
-                  <dd>2020年12月21日</dd>
-                </div>
-                <div class="p-about__tableInner">
-                  <dt>代表</dt>
-                  <dd>池田 遼</dd>
-                </div>
-                <div class="p-about__tableInner">
-                  <dt>住所</dt>
-                  <dd>海外（ジョージア）</dd>
-                </div>
-                <div class="p-about__tableInner">
-                  <dt>事業内容</dt>
-                  <dd>
-                    <ul>
-                      <li>コーディング代行</li>
-                      <li>IT・Web特化ライティング</li>
-                      <li>
-                        メディア運営（<a
-                          href="https://plusoneweb.net/"
-                          target="_blank">PLUSONEWEB</a>）
-                      </li>
-                      <li>
-                        講師（<a
-                          href="https://www.street-academy.com/steachers/729106"
-                          target="_blank">ストアカ</a>）
-                      </li>
-                    </ul>
-                  </dd>
-                </div>
-                <div class="p-about__tableInner">
-                  <dt>連絡手段</dt>
-                  <dd>
-                    メール / Chatwork / 電話<br />※初回の方はお問い合わせフォームよりご連絡下さい。
-                  </dd>
-                </div>
-              </dl>
+      <main class="l-mainContent">
+        <section class="p-about l-sectionPadding">
+          <div class="l-container">
+            <h2 class="c-title1">弊所について</h2>
+            <div class="p-about__intro">
+              <p>
+                弊所 E-VALUE WORKS
+                は、2020年12月に開業した個人経営のWeb制作事務所です。
+              </p>
+              <p>
+                インターネットを基盤とし、真に価値あるサービスの提供を志し、日々邁進を続けています。
+              </p>
             </div>
-          </section>
-          <section class="p-about-profile l-sectionPadding">
-            <h2 class="c-title1">代表プロフィール</h2>
+            <dl class="p-about__table">
+              <div class="p-about__tableInner">
+                <dt>屋号</dt>
+                <dd>E-VALUE WORKS</dd>
+              </div>
+              <div class="p-about__tableInner">
+                <dt>事業形態</dt>
+                <dd>フリーランス・個人事業主</dd>
+              </div>
+              <div class="p-about__tableInner">
+                <dt>開業日</dt>
+                <dd>2020年12月21日</dd>
+              </div>
+              <div class="p-about__tableInner">
+                <dt>代表</dt>
+                <dd>池田 遼</dd>
+              </div>
+              <div class="p-about__tableInner">
+                <dt>住所</dt>
+                <dd>海外（ジョージア）</dd>
+              </div>
+              <div class="p-about__tableInner">
+                <dt>事業内容</dt>
+                <dd>
+                  <ul>
+                    <li>コーディング代行</li>
+                    <li>IT・Web特化ライティング</li>
+                    <li>
+                      メディア運営（<a
+                        href="https://plusoneweb.net/"
+                        target="_blank">PLUSONEWEB</a>）
+                    </li>
+                    <li>
+                      講師（<a
+                        href="https://www.street-academy.com/steachers/729106"
+                        target="_blank">ストアカ</a>）
+                    </li>
+                  </ul>
+                </dd>
+              </div>
+              <div class="p-about__tableInner">
+                <dt>連絡手段</dt>
+                <dd>
+                  メール / Chatwork / 電話<br />※初回の方はお問い合わせフォームよりご連絡下さい。
+                </dd>
+              </div>
+            </dl>
+          </div>
+        </section>
+        <section class="p-about-profile l-sectionPadding">
+          <h2 class="c-title1">代表プロフィール</h2>
+          <div class="l-slim-container">
             <div class="p-about-profile__inner">
               <div class="p-about-profile__photo">
                 <img src="<?php echo esc_url(get_template_directory_uri()); ?>/dist/img/profile.jpg" />
@@ -116,12 +116,12 @@
                 </div>
               </div>
             </div>
-          </section>
-          
-          <?php get_template_part('template-parts/fixcta'); ?>
+          </div>
+        </section>
 
-        </main>
-      </div>
+        <?php get_template_part('template-parts/fixcta'); ?>
+
+      </main>
     </div>
   </div>
 
