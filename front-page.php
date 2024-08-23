@@ -40,14 +40,15 @@
   $args = array(
     'post_type' => 'news',
     'posts_per_page' => 5,
-    array(
-      'inclusive' => true, // 1ヶ月前の日付を含む
-      'after' => date('Y/m/d 0:0:0', strtotime('-1 month')) // 1ヶ月前
+    'date_query' => array(
+      array(
+        'inclusive' => true, // 1ヶ月前の日付を含む
+        'after' => date('Y/m/d 0:0:0', strtotime('-1 month')) // 1ヶ月前
+      ),
     ),
   );
   $the_latest_query = new WP_Query($args);
   ?>
-
   <?php if ($the_latest_query->have_posts()): ?>
     <section class="p-top-news">
       <div class="l-container">
@@ -57,11 +58,13 @@
               <time class="p-top-news__time" datetime="<?php the_time('Y-m-d'); ?>"><?php the_time('Y/m/d'); ?></time>
               <!-- 1つまで -->
               <?php
-              $categories = get_the_category();
-              if ($categories):
+              $terms = get_the_terms(get_the_ID(), 'news_category');
+              if ($terms):
               ?>
                 <div class="p-top-news__taxonomy">
-                  <a href="<?php echo esc_url(get_category_link($categories[0]->term_id)); ?>"><?php echo esc_html($categories[0]->name); ?></a>
+                  <?php foreach ($terms as $term): ?>
+                    <a href="<?php echo esc_url(get_term_link($term)); ?>"><?php echo esc_html($term->name); ?></a>
+                  <?php endforeach; ?>
                 </div>
               <?php endif; ?>
               <div class="p-top-news__title">
@@ -74,6 +77,7 @@
     </section>
     <?php wp_reset_postdata(); ?>
   <?php endif; ?>
+
 
   <section class="p-top-troubles">
     <div class="l-sectionPadding">

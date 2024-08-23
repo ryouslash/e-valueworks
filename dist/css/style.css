@@ -3475,7 +3475,14 @@ body {
 .t-single-news .l-content__inner .p-editorContent,
 .t-archive-news .l-content__inner .p-editorContent,
 .t-taxonomy-archive-news .l-content__inner .p-editorContent {
-  margin: 60px 0;
+  margin: 60px 0 120px;
+}
+@media screen and (max-width: 575px) {
+  .t-single-news .l-content__inner .p-editorContent,
+  .t-archive-news .l-content__inner .p-editorContent,
+  .t-taxonomy-archive-news .l-content__inner .p-editorContent {
+    margin: 60px 0 100px;
+  }
 }
 
 .p-single-news-title .c-title1 {

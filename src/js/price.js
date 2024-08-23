@@ -6,3 +6,4 @@ new ScrollHint('.js-scrollable', {
     scrollable: "スクロールできます",
   },
 });
+

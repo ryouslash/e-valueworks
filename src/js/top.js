@@ -40,16 +40,21 @@ $(function() {
   let items = $('.p-top-news__item');
   let nextItem = 1;
 
+
   // 初期状態で1つ目のアイテムにクラスを追加
   items.eq(0).addClass('is-slideIn');
+  if (items.length > 1) {
+    function showNextItem() {
+      items.removeClass('is-slideIn');
+      items.eq(nextItem).addClass('is-slideIn');
+      nextItem = (nextItem + 1) % items.length;
+    }
 
-  function showNextItem() {
-    items.removeClass('is-slideIn');
-    items.eq(nextItem).addClass('is-slideIn');
-    nextItem = (nextItem + 1) % items.length;
+    setInterval(showNextItem, 5000);
+  } else {
+    // アイテムが1つしかない場合は常に `is-slideIn` クラスを保持する
+    items.eq(0).addClass('is-slideIn');
   }
-
-  setInterval(showNextItem, 5000);
 
   // スクロールイベントの監視
   $(window).on('load scroll', function () {
