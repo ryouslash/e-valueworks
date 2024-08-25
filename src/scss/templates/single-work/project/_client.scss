@@ -26,6 +26,14 @@
     flex: 1;
   }
 
+  &__summaryText {
+    p {
+      &:not(:last-of-type) {
+        margin-bottom: 1em;
+      }
+    }
+  }
+
   &__right {
     flex: 1;
   }

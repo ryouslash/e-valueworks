@@ -10,6 +10,7 @@ module.exports = {
     top: './src/js/top.js',
     work: './src/js/work.js',
     price: './src/js/price.js',
+    admin: ['./src/js/admin.js', './src/scss/admin.scss'],
   },
   output: {  //出力先
     filename: 'js/[name].js',
@@ -36,7 +37,10 @@ module.exports = {
   //プラグインの設定（plugins プロパティの配列に追加）
   plugins: [
     new MiniCssExtractPlugin({
-      filename: 'css/style.css',  //ファイル名を指定
+      filename: (pathData) => {
+        // エントリーポイント名に応じて異なるファイル名を出力する
+        return pathData.chunk.name === 'main' ? 'css/style.css' : 'css/[name].css';
+      },
     }),
   ],
   //圧縮（minify）の設定

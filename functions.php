@@ -14,7 +14,7 @@ add_action('wp_enqueue_scripts', 'add_custom_styles');
  */
 function custom_admin_enqueue_styles()
 {
-  wp_enqueue_style('custom-admin-style', esc_url(get_template_directory_uri()) . '/dist/css/admin-style.css', array(), '1.0.0');
+  wp_enqueue_style('custom-admin-style', esc_url(get_template_directory_uri()) . '/dist/css/admin.css', array(), '1.0.0');
 }
 add_action('admin_enqueue_scripts', 'custom_admin_enqueue_styles');
 
@@ -34,6 +34,23 @@ function add_custom_scripts()
   endif;
 }
 add_action('wp_enqueue_scripts', 'add_custom_scripts');
+
+/**
+ * 管理画面でのJavaScriptの読み込み
+ */
+function term_thumbnail_scripts($hook)
+{
+  // スクリプトを特定の管理画面（カテゴリー・タグ編集画面）でのみ読み込む
+  if ($hook === 'edit-tags.php' || $hook === 'term.php') {
+    wp_enqueue_media(); // メディアライブラリ用スクリプトの読み込み
+    wp_enqueue_script('term-thumbnail-script', get_template_directory_uri() . '/dist/js/admin.js', array('jquery'), false, true);
+  }
+}
+add_action('admin_enqueue_scripts', 'term_thumbnail_scripts');
+
+
+
+
 
 get_template_part('includes/basic-setting');
 

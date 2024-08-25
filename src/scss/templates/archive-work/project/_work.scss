@@ -1,16 +1,16 @@
 @use "../../../foundation/variables" as *;
 
 .p-archive-work {
-  &__inner {
-    padding: 60px 0;
-  }
-
   &__items {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     flex-wrap: wrap;
     margin-top: 60px;
-    row-gap: 30px;
+    gap: 30px;
+  }
+
+  &__noItem {
+    margin-top: 60px;
   }
 
   &__item {

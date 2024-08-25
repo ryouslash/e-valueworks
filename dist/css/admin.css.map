@@ -1,0 +1,1 @@
+{"version":3,"file":"css/admin.css","mappings":";;;AAAA;EACE;AACF,C","sources":["webpack://myproject/./src/scss/admin.scss"],"sourcesContent":[".term-thumbnail-upload {\n  margin: 2px 0 5px !important;\n}\n"],"names":[],"sourceRoot":""}

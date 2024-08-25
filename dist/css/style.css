@@ -3508,6 +3508,9 @@ body {
 .p-single-work-client__left {
   flex: 1;
 }
+.p-single-work-client__summaryText p:not(:last-of-type) {
+  margin-bottom: 1em;
+}
 .p-single-work-client__right {
   flex: 1;
 }
@@ -3595,15 +3598,15 @@ body {
   transform: translateY(0);
 }
 
-.p-archive-work__inner {
-  padding: 60px 0;
-}
 .p-archive-work__items {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   flex-wrap: wrap;
   margin-top: 60px;
-  row-gap: 30px;
+  gap: 30px;
+}
+.p-archive-work__noItem {
+  margin-top: 60px;
 }
 .p-archive-work__item {
   width: calc(25% - 22.5px);

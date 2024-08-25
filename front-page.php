@@ -213,65 +213,47 @@
     </div>
   </section>
 
-  <section class="p-top-work l-sectionPadding">
-    <div class="l-container">
-      <h2 class="c-title1">制作実績</h2>
-      <div class="p-top-work__inner">
-        <p class="p-top-work__text">※以下は実績の一部です。</p>
-        <div class="p-top-work__slider">
-          <div class="p-top-work__slider-item">
-            <a href="#">
-              <figure class="p-top-work__photo">
-                <img src="<?php echo esc_url(get_template_directory_uri()); ?>/dist/img/work1.png" />
-              </figure>
-              <div class="p-archive-work__industry">宿泊施設</div>
-
-              <h3 class="p-top-work__title">
-                <span class="u-inline-block">亀岡ゲストハウス</span>
-                <span class="u-inline-block">舞舟 様</span>
-              </h3>
-            </a>
-          </div>
-          <div class="p-top-work__slider-item">
-            <a href="#">
-              <figure class="p-top-work__photo">
-                <img src="<?php echo esc_url(get_template_directory_uri()); ?>/dist/img/work2.png" />
-              </figure>
-              <div class="p-top-work__industry">協会・団体</div>
-              <h3 class="p-top-work__title">
-                <span class="u-inline-block">一般社団法人</span>
-                <span class="u-inline-block">新潟地域福祉協会 様</span>
-              </h3>
-            </a>
-          </div>
-          <div class="p-top-work__slider-item">
-            <a href="#">
-              <figure class="p-top-work__photo">
-                <img src="<?php echo esc_url(get_template_directory_uri()); ?>/dist/img/work3.png" />
-              </figure>
-              <div class="p-archive-work__industry">コンサルティング</div>
-              <h3 class="p-top-work__title">
-                <span class="u-inline-block">オランダ海外進出・起業支援</span>
-                <span class="u-inline-block">A3 様</span>
-              </h3>
-            </a>
-          </div>
-          <div class="p-top-work__slider-item">
-            <a href="#">
-              <figure class="p-top-work__photo">
-                <img src="<?php echo esc_url(get_template_directory_uri()); ?>/dist/img/work4.png" />
-              </figure>
-              <div class="p-archive-work__industry">宿泊施設</div>
-              <h3 class="p-top-work__title">
-                <span class="u-inline-block">大阪野田の</span><span class="u-inline-block">サウナ付きデザイナーズホテル</span>
-                <span class="u-inline-block">d3 HOTEL+ 様</span>
-              </h3>
-            </a>
+  <?php
+  $args = array(
+    'post_type' => 'work',
+    'posts_per_page' => 5,
+  );
+  $the_work_query = new WP_Query($args);
+  ?>
+  <?php if ($the_work_query->have_posts()): ?>
+    <section class="p-top-work l-sectionPadding">
+      <div class="l-container">
+        <h2 class="c-title1">制作実績</h2>
+        <div class="p-top-work__inner">
+          <p class="p-top-work__text">※以下は実績の一部です。</p>
+          <div class="p-top-work__slider">
+            <?php while ($the_work_query->have_posts()): $the_work_query->the_post(); ?>
+              <div class="p-top-work__slider-item">
+                <a href="<?php the_permalink(); ?>">
+                  <?php if (has_post_thumbnail()): ?>
+                    <figure class="p-top-work__photo">
+                      <?php the_post_thumbnail(); ?>
+                    </figure>
+                  <?php endif; ?>
+                  <?php
+                  $terms = get_the_terms(get_the_ID(), 'industry');
+                  if ($terms && !is_wp_error($terms)) : ?>
+                    <div class="p-archive-work__industry">
+                      <?php echo esc_html($terms[0]->name); ?>
+                    </div>
+                  <?php endif; ?>
+                  <h3 class="p-top-work__title">
+                    <?php the_title(); ?>
+                  </h3>
+                </a>
+              </div>
+            <?php endwhile; ?>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+    <?php wp_reset_postdata(); ?>
+  <?php endif; ?>
 
   <section class="p-top-promise l-sectionPadding">
     <div class="l-container">
