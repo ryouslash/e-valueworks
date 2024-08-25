@@ -96,6 +96,8 @@
 // archive
 @use "templates/archive/_style" as archiveTemplate;
 
+@use "templates/search/_style" as sarchTemplate;
+
 //single-news
 @use "templates/single-news/_style" as singleNewsTemplate;
 @use "templates/single-news/project/title" as singleNewsTitle;

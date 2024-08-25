@@ -8,7 +8,7 @@
 <body>
   <?php get_template_part('template-parts/header1'); ?>
 
-  <div class="l-content t-archive">
+  <div class="l-content t-search">
     <div class="c-pageHeader">
       <div class="l-container">
         <span class="c-pageHeader__subTitle">お役立ちコラム</span>
