@@ -65,9 +65,6 @@
 @use "pages/top/project/_faq";
 @use "pages/top/project/_contact";
 
-// index
-@use "pages/index/_style" as indexPage;
-
 // 404
 @use "pages/404/_style" as errorPage;
 @use "pages/404/project/_error";

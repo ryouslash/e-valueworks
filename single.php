@@ -9,7 +9,26 @@
 
 
 <div class="l-content t-single">
-  <div class="c-pageHeader">
+  <?php
+  // 投稿が属する最初のカテゴリーのIDを取得
+  $categories = get_the_category($post->ID);
+  $term_id = null;
+  $background_image_url = '';
+
+  // カテゴリーが設定されている場合
+  if (!empty($categories)) {
+    $term_id = $categories[0]->term_id;
+    // カテゴリーのカスタムフィールド 'term_thumbnail' から画像URLを取得
+    $background_image_url = get_term_meta($term_id, 'term_thumbnail', true);
+  }
+
+  // 最終的に背景画像として表示するURLを決定
+  if (empty($background_image_url)) {
+    // 画像URLがない場合はデフォルト画像を使用
+    $background_image_url = esc_url(get_template_directory_uri() . '/dist/img/column.jpg');
+  }
+  ?>
+  <div class="c-pageHeader" style="background-image: url('<?php echo esc_url($background_image_url); ?>');">
     <div class="l-container">
       <span class="c-pageHeader__subTitle">お役立ちコラム</span>
       <div class="c-pageHeader__title">

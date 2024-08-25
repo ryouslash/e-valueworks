@@ -18,7 +18,7 @@
               <?php
               $custom_title = get_the_title();
               $custom_title = str_replace('|br|', '<br>', $custom_title);
-              echo $custom_title;
+              echo wp_kses_post($custom_title);
               ?>
             </h1>
             <div class="p-single-work-client__detail">
