@@ -595,39 +595,7 @@
     </h2>
     <div class="p-top-contact__inner">
       <div class="l-slim-container">
-        <form class="p-contactForm">
-          <div class="p-contactForm__item">
-            <label for="your-name">お名前</label>
-            <input type="text" id="your-name" placeholder="例）山田 太郎" />
-          </div>
-          <div class="p-contactForm__item">
-            <label for="your-name">メールアドレス</label>
-            <input
-              type="email"
-              id="your-name"
-              placeholder="例）xxxxx@xxxxx.com" />
-          </div>
-          <div class="p-contactForm__item">
-            <label for="your-name">題名</label>
-            <select>
-              <option>無料相談・お見積り</option>
-              <option>その他</option>
-            </select>
-          </div>
-          <div class="p-contactForm__item">
-            <label for="your-name">メッセージ</label>
-            <textarea
-              placeholder="プロジェクトの概要や予算、納期希望、特記事項等を詳しくお書き下さい。"></textarea>
-          </div>
-          <div class="p-contactForm__item p-contactForm__submit">
-            <button type="submit">確認画面へ</button>
-          </div>
-          <p class="p-contactForm__hosoku">
-            ※2営業日以内に返信させて頂きます。<br />お問い合わせは<a
-              href="https://www.chatwork.com/ryouslash"
-              target="_blank">Chatwork</a>からも受け付けています。
-          </p>
-        </form>
+        <?php echo do_shortcode('[contact-form-7 id="e0fded1" title="コンタクトフォーム" html_class="p-contactForm"]'); ?>
       </div>
     </div>
   </section>

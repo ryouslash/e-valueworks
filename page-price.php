@@ -239,70 +239,60 @@
                   ※海外に恒久的施設（PE）を移しているため、消費税は頂いておりません。
                 </div>
               </div>
-              <div class="p-price-osusume">
-                <div class="p-price-osusume__inner">
-                  <div class="p-price-osusume__left">
-                    <figure class="p-price-osusume__img">
-                      <picture>
-                        <source
-                          srcset="<?php echo esc_url(get_template_directory_uri()); ?>/dist/img/female-teacher.png"
-                          media="(min-width: 768px)"
-                          type="image/png" />
-                        <source
-                          srcset="<?php echo esc_url(get_template_directory_uri()); ?>/dist/img/partnership.png"
-                          media="(max-width: 767px)"
-                          type="image/png" />
-                        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/dist/img/female-teacher.png" />
-                      </picture>
+              <div class="p-price-workExample">
+                <div class="p-price-workExample__inner">
+                  <div class="p-price-workExample__left">
+                    <figure class="p-price-workExample__img">
+                      <img src="<?php echo esc_url(get_template_directory_uri()); ?>/dist/img/partnership.png">
                     </figure>
                   </div>
-                  <div class="p-price-osusume__right">
-                    <div class="p-price-osusume__title">
+                  <div class="p-price-workExample__right">
+                    <div class="p-price-workExample__title">
                       <i class="fa-regular fa-hand-point-right"></i>保守・管理プランで外注できる業務例
                     </div>
-                    <ul class="p-price-osusume__lists">
-                      <li class="p-price-osusume__list">
+                    <ul class="p-price-workExample__lists">
+                      <li class="p-price-workExample__list">
                         <i class="fa-solid fa-check"></i>既存サイトのテキスト、PDF差し替え
                       </li>
-                      <li class="p-price-osusume__list">
+                      <li class="p-price-workExample__list">
                         <i class="fa-solid fa-check"></i>お知らせ更新
                       </li>
-                      <li class="p-price-osusume__list">
+                      <li class="p-price-workExample__list">
                         <i class="fa-solid fa-check"></i>バックアップ取得
                       </li>
-                      <li class="p-price-osusume__list">
+                      <li class="p-price-workExample__list">
                         <i class="fa-solid fa-check"></i>WordPressコア、テーマ、プラグインのバージョン更新
                       </li>
-                      <li class="p-price-osusume__list">
+                      <li class="p-price-workExample__list">
                         <i class="fa-solid fa-check"></i>PHPバージョンの更新
                       </li>
-                      <li class="p-price-osusume__list">
+                      <li class="p-price-workExample__list">
                         <i class="fa-solid fa-check"></i>既存ページへのセクション追加
                       </li>
-                      <li class="p-price-osusume__list">
+                      <li class="p-price-workExample__list">
                         <i class="fa-solid fa-check"></i>新規ページのコーディング
                       </li>
-                      <li class="p-price-osusume__list">
+                      <li class="p-price-workExample__list">
                         <i class="fa-solid fa-check"></i>LPコーディング
                       </li>
-                      <li class="p-price-osusume__list">
+                      <li class="p-price-workExample__list">
                         <i class="fa-solid fa-check"></i>バックアップデータからのサイト復旧
                       </li>
-                      <li class="p-price-osusume__list">
+                      <li class="p-price-workExample__list">
                         <i class="fa-solid fa-check"></i>サーバー移管
                       </li>
-                      <li class="p-price-osusume__list">
+                      <li class="p-price-workExample__list">
                         <i class="fa-solid fa-check"></i>ドメイン移管
                       </li>
-                      <li class="p-price-osusume__list">
+                      <li class="p-price-workExample__list">
                         <i class="fa-solid fa-check"></i>Web・プログラミング関連のノウハウ記事の執筆
                       </li>
-                      <li class="p-price-osusume__list">
+                      <li class="p-price-workExample__list">
                         <i class="fa-solid fa-check"></i>ECサイトの受注管理
                         など
                       </li>
                     </ul>
-                    <div class="p-price-osusume__hosoku">
+                    <div class="p-price-workExample__hosoku">
                       <p>その他、ご要望に合わせて柔軟に対応します。</p>
                     </div>
                   </div>

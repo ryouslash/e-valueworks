@@ -31,6 +31,9 @@ function add_custom_scripts()
 
   elseif (is_singular('work')):
     wp_enqueue_script('work', esc_url(get_template_directory_uri()) . '/dist/js/work.js', array('common'), '1.0.0', true); // 制作実績用スクリプト
+
+  elseif (is_page('price')):
+    wp_enqueue_script('price', esc_url(get_template_directory_uri()) . '/dist/js/price.js', array('common'), '1.0.0', true); // 料金ページ用スクリプト
   endif;
 }
 add_action('wp_enqueue_scripts', 'add_custom_scripts');
@@ -48,10 +51,6 @@ function term_thumbnail_scripts($hook)
 }
 add_action('admin_enqueue_scripts', 'term_thumbnail_scripts');
 
-
-
-
-
 get_template_part('includes/basic-setting');
 
 get_template_part('includes/redirect');
@@ -59,3 +58,5 @@ get_template_part('includes/redirect');
 get_template_part('includes/custom-posts');
 
 get_template_part('includes/taxonomy-fields');
+
+get_template_part('includes/contact-form7');

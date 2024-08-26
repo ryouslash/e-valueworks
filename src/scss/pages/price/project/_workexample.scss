@@ -1,6 +1,6 @@
 @use "../../../foundation/variables" as *;
 
-.p-price-osusume {
+.p-price-workExample {
   margin-top: 60px;
 
   &__inner {
@@ -28,12 +28,10 @@
   }
 
   &__left {
-    width: 100%;
-    max-width: 150px;
-    flex-shrink: 0;
+    display: none;
     @include mq-down() {
-      max-width: initial;
-      margin-top: 30px;
+      display: block;
+      margin: 30px 0;
     }
   }
 
