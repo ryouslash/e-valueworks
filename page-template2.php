@@ -11,7 +11,6 @@
 
 <head>
   <?php get_header(); ?>
-
 </head>
 
 <body>
@@ -35,7 +34,6 @@
               <div class="p-editorContent -page-template2">
                 <?php the_content(); ?>
               </div>
-
             </main>
             <!-- サイドバーなし -->
           </div>
@@ -44,27 +42,4 @@
     <?php endwhile; ?>
   <?php endif; ?>
 
-  <footer class="l-footer">
-    <div class="l-container">
-      <div class="l-footer__inner">
-        <nav class="l-footer__navi">
-          <ul class="l-footer__navi-items">
-            <li class="l-footer__navi-item">
-              <a href="#">プライバシーポリシー</a>
-            </li>
-          </ul>
-        </nav>
-      </div>
-    </div>
-    <div class="l-footer__copyright">
-      <small>&copy; E-VALUE WORKS.</small>
-    </div>
-  </footer>
-  <a class="c-pageTop js-pageTop" href="#">
-    <i class="fa-solid fa-chevron-up"></i>
-  </a>
-  <script src="dist/js/vendors.js"></script>
-  <script src="dist/js/common.js"></script>
-</body>
-
-</html>
+  <?php get_footer(); ?>

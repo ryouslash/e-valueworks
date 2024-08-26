@@ -18,10 +18,10 @@
               <div class="p-editorContent -page-template-default">
                 <?php the_content(); ?>
               </div>
+            <?php endwhile; ?>
+          <?php endif; ?>
         </main>
-      <?php endwhile; ?>
-    <?php endif; ?>
-    <!-- サイドバーなし -->
+        <!-- サイドバーなし -->
       </div>
     </div>
   </div>
