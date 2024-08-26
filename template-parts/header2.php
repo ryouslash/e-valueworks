@@ -42,7 +42,8 @@
         <ul class="p-drawerMenu__items">
           <?php foreach ($menu_items as $item): ?>
             <li class="p-drawerMenu__item p-drawerMenu__item--home">
-              <a href="<?php echo $item->url; ?>"><?php echo $item->title; ?><span><?php echo $item->description; ?></span></a>
+              <a href="<?php echo $item->url; ?>"><?php echo $item->title; ?></a>
+              <span><?php echo $item->description; ?></span>
             </li>
           <?php endforeach; ?>
         </ul>

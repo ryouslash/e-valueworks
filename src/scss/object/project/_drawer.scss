@@ -7,27 +7,27 @@
   }
 
   &__item {
-    margin-bottom: 0.5em;
-    padding-bottom: 0.5em;
     border-bottom: 1px dotted #aaaaaa;
+    position: relative;
 
     &:first-of-type {
       border-top: 1px dotted #aaaaaa;
-      padding-top: 0.5em;
     }
 
     a {
-      position: relative;
-      
-      span {
-        display: block;
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        transform: translateX(calc(100% + 20px));
-        color: #777777;
-        font-size: 1.1rem;
-      }
+      display: block;
+      width: 100%;
+      padding: 0.5em 0;
+    }
+
+    span {
+      display: block;
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translate(0, -50%);
+      color: #777777;
+      font-size: 1.1rem;
     }
   }
 
