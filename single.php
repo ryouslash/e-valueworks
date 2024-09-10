@@ -106,13 +106,11 @@
                 <?php endif; ?>
               </div>
 
-              <div class="p-postHead__thumbnail">
-                <?php if (has_post_thumbnail()): ?>
+              <?php if (has_post_thumbnail()): ?>
+                <div class="p-postHead__thumbnail">
                   <?php the_post_thumbnail('large'); ?>
-                <?php else: ?>
-                  <img src="<?php echo esc_url(get_template_directory_uri()); ?>/dist/img/noimg.jpg" />
-                <?php endif; ?>
-              </div>
+                </div>
+              <?php endif; ?>
             </div>
 
             <div class="p-editorContent">
