@@ -60,3 +60,5 @@ get_template_part('includes/custom-posts');
 get_template_part('includes/taxonomy-fields');
 
 get_template_part('includes/contact-form7');
+
+get_template_part('includes/widget');

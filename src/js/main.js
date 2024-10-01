@@ -45,8 +45,23 @@ $(function() {
   
   setVw(); // 初期ロード時に関数を実行
 
-  $(window).on("load resize", function() { // ロード時、resize時に関数を実行
-    setVw();
+  // debounce関数の定義
+  function debounce(func, wait) {
+    let timeout;
+    return function () {
+      const context = this, args = arguments;
+      clearTimeout(timeout);
+      timeout = setTimeout(function () {
+        func.apply(context, args);
+      }, wait);
+    };
+  }
+
+  // debounceを使用して、resize時に実行を制限
+  const debouncedSetVw = debounce(setVw, 200); // 200ms待機後に実行
+
+  $(window).on("resize", function () {// resize時に関数を実行
+    debouncedSetVw(); 
   });
 
   const drawerBtn = document.querySelector('.l-header__drawerBtn');
