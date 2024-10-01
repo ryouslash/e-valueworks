@@ -5,4 +5,10 @@
     font-size: $fontL;
     font-weight: 700;
   }
+
+  &__thumbnail {
+    > img {
+      box-shadow: 0 0 4px #a9a9a9;
+    }
+  }
 }
