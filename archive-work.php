@@ -15,6 +15,31 @@
           <div class="c-title1">制作実績</div>
 
           <div class="p-archive-work">
+
+            <div class="p-archive-work__search">
+              <div class="p-archive-work__searchTitle"><i class="fa-solid fa-magnifying-glass"></i>絞り込み検索</div>
+              <div class="p-archive-work__searchArea">
+                <ul class="p-archive-work__searchItems">
+                  <li class="p-archive-work__searchItem">
+
+                    <dl>
+                      <dt>ページ数</dt>
+                      <dd><input type="checkbox"><label for=""></label></dd>
+                    </dl>
+                  </li>
+                  <li class="p-archive-work__searchItem">
+                    <div>価格帯</div>
+                  </li>
+                  <li class="p-archive-work__searchItem">
+                    <div>使用言語・ツール</div>
+                  </li>
+                  <li class="p-archive-work__searchItem">
+                    <div>サイト仕様</div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
             <?php if (have_posts()): ?>
               <ul class="p-archive-work__items">
                 <?php while (have_posts()): the_post(); ?>

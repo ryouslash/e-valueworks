@@ -17,7 +17,8 @@ import {
   faTag,
   faChevronLeft,
   faChevronRight,
-  faSackDollar
+  faSackDollar,
+  faMagnifyingGlass
 } from '@fortawesome/free-solid-svg-icons';
 import {
   faEnvelope,
@@ -33,7 +34,7 @@ import {
 
 $(function() {
   // Font awesome 読み込み
-  library.add(faEnvelope, faHandshake, faPenNib, faCode, faServer, faChevronDown, faLink, faInstagram, faFacebook, faGithub, faLinkedin, faChevronUp, faBars, faXmark, faCheck, faTag, faChevronLeft, faChevronRight, faSackDollar, faHandPointRight);
+  library.add(faEnvelope, faHandshake, faPenNib, faCode, faServer, faChevronDown, faLink, faInstagram, faFacebook, faGithub, faLinkedin, faChevronUp, faBars, faXmark, faCheck, faTag, faChevronLeft, faChevronRight, faSackDollar, faHandPointRight,faMagnifyingGlass);
 
   dom.i2svg();
   

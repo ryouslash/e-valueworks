@@ -36,6 +36,30 @@ add_action('init', function () {
     'hierarchical' => true,
     'show_in_rest' => true,
   ]);
+
+  register_taxonomy('page', 'work', [
+    'label' => 'ページ数',
+    'hierarchical' => true,
+    'show_in_rest' => true,
+  ]);
+
+  register_taxonomy('price', 'work', [
+    'label' => '価格帯',
+    'hierarchical' => true,
+    'show_in_rest' => true,
+  ]);
+
+  register_taxonomy('language', 'work', [
+    'label' => '使用言語・ツール',
+    'hierarchical' => true,
+    'show_in_rest' => true,
+  ]);
+
+  register_taxonomy('specification', 'work', [
+    'label' => 'サイト仕様',
+    'hierarchical' => true,
+    'show_in_rest' => true,
+  ]);
 });
 
 /**
