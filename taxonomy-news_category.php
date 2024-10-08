@@ -20,25 +20,21 @@
         </main>
         <aside class="l-sidebar">
           <!-- 1つまで -->
-          <?php if (have_posts()): ?>
-            <?php while (have_posts()) : the_post(); ?>
-              <div class="p-single-news-title">
-                <?php
-                $terms = get_the_terms(get_the_ID(), 'news_category');
-                if ($terms):
-                ?>
-                  <div class="c-title1"><?php echo esc_html($terms[0]->name); ?></div>
-                  <div class="c-subTitle">
-                    <?php
-                    $slug = esc_html(($terms[0]->slug));
-                    $formatted_slug = strtoupper(str_replace('-', ' ', $slug));
-                    echo $formatted_slug;
-                    ?>
-                  </div>
-                <?php endif; ?>
-              </div>
-            <?php endwhile; ?>
-          <?php endif; ?>
+          <div class="p-single-news-title">
+            <?php
+            $queried_object = get_queried_object();
+
+            if ($queried_object && is_tax('news_category')) {
+              // タクソノミーネーム
+              $taxonomy_name = esc_html($queried_object->name);
+              echo '<div class="c-title1">' . $taxonomy_name . '</div>';
+
+              // タクソノミースラッグ（大文字でフォーマット）
+              $taxonomy_slug = strtoupper(str_replace('-', ' ', esc_html($queried_object->slug)));
+              echo '<div class="c-subTitle">' . $taxonomy_slug . '</div>';
+            }
+            ?>
+          </div>
         </aside>
       </div>
     </div>
