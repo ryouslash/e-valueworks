@@ -16,33 +16,95 @@
 
           <div class="p-archive-work">
 
+            <?php get_template_part('template-parts/filtersearch'); ?>
+
             <div class="p-archive-work__search">
               <div class="p-archive-work__searchTitle"><i class="fa-solid fa-magnifying-glass"></i>絞り込み検索</div>
               <div class="p-archive-work__searchArea">
-                <ul class="p-archive-work__searchItems">
-                  <li class="p-archive-work__searchItem">
-
-                    <dl>
-                      <dt>ページ数</dt>
-                      <dd><input type="checkbox"><label for=""></label></dd>
-                    </dl>
-                  </li>
-                  <li class="p-archive-work__searchItem">
-                    <div>価格帯</div>
-                  </li>
-                  <li class="p-archive-work__searchItem">
-                    <div>使用言語・ツール</div>
-                  </li>
-                  <li class="p-archive-work__searchItem">
-                    <div>サイト仕様</div>
-                  </li>
-                </ul>
+                <form method="get" action="<?php echo esc_url(home_url('work')); ?>">
+                  <ul class="p-archive-work__searchItems">
+                    <li class="p-archive-work__searchItem">
+                      <dl>
+                        <dt>ページ数</dt>
+                        <dd>
+                          <?php
+                          $page_terms = get_terms($tax_type01, array('hide_empty' => false));
+                          foreach ($page_terms as $term) :
+                            $checked = '';
+                            if (in_array($term->slug, $param_page_terms, true)) {
+                              $checked = 'checked';
+                            }
+                          ?>
+                            <input type="checkbox" id="<?php echo esc_attr($term->slug); ?>" name="<?php echo $tax_type01; ?>[]" value="<?php echo esc_attr($term->slug); ?>" <?php echo $checked; ?>><label class="checkbox" for="<?php echo esc_attr($term->slug); ?>"><?php echo esc_html($term->name); ?></label>
+                          <?php endforeach; ?>
+                        </dd>
+                      </dl>
+                    </li>
+                    <li class="p-archive-work__searchItem">
+                      <dl>
+                        <dt>価格帯</dt>
+                        <dd>
+                          <?php
+                          $price_terms = get_terms($tax_type02, array('hide_empty' => false));
+                          foreach ($price_terms as $term) :
+                            $checked = '';
+                            if (in_array($term->slug, $param_price_terms, true)) {
+                              $checked = 'checked';
+                            }
+                          ?>
+                            <input type="checkbox" id="<?php echo esc_attr($term->slug); ?>" name="<?php echo $tax_type02; ?>[]" value="<?php echo esc_attr($term->slug); ?>" <?php echo $checked; ?>><label class="checkbox" for="<?php echo esc_attr($term->slug); ?>"><?php echo esc_html($term->name); ?></label>
+                          <?php endforeach; ?>
+                        </dd>
+                      </dl>
+                    </li>
+                    <li class="p-archive-work__searchItem">
+                      <dl>
+                        <dt>使用言語・ツール</dt>
+                        <dd>
+                          <?php
+                          $language_terms = get_terms($tax_type03, array('hide_empty' => false));
+                          foreach ($language_terms as $term) :
+                            $checked = '';
+                            if (in_array($term->slug, $param_language_terms, true)) {
+                              $checked = 'checked';
+                            }
+                          ?>
+                            <input type="checkbox" id="<?php echo esc_attr($term->slug); ?>" name="<?php echo $tax_type03; ?>[]" value="<?php echo esc_attr($term->slug); ?>" <?php echo $checked; ?>><label class="checkbox" for="<?php echo esc_attr($term->slug); ?>"><?php echo esc_html($term->name); ?></label>
+                          <?php endforeach; ?>
+                        </dd>
+                      </dl>
+                    </li>
+                    <li class="p-archive-work__searchItem">
+                      <dl>
+                        <dt>サイト仕様</dt>
+                        <dd>
+                          <?php
+                          $specification_terms = get_terms($tax_type04, array('hide_empty' => false));
+                          foreach ($specification_terms as $term) :
+                            $checked = '';
+                            if (in_array($term->slug, $param_specification_terms, true)) {
+                              $checked = 'checked';
+                            }
+                          ?>
+                            <input type="checkbox" id="<?php echo esc_attr($term->slug); ?>" name="<?php echo $tax_type04; ?>[]" value="<?php echo esc_attr($term->slug); ?>" <?php echo $checked; ?>><label class="checkbox" for="<?php echo esc_attr($term->slug); ?>"><?php echo esc_html($term->name); ?></label>
+                          <?php endforeach; ?>
+                        </dd>
+                      </dl>
+                    </li>
+                  </ul>
+                  <div class="p-archive-work__searchBtns">
+                    <input type="submit" value="絞り込む">
+                  </div>
+                </form>
               </div>
             </div>
 
-            <?php if (have_posts()): ?>
+            <?php
+            $new_query = new WP_Query($search_args);
+
+            if ($new_query->have_posts()): ?>
               <ul class="p-archive-work__items">
-                <?php while (have_posts()): the_post(); ?>
+                <?php while ($new_query->have_posts()): $new_query->the_post(); ?>
                   <li class="p-archive-work__item">
                     <a href="<?php the_permalink(); ?>">
                       <?php if (has_post_thumbnail()): ?>

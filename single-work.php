@@ -39,7 +39,6 @@
                         $url = get_field('url');
                         $pageNumber = get_field('ページ数');
                         $estimatedAmount = get_field('見積もり金額');
-                        $siteSpecifications = get_field('サイト仕様');
                         $scope = get_field('弊所スコープ');
                         if ($url):
                         ?>
@@ -79,12 +78,37 @@
                             </dd>
                           </div>
                         <?php endif; ?>
-                        <?php if ($siteSpecifications): ?>
+                        <?php
+                        $post_language_terms = get_the_terms(get_the_ID(), 'language');
+                        if (!empty($post_language_terms) && !is_wp_error($post_language_terms)): ?>
+                          <div
+                            class="p-single-work-client__tableItem p-single-work-client__tableItem--language">
+                            <dt>使用言語・ツール</dt>
+                            <dd>
+                              <?php
+                              $post_language_names = array();
+                              foreach ($post_language_terms as $term) {
+                                $post_language_names[] = esc_html($term->name);
+                              }
+                              echo implode(' / ', $post_language_names);
+                              ?>
+                            </dd>
+                          </div>
+                        <?php endif; ?>
+                        <?php
+                        $post_specification_terms = get_the_terms(get_the_ID(), 'specification');
+                        if (!empty($post_specification_terms) && !is_wp_error($post_specification_terms)): ?>
                           <div
                             class="p-single-work-client__tableItem p-single-work-client__tableItem--specification">
                             <dt>サイト仕様</dt>
                             <dd>
-                              <?php echo esc_html($siteSpecifications); ?>
+                              <?php
+                              $post_specification_names = array();
+                              foreach ($post_specification_terms as $term) {
+                                $post_specification_names[] = esc_html($term->name);
+                              }
+                              echo implode(' / ', $post_specification_names);
+                              ?>
                             </dd>
                           </div>
                         <?php endif; ?>

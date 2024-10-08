@@ -47,7 +47,9 @@
                     // カテゴリー名を取得
                   }
                   ?>
-                  <div class="p-postList__taxonomy"><?php echo esc_html($first_category->name); ?></div>
+                  <div class="p-postList__taxonomy">
+                    <?php echo esc_html($first_category->name); ?>
+                  </div>
 
                 <?php endif; ?>
 

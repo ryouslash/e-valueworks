@@ -51,4 +51,111 @@
     text-align: center;
     font-weight: 500;
   }
+
+  &__search {
+    margin-top: 30px;
+  }
+
+  &__searchTitle {
+    text-align: center;
+    font-weight: 700;
+    font-size: $fontM;
+    background-color: #eeeeee;
+    padding: 10px 0;
+
+    > svg {
+      margin-right: 0.5em;
+    }
+  }
+
+  &__searchArea {
+    padding: 30px;
+    border-bottom: 2px dotted #cccccc;
+    transition: padding 0.3s;
+
+    @include mq-down() {
+      padding: 30px 0;
+    }
+
+    @include mq-down(sm) {
+      padding: 20px 0;
+    }
+  }
+
+  &__searchItem {
+    &:not(:last-of-type) {
+      margin-bottom: 10px;
+    }
+    > dl {
+      display: flex;
+
+      @include mq-down() {
+        display: block;
+      }
+
+      > dt {
+        width: 100%;
+        max-width: 150px;
+        font-weight: 600;
+
+        @include mq-down() {
+          max-width: initial;
+          margin-bottom: 0.3em;
+          line-height: 1;
+        }
+      }
+
+      > dd {
+        font-size: 0;
+        flex: 1;
+
+        input[type="checkbox"] {
+          display: none;
+        }
+
+        input[type="checkbox"]:checked + label {
+          background-color: $subColor;
+          color: #ffffff;
+        }
+
+        label {
+          cursor: pointer;
+          display: inline-block;
+          line-height: 1;
+          padding: 5px 8px;
+          color: $subColor;
+          border-radius: 3px;
+          border: 1px solid $subColor;
+          font-weight: 600;
+          font-size: 1.6rem;
+          margin: 2.5px;
+        }
+      }
+    }
+  }
+
+  &__searchBtns {
+    margin-top: 30px;
+    text-align: center;
+
+    > input {
+      appearance: none;
+      -webkit-appearance: none;
+      display: inline-block;
+      padding: 10px 30px;
+      margin: 0 auto;
+      background-color: #f29949;
+      border: none;
+      border-radius: 5px;
+      font-weight: 600;
+      font-size: $fontM;
+      color: #fff;
+      transition: all 0.3s ease-in-out;
+      cursor: pointer;
+
+      &:hover {
+        opacity: 0.9;
+      }
+    }
+  }
 }

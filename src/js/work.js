@@ -24,4 +24,8 @@ $(function() {
   $(window).on('scroll', function() {
     workCheckVisibility();
   });
+
+  $('.js-searchTitle').on('click', function() {
+    $('.p-archive-work__searchInner').toggleClass('is-open');
+  });
 });

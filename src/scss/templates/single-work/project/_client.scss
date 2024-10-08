@@ -71,7 +71,7 @@
 
     dt {
       width: 100%;
-      max-width: 100px;
+      max-width: 120px;
       flex-shrink: 0;
       font-weight: 600;
 
@@ -122,7 +122,9 @@
 
   &__siteImg {
     opacity: 0;
-    transition: opacity 0.5s, transform 0.5s;
+    transition:
+      opacity 0.5s,
+      transform 0.5s;
     transform: translateY(20px);
     transition-delay: 0.5s;
 
