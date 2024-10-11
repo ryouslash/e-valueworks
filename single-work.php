@@ -80,34 +80,41 @@
                         <?php endif; ?>
                         <?php
                         $post_language_terms = get_the_terms(get_the_ID(), 'language');
-                        if (!empty($post_language_terms) && !is_wp_error($post_language_terms)): ?>
-                          <div
-                            class="p-single-work-client__tableItem p-single-work-client__tableItem--language">
+                        if (!empty($post_language_terms) && !is_wp_error($post_language_terms)) :
+                          usort($post_language_terms, function ($a, $b) {
+                            return  $a->term_id - $b->term_id;  // term_id で昇順に並べ替え
+                          });
+                        ?>
+                          <div class="p-single-work-client__tableItem p-single-work-client__tableItem--language">
                             <dt>使用言語・ツール</dt>
                             <dd>
                               <?php
                               $post_language_names = array();
                               foreach ($post_language_terms as $term) {
-                                $post_language_names[] = esc_html($term->name);
+                                $post_language_names[] = esc_html($term->name);  // 各タクソノミー名を取得
                               }
-                              echo implode(' / ', $post_language_names);
+                              echo implode(' / ', $post_language_names);  // タクソノミー名を / で区切って出力
                               ?>
                             </dd>
                           </div>
                         <?php endif; ?>
                         <?php
                         $post_specification_terms = get_the_terms(get_the_ID(), 'specification');
-                        if (!empty($post_specification_terms) && !is_wp_error($post_specification_terms)): ?>
-                          <div
-                            class="p-single-work-client__tableItem p-single-work-client__tableItem--specification">
+                        if (!empty($post_specification_terms) && !is_wp_error($post_specification_terms)) :
+                          // term_id で昇順に並び替え
+                          usort($post_specification_terms, function ($a, $b) {
+                            return $a->term_id - $b->term_id;
+                          });
+                        ?>
+                          <div class="p-single-work-client__tableItem p-single-work-client__tableItem--specification">
                             <dt>サイト仕様</dt>
                             <dd>
                               <?php
                               $post_specification_names = array();
                               foreach ($post_specification_terms as $term) {
-                                $post_specification_names[] = esc_html($term->name);
+                                $post_specification_names[] = esc_html($term->name);  // 各タクソノミー名を取得
                               }
-                              echo implode(' / ', $post_specification_names);
+                              echo implode(' / ', $post_specification_names);  // タクソノミー名を / で区切って出力
                               ?>
                             </dd>
                           </div>

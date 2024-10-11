@@ -28,14 +28,20 @@
                         <dt>ページ数</dt>
                         <dd>
                           <?php
-                          $page_terms = get_terms($tax_type01, array('hide_empty' => false));
+                          $page_terms = get_terms($tax_type01, array(
+                            'hide_empty' => false,
+                            'orderby' => 'term_id',  // 明示的にID順に並べる
+                            'order' => 'ASC'         // 昇順で並べる（降順の場合は 'DESC'）
+                          ));
+
                           foreach ($page_terms as $term) :
                             $checked = '';
                             if (in_array($term->slug, $param_page_terms, true)) {
                               $checked = 'checked';
                             }
                           ?>
-                            <input type="checkbox" id="<?php echo esc_attr($term->slug); ?>" name="<?php echo $tax_type01; ?>[]" value="<?php echo esc_attr($term->slug); ?>" <?php echo $checked; ?>><label class="checkbox" for="<?php echo esc_attr($term->slug); ?>"><?php echo esc_html($term->name); ?></label>
+                            <input type="checkbox" id="<?php echo esc_attr($term->slug); ?>" name="<?php echo $tax_type01; ?>[]" value="<?php echo esc_attr($term->slug); ?>" <?php echo $checked; ?>>
+                            <label class="checkbox" for="<?php echo esc_attr($term->slug); ?>"><?php echo esc_html($term->name); ?></label>
                           <?php endforeach; ?>
                         </dd>
                       </dl>
@@ -45,15 +51,24 @@
                         <dt>価格帯</dt>
                         <dd>
                           <?php
-                          $price_terms = get_terms($tax_type02, array('hide_empty' => false));
+                          $price_terms = get_terms($tax_type02, array(
+                            'hide_empty' => false,
+                            'orderby' => 'term_id',  // ID順で並べる
+                            'order' => 'ASC'         // 昇順で並べる（降順にしたい場合は 'DESC' に変更）
+                          ));
+
                           foreach ($price_terms as $term) :
                             $checked = '';
                             if (in_array($term->slug, $param_price_terms, true)) {
                               $checked = 'checked';
                             }
                           ?>
-                            <input type="checkbox" id="<?php echo esc_attr($term->slug); ?>" name="<?php echo $tax_type02; ?>[]" value="<?php echo esc_attr($term->slug); ?>" <?php echo $checked; ?>><label class="checkbox" for="<?php echo esc_attr($term->slug); ?>"><?php echo esc_html($term->name); ?></label>
+                            <input type="checkbox" id="<?php echo esc_attr($term->slug); ?>" name="<?php echo $tax_type02; ?>[]" value="<?php echo esc_attr($term->slug); ?>" <?php echo $checked; ?>>
+                            <label class="checkbox" for="<?php echo esc_attr($term->slug); ?>">
+                              <?php echo esc_html($term->name); ?>
+                            </label>
                           <?php endforeach; ?>
+
                         </dd>
                       </dl>
                     </li>
@@ -62,15 +77,24 @@
                         <dt>使用言語・ツール</dt>
                         <dd>
                           <?php
-                          $language_terms = get_terms($tax_type03, array('hide_empty' => false));
+                          $language_terms = get_terms($tax_type03, array(
+                            'hide_empty' => false,
+                            'orderby' => 'term_id',  // ID順で並べる
+                            'order' => 'ASC'         // 昇順で並べる（降順にしたい場合は 'DESC' に変更）
+                          ));
+
                           foreach ($language_terms as $term) :
                             $checked = '';
                             if (in_array($term->slug, $param_language_terms, true)) {
                               $checked = 'checked';
                             }
                           ?>
-                            <input type="checkbox" id="<?php echo esc_attr($term->slug); ?>" name="<?php echo $tax_type03; ?>[]" value="<?php echo esc_attr($term->slug); ?>" <?php echo $checked; ?>><label class="checkbox" for="<?php echo esc_attr($term->slug); ?>"><?php echo esc_html($term->name); ?></label>
+                            <input type="checkbox" id="<?php echo esc_attr($term->slug); ?>" name="<?php echo $tax_type03; ?>[]" value="<?php echo esc_attr($term->slug); ?>" <?php echo $checked; ?>>
+                            <label class="checkbox" for="<?php echo esc_attr($term->slug); ?>">
+                              <?php echo esc_html($term->name); ?>
+                            </label>
                           <?php endforeach; ?>
+
                         </dd>
                       </dl>
                     </li>
@@ -79,15 +103,22 @@
                         <dt>サイト仕様</dt>
                         <dd>
                           <?php
-                          $specification_terms = get_terms($tax_type04, array('hide_empty' => false));
+                          $specification_terms = get_terms($tax_type04, array(
+                            'hide_empty' => false,
+                            'orderby' => 'term_id',  // ID順で並べる
+                            'order' => 'ASC'         // 昇順に並べる（降順の場合は 'DESC'）
+                          ));
+
                           foreach ($specification_terms as $term) :
                             $checked = '';
                             if (in_array($term->slug, $param_specification_terms, true)) {
                               $checked = 'checked';
                             }
                           ?>
-                            <input type="checkbox" id="<?php echo esc_attr($term->slug); ?>" name="<?php echo $tax_type04; ?>[]" value="<?php echo esc_attr($term->slug); ?>" <?php echo $checked; ?>><label class="checkbox" for="<?php echo esc_attr($term->slug); ?>"><?php echo esc_html($term->name); ?></label>
+                            <input type="checkbox" id="<?php echo esc_attr($term->slug); ?>" name="<?php echo $tax_type04; ?>[]" value="<?php echo esc_attr($term->slug); ?>" <?php echo $checked; ?>>
+                            <label class="checkbox" for="<?php echo esc_attr($term->slug); ?>"><?php echo esc_html($term->name); ?></label>
                           <?php endforeach; ?>
+
                         </dd>
                       </dl>
                     </li>
