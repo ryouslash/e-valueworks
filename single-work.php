@@ -62,9 +62,7 @@
                           <div
                             class="p-single-work-client__tableItem p-single-work-client__tableItem--page">
                             <dt>ページ数</dt>
-                            <dd>
-                              <?php echo esc_html($pageNumber); ?>
-                            </dd>
+                            <dd><?php echo esc_html($pageNumber); ?></dd>
                           </div>
                         <?php endif; ?>
                         <?php
@@ -73,9 +71,7 @@
                           <div
                             class="p-single-work-client__tableItem p-single-work-client__tableItem--price">
                             <dt>見積もり金額</dt>
-                            <dd>
-                              <?php echo esc_html($estimatedAmount); ?>
-                            </dd>
+                            <dd><?php echo esc_html($estimatedAmount); ?></dd>
                           </div>
                         <?php endif; ?>
                         <?php
@@ -87,15 +83,13 @@
                         ?>
                           <div class="p-single-work-client__tableItem p-single-work-client__tableItem--language">
                             <dt>使用言語・ツール</dt>
-                            <dd>
-                              <?php
-                              $post_language_names = array();
-                              foreach ($post_language_terms as $term) {
-                                $post_language_names[] = esc_html($term->name);  // 各タクソノミー名を取得
-                              }
-                              echo implode(' / ', $post_language_names);  // タクソノミー名を / で区切って出力
-                              ?>
-                            </dd>
+                            <dd><?php
+                                $post_language_names = array();
+                                foreach ($post_language_terms as $term) {
+                                  $post_language_names[] = esc_html($term->name);  // 各タクソノミー名を取得
+                                }
+                                echo implode(' / ', $post_language_names);  // タクソノミー名を / で区切って出力
+                                ?></dd>
                           </div>
                         <?php endif; ?>
                         <?php
@@ -108,24 +102,20 @@
                         ?>
                           <div class="p-single-work-client__tableItem p-single-work-client__tableItem--specification">
                             <dt>サイト仕様</dt>
-                            <dd>
-                              <?php
-                              $post_specification_names = array();
-                              foreach ($post_specification_terms as $term) {
-                                $post_specification_names[] = esc_html($term->name);  // 各タクソノミー名を取得
-                              }
-                              echo implode(' / ', $post_specification_names);  // タクソノミー名を / で区切って出力
-                              ?>
-                            </dd>
+                            <dd><?php
+                                $post_specification_names = array();
+                                foreach ($post_specification_terms as $term) {
+                                  $post_specification_names[] = esc_html($term->name);  // 各タクソノミー名を取得
+                                }
+                                echo implode(' / ', $post_specification_names);  // タクソノミー名を / で区切って出力
+                                ?></dd>
                           </div>
                         <?php endif; ?>
                         <?php if ($scope): ?>
                           <div
                             class="p-single-work-client__tableItem p-single-work-client__tableItem--scope">
                             <dt>弊所スコープ</dt>
-                            <dd>
-                              <?php echo esc_html($scope); ?>
-                            </dd>
+                            <dd><?php echo esc_html($scope); ?></dd>
                           </div>
                         <?php endif; ?>
                       </dl>
