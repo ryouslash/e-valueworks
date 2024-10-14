@@ -19,6 +19,18 @@ function custom_admin_enqueue_styles()
 add_action('admin_enqueue_scripts', 'custom_admin_enqueue_styles');
 
 /**
+ * エディター用の CSS 読み込み
+ */
+add_action('after_setup_theme', function () {
+
+  // ブロックエディターをサポート
+  add_theme_support('editor-styles');
+
+  // 指定のファイルを読み込む
+  add_editor_style('dist/css/editor-style.css');
+});
+
+/**
  * JSファイルの読み込み
  */
 function add_custom_scripts()
@@ -29,13 +41,13 @@ function add_custom_scripts()
   wp_enqueue_script('main', esc_url(get_template_directory_uri()) . '/dist/js/main.js', array('jquery'), filemtime(get_template_directory() . '/dist/js/main.js'), true);
 
   if (is_front_page()):
-    wp_enqueue_script('top', esc_url(get_template_directory_uri()) . '/dist/js/top.js', array('common'), filemtime(get_template_directory() . '/dist/js/top.js'), true); // トップページ用スクリプト
+    wp_enqueue_script('top', esc_url(get_template_directory_uri()) . '/dist/js/top.js', array('main'), filemtime(get_template_directory() . '/dist/js/top.js'), true); // トップページ用スクリプト
 
   elseif (is_singular('work')):
-    wp_enqueue_script('work', esc_url(get_template_directory_uri()) . '/dist/js/work.js', array('common'), filemtime(get_template_directory() . '/dist/js/work.js'), true); // 制作実績用スクリプト
+    wp_enqueue_script('work', esc_url(get_template_directory_uri()) . '/dist/js/work.js', array('main'), filemtime(get_template_directory() . '/dist/js/work.js'), true); // 制作実績用スクリプト
 
   elseif (is_page('price')):
-    wp_enqueue_script('price', esc_url(get_template_directory_uri()) . '/dist/js/price.js', array('common'), filemtime(get_template_directory() . '/dist/js/price.js'), true); // 料金ページ用スクリプト
+    wp_enqueue_script('price', esc_url(get_template_directory_uri()) . '/dist/js/price.js', array('main'), filemtime(get_template_directory() . '/dist/js/price.js'), true); // 料金ページ用スクリプト
   endif;
 }
 add_action('wp_enqueue_scripts', 'add_custom_scripts');

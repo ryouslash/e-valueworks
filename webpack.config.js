@@ -11,6 +11,7 @@ module.exports = {
     work: './src/js/work.js',
     price: './src/js/price.js',
     admin: ['./src/js/admin.js', './src/scss/admin.scss'],
+    'editor-style': './src/js/editor-style.scss',
   },
   output: {  //出力先
     filename: 'js/[name].js',
