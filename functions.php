@@ -63,6 +63,7 @@ function term_thumbnail_scripts($hook)
     wp_enqueue_script('term-thumbnail-script', get_template_directory_uri() . '/dist/js/admin.js', array('jquery'), false, true);
   }
 }
+
 add_action('admin_enqueue_scripts', 'term_thumbnail_scripts');
 
 get_template_part('includes/basic-setting');
@@ -76,3 +77,5 @@ get_template_part('includes/taxonomy-fields');
 get_template_part('includes/contact-form7');
 
 get_template_part('includes/widget');
+
+get_template_part('includes/core-blocks-style');

@@ -1,6 +1,11 @@
 // project（全ページ共通）
 @use "foundation/variables" as *;
 
+/*
+ * blocks
+ */
+@use "blocks/core/_image";
+
 body {
   font-family: sans-serif;
 }

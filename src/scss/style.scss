@@ -115,3 +115,8 @@
 
 // taxonomy-archive-news
 @use "templates/taxonomy-archive-news/_style" as taxonomyArchiveNewsTemplate;
+
+/*
+ * blocks
+ */
+@use "blocks/core/_image";

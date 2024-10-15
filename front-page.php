@@ -40,12 +40,6 @@
   $args = array(
     'post_type' => 'news',
     'posts_per_page' => 5,
-    'date_query' => array(
-      array(
-        'inclusive' => true, // 1ヶ月前の日付を含む
-        'after' => date('Y/m/d 0:0:0', strtotime('-1 month')) // 1ヶ月前
-      ),
-    ),
   );
   $the_latest_query = new WP_Query($args);
   ?>
