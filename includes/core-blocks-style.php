@@ -10,5 +10,13 @@ function custom_block_styles()
       'label' => 'シャドウ', // スタイルの表示名
     )
   );
+
+  register_block_style(
+    'core/list',
+    array(
+      'name'  => 'borderBottom', // スタイル名
+      'label' => '下線付き', // スタイルの表示名
+    )
+  );
 }
 add_action('init', 'custom_block_styles');

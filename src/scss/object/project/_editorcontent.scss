@@ -81,4 +81,38 @@
     margin: 0 0.3em;
     padding: 0.25em 0.5em;
   }
+
+  .wp-block-quote {
+    position: relative;
+    padding: 30px 15px 10px;
+    box-sizing: border-box;
+    background: #efefef;
+    color: #555;
+    border-left: 5px solid #18c1f0;
+
+    &:before {
+      content: "";
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      top: 10px;
+      left: 15px;
+      background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0NDggNTEyIj48cGF0aCBmaWxsPSIjMThjMWYwIiBkPSJNMCAyMTZDMCAxNDkuNyA1My43IDk2IDEyMCA5Nmw4IDBjMTcuNyAwIDMyIDE0LjMgMzIgMzJzLTE0LjMgMzItMzIgMzJsLTggMGMtMzAuOSAwLTU2IDI1LjEtNTYgNTZsMCA4IDY0IDBjMzUuMyAwIDY0IDI4LjcgNjQgNjRsMCA2NGMwIDM1LjMtMjguNyA2NC02NCA2NGwtNjQgMGMtMzUuMyAwLTY0LTI4LjctNjQtNjRsMC0zMiAwLTMyIDAtNzJ6bTI1NiAwYzAtNjYuMyA1My43LTEyMCAxMjAtMTIwbDggMGMxNy43IDAgMzIgMTQuMyAzMiAzMnMtMTQuMyAzMi0zMiAzMmwtOCAwYy0zMC45IDAtNTYgMjUuMS01NiA1NmwwIDggNjQgMGMzNS4zIDAgNjQgMjguNyA2NCA2NGwwIDY0YzAgMzUuMy0yOC43IDY0LTY0IDY0bC02NCAwYy0zNS4zIDAtNjQtMjguNy02NC02NGwwLTMyIDAtMzIgMC03MnoiLz48L3N2Zz4=");
+      background-size: cover;
+    }
+
+    p {
+      padding: 0;
+      margin: 10px 0;
+      line-height: 1.7;
+    }
+
+    cite {
+      display: block;
+      text-align: right;
+      color: #888888;
+      font-size: 0.9em;
+    }
+  }
 }

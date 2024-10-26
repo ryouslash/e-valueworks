@@ -1,0 +1,9 @@
+.is-style-borderBottom {
+  > li {
+    padding: 0.5em 0;
+    border-bottom: 1px dotted #666666;
+
+    &:not(:last-of-type) {
+    }
+  }
+}
