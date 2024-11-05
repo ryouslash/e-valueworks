@@ -65,3 +65,7 @@ utility 要素。
 ※「p-archve-work-work」（カスタム投稿「work」アーカイブテンプレート内の実績セクションの場合） などになる場合は、2 回繰り返さず「p-archive-work」で OK。
 
 ※カスタムタクソノミーが 1 つの場合は、「p-taxonomy-archive-カスタム投稿名-プロジェクト名」で OK。
+
+## 本プロジェクトで使用しているアイコンについて
+
+※本プロジェクトではFont Awesome Free（https://fontawesome.com/license/free）のアイコンを利用しています。

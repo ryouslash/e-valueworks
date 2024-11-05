@@ -1,2 +1,112 @@
-.is-style-shadow{box-shadow:0 0 4px #a9a9a9}.is-style-borderBottom>li{border-bottom:1px dotted #666;padding:.5em 0}body{font-family:sans-serif}h2{font-size:clamp(2rem,1.8rem + .625vw,2.6rem)}h3{font-size:clamp(1.8rem,1.6rem + .625vw,2rem)}ol,ul{padding-left:1em}ol li,ul li{margin:.2em 0}ol li::marker,ul li::marker{margin:0;padding:0}ol li ol,ol li ul,ul li ol,ul li ul{margin-left:1em;margin-top:.2em}ol li ul li,ul li ul li{list-style-type:circle}ul li{list-style-type:disc}ol li{list-style-type:decimal}a{text-decoration:underline}a:hover{text-decoration:none}:not(pre) code{align-items:center;background:#f7f7f7!important;border:1px solid rgba(0,0,0,.1);border-radius:2px;color:#333;display:inline-flex;font-size:.9em;letter-spacing:0;line-height:1;margin:0 .5em;padding:.25em .5em}.wp-block-quote{background:#efefef;border-left:5px solid #18c1f0;box-sizing:border-box;color:#555;padding:30px 15px 10px;position:relative}.wp-block-quote:before{background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0NDggNTEyIj48cGF0aCBmaWxsPSIjMThjMWYwIiBkPSJNMCAyMTZDMCAxNDkuNyA1My43IDk2IDEyMCA5Nmg4YzE3LjcgMCAzMiAxNC4zIDMyIDMycy0xNC4zIDMyLTMyIDMyaC04Yy0zMC45IDAtNTYgMjUuMS01NiA1NnY4aDY0YzM1LjMgMCA2NCAyOC43IDY0IDY0djY0YzAgMzUuMy0yOC43IDY0LTY0IDY0SDY0Yy0zNS4zIDAtNjQtMjguNy02NC02NFYyMTZtMjU2IDBjMC02Ni4zIDUzLjctMTIwIDEyMC0xMjBoOGMxNy43IDAgMzIgMTQuMyAzMiAzMnMtMTQuMyAzMi0zMiAzMmgtOGMtMzAuOSAwLTU2IDI1LjEtNTYgNTZ2OGg2NGMzNS4zIDAgNjQgMjguNyA2NCA2NHY2NGMwIDM1LjMtMjguNyA2NC02NCA2NGgtNjRjLTM1LjMgMC02NC0yOC43LTY0LTY0VjIxNiIvPjwvc3ZnPg==);background-size:cover;content:"";display:inline-block;height:20px;left:15px;position:absolute;top:10px;width:20px}.wp-block-quote p{line-height:1.7;margin:10px 0;padding:0}.wp-block-quote cite{color:#888;display:block;font-size:.9em;text-align:right}
+/*!*****************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[0].use[1]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[0].use[2]!./src/scss/editor-style.scss ***!
+  \*****************************************************************************************************************************************************************************/
+/*
+ * blocks
+ */
+.is-style-shadow {
+  box-shadow: 0 0 4px #a9a9a9;
+}
+
+.is-style-borderBottom > li {
+  padding: 0.5em 0;
+  border-bottom: 1px dotted #666666;
+}
+body {
+  font-family: sans-serif;
+}
+
+h2 {
+  font-size: clamp(2rem, 1.8rem + 0.625vw, 2.6rem);
+}
+
+h3 {
+  font-size: clamp(1.8rem, 1.6rem + 0.625vw, 2rem);
+}
+
+ul,
+ol {
+  padding-left: 1em;
+}
+ul li,
+ol li {
+  margin: 0.2em 0;
+}
+ul li::marker,
+ol li::marker {
+  margin: 0;
+  padding: 0;
+}
+ul li ul,
+ul li ol,
+ol li ul,
+ol li ol {
+  margin-left: 1em;
+  margin-top: 0.2em;
+}
+ul li ul li,
+ol li ul li {
+  list-style-type: circle;
+}
+
+ul li {
+  list-style-type: disc;
+}
+
+ol li {
+  list-style-type: decimal;
+}
+
+a {
+  text-decoration: underline;
+}
+a:hover {
+  text-decoration: none;
+}
+
+:not(pre) code {
+  align-items: center;
+  color: #333333;
+  display: inline-flex;
+  font-size: 0.9em;
+  letter-spacing: 0;
+  line-height: 1;
+  background: #f7f7f7 !important;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 2px;
+  margin: 0px 0.5em;
+  padding: 0.25em 0.5em;
+}
+
+.wp-block-quote {
+  position: relative;
+  padding: 30px 15px 10px;
+  box-sizing: border-box;
+  background: #efefef;
+  color: #555;
+  border-left: 5px solid #18c1f0;
+}
+.wp-block-quote:before {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 10px;
+  left: 15px;
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0NDggNTEyIj48cGF0aCBmaWxsPSIjMThjMWYwIiBkPSJNMCAyMTZDMCAxNDkuNyA1My43IDk2IDEyMCA5Nmw4IDBjMTcuNyAwIDMyIDE0LjMgMzIgMzJzLTE0LjMgMzItMzIgMzJsLTggMGMtMzAuOSAwLTU2IDI1LjEtNTYgNTZsMCA4IDY0IDBjMzUuMyAwIDY0IDI4LjcgNjQgNjRsMCA2NGMwIDM1LjMtMjguNyA2NC02NCA2NGwtNjQgMGMtMzUuMyAwLTY0LTI4LjctNjQtNjRsMC0zMiAwLTMyIDAtNzJ6bTI1NiAwYzAtNjYuMyA1My43LTEyMCAxMjAtMTIwbDggMGMxNy43IDAgMzIgMTQuMyAzMiAzMnMtMTQuMyAzMi0zMiAzMmwtOCAwYy0zMC45IDAtNTYgMjUuMS01NiA1NmwwIDggNjQgMGMzNS4zIDAgNjQgMjguNyA2NCA2NGwwIDY0YzAgMzUuMy0yOC43IDY0LTY0IDY0bC02NCAwYy0zNS4zIDAtNjQtMjguNy02NC02NGwwLTMyIDAtMzIgMC03MnoiLz48L3N2Zz4=);
+  background-size: cover;
+}
+.wp-block-quote p {
+  padding: 0;
+  margin: 10px 0;
+  line-height: 1.7;
+}
+.wp-block-quote cite {
+  display: block;
+  text-align: right;
+  color: #888888;
+  font-size: 0.9em;
+}
+
 /*# sourceMappingURL=editor-style.css.map*/
