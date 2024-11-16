@@ -1,5 +1,3 @@
-# E-VALUE WORKS CSS設計
-
 ## CSS 設計：ベースとして基本は FLOCSS を採用（各フォルダの意味は以下の通り。）
 
 ### foundation
@@ -8,11 +6,11 @@
 
 ### layout
 
-header、footer などレイアウトに関連するもの。container などは common.scss に記述。 例）l-header、l-footer
+header、footer などレイアウトに関連するもの。例）l-header、l-footer
 
 ### object ＞ component
 
-2 ページ以上で共通のコンポーネント要素を格納。 例）c-button1、c-title1
+2 ページ以上で共通のコンポーネント要素を格納。 例）c-button、c-title
 
 ### object ＞ project
 
@@ -28,44 +26,34 @@ utility 要素。
 
 ### pages > ページ名 > \_style.scss
 
-そのページのみのスタイルを記述。
+そのページ固有のスタイルを記述。
+
+※ページ共通のコンポーネント要素やプロジェクト要素で、ページのみのスタイルを追加したい場合、body 要素に「page-ページのスラッグ名」がつくように設定し、それをスコープとして\_style.scss にスタイルを記述する。
 
 ### templates > テンプレート名 > project
 
-固定ページ、投稿、カスタム投稿でしか使わないプロジェクト要素を格納。
+固定ページ、投稿、カスタム投稿のテンプレートファイルでしか使わないプロジェクト要素を格納。
+固定ページで作成しているページが複数ある場合、各ページ固有のスタイルは pages > ページ名で管理するが、テンプレート全体で変更したい箇所がある場合はこちらに記述する。（ページヘッダーなど、基本は object ＞ component、object ＞ project で対応。）
 
 テンプレート名の付け方は以下の通り。
 
-- 投稿ページ「single」
-- 固定ページ「page」
-- アーカイブページ「archive」（タクソノミー毎に分ける場合は、「タクソノミー名-archive」）
-- Blog Posts Index ページ「index」
-- カスタム投稿ページ「single-カスタム投稿名」
-- カスタム投稿アーカイブページ「archive-カスタム投稿名」
-- カスタムタクソノミーアーカイブページ「カスタムタクソノミー名-archive-カスタム投稿名」
+- 投稿ページ「p-single-プロジェクト名」
+- 投稿アーカイブ「p-archive-プロジェクト名」（Date、Category、Tag、Author を分けない場合）、「p-タクソノミー名-archive-プロジェクト名」（Date、Category、Tag、Author を分ける場合）
+- 固定ページ「p-page-プロジェクト名」
+- アーカイブページ「p-archive-プロジェクト名」（タクソノミー毎に分ける場合は、「p-タクソノミー名-archive-プロジェクト名」）
+- Blog Posts Index ページ「p-index-プロジェクト名」
+- カスタム投稿ページ「p-single-カスタム投稿名-プロジェクト名」
+- カスタム投稿アーカイブページ「p-archive-カスタム投稿名-プロジェクト名」
+  ※「p-archve-work-work」（カスタム投稿「work」アーカイブテンプレート内の実績セクションの場合） などになる場合は、2 回繰り返さず「p-archive-work」で OK。
+- カスタムタクソノミーアーカイブページ「p-カスタムタクソノミー名-archive-カスタム投稿名-プロジェクト名」
+  ※カスタムタクソノミーが 1 つの場合は、「p-taxonomy-archive-カスタム投稿名-プロジェクト名」で OK。
 
 ### templates > テンプレート名 > \_style.scss
 
-そのページのみのスタイルを記述。
+そのテンプレート固有のスタイルを記述。
 
-※ページ共通のコンポーネント要素やプロジェクト要素で、ページのみのスタイルを追加したい場合、スタイル変更を加えた親コンテンツのいずれかに「page-ページ名」「t-テンプレート名」をつけて\_style.scss にスタイルを記述する。
-
-## クラス名の付与ルール
-
-クラス名は以下のルールで接頭辞を付与するものとする。
-
-- 固定ページ「p-page-プロジェクト名」
-- 投稿詳細ページ「p-single-プロジェクト名」
-- 投稿アーカイブ「p-archive-プロジェクト名」（Date、Category、Tag、Author を分けない場合）、「p-タクソノミー名-archive-プロジェクト名」（Date、Category、Tag、Author を分ける場合）
-- Blog Posts Index ページ「p-index-archive」
-- カスタム投稿詳細ページ「p-single-カスタム投稿名-プロジェクト名」
-- カスタム投稿アーカイブページ「p-archive-カスタム投稿名-プロジェクト名」
-- カスタムタクソノミーアーカイブページ「p-カスタムタクソノミー名-archive-カスタム投稿名-プロジェクト名」
-
-※「p-archve-work-work」（カスタム投稿「work」アーカイブテンプレート内の実績セクションの場合） などになる場合は、2 回繰り返さず「p-archive-work」で OK。
-
-※カスタムタクソノミーが 1 つの場合は、「p-taxonomy-archive-カスタム投稿名-プロジェクト名」で OK。
+※ページ共通のコンポーネント要素やプロジェクト要素で、テンプレート固有のスタイルを追加したい場合、body 要素に「t-テンプレート名」がつくように設定し、それをスコープとして\_style.scss にスタイルを記述する。
 
 ## 本プロジェクトで使用しているアイコンについて
 
-※本プロジェクトではFont Awesome Free（https://fontawesome.com/license/free）のアイコンを利用しています。
+※本プロジェクトでは Font Awesome Free（https://fontawesome.com/license/free）のアイコンを利用しています。
