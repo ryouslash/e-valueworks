@@ -93,13 +93,15 @@
     &:before {
       content: "";
       display: inline-block;
-      width: 20px;
+      width: 30px;
       height: 20px;
       position: absolute;
       top: 10px;
       left: 15px;
-      background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0NDggNTEyIj48cGF0aCBmaWxsPSIjMThjMWYwIiBkPSJNMCAyMTZDMCAxNDkuNyA1My43IDk2IDEyMCA5Nmw4IDBjMTcuNyAwIDMyIDE0LjMgMzIgMzJzLTE0LjMgMzItMzIgMzJsLTggMGMtMzAuOSAwLTU2IDI1LjEtNTYgNTZsMCA4IDY0IDBjMzUuMyAwIDY0IDI4LjcgNjQgNjRsMCA2NGMwIDM1LjMtMjguNyA2NC02NCA2NGwtNjQgMGMtMzUuMyAwLTY0LTI4LjctNjQtNjRsMC0zMiAwLTMyIDAtNzJ6bTI1NiAwYzAtNjYuMyA1My43LTEyMCAxMjAtMTIwbDggMGMxNy43IDAgMzIgMTQuMyAzMiAzMnMtMTQuMyAzMi0zMiAzMmwtOCAwYy0zMC45IDAtNTYgMjUuMS01NiA1NmwwIDggNjQgMGMzNS4zIDAgNjQgMjguNyA2NCA2NGwwIDY0YzAgMzUuMy0yOC43IDY0LTY0IDY0bC02NCAwYy0zNS4zIDAtNjQtMjguNy02NC02NGwwLTMyIDAtMzIgMC03MnoiLz48L3N2Zz4=");
-      background-size: cover;
+      background-image: url("../img/quotation.svg");
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: bottom center;
     }
 
     p {
