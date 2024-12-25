@@ -43,6 +43,7 @@ function add_custom_scripts()
   if (is_front_page()):
     wp_enqueue_script('top', esc_url(get_template_directory_uri()) . '/dist/js/top.js', array('main'), filemtime(get_template_directory() . '/dist/js/top.js'), true); // トップページ用スクリプト
 
+
   elseif (is_singular('work')):
     wp_enqueue_script('work', esc_url(get_template_directory_uri()) . '/dist/js/work.js', array('main'), filemtime(get_template_directory() . '/dist/js/work.js'), true); // 制作実績用スクリプト
 

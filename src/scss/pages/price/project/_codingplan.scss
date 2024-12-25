@@ -1,15 +1,15 @@
-@use "../../../foundation/variables" as *;
+@use "@scss/foundation/variables" as *;
 
 .p-price-codingPlan {
-  margin-top: 80px;
+  margin-top: 8rem;
 
   &__items {
-    margin-top: 30px;
+    margin-top: 3rem;
   }
 
   &__item {
     &:not(:last-of-type) {
-      margin-bottom: 60px;
+      margin-bottom: 6rem;
     }
   }
 
@@ -18,17 +18,17 @@
     font-weight: 700;
     background-color: #98daec;
     color: #ffffff;
-    padding: 15px 10px;
+    padding: 1.5rem 1rem;
     text-align: center;
-    border-radius: 5px;
-    text-shadow: 1px 2px 5px #70b4c77f;
+    border-radius: 0.5rem;
+    text-shadow: 0.1rem 0.2rem 0.5rem #70b4c77f;
   }
 
   &__h3Title {
     font-size: $fontM;
     font-weight: 600;
     position: relative;
-    padding-left: 40px;
+    padding-left: 4rem;
 
     &::before {
       content: "";
@@ -38,28 +38,28 @@
       top: 50%;
       left: 0;
       transform: translateY(-50%);
-      width: 30px;
-      height: 5px;
+      width: 3rem;
+      height: 0.5rem;
     }
   }
 
   &__detail {
-    margin-top: 30px;
+    margin-top: 3rem;
   }
 
   &__table {
-    margin-top: 30px;
+    margin-top: 3rem;
     font-weight: 500;
 
     table {
       width: 100%;
       border-collapse: separate;
-      border-spacing: 2px 0;
+      border-spacing: 0.2rem 0;
       white-space: nowrap;
     }
 
     tbody > tr {
-      padding: 10px;
+      padding: 1rem;
       &:nth-of-type(2n) {
         background-color: #eeeeee;
       }
@@ -79,7 +79,7 @@
 
     th,
     td {
-      padding: 10px 20px;
+      padding: 1rem 2rem;
       vertical-align: middle;
     }
 

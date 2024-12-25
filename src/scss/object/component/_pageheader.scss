@@ -1,7 +1,7 @@
-@use "../../foundation/variables" as *;
+@use "@scss/foundation/variables" as *;
 
 .c-pageHeader {
-  padding: 60px 0;
+  padding: 6rem 0;
   background-color: #eeeeee;
   position: relative;
   background-size: cover;

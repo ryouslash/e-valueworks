@@ -1,18 +1,35 @@
-@use "../../../foundation/variables" as *;
+@use "@scss/foundation/variables" as *;
 
 .p-top-work {
   background-color: #ffffff;
   overflow: hidden;
 
   &__slider {
-    margin-top: 60px;
+    margin-top: 6rem;
 
     .slick-slide {
-      margin: 0 15px;
+      margin: 0 1.5rem;
     }
 
     .slick-dots {
-      bottom: -50px;
+      bottom: -5rem;
+      li {
+        width: 2rem;
+        height: 2rem;
+        margin: 0 0.5rem;
+
+        button {
+          width: 2rem;
+          height: 2rem;
+
+          &::before {
+            font-size: 0.6rem;
+            line-height: 2rem;
+            width: 2rem;
+            height: 2rem;
+          }
+        }
+      }
     }
   }
 
@@ -30,12 +47,12 @@
 
   &__text {
     text-align: center;
-    margin-top: 30px;
+    margin-top: 3rem;
   }
 
   &__industry {
     margin: 2em 0 1em;
-    padding: 5px 10px;
+    padding: 0.5rem 1rem;
     background-color: #eeeeee;
     text-align: center;
     font-weight: 500;

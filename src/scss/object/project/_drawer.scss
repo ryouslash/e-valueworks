@@ -1,4 +1,4 @@
-@use "../../foundation/variables" as *;
+@use "@scss/foundation/variables" as *;
 
 .p-drawerMenu {
   &__items {
@@ -7,11 +7,11 @@
   }
 
   &__item {
-    border-bottom: 1px dotted #aaaaaa;
+    border-bottom: 0.1rem dotted #aaaaaa;
     position: relative;
 
     &:first-of-type {
-      border-top: 1px dotted #aaaaaa;
+      border-top: 0.1rem dotted #aaaaaa;
     }
 
     a {
@@ -42,7 +42,7 @@
       grid-template-rows: 1fr;
 
       .p-drawerMenu__items {
-        padding: 30px 0;
+        padding: 3rem 0;
       }
     }
 

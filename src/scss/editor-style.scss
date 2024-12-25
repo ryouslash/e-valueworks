@@ -1,11 +1,10 @@
 // project（全ページ共通）
-@use "foundation/variables" as *;
+@use "@scss/foundation/variables" as *;
 
 /*
  * blocks
  */
-@use "blocks/core/_image";
-@use "blocks/core/_list";
+@use "@scss/blocks";
 
 body {
   font-family: sans-serif;
@@ -72,29 +71,29 @@ a {
   letter-spacing: 0;
   line-height: 1;
   background: #f7f7f7 !important;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: 2px;
-  margin: 0px 0.5em;
+  border: 0.1rem solid rgba(0, 0, 0, 0.1);
+  border-radius: 0.2rem;
+  margin: 0 0.5em;
   padding: 0.25em 0.5em;
 }
 
 .wp-block-quote {
   position: relative;
-  padding: 30px 15px 10px;
+  padding: 3rem 1.5rem 1rem;
   box-sizing: border-box;
   background: #efefef;
   color: #555;
-  border-left: 5px solid #18c1f0;
+  border-left: 0.5rem solid #18c1f0;
 
   &:before {
     content: "";
     display: inline-block;
-    width: 30px;
-    height: 20px;
+    width: 3rem;
+    height: 2rem;
     position: absolute;
-    top: 10px;
-    left: 15px;
-    background-image: url("../img/quotation.svg");
+    top: 1rem;
+    left: 1.5rem;
+    background-image: url("~@img/quotation.svg");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: bottom center;
@@ -102,7 +101,7 @@ a {
 
   p {
     padding: 0;
-    margin: 10px 0;
+    margin: 1rem 0;
     line-height: 1.7;
   }
 

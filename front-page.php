@@ -1,13 +1,7 @@
-<!DOCTYPE html>
-<html lang="ja">
+<?php get_header(); ?>
 
-<head>
-  <?php get_header(); ?>
-</head>
-
-<?php get_template_part('template-parts/header1'); ?>
 <main class="l-content">
-  <section class="p-top-mainVisual">
+  <div class="p-top-mainVisual">
     <div class="p-top-mainVisual__bg"></div>
     <div class="p-top-mainVisual__inner l-container">
       <div class="p-top-mainVisual__title js-typing"></div>
@@ -31,10 +25,10 @@
         <a
           href="https://www.chatwork.com/ryouslash"
           class="p-top-mainVisual__button p-top-mainVisual__button--chatwork"
-          target="_blank"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/dist/img/cw_logomark_color.svg" />Chatworkでご相談</a>
+          target="_blank"><img src="/img/cw_logomark_color.svg" alt="Chatwork アイコン" width="150" height="150" />Chatworkでご相談</a>
       </div>
     </div>
-  </section>
+  </div>
 
   <?php
   $args = array(
@@ -44,7 +38,7 @@
   $the_latest_query = new WP_Query($args);
   ?>
   <?php if ($the_latest_query->have_posts()): ?>
-    <section class="p-top-news">
+    <div class="p-top-news">
       <div class="l-container">
         <ul class="p-top-news__items">
           <?php while ($the_latest_query->have_posts()): $the_latest_query->the_post(); ?>
@@ -68,7 +62,7 @@
           <?php endwhile; ?>
         </ul>
       </div>
-    </section>
+    </div>
     <?php wp_reset_postdata(); ?>
   <?php endif; ?>
 
@@ -115,7 +109,7 @@
             </div>
           </div>
           <div class="p-top-troubles__center">
-            <img src="<?php echo esc_url(get_template_directory_uri()); ?>/dist/img/overthinking-man.png" alt="" />
+            <img src="/img/overthinking-man.png" alt="悩んでいる人" width="735" height="854" loading="lazy" />
           </div>
         </div>
       </div>
@@ -179,7 +173,6 @@
           <dt class="p-top-about__itemTitle">Skills</dt>
           <dd class="p-top-about__itemDetail">
             <p>
-              言語・ソフトウェア<br />
               <span class="u-inline-block">HTML</span> /
               <span class="u-inline-block">CSS</span> /
               <span class="u-inline-block">SCSS</span> /
@@ -187,21 +180,17 @@
               <span class="u-inline-block">PHP</span> /
               <span class="u-inline-block">WordPress</span> /
               <span class="u-inline-block">JavaScript</span> /
-              <span class="u-inline-block">jQuery</span>
-            </p>
-            <p>
-              バージョン管理<br />
+              <span class="u-inline-block">jQuery</span> /
+              <span class="u-inline-block">React</span> /
               <span class="u-inline-block">Git</span> /
-              <span class="u-inline-block">Github</span>
-            </p>
-            <p class="u-mb0">
-              ビルドツール<br />
-              <span class="u-inline-block">Webpack</span>
+              <span class="u-inline-block">Github</span> /
+              <span class="u-inline-block">Webpack</span> /
+              <span class="u-inline-block">Gulp</span>
             </p>
           </dd>
         </dl>
         <div class="p-top-about__item p-top-about__item--photo">
-          <img src="<?php echo esc_url(get_template_directory_uri()); ?>/dist/img/profile.jpg" alt="" />
+          <img src="/img/profile.jpg" alt="プロフィール写真" width="1000" height="1000" loading="lazy" />
         </div>
       </div>
     </div>
@@ -236,9 +225,9 @@
                       <?php echo esc_html($terms[0]->name); ?>
                     </div>
                   <?php endif; ?>
-                  <h3 class="p-top-work__title">
+                  <div class="p-top-work__title">
                     <?php the_title(); ?>
-                  </h3>
+                  </div>
                 </a>
               </div>
             <?php endwhile; ?>
@@ -303,12 +292,11 @@
               </dd>
             </dl>
           </div>
-          <!-- <img src="<?php echo esc_url(get_template_directory_uri()); ?>/dist/img/partner.png" alt=""> -->
         </div>
         <div class="p-top-promise__scroll">
           <div class="p-top-promise__img">
             <figure>
-              <img src="<?php echo esc_url(get_template_directory_uri()); ?>/dist/img/promise1.png" alt="" />
+              <img src="/img/promise1.png" alt="責任感" width="1000" height="933" loading="lazy" />
               <figcaption>
                 <div class="p-top-promise__title">
                   <span>お約束1</span>
@@ -322,7 +310,7 @@
           </div>
           <div class="p-top-promise__img">
             <figure>
-              <img src="<?php echo esc_url(get_template_directory_uri()); ?>/dist/img/promise2.png" alt="" />
+              <img src="/img/promise2.png" alt="迅速な対応" width="1000" height="933" loading="lazy" />
               <figcaption>
                 <div class="p-top-promise__title">
                   <span>お約束2</span>
@@ -336,7 +324,7 @@
           </div>
           <div class="p-top-promise__img">
             <figure>
-              <img src="<?php echo esc_url(get_template_directory_uri()); ?>/dist/img/promise3.png" alt="" />
+              <img src="/img/promise3.png" alt="思いやり" width="1000" height="933" loading="lazy" />
               <figcaption>
                 <div class="p-top-promise__title">
                   <span>お約束3</span>
@@ -350,7 +338,7 @@
           </div>
           <div class="p-top-promise__img u-mb0">
             <figure>
-              <img src="<?php echo esc_url(get_template_directory_uri()); ?>/dist/img/promise4.png" alt="" />
+              <img src="/img/promise4.png" alt="自己研鑽" width="1000" height="933" loading="lazy" />
               <figcaption>
                 <div class="p-top-promise__title">
                   <span>お約束4</span>
@@ -511,7 +499,7 @@
       <h2 class="c-title1">よくある質問</h2>
       <div class="p-top-faq__inner">
         <div class="p-top-faq__left">
-          <img src="<?php echo esc_url(get_template_directory_uri()); ?>/dist/img/man-with-green-tie.png" />
+          <img src="/img/man-with-green-tie.png" alt="緑色のネクタイをした男性のイラスト" width="629" height="867" loading="lazy" />
         </div>
         <div class="p-top-faq_right">
           <dl class="p-top-faq__list p-top-faq__list1 is-open">

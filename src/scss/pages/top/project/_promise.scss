@@ -1,4 +1,4 @@
-@use "../../../foundation/variables" as *;
+@use "@scss/foundation/variables" as *;
 
 .p-top-promise {
   background: rgb(240, 240, 240);
@@ -13,7 +13,7 @@
     grid-template-columns: 3fr 2fr;
     align-items: flex-start;
     justify-content: space-between;
-    gap: 20px;
+    gap: 2rem;
     position: relative;
 
     @include mq-down(lg) {
@@ -22,7 +22,7 @@
   }
 
   &__items {
-    margin-top: 60px;
+    margin-top: 6rem;
 
     @include mq-down(lg) {
       display: none;
@@ -30,12 +30,12 @@
   }
 
   &__item {
-    margin-bottom: 45px;
+    margin-bottom: 4.5rem;
 
     &.is-active {
       .p-top-promise__detail {
         grid-template-rows: 1fr;
-        padding: 30px;
+        padding: 3rem;
         margin-top: 1em;
       }
     }
@@ -43,7 +43,7 @@
 
   &__fixed {
     position: sticky;
-    top: 160.5px;
+    top: 16.05rem;
 
     @include mq-down(lg) {
       position: static;
@@ -69,21 +69,22 @@
     .p-top-promise__title > span {
       background-color: #733c3c;
       color: #ffffff;
-      padding: 0px 5px;
-      border-radius: 3px;
+      padding: 0 0.5rem;
+      border-radius: 0.3rem;
       flex-shrink: 0;
     }
 
     .p-top-promise__detail {
       background: #ffffff;
-      box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.3);
+      box-shadow: 0.2rem 0.4rem 0.5rem rgba(0, 0, 0, 0.3);
       margin-left: 1em;
       display: grid;
       grid-template-rows: 0fr;
-      border-radius: 3px;
+      border-radius: 0.3rem;
       font-size: $fontM;
-
-      transition: 0.3s ease-out;
+      transition:
+        grid-template-rows 0.3s ease-out,
+        padding 0.3s;
 
       p {
         overflow-y: hidden;
@@ -105,35 +106,35 @@
     .p-top-promise__title > span {
       background-color: #733c3c;
       color: #ffffff;
-      padding: 0px 5px;
-      border-radius: 3px;
+      padding: 0 0.5rem;
+      border-radius: 0.3rem;
       flex-shrink: 0;
     }
 
     .p-top-promise__detail {
       background: #ffffff;
-      box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.3);
+      box-shadow: 0.2rem 0.4rem 0.5rem rgba(0, 0, 0, 0.3);
       display: grid;
-      border-radius: 3px;
+      border-radius: 0.3rem;
       font-size: $fontM;
-      padding: 30px;
+      padding: 3rem;
       margin-top: 1em;
 
       @include mq-down(sm) {
-        padding: 20px;
+        padding: 2rem;
       }
     }
 
     @include mq-down(lg) {
-      margin-top: 60px;
+      margin-top: 6rem;
     }
   }
 
   &__img {
-    margin-bottom: 120px;
+    margin-bottom: 12rem;
 
     @include mq-down(lg) {
-      margin-bottom: 60px;
+      margin-bottom: 6rem;
     }
 
     img {

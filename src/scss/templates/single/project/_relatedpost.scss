@@ -1,16 +1,16 @@
-@use "../../../foundation/variables" as *;
+@use "@scss/foundation/variables" as *;
 
 .p-single-relatedPosts {
-  margin: 120px 0 0;
+  margin: 12rem 0 0;
 
   @include mq-down(sm) {
-    margin: 100px 0 0;
+    margin: 10rem 0 0;
   }
 
   & > h2 {
     font-size: $fontL;
     background-color: #eeeeee;
-    border-left: 3px solid $keyColor;
+    border-left: 0.3rem solid $keyColor;
     padding: 0.3em 0.5em;
   }
 
@@ -18,11 +18,11 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    gap: 30px;
-    margin-top: 30px;
+    gap: 3rem;
+    margin-top: 3rem;
 
     @include mq-down() {
-      gap: 20px;
+      gap: 2rem;
     }
 
     @include mq-down(sm) {
@@ -31,23 +31,23 @@
   }
 
   &__item {
-    width: calc(50% - 15px);
+    width: calc(50% - 1.5rem);
 
     @include mq-down() {
-      width: calc(50% - 10px);
+      width: calc(50% - 1rem);
     }
 
     @include mq-down(sm) {
       width: 100%;
 
       &:not(:last-of-type) {
-        margin-bottom: 20px;
+        margin-bottom: 2rem;
       }
     }
 
     & > a {
       display: flex;
-      gap: 10px;
+      gap: 1rem;
     }
 
     &:hover {
@@ -58,12 +58,12 @@
   }
 
   &__itemLeft {
-    max-width: 100px;
+    max-width: 10rem;
     width: 100%;
     flex-shrink: 0;
 
     @include mq-down(sm) {
-      max-width: 150px;
+      max-width: 15rem;
     }
   }
 
@@ -91,6 +91,6 @@
   }
 
   &__noItem {
-    margin-top: 30px;
+    margin-top: 3rem;
   }
 }

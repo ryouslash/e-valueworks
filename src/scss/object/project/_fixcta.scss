@@ -1,8 +1,8 @@
-@use "../../foundation/variables" as *;
+@use "@scss/foundation/variables" as *;
 
 .p-fixCta {
   position: fixed;
-  right: -240px;
+  right: -24rem;
   transform: translateY(-50%);
   top: 50%;
   z-index: 10;
@@ -21,7 +21,7 @@
     background-color: $keyColor;
     font-size: $fontM;
     line-height: 1;
-    padding: 20px 10px;
+    padding: 2rem 1rem;
     color: #ffffff;
     font-weight: 700;
     cursor: pointer;
@@ -33,23 +33,23 @@
   }
 
   &__right {
-    width: 240px;
-    padding: 20px;
+    width: 24rem;
+    padding: 2rem;
     background-color: #ffffff;
     display: flex;
     align-items: center;
-    border-top: 3px solid $keyColor;
-    border-bottom: 3px solid $keyColor;
+    border-top: 0.3rem solid $keyColor;
+    border-bottom: 0.3rem solid $keyColor;
     position: relative;
   }
 
   &__close {
     position: absolute;
     top: 0;
-    right: 20px;
+    right: 2rem;
     transform: translateY(-50%);
-    width: 25px;
-    height: 25px;
+    width: 2.5rem;
+    height: 2.5rem;
     border-radius: 50%;
     background-color: $keyColor;
     color: #ffffff;
@@ -72,7 +72,7 @@
     text-align: center;
 
     &:not(:last-of-type) {
-      margin-bottom: 10px;
+      margin-bottom: 1rem;
     }
 
     img {
@@ -86,11 +86,13 @@
 
     a {
       display: block;
-      padding: 10px 20px;
+      padding: 1rem 2rem;
       font-weight: 600;
       background-color: #eeeeee;
-      box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.3);
-      transition: background-color 0.3s, color 0.3s;
+      box-shadow: 0.2rem 0.4rem 0.5rem rgba(0, 0, 0, 0.3);
+      transition:
+        background-color 0.3s,
+        color 0.3s;
 
       &:hover {
         background-color: $keyColor;

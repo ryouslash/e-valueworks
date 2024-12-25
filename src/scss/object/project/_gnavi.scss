@@ -1,4 +1,4 @@
-@use "../../foundation/variables" as *;
+@use "@scss/foundation/variables" as *;
 
 .p-gnav {
   display: flex;
@@ -6,13 +6,13 @@
   &__item {
     & a {
       display: block;
-      padding: 20px 15px;
+      padding: 2rem 1.5rem;
       position: relative;
       transition: opacity 0.3s;
 
       &:before {
         content: "";
-        height: 2px;
+        height: 0.2rem;
         background-color: #aaaaaa;
         display: block;
         width: 0;
@@ -31,11 +31,11 @@
       }
 
       span {
-        font-size: 11px;
+        font-size: 1.1rem;
         color: #777777;
         text-align: center;
         display: block;
-        margin-top: 5px;
+        margin-top: 0.5rem;
       }
     }
   }

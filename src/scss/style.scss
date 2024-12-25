@@ -3,121 +3,71 @@
 /*
  * foundation
  */
-@use "foundation/_reset";
-@use "foundation/_base";
-@use "foundation/_variables";
-@use "foundation/library/_slick";
-@use "foundation/library/_scrollhint";
+@use "@scss/foundation";
 
 /*
  * layout
  */
-@use "layout/_footer";
-@use "layout/_header";
-@use "layout/_content";
-@use "layout/_common";
+@use "@scss/layout";
 
 /*
  * object
  */
 
 // component
-@use "object/component/_button";
-@use "object/component/_title";
-@use "object/component/_snslink";
-@use "object/component/_pagetop";
-@use "object/component/_pageheader";
-@use "object/component/_breadcrumb";
-@use "object/component/_postmetas";
-@use "object/component/_prevnextnavi";
-@use "object/component/_pagination";
-@use "object/component/_table";
+@use "@scss/object/component";
 
 // project（全ページ共通）
-@use "object/project/_gnavi.scss";
-@use "object/project/_drawer";
-@use "object/project/_editorcontent";
-@use "object/project/_posthead";
-@use "object/project/_postlist";
-@use "object/project/_fixcta";
-@use "object/project/sidebar/_sidebaritem";
-@use "object/project/sidebar/_lastestposts";
-@use "object/project/sidebar/_taxonomy";
-@use "object/project/sidebar/_search";
+@use "@scss/object/project";
 
 // utility
-@use "object/utility/_utilities";
+@use "@scss/object/utility";
 
 /*
  * pages
  */
 
 // top
-@use "pages/top/style" as topPage;
-@use "pages/top/project/_mainvisual";
-@use "pages/top/project/_news";
-@use "pages/top/project/_trouble";
-@use "pages/top/project/_about" as topAbout;
-@use "pages/top/project/_work";
-@use "pages/top/project/_promise";
-@use "pages/top/project/_price";
-@use "pages/top/project/_flow";
-@use "pages/top/project/_faq";
-@use "pages/top/project/_contact";
+@use "@scss/pages/top";
 
 // 404
-@use "pages/404/_style" as errorPage;
-@use "pages/404/project/_error";
+@use "@scss/pages/error";
 
 // price
-@use "pages/price/_style" as pricePage;
-@use "pages/price/project/_intro";
-@use "pages/price/project/_codingplan";
-@use "pages/price/project/_workexample";
-@use "pages/price/project/_estimate";
-@use "pages/price/project/_maintenanceplan";
+@use "@scss/pages/price";
 
 // about
-@use "pages/about/_style" as aboutPage;
-@use "pages/about/project/_about";
-@use "pages/about/project/_profile";
+@use "@scss/pages/about";
 
 /*
  * templates（固定ページ、投稿、カスタム投稿、アーカイブ）
  */
 
 // page
-@use "templates/page/_style" as pageTemplate;
+@use "@scss/templates/page";
 
 // single
-@use "templates/single/_style" as singleTemplate;
-@use "templates/single/project/_relatedpost";
+@use "@scss/templates/single";
 
-// archive
-@use "templates/archive/_style" as archiveTemplate;
-
-@use "templates/search/_style" as sarchTemplate;
+// search
+@use "@scss/templates/search";
 
 //single-news
-@use "templates/single-news/_style" as singleNewsTemplate;
-@use "templates/single-news/project/title" as singleNewsTitle;
+@use "@scss/templates/single-news";
 
 //archive-news
-@use "templates/archive-news/_style" as archiveNewsTemplate;
-
-//single-work
-@use "templates/single-work/_style" as singleWorkTemplate;
-@use "templates/single-work/project/client";
-
-//archive-work
-@use "templates/archive-work/_style" as archiveWorkTemplate;
-@use "templates/archive-work/project/work" as archiveWork;
+@use "@scss/templates/archive-news";
 
 // taxonomy-archive-news
-@use "templates/taxonomy-archive-news/_style" as taxonomyArchiveNewsTemplate;
+@use "@scss/templates/taxonomy-archive-news";
+
+//single-work
+@use "@scss/templates/single-work";
+
+//archive-work
+@use "@scss/templates/archive-work";
 
 /*
  * blocks
  */
-@use "blocks/core/_image";
-@use "blocks/core/_list";
+@use "@scss/blocks";

@@ -11,7 +11,7 @@
         </li>
         <li class="p-fixCta__naviItem p-fixCta__naviItem--chatwork">
           <a href="https://www.chatwork.com/ryouslash" target="_blank"><img
-              src="<?php echo esc_url(get_template_directory_uri()); ?>/dist/img/cw_logomark_color.svg" />Chatworkでご相談</a>
+              src="/img/cw_logomark_color.svg" alt="Chatwork アイコン" width="150" height="150" loading="lazy" />Chatworkでご相談</a>
         </li>
       </ul>
       <div class="p-fixCta__close">

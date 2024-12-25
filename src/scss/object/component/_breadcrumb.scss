@@ -1,8 +1,8 @@
-@use "../../foundation/variables" as *;
+@use "@scss/foundation/variables" as *;
 
 .c-breadcrumb {
   background-color: #eeeeee;
-  padding: 10px 0;
+  padding: 1rem 0;
 
   &__inner {
     > span {

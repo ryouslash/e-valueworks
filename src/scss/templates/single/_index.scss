@@ -1,0 +1,13 @@
+@use "@scss/templates/single/project/relatedpost";
+
+@use "@scss/foundation/variables" as *;
+
+.t-single {
+  .p-editorContent {
+    margin: 6rem 0 12rem;
+
+    @include mq-down(sm) {
+      margin: 6rem 0 10rem;
+    }
+  }
+}

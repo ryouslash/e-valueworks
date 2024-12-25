@@ -1,2 +1,1 @@
 jQuery((function(t){t(".term-thumbnail-upload").on("click",(function(e){e.preventDefault();var n=t(this),i=wp.media({title:"画像を選択",button:{text:"この画像を使用"},multiple:!1}).on("select",(function(){var t=i.state().get("selection").first().toJSON();n.prev("input").val(t.url)})).open()}))}));
-//# sourceMappingURL=admin.js.map

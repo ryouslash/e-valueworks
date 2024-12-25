@@ -1,20 +1,20 @@
-@use "../../../foundation/variables" as *;
+@use "@scss/foundation/variables" as *;
 
 .p-price-maintenancePlan {
-  margin: 120px 0 0;
+  margin: 12rem 0 0;
 
   &__title {
     font-size: $fontL;
     font-weight: 700;
     background-color: #98daec;
     color: #ffffff;
-    padding: 15px 10px;
+    padding: 1.5rem 1rem;
     text-align: center;
-    border-radius: 5px;
+    border-radius: 0.5rem;
   }
 
   &__detail {
-    margin-top: 30px;
+    margin-top: 3rem;
 
     p {
       &:not(:last-of-type) {
@@ -24,18 +24,18 @@
   }
 
   &__table {
-    margin-top: 30px;
+    margin-top: 3rem;
     font-weight: 500;
 
     table {
       width: 100%;
       border-collapse: separate;
-      border-spacing: 2px 0;
+      border-spacing: 0.2rem 0;
       white-space: nowrap;
     }
 
     tbody > tr {
-      padding: 10px;
+      padding: 1rem;
 
       td {
         &:first-of-type,
@@ -52,7 +52,7 @@
 
     th,
     td {
-      padding: 10px 20px;
+      padding: 1rem 2rem;
       vertical-align: middle;
     }
 

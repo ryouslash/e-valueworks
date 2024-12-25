@@ -1,18 +1,18 @@
-@use "../../foundation/variables" as *;
+@use "@scss/foundation/variables" as *;
 
 .p-postList {
   &__item {
     &:not(:last-of-type) {
       a {
-        margin-bottom: 10px;
+        margin-bottom: 1rem;
       }
     }
 
     a {
       display: flex;
       justify-content: space-between;
-      gap: 30px;
-      padding: 20px;
+      gap: 3rem;
+      padding: 2rem;
       transition: background-color 0.5s;
 
       @include mq-down(sm) {
@@ -20,7 +20,7 @@
       }
 
       @include mq-down(xs) {
-        padding: 10px;
+        padding: 1rem;
       }
 
       &:hover {
@@ -35,7 +35,7 @@
 
   &__left {
     width: 30%;
-    min-width: 180px;
+    min-width: 18rem;
 
     @include mq-down(sm) {
       width: 100%;
@@ -73,8 +73,10 @@
 
   &__taxonomy {
     padding: 0.1em 0.6em;
-    transition: color 0.5s, background-color 0.5s;
-    border: 1px solid #73be60;
+    transition:
+      color 0.5s,
+      background-color 0.5s;
+    border: 0.1rem solid #73be60;
     color: #73be60;
   }
 }

@@ -2,35 +2,35 @@
 
 .p-sidebarItem {
   background-color: #eeeeee;
-  padding: 20px;
+  padding: 2rem;
 
   &:not(:last-of-type) {
-    margin-bottom: 30px;
+    margin-bottom: 3rem;
   }
 
   &__title {
     font-size: $fontM;
     text-align: center;
     font-weight: 500;
-    margin-bottom: 20px;
+    margin-bottom: 2rem;
 
     &::before {
       content: "";
       display: block;
-      width: 30px;
-      height: 10px;
+      width: 3rem;
+      height: 1rem;
       margin-left: auto;
-      border-right: 1px solid #aaaaaa;
-      border-top: 1px solid #aaaaaa;
+      border-right: 0.1rem solid #aaaaaa;
+      border-top: 0.1rem solid #aaaaaa;
     }
 
     &::after {
       content: "";
       display: block;
-      width: 30px;
-      height: 10px;
-      border-left: 1px solid #aaaaaa;
-      border-bottom: 1px solid #aaaaaa;
+      width: 3rem;
+      height: 1rem;
+      border-left: 0.1rem solid #aaaaaa;
+      border-bottom: 0.1rem solid #aaaaaa;
     }
   }
 }

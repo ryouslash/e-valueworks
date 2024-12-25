@@ -1,12 +1,12 @@
-@use "../../../foundation/variables" as *;
+@use "@scss/foundation/variables" as *;
 
 // メインビジュアル
 .p-top-mainVisual {
   position: relative;
-  min-height: calc(400px + 5vw);
+  min-height: calc(40rem + 5vw);
   display: flex;
   align-items: center;
-  padding: 30px 0;
+  padding: 3rem 0;
 
   @keyframes fadeIn {
     0% {
@@ -20,7 +20,7 @@
   &__bg {
     width: 100%;
     height: 100%;
-    background-image: url("../img/website-thumbnail.jpg");
+    background-image: url("~@img/website-thumbnail.jpg");
     background-size: cover;
     position: absolute;
     z-index: -1;
@@ -61,13 +61,13 @@
 
     &::after {
       content: "";
-      border-right: 10px solid #333;
+      border-right: 1rem solid #333;
       margin-left: 0.5em;
       animation: flashing 1s linear infinite;
       opacity: 0;
 
       @include mq-down() {
-        border-right: 10px solid #ffffff;
+        border-right: 1rem solid #ffffff;
       }
     }
 
@@ -81,8 +81,10 @@
   &__buttons {
     opacity: 0;
     visibility: hidden;
-    transform: translateY(20px);
-    transition: 0.3s;
+    transform: translateY(2rem);
+    transition:
+      opacity 0.3s,
+      transform 0.3s;
     &.is-show {
       opacity: 1;
       visibility: visible;
@@ -116,10 +118,10 @@
   &__buttons {
     display: flex;
     width: 100%;
-    max-width: 500px;
+    max-width: 50rem;
     justify-content: space-between;
-    margin-top: 15px;
-    gap: 10px;
+    margin-top: 1.5rem;
+    gap: 1rem;
 
     @include mq-down() {
       max-width: initial;
@@ -132,15 +134,17 @@
 
   &__button {
     display: flex;
-    padding: 20px 0;
+    padding: 2rem 0;
     font-weight: 700;
     justify-content: center;
     align-items: center;
-    box-shadow: 2px 2px 6px #aaaaaa;
+    box-shadow: 0.2rem 0.2rem 0.6rem #aaaaaa;
     position: relative;
     top: 0;
     left: 0;
-    transition: 0.3s;
+    transition:
+      top 0.3s,
+      left 0.3s;
     width: 50%;
 
     @include mq-down(sm) {
@@ -148,16 +152,16 @@
     }
 
     &:hover {
-      top: 2px;
-      left: 2px;
+      top: 0.2rem;
+      left: 0.2rem;
     }
 
     &--chatwork {
       background-color: #dcdcdc;
 
       img {
-        width: 20px;
-        margin-right: 10px;
+        width: 2rem;
+        margin-right: 1rem;
       }
     }
 
@@ -168,7 +172,7 @@
 
     svg {
       font-size: 2rem;
-      margin-right: 10px;
+      margin-right: 1rem;
     }
   }
 }

@@ -1,4 +1,4 @@
-@use "../../foundation/variables" as *;
+@use "@scss/foundation/variables" as *;
 
 @keyframes shiny {
   0% {
@@ -22,25 +22,28 @@
   font-weight: 700;
   font-size: $fontM;
   max-width: 50%;
-  min-width: 240px;
+  min-width: 24rem;
   margin: 0 auto;
   text-align: center;
-  border-radius: 30px;
-  padding: 20px 0;
+  border-radius: 3rem;
+  padding: 2rem 0;
   top: 0;
   right: 0;
   overflow: hidden;
-  transition: 0.3s;
+  transition:
+    top 0.3s,
+    right 0.3s,
+    box-shadow 0.3s;
   position: relative;
-  box-shadow: 3px 5px #b96921;
+  box-shadow: 0.3rem 0.5rem #b96921;
 
   &::after {
     content: "";
     position: absolute;
-    top: -100px;
-    left: -100px;
-    width: 50px;
-    height: 50px;
+    top: -10rem;
+    left: -10rem;
+    width: 5rem;
+    height: 5rem;
     background-image: linear-gradient(
       100deg,
       rgba(255, 255, 255, 0) 10%,
@@ -54,41 +57,42 @@
   }
 
   &:hover {
-    top: 3px;
+    top: 0.3rem;
     box-shadow: initial;
-    right: -5px;
+    right: -0.5rem;
   }
 }
 
 .c-button3 {
   position: relative;
-  padding: 0 0 0 50px;
-  margin-top: 60px;
+  padding: 0 0 0 5rem;
+  margin-top: 6rem;
+  display: inline-block;
 
   &:before {
     content: "";
     position: absolute;
-    left: 10px;
+    left: 1rem;
     top: 50%;
-    background-image: url("../img/button-arrow.svg");
+    background-image: url("~@img/button-arrow.svg");
     background-size: cover;
     background-position: right;
     transform: translateY(-50%) scale(-1, 1);
     display: block;
-    width: 30px;
-    height: 10px;
-    transition: 0.5s;
+    width: 3rem;
+    height: 1rem;
+    transition: left 0.3s;
   }
 
   &:hover {
     &:before {
       left: 0;
-      background-image: url("../img/button-arrow-blue.svg");
+      background-image: url("~@img/button-arrow-blue.svg");
     }
   }
 
   a {
-    transition: color 0.5s;
+    transition: color 0.3s;
 
     &:hover {
       color: $keyColor;

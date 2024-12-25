@@ -1,23 +1,26 @@
-@use "../../../foundation/variables" as *;
+@use "@scss/foundation/variables" as *;
 
 .p-top-contact {
   background-color: #ffffff;
 
   &__inner {
-    padding: 100px 0 120px;
+    padding: 10rem 0 12rem;
     clip-path: inset(0);
 
     @include mq-down(sm) {
-      padding: 80px 0 100px;
+      padding: 8rem 0 10rem;
     }
 
     &::before {
       content: "";
       display: block;
-      background-image: url(../img/contact.jpg);
+      background-image: url("~@img/contact.jpg");
+      background-size: cover;
       position: fixed;
       top: 0;
       left: 0;
+      right: 0;
+      bottom: 0;
       width: 100%;
       height: 100vh;
       z-index: -1;
@@ -27,17 +30,17 @@
   .c-title1 {
     color: #ffffff;
     background-color: $subColor;
-    padding: 30px 20px;
+    padding: 3rem 2rem;
     position: relative;
 
     &::after {
       content: "";
-      border-top: 40px solid $subColor;
-      border-left: 60px solid transparent;
-      border-right: 60px solid transparent;
+      border-top: 4rem solid $subColor;
+      border-left: 6rem solid transparent;
+      border-right: 6rem solid transparent;
       position: absolute;
       left: 50%;
-      bottom: 1px;
+      bottom: 0.1rem;
       transform: translateX(-50%) translateY(100%);
       z-index: 1;
     }
@@ -46,16 +49,16 @@
 
 .p-contactForm {
   background-color: rgba(255, 255, 255, 0.8);
-  box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.3);
-  padding: 60px;
-  border-radius: 10px;
+  box-shadow: 0.2rem 0.4rem 0.5rem rgba(0, 0, 0, 0.3);
+  padding: 6rem;
+  border-radius: 1rem;
 
   @include mq-down() {
-    padding: 40px;
+    padding: 4rem;
   }
 
   @include mq-down(sm) {
-    padding: 20px;
+    padding: 2rem;
   }
 
   label {
@@ -68,15 +71,17 @@
   input[type="text"],
   input[type="email"],
   select,
+  option,
   textarea {
     width: 100%;
     box-sizing: border-box;
-    padding: 10px;
-    border-radius: 3px;
-    border: 1px solid #aaaaaa;
+    padding: 1rem;
+    border-radius: 0.3rem;
+    border: 0.1rem solid #aaaaaa;
+    font-size: 1.6rem;
 
     &:focus {
-      outline: 1px solid $subColor;
+      outline: 0.1rem solid $subColor;
     }
 
     &::placeholder {
@@ -86,28 +91,28 @@
   }
 
   textarea {
-    height: calc(8em * 1.5 + 20px);
+    height: calc(8rem * 1.5 + 2rem);
     line-height: 1.5;
   }
 
   &__item {
     &:not(:last-of-type) {
-      margin-bottom: 20px;
+      margin-bottom: 2rem;
     }
   }
 
   &__buttonInner {
     position: relative;
     width: 100%;
-    max-width: 300px;
-    margin: 60px auto;
+    max-width: 30rem;
+    margin: 6rem auto;
     z-index: 1;
 
     &:hover {
       &::before,
       &::after {
-        width: calc(100% + 11px);
-        height: calc(100% + 11px);
+        width: calc(100% + 1.1rem);
+        height: calc(100% + 1.1rem);
         border-color: #666;
       }
     }
@@ -118,23 +123,26 @@
       /*絶対配置で線の位置を決める*/
       position: absolute;
       border: solid #f29949;
-      width: 30px;
-      height: 30px;
+      width: 3rem;
+      height: 3rem;
       /*アニメーションの指定*/
-      transition: all 0.3s ease-in-out;
+      transition:
+        width 0.3s ease-in-out,
+        height 0.3s ease-in-out,
+        border-color 0.3s ease-in-out;
       z-index: -1;
     }
 
     &::before {
-      top: -6px;
-      left: -6px;
-      border-width: 1px 0 0 1px;
+      top: -0.6rem;
+      left: -0.6rem;
+      border-width: 0.1rem 0 0 0.1rem;
     }
 
     &::after {
-      bottom: -6px;
-      right: -6px;
-      border-width: 0 1px 1px 0;
+      bottom: -0.6rem;
+      right: -0.6rem;
+      border-width: 0 0rem 0.1rem 0;
     }
 
     input[type="submit"] {
@@ -143,13 +151,16 @@
       width: 100%;
       display: block;
       background-color: #f29949;
-      border: 1px solid #f29949;
-      padding: 20px 0;
+      border: 0.1rem solid #f29949;
+      padding: 2rem 0;
       display: block;
       font-weight: bolder;
       font-size: $fontM;
       color: #fff;
-      transition: all 0.3s ease-in-out;
+      transition:
+        background-color 0.3s ease-in-out,
+        color 0.3s ease-in-out,
+        border-color 0.3s ease-in-out;
       cursor: pointer;
 
       &:hover {
@@ -174,6 +185,16 @@
 
 .wpcf7-spinner {
   position: absolute;
-  bottom: -40px;
+  width: 2.4rem;
+  height: 2.4rem;
+  bottom: -4rem;
   left: 0;
+
+  &::before {
+    top: 0.4rem;
+    left: 0.4rem;
+    width: 0.6rem;
+    height: 0.6rem;
+    transform-origin: 0.8rem 0.8rem;
+  }
 }

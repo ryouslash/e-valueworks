@@ -1,4 +1,4 @@
-@use "../../../foundation/variables" as *;
+@use "@scss/foundation/variables" as *;
 
 .p-single-news-title {
   .c-title1 {
@@ -12,6 +12,6 @@
   @include mq-down(lg) {
     text-align: center;
     padding-bottom: 0.3em;
-    border-bottom: 1px solid #cccccc;
+    border-bottom: 0.1rem solid #cccccc;
   }
 }

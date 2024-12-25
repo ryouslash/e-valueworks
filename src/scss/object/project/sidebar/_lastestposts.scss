@@ -1,7 +1,7 @@
 .p-sidebarLatestPosts {
   &__item {
     &:not(:last-of-type) {
-      margin-bottom: 20px;
+      margin-bottom: 2rem;
     }
 
     &:hover {
@@ -14,7 +14,7 @@
   &__thumbnail {
     overflow: hidden;
     aspect-ratio: 3/2;
-    box-shadow: 0 0 4px #a9a9a9;
+    box-shadow: 0 0 0.4rem #a9a9a9;
 
     img {
       height: 100%;

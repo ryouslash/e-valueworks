@@ -1,12 +1,12 @@
-@use "../foundation/variables.scss" as *;
+@use "@scss/foundation/variables.scss" as *;
 
 .l-sidebar {
   &__item {
     background-color: #eeeeee;
-    padding: 20px;
+    padding: 2rem;
 
     &:not(:last-of-type) {
-      margin-bottom: 30px;
+      margin-bottom: 3rem;
     }
   }
 
@@ -14,31 +14,31 @@
     font-size: $fontM;
     text-align: center;
     font-weight: 500;
-    margin-bottom: 20px;
+    margin-bottom: 2rem;
 
     &::before {
       content: "";
       display: block;
-      width: 30px;
-      height: 10px;
+      width: 3rem;
+      height: 1rem;
       margin-left: auto;
-      border-right: 1px solid #aaaaaa;
-      border-top: 1px solid #aaaaaa;
+      border-right: 0.1rem solid #aaaaaa;
+      border-top: 0.1rem solid #aaaaaa;
     }
 
     &::after {
       content: "";
       display: block;
-      width: 30px;
-      height: 10px;
-      border-left: 1px solid #aaaaaa;
-      border-bottom: 1px solid #aaaaaa;
+      width: 3rem;
+      height: 1rem;
+      border-left: 0.1rem solid #aaaaaa;
+      border-bottom: 0.1rem solid #aaaaaa;
     }
   }
 
   &__latestItem {
     &:not(:last-of-type) {
-      margin-bottom: 20px;
+      margin-bottom: 2rem;
     }
 
     &:hover {
@@ -106,12 +106,12 @@
       input[type="text"] {
         box-sizing: border-box;
         flex: 1;
-        padding: 10px;
-        border-radius: 3px;
-        border: 1px solid #aaaaaa;
+        padding: 1rem;
+        border-radius: 0.3rem;
+        border: 0.1rem solid #aaaaaa;
 
         &:focus {
-          outline: 1px solid $keyColor;
+          outline: 0.1rem solid $keyColor;
         }
 
         &::placeholder {
@@ -125,8 +125,8 @@
         background-color: $keyColor;
         color: #ffffff;
         border: none;
-        padding: 0 10px;
-        border-radius: 3px;
+        padding: 0 1rem;
+        border-radius: 0.3rem;
         transition: opacity 0.3s;
         cursor: pointer;
 

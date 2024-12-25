@@ -1,8 +1,8 @@
-@use "../../foundation/variables" as *;
+@use "@scss/foundation/variables" as *;
 
 .c-pagination {
   .wp-pagenavi {
-    margin-top: 60px;
+    margin-top: 6rem;
 
     display: flex;
     flex-wrap: wrap;

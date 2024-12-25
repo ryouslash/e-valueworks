@@ -1,27 +1,27 @@
-@use "../../../foundation/variables" as *;
+@use "@scss/foundation/variables" as *;
 
 .p-archive-work {
   &__items {
     display: flex;
     justify-content: flex-start;
     flex-wrap: wrap;
-    margin-top: 60px;
-    gap: 30px;
+    margin-top: 6rem;
+    gap: 3rem;
   }
 
   &__noItem {
-    margin-top: 60px;
+    margin-top: 6rem;
   }
 
   &__item {
-    width: calc(25% - 22.5px);
+    width: calc(25% - 2.25rem);
 
     @include mq-down(lg) {
-      width: calc(calc(100% / 3) - 20px);
+      width: calc(calc(100% / 3) - 2rem);
     }
 
     @include mq-down() {
-      width: calc(50% - 15px);
+      width: calc(50% - 1.5rem);
     }
 
     @include mq-down(sm) {
@@ -41,7 +41,7 @@
 
   &__industry {
     margin: 2em 0 1em;
-    padding: 5px 10px;
+    padding: 0.5rem 1rem;
     background-color: #eeeeee;
     text-align: center;
     font-weight: 500;
@@ -53,7 +53,7 @@
   }
 
   &__search {
-    margin-top: 30px;
+    margin-top: 3rem;
   }
 
   &__searchTitle {
@@ -61,7 +61,7 @@
     font-weight: 700;
     font-size: $fontM;
     background-color: #eeeeee;
-    padding: 10px 0;
+    padding: 1rem 0;
 
     > svg {
       margin-right: 0.5em;
@@ -69,22 +69,22 @@
   }
 
   &__searchArea {
-    padding: 30px;
-    border-bottom: 2px dotted #cccccc;
+    padding: 3rem;
+    border-bottom: 0.2rem dotted #cccccc;
     transition: padding 0.3s;
 
     @include mq-down() {
-      padding: 30px 0;
+      padding: 3rem 0;
     }
 
     @include mq-down(sm) {
-      padding: 20px 0;
+      padding: 2rem 0;
     }
   }
 
   &__searchItem {
     &:not(:last-of-type) {
-      margin-bottom: 10px;
+      margin-bottom: 1rem;
     }
     > dl {
       display: flex;
@@ -95,7 +95,7 @@
 
       > dt {
         width: 100%;
-        max-width: 150px;
+        max-width: 15rem;
         font-weight: 600;
 
         @include mq-down() {
@@ -122,31 +122,31 @@
           cursor: pointer;
           display: inline-block;
           line-height: 1;
-          padding: 5px 8px;
+          padding: 0.5rem 0.8rem;
           color: $subColor;
-          border-radius: 3px;
-          border: 1px solid $subColor;
+          border-radius: 0.3rem;
+          border: 0.1rem solid $subColor;
           font-weight: 600;
           font-size: 1.6rem;
-          margin: 2.5px;
+          margin: 0.25rem;
         }
       }
     }
   }
 
   &__searchBtns {
-    margin-top: 30px;
+    margin-top: 3rem;
     text-align: center;
 
     > input {
       appearance: none;
       -webkit-appearance: none;
       display: inline-block;
-      padding: 10px 30px;
+      padding: 1rem 3rem;
       margin: 0 auto;
       background-color: #f29949;
       border: none;
-      border-radius: 5px;
+      border-radius: 0.5rem;
       font-weight: 600;
       font-size: $fontM;
       color: #fff;

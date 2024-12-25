@@ -1,4 +1,4 @@
-@use "../../../foundation/variables" as *;
+@use "@scss/foundation/variables" as *;
 
 .p-top-news {
   background-color: #eeeeee;
@@ -19,8 +19,10 @@
     top: 100%;
     left: 0;
     opacity: 0;
-    padding: 10px 0;
-    transition: top 1s, opacity 1s;
+    padding: 1rem 0;
+    transition:
+      top 1s,
+      opacity 1s;
 
     &.is-slideIn {
       position: sticky;
@@ -44,14 +46,16 @@
 
     a {
       padding: 0.1em 0.6em;
-      transition: color 0.5s, background-color 0.5s;
-      border: 1px solid $subColor;
+      transition:
+        color 0.5s,
+        background-color 0.5s;
+      border: 0.1rem solid $subColor;
       color: #ffffff;
       background-color: $subColor;
 
       &:hover {
         color: $subColor;
-        border: 1px solid $subColor;
+        border: 0.1rem solid $subColor;
         background-color: #ffffff;
       }
     }

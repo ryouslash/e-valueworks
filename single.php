@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html lang="ja">
-
-<head>
-  <?php get_header(); ?>
-</head>
-
-<?php get_template_part('template-parts/header2'); ?>
-
+<?php get_header(); ?>
 
 <div class="l-content t-single">
   <?php
@@ -150,7 +142,7 @@
                         <?php if (has_post_thumbnail()): ?>
                           <?php the_post_thumbnail('large'); ?>
                         <?php else: ?>
-                          <img src="<?php echo esc_url(get_template_directory_uri()); ?>/dist/img/noimg.jpg" />
+                          <img src="/img/noimg.jpg" alt="" width="750" height="750" loading="lazy" />
                         <?php endif; ?>
                       </div>
                     </div>
