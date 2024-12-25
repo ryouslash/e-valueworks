@@ -70,6 +70,7 @@
 
   &__naviItem {
     text-align: center;
+    white-space: nowrap;
 
     &:not(:last-of-type) {
       margin-bottom: 1rem;
