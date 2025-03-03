@@ -1,0 +1,63 @@
+@use "../../foundation/variables" as *;
+.u-inline-block {
+  display: inline-block;
+}
+
+.u-md--hide {
+  display: block;
+
+  @include mq-down() {
+    display: none;
+  }
+}
+
+.u-mb0 {
+  margin-bottom: 0 !important;
+}
+
+.u-pt0 {
+  padding-top: 0 !important;
+}
+
+.u-text--bolder {
+  font-weight: bolder;
+}
+
+.u-text--bigger {
+  font-size: $fontM;
+}
+
+.u-text--left {
+  text-align: left;
+}
+
+.u-text--center {
+  text-align: center;
+}
+
+.u-emphasis--pink {
+  background-image: radial-gradient(
+    circle at center,
+    #ffa7be 30%,
+    transparent 30%
+  );
+  background-position: top right;
+  background-repeat: repeat-x;
+  background-size: 1em 0.3em;
+  padding-top: 0.5em;
+}
+
+.u-underline--yellow {
+  background: linear-gradient(transparent 60%, #f8e6a4 0%);
+  padding: 0 1px 0px;
+}
+
+.u-underline--pink {
+  background: linear-gradient(transparent 60%, #ffa7be 0%);
+  padding: 0 1px 0px;
+}
+
+.u-underline--orange {
+  background: linear-gradient(transparent 60%, #f29949 0%);
+  padding: 0 1px 0px;
+}

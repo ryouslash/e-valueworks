@@ -1,0 +1,12 @@
+.p-404-error {
+  &__text {
+    margin-top: 60px;
+
+    a {
+      text-decoration: underline;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+}

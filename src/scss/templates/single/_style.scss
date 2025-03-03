@@ -1,0 +1,11 @@
+@use "../../foundation/variables" as *;
+
+.t-single {
+  .p-editorContent {
+    margin: 60px 0 120px;
+
+    @include mq-down(sm) {
+      margin: 60px 0 100px;
+    }
+  }
+}
