@@ -1,114 +1,69 @@
 // project（全ページ共通）
-@use "@scss/foundation/variables" as *;
+/*
+ * layout
+ */
+@use "@scss/layout";
 
 /*
- * blocks
- */
+  * object
+  */
+
+// component
+@use "@scss/object/component";
+
+// project（全ページ共通）
+@use "@scss/object/project";
+
+// utility
+@use "@scss/object/utility";
+
+/*
+  * pages
+  */
+
+// top
+@use "@scss/pages/top";
+
+// 404
+@use "@scss/pages/error";
+
+// price
+@use "@scss/pages/price";
+
+// about
+@use "@scss/pages/about";
+
+/*
+  * templates（固定ページ、投稿、カスタム投稿、アーカイブ）
+  */
+
+// page
+@use "@scss/templates/page";
+
+// single
+@use "@scss/templates/single";
+
+// search
+@use "@scss/templates/search";
+
+//single-news
+@use "@scss/templates/single-news";
+
+//archive-news
+@use "@scss/templates/archive-news";
+
+// taxonomy-archive-news
+@use "@scss/templates/taxonomy-archive-news";
+
+//single-work
+@use "@scss/templates/single-work";
+
+//archive-work
+@use "@scss/templates/archive-work";
+
+/*
+  * blocks
+  */
 @use "@scss/blocks";
 
-body {
-  font-family: sans-serif;
-}
-
-h2 {
-  font-size: $fontL;
-}
-
-h3 {
-  font-size: $fontM;
-}
-
-ul,
-ol {
-  padding-left: 1em;
-
-  li {
-    margin: 0.2em 0;
-
-    &::marker {
-      margin: 0;
-      padding: 0;
-    }
-
-    ul,
-    ol {
-      margin-left: 1em;
-      margin-top: 0.2em;
-    }
-
-    ul {
-      li {
-        list-style-type: circle;
-      }
-    }
-  }
-}
-
-ul {
-  li {
-    list-style-type: disc;
-  }
-}
-
-ol {
-  li {
-    list-style-type: decimal;
-  }
-}
-
-a {
-  text-decoration: underline;
-  &:hover {
-    text-decoration: none;
-  }
-}
-
-:not(pre) code {
-  align-items: center;
-  color: #333333;
-  display: inline-flex;
-  font-size: 0.9em;
-  letter-spacing: 0;
-  line-height: 1;
-  background: #f7f7f7 !important;
-  border: 0.1rem solid rgba(0, 0, 0, 0.1);
-  border-radius: 0.2rem;
-  margin: 0 0.5em;
-  padding: 0.25em 0.5em;
-}
-
-.wp-block-quote {
-  position: relative;
-  padding: 3rem 1.5rem 1rem;
-  box-sizing: border-box;
-  background: #efefef;
-  color: #555;
-  border-left: 0.5rem solid #18c1f0;
-
-  &:before {
-    content: "";
-    display: inline-block;
-    width: 3rem;
-    height: 2rem;
-    position: absolute;
-    top: 1rem;
-    left: 1.5rem;
-    background-image: url("~@img/quotation.svg");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: bottom center;
-  }
-
-  p {
-    padding: 0;
-    margin: 1rem 0;
-    line-height: 1.7;
-  }
-
-  cite {
-    display: block;
-    text-align: right;
-    color: #888888;
-    font-size: 0.9em;
-  }
-}
+@use "@scss/foundation/variables" as *;

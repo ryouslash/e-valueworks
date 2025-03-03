@@ -65,6 +65,20 @@ function term_thumbnail_scripts($hook)
   }
 }
 
+/**
+ *  固定ページのスラッグをbodyクラスに追加
+ */
+function my_body_class($classes)
+{
+  if (is_page()) {
+    $page = get_post();
+    $classes[] = $page->post_name; // スラッグ名を追加
+    $classes[] = 'page-' . $page->post_name; // 'page-' プレフィックスを追加
+  }
+  return $classes;
+}
+add_filter('body_class', 'my_body_class');
+
 add_action('admin_enqueue_scripts', 'term_thumbnail_scripts');
 
 get_template_part('includes/basic-setting');

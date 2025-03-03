@@ -18,5 +18,13 @@ function custom_block_styles()
       'label' => '下線付き', // スタイルの表示名
     )
   );
+
+  register_block_style(
+    'core/paragraph',
+    array(
+      'name'  => 'point', // スタイル名
+      'label' => 'ポイント', // スタイルの表示名
+    )
+  );
 }
 add_action('init', 'custom_block_styles');
