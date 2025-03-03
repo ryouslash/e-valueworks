@@ -173,17 +173,25 @@
           <dt class="p-top-about__itemTitle">Skills</dt>
           <dd class="p-top-about__itemDetail">
             <p>
+              言語<br />
               <span class="u-inline-block">HTML</span> /
               <span class="u-inline-block">CSS</span> /
               <span class="u-inline-block">SCSS</span> /
-              <span class="u-inline-block">FLOCSS</span> /
               <span class="u-inline-block">PHP</span> /
-              <span class="u-inline-block">WordPress</span> /
-              <span class="u-inline-block">JavaScript</span> /
+              <span class="u-inline-block">JavaScript</span>
+            </p>
+            <p>
+              ライブラリ・フレームワーク<br />
               <span class="u-inline-block">jQuery</span> /
-              <span class="u-inline-block">React</span> /
-              <span class="u-inline-block">Git</span> /
-              <span class="u-inline-block">Github</span> /
+              <span class="u-inline-block">React（学習中）</span> /
+              <span class="u-inline-block">Laravel（学習中）</span>
+            </p>
+            <p>
+              CMS<br />
+              <span class="u-inline-block">WordPress</span>
+            </p>
+            <p>
+              タスクランナー・バンドルツール<br />
               <span class="u-inline-block">Webpack</span> /
               <span class="u-inline-block">Gulp</span>
             </p>
