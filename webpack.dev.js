@@ -5,7 +5,6 @@ module.exports = merge(common, {
   mode: "development",
   resolve: {
     alias: {
-      ...common.resolve.alias,
       vue$: "vue/dist/vue.esm-browser.js", // 本番用 Vue の alias を指定
     },
   },

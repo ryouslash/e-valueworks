@@ -1,3 +1,5 @@
+@use "sass:map";
+
 // フォント
 $fontXL: clamp(2rem, calc(1.8rem + 0.9375vw), 3.2rem);
 $fontL: clamp(2rem, calc(1.8rem + 0.625vw), 2.6rem);
@@ -56,19 +58,19 @@ $breakpoint-only: (
 ) !default;
 
 @mixin mq-up($breakpoint: md) {
-  @media #{map-get($breakpoint-up, $breakpoint)} {
+  @media #{map.get($breakpoint-up, $breakpoint)} {
     @content;
   }
 }
 
 @mixin mq-down($breakpoint: md) {
-  @media #{map-get($breakpoint-down, $breakpoint)} {
+  @media #{map.get($breakpoint-down, $breakpoint)} {
     @content;
   }
 }
 
 @mixin mq-only($breakpoint: md-sm) {
-  @media #{map-get($breakpoint-only, $breakpoint)} {
+  @media #{map.get($breakpoint-only, $breakpoint)} {
     @content;
   }
 }

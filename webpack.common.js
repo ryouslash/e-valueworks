@@ -1,4 +1,5 @@
-const path = require("path"); //path モジュールの読み込み
+const path = require("path");
+const { VueLoaderPlugin } = require("vue-loader");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 
@@ -33,6 +34,11 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.vue$/,
+        loader: "vue-loader",
+        exclude: /node_modules/,
+      },
+      {
         // JS用のローダー
         test: /\.js$/,
         exclude: /node_modules/,
@@ -46,21 +52,30 @@ module.exports = {
         ],
       },
       {
-        //CSS & SASS 用のローダー
+        // SASS 用のローダー
         // 対象となる拡張子を指定
-        test: /\.(scss|sass|css)$/i,
+        test: /\.scss$/i,
         // どのローダーを噛ませるのかを指定（下から実行されていく。）
         use: [
-          // styleタグを使ってCSS情報をHTML内に注入する処理
-          // "style-loader",
+          // CSSを別ファイルに分けられるプラグイン
           MiniCssExtractPlugin.loader,
-          // CSS内でimportされているものをバンドル際に使用
+          // CSSファイルをJavaScriptでimportできるようにするローダー
           "css-loader",
           // ベンダープレフィックスが必要なものに自動的に付与
           "postcss-loader",
           // SASSからCSSへのコンパイルに使用
-          "sass-loader",
+          {
+            loader: "sass-loader",
+            options: {
+              api: "modern-compiler",
+              implementation: require("sass"),
+            },
+          },
         ],
+      },
+      {
+        test: /\.css$/,
+        use: ["vue-style-loader", "css-loader"],
       },
       //Asset Modules
       {
@@ -73,6 +88,7 @@ module.exports = {
   },
   //プラグインの設定（plugins プロパティの配列に追加）
   plugins: [
+    new VueLoaderPlugin(),
     new MiniCssExtractPlugin({
       filename: (pathData) => {
         // エントリーポイント名に応じて異なるファイル名を出力する
@@ -112,6 +128,7 @@ module.exports = {
     alias: {
       "@scss": path.resolve(__dirname, "src/scss"),
       "@img": path.resolve(__dirname, "src/img"),
+      "@components": path.resolve(__dirname, "src/components"),
     },
   },
 };

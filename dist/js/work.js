@@ -81,6 +81,8 @@ module.exports = jQuery;
 /******/ 	
 /************************************************************************/
 var __webpack_exports__ = {};
+// This entry needs to be wrapped in an IIFE because it needs to be isolated against other modules in the chunk.
+(() => {
 /*!************************!*\
   !*** ./src/js/work.js ***!
   \************************/
@@ -113,6 +115,8 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(function () {
     jquery__WEBPACK_IMPORTED_MODULE_0___default()('.p-archive-work__searchInner').toggleClass('is-open');
   });
 });
+})();
+
 /******/ })()
 ;
 //# sourceMappingURL=work.js.map

@@ -1,6 +1,6 @@
-/*!********************************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/scss/style.scss ***!
-  \********************************************************************************************************************************************************/
+/*!********************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-2.use[3]!./src/scss/style.scss ***!
+  \********************************************************************************************************************************************************************************/
 @import url(https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap);
 /*!***********************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/slick-carousel/slick/slick.css ***!
@@ -351,25 +351,13 @@
   }
 }
 
-.scroll-hint.is-right-scrollable {
-  background: linear-gradient(270deg, rgba(0, 0, 0, .15) 0, rgba(0, 0, 0, 0) 16px, rgba(0, 0, 0, 0));
-}
-
-.scroll-hint.is-right-scrollable.is-left-scrollable {
-  background: linear-gradient(90deg, rgba(0, 0, 0, .15) 0, rgba(0, 0, 0, 0) 16px, rgba(0, 0, 0, 0)), linear-gradient(270deg, rgba(0, 0, 0, .15) 0, rgba(0, 0, 0, 0) 16px, rgba(0, 0, 0, 0));
-}
-
-.scroll-hint.is-left-scrollable {
-  background: linear-gradient(90deg, rgba(0, 0, 0, .15) 0, rgba(0, 0, 0, 0) 16px, rgba(0, 0, 0, 0));
-}
-
 .scroll-hint-icon {
   position: absolute;
   top: calc(50% - 25px);
   left: calc(50% - 60px);
   box-sizing: border-box;
   width: 120px;
-  height: 80px;
+  height: auto;
   border-radius: 5px;
   transition: opacity .3s;
   opacity: 0;
@@ -452,9 +440,57 @@
 .scroll-hint-icon-white .scroll-hint-text {
   color: #000;
 }
-/*!************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/scss/style.scss (1) ***!
-  \************************************************************************************************************************************************************/
+
+
+
+.scroll-hint-shadow-wrap {
+  position: relative;
+}
+
+.scroll-hint-shadow-wrap::after {
+  content: "";
+  width: 20px;
+  height: 100%;
+  background: linear-gradient(270deg, rgba(0, 0, 0, .15) 0, rgba(0, 0, 0, 0) 16px, rgba(0, 0, 0, 0));
+  position: absolute;
+  top: 0;
+  right: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.scroll-hint-shadow-wrap::before {
+  content: "";
+  width: 20px;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(0, 0, 0, .15) 0, rgba(0, 0, 0, 0) 16px, rgba(0, 0, 0, 0));
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.scroll-hint-shadow-wrap:has(.scroll-hint.is-right-scrollable)::after,
+.scroll-hint-shadow-wrap.is-right-scrollable::after
+ {
+  opacity: 1;
+  visibility: visible;
+}
+
+.scroll-hint-shadow-wrap:has(.scroll-hint.is-left-scrollable)::before,
+.scroll-hint-shadow-wrap.is-left-scrollable::before
+ {
+  opacity: 1;
+  visibility: visible;
+}
+/*!************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-2.use[3]!./src/scss/style.scss (1) ***!
+  \************************************************************************************************************************************************************************************/
 @charset "UTF-8";
 /*
  * foundation

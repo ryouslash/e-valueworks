@@ -1,15 +1,11 @@
 import $ from "jquery";
+
 import { createApp } from "vue";
+import Example from "@components/Example.vue";
 
 import "slick-carousel/slick/slick.min.js";
 
-const app = createApp({
-  data() {
-    return {
-      message: "Hello World",
-    };
-  },
-});
+const app = createApp(Example);
 app.mount("#app");
 
 $(function () {

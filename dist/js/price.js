@@ -84,6 +84,7 @@ var defaults = {
   scrollableRightClass: 'is-right-scrollable',
   scrollableLeftClass: 'is-left-scrollable',
   scrollHintClass: 'scroll-hint',
+  scrollHintShadowWrapClass: 'scroll-hint-shadow-wrap',
   scrollHintIconClass: 'scroll-hint-icon',
   scrollHintIconAppendClass: '', // 'scroll-hint-icon-white'
   scrollHintIconWrapClass: 'scroll-hint-icon-wrap',
@@ -107,7 +108,14 @@ var ScrollHint = function () {
 
     this.opt = (0, _es6ObjectAssign.assign)({}, defaults, option);
     this.items = [];
-    var elements = typeof ele === 'string' ? document.querySelectorAll(ele) : ele;
+    var elements = void 0;
+    if (ele instanceof HTMLElement) {
+      elements = [ele];
+    } else if (typeof ele === 'string') {
+      elements = document.querySelectorAll(ele);
+    } else {
+      elements = ele;
+    }
     var applyToParents = this.opt.applyToParents;
 
     [].forEach.call(elements, function (element) {
@@ -135,8 +143,16 @@ var ScrollHint = function () {
         }
       }, true);
       (0, _util.addClass)(element, _this.opt.scrollHintClass);
-      (0, _util.append)(element, '<div class="' + _this.opt.scrollHintIconWrapClass + '" data-target="scrollable-icon">\n        <span class="' + _this.opt.scrollHintIconClass + (_this.opt.scrollHintIconAppendClass ? ' ' + _this.opt.scrollHintIconAppendClass : '') + '">\n          <div class="' + _this.opt.scrollHintText + '">' + _this.opt.i18n.scrollable + '</div>\n        </span>\n      </div>');
       _this.items.push(item);
+
+      (0, _util.append)(element, '<div class="' + _this.opt.scrollHintIconWrapClass + '" data-target="scrollable-icon">\n        <span class="' + _this.opt.scrollHintIconClass + (_this.opt.scrollHintIconAppendClass ? ' ' + _this.opt.scrollHintIconAppendClass : '') + '">\n          <div class="' + _this.opt.scrollHintText + '">' + _this.opt.i18n.scrollable + '</div>\n        </span>\n      </div>');
+
+      if (_this.opt.suggestiveShadow) {
+        var wrapper = document.createElement('div');
+        wrapper.classList.add(_this.opt.scrollHintShadowWrapClass);
+        element.parentNode.insertBefore(wrapper, element);
+        wrapper.appendChild(element);
+      }
     });
     window.addEventListener('scroll', function () {
       _this.updateItems();
@@ -373,6 +389,8 @@ var getOffset = exports.getOffset = function getOffset(el) {
 /******/ 	
 /************************************************************************/
 var __webpack_exports__ = {};
+// This entry needs to be wrapped in an IIFE because it needs to be isolated against other modules in the chunk.
+(() => {
 /*!*************************!*\
   !*** ./src/js/price.js ***!
   \*************************/
@@ -387,6 +405,8 @@ new (scroll_hint__WEBPACK_IMPORTED_MODULE_0___default())('.js-scrollable', {
     scrollable: "スクロールできます"
   }
 });
+})();
+
 /******/ })()
 ;
 //# sourceMappingURL=price.js.map

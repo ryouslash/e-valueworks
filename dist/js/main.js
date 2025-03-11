@@ -2,16 +2,6 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "jquery":
-/*!*************************!*\
-  !*** external "jQuery" ***!
-  \*************************/
-/***/ ((module) => {
-
-module.exports = jQuery;
-
-/***/ }),
-
 /***/ "./node_modules/@fortawesome/fontawesome-svg-core/index.mjs":
 /*!******************************************************************!*\
   !*** ./node_modules/@fortawesome/fontawesome-svg-core/index.mjs ***!
@@ -33,8 +23,120 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   text: () => (/* binding */ text),
 /* harmony export */   toHtml: () => (/* binding */ toHtml$1)
 /* harmony export */ });
-const noop = () => {};
+/*!
+ * Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com
+ * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
+ * Copyright 2024 Fonticons, Inc.
+ */
+function _defineProperty(e, r, t) {
+  return (r = _toPropertyKey(r)) in e ? Object.defineProperty(e, r, {
+    value: t,
+    enumerable: !0,
+    configurable: !0,
+    writable: !0
+  }) : e[r] = t, e;
+}
+function _inherits(t, e) {
+  if ("function" != typeof e && null !== e) throw new TypeError("Super expression must either be null or a function");
+  t.prototype = Object.create(e && e.prototype, {
+    constructor: {
+      value: t,
+      writable: !0,
+      configurable: !0
+    }
+  }), Object.defineProperty(t, "prototype", {
+    writable: !1
+  }), e && _setPrototypeOf(t, e);
+}
+function ownKeys(e, r) {
+  var t = Object.keys(e);
+  if (Object.getOwnPropertySymbols) {
+    var o = Object.getOwnPropertySymbols(e);
+    r && (o = o.filter(function (r) {
+      return Object.getOwnPropertyDescriptor(e, r).enumerable;
+    })), t.push.apply(t, o);
+  }
+  return t;
+}
+function _objectSpread2(e) {
+  for (var r = 1; r < arguments.length; r++) {
+    var t = null != arguments[r] ? arguments[r] : {};
+    r % 2 ? ownKeys(Object(t), !0).forEach(function (r) {
+      _defineProperty(e, r, t[r]);
+    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) {
+      Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r));
+    });
+  }
+  return e;
+}
+function _setPrototypeOf(t, e) {
+  return _setPrototypeOf = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function (t, e) {
+    return t.__proto__ = e, t;
+  }, _setPrototypeOf(t, e);
+}
+function _toPrimitive(t, r) {
+  if ("object" != typeof t || !t) return t;
+  var e = t[Symbol.toPrimitive];
+  if (void 0 !== e) {
+    var i = e.call(t, r || "default");
+    if ("object" != typeof i) return i;
+    throw new TypeError("@@toPrimitive must return a primitive value.");
+  }
+  return ("string" === r ? String : Number)(t);
+}
+function _toPropertyKey(t) {
+  var i = _toPrimitive(t, "string");
+  return "symbol" == typeof i ? i : i + "";
+}
+function _wrapRegExp() {
+  _wrapRegExp = function (e, r) {
+    return new BabelRegExp(e, void 0, r);
+  };
+  var e = RegExp.prototype,
+    r = new WeakMap();
+  function BabelRegExp(e, t, p) {
+    var o = RegExp(e, t);
+    return r.set(o, p || r.get(e)), _setPrototypeOf(o, BabelRegExp.prototype);
+  }
+  function buildGroups(e, t) {
+    var p = r.get(t);
+    return Object.keys(p).reduce(function (r, t) {
+      var o = p[t];
+      if ("number" == typeof o) r[t] = e[o];else {
+        for (var i = 0; void 0 === e[o[i]] && i + 1 < o.length;) i++;
+        r[t] = e[o[i]];
+      }
+      return r;
+    }, Object.create(null));
+  }
+  return _inherits(BabelRegExp, RegExp), BabelRegExp.prototype.exec = function (r) {
+    var t = e.exec.call(this, r);
+    if (t) {
+      t.groups = buildGroups(t, this);
+      var p = t.indices;
+      p && (p.groups = buildGroups(p, this));
+    }
+    return t;
+  }, BabelRegExp.prototype[Symbol.replace] = function (t, p) {
+    if ("string" == typeof p) {
+      var o = r.get(this);
+      return e[Symbol.replace].call(this, t, p.replace(/\$<([^>]+)>/g, function (e, r) {
+        var t = o[r];
+        return "$" + (Array.isArray(t) ? t.join("$") : t);
+      }));
+    }
+    if ("function" == typeof p) {
+      var i = this;
+      return e[Symbol.replace].call(this, t, function () {
+        var e = arguments;
+        return "object" != typeof e[e.length - 1] && (e = [].slice.call(e)).push(buildGroups(e, i)), p.apply(this, e);
+      });
+    }
+    return e[Symbol.replace].call(this, t, p);
+  }, _wrapRegExp.apply(this, arguments);
+}
 
+const noop = () => {};
 let _WINDOW = {};
 let _DOCUMENT = {};
 let _MUTATION_OBSERVER = null;
@@ -42,14 +144,12 @@ let _PERFORMANCE = {
   mark: noop,
   measure: noop
 };
-
 try {
   if (typeof window !== 'undefined') _WINDOW = window;
   if (typeof document !== 'undefined') _DOCUMENT = document;
   if (typeof MutationObserver !== 'undefined') _MUTATION_OBSERVER = MutationObserver;
   if (typeof performance !== 'undefined') _PERFORMANCE = performance;
 } catch (e) {}
-
 const {
   userAgent = ''
 } = _WINDOW.navigator || {};
@@ -61,231 +161,327 @@ const IS_BROWSER = !!WINDOW.document;
 const IS_DOM = !!DOCUMENT.documentElement && !!DOCUMENT.head && typeof DOCUMENT.addEventListener === 'function' && typeof DOCUMENT.createElement === 'function';
 const IS_IE = ~userAgent.indexOf('MSIE') || ~userAgent.indexOf('Trident/');
 
-var a = "classic",
-    t = "duotone",
-    r = "sharp",
-    o = "sharp-duotone",
-    c = [a, t, r, o];
-
-var et$1 = {
-  classic: {
-    900: "fas",
-    400: "far",
-    normal: "far",
-    300: "fal",
-    100: "fat"
+var p = /fa(s|r|l|t|d|dr|dl|dt|b|k|kd|ss|sr|sl|st|sds|sdr|sdl|sdt)?[\-\ ]/,
+  g = /Font ?Awesome ?([56 ]*)(Solid|Regular|Light|Thin|Duotone|Brands|Free|Pro|Sharp Duotone|Sharp|Kit)?.*/i;
+var S = {
+    classic: {
+      fa: "solid",
+      fas: "solid",
+      "fa-solid": "solid",
+      far: "regular",
+      "fa-regular": "regular",
+      fal: "light",
+      "fa-light": "light",
+      fat: "thin",
+      "fa-thin": "thin",
+      fab: "brands",
+      "fa-brands": "brands"
+    },
+    duotone: {
+      fa: "solid",
+      fad: "solid",
+      "fa-solid": "solid",
+      "fa-duotone": "solid",
+      fadr: "regular",
+      "fa-regular": "regular",
+      fadl: "light",
+      "fa-light": "light",
+      fadt: "thin",
+      "fa-thin": "thin"
+    },
+    sharp: {
+      fa: "solid",
+      fass: "solid",
+      "fa-solid": "solid",
+      fasr: "regular",
+      "fa-regular": "regular",
+      fasl: "light",
+      "fa-light": "light",
+      fast: "thin",
+      "fa-thin": "thin"
+    },
+    "sharp-duotone": {
+      fa: "solid",
+      fasds: "solid",
+      "fa-solid": "solid",
+      fasdr: "regular",
+      "fa-regular": "regular",
+      fasdl: "light",
+      "fa-light": "light",
+      fasdt: "thin",
+      "fa-thin": "thin"
+    }
   },
-  sharp: {
-    900: "fass",
-    400: "fasr",
-    300: "fasl",
-    100: "fast"
+  A = {
+    GROUP: "duotone-group",
+    SWAP_OPACITY: "swap-opacity",
+    PRIMARY: "primary",
+    SECONDARY: "secondary"
   },
-  "sharp-duotone": {
-    900: "fasds"
-  }
-};
-var bt = {
-  kit: {
-    fak: "kit",
-    "fa-kit": "kit"
+  P = ["fa-classic", "fa-duotone", "fa-sharp", "fa-sharp-duotone"];
+var s = "classic",
+  t = "duotone",
+  r = "sharp",
+  o = "sharp-duotone",
+  L = [s, t, r, o];
+var G = {
+    classic: {
+      900: "fas",
+      400: "far",
+      normal: "far",
+      300: "fal",
+      100: "fat"
+    },
+    duotone: {
+      900: "fad",
+      400: "fadr",
+      300: "fadl",
+      100: "fadt"
+    },
+    sharp: {
+      900: "fass",
+      400: "fasr",
+      300: "fasl",
+      100: "fast"
+    },
+    "sharp-duotone": {
+      900: "fasds",
+      400: "fasdr",
+      300: "fasdl",
+      100: "fasdt"
+    }
+  };
+var lt = {
+    "Font Awesome 6 Free": {
+      900: "fas",
+      400: "far"
+    },
+    "Font Awesome 6 Pro": {
+      900: "fas",
+      400: "far",
+      normal: "far",
+      300: "fal",
+      100: "fat"
+    },
+    "Font Awesome 6 Brands": {
+      400: "fab",
+      normal: "fab"
+    },
+    "Font Awesome 6 Duotone": {
+      900: "fad",
+      400: "fadr",
+      normal: "fadr",
+      300: "fadl",
+      100: "fadt"
+    },
+    "Font Awesome 6 Sharp": {
+      900: "fass",
+      400: "fasr",
+      normal: "fasr",
+      300: "fasl",
+      100: "fast"
+    },
+    "Font Awesome 6 Sharp Duotone": {
+      900: "fasds",
+      400: "fasdr",
+      normal: "fasdr",
+      300: "fasdl",
+      100: "fasdt"
+    }
+  };
+var pt = new Map([["classic", {
+    defaultShortPrefixId: "fas",
+    defaultStyleId: "solid",
+    styleIds: ["solid", "regular", "light", "thin", "brands"],
+    futureStyleIds: [],
+    defaultFontWeight: 900
+  }], ["sharp", {
+    defaultShortPrefixId: "fass",
+    defaultStyleId: "solid",
+    styleIds: ["solid", "regular", "light", "thin"],
+    futureStyleIds: [],
+    defaultFontWeight: 900
+  }], ["duotone", {
+    defaultShortPrefixId: "fad",
+    defaultStyleId: "solid",
+    styleIds: ["solid", "regular", "light", "thin"],
+    futureStyleIds: [],
+    defaultFontWeight: 900
+  }], ["sharp-duotone", {
+    defaultShortPrefixId: "fasds",
+    defaultStyleId: "solid",
+    styleIds: ["solid", "regular", "light", "thin"],
+    futureStyleIds: [],
+    defaultFontWeight: 900
+  }]]),
+  xt = {
+    classic: {
+      solid: "fas",
+      regular: "far",
+      light: "fal",
+      thin: "fat",
+      brands: "fab"
+    },
+    duotone: {
+      solid: "fad",
+      regular: "fadr",
+      light: "fadl",
+      thin: "fadt"
+    },
+    sharp: {
+      solid: "fass",
+      regular: "fasr",
+      light: "fasl",
+      thin: "fast"
+    },
+    "sharp-duotone": {
+      solid: "fasds",
+      regular: "fasdr",
+      light: "fasdl",
+      thin: "fasdt"
+    }
+  };
+var Ft = ["fak", "fa-kit", "fakd", "fa-kit-duotone"],
+  St = {
+    kit: {
+      fak: "kit",
+      "fa-kit": "kit"
+    },
+    "kit-duotone": {
+      fakd: "kit-duotone",
+      "fa-kit-duotone": "kit-duotone"
+    }
   },
-  "kit-duotone": {
-    fakd: "kit-duotone",
-    "fa-kit-duotone": "kit-duotone"
-  }
-},
-    Ct = ["kit"];
-var Dt = /fa(s|r|l|t|d|b|k|kd|ss|sr|sl|st|sds)?[\-\ ]/,
-    Kt = /Font ?Awesome ?([56 ]*)(Solid|Regular|Light|Thin|Duotone|Brands|Free|Pro|Sharp Duotone|Sharp|Kit)?.*/i;
-var ao = {
-  "Font Awesome 5 Free": {
-    900: "fas",
-    400: "far"
-  },
-  "Font Awesome 5 Pro": {
-    900: "fas",
-    400: "far",
-    normal: "far",
-    300: "fal"
-  },
-  "Font Awesome 5 Brands": {
-    400: "fab",
-    normal: "fab"
-  },
-  "Font Awesome 5 Duotone": {
-    900: "fad"
-  }
-};
-var eo = {
-  "Font Awesome 6 Free": {
-    900: "fas",
-    400: "far"
-  },
-  "Font Awesome 6 Pro": {
-    900: "fas",
-    400: "far",
-    normal: "far",
-    300: "fal",
-    100: "fat"
-  },
-  "Font Awesome 6 Brands": {
-    400: "fab",
-    normal: "fab"
-  },
-  "Font Awesome 6 Duotone": {
-    900: "fad"
-  },
-  "Font Awesome 6 Sharp": {
-    900: "fass",
-    400: "fasr",
-    normal: "fasr",
-    300: "fasl",
-    100: "fast"
-  },
-  "Font Awesome 6 Sharp Duotone": {
-    900: "fasds"
-  }
-},
-    lo = {
-  classic: {
-    "fa-brands": "fab",
-    "fa-duotone": "fad",
-    "fa-light": "fal",
-    "fa-regular": "far",
-    "fa-solid": "fas",
-    "fa-thin": "fat"
-  },
-  sharp: {
-    "fa-solid": "fass",
-    "fa-regular": "fasr",
-    "fa-light": "fasl",
-    "fa-thin": "fast"
-  },
-  "sharp-duotone": {
-    "fa-solid": "fasds"
-  }
-},
-    y = {
-  classic: ["fas", "far", "fal", "fat"],
-  sharp: ["fass", "fasr", "fasl", "fast"],
-  "sharp-duotone": ["fasds"]
-},
-    no = {
-  classic: {
-    fab: "fa-brands",
-    fad: "fa-duotone",
-    fal: "fa-light",
-    far: "fa-regular",
-    fas: "fa-solid",
-    fat: "fa-thin"
-  },
-  sharp: {
-    fass: "fa-solid",
-    fasr: "fa-regular",
-    fasl: "fa-light",
-    fast: "fa-thin"
-  },
-  "sharp-duotone": {
-    fasds: "fa-solid"
-  }
-},
-    fo = {
-  classic: {
-    solid: "fas",
-    regular: "far",
-    light: "fal",
-    thin: "fat",
-    duotone: "fad",
-    brands: "fab"
-  },
-  sharp: {
-    solid: "fass",
-    regular: "fasr",
-    light: "fasl",
-    thin: "fast"
-  },
-  "sharp-duotone": {
-    solid: "fasds"
-  }
-},
-    ho = {
-  classic: {
-    fa: "solid",
-    fas: "solid",
-    "fa-solid": "solid",
-    far: "regular",
-    "fa-regular": "regular",
-    fal: "light",
-    "fa-light": "light",
-    fat: "thin",
-    "fa-thin": "thin",
-    fad: "duotone",
-    "fa-duotone": "duotone",
-    fab: "brands",
-    "fa-brands": "brands"
-  },
-  sharp: {
-    fa: "solid",
-    fass: "solid",
-    "fa-solid": "solid",
-    fasr: "regular",
-    "fa-regular": "regular",
-    fasl: "light",
-    "fa-light": "light",
-    fast: "thin",
-    "fa-thin": "thin"
-  },
-  "sharp-duotone": {
-    fa: "solid",
-    fasds: "solid",
-    "fa-solid": "solid"
-  }
-},
-    x$1 = ["solid", "regular", "light", "thin", "duotone", "brands"],
-    u$1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-    m$1 = u$1.concat([11, 12, 13, 14, 15, 16, 17, 18, 19, 20]),
-    t$1 = {
-  GROUP: "duotone-group",
-  SWAP_OPACITY: "swap-opacity",
-  PRIMARY: "primary",
-  SECONDARY: "secondary"
-},
-    yo = [...Object.keys(y), ...x$1, "2xs", "xs", "sm", "lg", "xl", "2xl", "beat", "border", "fade", "beat-fade", "bounce", "flip-both", "flip-horizontal", "flip-vertical", "flip", "fw", "inverse", "layers-counter", "layers-text", "layers", "li", "pull-left", "pull-right", "pulse", "rotate-180", "rotate-270", "rotate-90", "rotate-by", "shake", "spin-pulse", "spin-reverse", "spin", "stack-1x", "stack-2x", "stack", "ul", t$1.GROUP, t$1.SWAP_OPACITY, t$1.PRIMARY, t$1.SECONDARY].concat(u$1.map(o => "".concat(o, "x"))).concat(m$1.map(o => "w-".concat(o)));
-var mo = {
-  "Font Awesome Kit": {
-    400: "fak",
-    normal: "fak"
-  },
-  "Font Awesome Kit Duotone": {
-    400: "fakd",
-    normal: "fakd"
-  }
-},
-    Io = {
+  At = ["kit"];
+var Ct = {
   kit: {
     "fa-kit": "fak"
   },
   "kit-duotone": {
     "fa-kit-duotone": "fakd"
   }
-},
-    Fo = {
-  kit: {
-    fak: "fa-kit"
-  },
-  "kit-duotone": {
-    fakd: "fa-kit-duotone"
-  }
-},
-    So = {
-  kit: {
-    kit: "fak"
-  },
-  "kit-duotone": {
-    "kit-duotone": "fakd"
-  }
 };
+var Lt = ["fak", "fakd"],
+  Wt = {
+    kit: {
+      fak: "fa-kit"
+    },
+    "kit-duotone": {
+      fakd: "fa-kit-duotone"
+    }
+  };
+var Et = {
+    kit: {
+      kit: "fak"
+    },
+    "kit-duotone": {
+      "kit-duotone": "fakd"
+    }
+  };
+
+var t$1 = {
+    GROUP: "duotone-group",
+    SWAP_OPACITY: "swap-opacity",
+    PRIMARY: "primary",
+    SECONDARY: "secondary"
+  },
+  r$1 = ["fa-classic", "fa-duotone", "fa-sharp", "fa-sharp-duotone"];
+var bt$1 = ["fak", "fa-kit", "fakd", "fa-kit-duotone"];
+var Yt = {
+    "Font Awesome Kit": {
+      400: "fak",
+      normal: "fak"
+    },
+    "Font Awesome Kit Duotone": {
+      400: "fakd",
+      normal: "fakd"
+    }
+  };
+var ua = {
+    classic: {
+      "fa-brands": "fab",
+      "fa-duotone": "fad",
+      "fa-light": "fal",
+      "fa-regular": "far",
+      "fa-solid": "fas",
+      "fa-thin": "fat"
+    },
+    duotone: {
+      "fa-regular": "fadr",
+      "fa-light": "fadl",
+      "fa-thin": "fadt"
+    },
+    sharp: {
+      "fa-solid": "fass",
+      "fa-regular": "fasr",
+      "fa-light": "fasl",
+      "fa-thin": "fast"
+    },
+    "sharp-duotone": {
+      "fa-solid": "fasds",
+      "fa-regular": "fasdr",
+      "fa-light": "fasdl",
+      "fa-thin": "fasdt"
+    }
+  },
+  I$1 = {
+    classic: ["fas", "far", "fal", "fat", "fad"],
+    duotone: ["fadr", "fadl", "fadt"],
+    sharp: ["fass", "fasr", "fasl", "fast"],
+    "sharp-duotone": ["fasds", "fasdr", "fasdl", "fasdt"]
+  },
+  ga = {
+    classic: {
+      fab: "fa-brands",
+      fad: "fa-duotone",
+      fal: "fa-light",
+      far: "fa-regular",
+      fas: "fa-solid",
+      fat: "fa-thin"
+    },
+    duotone: {
+      fadr: "fa-regular",
+      fadl: "fa-light",
+      fadt: "fa-thin"
+    },
+    sharp: {
+      fass: "fa-solid",
+      fasr: "fa-regular",
+      fasl: "fa-light",
+      fast: "fa-thin"
+    },
+    "sharp-duotone": {
+      fasds: "fa-solid",
+      fasdr: "fa-regular",
+      fasdl: "fa-light",
+      fasdt: "fa-thin"
+    }
+  },
+  x = ["fa-solid", "fa-regular", "fa-light", "fa-thin", "fa-duotone", "fa-brands"],
+  Ia = ["fa", "fas", "far", "fal", "fat", "fad", "fadr", "fadl", "fadt", "fab", "fass", "fasr", "fasl", "fast", "fasds", "fasdr", "fasdl", "fasdt", ...r$1, ...x],
+  m$1 = ["solid", "regular", "light", "thin", "duotone", "brands"],
+  c$1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+  F$1 = c$1.concat([11, 12, 13, 14, 15, 16, 17, 18, 19, 20]),
+  ma = [...Object.keys(I$1), ...m$1, "2xs", "xs", "sm", "lg", "xl", "2xl", "beat", "border", "fade", "beat-fade", "bounce", "flip-both", "flip-horizontal", "flip-vertical", "flip", "fw", "inverse", "layers-counter", "layers-text", "layers", "li", "pull-left", "pull-right", "pulse", "rotate-180", "rotate-270", "rotate-90", "rotate-by", "shake", "spin-pulse", "spin-reverse", "spin", "stack-1x", "stack-2x", "stack", "ul", t$1.GROUP, t$1.SWAP_OPACITY, t$1.PRIMARY, t$1.SECONDARY].concat(c$1.map(a => "".concat(a, "x"))).concat(F$1.map(a => "w-".concat(a)));
+var wa = {
+    "Font Awesome 5 Free": {
+      900: "fas",
+      400: "far"
+    },
+    "Font Awesome 5 Pro": {
+      900: "fas",
+      400: "far",
+      normal: "far",
+      300: "fal"
+    },
+    "Font Awesome 5 Brands": {
+      400: "fab",
+      normal: "fab"
+    },
+    "Font Awesome 5 Duotone": {
+      900: "fad"
+    }
+  };
 
 const NAMESPACE_IDENTIFIER = '___FONT_AWESOME___';
 const UNITS_IN_GRID = 16;
@@ -306,69 +502,54 @@ const PRODUCTION = (() => {
     return false;
   }
 })();
-const FAMILIES = [a, r, o];
-
 function familyProxy(obj) {
   // Defaults to the classic family if family is not available
   return new Proxy(obj, {
     get(target, prop) {
-      return prop in target ? target[prop] : target[a];
+      return prop in target ? target[prop] : target[s];
     }
-
   });
 }
+const _PREFIX_TO_STYLE = _objectSpread2({}, S);
 
-const _PREFIX_TO_STYLE = { ...ho
-};
-_PREFIX_TO_STYLE[a] = { ...ho[a],
-  ...bt['kit'],
-  ...bt['kit-duotone']
-};
+// We changed FACSSClassesToStyleId in the icons repo to be canonical and as such, "classic" family does not have any
+// duotone styles.  But we do still need duotone in _PREFIX_TO_STYLE below, so we are manually adding
+// {'fa-duotone': 'duotone'}
+_PREFIX_TO_STYLE[s] = _objectSpread2(_objectSpread2(_objectSpread2(_objectSpread2({}, {
+  'fa-duotone': 'duotone'
+}), S[s]), St['kit']), St['kit-duotone']);
 const PREFIX_TO_STYLE = familyProxy(_PREFIX_TO_STYLE);
-const _STYLE_TO_PREFIX = { ...fo
-};
-_STYLE_TO_PREFIX[a] = { ..._STYLE_TO_PREFIX[a],
-  ...So['kit'],
-  ...So['kit-duotone']
-};
+const _STYLE_TO_PREFIX = _objectSpread2({}, xt);
+
+// We changed FAStyleIdToShortPrefixId in the icons repo to be canonical and as such, "classic" family does not have any
+// duotone styles.  But we do still need duotone in _STYLE_TO_PREFIX below, so we are manually adding {duotone: 'fad'}
+_STYLE_TO_PREFIX[s] = _objectSpread2(_objectSpread2(_objectSpread2(_objectSpread2({}, {
+  duotone: 'fad'
+}), _STYLE_TO_PREFIX[s]), Et['kit']), Et['kit-duotone']);
 const STYLE_TO_PREFIX = familyProxy(_STYLE_TO_PREFIX);
-const _PREFIX_TO_LONG_STYLE = { ...no
-};
-_PREFIX_TO_LONG_STYLE[a] = { ..._PREFIX_TO_LONG_STYLE[a],
-  ...Fo['kit']
-};
+const _PREFIX_TO_LONG_STYLE = _objectSpread2({}, ga);
+_PREFIX_TO_LONG_STYLE[s] = _objectSpread2(_objectSpread2({}, _PREFIX_TO_LONG_STYLE[s]), Wt['kit']);
 const PREFIX_TO_LONG_STYLE = familyProxy(_PREFIX_TO_LONG_STYLE);
-const _LONG_STYLE_TO_PREFIX = { ...lo
-};
-_LONG_STYLE_TO_PREFIX[a] = { ..._LONG_STYLE_TO_PREFIX[a],
-  ...Io['kit']
-};
+const _LONG_STYLE_TO_PREFIX = _objectSpread2({}, ua);
+_LONG_STYLE_TO_PREFIX[s] = _objectSpread2(_objectSpread2({}, _LONG_STYLE_TO_PREFIX[s]), Ct['kit']);
 const LONG_STYLE_TO_PREFIX = familyProxy(_LONG_STYLE_TO_PREFIX);
-const ICON_SELECTION_SYNTAX_PATTERN = Dt; // eslint-disable-line no-useless-escape
+const ICON_SELECTION_SYNTAX_PATTERN = p; // eslint-disable-line no-useless-escape
 
 const LAYERS_TEXT_CLASSNAME = 'fa-layers-text';
-const FONT_FAMILY_PATTERN = Kt;
-const _FONT_WEIGHT_TO_PREFIX = { ...et$1
-};
+const FONT_FAMILY_PATTERN = g;
+const _FONT_WEIGHT_TO_PREFIX = _objectSpread2({}, G);
 const FONT_WEIGHT_TO_PREFIX = familyProxy(_FONT_WEIGHT_TO_PREFIX);
 const ATTRIBUTES_WATCHED_FOR_MUTATION = ['class', 'data-prefix', 'data-icon', 'data-fa-transform', 'data-fa-mask'];
-const DUOTONE_CLASSES = t$1;
-const prefixes = new Set();
-Object.keys(STYLE_TO_PREFIX[a]).map(prefixes.add.bind(prefixes));
-Object.keys(STYLE_TO_PREFIX[r]).map(prefixes.add.bind(prefixes));
-Object.keys(STYLE_TO_PREFIX[o]).map(prefixes.add.bind(prefixes));
-const RESERVED_CLASSES = [...Ct, ...yo];
+const DUOTONE_CLASSES = A;
+const RESERVED_CLASSES = [...At, ...ma];
 
 const initial = WINDOW.FontAwesomeConfig || {};
-
 function getAttrConfig(attr) {
   var element = DOCUMENT.querySelector('script[' + attr + ']');
-
   if (element) {
     return element.getAttribute(attr);
   }
 }
-
 function coerce(val) {
   // Getting an empty string will occur if the attribute is set on the HTML tag but without a value
   // We'll assume that this is an indication that it should be toggled to true
@@ -377,22 +558,19 @@ function coerce(val) {
   if (val === 'true') return true;
   return val;
 }
-
 if (DOCUMENT && typeof DOCUMENT.querySelector === 'function') {
   const attrs = [['data-family-prefix', 'familyPrefix'], ['data-css-prefix', 'cssPrefix'], ['data-family-default', 'familyDefault'], ['data-style-default', 'styleDefault'], ['data-replacement-class', 'replacementClass'], ['data-auto-replace-svg', 'autoReplaceSvg'], ['data-auto-add-css', 'autoAddCss'], ['data-auto-a11y', 'autoA11y'], ['data-search-pseudo-elements', 'searchPseudoElements'], ['data-observe-mutations', 'observeMutations'], ['data-mutate-approach', 'mutateApproach'], ['data-keep-original-source', 'keepOriginalSource'], ['data-measure-performance', 'measurePerformance'], ['data-show-missing-icons', 'showMissingIcons']];
   attrs.forEach(_ref => {
     let [attr, key] = _ref;
     const val = coerce(getAttrConfig(attr));
-
     if (val !== undefined && val !== null) {
       initial[key] = val;
     }
   });
 }
-
 const _default = {
   styleDefault: 'solid',
-  familyDefault: 'classic',
+  familyDefault: s,
   cssPrefix: DEFAULT_CSS_PREFIX,
   replacementClass: DEFAULT_REPLACEMENT_CLASS,
   autoReplaceSvg: true,
@@ -404,15 +582,13 @@ const _default = {
   keepOriginalSource: true,
   measurePerformance: false,
   showMissingIcons: true
-}; // familyPrefix is deprecated but we must still support it if present
+};
 
+// familyPrefix is deprecated but we must still support it if present
 if (initial.familyPrefix) {
   initial.cssPrefix = initial.familyPrefix;
 }
-
-const _config = { ..._default,
-  ...initial
-};
+const _config = _objectSpread2(_objectSpread2({}, _default), initial);
 if (!_config.autoReplaceSvg) _config.observeMutations = false;
 const config = {};
 Object.keys(_default).forEach(key => {
@@ -420,20 +596,19 @@ Object.keys(_default).forEach(key => {
     enumerable: true,
     set: function (val) {
       _config[key] = val;
-
       _onChangeCb.forEach(cb => cb(config));
     },
     get: function () {
       return _config[key];
     }
   });
-}); // familyPrefix is deprecated as of 6.2.0 and should be removed in 7.0.0
+});
 
+// familyPrefix is deprecated as of 6.2.0 and should be removed in 7.0.0
 Object.defineProperty(config, 'familyPrefix', {
   enumerable: true,
   set: function (val) {
     _config.cssPrefix = val;
-
     _onChangeCb.forEach(cb => cb(config));
   },
   get: function () {
@@ -444,7 +619,6 @@ WINDOW.FontAwesomeConfig = config;
 const _onChangeCb = [];
 function onChange(cb) {
   _onChangeCb.push(cb);
-
   return () => {
     _onChangeCb.splice(_onChangeCb.indexOf(cb), 1);
   };
@@ -463,22 +637,18 @@ function insertCss(css) {
   if (!css || !IS_DOM) {
     return;
   }
-
   const style = DOCUMENT.createElement('style');
   style.setAttribute('type', 'text/css');
   style.innerHTML = css;
   const headChildren = DOCUMENT.head.childNodes;
   let beforeChild = null;
-
   for (let i = headChildren.length - 1; i > -1; i--) {
     const child = headChildren[i];
     const tagName = (child.tagName || '').toUpperCase();
-
     if (['STYLE', 'LINK'].indexOf(tagName) > -1) {
       beforeChild = child;
     }
   }
-
   DOCUMENT.head.insertBefore(style, beforeChild);
   return css;
 }
@@ -486,20 +656,16 @@ const idPool = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
 function nextUniqueId() {
   let size = 12;
   let id = '';
-
   while (size-- > 0) {
     id += idPool[Math.random() * 62 | 0];
   }
-
   return id;
 }
 function toArray(obj) {
   const array = [];
-
   for (let i = (obj || []).length >>> 0; i--;) {
     array[i] = obj[i];
   }
-
   return array;
 }
 function classArray(node) {
@@ -557,7 +723,6 @@ function transformForCss(_ref2) {
     startCentered = false
   } = _ref2;
   let val = '';
-
   if (startCentered && IS_IE) {
     val += "translate(".concat(transform.x / d$2 - width / 2, "em, ").concat(transform.y / d$2 - height / 2, "em) ");
   } else if (startCentered) {
@@ -565,13 +730,12 @@ function transformForCss(_ref2) {
   } else {
     val += "translate(".concat(transform.x / d$2, "em, ").concat(transform.y / d$2, "em) ");
   }
-
   val += "scale(".concat(transform.size / d$2 * (transform.flipX ? -1 : 1), ", ").concat(transform.size / d$2 * (transform.flipY ? -1 : 1), ") ");
   val += "rotate(".concat(transform.rotate, "deg) ");
   return val;
 }
 
-var baseStyles = ":root, :host {\n  --fa-font-solid: normal 900 1em/1 \"Font Awesome 6 Free\";\n  --fa-font-regular: normal 400 1em/1 \"Font Awesome 6 Free\";\n  --fa-font-light: normal 300 1em/1 \"Font Awesome 6 Pro\";\n  --fa-font-thin: normal 100 1em/1 \"Font Awesome 6 Pro\";\n  --fa-font-duotone: normal 900 1em/1 \"Font Awesome 6 Duotone\";\n  --fa-font-brands: normal 400 1em/1 \"Font Awesome 6 Brands\";\n  --fa-font-sharp-solid: normal 900 1em/1 \"Font Awesome 6 Sharp\";\n  --fa-font-sharp-regular: normal 400 1em/1 \"Font Awesome 6 Sharp\";\n  --fa-font-sharp-light: normal 300 1em/1 \"Font Awesome 6 Sharp\";\n  --fa-font-sharp-thin: normal 100 1em/1 \"Font Awesome 6 Sharp\";\n  --fa-font-sharp-duotone-solid: normal 900 1em/1 \"Font Awesome 6 Sharp Duotone\";\n}\n\nsvg:not(:root).svg-inline--fa, svg:not(:host).svg-inline--fa {\n  overflow: visible;\n  box-sizing: content-box;\n}\n\n.svg-inline--fa {\n  display: var(--fa-display, inline-block);\n  height: 1em;\n  overflow: visible;\n  vertical-align: -0.125em;\n}\n.svg-inline--fa.fa-2xs {\n  vertical-align: 0.1em;\n}\n.svg-inline--fa.fa-xs {\n  vertical-align: 0em;\n}\n.svg-inline--fa.fa-sm {\n  vertical-align: -0.0714285705em;\n}\n.svg-inline--fa.fa-lg {\n  vertical-align: -0.2em;\n}\n.svg-inline--fa.fa-xl {\n  vertical-align: -0.25em;\n}\n.svg-inline--fa.fa-2xl {\n  vertical-align: -0.3125em;\n}\n.svg-inline--fa.fa-pull-left {\n  margin-right: var(--fa-pull-margin, 0.3em);\n  width: auto;\n}\n.svg-inline--fa.fa-pull-right {\n  margin-left: var(--fa-pull-margin, 0.3em);\n  width: auto;\n}\n.svg-inline--fa.fa-li {\n  width: var(--fa-li-width, 2em);\n  top: 0.25em;\n}\n.svg-inline--fa.fa-fw {\n  width: var(--fa-fw-width, 1.25em);\n}\n\n.fa-layers svg.svg-inline--fa {\n  bottom: 0;\n  left: 0;\n  margin: auto;\n  position: absolute;\n  right: 0;\n  top: 0;\n}\n\n.fa-layers-counter, .fa-layers-text {\n  display: inline-block;\n  position: absolute;\n  text-align: center;\n}\n\n.fa-layers {\n  display: inline-block;\n  height: 1em;\n  position: relative;\n  text-align: center;\n  vertical-align: -0.125em;\n  width: 1em;\n}\n.fa-layers svg.svg-inline--fa {\n  transform-origin: center center;\n}\n\n.fa-layers-text {\n  left: 50%;\n  top: 50%;\n  transform: translate(-50%, -50%);\n  transform-origin: center center;\n}\n\n.fa-layers-counter {\n  background-color: var(--fa-counter-background-color, #ff253a);\n  border-radius: var(--fa-counter-border-radius, 1em);\n  box-sizing: border-box;\n  color: var(--fa-inverse, #fff);\n  line-height: var(--fa-counter-line-height, 1);\n  max-width: var(--fa-counter-max-width, 5em);\n  min-width: var(--fa-counter-min-width, 1.5em);\n  overflow: hidden;\n  padding: var(--fa-counter-padding, 0.25em 0.5em);\n  right: var(--fa-right, 0);\n  text-overflow: ellipsis;\n  top: var(--fa-top, 0);\n  transform: scale(var(--fa-counter-scale, 0.25));\n  transform-origin: top right;\n}\n\n.fa-layers-bottom-right {\n  bottom: var(--fa-bottom, 0);\n  right: var(--fa-right, 0);\n  top: auto;\n  transform: scale(var(--fa-layers-scale, 0.25));\n  transform-origin: bottom right;\n}\n\n.fa-layers-bottom-left {\n  bottom: var(--fa-bottom, 0);\n  left: var(--fa-left, 0);\n  right: auto;\n  top: auto;\n  transform: scale(var(--fa-layers-scale, 0.25));\n  transform-origin: bottom left;\n}\n\n.fa-layers-top-right {\n  top: var(--fa-top, 0);\n  right: var(--fa-right, 0);\n  transform: scale(var(--fa-layers-scale, 0.25));\n  transform-origin: top right;\n}\n\n.fa-layers-top-left {\n  left: var(--fa-left, 0);\n  right: auto;\n  top: var(--fa-top, 0);\n  transform: scale(var(--fa-layers-scale, 0.25));\n  transform-origin: top left;\n}\n\n.fa-1x {\n  font-size: 1em;\n}\n\n.fa-2x {\n  font-size: 2em;\n}\n\n.fa-3x {\n  font-size: 3em;\n}\n\n.fa-4x {\n  font-size: 4em;\n}\n\n.fa-5x {\n  font-size: 5em;\n}\n\n.fa-6x {\n  font-size: 6em;\n}\n\n.fa-7x {\n  font-size: 7em;\n}\n\n.fa-8x {\n  font-size: 8em;\n}\n\n.fa-9x {\n  font-size: 9em;\n}\n\n.fa-10x {\n  font-size: 10em;\n}\n\n.fa-2xs {\n  font-size: 0.625em;\n  line-height: 0.1em;\n  vertical-align: 0.225em;\n}\n\n.fa-xs {\n  font-size: 0.75em;\n  line-height: 0.0833333337em;\n  vertical-align: 0.125em;\n}\n\n.fa-sm {\n  font-size: 0.875em;\n  line-height: 0.0714285718em;\n  vertical-align: 0.0535714295em;\n}\n\n.fa-lg {\n  font-size: 1.25em;\n  line-height: 0.05em;\n  vertical-align: -0.075em;\n}\n\n.fa-xl {\n  font-size: 1.5em;\n  line-height: 0.0416666682em;\n  vertical-align: -0.125em;\n}\n\n.fa-2xl {\n  font-size: 2em;\n  line-height: 0.03125em;\n  vertical-align: -0.1875em;\n}\n\n.fa-fw {\n  text-align: center;\n  width: 1.25em;\n}\n\n.fa-ul {\n  list-style-type: none;\n  margin-left: var(--fa-li-margin, 2.5em);\n  padding-left: 0;\n}\n.fa-ul > li {\n  position: relative;\n}\n\n.fa-li {\n  left: calc(-1 * var(--fa-li-width, 2em));\n  position: absolute;\n  text-align: center;\n  width: var(--fa-li-width, 2em);\n  line-height: inherit;\n}\n\n.fa-border {\n  border-color: var(--fa-border-color, #eee);\n  border-radius: var(--fa-border-radius, 0.1em);\n  border-style: var(--fa-border-style, solid);\n  border-width: var(--fa-border-width, 0.08em);\n  padding: var(--fa-border-padding, 0.2em 0.25em 0.15em);\n}\n\n.fa-pull-left {\n  float: left;\n  margin-right: var(--fa-pull-margin, 0.3em);\n}\n\n.fa-pull-right {\n  float: right;\n  margin-left: var(--fa-pull-margin, 0.3em);\n}\n\n.fa-beat {\n  animation-name: fa-beat;\n  animation-delay: var(--fa-animation-delay, 0s);\n  animation-direction: var(--fa-animation-direction, normal);\n  animation-duration: var(--fa-animation-duration, 1s);\n  animation-iteration-count: var(--fa-animation-iteration-count, infinite);\n  animation-timing-function: var(--fa-animation-timing, ease-in-out);\n}\n\n.fa-bounce {\n  animation-name: fa-bounce;\n  animation-delay: var(--fa-animation-delay, 0s);\n  animation-direction: var(--fa-animation-direction, normal);\n  animation-duration: var(--fa-animation-duration, 1s);\n  animation-iteration-count: var(--fa-animation-iteration-count, infinite);\n  animation-timing-function: var(--fa-animation-timing, cubic-bezier(0.28, 0.84, 0.42, 1));\n}\n\n.fa-fade {\n  animation-name: fa-fade;\n  animation-delay: var(--fa-animation-delay, 0s);\n  animation-direction: var(--fa-animation-direction, normal);\n  animation-duration: var(--fa-animation-duration, 1s);\n  animation-iteration-count: var(--fa-animation-iteration-count, infinite);\n  animation-timing-function: var(--fa-animation-timing, cubic-bezier(0.4, 0, 0.6, 1));\n}\n\n.fa-beat-fade {\n  animation-name: fa-beat-fade;\n  animation-delay: var(--fa-animation-delay, 0s);\n  animation-direction: var(--fa-animation-direction, normal);\n  animation-duration: var(--fa-animation-duration, 1s);\n  animation-iteration-count: var(--fa-animation-iteration-count, infinite);\n  animation-timing-function: var(--fa-animation-timing, cubic-bezier(0.4, 0, 0.6, 1));\n}\n\n.fa-flip {\n  animation-name: fa-flip;\n  animation-delay: var(--fa-animation-delay, 0s);\n  animation-direction: var(--fa-animation-direction, normal);\n  animation-duration: var(--fa-animation-duration, 1s);\n  animation-iteration-count: var(--fa-animation-iteration-count, infinite);\n  animation-timing-function: var(--fa-animation-timing, ease-in-out);\n}\n\n.fa-shake {\n  animation-name: fa-shake;\n  animation-delay: var(--fa-animation-delay, 0s);\n  animation-direction: var(--fa-animation-direction, normal);\n  animation-duration: var(--fa-animation-duration, 1s);\n  animation-iteration-count: var(--fa-animation-iteration-count, infinite);\n  animation-timing-function: var(--fa-animation-timing, linear);\n}\n\n.fa-spin {\n  animation-name: fa-spin;\n  animation-delay: var(--fa-animation-delay, 0s);\n  animation-direction: var(--fa-animation-direction, normal);\n  animation-duration: var(--fa-animation-duration, 2s);\n  animation-iteration-count: var(--fa-animation-iteration-count, infinite);\n  animation-timing-function: var(--fa-animation-timing, linear);\n}\n\n.fa-spin-reverse {\n  --fa-animation-direction: reverse;\n}\n\n.fa-pulse,\n.fa-spin-pulse {\n  animation-name: fa-spin;\n  animation-direction: var(--fa-animation-direction, normal);\n  animation-duration: var(--fa-animation-duration, 1s);\n  animation-iteration-count: var(--fa-animation-iteration-count, infinite);\n  animation-timing-function: var(--fa-animation-timing, steps(8));\n}\n\n@media (prefers-reduced-motion: reduce) {\n  .fa-beat,\n.fa-bounce,\n.fa-fade,\n.fa-beat-fade,\n.fa-flip,\n.fa-pulse,\n.fa-shake,\n.fa-spin,\n.fa-spin-pulse {\n    animation-delay: -1ms;\n    animation-duration: 1ms;\n    animation-iteration-count: 1;\n    transition-delay: 0s;\n    transition-duration: 0s;\n  }\n}\n@keyframes fa-beat {\n  0%, 90% {\n    transform: scale(1);\n  }\n  45% {\n    transform: scale(var(--fa-beat-scale, 1.25));\n  }\n}\n@keyframes fa-bounce {\n  0% {\n    transform: scale(1, 1) translateY(0);\n  }\n  10% {\n    transform: scale(var(--fa-bounce-start-scale-x, 1.1), var(--fa-bounce-start-scale-y, 0.9)) translateY(0);\n  }\n  30% {\n    transform: scale(var(--fa-bounce-jump-scale-x, 0.9), var(--fa-bounce-jump-scale-y, 1.1)) translateY(var(--fa-bounce-height, -0.5em));\n  }\n  50% {\n    transform: scale(var(--fa-bounce-land-scale-x, 1.05), var(--fa-bounce-land-scale-y, 0.95)) translateY(0);\n  }\n  57% {\n    transform: scale(1, 1) translateY(var(--fa-bounce-rebound, -0.125em));\n  }\n  64% {\n    transform: scale(1, 1) translateY(0);\n  }\n  100% {\n    transform: scale(1, 1) translateY(0);\n  }\n}\n@keyframes fa-fade {\n  50% {\n    opacity: var(--fa-fade-opacity, 0.4);\n  }\n}\n@keyframes fa-beat-fade {\n  0%, 100% {\n    opacity: var(--fa-beat-fade-opacity, 0.4);\n    transform: scale(1);\n  }\n  50% {\n    opacity: 1;\n    transform: scale(var(--fa-beat-fade-scale, 1.125));\n  }\n}\n@keyframes fa-flip {\n  50% {\n    transform: rotate3d(var(--fa-flip-x, 0), var(--fa-flip-y, 1), var(--fa-flip-z, 0), var(--fa-flip-angle, -180deg));\n  }\n}\n@keyframes fa-shake {\n  0% {\n    transform: rotate(-15deg);\n  }\n  4% {\n    transform: rotate(15deg);\n  }\n  8%, 24% {\n    transform: rotate(-18deg);\n  }\n  12%, 28% {\n    transform: rotate(18deg);\n  }\n  16% {\n    transform: rotate(-22deg);\n  }\n  20% {\n    transform: rotate(22deg);\n  }\n  32% {\n    transform: rotate(-12deg);\n  }\n  36% {\n    transform: rotate(12deg);\n  }\n  40%, 100% {\n    transform: rotate(0deg);\n  }\n}\n@keyframes fa-spin {\n  0% {\n    transform: rotate(0deg);\n  }\n  100% {\n    transform: rotate(360deg);\n  }\n}\n.fa-rotate-90 {\n  transform: rotate(90deg);\n}\n\n.fa-rotate-180 {\n  transform: rotate(180deg);\n}\n\n.fa-rotate-270 {\n  transform: rotate(270deg);\n}\n\n.fa-flip-horizontal {\n  transform: scale(-1, 1);\n}\n\n.fa-flip-vertical {\n  transform: scale(1, -1);\n}\n\n.fa-flip-both,\n.fa-flip-horizontal.fa-flip-vertical {\n  transform: scale(-1, -1);\n}\n\n.fa-rotate-by {\n  transform: rotate(var(--fa-rotate-angle, 0));\n}\n\n.fa-stack {\n  display: inline-block;\n  vertical-align: middle;\n  height: 2em;\n  position: relative;\n  width: 2.5em;\n}\n\n.fa-stack-1x,\n.fa-stack-2x {\n  bottom: 0;\n  left: 0;\n  margin: auto;\n  position: absolute;\n  right: 0;\n  top: 0;\n  z-index: var(--fa-stack-z-index, auto);\n}\n\n.svg-inline--fa.fa-stack-1x {\n  height: 1em;\n  width: 1.25em;\n}\n.svg-inline--fa.fa-stack-2x {\n  height: 2em;\n  width: 2.5em;\n}\n\n.fa-inverse {\n  color: var(--fa-inverse, #fff);\n}\n\n.sr-only,\n.fa-sr-only {\n  position: absolute;\n  width: 1px;\n  height: 1px;\n  padding: 0;\n  margin: -1px;\n  overflow: hidden;\n  clip: rect(0, 0, 0, 0);\n  white-space: nowrap;\n  border-width: 0;\n}\n\n.sr-only-focusable:not(:focus),\n.fa-sr-only-focusable:not(:focus) {\n  position: absolute;\n  width: 1px;\n  height: 1px;\n  padding: 0;\n  margin: -1px;\n  overflow: hidden;\n  clip: rect(0, 0, 0, 0);\n  white-space: nowrap;\n  border-width: 0;\n}\n\n.svg-inline--fa .fa-primary {\n  fill: var(--fa-primary-color, currentColor);\n  opacity: var(--fa-primary-opacity, 1);\n}\n\n.svg-inline--fa .fa-secondary {\n  fill: var(--fa-secondary-color, currentColor);\n  opacity: var(--fa-secondary-opacity, 0.4);\n}\n\n.svg-inline--fa.fa-swap-opacity .fa-primary {\n  opacity: var(--fa-secondary-opacity, 0.4);\n}\n\n.svg-inline--fa.fa-swap-opacity .fa-secondary {\n  opacity: var(--fa-primary-opacity, 1);\n}\n\n.svg-inline--fa mask .fa-primary,\n.svg-inline--fa mask .fa-secondary {\n  fill: black;\n}\n\n.fad.fa-inverse,\n.fa-duotone.fa-inverse {\n  color: var(--fa-inverse, #fff);\n}";
+var baseStyles = ":root, :host {\n  --fa-font-solid: normal 900 1em/1 \"Font Awesome 6 Free\";\n  --fa-font-regular: normal 400 1em/1 \"Font Awesome 6 Free\";\n  --fa-font-light: normal 300 1em/1 \"Font Awesome 6 Pro\";\n  --fa-font-thin: normal 100 1em/1 \"Font Awesome 6 Pro\";\n  --fa-font-duotone: normal 900 1em/1 \"Font Awesome 6 Duotone\";\n  --fa-font-duotone-regular: normal 400 1em/1 \"Font Awesome 6 Duotone\";\n  --fa-font-duotone-light: normal 300 1em/1 \"Font Awesome 6 Duotone\";\n  --fa-font-duotone-thin: normal 100 1em/1 \"Font Awesome 6 Duotone\";\n  --fa-font-brands: normal 400 1em/1 \"Font Awesome 6 Brands\";\n  --fa-font-sharp-solid: normal 900 1em/1 \"Font Awesome 6 Sharp\";\n  --fa-font-sharp-regular: normal 400 1em/1 \"Font Awesome 6 Sharp\";\n  --fa-font-sharp-light: normal 300 1em/1 \"Font Awesome 6 Sharp\";\n  --fa-font-sharp-thin: normal 100 1em/1 \"Font Awesome 6 Sharp\";\n  --fa-font-sharp-duotone-solid: normal 900 1em/1 \"Font Awesome 6 Sharp Duotone\";\n  --fa-font-sharp-duotone-regular: normal 400 1em/1 \"Font Awesome 6 Sharp Duotone\";\n  --fa-font-sharp-duotone-light: normal 300 1em/1 \"Font Awesome 6 Sharp Duotone\";\n  --fa-font-sharp-duotone-thin: normal 100 1em/1 \"Font Awesome 6 Sharp Duotone\";\n}\n\nsvg:not(:root).svg-inline--fa, svg:not(:host).svg-inline--fa {\n  overflow: visible;\n  box-sizing: content-box;\n}\n\n.svg-inline--fa {\n  display: var(--fa-display, inline-block);\n  height: 1em;\n  overflow: visible;\n  vertical-align: -0.125em;\n}\n.svg-inline--fa.fa-2xs {\n  vertical-align: 0.1em;\n}\n.svg-inline--fa.fa-xs {\n  vertical-align: 0em;\n}\n.svg-inline--fa.fa-sm {\n  vertical-align: -0.0714285705em;\n}\n.svg-inline--fa.fa-lg {\n  vertical-align: -0.2em;\n}\n.svg-inline--fa.fa-xl {\n  vertical-align: -0.25em;\n}\n.svg-inline--fa.fa-2xl {\n  vertical-align: -0.3125em;\n}\n.svg-inline--fa.fa-pull-left {\n  margin-right: var(--fa-pull-margin, 0.3em);\n  width: auto;\n}\n.svg-inline--fa.fa-pull-right {\n  margin-left: var(--fa-pull-margin, 0.3em);\n  width: auto;\n}\n.svg-inline--fa.fa-li {\n  width: var(--fa-li-width, 2em);\n  top: 0.25em;\n}\n.svg-inline--fa.fa-fw {\n  width: var(--fa-fw-width, 1.25em);\n}\n\n.fa-layers svg.svg-inline--fa {\n  bottom: 0;\n  left: 0;\n  margin: auto;\n  position: absolute;\n  right: 0;\n  top: 0;\n}\n\n.fa-layers-counter, .fa-layers-text {\n  display: inline-block;\n  position: absolute;\n  text-align: center;\n}\n\n.fa-layers {\n  display: inline-block;\n  height: 1em;\n  position: relative;\n  text-align: center;\n  vertical-align: -0.125em;\n  width: 1em;\n}\n.fa-layers svg.svg-inline--fa {\n  transform-origin: center center;\n}\n\n.fa-layers-text {\n  left: 50%;\n  top: 50%;\n  transform: translate(-50%, -50%);\n  transform-origin: center center;\n}\n\n.fa-layers-counter {\n  background-color: var(--fa-counter-background-color, #ff253a);\n  border-radius: var(--fa-counter-border-radius, 1em);\n  box-sizing: border-box;\n  color: var(--fa-inverse, #fff);\n  line-height: var(--fa-counter-line-height, 1);\n  max-width: var(--fa-counter-max-width, 5em);\n  min-width: var(--fa-counter-min-width, 1.5em);\n  overflow: hidden;\n  padding: var(--fa-counter-padding, 0.25em 0.5em);\n  right: var(--fa-right, 0);\n  text-overflow: ellipsis;\n  top: var(--fa-top, 0);\n  transform: scale(var(--fa-counter-scale, 0.25));\n  transform-origin: top right;\n}\n\n.fa-layers-bottom-right {\n  bottom: var(--fa-bottom, 0);\n  right: var(--fa-right, 0);\n  top: auto;\n  transform: scale(var(--fa-layers-scale, 0.25));\n  transform-origin: bottom right;\n}\n\n.fa-layers-bottom-left {\n  bottom: var(--fa-bottom, 0);\n  left: var(--fa-left, 0);\n  right: auto;\n  top: auto;\n  transform: scale(var(--fa-layers-scale, 0.25));\n  transform-origin: bottom left;\n}\n\n.fa-layers-top-right {\n  top: var(--fa-top, 0);\n  right: var(--fa-right, 0);\n  transform: scale(var(--fa-layers-scale, 0.25));\n  transform-origin: top right;\n}\n\n.fa-layers-top-left {\n  left: var(--fa-left, 0);\n  right: auto;\n  top: var(--fa-top, 0);\n  transform: scale(var(--fa-layers-scale, 0.25));\n  transform-origin: top left;\n}\n\n.fa-1x {\n  font-size: 1em;\n}\n\n.fa-2x {\n  font-size: 2em;\n}\n\n.fa-3x {\n  font-size: 3em;\n}\n\n.fa-4x {\n  font-size: 4em;\n}\n\n.fa-5x {\n  font-size: 5em;\n}\n\n.fa-6x {\n  font-size: 6em;\n}\n\n.fa-7x {\n  font-size: 7em;\n}\n\n.fa-8x {\n  font-size: 8em;\n}\n\n.fa-9x {\n  font-size: 9em;\n}\n\n.fa-10x {\n  font-size: 10em;\n}\n\n.fa-2xs {\n  font-size: 0.625em;\n  line-height: 0.1em;\n  vertical-align: 0.225em;\n}\n\n.fa-xs {\n  font-size: 0.75em;\n  line-height: 0.0833333337em;\n  vertical-align: 0.125em;\n}\n\n.fa-sm {\n  font-size: 0.875em;\n  line-height: 0.0714285718em;\n  vertical-align: 0.0535714295em;\n}\n\n.fa-lg {\n  font-size: 1.25em;\n  line-height: 0.05em;\n  vertical-align: -0.075em;\n}\n\n.fa-xl {\n  font-size: 1.5em;\n  line-height: 0.0416666682em;\n  vertical-align: -0.125em;\n}\n\n.fa-2xl {\n  font-size: 2em;\n  line-height: 0.03125em;\n  vertical-align: -0.1875em;\n}\n\n.fa-fw {\n  text-align: center;\n  width: 1.25em;\n}\n\n.fa-ul {\n  list-style-type: none;\n  margin-left: var(--fa-li-margin, 2.5em);\n  padding-left: 0;\n}\n.fa-ul > li {\n  position: relative;\n}\n\n.fa-li {\n  left: calc(-1 * var(--fa-li-width, 2em));\n  position: absolute;\n  text-align: center;\n  width: var(--fa-li-width, 2em);\n  line-height: inherit;\n}\n\n.fa-border {\n  border-color: var(--fa-border-color, #eee);\n  border-radius: var(--fa-border-radius, 0.1em);\n  border-style: var(--fa-border-style, solid);\n  border-width: var(--fa-border-width, 0.08em);\n  padding: var(--fa-border-padding, 0.2em 0.25em 0.15em);\n}\n\n.fa-pull-left {\n  float: left;\n  margin-right: var(--fa-pull-margin, 0.3em);\n}\n\n.fa-pull-right {\n  float: right;\n  margin-left: var(--fa-pull-margin, 0.3em);\n}\n\n.fa-beat {\n  animation-name: fa-beat;\n  animation-delay: var(--fa-animation-delay, 0s);\n  animation-direction: var(--fa-animation-direction, normal);\n  animation-duration: var(--fa-animation-duration, 1s);\n  animation-iteration-count: var(--fa-animation-iteration-count, infinite);\n  animation-timing-function: var(--fa-animation-timing, ease-in-out);\n}\n\n.fa-bounce {\n  animation-name: fa-bounce;\n  animation-delay: var(--fa-animation-delay, 0s);\n  animation-direction: var(--fa-animation-direction, normal);\n  animation-duration: var(--fa-animation-duration, 1s);\n  animation-iteration-count: var(--fa-animation-iteration-count, infinite);\n  animation-timing-function: var(--fa-animation-timing, cubic-bezier(0.28, 0.84, 0.42, 1));\n}\n\n.fa-fade {\n  animation-name: fa-fade;\n  animation-delay: var(--fa-animation-delay, 0s);\n  animation-direction: var(--fa-animation-direction, normal);\n  animation-duration: var(--fa-animation-duration, 1s);\n  animation-iteration-count: var(--fa-animation-iteration-count, infinite);\n  animation-timing-function: var(--fa-animation-timing, cubic-bezier(0.4, 0, 0.6, 1));\n}\n\n.fa-beat-fade {\n  animation-name: fa-beat-fade;\n  animation-delay: var(--fa-animation-delay, 0s);\n  animation-direction: var(--fa-animation-direction, normal);\n  animation-duration: var(--fa-animation-duration, 1s);\n  animation-iteration-count: var(--fa-animation-iteration-count, infinite);\n  animation-timing-function: var(--fa-animation-timing, cubic-bezier(0.4, 0, 0.6, 1));\n}\n\n.fa-flip {\n  animation-name: fa-flip;\n  animation-delay: var(--fa-animation-delay, 0s);\n  animation-direction: var(--fa-animation-direction, normal);\n  animation-duration: var(--fa-animation-duration, 1s);\n  animation-iteration-count: var(--fa-animation-iteration-count, infinite);\n  animation-timing-function: var(--fa-animation-timing, ease-in-out);\n}\n\n.fa-shake {\n  animation-name: fa-shake;\n  animation-delay: var(--fa-animation-delay, 0s);\n  animation-direction: var(--fa-animation-direction, normal);\n  animation-duration: var(--fa-animation-duration, 1s);\n  animation-iteration-count: var(--fa-animation-iteration-count, infinite);\n  animation-timing-function: var(--fa-animation-timing, linear);\n}\n\n.fa-spin {\n  animation-name: fa-spin;\n  animation-delay: var(--fa-animation-delay, 0s);\n  animation-direction: var(--fa-animation-direction, normal);\n  animation-duration: var(--fa-animation-duration, 2s);\n  animation-iteration-count: var(--fa-animation-iteration-count, infinite);\n  animation-timing-function: var(--fa-animation-timing, linear);\n}\n\n.fa-spin-reverse {\n  --fa-animation-direction: reverse;\n}\n\n.fa-pulse,\n.fa-spin-pulse {\n  animation-name: fa-spin;\n  animation-direction: var(--fa-animation-direction, normal);\n  animation-duration: var(--fa-animation-duration, 1s);\n  animation-iteration-count: var(--fa-animation-iteration-count, infinite);\n  animation-timing-function: var(--fa-animation-timing, steps(8));\n}\n\n@media (prefers-reduced-motion: reduce) {\n  .fa-beat,\n.fa-bounce,\n.fa-fade,\n.fa-beat-fade,\n.fa-flip,\n.fa-pulse,\n.fa-shake,\n.fa-spin,\n.fa-spin-pulse {\n    animation-delay: -1ms;\n    animation-duration: 1ms;\n    animation-iteration-count: 1;\n    transition-delay: 0s;\n    transition-duration: 0s;\n  }\n}\n@keyframes fa-beat {\n  0%, 90% {\n    transform: scale(1);\n  }\n  45% {\n    transform: scale(var(--fa-beat-scale, 1.25));\n  }\n}\n@keyframes fa-bounce {\n  0% {\n    transform: scale(1, 1) translateY(0);\n  }\n  10% {\n    transform: scale(var(--fa-bounce-start-scale-x, 1.1), var(--fa-bounce-start-scale-y, 0.9)) translateY(0);\n  }\n  30% {\n    transform: scale(var(--fa-bounce-jump-scale-x, 0.9), var(--fa-bounce-jump-scale-y, 1.1)) translateY(var(--fa-bounce-height, -0.5em));\n  }\n  50% {\n    transform: scale(var(--fa-bounce-land-scale-x, 1.05), var(--fa-bounce-land-scale-y, 0.95)) translateY(0);\n  }\n  57% {\n    transform: scale(1, 1) translateY(var(--fa-bounce-rebound, -0.125em));\n  }\n  64% {\n    transform: scale(1, 1) translateY(0);\n  }\n  100% {\n    transform: scale(1, 1) translateY(0);\n  }\n}\n@keyframes fa-fade {\n  50% {\n    opacity: var(--fa-fade-opacity, 0.4);\n  }\n}\n@keyframes fa-beat-fade {\n  0%, 100% {\n    opacity: var(--fa-beat-fade-opacity, 0.4);\n    transform: scale(1);\n  }\n  50% {\n    opacity: 1;\n    transform: scale(var(--fa-beat-fade-scale, 1.125));\n  }\n}\n@keyframes fa-flip {\n  50% {\n    transform: rotate3d(var(--fa-flip-x, 0), var(--fa-flip-y, 1), var(--fa-flip-z, 0), var(--fa-flip-angle, -180deg));\n  }\n}\n@keyframes fa-shake {\n  0% {\n    transform: rotate(-15deg);\n  }\n  4% {\n    transform: rotate(15deg);\n  }\n  8%, 24% {\n    transform: rotate(-18deg);\n  }\n  12%, 28% {\n    transform: rotate(18deg);\n  }\n  16% {\n    transform: rotate(-22deg);\n  }\n  20% {\n    transform: rotate(22deg);\n  }\n  32% {\n    transform: rotate(-12deg);\n  }\n  36% {\n    transform: rotate(12deg);\n  }\n  40%, 100% {\n    transform: rotate(0deg);\n  }\n}\n@keyframes fa-spin {\n  0% {\n    transform: rotate(0deg);\n  }\n  100% {\n    transform: rotate(360deg);\n  }\n}\n.fa-rotate-90 {\n  transform: rotate(90deg);\n}\n\n.fa-rotate-180 {\n  transform: rotate(180deg);\n}\n\n.fa-rotate-270 {\n  transform: rotate(270deg);\n}\n\n.fa-flip-horizontal {\n  transform: scale(-1, 1);\n}\n\n.fa-flip-vertical {\n  transform: scale(1, -1);\n}\n\n.fa-flip-both,\n.fa-flip-horizontal.fa-flip-vertical {\n  transform: scale(-1, -1);\n}\n\n.fa-rotate-by {\n  transform: rotate(var(--fa-rotate-angle, 0));\n}\n\n.fa-stack {\n  display: inline-block;\n  vertical-align: middle;\n  height: 2em;\n  position: relative;\n  width: 2.5em;\n}\n\n.fa-stack-1x,\n.fa-stack-2x {\n  bottom: 0;\n  left: 0;\n  margin: auto;\n  position: absolute;\n  right: 0;\n  top: 0;\n  z-index: var(--fa-stack-z-index, auto);\n}\n\n.svg-inline--fa.fa-stack-1x {\n  height: 1em;\n  width: 1.25em;\n}\n.svg-inline--fa.fa-stack-2x {\n  height: 2em;\n  width: 2.5em;\n}\n\n.fa-inverse {\n  color: var(--fa-inverse, #fff);\n}\n\n.sr-only,\n.fa-sr-only {\n  position: absolute;\n  width: 1px;\n  height: 1px;\n  padding: 0;\n  margin: -1px;\n  overflow: hidden;\n  clip: rect(0, 0, 0, 0);\n  white-space: nowrap;\n  border-width: 0;\n}\n\n.sr-only-focusable:not(:focus),\n.fa-sr-only-focusable:not(:focus) {\n  position: absolute;\n  width: 1px;\n  height: 1px;\n  padding: 0;\n  margin: -1px;\n  overflow: hidden;\n  clip: rect(0, 0, 0, 0);\n  white-space: nowrap;\n  border-width: 0;\n}\n\n.svg-inline--fa .fa-primary {\n  fill: var(--fa-primary-color, currentColor);\n  opacity: var(--fa-primary-opacity, 1);\n}\n\n.svg-inline--fa .fa-secondary {\n  fill: var(--fa-secondary-color, currentColor);\n  opacity: var(--fa-secondary-opacity, 0.4);\n}\n\n.svg-inline--fa.fa-swap-opacity .fa-primary {\n  opacity: var(--fa-secondary-opacity, 0.4);\n}\n\n.svg-inline--fa.fa-swap-opacity .fa-secondary {\n  opacity: var(--fa-primary-opacity, 1);\n}\n\n.svg-inline--fa mask .fa-primary,\n.svg-inline--fa mask .fa-secondary {\n  fill: black;\n}";
 
 function css() {
   const dcp = DEFAULT_CSS_PREFIX;
@@ -579,26 +743,21 @@ function css() {
   const fp = config.cssPrefix;
   const rc = config.replacementClass;
   let s = baseStyles;
-
   if (fp !== dcp || rc !== drc) {
     const dPatt = new RegExp("\\.".concat(dcp, "\\-"), 'g');
     const customPropPatt = new RegExp("\\--".concat(dcp, "\\-"), 'g');
     const rPatt = new RegExp("\\.".concat(drc), 'g');
     s = s.replace(dPatt, ".".concat(fp, "-")).replace(customPropPatt, "--".concat(fp, "-")).replace(rPatt, ".".concat(rc));
   }
-
   return s;
 }
-
 let _cssInserted = false;
-
 function ensureCss() {
   if (config.autoAddCss && !_cssInserted) {
     insertCss(css());
     _cssInserted = true;
   }
 }
-
 var InjectCSS = {
   mixout() {
     return {
@@ -608,44 +767,36 @@ var InjectCSS = {
       }
     };
   },
-
   hooks() {
     return {
       beforeDOMElementCreation() {
         ensureCss();
       },
-
       beforeI2svg() {
         ensureCss();
       }
-
     };
   }
-
 };
 
-const w$1 = WINDOW || {};
-if (!w$1[NAMESPACE_IDENTIFIER]) w$1[NAMESPACE_IDENTIFIER] = {};
-if (!w$1[NAMESPACE_IDENTIFIER].styles) w$1[NAMESPACE_IDENTIFIER].styles = {};
-if (!w$1[NAMESPACE_IDENTIFIER].hooks) w$1[NAMESPACE_IDENTIFIER].hooks = {};
-if (!w$1[NAMESPACE_IDENTIFIER].shims) w$1[NAMESPACE_IDENTIFIER].shims = [];
-var namespace = w$1[NAMESPACE_IDENTIFIER];
+const w = WINDOW || {};
+if (!w[NAMESPACE_IDENTIFIER]) w[NAMESPACE_IDENTIFIER] = {};
+if (!w[NAMESPACE_IDENTIFIER].styles) w[NAMESPACE_IDENTIFIER].styles = {};
+if (!w[NAMESPACE_IDENTIFIER].hooks) w[NAMESPACE_IDENTIFIER].hooks = {};
+if (!w[NAMESPACE_IDENTIFIER].shims) w[NAMESPACE_IDENTIFIER].shims = [];
+var namespace = w[NAMESPACE_IDENTIFIER];
 
 const functions = [];
-
 const listener = function () {
   DOCUMENT.removeEventListener('DOMContentLoaded', listener);
   loaded = 1;
   functions.map(fn => fn());
 };
-
 let loaded = false;
-
 if (IS_DOM) {
   loaded = (DOCUMENT.documentElement.doScroll ? /^loaded|^c/ : /^loaded|^i|^c/).test(DOCUMENT.readyState);
   if (!loaded) DOCUMENT.addEventListener('DOMContentLoaded', listener);
 }
-
 function domready (fn) {
   if (!IS_DOM) return;
   loaded ? setTimeout(fn, 0) : functions.push(fn);
@@ -657,7 +808,6 @@ function toHtml(abstractNodes) {
     attributes = {},
     children = []
   } = abstractNodes;
-
   if (typeof abstractNodes === 'string') {
     return htmlEscape(abstractNodes);
   } else {
@@ -679,7 +829,6 @@ function iconFromMapping(mapping, prefix, iconName) {
  * Internal helper to bind a function known to have 4 arguments
  * to a given context.
  */
-
 var bindInternal4 = function bindInternal4(func, thisContext) {
   return function (a, b, c, d) {
     return func.call(thisContext, a, b, c, d);
@@ -697,16 +846,13 @@ var bindInternal4 = function bindInternal4(func, thisContext) {
  * @param  {Object}   thisContext  The context for the reducer.
  * @return {mixed}                 The final result.
  */
-
-
 var reduce = function fastReduceObject(subject, fn, initialValue, thisContext) {
   var keys = Object.keys(subject),
-      length = keys.length,
-      iterator = thisContext !== undefined ? bindInternal4(fn, thisContext) : fn,
-      i,
-      key,
-      result;
-
+    length = keys.length,
+    iterator = thisContext !== undefined ? bindInternal4(fn, thisContext) : fn,
+    i,
+    key,
+    result;
   if (initialValue === undefined) {
     i = 1;
     result = subject[keys[0]];
@@ -714,12 +860,10 @@ var reduce = function fastReduceObject(subject, fn, initialValue, thisContext) {
     i = 0;
     result = initialValue;
   }
-
   for (; i < length; i++) {
     key = keys[i];
     result = iterator(result, subject[key], key, subject);
   }
-
   return result;
 };
 
@@ -747,17 +891,15 @@ var reduce = function fastReduceObject(subject, fn, initialValue, thisContext) {
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
+
 function ucs2decode(string) {
   const output = [];
   let counter = 0;
   const length = string.length;
-
   while (counter < length) {
     const value = string.charCodeAt(counter++);
-
     if (value >= 0xD800 && value <= 0xDBFF && counter < length) {
       const extra = string.charCodeAt(counter++);
-
       if ((extra & 0xFC00) == 0xDC00) {
         // eslint-disable-line eqeqeq
         output.push(((value & 0x3FF) << 10) + (extra & 0x3FF) + 0x10000);
@@ -769,10 +911,8 @@ function ucs2decode(string) {
       output.push(value);
     }
   }
-
   return output;
 }
-
 function toHex(unicode) {
   const decoded = ucs2decode(unicode);
   return decoded.length === 1 ? decoded[0].toString(16) : null;
@@ -781,15 +921,12 @@ function codePointAt(string, index) {
   const size = string.length;
   let first = string.charCodeAt(index);
   let second;
-
   if (first >= 0xD800 && first <= 0xDBFF && size > index + 1) {
     second = string.charCodeAt(index + 1);
-
     if (second >= 0xDC00 && second <= 0xDFFF) {
       return (first - 0xD800) * 0x400 + second - 0xDC00 + 0x10000;
     }
   }
-
   return first;
 }
 
@@ -797,74 +934,72 @@ function normalizeIcons(icons) {
   return Object.keys(icons).reduce((acc, iconName) => {
     const icon = icons[iconName];
     const expanded = !!icon.icon;
-
     if (expanded) {
       acc[icon.iconName] = icon.icon;
     } else {
       acc[iconName] = icon;
     }
-
     return acc;
   }, {});
 }
-
 function defineIcons(prefix, icons) {
   let params = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
   const {
     skipHooks = false
   } = params;
   const normalized = normalizeIcons(icons);
-
   if (typeof namespace.hooks.addPack === 'function' && !skipHooks) {
     namespace.hooks.addPack(prefix, normalizeIcons(icons));
   } else {
-    namespace.styles[prefix] = { ...(namespace.styles[prefix] || {}),
-      ...normalized
-    };
+    namespace.styles[prefix] = _objectSpread2(_objectSpread2({}, namespace.styles[prefix] || {}), normalized);
   }
+
   /**
    * Font Awesome 4 used the prefix of `fa` for all icons. With the introduction
    * of new styles we needed to differentiate between them. Prefix `fa` is now an alias
    * for `fas` so we'll ease the upgrade process for our users by automatically defining
    * this as well.
    */
-
-
   if (prefix === 'fas') {
     defineIcons('fa', icons);
   }
 }
 
+const duotonePathRe = [/*#__PURE__*/_wrapRegExp(/path d="([^"]+)".*path d="([^"]+)"/, {
+  d1: 1,
+  d2: 2
+}), /*#__PURE__*/_wrapRegExp(/path class="([^"]+)".*d="([^"]+)".*path class="([^"]+)".*d="([^"]+)"/, {
+  cls1: 1,
+  d1: 2,
+  cls2: 3,
+  d2: 4
+}), /*#__PURE__*/_wrapRegExp(/path class="([^"]+)".*d="([^"]+)"/, {
+  cls1: 1,
+  d1: 2
+})];
+
 const {
   styles,
   shims
 } = namespace;
-const LONG_STYLE = {
-  [a]: Object.values(PREFIX_TO_LONG_STYLE[a]),
-  [r]: Object.values(PREFIX_TO_LONG_STYLE[r]),
-  [o]: Object.values(PREFIX_TO_LONG_STYLE[o])
-};
+const FAMILY_NAMES = Object.keys(PREFIX_TO_LONG_STYLE);
+const PREFIXES_FOR_FAMILY = FAMILY_NAMES.reduce((acc, familyId) => {
+  acc[familyId] = Object.keys(PREFIX_TO_LONG_STYLE[familyId]);
+  return acc;
+}, {});
 let _defaultUsablePrefix = null;
 let _byUnicode = {};
 let _byLigature = {};
 let _byOldName = {};
 let _byOldUnicode = {};
 let _byAlias = {};
-const PREFIXES = {
-  [a]: Object.keys(PREFIX_TO_STYLE[a]),
-  [r]: Object.keys(PREFIX_TO_STYLE[r]),
-  [o]: Object.keys(PREFIX_TO_STYLE[o])
-};
-
 function isReserved(name) {
   return ~RESERVED_CLASSES.indexOf(name);
 }
-
 function getIconName(cssPrefix, cls) {
   const parts = cls.split('-');
   const prefix = parts[0];
   const iconName = parts.slice(1).join('-');
-
   if (prefix === cssPrefix && iconName !== '' && !isReserved(iconName)) {
     return iconName;
   } else {
@@ -878,12 +1013,10 @@ const build = () => {
       return o$$1;
     }, {});
   };
-
   _byUnicode = lookup((acc, icon, iconName) => {
     if (icon[3]) {
       acc[icon[3]] = iconName;
     }
-
     if (icon[2]) {
       const aliases = icon[2].filter(a$$1 => {
         return typeof a$$1 === 'number';
@@ -892,12 +1025,10 @@ const build = () => {
         acc[alias.toString(16)] = iconName;
       });
     }
-
     return acc;
   });
   _byLigature = lookup((acc, icon, iconName) => {
     acc[iconName] = iconName;
-
     if (icon[2]) {
       const aliases = icon[2].filter(a$$1 => {
         return typeof a$$1 === 'string';
@@ -906,7 +1037,6 @@ const build = () => {
         acc[alias] = iconName;
       });
     }
-
     return acc;
   });
   _byAlias = lookup((acc, icon, iconName) => {
@@ -916,33 +1046,30 @@ const build = () => {
       acc[alias] = iconName;
     });
     return acc;
-  }); // If we have a Kit, we can't determine if regular is available since we
-  // could be auto-fetching it. We'll have to assume that it is available.
+  });
 
+  // If we have a Kit, we can't determine if regular is available since we
+  // could be auto-fetching it. We'll have to assume that it is available.
   const hasRegular = 'far' in styles || config.autoFetchSvg;
   const shimLookups = reduce(shims, (acc, shim) => {
     const maybeNameMaybeUnicode = shim[0];
     let prefix = shim[1];
     const iconName = shim[2];
-
     if (prefix === 'far' && !hasRegular) {
       prefix = 'fas';
     }
-
     if (typeof maybeNameMaybeUnicode === 'string') {
       acc.names[maybeNameMaybeUnicode] = {
         prefix,
         iconName
       };
     }
-
     if (typeof maybeNameMaybeUnicode === 'number') {
       acc.unicodes[maybeNameMaybeUnicode.toString(16)] = {
         prefix,
         iconName
       };
     }
-
     return acc;
   }, {
     names: {},
@@ -996,103 +1123,146 @@ const emptyCanonicalIcon = () => {
     rest: []
   };
 };
+function getFamilyId(values) {
+  let family = s;
+  const famProps = FAMILY_NAMES.reduce((acc, familyId) => {
+    acc[familyId] = "".concat(config.cssPrefix, "-").concat(familyId);
+    return acc;
+  }, {});
+  L.forEach(familyId => {
+    if (values.includes(famProps[familyId]) || values.some(v$$1 => PREFIXES_FOR_FAMILY[familyId].includes(v$$1))) {
+      family = familyId;
+    }
+  });
+  return family;
+}
 function getCanonicalPrefix(styleOrPrefix) {
   let params = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
   const {
-    family = a
+    family = s
   } = params;
   const style = PREFIX_TO_STYLE[family][styleOrPrefix];
+
+  // handles the exception of passing in only a family of 'duotone' with no style
+  if (family === t && !styleOrPrefix) {
+    return 'fad';
+  }
   const prefix = STYLE_TO_PREFIX[family][styleOrPrefix] || STYLE_TO_PREFIX[family][style];
   const defined = styleOrPrefix in namespace.styles ? styleOrPrefix : null;
   const result = prefix || defined || null;
   return result;
 }
-const PREFIXES_FOR_FAMILY = {
-  [a]: Object.keys(PREFIX_TO_LONG_STYLE[a]),
-  [r]: Object.keys(PREFIX_TO_LONG_STYLE[r]),
-  [o]: Object.keys(PREFIX_TO_LONG_STYLE[o])
-};
+function moveNonFaClassesToRest(classNames) {
+  let rest = [];
+  let iconName = null;
+  classNames.forEach(cls => {
+    const result = getIconName(config.cssPrefix, cls);
+    if (result) {
+      iconName = result;
+    } else if (cls) {
+      rest.push(cls);
+    }
+  });
+  return {
+    iconName,
+    rest
+  };
+}
+function sortedUniqueValues(arr) {
+  return arr.sort().filter((value, index, arr) => {
+    return arr.indexOf(value) === index;
+  });
+}
 function getCanonicalIcon(values) {
   let params = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
   const {
     skipLookups = false
   } = params;
-  const famProps = {
-    [a]: "".concat(config.cssPrefix, "-").concat(a),
-    [r]: "".concat(config.cssPrefix, "-").concat(r),
-    [o]: "".concat(config.cssPrefix, "-").concat(o)
-  };
   let givenPrefix = null;
-  let family = a;
-  const nonDuotoneFamilyIds = c.filter(familyId => familyId !== t);
-  nonDuotoneFamilyIds.forEach(familyId => {
-    if (values.includes(famProps[familyId]) || values.some(v$$1 => PREFIXES_FOR_FAMILY[familyId].includes(v$$1))) {
-      family = familyId;
-    }
+  const faCombinedClasses = Ia.concat(bt$1);
+  const faStyleOrFamilyClasses = sortedUniqueValues(values.filter(cls => faCombinedClasses.includes(cls)));
+  const nonStyleOrFamilyClasses = sortedUniqueValues(values.filter(cls => !Ia.includes(cls)));
+  const faStyles = faStyleOrFamilyClasses.filter(cls => {
+    givenPrefix = cls;
+    return !P.includes(cls);
   });
-  const canonical = values.reduce((acc, cls) => {
-    const iconName = getIconName(config.cssPrefix, cls);
-
-    if (styles[cls]) {
-      cls = LONG_STYLE[family].includes(cls) ? LONG_STYLE_TO_PREFIX[family][cls] : cls;
-      givenPrefix = cls;
-      acc.prefix = cls;
-    } else if (PREFIXES[family].indexOf(cls) > -1) {
-      givenPrefix = cls;
-      acc.prefix = getCanonicalPrefix(cls, {
-        family
-      });
-    } else if (iconName) {
-      acc.iconName = iconName;
-    } else if (cls !== config.replacementClass && !nonDuotoneFamilyIds.some(familyName => cls === famProps[familyName])) {
-      acc.rest.push(cls);
-    }
-
-    if (!skipLookups && acc.prefix && acc.iconName) {
-      const shim = givenPrefix === 'fa' ? byOldName(acc.iconName) : {};
-      const aliasIconName = byAlias(acc.prefix, acc.iconName);
-
-      if (shim.prefix) {
-        givenPrefix = null;
-      }
-
-      acc.iconName = shim.iconName || aliasIconName || acc.iconName;
-      acc.prefix = shim.prefix || acc.prefix;
-
-      if (acc.prefix === 'far' && !styles['far'] && styles['fas'] && !config.autoFetchSvg) {
-        // Allow a fallback from the regular style to solid if regular is not available
-        // but only if we aren't auto-fetching SVGs
-        acc.prefix = 'fas';
-      }
-    }
-
-    return acc;
-  }, emptyCanonicalIcon());
-
+  const [styleFromValues = null] = faStyles;
+  const family = getFamilyId(faStyleOrFamilyClasses);
+  const canonical = _objectSpread2(_objectSpread2({}, moveNonFaClassesToRest(nonStyleOrFamilyClasses)), {}, {
+    prefix: getCanonicalPrefix(styleFromValues, {
+      family
+    })
+  });
+  return _objectSpread2(_objectSpread2(_objectSpread2({}, canonical), getDefaultCanonicalPrefix({
+    values,
+    family,
+    styles,
+    config,
+    canonical,
+    givenPrefix
+  })), applyShimAndAlias(skipLookups, givenPrefix, canonical));
+}
+function applyShimAndAlias(skipLookups, givenPrefix, canonical) {
+  let {
+    prefix,
+    iconName
+  } = canonical;
+  if (skipLookups || !prefix || !iconName) {
+    return {
+      prefix,
+      iconName
+    };
+  }
+  const shim = givenPrefix === 'fa' ? byOldName(iconName) : {};
+  const aliasIconName = byAlias(prefix, iconName);
+  iconName = shim.iconName || aliasIconName || iconName;
+  prefix = shim.prefix || prefix;
+  if (prefix === 'far' && !styles['far'] && styles['fas'] && !config.autoFetchSvg) {
+    // Allow a fallback from the regular style to solid if regular is not available
+    // but only if we aren't auto-fetching SVGs
+    prefix = 'fas';
+  }
+  return {
+    prefix,
+    iconName
+  };
+}
+const newCanonicalFamilies = L.filter(familyId => {
+  return familyId !== s || familyId !== t;
+});
+const newCanonicalStyles = Object.keys(ga).filter(key => key !== s).map(key => Object.keys(ga[key])).flat();
+function getDefaultCanonicalPrefix(prefixOptions) {
+  const {
+    values,
+    family,
+    canonical,
+    givenPrefix = '',
+    styles = {},
+    config: config$$1 = {}
+  } = prefixOptions;
+  const isDuotoneFamily = family === t;
+  const valuesHasDuotone = values.includes('fa-duotone') || values.includes('fad');
+  const defaultFamilyIsDuotone = config$$1.familyDefault === 'duotone';
+  const canonicalPrefixIsDuotone = canonical.prefix === 'fad' || canonical.prefix === 'fa-duotone';
+  if (!isDuotoneFamily && (valuesHasDuotone || defaultFamilyIsDuotone || canonicalPrefixIsDuotone)) {
+    canonical.prefix = 'fad';
+  }
   if (values.includes('fa-brands') || values.includes('fab')) {
     canonical.prefix = 'fab';
   }
-
-  if (values.includes('fa-duotone') || values.includes('fad')) {
-    canonical.prefix = 'fad';
+  if (!canonical.prefix && newCanonicalFamilies.includes(family)) {
+    const validPrefix = Object.keys(styles).find(key => newCanonicalStyles.includes(key));
+    if (validPrefix || config$$1.autoFetchSvg) {
+      const defaultPrefix = pt.get(family).defaultShortPrefixId;
+      canonical.prefix = defaultPrefix;
+      canonical.iconName = byAlias(canonical.prefix, canonical.iconName) || canonical.iconName;
+    }
   }
-
-  if (!canonical.prefix && family === r && (styles['fass'] || config.autoFetchSvg)) {
-    canonical.prefix = 'fass';
-    canonical.iconName = byAlias(canonical.prefix, canonical.iconName) || canonical.iconName;
-  }
-
-  if (!canonical.prefix && family === o && (styles['fasds'] || config.autoFetchSvg)) {
-    canonical.prefix = 'fasds';
-    canonical.iconName = byAlias(canonical.prefix, canonical.iconName) || canonical.iconName;
-  }
-
   if (canonical.prefix === 'fa' || givenPrefix === 'fa') {
     // The fa prefix is not canonical. So if it has made it through until this point
     // we will shift it to the correct prefix.
     canonical.prefix = getDefaultUsablePrefix() || 'fas';
   }
-
   return canonical;
 }
 
@@ -1100,29 +1270,24 @@ class Library {
   constructor() {
     this.definitions = {};
   }
-
   add() {
     for (var _len = arguments.length, definitions = new Array(_len), _key = 0; _key < _len; _key++) {
       definitions[_key] = arguments[_key];
     }
-
     const additions = definitions.reduce(this._pullDefinitions, {});
     Object.keys(additions).forEach(key => {
-      this.definitions[key] = { ...(this.definitions[key] || {}),
-        ...additions[key]
-      };
-      defineIcons(key, additions[key]); // TODO can we stop doing this? We can't get the icons by 'fa-solid' any longer so this probably needs to change
+      this.definitions[key] = _objectSpread2(_objectSpread2({}, this.definitions[key] || {}), additions[key]);
+      defineIcons(key, additions[key]);
 
-      const longPrefix = PREFIX_TO_LONG_STYLE[a][key];
+      // TODO can we stop doing this? We can't get the icons by 'fa-solid' any longer so this probably needs to change
+      const longPrefix = PREFIX_TO_LONG_STYLE[s][key];
       if (longPrefix) defineIcons(longPrefix, additions[key]);
       build();
     });
   }
-
   reset() {
     this.definitions = {};
   }
-
   _pullDefinitions(additions, definition) {
     const normalized = definition.prefix && definition.iconName && definition.icon ? {
       0: definition
@@ -1135,7 +1300,6 @@ class Library {
       } = normalized[key];
       const aliases = icon[2];
       if (!additions[prefix]) additions[prefix] = {};
-
       if (aliases.length > 0) {
         aliases.forEach(alias => {
           if (typeof alias === 'string') {
@@ -1143,12 +1307,10 @@ class Library {
           }
         });
       }
-
       additions[prefix][iconName] = icon;
     });
     return additions;
   }
-
 }
 
 let _plugins = [];
@@ -1166,48 +1328,40 @@ function registerPlugins(nextPlugins, _ref) {
       delete providers[k];
     }
   });
-
   _plugins.forEach(plugin => {
     const mixout = plugin.mixout ? plugin.mixout() : {};
     Object.keys(mixout).forEach(tk => {
       if (typeof mixout[tk] === 'function') {
         obj[tk] = mixout[tk];
       }
-
       if (typeof mixout[tk] === 'object') {
         Object.keys(mixout[tk]).forEach(sk => {
           if (!obj[tk]) {
             obj[tk] = {};
           }
-
           obj[tk][sk] = mixout[tk][sk];
         });
       }
     });
-
     if (plugin.hooks) {
       const hooks = plugin.hooks();
       Object.keys(hooks).forEach(hook => {
         if (!_hooks[hook]) {
           _hooks[hook] = [];
         }
-
         _hooks[hook].push(hooks[hook]);
       });
     }
-
     if (plugin.provides) {
       plugin.provides(providers);
     }
   });
-
   return obj;
 }
 function chainHooks(hook, accumulator) {
   for (var _len = arguments.length, args = new Array(_len > 2 ? _len - 2 : 0), _key = 2; _key < _len; _key++) {
     args[_key - 2] = arguments[_key];
   }
-
   const hookFns = _hooks[hook] || [];
   hookFns.forEach(hookFn => {
     accumulator = hookFn.apply(null, [accumulator, ...args]); // eslint-disable-line no-useless-call
@@ -1218,7 +1372,6 @@ function callHooks(hook) {
   for (var _len2 = arguments.length, args = new Array(_len2 > 1 ? _len2 - 1 : 0), _key2 = 1; _key2 < _len2; _key2++) {
     args[_key2 - 1] = arguments[_key2];
   }
-
   const hookFns = _hooks[hook] || [];
   hookFns.forEach(hookFn => {
     hookFn.apply(null, args);
@@ -1235,7 +1388,6 @@ function findIconDefinition(iconLookup) {
   if (iconLookup.prefix === 'fa') {
     iconLookup.prefix = 'fas';
   }
-
   let {
     iconName
   } = iconLookup;
@@ -1253,7 +1405,6 @@ const noAuto = () => {
 const dom = {
   i2svg: function () {
     let params = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-
     if (IS_DOM) {
       callHooks('beforeI2svg', params);
       callProvided('pseudoElements2svg', params);
@@ -1267,11 +1418,9 @@ const dom = {
     const {
       autoReplaceSvgRoot
     } = params;
-
     if (config.autoReplaceSvg === false) {
       config.autoReplaceSvg = true;
     }
-
     config.observeMutations = true;
     domready(() => {
       autoReplace({
@@ -1286,14 +1435,12 @@ const parse = {
     if (icon === null) {
       return null;
     }
-
     if (typeof icon === 'object' && icon.prefix && icon.iconName) {
       return {
         prefix: icon.prefix,
         iconName: byAlias(icon.prefix, icon.iconName) || icon.iconName
       };
     }
-
     if (Array.isArray(icon) && icon.length === 2) {
       const iconName = icon[1].indexOf('fa-') === 0 ? icon[1].slice(3) : icon[1];
       const prefix = getCanonicalPrefix(icon[0]);
@@ -1302,7 +1449,6 @@ const parse = {
         iconName: byAlias(prefix, iconName) || iconName
       };
     }
-
     if (typeof icon === 'string' && (icon.indexOf("".concat(config.cssPrefix, "-")) > -1 || icon.match(ICON_SELECTION_SYNTAX_PATTERN))) {
       const canonicalIcon = getCanonicalIcon(icon.split(' '), {
         skipLookups: true
@@ -1312,7 +1458,6 @@ const parse = {
         iconName: byAlias(canonicalIcon.prefix, canonicalIcon.iconName) || canonicalIcon.iconName
       };
     }
-
     if (typeof icon === 'string') {
       const prefix = getDefaultUsablePrefix();
       return {
@@ -1331,7 +1476,6 @@ const api = {
   findIconDefinition,
   toHtml
 };
-
 const autoReplace = function () {
   let params = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
   const {
@@ -1371,7 +1515,6 @@ function asIcon (_ref) {
     styles,
     transform
   } = _ref;
-
   if (transformIsMeaningful(transform) && main.found && !mask.found) {
     const {
       width,
@@ -1381,11 +1524,10 @@ function asIcon (_ref) {
       x: width / height / 2,
       y: 0.5
     };
-    attributes['style'] = joinStyles({ ...styles,
+    attributes['style'] = joinStyles(_objectSpread2(_objectSpread2({}, styles), {}, {
       'transform-origin': "".concat(offset.x + transform.x / 16, "em ").concat(offset.y + transform.y / 16, "em")
-    });
+    }));
   }
-
   return [{
     tag: 'svg',
     attributes,
@@ -1409,9 +1551,9 @@ function asSymbol (_ref) {
     },
     children: [{
       tag: 'symbol',
-      attributes: { ...attributes,
+      attributes: _objectSpread2(_objectSpread2({}, attributes), {}, {
         id
-      },
+      }),
       children
     }]
   }];
@@ -1437,27 +1579,25 @@ function makeInlineSvgAbstract(params) {
     width,
     height
   } = mask.found ? mask : main;
-  const isUploadedIcon = prefix === 'fak';
-  const attrClass = [config.replacementClass, iconName ? "".concat(config.cssPrefix, "-").concat(iconName) : ''].filter(c => extra.classes.indexOf(c) === -1).filter(c => c !== '' || !!c).concat(extra.classes).join(' ');
+  const isUploadedIcon = Lt.includes(prefix);
+  const attrClass = [config.replacementClass, iconName ? "".concat(config.cssPrefix, "-").concat(iconName) : ''].filter(c$$1 => extra.classes.indexOf(c$$1) === -1).filter(c$$1 => c$$1 !== '' || !!c$$1).concat(extra.classes).join(' ');
   let content = {
     children: [],
-    attributes: { ...extra.attributes,
+    attributes: _objectSpread2(_objectSpread2({}, extra.attributes), {}, {
       'data-prefix': prefix,
       'data-icon': iconName,
       'class': attrClass,
       'role': extra.attributes.role || 'img',
       'xmlns': 'http://www.w3.org/2000/svg',
       'viewBox': "0 0 ".concat(width, " ").concat(height)
-    }
+    })
   };
   const uploadedIconWidthStyle = isUploadedIcon && !~extra.classes.indexOf('fa-fw') ? {
     width: "".concat(width / height * 16 * 0.0625, "em")
   } : {};
-
   if (watchable) {
     content.attributes[DATA_FA_I2SVG] = '';
   }
-
   if (title) {
     content.children.push({
       tag: 'title',
@@ -1468,8 +1608,7 @@ function makeInlineSvgAbstract(params) {
     });
     delete content.attributes.title;
   }
-
-  const args = { ...content,
+  const args = _objectSpread2(_objectSpread2({}, content), {}, {
     prefix,
     iconName,
     main,
@@ -1477,10 +1616,8 @@ function makeInlineSvgAbstract(params) {
     maskId,
     transform,
     symbol,
-    styles: { ...uploadedIconWidthStyle,
-      ...extra.styles
-    }
-  };
+    styles: _objectSpread2(_objectSpread2({}, uploadedIconWidthStyle), extra.styles)
+  });
   const {
     children,
     attributes
@@ -1493,7 +1630,6 @@ function makeInlineSvgAbstract(params) {
   };
   args.children = children;
   args.attributes = attributes;
-
   if (symbol) {
     return asSymbol(args);
   } else {
@@ -1510,20 +1646,15 @@ function makeLayersTextAbstract(params) {
     extra,
     watchable = false
   } = params;
-  const attributes = { ...extra.attributes,
-    ...(title ? {
-      'title': title
-    } : {}),
+  const attributes = _objectSpread2(_objectSpread2(_objectSpread2({}, extra.attributes), title ? {
+    'title': title
+  } : {}), {}, {
     'class': extra.classes.join(' ')
-  };
-
+  });
   if (watchable) {
     attributes[DATA_FA_I2SVG] = '';
   }
-
-  const styles = { ...extra.styles
-  };
-
+  const styles = _objectSpread2({}, extra.styles);
   if (transformIsMeaningful(transform)) {
     styles['transform'] = transformForCss({
       transform,
@@ -1533,20 +1664,16 @@ function makeLayersTextAbstract(params) {
     });
     styles['-webkit-transform'] = styles['transform'];
   }
-
   const styleString = joinStyles(styles);
-
   if (styleString.length > 0) {
     attributes['style'] = styleString;
   }
-
   const val = [];
   val.push({
     tag: 'span',
     attributes,
     children: [content]
   });
-
   if (title) {
     val.push({
       tag: 'span',
@@ -1556,7 +1683,6 @@ function makeLayersTextAbstract(params) {
       children: [title]
     });
   }
-
   return val;
 }
 function makeLayersCounterAbstract(params) {
@@ -1565,25 +1691,21 @@ function makeLayersCounterAbstract(params) {
     title,
     extra
   } = params;
-  const attributes = { ...extra.attributes,
-    ...(title ? {
-      'title': title
-    } : {}),
+  const attributes = _objectSpread2(_objectSpread2(_objectSpread2({}, extra.attributes), title ? {
+    'title': title
+  } : {}), {}, {
     'class': extra.classes.join(' ')
-  };
+  });
   const styleString = joinStyles(extra.styles);
-
   if (styleString.length > 0) {
     attributes['style'] = styleString;
   }
-
   const val = [];
   val.push({
     tag: 'span',
     attributes,
     children: [content]
   });
-
   if (title) {
     val.push({
       tag: 'span',
@@ -1593,7 +1715,6 @@ function makeLayersCounterAbstract(params) {
       children: [title]
     });
   }
-
   return val;
 }
 
@@ -1605,7 +1726,6 @@ function asFoundIcon(icon) {
   const height = icon[1];
   const [vectorData] = icon.slice(4);
   let element = null;
-
   if (Array.isArray(vectorData)) {
     element = {
       tag: 'g',
@@ -1637,7 +1757,6 @@ function asFoundIcon(icon) {
       }
     };
   }
-
   return {
     found: true,
     width,
@@ -1650,106 +1769,86 @@ const missingIconResolutionMixin = {
   width: 512,
   height: 512
 };
-
 function maybeNotifyMissing(iconName, prefix) {
   if (!PRODUCTION && !config.showMissingIcons && iconName) {
     console.error("Icon with name \"".concat(iconName, "\" and prefix \"").concat(prefix, "\" is missing."));
   }
 }
-
 function findIcon(iconName, prefix) {
   let givenPrefix = prefix;
-
   if (prefix === 'fa' && config.styleDefault !== null) {
     prefix = getDefaultUsablePrefix();
   }
-
   return new Promise((resolve, reject) => {
     if (givenPrefix === 'fa') {
       const shim = byOldName(iconName) || {};
       iconName = shim.iconName || iconName;
       prefix = shim.prefix || prefix;
     }
-
     if (iconName && prefix && styles$1[prefix] && styles$1[prefix][iconName]) {
       const icon = styles$1[prefix][iconName];
       return resolve(asFoundIcon(icon));
     }
-
     maybeNotifyMissing(iconName, prefix);
-    resolve({ ...missingIconResolutionMixin,
+    resolve(_objectSpread2(_objectSpread2({}, missingIconResolutionMixin), {}, {
       icon: config.showMissingIcons && iconName ? callProvided('missingIconAbstract') || {} : {}
-    });
+    }));
   });
 }
 
 const noop$1 = () => {};
-
 const p$2 = config.measurePerformance && PERFORMANCE && PERFORMANCE.mark && PERFORMANCE.measure ? PERFORMANCE : {
   mark: noop$1,
   measure: noop$1
 };
-const preamble = "FA \"6.6.0\"";
-
+const preamble = "FA \"6.7.2\"";
 const begin = name => {
   p$2.mark("".concat(preamble, " ").concat(name, " begins"));
   return () => end(name);
 };
-
 const end = name => {
   p$2.mark("".concat(preamble, " ").concat(name, " ends"));
   p$2.measure("".concat(preamble, " ").concat(name), "".concat(preamble, " ").concat(name, " begins"), "".concat(preamble, " ").concat(name, " ends"));
 };
-
 var perf = {
   begin,
   end
 };
 
 const noop$2 = () => {};
-
 function isWatched(node) {
   const i2svg = node.getAttribute ? node.getAttribute(DATA_FA_I2SVG) : null;
   return typeof i2svg === 'string';
 }
-
 function hasPrefixAndIcon(node) {
   const prefix = node.getAttribute ? node.getAttribute(DATA_PREFIX) : null;
   const icon = node.getAttribute ? node.getAttribute(DATA_ICON) : null;
   return prefix && icon;
 }
-
 function hasBeenReplaced(node) {
   return node && node.classList && node.classList.contains && node.classList.contains(config.replacementClass);
 }
-
 function getMutator() {
   if (config.autoReplaceSvg === true) {
     return mutators.replace;
   }
-
   const mutator = mutators[config.autoReplaceSvg];
   return mutator || mutators.replace;
 }
-
 function createElementNS(tag) {
   return DOCUMENT.createElementNS('http://www.w3.org/2000/svg', tag);
 }
-
 function createElement(tag) {
   return DOCUMENT.createElement(tag);
 }
-
 function convertSVG(abstractObj) {
   let params = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
   const {
     ceFn = abstractObj.tag === 'svg' ? createElementNS : createElement
   } = params;
-
   if (typeof abstractObj === 'string') {
     return DOCUMENT.createTextNode(abstractObj);
   }
-
   const tag = ceFn(abstractObj.tag);
   Object.keys(abstractObj.attributes || []).forEach(function (key) {
     tag.setAttribute(key, abstractObj.attributes[key]);
@@ -1762,26 +1861,20 @@ function convertSVG(abstractObj) {
   });
   return tag;
 }
-
 function nodeAsComment(node) {
   let comment = " ".concat(node.outerHTML, " ");
   /* BEGIN.ATTRIBUTION */
-
   comment = "".concat(comment, "Font Awesome fontawesome.com ");
   /* END.ATTRIBUTION */
-
   return comment;
 }
-
 const mutators = {
   replace: function (mutation) {
     const node = mutation[0];
-
     if (node.parentNode) {
       mutation[1].forEach(abstract => {
         node.parentNode.insertBefore(convertSVG(abstract), node);
       });
-
       if (node.getAttribute(DATA_FA_I2SVG) === null && config.keepOriginalSource) {
         let comment = DOCUMENT.createComment(nodeAsComment(node));
         node.parentNode.replaceChild(comment, node);
@@ -1792,16 +1885,15 @@ const mutators = {
   },
   nest: function (mutation) {
     const node = mutation[0];
-    const abstract = mutation[1]; // If we already have a replaced node we do not want to continue nesting within it.
-    // Short-circuit to the standard replacement
+    const abstract = mutation[1];
 
+    // If we already have a replaced node we do not want to continue nesting within it.
+    // Short-circuit to the standard replacement
     if (~classArray(node).indexOf(config.replacementClass)) {
       return mutators.replace(mutation);
     }
-
     const forSvg = new RegExp("".concat(config.cssPrefix, "-.*"));
     delete abstract[0].attributes.id;
-
     if (abstract[0].attributes.class) {
       const splitClasses = abstract[0].attributes.class.split(' ').reduce((acc, cls) => {
         if (cls === config.replacementClass || cls.match(forSvg)) {
@@ -1809,43 +1901,35 @@ const mutators = {
         } else {
           acc.toNode.push(cls);
         }
-
         return acc;
       }, {
         toNode: [],
         toSvg: []
       });
       abstract[0].attributes.class = splitClasses.toSvg.join(' ');
-
       if (splitClasses.toNode.length === 0) {
         node.removeAttribute('class');
       } else {
         node.setAttribute('class', splitClasses.toNode.join(' '));
       }
     }
-
     const newInnerHTML = abstract.map(a => toHtml(a)).join('\n');
     node.setAttribute(DATA_FA_I2SVG, '');
     node.innerHTML = newInnerHTML;
   }
 };
-
 function performOperationSync(op) {
   op();
 }
-
 function perform(mutations, callback) {
   const callbackFunction = typeof callback === 'function' ? callback : noop$2;
-
   if (mutations.length === 0) {
     callbackFunction();
   } else {
     let frame = performOperationSync;
-
     if (config.mutateApproach === MUTATION_APPROACH_ASYNC) {
       frame = WINDOW.requestAnimationFrame || performOperationSync;
     }
-
     frame(() => {
       const mutator = getMutator();
       const mark = perf.begin('mutate');
@@ -1862,23 +1946,21 @@ function disableObservation() {
 function enableObservation() {
   disabled = false;
 }
-let mo$1 = null;
+let mo = null;
 function observe(options) {
   if (!MUTATION_OBSERVER) {
     return;
   }
-
   if (!config.observeMutations) {
     return;
   }
-
   const {
     treeCallback = noop$2,
     nodeCallback = noop$2,
     pseudoElementsCallback = noop$2,
     observeMutationsRoot = DOCUMENT
   } = options;
-  mo$1 = new MUTATION_OBSERVER(objects => {
+  mo = new MUTATION_OBSERVER(objects => {
     if (disabled) return;
     const defaultPrefix = getDefaultUsablePrefix();
     toArray(objects).forEach(mutationRecord => {
@@ -1886,14 +1968,11 @@ function observe(options) {
         if (config.searchPseudoElements) {
           pseudoElementsCallback(mutationRecord.target);
         }
-
         treeCallback(mutationRecord.target);
       }
-
       if (mutationRecord.type === 'attributes' && mutationRecord.target.parentNode && config.searchPseudoElements) {
         pseudoElementsCallback(mutationRecord.target.parentNode);
       }
-
       if (mutationRecord.type === 'attributes' && isWatched(mutationRecord.target) && ~ATTRIBUTES_WATCHED_FOR_MUTATION.indexOf(mutationRecord.attributeName)) {
         if (mutationRecord.attributeName === 'class' && hasPrefixAndIcon(mutationRecord.target)) {
           const {
@@ -1909,7 +1988,7 @@ function observe(options) {
     });
   });
   if (!IS_DOM) return;
-  mo$1.observe(observeMutationsRoot, {
+  mo.observe(observeMutationsRoot, {
     childList: true,
     attributes: true,
     characterData: true,
@@ -1917,28 +1996,24 @@ function observe(options) {
   });
 }
 function disconnect() {
-  if (!mo$1) return;
-  mo$1.disconnect();
+  if (!mo) return;
+  mo.disconnect();
 }
 
 function styleParser (node) {
   const style = node.getAttribute('style');
   let val = [];
-
   if (style) {
     val = style.split(';').reduce((acc, style) => {
       const styles = style.split(':');
       const prop = styles[0];
       const value = styles.slice(1);
-
       if (prop && value.length > 0) {
         acc[prop] = value.join(':').trim();
       }
-
       return acc;
     }, {});
   }
-
   return val;
 }
 
@@ -1947,28 +2022,22 @@ function classParser (node) {
   const existingIconName = node.getAttribute('data-icon');
   const innerText = node.innerText !== undefined ? node.innerText.trim() : '';
   let val = getCanonicalIcon(classArray(node));
-
   if (!val.prefix) {
     val.prefix = getDefaultUsablePrefix();
   }
-
   if (existingPrefix && existingIconName) {
     val.prefix = existingPrefix;
     val.iconName = existingIconName;
   }
-
   if (val.iconName && val.prefix) {
     return val;
   }
-
   if (val.prefix && innerText.length > 0) {
     val.iconName = byLigature(val.prefix, node.innerText) || byUnicode(val.prefix, toHex(node.innerText));
   }
-
   if (!val.iconName && config.autoFetchSvg && node.firstChild && node.firstChild.nodeType === Node.TEXT_NODE) {
     val.iconName = node.firstChild.data;
   }
-
   return val;
 }
 
@@ -1977,12 +2046,10 @@ function attributesParser (node) {
     if (acc.name !== 'class' && acc.name !== 'style') {
       acc[attr.name] = attr.value;
     }
-
     return acc;
   }, {});
   const title = node.getAttribute('title');
   const titleId = node.getAttribute('data-fa-title-id');
-
   if (config.autoA11y) {
     if (title) {
       extraAttributes['aria-labelledby'] = "".concat(config.replacementClass, "-title-").concat(titleId || nextUniqueId());
@@ -1991,7 +2058,6 @@ function attributesParser (node) {
       extraAttributes['focusable'] = 'false';
     }
   }
-
   return extraAttributes;
 }
 
@@ -2028,7 +2094,7 @@ function parseMeta(node) {
   const extraAttributes = attributesParser(node);
   const pluginMeta = chainHooks('parseNodeAttributes', {}, node);
   let extraStyles = parser.styleParser ? styleParser(node) : [];
-  return {
+  return _objectSpread2({
     iconName,
     title: node.getAttribute('title'),
     titleId: node.getAttribute('data-fa-title-id'),
@@ -2045,76 +2111,56 @@ function parseMeta(node) {
       classes: extraClasses,
       styles: extraStyles,
       attributes: extraAttributes
-    },
-    ...pluginMeta
-  };
+    }
+  }, pluginMeta);
 }
 
 const {
   styles: styles$2
 } = namespace;
-
 function generateMutation(node) {
   const nodeMeta = config.autoReplaceSvg === 'nest' ? parseMeta(node, {
     styleParser: false
   }) : parseMeta(node);
-
   if (~nodeMeta.extra.classes.indexOf(LAYERS_TEXT_CLASSNAME)) {
     return callProvided('generateLayersText', node, nodeMeta);
   } else {
     return callProvided('generateSvgReplacementMutation', node, nodeMeta);
   }
 }
-
-let knownPrefixes = new Set();
-FAMILIES.map(family => {
-  knownPrefixes.add("fa-".concat(family));
-});
-Object.keys(PREFIX_TO_STYLE[a]).map(knownPrefixes.add.bind(knownPrefixes));
-Object.keys(PREFIX_TO_STYLE[r]).map(knownPrefixes.add.bind(knownPrefixes));
-Object.keys(PREFIX_TO_STYLE[o]).map(knownPrefixes.add.bind(knownPrefixes));
-knownPrefixes = [...knownPrefixes];
-
+function getKnownPrefixes() {
+  return [...Ft, ...Ia];
+}
 function onTree(root) {
   let callback = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
   if (!IS_DOM) return Promise.resolve();
   const htmlClassList = DOCUMENT.documentElement.classList;
-
   const hclAdd = suffix => htmlClassList.add("".concat(HTML_CLASS_I2SVG_BASE_CLASS, "-").concat(suffix));
-
   const hclRemove = suffix => htmlClassList.remove("".concat(HTML_CLASS_I2SVG_BASE_CLASS, "-").concat(suffix));
-
-  const prefixes = config.autoFetchSvg ? knownPrefixes : FAMILIES.map(f$$1 => "fa-".concat(f$$1)).concat(Object.keys(styles$2));
-
+  const prefixes = config.autoFetchSvg ? getKnownPrefixes() : P.concat(Object.keys(styles$2));
   if (!prefixes.includes('fa')) {
     prefixes.push('fa');
   }
-
   const prefixesDomQuery = [".".concat(LAYERS_TEXT_CLASSNAME, ":not([").concat(DATA_FA_I2SVG, "])")].concat(prefixes.map(p$$1 => ".".concat(p$$1, ":not([").concat(DATA_FA_I2SVG, "])"))).join(', ');
-
   if (prefixesDomQuery.length === 0) {
     return Promise.resolve();
   }
-
   let candidates = [];
-
   try {
     candidates = toArray(root.querySelectorAll(prefixesDomQuery));
-  } catch (e$$1) {// noop
+  } catch (e$$1) {
+    // noop
   }
-
   if (candidates.length > 0) {
     hclAdd('pending');
     hclRemove('complete');
   } else {
     return Promise.resolve();
   }
-
   const mark = perf.begin('onTree');
   const mutations = candidates.reduce((acc, node) => {
     try {
       const mutation = generateMutation(node);
-
       if (mutation) {
         acc.push(mutation);
       }
@@ -2125,7 +2171,6 @@ function onTree(root) {
         }
       }
     }
-
     return acc;
   }, []);
   return new Promise((resolve, reject) => {
@@ -2144,7 +2189,6 @@ function onTree(root) {
     });
   });
 }
-
 function onNode(node) {
   let callback = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
   generateMutation(node).then(mutation => {
@@ -2153,7 +2197,6 @@ function onNode(node) {
     }
   });
 }
-
 function resolveIcons(next) {
   return function (maybeIconDefinition) {
     let params = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
@@ -2161,17 +2204,14 @@ function resolveIcons(next) {
     let {
       mask
     } = params;
-
     if (mask) {
       mask = (mask || {}).icon ? mask : findIconDefinition(mask || {});
     }
-
-    return next(iconDefinition, { ...params,
+    return next(iconDefinition, _objectSpread2(_objectSpread2({}, params), {}, {
       mask
-    });
+    }));
   };
 }
-
 const render = function (iconDefinition) {
   let params = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
   const {
@@ -2191,15 +2231,13 @@ const render = function (iconDefinition) {
     iconName,
     icon
   } = iconDefinition;
-  return domVariants({
-    type: 'icon',
-    ...iconDefinition
-  }, () => {
+  return domVariants(_objectSpread2({
+    type: 'icon'
+  }, iconDefinition), () => {
     callHooks('beforeDOMElementCreation', {
       iconDefinition,
       params
     });
-
     if (config.autoA11y) {
       if (title) {
         attributes['aria-labelledby'] = "".concat(config.replacementClass, "-title-").concat(titleId || nextUniqueId());
@@ -2208,7 +2246,6 @@ const render = function (iconDefinition) {
         attributes['focusable'] = 'false';
       }
     }
-
     return makeInlineSvgAbstract({
       icons: {
         main: asFoundIcon(icon),
@@ -2221,9 +2258,7 @@ const render = function (iconDefinition) {
       },
       prefix,
       iconName,
-      transform: { ...meaninglessTransform,
-        ...transform
-      },
+      transform: _objectSpread2(_objectSpread2({}, meaninglessTransform), transform),
       symbol,
       title,
       maskId,
@@ -2242,7 +2277,6 @@ var ReplaceElements = {
       icon: resolveIcons(render)
     };
   },
-
   hooks() {
     return {
       mutationObserverCallbacks(accumulator) {
@@ -2250,10 +2284,8 @@ var ReplaceElements = {
         accumulator.nodeCallback = onNode;
         return accumulator;
       }
-
     };
   },
-
   provides(providers$$1) {
     providers$$1.i2svg = function (params) {
       const {
@@ -2262,7 +2294,6 @@ var ReplaceElements = {
       } = params;
       return onTree(node, callback);
     };
-
     providers$$1.generateSvgReplacementMutation = function (node, nodeMeta) {
       const {
         iconName,
@@ -2301,7 +2332,6 @@ var ReplaceElements = {
         }).catch(reject);
       });
     };
-
     providers$$1.generateAbstractIcon = function (_ref2) {
       let {
         children,
@@ -2311,13 +2341,10 @@ var ReplaceElements = {
         styles
       } = _ref2;
       const styleString = joinStyles(styles);
-
       if (styleString.length > 0) {
         attributes['style'] = styleString;
       }
-
       let nextChild;
-
       if (transformIsMeaningful(transform)) {
         nextChild = callProvided('generateAbstractTransformGrouping', {
           main,
@@ -2326,7 +2353,6 @@ var ReplaceElements = {
           iconWidth: main.width
         });
       }
-
       children.push(nextChild || main.icon);
       return {
         children,
@@ -2334,7 +2360,6 @@ var ReplaceElements = {
       };
     };
   }
-
 };
 
 var Layers = {
@@ -2367,10 +2392,8 @@ var Layers = {
           }];
         });
       }
-
     };
   }
-
 };
 
 var LayersCounter = {
@@ -2403,10 +2426,8 @@ var LayersCounter = {
           });
         });
       }
-
     };
   }
-
 };
 
 var LayersText = {
@@ -2431,9 +2452,7 @@ var LayersText = {
           });
           return makeLayersTextAbstract({
             content,
-            transform: { ...meaninglessTransform,
-              ...transform
-            },
+            transform: _objectSpread2(_objectSpread2({}, meaninglessTransform), transform),
             title,
             extra: {
               attributes,
@@ -2443,10 +2462,8 @@ var LayersText = {
           });
         });
       }
-
     };
   },
-
   provides(providers$$1) {
     providers$$1.generateLayersText = function (node, nodeMeta) {
       const {
@@ -2456,18 +2473,15 @@ var LayersText = {
       } = nodeMeta;
       let width = null;
       let height = null;
-
       if (IS_IE) {
         const computedFontSize = parseInt(getComputedStyle(node).fontSize, 10);
         const boundingClientRect = node.getBoundingClientRect();
         width = boundingClientRect.width / computedFontSize;
         height = boundingClientRect.height / computedFontSize;
       }
-
       if (config.autoA11y && !title) {
         extra.attributes['aria-hidden'] = 'true';
       }
-
       return Promise.resolve([node, makeLayersTextAbstract({
         content: node.innerHTML,
         width,
@@ -2479,21 +2493,16 @@ var LayersText = {
       })]);
     };
   }
-
 };
 
 const CLEAN_CONTENT_PATTERN = new RegExp('\u{22}', 'ug');
 const SECONDARY_UNICODE_RANGE = [1105920, 1112319];
-const _FONT_FAMILY_WEIGHT_TO_PREFIX = { ...{
-    FontAwesome: {
-      normal: 'fas',
-      400: 'fas'
-    }
-  },
-  ...eo,
-  ...ao,
-  ...mo
-};
+const _FONT_FAMILY_WEIGHT_TO_PREFIX = _objectSpread2(_objectSpread2(_objectSpread2(_objectSpread2({}, {
+  FontAwesome: {
+    normal: 'fas',
+    400: 'fas'
+  }
+}), lt), wa), Yt);
 const FONT_FAMILY_WEIGHT_TO_PREFIX = Object.keys(_FONT_FAMILY_WEIGHT_TO_PREFIX).reduce((acc, key) => {
   acc[key.toLowerCase()] = _FONT_FAMILY_WEIGHT_TO_PREFIX[key];
   return acc;
@@ -2519,7 +2528,6 @@ function getPrefix(fontFamily, fontWeight) {
   const fontWeightSanitized = isNaN(fontWeightInteger) ? 'normal' : fontWeightInteger;
   return (FONT_FAMILY_WEIGHT_TO_PREFIX[fontFamilySanitized] || {})[fontWeightSanitized] || FONT_FAMILY_WEIGHT_FALLBACK[fontFamilySanitized];
 }
-
 function replaceForPosition(node, position) {
   const pendingAttribute = "".concat(DATA_FA_PSEUDO_ELEMENT_PENDING).concat(position.replace(':', '-'));
   return new Promise((resolve, reject) => {
@@ -2527,15 +2535,13 @@ function replaceForPosition(node, position) {
       // This node is already being processed
       return resolve();
     }
-
     const children = toArray(node.children);
-    const alreadyProcessedPseudoElement = children.filter(c => c.getAttribute(DATA_FA_PSEUDO_ELEMENT) === position)[0];
+    const alreadyProcessedPseudoElement = children.filter(c$$1 => c$$1.getAttribute(DATA_FA_PSEUDO_ELEMENT) === position)[0];
     const styles = WINDOW.getComputedStyle(node, position);
     const fontFamily = styles.getPropertyValue('font-family');
     const fontFamilyMatch = fontFamily.match(FONT_FAMILY_PATTERN);
     const fontWeight = styles.getPropertyValue('font-weight');
     const content = styles.getPropertyValue('content');
-
     if (alreadyProcessedPseudoElement && !fontFamilyMatch) {
       // If we've already processed it but the current computed style does not result in a font-family,
       // that probably means that a class name that was previously present to make the icon has been
@@ -2552,33 +2558,29 @@ function replaceForPosition(node, position) {
       const isV4 = fontFamilyMatch[0].startsWith('FontAwesome');
       let iconName = byUnicode(prefix, hexValue);
       let iconIdentifier = iconName;
-
       if (isV4) {
         const iconName4 = byOldUnicode(hexValue);
-
         if (iconName4.iconName && iconName4.prefix) {
           iconName = iconName4.iconName;
           prefix = iconName4.prefix;
         }
-      } // Only convert the pseudo element in this ::before/::after position into an icon if we haven't
+      }
+
+      // Only convert the pseudo element in this ::before/::after position into an icon if we haven't
       // already done so with the same prefix and iconName
-
-
       if (iconName && !isSecondary && (!alreadyProcessedPseudoElement || alreadyProcessedPseudoElement.getAttribute(DATA_PREFIX) !== prefix || alreadyProcessedPseudoElement.getAttribute(DATA_ICON) !== iconIdentifier)) {
         node.setAttribute(pendingAttribute, iconIdentifier);
-
         if (alreadyProcessedPseudoElement) {
           // Delete the old one, since we're replacing it with a new one
           node.removeChild(alreadyProcessedPseudoElement);
         }
-
         const meta = blankMeta();
         const {
           extra
         } = meta;
         extra.attributes[DATA_FA_PSEUDO_ELEMENT] = position;
         findIcon(iconName, prefix).then(main => {
-          const abstract = makeInlineSvgAbstract({ ...meta,
+          const abstract = makeInlineSvgAbstract(_objectSpread2(_objectSpread2({}, meta), {}, {
             icons: {
               main,
               mask: emptyCanonicalIcon()
@@ -2587,16 +2589,14 @@ function replaceForPosition(node, position) {
             iconName: iconIdentifier,
             extra,
             watchable: true
-          });
+          }));
           const element = DOCUMENT.createElementNS('http://www.w3.org/2000/svg', 'svg');
-
           if (position === '::before') {
             node.insertBefore(element, node.firstChild);
           } else {
             node.appendChild(element);
           }
-
-          element.outerHTML = abstract.map(a => toHtml(a)).join('\n');
+          element.outerHTML = abstract.map(a$$1 => toHtml(a$$1)).join('\n');
           node.removeAttribute(pendingAttribute);
           resolve();
         }).catch(reject);
@@ -2608,15 +2608,12 @@ function replaceForPosition(node, position) {
     }
   });
 }
-
 function replace(node) {
   return Promise.all([replaceForPosition(node, '::before'), replaceForPosition(node, '::after')]);
 }
-
 function processable(node) {
   return node.parentNode !== document.head && !~TAGNAMES_TO_SKIP_FOR_PSEUDOELEMENTS.indexOf(node.tagName.toUpperCase()) && !node.getAttribute(DATA_FA_PSEUDO_ELEMENT) && (!node.parentNode || node.parentNode.tagName !== 'svg');
 }
-
 function searchPseudoElements(root) {
   if (!IS_DOM) return;
   return new Promise((resolve, reject) => {
@@ -2634,7 +2631,6 @@ function searchPseudoElements(root) {
     });
   });
 }
-
 var PseudoElements = {
   hooks() {
     return {
@@ -2642,22 +2638,18 @@ var PseudoElements = {
         accumulator.pseudoElementsCallback = searchPseudoElements;
         return accumulator;
       }
-
     };
   },
-
   provides(providers) {
     providers.pseudoElements2svg = function (params) {
       const {
         node = DOCUMENT
       } = params;
-
       if (config.searchPseudoElements) {
         searchPseudoElements(node);
       }
     };
   }
-
 };
 
 let _unwatched = false;
@@ -2669,26 +2661,21 @@ var MutationObserver$1 = {
           disableObservation();
           _unwatched = true;
         }
-
       }
     };
   },
-
   hooks() {
     return {
       bootstrap() {
         observe(chainHooks('mutationObserverCallbacks', {}));
       },
-
       noAuto() {
         disconnect();
       },
-
       watch(params) {
         const {
           observeMutationsRoot
         } = params;
-
         if (_unwatched) {
           enableObservation();
         } else {
@@ -2697,10 +2684,8 @@ var MutationObserver$1 = {
           }));
         }
       }
-
     };
   }
-
 };
 
 const parseTransformString = transformString => {
@@ -2716,53 +2701,41 @@ const parseTransformString = transformString => {
     const parts = n.toLowerCase().split('-');
     const first = parts[0];
     let rest = parts.slice(1).join('-');
-
     if (first && rest === 'h') {
       acc.flipX = true;
       return acc;
     }
-
     if (first && rest === 'v') {
       acc.flipY = true;
       return acc;
     }
-
     rest = parseFloat(rest);
-
     if (isNaN(rest)) {
       return acc;
     }
-
     switch (first) {
       case 'grow':
         acc.size = acc.size + rest;
         break;
-
       case 'shrink':
         acc.size = acc.size - rest;
         break;
-
       case 'left':
         acc.x = acc.x - rest;
         break;
-
       case 'right':
         acc.x = acc.x + rest;
         break;
-
       case 'up':
         acc.y = acc.y - rest;
         break;
-
       case 'down':
         acc.y = acc.y + rest;
         break;
-
       case 'rotate':
         acc.rotate = acc.rotate + rest;
         break;
     }
-
     return acc;
   }, transform);
 };
@@ -2776,22 +2749,17 @@ var PowerTransforms = {
       }
     };
   },
-
   hooks() {
     return {
       parseNodeAttributes(accumulator, node) {
         const transformString = node.getAttribute('data-fa-transform');
-
         if (transformString) {
           accumulator.transform = parseTransformString(transformString);
         }
-
         return accumulator;
       }
-
     };
   },
-
   provides(providers) {
     providers.generateAbstractTransformGrouping = function (_ref) {
       let {
@@ -2819,24 +2787,19 @@ var PowerTransforms = {
       };
       return {
         tag: 'g',
-        attributes: { ...operations.outer
-        },
+        attributes: _objectSpread2({}, operations.outer),
         children: [{
           tag: 'g',
-          attributes: { ...operations.inner
-          },
+          attributes: _objectSpread2({}, operations.inner),
           children: [{
             tag: main.icon.tag,
             children: main.icon.children,
-            attributes: { ...main.icon.attributes,
-              ...operations.path
-            }
+            attributes: _objectSpread2(_objectSpread2({}, main.icon.attributes), operations.path)
           }]
         }]
       };
     };
   }
-
 };
 
 const ALL_SPACE = {
@@ -2845,17 +2808,13 @@ const ALL_SPACE = {
   width: '100%',
   height: '100%'
 };
-
 function fillBlack(abstract) {
   let force = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : true;
-
   if (abstract.attributes && (abstract.attributes.fill || force)) {
     abstract.attributes.fill = 'black';
   }
-
   return abstract;
 }
-
 function deGroup(abstract) {
   if (abstract.tag === 'g') {
     return abstract.children;
@@ -2863,26 +2822,21 @@ function deGroup(abstract) {
     return [abstract];
   }
 }
-
 var Masks = {
   hooks() {
     return {
       parseNodeAttributes(accumulator, node) {
         const maskData = node.getAttribute('data-fa-mask');
         const mask = !maskData ? emptyCanonicalIcon() : getCanonicalIcon(maskData.split(' ').map(i => i.trim()));
-
         if (!mask.prefix) {
           mask.prefix = getDefaultUsablePrefix();
         }
-
         accumulator.mask = mask;
         accumulator.maskId = node.getAttribute('data-fa-mask-id');
         return accumulator;
       }
-
     };
   },
-
   provides(providers) {
     providers.generateAbstractMask = function (_ref) {
       let {
@@ -2908,40 +2862,35 @@ var Masks = {
       });
       const maskRect = {
         tag: 'rect',
-        attributes: { ...ALL_SPACE,
+        attributes: _objectSpread2(_objectSpread2({}, ALL_SPACE), {}, {
           fill: 'white'
-        }
+        })
       };
       const maskInnerGroupChildrenMixin = mainPath.children ? {
         children: mainPath.children.map(fillBlack)
       } : {};
       const maskInnerGroup = {
         tag: 'g',
-        attributes: { ...trans.inner
-        },
-        children: [fillBlack({
+        attributes: _objectSpread2({}, trans.inner),
+        children: [fillBlack(_objectSpread2({
           tag: mainPath.tag,
-          attributes: { ...mainPath.attributes,
-            ...trans.path
-          },
-          ...maskInnerGroupChildrenMixin
-        })]
+          attributes: _objectSpread2(_objectSpread2({}, mainPath.attributes), trans.path)
+        }, maskInnerGroupChildrenMixin))]
       };
       const maskOuterGroup = {
         tag: 'g',
-        attributes: { ...trans.outer
-        },
+        attributes: _objectSpread2({}, trans.outer),
         children: [maskInnerGroup]
       };
       const maskId = "mask-".concat(explicitMaskId || nextUniqueId());
       const clipId = "clip-".concat(explicitMaskId || nextUniqueId());
       const maskTag = {
         tag: 'mask',
-        attributes: { ...ALL_SPACE,
+        attributes: _objectSpread2(_objectSpread2({}, ALL_SPACE), {}, {
           id: maskId,
           maskUnits: 'userSpaceOnUse',
           maskContentUnits: 'userSpaceOnUse'
-        },
+        }),
         children: [maskRect, maskOuterGroup]
       };
       const defs = {
@@ -2956,12 +2905,11 @@ var Masks = {
       };
       children.push(defs, {
         tag: 'rect',
-        attributes: {
+        attributes: _objectSpread2({
           fill: 'currentColor',
           'clip-path': "url(#".concat(clipId, ")"),
-          mask: "url(#".concat(maskId, ")"),
-          ...ALL_SPACE
-        }
+          mask: "url(#".concat(maskId, ")")
+        }, ALL_SPACE)
       });
       return {
         children,
@@ -2969,17 +2917,14 @@ var Masks = {
       };
     };
   }
-
 };
 
 var MissingIconIndicator = {
   provides(providers) {
     let reduceMotion = false;
-
     if (WINDOW.matchMedia) {
       reduceMotion = WINDOW.matchMedia('(prefers-reduced-motion: reduce)').matches;
     }
-
     providers.missingIconAbstract = function () {
       const gChildren = [];
       const FILL = {
@@ -2989,74 +2934,71 @@ var MissingIconIndicator = {
         attributeType: 'XML',
         repeatCount: 'indefinite',
         dur: '2s'
-      }; // Ring
+      };
 
+      // Ring
       gChildren.push({
         tag: 'path',
-        attributes: { ...FILL,
+        attributes: _objectSpread2(_objectSpread2({}, FILL), {}, {
           d: 'M156.5,447.7l-12.6,29.5c-18.7-9.5-35.9-21.2-51.5-34.9l22.7-22.7C127.6,430.5,141.5,440,156.5,447.7z M40.6,272H8.5 c1.4,21.2,5.4,41.7,11.7,61.1L50,321.2C45.1,305.5,41.8,289,40.6,272z M40.6,240c1.4-18.8,5.2-37,11.1-54.1l-29.5-12.6 C14.7,194.3,10,216.7,8.5,240H40.6z M64.3,156.5c7.8-14.9,17.2-28.8,28.1-41.5L69.7,92.3c-13.7,15.6-25.5,32.8-34.9,51.5 L64.3,156.5z M397,419.6c-13.9,12-29.4,22.3-46.1,30.4l11.9,29.8c20.7-9.9,39.8-22.6,56.9-37.6L397,419.6z M115,92.4 c13.9-12,29.4-22.3,46.1-30.4l-11.9-29.8c-20.7,9.9-39.8,22.6-56.8,37.6L115,92.4z M447.7,355.5c-7.8,14.9-17.2,28.8-28.1,41.5 l22.7,22.7c13.7-15.6,25.5-32.9,34.9-51.5L447.7,355.5z M471.4,272c-1.4,18.8-5.2,37-11.1,54.1l29.5,12.6 c7.5-21.1,12.2-43.5,13.6-66.8H471.4z M321.2,462c-15.7,5-32.2,8.2-49.2,9.4v32.1c21.2-1.4,41.7-5.4,61.1-11.7L321.2,462z M240,471.4c-18.8-1.4-37-5.2-54.1-11.1l-12.6,29.5c21.1,7.5,43.5,12.2,66.8,13.6V471.4z M462,190.8c5,15.7,8.2,32.2,9.4,49.2h32.1 c-1.4-21.2-5.4-41.7-11.7-61.1L462,190.8z M92.4,397c-12-13.9-22.3-29.4-30.4-46.1l-29.8,11.9c9.9,20.7,22.6,39.8,37.6,56.9 L92.4,397z M272,40.6c18.8,1.4,36.9,5.2,54.1,11.1l12.6-29.5C317.7,14.7,295.3,10,272,8.5V40.6z M190.8,50 c15.7-5,32.2-8.2,49.2-9.4V8.5c-21.2,1.4-41.7,5.4-61.1,11.7L190.8,50z M442.3,92.3L419.6,115c12,13.9,22.3,29.4,30.5,46.1 l29.8-11.9C470,128.5,457.3,109.4,442.3,92.3z M397,92.4l22.7-22.7c-15.6-13.7-32.8-25.5-51.5-34.9l-12.6,29.5 C370.4,72.1,384.4,81.5,397,92.4z'
-        }
+        })
       });
-      const OPACITY_ANIMATE = { ...ANIMATION_BASE,
+      const OPACITY_ANIMATE = _objectSpread2(_objectSpread2({}, ANIMATION_BASE), {}, {
         attributeName: 'opacity'
-      };
+      });
       const dot = {
         tag: 'circle',
-        attributes: { ...FILL,
+        attributes: _objectSpread2(_objectSpread2({}, FILL), {}, {
           cx: '256',
           cy: '364',
           r: '28'
-        },
+        }),
         children: []
       };
-
       if (!reduceMotion) {
         dot.children.push({
           tag: 'animate',
-          attributes: { ...ANIMATION_BASE,
+          attributes: _objectSpread2(_objectSpread2({}, ANIMATION_BASE), {}, {
             attributeName: 'r',
             values: '28;14;28;28;14;28;'
-          }
+          })
         }, {
           tag: 'animate',
-          attributes: { ...OPACITY_ANIMATE,
+          attributes: _objectSpread2(_objectSpread2({}, OPACITY_ANIMATE), {}, {
             values: '1;0;1;1;0;1;'
-          }
+          })
         });
       }
-
       gChildren.push(dot);
       gChildren.push({
         tag: 'path',
-        attributes: { ...FILL,
+        attributes: _objectSpread2(_objectSpread2({}, FILL), {}, {
           opacity: '1',
           d: 'M263.7,312h-16c-6.6,0-12-5.4-12-12c0-71,77.4-63.9,77.4-107.8c0-20-17.8-40.2-57.4-40.2c-29.1,0-44.3,9.6-59.2,28.7 c-3.9,5-11.1,6-16.2,2.4l-13.1-9.2c-5.6-3.9-6.9-11.8-2.6-17.2c21.2-27.2,46.4-44.7,91.2-44.7c52.3,0,97.4,29.8,97.4,80.2 c0,67.6-77.4,63.5-77.4,107.8C275.7,306.6,270.3,312,263.7,312z'
-        },
+        }),
         children: reduceMotion ? [] : [{
           tag: 'animate',
-          attributes: { ...OPACITY_ANIMATE,
+          attributes: _objectSpread2(_objectSpread2({}, OPACITY_ANIMATE), {}, {
             values: '1;0;0;0;0;1;'
-          }
+          })
         }]
       });
-
       if (!reduceMotion) {
         // Exclamation
         gChildren.push({
           tag: 'path',
-          attributes: { ...FILL,
+          attributes: _objectSpread2(_objectSpread2({}, FILL), {}, {
             opacity: '0',
             d: 'M232.5,134.5l7,168c0.3,6.4,5.6,11.5,12,11.5h9c6.4,0,11.7-5.1,12-11.5l7-168c0.3-6.8-5.2-12.5-12-12.5h-23 C237.7,122,232.2,127.7,232.5,134.5z'
-          },
+          }),
           children: [{
             tag: 'animate',
-            attributes: { ...OPACITY_ANIMATE,
+            attributes: _objectSpread2(_objectSpread2({}, OPACITY_ANIMATE), {}, {
               values: '0;0;1;1;0;0;'
-            }
+            })
           }]
         });
       }
-
       return {
         tag: 'g',
         attributes: {
@@ -3066,7 +3008,6 @@ var MissingIconIndicator = {
       };
     };
   }
-
 };
 
 var SvgSymbols = {
@@ -3078,10 +3019,8 @@ var SvgSymbols = {
         accumulator['symbol'] = symbol;
         return accumulator;
       }
-
     };
   }
-
 };
 
 var plugins = [InjectCSS, ReplaceElements, Layers, LayersCounter, LayersText, PseudoElements, MutationObserver$1, PowerTransforms, Masks, MissingIconIndicator, SvgSymbols];
@@ -3211,6 +3150,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   faCreativeCommonsShare: () => (/* binding */ faCreativeCommonsShare),
 /* harmony export */   faCreativeCommonsZero: () => (/* binding */ faCreativeCommonsZero),
 /* harmony export */   faCriticalRole: () => (/* binding */ faCriticalRole),
+/* harmony export */   faCss: () => (/* binding */ faCss),
 /* harmony export */   faCss3: () => (/* binding */ faCss3),
 /* harmony export */   faCss3Alt: () => (/* binding */ faCss3Alt),
 /* harmony export */   faCuttlefish: () => (/* binding */ faCuttlefish),
@@ -3262,6 +3202,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   faFedex: () => (/* binding */ faFedex),
 /* harmony export */   faFedora: () => (/* binding */ faFedora),
 /* harmony export */   faFigma: () => (/* binding */ faFigma),
+/* harmony export */   faFilesPinwheel: () => (/* binding */ faFilesPinwheel),
 /* harmony export */   faFirefox: () => (/* binding */ faFirefox),
 /* harmony export */   faFirefoxBrowser: () => (/* binding */ faFirefoxBrowser),
 /* harmony export */   faFirstOrder: () => (/* binding */ faFirstOrder),
@@ -3505,6 +3446,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   faSpeakerDeck: () => (/* binding */ faSpeakerDeck),
 /* harmony export */   faSpotify: () => (/* binding */ faSpotify),
 /* harmony export */   faSquareBehance: () => (/* binding */ faSquareBehance),
+/* harmony export */   faSquareBluesky: () => (/* binding */ faSquareBluesky),
 /* harmony export */   faSquareDribbble: () => (/* binding */ faSquareDribbble),
 /* harmony export */   faSquareFacebook: () => (/* binding */ faSquareFacebook),
 /* harmony export */   faSquareFontAwesome: () => (/* binding */ faSquareFontAwesome),
@@ -3644,6 +3586,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   fab: () => (/* binding */ icons),
 /* harmony export */   prefix: () => (/* binding */ prefix)
 /* harmony export */ });
+/*!
+ * Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com
+ * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
+ * Copyright 2024 Fonticons, Inc.
+ */
 const prefix = "fab";
 const faMonero = {
   prefix: 'fab',
@@ -4213,6 +4160,11 @@ const faInstalod = {
   iconName: 'instalod',
   icon: [512, 512, [], "e081", "M153.384,480H387.113L502.554,275.765,204.229,333.211ZM504.726,240.078,387.113,32H155.669L360.23,267.9ZM124.386,48.809,7.274,256,123.236,461.154,225.627,165.561Z"]
 };
+const faFilesPinwheel = {
+  prefix: 'fab',
+  iconName: 'files-pinwheel',
+  icon: [512, 512, [], "e69f", "M253.2 246.4L136.9 130.2c-.6-.6-1-1.3-1.4-2s-.5-1.6-.5-2.4s.2-1.6 .5-2.4s.8-1.4 1.4-2L253.3 5.1c.9-.9 2-1.5 3.2-1.7s2.5-.1 3.6 .3s2.1 1.3 2.8 2.3s1.1 2.2 1.1 3.5L264 242c0 1.3-.3 2.5-1 3.6s-1.7 1.9-2.9 2.4s-2.5 .6-3.7 .3s-2.4-.9-3.2-1.9zm40.3-4.4l0-134.4c0-.8 .1-1.6 .5-2.4s.8-1.5 1.3-2.1s1.3-1.1 2-1.4s1.6-.5 2.4-.5l134.4 0c1.2 0 2.5 .4 3.5 1.1s1.8 1.7 2.3 2.8s.6 2.4 .3 3.6s-.9 2.3-1.7 3.2L304 246.4c-.9 .8-2 1.4-3.2 1.6s-2.4 .1-3.5-.4s-2.1-1.3-2.8-2.3s-1.1-2.2-1.1-3.4zm30.6 35c-1.2 0-2.5-.3-3.5-1s-1.9-1.6-2.4-2.8s-.6-2.4-.4-3.6s.8-2.3 1.7-3.2l84.2-84.2c.6-.6 1.3-1 2-1.4s1.6-.5 2.4-.5s1.6 .2 2.4 .5s1.4 .8 2 1.4l84.4 84.2c.9 .9 1.5 2 1.7 3.2s.1 2.5-.3 3.6s-1.3 2.1-2.3 2.8s-2.2 1.1-3.5 1.1l-168.5 0zM414.8 408l-95.3-95.2c-.9-.9-1.5-2-1.7-3.2s-.1-2.5 .4-3.7s1.3-2.1 2.4-2.8s2.3-1 3.5-1l95.2 0c1.7 0 3.2 .7 4.4 1.8s1.8 2.8 1.8 4.4l0 95.3c0 1.2-.4 2.5-1.1 3.5s-1.7 1.8-2.8 2.3s-2.4 .6-3.6 .3s-2.3-.9-3.2-1.7zM16.5 302.1l216.9 0c1.2 0 2.5 .4 3.5 1.1s1.8 1.7 2.3 2.8s.6 2.4 .3 3.6s-.8 2.3-1.7 3.2L129.4 421.2c-.6 .6-1.3 1-2 1.4s-1.6 .5-2.4 .5s-1.6-.2-2.4-.5s-1.4-.8-2-1.4L12 312.8c-.9-.9-1.5-2-1.7-3.2s-.1-2.5 .4-3.6s1.3-2.1 2.3-2.8s2.3-1 3.5-1zM264 465.3c0 .8-.2 1.6-.5 2.4s-.8 1.5-1.4 2s-1.3 1-2 1.4s-1.6 .5-2.4 .5l-128 0c-1.2 0-2.5-.4-3.5-1.1s-1.8-1.7-2.3-2.8s-.6-2.4-.3-3.6s.8-2.3 1.7-3.2l128-128c.9-.9 2-1.5 3.2-1.7s2.5-.1 3.6 .3s2.1 1.3 2.8 2.3s1.1 2.2 1.1 3.5l0 128zm40-132.5l82.8 82.7c.6 .6 1 1.3 1.4 2s.5 1.6 .5 2.4s-.2 1.6-.5 2.4s-.8 1.4-1.4 2L304 507c-.9 .9-2 1.5-3.2 1.7s-2.5 .1-3.6-.3s-2.1-1.3-2.8-2.3s-1.1-2.2-1.1-3.5l0-165.4c0-1.2 .4-2.5 1.1-3.5s1.7-1.8 2.8-2.3s2.4-.6 3.6-.3s2.3 .8 3.2 1.7zM78.7 122.4c0-1.2 .3-2.5 1-3.5s1.7-1.8 2.8-2.3s2.4-.6 3.6-.4s2.3 .8 3.2 1.7L237.8 266.4c.9 .9 1.5 2 1.7 3.2s.1 2.5-.3 3.6s-1.3 2.1-2.3 2.8s-2.2 1.1-3.5 1.1L85 277.1c-1.7 0-3.2-.7-4.4-1.8s-1.8-2.8-1.8-4.4l0-148.4z"]
+};
 const faExpeditedssl = {
   prefix: 'fab',
   iconName: 'expeditedssl',
@@ -4370,7 +4322,7 @@ const faMeta = {
 const faLaravel = {
   prefix: 'fab',
   iconName: 'laravel',
-  icon: [512, 512, [], "f3bd", "M504.4,115.83a5.72,5.72,0,0,0-.28-.68,8.52,8.52,0,0,0-.53-1.25,6,6,0,0,0-.54-.71,9.36,9.36,0,0,0-.72-.94c-.23-.22-.52-.4-.77-.6a8.84,8.84,0,0,0-.9-.68L404.4,55.55a8,8,0,0,0-8,0L300.12,111h0a8.07,8.07,0,0,0-.88.69,7.68,7.68,0,0,0-.78.6,8.23,8.23,0,0,0-.72.93c-.17.24-.39.45-.54.71a9.7,9.7,0,0,0-.52,1.25c-.08.23-.21.44-.28.68a8.08,8.08,0,0,0-.28,2.08V223.18l-80.22,46.19V63.44a7.8,7.8,0,0,0-.28-2.09c-.06-.24-.2-.45-.28-.68a8.35,8.35,0,0,0-.52-1.24c-.14-.26-.37-.47-.54-.72a9.36,9.36,0,0,0-.72-.94,9.46,9.46,0,0,0-.78-.6,9.8,9.8,0,0,0-.88-.68h0L115.61,1.07a8,8,0,0,0-8,0L11.34,56.49h0a6.52,6.52,0,0,0-.88.69,7.81,7.81,0,0,0-.79.6,8.15,8.15,0,0,0-.71.93c-.18.25-.4.46-.55.72a7.88,7.88,0,0,0-.51,1.24,6.46,6.46,0,0,0-.29.67,8.18,8.18,0,0,0-.28,2.1v329.7a8,8,0,0,0,4,6.95l192.5,110.84a8.83,8.83,0,0,0,1.33.54c.21.08.41.2.63.26a7.92,7.92,0,0,0,4.1,0c.2-.05.37-.16.55-.22a8.6,8.6,0,0,0,1.4-.58L404.4,400.09a8,8,0,0,0,4-6.95V287.88l92.24-53.11a8,8,0,0,0,4-7V117.92A8.63,8.63,0,0,0,504.4,115.83ZM111.6,17.28h0l80.19,46.15-80.2,46.18L31.41,63.44Zm88.25,60V278.6l-46.53,26.79-33.69,19.4V123.5l46.53-26.79Zm0,412.78L23.37,388.5V77.32L57.06,96.7l46.52,26.8V338.68a6.94,6.94,0,0,0,.12.9,8,8,0,0,0,.16,1.18h0a5.92,5.92,0,0,0,.38.9,6.38,6.38,0,0,0,.42,1v0a8.54,8.54,0,0,0,.6.78,7.62,7.62,0,0,0,.66.84l0,0c.23.22.52.38.77.58a8.93,8.93,0,0,0,.86.66l0,0,0,0,92.19,52.18Zm8-106.17-80.06-45.32,84.09-48.41,92.26-53.11,80.13,46.13-58.8,33.56Zm184.52,4.57L215.88,490.11V397.8L346.6,323.2l45.77-26.15Zm0-119.13L358.68,250l-46.53-26.79V131.79l33.69,19.4L392.37,178Zm8-105.28-80.2-46.17,80.2-46.16,80.18,46.15Zm8,105.28V178L455,151.19l33.68-19.4v91.39h0Z"]
+  icon: [512, 512, [], "f3bd", "M107.2 0c2.5 0 4.7 .8 6.7 2l94.3 54.1c2.7 1.5 4.5 3.5 5.4 5.9c.9 2.2 .9 4.3 .9 5.6l0 193.4 69.2-39.7 0-100.3c0-2.6 .6-5 2.2-7.2c1.5-2.1 3.5-3.6 5.7-4.8c0 0 0 0 0 0l94-54c1.6-.9 3.4-1.6 5.5-1.6s4 .7 5.6 1.6l95.8 55.1c2.3 1.3 3.9 3 4.9 5.3c.9 2.1 .9 4.2 .9 5.8l0 107.2c0 2-.2 4.3-1.4 6.4c-1.2 2.2-3 3.7-5.1 4.9l-.1 .1-88 50.5 0 100c0 2.3-.3 4.8-1.6 7c-1.3 2.2-3.3 3.7-5.3 4.9c0 0 0 0-.1 0L208.7 510c-2.2 1.2-4.5 2-7.1 2s-4.9-.9-7.1-2l-.1-.1L7.1 402l-.5-.3c-1.1-.7-2.6-1.7-3.8-2.9C.9 396.9 0 394.6 0 391.6L0 65.9c0-4.8 3-7.9 5.5-9.3L100.5 2c2-1.2 4.3-2 6.8-2zM38.1 67.1l69 39.9 69.2-39.9L107.1 27.4l-69 39.7zm353 93.2l69-39.7-69-39.7-69.1 39.7 69.1 39.7zM189.2 89L120 128.8l0 186.4 69.2-39.9 0-186.4zM94.5 128.9L25.2 89.1l0 294.2 164 94.2 0-79.4-87.3-49.3-.2-.1c-1.3-.8-3.2-1.9-4.6-3.7c-1.7-2.1-2.5-4.7-2.5-7.7l0-208.5zm214.7 92.4l69.3 39.6 0-78.5-69.3-39.9 0 78.8zm94.5 39.6L473 221.2l0-78.8-69.3 39.9 0 78.5zM201.6 376.1l163.8-93.2-69-39.9L133 337.1l68.6 38.9zm12.9 101.5l164-94.2 0-78.8-164 93.6 0 79.4z"]
 };
 const faHotjar = {
   prefix: 'fab',
@@ -4401,6 +4353,11 @@ const faHips = {
   prefix: 'fab',
   iconName: 'hips',
   icon: [640, 512, [], "f452", "M251.6 157.6c0-1.9-.9-2.8-2.8-2.8h-40.9c-1.6 0-2.7 1.4-2.7 2.8v201.8c0 1.4 1.1 2.8 2.7 2.8h40.9c1.9 0 2.8-.9 2.8-2.8zM156.5 168c-16.1-11.8-36.3-17.9-60.3-18-18.1-.1-34.6 3.7-49.8 11.4V80.2c0-1.8-.9-2.7-2.8-2.7H2.7c-1.8 0-2.7.9-2.7 2.7v279.2c0 1.9.9 2.8 2.7 2.8h41c1.9 0 2.8-.9 2.8-2.8V223.3c0-.8-2.8-27 45.8-27 48.5 0 45.8 26.1 45.8 27v122.6c0 9 7.3 16.3 16.4 16.3h27.3c1.8 0 2.7-.9 2.7-2.8V223.3c0-23.4-9.3-41.8-28-55.3zm478.4 110.1c-6.8-15.7-18.4-27-34.9-34.1l-57.6-25.3c-8.6-3.6-9.2-11.2-2.6-16.1 7.4-5.5 44.3-13.9 84 6.8 1.7 1 4-.3 4-2.4v-44.7c0-1.3-.6-2.1-1.9-2.6-17.7-6.6-36.1-9.9-55.1-9.9-26.5 0-45.3 5.8-58.5 15.4-.5.4-28.4 20-22.7 53.7 3.4 19.6 15.8 34.2 37.2 43.6l53.6 23.5c11.6 5.1 15.2 13.3 12.2 21.2-3.7 9.1-13.2 13.6-36.5 13.6-24.3 0-44.7-8.9-58.4-19.1-2.1-1.4-4.4.2-4.4 2.3v34.4c0 10.4 4.9 17.3 14.6 20.7 15.6 5.5 31.6 8.2 48.2 8.2 12.7 0 25.8-1.2 36.3-4.3.7-.3 36-8.9 45.6-45.8 3.5-13.5 2.4-26.5-3.1-39.1zM376.2 149.8c-31.7 0-104.2 20.1-104.2 103.5v183.5c0 .8.6 2.7 2.7 2.7h40.9c1.9 0 2.8-.9 2.8-2.7V348c16.5 12.7 35.8 19.1 57.7 19.1 60.5 0 108.7-48.5 108.7-108.7.1-60.3-48.2-108.6-108.6-108.6zm0 170.9c-17.2 0-31.9-6.1-44-18.2-12.2-12.2-18.2-26.8-18.2-44 0-34.5 27.6-62.2 62.2-62.2 34.5 0 62.2 27.6 62.2 62.2.1 34.3-27.3 62.2-62.2 62.2zM228.3 72.5c-15.9 0-28.8 12.9-28.9 28.9 0 15.6 12.7 28.9 28.9 28.9s28.9-13.1 28.9-28.9c0-16.2-13-28.9-28.9-28.9z"]
+};
+const faCss = {
+  prefix: 'fab',
+  iconName: 'css',
+  icon: [448, 512, [], "e6a2", "M376.3 32L0 32 0 408.3c0 19 7.6 37.2 21 50.7s31.7 21 50.7 21l304.6 0c19 0 37.2-7.6 50.7-21s21-31.7 21-50.7l0-304.6c0-19-7.6-37.2-21-50.7s-31.7-21-50.7-21zM332.4 431.4c-7.7-8.5-11.7-20.7-12-36.6l31.3 0c.2 14.1 5.1 21.1 14.8 21.1c4.9 0 8.4-1.6 10.5-4.7c2-3.1 3-8 3-14.8c0-5.4-1.3-9.9-4-13.4c-3.5-4.2-8.1-7.5-13.2-9.5L351.2 368c-10.3-4.9-17.8-10.8-22.5-17.6c-4.5-6.8-6.7-16.3-6.7-28.4c0-13.6 4-24.6 11.8-33.1c8.1-8.5 19.1-12.7 33.2-12.7c13.6 0 24.1 4.2 31.5 12.5c7.5 8.4 11.5 20.3 11.8 35.9l-30.1 0c.2-5.1-.9-10.2-3-14.8c-1.7-3.4-5-5.1-10-5.1c-8.8 0-13.2 5.2-13.2 15.7c0 5.3 1.1 9.4 3.2 12.6c3.1 3.5 7 6.2 11.4 7.8l11.1 4.9c11.5 5.3 19.7 11.7 24.8 19.4c5.1 7.7 7.6 18 7.6 31c0 15.5-4 27.4-12.3 35.7c-8.2 8.3-19.5 12.5-34.1 12.5s-25.6-4.2-33.4-12.7zm-101 0c-7.7-8.5-11.7-20.7-12-36.6l31.3 0c.2 14.1 5.1 21.1 14.8 21.1c4.9 0 8.4-1.6 10.4-4.7c2-3.1 3-8 3-14.8c0-5.4-1.3-9.9-3.9-13.4c-3.5-4.2-8.1-7.5-13.2-9.5L250.2 368c-10.3-4.9-17.8-10.8-22.5-17.6c-4.5-6.8-6.7-16.3-6.7-28.4c0-13.6 4-24.6 11.8-33.1c8.1-8.5 19.1-12.7 33.2-12.7c13.6 0 24.1 4.2 31.4 12.5c7.6 8.4 11.5 20.3 11.9 35.9l-30.1 0c.2-5.1-.9-10.2-3-14.8c-1.7-3.4-5-5.1-10-5.1c-8.8 0-13.2 5.2-13.2 15.7c0 5.3 1.1 9.4 3.2 12.6c3.1 3.5 7 6.2 11.4 7.8l11.1 4.9c11.5 5.3 19.7 11.7 24.8 19.4c5.1 7.7 7.6 18 7.6 31c0 15.5-4.1 27.4-12.3 35.7s-19.5 12.5-34.1 12.5s-25.6-4.2-33.4-12.7zm-105.6 1.1c-8.4-7.7-12.5-19.2-12.5-34.5l0-75.4c0-15.2 4.4-26.7 13.2-34.6c8.9-7.8 20.7-11.8 35.2-11.8c14.1 0 25.2 4 33.4 12c8.3 8 12.5 20 12.5 35.9l0 6-33.1 0 0-5.8c0-6.1-1.3-10.7-4-13.6c-1.1-1.5-2.6-2.7-4.3-3.5s-3.5-1.2-5.4-1.1c-5.4 0-9.2 1.8-11.4 5.6c-2.3 5.2-3.3 10.8-3 16.4l0 65.5c0 13.7 4.8 20.6 14.4 20.8c4.5 0 7.9-1.6 10.2-4.8c2.5-4.1 3.7-8.8 3.5-13.6l0-4.9 33.1 0 0 5.1c0 10.6-2.1 19.5-6.2 26.6c-4 6.9-9.9 12.5-17.1 16c-7.7 3.7-16.1 5.5-24.6 5.3c-14.2 0-25.5-3.9-33.8-11.6z"]
 };
 const faBehance = {
   prefix: 'fab',
@@ -4848,7 +4805,7 @@ const faVine = {
 const faSignalMessenger = {
   prefix: 'fab',
   iconName: 'signal-messenger',
-  icon: [512, 512, [], "e663", "M194.6 7.5l5.8 23.3C177.7 36.3 156 45.3 136 57.4L123.7 36.8c22-13.3 45.9-23.2 70.9-29.3zm122.9 0l-5.8 23.3C334.3 36.3 356 45.3 376 57.4l12.4-20.6c-22-13.3-46-23.2-71-29.3zM36.8 123.7c-13.3 22-23.2 45.9-29.3 70.9l23.3 5.8C36.3 177.7 45.3 156 57.4 136L36.8 123.7zM24 256c0-11.6 .9-23.3 2.6-34.8L2.9 217.6c-3.8 25.4-3.8 51.3 0 76.7l23.7-3.6C24.9 279.3 24 267.6 24 256zM388.3 475.2L376 454.6c-20 12.1-41.6 21-64.2 26.6l5.8 23.3c24.9-6.2 48.8-16 70.8-29.3zM488 256c0 11.6-.9 23.3-2.6 34.8l23.7 3.6c3.8-25.4 3.8-51.3 0-76.7l-23.7 3.6c1.7 11.5 2.6 23.1 2.6 34.8zm16.5 61.4l-23.3-5.8c-5.6 22.7-14.5 44.3-26.6 64.3l20.6 12.4c13.3-22 23.2-46 29.3-71zm-213.8 168c-23 3.5-46.5 3.5-69.5 0l-3.6 23.7c25.4 3.8 51.3 3.8 76.7 0l-3.6-23.7zm152-91.8c-13.8 18.7-30.4 35.3-49.2 49.1l14.2 19.3c20.7-15.2 39-33.4 54.2-54.1l-19.3-14.4zM393.6 69.2c18.8 13.8 35.3 30.4 49.2 49.2L462.1 104C446.9 83.4 428.6 65.1 408 49.9L393.6 69.2zM69.2 118.4c13.8-18.8 30.4-35.3 49.2-49.2L104 49.9C83.4 65.1 65.1 83.4 49.9 104l19.3 14.4zm406 5.3L454.6 136c12.1 20 21 41.6 26.6 64.2l23.3-5.8c-6.2-24.9-16-48.8-29.3-70.8zm-254-97.1c23-3.5 46.5-3.5 69.5 0l3.6-23.7C268.9-1 243.1-1 217.6 2.9l3.6 23.7zM81.6 468.4L32 480l11.6-49.6L20.2 425 8.6 474.5c-.9 4-.8 8.1 .3 12.1s3.2 7.5 6.1 10.4s6.5 5 10.4 6.1s8.1 1.2 12.1 .3L87 492l-5.4-23.6zM25.2 403.6L48.6 409l8-34.4c-11.7-19.6-20.4-40.8-25.8-63L7.5 317.4c5.2 21.2 13.2 41.7 23.6 60.8l-5.9 25.3zm112 52l-34.4 8 5.4 23.4 25.3-5.9c19.2 10.4 39.6 18.4 60.8 23.6l5.8-23.3c-22.1-5.5-43.3-14.3-62.8-26l-.2 .2zM256 48c-37.2 0-73.6 10-105.6 28.9s-58.4 46-76.3 78.6s-26.9 69.3-25.8 106.4s12 73.3 31.8 104.8L60 452l85.3-20c27.3 17.2 58.2 27.8 90.3 31s64.5-1.1 94.6-12.6s57.2-29.8 79-53.6s37.8-52.2 46.8-83.2s10.5-63.6 4.7-95.3s-19-61.6-38.4-87.4s-44.5-46.7-73.4-61S288.3 48 256 48z"]
+  icon: [512, 512, [], "e663", "M256 0c13.3 0 26.3 1 39.1 3l-3.7 23.7C279.9 24.9 268 24 256 24s-23.9 .9-35.4 2.7L216.9 3C229.7 1 242.7 0 256 0zm60.8 7.3l-5.7 23.3c23.4 5.7 45.4 14.9 65.4 27.1l12.5-20.5c-22.1-13.4-46.4-23.6-72.2-29.9zm90.5 42.2L393.1 68.8c19.1 14 36 30.9 50.1 50.1l19.4-14.2C447 83.6 428.4 65 407.3 49.5zm67.5 73.6l-20.5 12.5c12.2 20 21.4 42 27.1 65.4l23.3-5.7c-6.3-25.8-16.5-50.1-29.9-72.2zM509 216.9l-23.7 3.7c1.8 11.5 2.7 23.4 2.7 35.4s-.9 23.9-2.7 35.4l23.7 3.7c1.9-12.7 3-25.8 3-39.1s-1-26.3-3-39.1zM454.3 376.5c12.2-20 21.4-42 27.1-65.4l23.3 5.7c-6.3 25.8-16.5 50.1-29.9 72.2l-20.5-12.5zm-11.1 16.6l19.4 14.2c-15.5 21.1-34.1 39.8-55.2 55.2l-14.2-19.4c19.1-14 36-30.9 50.1-50.1zm-66.7 61.2l12.5 20.5c-22.1 13.4-46.4 23.6-72.2 29.9l-5.7-23.3c23.4-5.7 45.4-14.9 65.4-27.1zm-85.1 31l3.7 23.7c-12.7 1.9-25.8 3-39.1 3s-26.3-1-39.1-3l3.7-23.7c11.5 1.8 23.4 2.7 35.4 2.7s23.9-.9 35.4-2.7zm-90.5-3.9l-5.7 23.3c-19.4-4.7-37.9-11.6-55.3-20.5l-24.3 5.7-5.5-23.4 32.8-7.7 7.8 4c15.7 8 32.5 14.3 50.1 18.6zM90 471.3l5.5 23.4-41.6 9.7C26 510.8 1.2 486 7.6 458.2l9.7-41.6L40.7 422 31 463.7c-2.4 10.4 6.9 19.7 17.3 17.3L90 471.3zM45.5 401.8l-23.4-5.5L27.8 372C18.9 354.7 12 336.1 7.3 316.7l23.3-5.7c4.3 17.6 10.6 34.4 18.6 50.1l4 7.8-7.7 32.8zM26.7 291.4L3 295.1C1 282.3 0 269.3 0 256s1-26.3 3-39.1l23.7 3.7C24.9 232.1 24 244 24 256s.9 23.9 2.7 35.4zm3.9-90.5L7.3 195.2c6.3-25.8 16.5-50.1 29.9-72.2l20.5 12.5c-12.2 20-21.4 42-27.1 65.4zm38.3-82.1L49.5 104.7C65 83.6 83.6 65 104.7 49.5l14.2 19.4c-19.1 14-36 30.9-50.1 50.1zm66.7-61.2L123.1 37.2c22.1-13.4 46.4-23.6 72.2-29.9l5.7 23.3c-23.4 5.7-45.4 14.9-65.4 27.1zM464 256c0 114.9-93.1 208-208 208c-36.4 0-70.7-9.4-100.5-25.8c-2.9-1.6-6.2-2.1-9.4-1.4L53.6 458.4l21.6-92.5c.7-3.2 .2-6.5-1.4-9.4C57.4 326.7 48 292.4 48 256C48 141.1 141.1 48 256 48s208 93.1 208 208z"]
 };
 const faPaypal = {
   prefix: 'fab',
@@ -5076,6 +5033,11 @@ const faFly = {
   prefix: 'fab',
   iconName: 'fly',
   icon: [384, 512, [], "f417", "M197.8 427.8c12.9 11.7 33.7 33.3 33.2 50.7 0 .8-.1 1.6-.1 2.5-1.8 19.8-18.8 31.1-39.1 31-25-.1-39.9-16.8-38.7-35.8 1-16.2 20.5-36.7 32.4-47.6 2.3-2.1 2.7-2.7 5.6-3.6 3.4 0 3.9.3 6.7 2.8zM331.9 67.3c-16.3-25.7-38.6-40.6-63.3-52.1C243.1 4.5 214-.2 192 0c-44.1 0-71.2 13.2-81.1 17.3C57.3 45.2 26.5 87.2 28 158.6c7.1 82.2 97 176 155.8 233.8 1.7 1.6 4.5 4.5 6.2 5.1l3.3.1c2.1-.7 1.8-.5 3.5-2.1 52.3-49.2 140.7-145.8 155.9-215.7 7-39.2 3.1-72.5-20.8-112.5zM186.8 351.9c-28-51.1-65.2-130.7-69.3-189-3.4-47.5 11.4-131.2 69.3-136.7v325.7zM328.7 180c-16.4 56.8-77.3 128-118.9 170.3C237.6 298.4 275 217 277 158.4c1.6-45.9-9.8-105.8-48-131.4 88.8 18.3 115.5 98.1 99.7 153z"]
+};
+const faSquareBluesky = {
+  prefix: 'fab',
+  iconName: 'square-bluesky',
+  icon: [448, 512, [], "e6a3", "M64 32C28.7 32 0 60.7 0 96L0 416c0 35.3 28.7 64 64 64l320 0c35.3 0 64-28.7 64-64l0-320c0-35.3-28.7-64-64-64L64 32zM224 247.4c14.5-30 54-85.8 90.7-113.3c26.5-19.9 69.3-35.2 69.3 13.7c0 9.8-5.6 82.1-8.9 93.8c-11.4 40.8-53 51.2-90 44.9c64.7 11 81.2 47.5 45.6 84c-67.5 69.3-97-17.4-104.6-39.6c0 0 0 0 0 0l-.3-.9c-.9-2.6-1.4-4.1-1.8-4.1s-.9 1.5-1.8 4.1c-.1 .3-.2 .6-.3 .9c0 0 0 0 0 0c-7.6 22.2-37.1 108.8-104.6 39.6c-35.5-36.5-19.1-73 45.6-84c-37 6.3-78.6-4.1-90-44.9c-3.3-11.7-8.9-84-8.9-93.8c0-48.9 42.9-33.5 69.3-13.7c36.7 27.5 76.2 83.4 90.7 113.3z"]
 };
 const faAviato = {
   prefix: 'fab',
@@ -5610,7 +5572,7 @@ const faWaze = {
 const faBluesky = {
   prefix: 'fab',
   iconName: 'bluesky',
-  icon: [576, 512, [], "e671", "M407.8 294.7c-3.3-.4-6.7-.8-10-1.3c3.4 .4 6.7 .9 10 1.3zM288 227.1C261.9 176.4 190.9 81.9 124.9 35.3C61.6-9.4 37.5-1.7 21.6 5.5C3.3 13.8 0 41.9 0 58.4S9.1 194 15 213.9c19.5 65.7 89.1 87.9 153.2 80.7c3.3-.5 6.6-.9 10-1.4c-3.3 .5-6.6 1-10 1.4C74.3 308.6-9.1 342.8 100.3 464.5C220.6 589.1 265.1 437.8 288 361.1c22.9 76.7 49.2 222.5 185.6 103.4c102.4-103.4 28.1-156-65.8-169.9c-3.3-.4-6.7-.8-10-1.3c3.4 .4 6.7 .9 10 1.3c64.1 7.1 133.6-15.1 153.2-80.7C566.9 194 576 75 576 58.4s-3.3-44.7-21.6-52.9c-15.8-7.1-40-14.9-103.2 29.8C385.1 81.9 314.1 176.4 288 227.1z"]
+  icon: [512, 512, [], "e671", "M111.8 62.2C170.2 105.9 233 194.7 256 242.4c23-47.6 85.8-136.4 144.2-180.2c42.1-31.6 110.3-56 110.3 21.8c0 15.5-8.9 130.5-14.1 149.2C478.2 298 412 314.6 353.1 304.5c102.9 17.5 129.1 75.5 72.5 133.5c-107.4 110.2-154.3-27.6-166.3-62.9l0 0c-1.7-4.9-2.6-7.8-3.3-7.8s-1.6 3-3.3 7.8l0 0c-12 35.3-59 173.1-166.3 62.9c-56.5-58-30.4-116 72.5-133.5C100 314.6 33.8 298 15.7 233.1C10.4 214.4 1.5 99.4 1.5 83.9c0-77.8 68.2-53.4 110.3-21.8z"]
 };
 const faCcJcb = {
   prefix: 'fab',
@@ -6261,6 +6223,7 @@ var icons = {
   faDebian,
   faOpenid,
   faInstalod,
+  faFilesPinwheel,
   faExpeditedssl,
   faSellcast,
   faSquareTwitter,
@@ -6302,6 +6265,7 @@ var icons = {
   faStickerMule,
   faCreativeCommonsZero,
   faHips,
+  faCss,
   faBehance,
   faReddit,
   faDiscord,
@@ -6445,6 +6409,7 @@ var icons = {
   faSpotify,
   faOptinMonster,
   faFly,
+  faSquareBluesky,
   faAviato,
   faItunes,
   faCuttlefish,
@@ -6943,6 +6908,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   far: () => (/* binding */ icons),
 /* harmony export */   prefix: () => (/* binding */ prefix)
 /* harmony export */ });
+/*!
+ * Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com
+ * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
+ * Copyright 2024 Fonticons, Inc.
+ */
 const prefix = "far";
 const faTrashCan = {
   prefix: 'far',
@@ -7580,7 +7550,7 @@ const faCalendarPlus = {
 const faCircleLeft = {
   prefix: 'far',
   iconName: 'circle-left',
-  icon: [512, 512, [61840, "arrow-alt-circle-left"], "f359", "M48 256a208 208 0 1 1 416 0A208 208 0 1 1 48 256zm464 0A256 256 0 1 0 0 256a256 256 0 1 0 512 0zM256 128l-32 0L96 256 224 384l32 0 0-80 128 0 0-96-128 0 0-80z"]
+  icon: [512, 512, [61840, "arrow-alt-circle-left"], "f359", "M48 256a208 208 0 1 1 416 0A208 208 0 1 1 48 256zm464 0A256 256 0 1 0 0 256a256 256 0 1 0 512 0zM217.4 376.9c4.2 4.5 10.1 7.1 16.3 7.1c12.3 0 22.3-10 22.3-22.3l0-57.7 96 0c17.7 0 32-14.3 32-32l0-32c0-17.7-14.3-32-32-32l-96 0 0-57.7c0-12.3-10-22.3-22.3-22.3c-6.2 0-12.1 2.6-16.3 7.1L117.5 242.2c-3.5 3.8-5.5 8.7-5.5 13.8s2 10.1 5.5 13.8l99.9 107.1z"]
 };
 const faArrowAltCircleLeft = faCircleLeft;
 const faMoneyBill1 = {
@@ -7642,7 +7612,7 @@ const faLaughWink = faFaceLaughWink;
 const faCircleDown = {
   prefix: 'far',
   iconName: 'circle-down',
-  icon: [512, 512, [61466, "arrow-alt-circle-down"], "f358", "M256 464a208 208 0 1 1 0-416 208 208 0 1 1 0 416zM256 0a256 256 0 1 0 0 512A256 256 0 1 0 256 0zM128 256l0 32L256 416 384 288l0-32-80 0 0-128-96 0 0 128-80 0z"]
+  icon: [512, 512, [61466, "arrow-alt-circle-down"], "f358", "M256 464a208 208 0 1 1 0-416 208 208 0 1 1 0 416zM256 0a256 256 0 1 0 0 512A256 256 0 1 0 256 0zM376.9 294.6c4.5-4.2 7.1-10.1 7.1-16.3c0-12.3-10-22.3-22.3-22.3L304 256l0-96c0-17.7-14.3-32-32-32l-32 0c-17.7 0-32 14.3-32 32l0 96-57.7 0C138 256 128 266 128 278.3c0 6.2 2.6 12.1 7.1 16.3l107.1 99.9c3.8 3.5 8.7 5.5 13.8 5.5s10.1-2 13.8-5.5l107.1-99.9z"]
 };
 const faArrowAltCircleDown = faCircleDown;
 const faThumbsDown = {
@@ -8473,6 +8443,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   faChartArea: () => (/* binding */ faChartArea),
 /* harmony export */   faChartBar: () => (/* binding */ faChartBar),
 /* harmony export */   faChartColumn: () => (/* binding */ faChartColumn),
+/* harmony export */   faChartDiagram: () => (/* binding */ faChartDiagram),
 /* harmony export */   faChartGantt: () => (/* binding */ faChartGantt),
 /* harmony export */   faChartLine: () => (/* binding */ faChartLine),
 /* harmony export */   faChartPie: () => (/* binding */ faChartPie),
@@ -8588,6 +8559,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   faCommentDollar: () => (/* binding */ faCommentDollar),
 /* harmony export */   faCommentDots: () => (/* binding */ faCommentDots),
 /* harmony export */   faCommentMedical: () => (/* binding */ faCommentMedical),
+/* harmony export */   faCommentNodes: () => (/* binding */ faCommentNodes),
 /* harmony export */   faCommentSlash: () => (/* binding */ faCommentSlash),
 /* harmony export */   faCommentSms: () => (/* binding */ faCommentSms),
 /* harmony export */   faCommenting: () => (/* binding */ faCommenting),
@@ -8808,6 +8780,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   faFileEdit: () => (/* binding */ faFileEdit),
 /* harmony export */   faFileExcel: () => (/* binding */ faFileExcel),
 /* harmony export */   faFileExport: () => (/* binding */ faFileExport),
+/* harmony export */   faFileFragment: () => (/* binding */ faFileFragment),
+/* harmony export */   faFileHalfDashed: () => (/* binding */ faFileHalfDashed),
 /* harmony export */   faFileImage: () => (/* binding */ faFileImage),
 /* harmony export */   faFileImport: () => (/* binding */ faFileImport),
 /* harmony export */   faFileInvoice: () => (/* binding */ faFileInvoice),
@@ -9022,6 +8996,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   faHelicopterSymbol: () => (/* binding */ faHelicopterSymbol),
 /* harmony export */   faHelmetSafety: () => (/* binding */ faHelmetSafety),
 /* harmony export */   faHelmetUn: () => (/* binding */ faHelmetUn),
+/* harmony export */   faHexagonNodes: () => (/* binding */ faHexagonNodes),
+/* harmony export */   faHexagonNodesBolt: () => (/* binding */ faHexagonNodesBolt),
 /* harmony export */   faHighlighter: () => (/* binding */ faHighlighter),
 /* harmony export */   faHiking: () => (/* binding */ faHiking),
 /* harmony export */   faHillAvalanche: () => (/* binding */ faHillAvalanche),
@@ -9701,6 +9677,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   faSprout: () => (/* binding */ faSprout),
 /* harmony export */   faSquare: () => (/* binding */ faSquare),
 /* harmony export */   faSquareArrowUpRight: () => (/* binding */ faSquareArrowUpRight),
+/* harmony export */   faSquareBinary: () => (/* binding */ faSquareBinary),
 /* harmony export */   faSquareCaretDown: () => (/* binding */ faSquareCaretDown),
 /* harmony export */   faSquareCaretLeft: () => (/* binding */ faSquareCaretLeft),
 /* harmony export */   faSquareCaretRight: () => (/* binding */ faSquareCaretRight),
@@ -10088,6 +10065,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   fas: () => (/* binding */ icons),
 /* harmony export */   prefix: () => (/* binding */ prefix)
 /* harmony export */ });
+/*!
+ * Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com
+ * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
+ * Copyright 2024 Fonticons, Inc.
+ */
 const prefix = "fas";
 const fa0 = {
   prefix: 'fas',
@@ -12409,6 +12391,11 @@ const faMartiniGlass = {
   icon: [512, 512, [127864, "glass-martini-alt"], "f57b", "M32 0C19.1 0 7.4 7.8 2.4 19.8s-2.2 25.7 6.9 34.9L224 269.3 224 448l-64 0c-17.7 0-32 14.3-32 32s14.3 32 32 32l96 0 96 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-64 0 0-178.7L502.6 54.6c9.2-9.2 11.9-22.9 6.9-34.9S492.9 0 480 0L32 0zM173.3 128l-64-64 293.5 0-64 64-165.5 0z"]
 };
 const faGlassMartiniAlt = faMartiniGlass;
+const faSquareBinary = {
+  prefix: 'fas',
+  iconName: 'square-binary',
+  icon: [448, 512, [], "e69b", "M0 96C0 60.7 28.7 32 64 32l320 0c35.3 0 64 28.7 64 64l0 320c0 35.3-28.7 64-64 64L64 480c-35.3 0-64-28.7-64-64L0 96zm144 4c-24.3 0-44 19.7-44 44l0 48c0 24.3 19.7 44 44 44l32 0c24.3 0 44-19.7 44-44l0-48c0-24.3-19.7-44-44-44l-32 0zm-4 44c0-2.2 1.8-4 4-4l32 0c2.2 0 4 1.8 4 4l0 48c0 2.2-1.8 4-4 4l-32 0c-2.2 0-4-1.8-4-4l0-48zm140-44c-11 0-20 9-20 20c0 9.7 6.9 17.7 16 19.6l0 76.4c0 11 9 20 20 20s20-9 20-20l0-96c0-11-9-20-20-20l-16 0zM132 296c0 9.7 6.9 17.7 16 19.6l0 76.4c0 11 9 20 20 20s20-9 20-20l0-96c0-11-9-20-20-20l-16 0c-11 0-20 9-20 20zm96 24l0 48c0 24.3 19.7 44 44 44l32 0c24.3 0 44-19.7 44-44l0-48c0-24.3-19.7-44-44-44l-32 0c-24.3 0-44 19.7-44 44zm44-4l32 0c2.2 0 4 1.8 4 4l0 48c0 2.2-1.8 4-4 4l-32 0c-2.2 0-4-1.8-4-4l0-48c0-2.2 1.8-4 4-4z"]
+};
 const faRotateLeft = {
   prefix: 'fas',
   iconName: 'rotate-left',
@@ -14027,6 +14014,11 @@ const faHandHoldingDollar = {
   icon: [576, 512, ["hand-holding-usd"], "f4c0", "M312 24l0 10.5c6.4 1.2 12.6 2.7 18.2 4.2c12.8 3.4 20.4 16.6 17 29.4s-16.6 20.4-29.4 17c-10.9-2.9-21.1-4.9-30.2-5c-7.3-.1-14.7 1.7-19.4 4.4c-2.1 1.3-3.1 2.4-3.5 3c-.3 .5-.7 1.2-.7 2.8c0 .3 0 .5 0 .6c.2 .2 .9 1.2 3.3 2.6c5.8 3.5 14.4 6.2 27.4 10.1l.9 .3s0 0 0 0c11.1 3.3 25.9 7.8 37.9 15.3c13.7 8.6 26.1 22.9 26.4 44.9c.3 22.5-11.4 38.9-26.7 48.5c-6.7 4.1-13.9 7-21.3 8.8l0 10.6c0 13.3-10.7 24-24 24s-24-10.7-24-24l0-11.4c-9.5-2.3-18.2-5.3-25.6-7.8c-2.1-.7-4.1-1.4-6-2c-12.6-4.2-19.4-17.8-15.2-30.4s17.8-19.4 30.4-15.2c2.6 .9 5 1.7 7.3 2.5c13.6 4.6 23.4 7.9 33.9 8.3c8 .3 15.1-1.6 19.2-4.1c1.9-1.2 2.8-2.2 3.2-2.9c.4-.6 .9-1.8 .8-4.1l0-.2c0-1 0-2.1-4-4.6c-5.7-3.6-14.3-6.4-27.1-10.3l-1.9-.6c-10.8-3.2-25-7.5-36.4-14.4c-13.5-8.1-26.5-22-26.6-44.1c-.1-22.9 12.9-38.6 27.7-47.4c6.4-3.8 13.3-6.4 20.2-8.2L264 24c0-13.3 10.7-24 24-24s24 10.7 24 24zM568.2 336.3c13.1 17.8 9.3 42.8-8.5 55.9L433.1 485.5c-23.4 17.2-51.6 26.5-80.7 26.5L192 512 32 512c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l36.8 0 44.9-36c22.7-18.2 50.9-28 80-28l78.3 0 16 0 64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-64 0-16 0c-8.8 0-16 7.2-16 16s7.2 16 16 16l120.6 0 119.7-88.2c17.8-13.1 42.8-9.3 55.9 8.5zM193.6 384c0 0 0 0 0 0l-.9 0c.3 0 .6 0 .9 0z"]
 };
 const faHandHoldingUsd = faHandHoldingDollar;
+const faChartDiagram = {
+  prefix: 'fas',
+  iconName: 'chart-diagram',
+  icon: [512, 512, [], "e695", "M80 32C53.5 32 32 53.5 32 80s21.5 48 48 48l152 0 0 40-48 48-56 0c-48.6 0-88 39.4-88 88l0 48-8 0c-17.7 0-32 14.3-32 32l0 64c0 17.7 14.3 32 32 32l64 0c17.7 0 32-14.3 32-32l0-64c0-17.7-14.3-32-32-32l-8 0 0-48c0-22.1 17.9-40 40-40l56 0 48 48 0 40-8 0c-17.7 0-32 14.3-32 32l0 64c0 17.7 14.3 32 32 32l64 0c17.7 0 32-14.3 32-32l0-64c0-17.7-14.3-32-32-32l-8 0 0-40 48-48 56 0c22.1 0 40 17.9 40 40l0 48-8 0c-17.7 0-32 14.3-32 32l0 64c0 17.7 14.3 32 32 32l64 0c17.7 0 32-14.3 32-32l0-64c0-17.7-14.3-32-32-32l-8 0 0-48c0-48.6-39.4-88-88-88l-56 0-48-48 0-40 152 0c26.5 0 48-21.5 48-48s-21.5-48-48-48L80 32z"]
+};
 const faBacterium = {
   prefix: 'fas',
   iconName: 'bacterium',
@@ -14155,6 +14147,11 @@ const faMosquitoNet = {
   prefix: 'fas',
   iconName: 'mosquito-net',
   icon: [640, 512, [], "e52c", "M168.8 462.3c-7.9-4-11.1-13.6-7.2-21.5L192 380.2l0-44.2c0-4.2 1.7-8.3 4.7-11.3L256 265.4l0-23.1L139.2 344C87.8 395.3 0 358.9 0 286.3c0-41.1 30.6-75.8 71.4-80.9l159.9-23.9-49.6-41.3c-5.1-4.2-7-11.1-4.9-17.4l13.9-41.7-29-58.1c-4-7.9-.7-17.5 7.2-21.5s17.5-.7 21.5 7.2l32 64c1.9 3.8 2.2 8.2 .9 12.2l-12.5 37.6L256 160.5l0-22.6c0-14.9 10.1-27.3 23.8-31l0-43.3c0-4.5 3.7-8.2 8.2-8.2s8.2 3.7 8.2 8.2l0 43.3c13.7 3.6 23.8 16.1 23.8 31l0 22.6 45.4-37.8L352.8 85.1c-1.3-4-1-8.4 .9-12.2l32-64c4-7.9 13.6-11.1 21.5-7.2s11.1 13.6 7.2 21.5l-29 58.1 13.9 41.7c2.1 6.2 .1 13.1-4.9 17.4l-49.6 41.3 159.9 23.9c22.5 2.8 41.8 14.6 54.7 31.4c-2.7 2.6-5.2 5.4-7.3 8.6c-8.6-12.9-23.3-21.5-40-21.5s-31.4 8.5-40 21.5c-8.6-12.9-23.3-21.5-40-21.5c-21.7 0-40 14.3-45.9 34.1c-10.7 3.2-19.8 10.1-25.9 19.2l-40.2-35 0 23.1 32.4 32.4c-.3 2-.4 4.1-.4 6.2c0 16.7 8.5 31.4 21.5 40c-4 2.6-7.5 5.9-10.6 9.5L320 310.6l0 50c0 17.7-14.3 32-32 32s-32-14.3-32-32l0-50-32 32 0 41.4c0 2.5-.6 4.9-1.7 7.2l-32 64c-4 7.9-13.6 11.1-21.5 7.2zM512 256c8.8 0 16 7.2 16 16l0 16 48 0 0-16c0-8.8 7.2-16 16-16s16 7.2 16 16l0 16 16 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-16 0 0 48 16 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-16 0 0 48 16 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-16 0 0 16c0 8.8-7.2 16-16 16s-16-7.2-16-16l0-16-48 0 0 16c0 8.8-7.2 16-16 16s-16-7.2-16-16l0-16-48 0 0 16c0 8.8-7.2 16-16 16s-16-7.2-16-16l0-16-16 0c-8.8 0-16-7.2-16-16s7.2-16 16-16l16 0 0-48-16 0c-8.8 0-16-7.2-16-16s7.2-16 16-16l16 0 0-48-16 0c-8.8 0-16-7.2-16-16s7.2-16 16-16l16 0 0-16c0-8.8 7.2-16 16-16s16 7.2 16 16l0 16 48 0 0-16c0-8.8 7.2-16 16-16zm16 112l48 0 0-48-48 0 0 48zm0 80l48 0 0-48-48 0 0 48zM448 320l0 48 48 0 0-48-48 0zm0 80l0 48 48 0 0-48-48 0z"]
+};
+const faFileFragment = {
+  prefix: 'fas',
+  iconName: 'file-fragment',
+  icon: [384, 512, [], "e697", "M0 64C0 28.7 28.7 0 64 0L224 0l0 128c0 17.7 14.3 32 32 32l128 0 0 288c0 35.3-28.7 64-64 64l-128 0 0-128c0-35.3-28.7-64-64-64L0 320 0 64zm384 64l-128 0L256 0 384 128zM32 352l96 0c17.7 0 32 14.3 32 32l0 96c0 17.7-14.3 32-32 32l-96 0c-17.7 0-32-14.3-32-32l0-96c0-17.7 14.3-32 32-32z"]
 };
 const faBridgeWater = {
   prefix: 'fas',
@@ -14848,6 +14845,11 @@ const faGripVertical = {
   prefix: 'fas',
   iconName: 'grip-vertical',
   icon: [320, 512, [], "f58e", "M40 352l48 0c22.1 0 40 17.9 40 40l0 48c0 22.1-17.9 40-40 40l-48 0c-22.1 0-40-17.9-40-40l0-48c0-22.1 17.9-40 40-40zm192 0l48 0c22.1 0 40 17.9 40 40l0 48c0 22.1-17.9 40-40 40l-48 0c-22.1 0-40-17.9-40-40l0-48c0-22.1 17.9-40 40-40zM40 320c-22.1 0-40-17.9-40-40l0-48c0-22.1 17.9-40 40-40l48 0c22.1 0 40 17.9 40 40l0 48c0 22.1-17.9 40-40 40l-48 0zM232 192l48 0c22.1 0 40 17.9 40 40l0 48c0 22.1-17.9 40-40 40l-48 0c-22.1 0-40-17.9-40-40l0-48c0-22.1 17.9-40 40-40zM40 160c-22.1 0-40-17.9-40-40L0 72C0 49.9 17.9 32 40 32l48 0c22.1 0 40 17.9 40 40l0 48c0 22.1-17.9 40-40 40l-48 0zM232 32l48 0c22.1 0 40 17.9 40 40l0 48c0 22.1-17.9 40-40 40l-48 0c-22.1 0-40-17.9-40-40l0-48c0-22.1 17.9-40 40-40z"]
+};
+const faHexagonNodes = {
+  prefix: 'fas',
+  iconName: 'hexagon-nodes',
+  icon: [448, 512, [], "e699", "M248 106.6c18.9-9 32-28.3 32-50.6c0-30.9-25.1-56-56-56s-56 25.1-56 56c0 22.3 13.1 41.6 32 50.6l0 98.8c-2.8 1.3-5.5 2.9-8 4.7l-80.1-45.8c1.6-20.8-8.6-41.6-27.9-52.8C57.2 96 23 105.2 7.5 132S1.2 193 28 208.5c1.3 .8 2.6 1.5 4 2.1l0 90.8c-1.3 .6-2.7 1.3-4 2.1C1.2 319-8 353.2 7.5 380S57.2 416 84 400.5c19.3-11.1 29.4-32 27.8-52.8l50.5-28.9c-11.5-11.2-19.9-25.6-23.8-41.7L88 306.1c-2.6-1.8-5.2-3.3-8-4.7l0-90.8c2.8-1.3 5.5-2.9 8-4.7l80.1 45.8c-.1 1.4-.2 2.8-.2 4.3c0 22.3 13.1 41.6 32 50.6l0 98.8c-18.9 9-32 28.3-32 50.6c0 30.9 25.1 56 56 56s56-25.1 56-56c0-22.3-13.1-41.6-32-50.6l0-98.8c2.8-1.3 5.5-2.9 8-4.7l80.1 45.8c-1.6 20.8 8.6 41.6 27.8 52.8c26.8 15.5 61 6.3 76.5-20.5s6.3-61-20.5-76.5c-1.3-.8-2.7-1.5-4-2.1l0-90.8c1.4-.6 2.7-1.3 4-2.1c26.8-15.5 36-49.7 20.5-76.5S390.8 96 364 111.5c-19.3 11.1-29.4 32-27.8 52.8l-50.6 28.9c11.5 11.2 19.9 25.6 23.8 41.7L360 205.9c2.6 1.8 5.2 3.3 8 4.7l0 90.8c-2.8 1.3-5.5 2.9-8 4.6l-80.1-45.8c.1-1.4 .2-2.8 .2-4.3c0-22.3-13.1-41.6-32-50.6l0-98.8z"]
 };
 const faArrowTurnUp = {
   prefix: 'fas',
@@ -16298,6 +16300,11 @@ const faFolderMinus = {
   iconName: 'folder-minus',
   icon: [512, 512, [], "f65d", "M448 480L64 480c-35.3 0-64-28.7-64-64L0 96C0 60.7 28.7 32 64 32l128 0c20.1 0 39.1 9.5 51.2 25.6l19.2 25.6c6 8.1 15.5 12.8 25.6 12.8l160 0c35.3 0 64 28.7 64 64l0 256c0 35.3-28.7 64-64 64zM184 272c-13.3 0-24 10.7-24 24s10.7 24 24 24l144 0c13.3 0 24-10.7 24-24s-10.7-24-24-24l-144 0z"]
 };
+const faHexagonNodesBolt = {
+  prefix: 'fas',
+  iconName: 'hexagon-nodes-bolt',
+  icon: [576, 512, [], "e69a", "M248 106.6c18.9-9 32-28.3 32-50.6c0-30.9-25.1-56-56-56s-56 25.1-56 56c0 22.3 13.1 41.6 32 50.6l0 98.8c-2.8 1.3-5.5 2.9-8 4.7l-80.1-45.8c1.6-20.8-8.6-41.6-27.9-52.8C57.2 96 23 105.2 7.5 132S1.2 193 28 208.5c1.3 .8 2.6 1.5 4 2.1l0 90.8c-1.3 .6-2.7 1.3-4 2.1C1.2 319-8 353.2 7.5 380S57.2 416 84 400.5c19.3-11.1 29.4-32 27.8-52.8l50.5-28.9c-11.5-11.2-19.9-25.6-23.8-41.7L88 306.1c-2.6-1.8-5.2-3.3-8-4.7l0-90.8c2.8-1.3 5.5-2.9 8-4.7l80.1 45.8c-.1 1.4-.2 2.8-.2 4.3c0 22.3 13.1 41.6 32 50.6l0 98.8c-18.9 9-32 28.3-32 50.6c0 30.9 25.1 56 56 56c30.7 0 55.6-24.7 56-55.2c-7.5-12.9-13.5-26.8-17.6-41.5c-4.2-4-9.1-7.3-14.4-9.9l0-98.8c2.8-1.3 5.5-2.9 8-4.7l10.5 6c5.5-15.3 13.1-29.5 22.4-42.5l-9.1-5.2c.1-1.4 .2-2.8 .2-4.3c0-22.3-13.1-41.6-32-50.6l0-98.8zM440.5 132C425 105.2 390.8 96 364 111.5c-19.3 11.1-29.4 32-27.8 52.8l-50.6 28.9c11.5 11.2 19.9 25.6 23.8 41.7L360 205.9c.4 .3 .8 .6 1.3 .9c21.7-9.5 45.6-14.8 70.8-14.8c2 0 4 0 5.9 .1c12.1-17.3 13.8-40.6 2.6-60.1zM432 512a144 144 0 1 0 0-288 144 144 0 1 0 0 288zm47.9-225c4.3 3.7 5.4 9.9 2.6 14.9L452.4 356l35.6 0c5.2 0 9.8 3.3 11.4 8.2s-.1 10.3-4.2 13.4l-96 72c-4.5 3.4-10.8 3.2-15.1-.6s-5.4-9.9-2.6-14.9L411.6 380 376 380c-5.2 0-9.8-3.3-11.4-8.2s.1-10.3 4.2-13.4l96-72c4.5-3.4 10.8-3.2 15.1 .6z"]
+};
 const faStore = {
   prefix: 'fas',
   iconName: 'store',
@@ -16649,6 +16656,11 @@ const faArrowUpShortWide = {
   icon: [576, 512, ["sort-amount-up-alt"], "f885", "M151.6 42.4C145.5 35.8 137 32 128 32s-17.5 3.8-23.6 10.4l-88 96c-11.9 13-11.1 33.3 2 45.2s33.3 11.1 45.2-2L96 146.3 96 448c0 17.7 14.3 32 32 32s32-14.3 32-32l0-301.7 32.4 35.4c11.9 13 32.2 13.9 45.2 2s13.9-32.2 2-45.2l-88-96zM320 32c-17.7 0-32 14.3-32 32s14.3 32 32 32l32 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-32 0zm0 128c-17.7 0-32 14.3-32 32s14.3 32 32 32l96 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-96 0zm0 128c-17.7 0-32 14.3-32 32s14.3 32 32 32l160 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-160 0zm0 128c-17.7 0-32 14.3-32 32s14.3 32 32 32l224 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-224 0z"]
 };
 const faSortAmountUpAlt = faArrowUpShortWide;
+const faCommentNodes = {
+  prefix: 'fas',
+  iconName: 'comment-nodes',
+  icon: [640, 512, [], "e696", "M256 448c10.8 0 21.5-.5 32-1.6c.3-15.8 4.4-31.7 12.9-46.4c16-27.7 43.7-44.4 73.2-47.5l16.7-29.2c-4.3-11-6.7-22.9-6.7-35.4c0-53 43-96 96-96c9.1 0 17.8 1.3 26.2 3.6C481.1 102.1 378.6 32 256 32C114.6 32 0 125.1 0 240c0 45.1 17.7 86.8 47.7 120.9c-1.9 24.5-11.4 46.3-21.4 62.9c-5.5 9.2-11.1 16.6-15.2 21.6c-2.1 2.5-3.7 4.4-4.9 5.7c-.2 .3-.4 .5-.6 .7c-.3 .3-.5 .5-.6 .7l-.3 .3c0 0 0 0 0 0c0 0 0 0 0 0s0 0 0 0s0 0 0 0c-4.6 4.6-5.9 11.4-3.4 17.4c2.5 6 8.3 9.9 14.8 9.9c28.7 0 57.6-8.9 81.6-19.3c22.9-10 42.4-21.9 54.3-30.6c31.8 11.5 67 17.9 104.1 17.9zm72.6-32c-17.7 30.6-7.2 69.7 23.4 87.4s69.7 7.2 87.4-23.4c1.5-2.6 2.8-5.3 3.9-8l73.3 0c1.1 2.7 2.4 5.4 3.9 8c17.7 30.6 56.8 41.1 87.4 23.4s41.1-56.8 23.4-87.4c-13.4-23.2-39.1-34.8-64-31.4l-17.6-30.7c-11 11.7-25 20.6-40.6 25.6l16.5 28.9c-3.8 4.8-6.8 10-9 15.6l-73.4 0c-2.2-5.6-5.3-10.8-9-15.6l33-57.7c4.1 .8 8.4 1.3 12.8 1.3c35.3 0 64-28.7 64-64s-28.7-64-64-64s-64 28.7-64 64c0 13.4 4.1 25.8 11.2 36.1l-34.6 60.5c-25-3.4-50.6 8.3-64 31.4z"]
+};
 const faHouseMedical = {
   prefix: 'fas',
   iconName: 'house-medical',
@@ -17366,6 +17378,11 @@ const faBrush = {
   prefix: 'fas',
   iconName: 'brush',
   icon: [384, 512, [], "f55d", "M162.4 6c-1.5-3.6-5-6-8.9-6l-19 0c-3.9 0-7.5 2.4-8.9 6L104.9 57.7c-3.2 8-14.6 8-17.8 0L66.4 6c-1.5-3.6-5-6-8.9-6L48 0C21.5 0 0 21.5 0 48L0 224l0 22.4L0 256l9.6 0 364.8 0 9.6 0 0-9.6 0-22.4 0-176c0-26.5-21.5-48-48-48L230.5 0c-3.9 0-7.5 2.4-8.9 6L200.9 57.7c-3.2 8-14.6 8-17.8 0L162.4 6zM0 288l0 32c0 35.3 28.7 64 64 64l64 0 0 64c0 35.3 28.7 64 64 64s64-28.7 64-64l0-64 64 0c35.3 0 64-28.7 64-64l0-32L0 288zM192 432a16 16 0 1 1 0 32 16 16 0 1 1 0-32z"]
+};
+const faFileHalfDashed = {
+  prefix: 'fas',
+  iconName: 'file-half-dashed',
+  icon: [384, 512, [], "e698", "M64 0C28.7 0 0 28.7 0 64L0 320l384 0 0-160-128 0c-17.7 0-32-14.3-32-32L224 0 64 0zM256 0l0 128 128 0L256 0zM0 416l64 0 0-64L0 352l0 64zm288 32l-80 0 0 64 80 0 0-64zm-112 0l-80 0 0 64 80 0 0-64zM64 448L0 448c0 35.3 28.7 64 64 64l0-64zm256 0l0 64c35.3 0 64-28.7 64-64l-64 0zm64-32l0-64-64 0 0 64 64 0z"]
 };
 const faMask = {
   prefix: 'fas',
@@ -18217,6 +18234,7 @@ var icons = {
   faArrowUpFromGroundWater,
   faMartiniGlass,
   faGlassMartiniAlt,
+  faSquareBinary,
   faRotateLeft,
   faRotateBack,
   faRotateBackward,
@@ -18639,6 +18657,7 @@ var icons = {
   faGrinSquint,
   faHandHoldingDollar,
   faHandHoldingUsd,
+  faChartDiagram,
   faBacterium,
   faHandPointer,
   faDrumSteelpan,
@@ -18672,6 +18691,7 @@ var icons = {
   faShieldVirus,
   faDiceSix,
   faMosquitoNet,
+  faFileFragment,
   faBridgeWater,
   faPersonBooth,
   faTextWidth,
@@ -18853,6 +18873,7 @@ var icons = {
   faPlugCirclePlus,
   faPlaceOfWorship,
   faGripVertical,
+  faHexagonNodes,
   faArrowTurnUp,
   faLevelUp,
   faU,
@@ -19242,6 +19263,7 @@ var icons = {
   faPhotoFilm,
   faPhotoVideo,
   faFolderMinus,
+  faHexagonNodesBolt,
   faStore,
   faArrowTrendUp,
   faPlugCircleMinus,
@@ -19329,6 +19351,7 @@ var icons = {
   faShieldBlank,
   faArrowUpShortWide,
   faSortAmountUpAlt,
+  faCommentNodes,
   faHouseMedical,
   faGolfBallTee,
   faGolfBall,
@@ -19519,6 +19542,7 @@ var icons = {
   faMugSaucer,
   faCoffee,
   faBrush,
+  faFileHalfDashed,
   faMask,
   faMagnifyingGlassMinus,
   faSearchMinus,
@@ -19593,6 +19617,16 @@ var icons = {
 
 
 
+/***/ }),
+
+/***/ "jquery":
+/*!*************************!*\
+  !*** external "jQuery" ***!
+  \*************************/
+/***/ ((module) => {
+
+module.exports = jQuery;
+
 /***/ })
 
 /******/ 	});
@@ -19664,7 +19698,7 @@ var icons = {
 /******/ 	
 /************************************************************************/
 var __webpack_exports__ = {};
-// This entry need to be wrapped in an IIFE because it need to be isolated against other entry modules.
+// This entry needs to be wrapped in an IIFE because it needs to be isolated against other entry modules.
 (() => {
 var __webpack_exports__ = {};
 /*!************************!*\
@@ -19784,7 +19818,7 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(function () {
 });
 })();
 
-// This entry need to be wrapped in an IIFE because it need to be isolated against other entry modules.
+// This entry needs to be wrapped in an IIFE because it needs to be isolated against other entry modules.
 (() => {
 /*!*****************************!*\
   !*** ./src/scss/style.scss ***!
