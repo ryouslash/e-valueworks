@@ -1,5 +1,9 @@
 <?php get_header(); ?>
 
+<div id="app">
+  {{ message }}
+</div>
+
 <main class="l-content">
   <div class="p-top-mainVisual">
     <div class="p-top-mainVisual__bg"></div>
