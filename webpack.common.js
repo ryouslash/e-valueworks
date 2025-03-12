@@ -9,6 +9,7 @@ module.exports = {
     top: "./src/js/top.js",
     work: "./src/js/work.js",
     price: "./src/js/price.js",
+    post: "./src/js/post.js",
     admin: ["./src/js/admin.js", "./src/scss/admin.scss"],
     "editor-style": "./src/scss/editor-style.scss",
   },

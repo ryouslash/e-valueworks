@@ -1,9 +1,5 @@
 <?php get_header(); ?>
 
-<div id="app">
-  {{ message }}
-</div>
-
 <main class="l-content">
   <div class="p-top-mainVisual">
     <div class="p-top-mainVisual__bg"></div>
@@ -184,9 +180,10 @@
               <span class="u-inline-block">JavaScript</span>
             </p>
             <p>
-              ライブラリ・フレームワーク<br />
+              ライブラリ<br />
               <span class="u-inline-block">jQuery</span> /
               <span class="u-inline-block">React（学習中）</span> /
+              <span class="u-inline-block">Vue.js（学習中）</span> /
               <span class="u-inline-block">Laravel（学習中）</span>
             </p>
             <p>
@@ -196,6 +193,7 @@
             <p>
               タスクランナー・バンドルツール<br />
               <span class="u-inline-block">Webpack</span> /
+              <span class="u-inline-block">Vite</span> /
               <span class="u-inline-block">Gulp</span>
             </p>
           </dd>

@@ -49,6 +49,15 @@ function add_custom_scripts()
 
   elseif (is_page('price')):
     wp_enqueue_script('price', esc_url(get_template_directory_uri()) . '/dist/js/price.js', array('main'), filemtime(get_template_directory() . '/dist/js/price.js'), true); // 料金ページ用スクリプト
+
+  elseif (is_singular('post') || is_home() || is_category() || is_tag()) :
+    wp_enqueue_script(
+      'post',
+      get_template_directory_uri() . '/dist/js/post.js',
+      array('main'),
+      filemtime(get_template_directory() . '/dist/js/post.js'),
+      true
+    );
   endif;
 }
 add_action('wp_enqueue_scripts', 'add_custom_scripts');
