@@ -1,3 +1,24 @@
+<script setup>
+import { ref } from "vue";
+import debounce from "@js/utils/debounce";
+
+const searchTerm = ref("");
+const posts = ref([]);
+
+const search = debounce(() => {
+  if (searchTerm.value.length < 3) {
+    posts.value = [];
+    return;
+  }
+
+  fetch(`https://e-valueworks.com/wp-json/wp/v2/posts?search=${searchTerm.value}`)
+    .then(response => response.json())
+    .then(data => {
+      posts.value = data;
+    });
+}, 500);
+</script>
+
 <template>
   <div>
     <input v-model="searchTerm" @input="search" type="text" placeholder="Search...">
@@ -8,41 +29,3 @@
     </div>
   </div>
 </template>
-
-<script>
-import { ref } from "vue";
-
-// 自作の debounce 関数
-function debounce(func, delay) {
-  let timer;
-  return function (...args) {
-    clearTimeout(timer);
-    timer = setTimeout(() => {
-      func.apply(this, args);
-    }, delay);
-  };
-}
-
-export default {
-  setup() {
-    const searchTerm = ref("");
-    const posts = ref([]);
-
-    // 自作 debounce を使って検索処理を遅延実行
-    const search = debounce(() => {
-      if (searchTerm.value.length < 3) {
-        posts.value = [];
-        return;
-      }
-
-      fetch(`https://e-valueworks.com/wp-json/wp/v2/posts?search=${searchTerm.value}`)
-        .then(response => response.json())
-        .then(data => {
-          posts.value = data;
-        });
-    }, 500);
-
-    return { searchTerm, posts, search };
-  }
-};
-</script>

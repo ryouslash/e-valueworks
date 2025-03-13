@@ -122,12 +122,19 @@ module.exports = {
           reuseExistingChunk: true,
           name: "vendors", // vendor.js として出力
         },
+        utility: {
+          test: /[\\/]src[\\/]js[\\/]/,
+          priority: -5,
+          reuseExistingChunk: true,
+          name: "utility",
+        },
       },
     },
   },
   resolve: {
     alias: {
       "@scss": path.resolve(__dirname, "src/scss"),
+      "@js": path.resolve(__dirname, "src/js"),
       "@img": path.resolve(__dirname, "src/img"),
       "@components": path.resolve(__dirname, "src/components"),
     },
