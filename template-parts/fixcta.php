@@ -4,14 +4,19 @@
     <div class="p-fixCta__right">
       <ul class="p-fixCta__naviItems">
         <li class="p-fixCta__naviItem p-fixCta__naviItem--price">
-          <a href="<?php echo esc_url(home_url('price')); ?>"><i class="fa-solid fa-sack-dollar"></i>ご利用料金</a>
+          <a href="<?php echo esc_url(home_url('price')); ?>"><i class="fa-solid fa-sack-dollar"></i>料金</a>
         </li>
         <li class="p-fixCta__naviItem p-fixCta__naviItem--form">
-          <a href="<?php echo esc_url(home_url('#contact')); ?>"><i class="fa-regular fa-envelope"></i>お見積もり相談</a>
+          <?php
+          if (is_front_page()): ?>
+            <a href="#contact"><i class="fa-regular fa-envelope"></i>メールで相談</a>
+          <?php else: ?>
+            <a href="<?php echo esc_url(home_url('#contact')); ?>"><i class="fa-regular fa-envelope"></i>メールで相談</a>
+          <?php endif ?>
         </li>
         <li class="p-fixCta__naviItem p-fixCta__naviItem--chatwork">
           <a href="https://www.chatwork.com/ryouslash" target="_blank"><img
-              src="/img/cw_logomark_color.svg" alt="Chatwork アイコン" width="150" height="150" loading="lazy" />Chatworkでご相談</a>
+              src="/img/cw_logomark_color.svg" alt="Chatwork アイコン" width="150" height="150" loading="lazy" />Chatworkで相談</a>
         </li>
       </ul>
       <div class="p-fixCta__close">
