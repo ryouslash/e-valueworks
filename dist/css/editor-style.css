@@ -1,5 +1,5 @@
 /*!***************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-2.use[3]!./src/scss/editor-style.scss ***!
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-4.use[3]!./src/scss/editor-style.scss ***!
   \***************************************************************************************************************************************************************************************/
 @charset "UTF-8";
 /*
@@ -2293,7 +2293,7 @@
 .p-contactForm__buttonInner::after {
   bottom: -0.6rem;
   right: -0.6rem;
-  border-width: 0 0rem 0.1rem 0;
+  border-width: 0 0.1rem 0.1rem 0;
 }
 .p-contactForm__buttonInner input[type=submit] {
   appearance: none;
@@ -3287,6 +3287,7 @@
   padding: 0.5em 0;
   border-bottom: 1px dotted #666666;
 }
+
 .is-style-point {
   background-color: #fffce6;
   padding: 2rem;

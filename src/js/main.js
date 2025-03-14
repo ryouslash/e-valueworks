@@ -1,6 +1,6 @@
 import $ from "jquery";
 import debounce from "@js/utils/debounce";
-import { config, dom, library } from "@fortawesome/fontawesome-svg-core";
+import { dom, library } from "@fortawesome/fontawesome-svg-core";
 import {
   faPenNib,
   faCode,

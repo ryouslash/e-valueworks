@@ -5,11 +5,10 @@ const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 
 module.exports = {
   entry: {
-    main: ["./src/js/main.js", "./src/scss/style.scss"],
+    main: ["/src/js/main.js", "./src/scss/style.scss"],
     top: "./src/js/top.js",
     work: "./src/js/work.js",
     price: "./src/js/price.js",
-    post: "./src/js/post.js",
     admin: ["./src/js/admin.js", "./src/scss/admin.scss"],
     "editor-style": "./src/scss/editor-style.scss",
   },
@@ -56,21 +55,46 @@ module.exports = {
         // SASS 用のローダー
         // 対象となる拡張子を指定
         test: /\.scss$/i,
-        // どのローダーを噛ませるのかを指定（下から実行されていく。）
-        use: [
-          // CSSを別ファイルに分けられるプラグイン
-          MiniCssExtractPlugin.loader,
-          // CSSファイルをJavaScriptでimportできるようにするローダー
-          "css-loader",
-          // ベンダープレフィックスが必要なものに自動的に付与
-          "postcss-loader",
-          // SASSからCSSへのコンパイルに使用
+        oneOf: [
           {
-            loader: "sass-loader",
-            options: {
-              api: "modern-compiler",
-              implementation: require("sass"),
-            },
+            // Vue コンポーネントの SCSS は `vue-style-loader` で `head` に埋め込む
+            resourceQuery: /vue/,
+            // どのローダーを噛ませるのかを指定（下から実行されていく。）
+            use: [
+              // `head` 内に埋め込む
+              "vue-style-loader",
+              // CSSファイルをJavaScriptでimportできるようにするローダー
+              "css-loader",
+              // ベンダープレフィックスが必要なものに自動的に付与
+              "postcss-loader",
+              // SASSからCSSへのコンパイルに使用
+              {
+                loader: "sass-loader",
+                options: {
+                  api: "modern-compiler",
+                  implementation: require("sass"),
+                },
+              },
+            ],
+          },
+          {
+            // どのローダーを噛ませるのかを指定（下から実行されていく。）
+            use: [
+              // CSSを別ファイルに分けられるプラグイン
+              MiniCssExtractPlugin.loader,
+              // CSSファイルをJavaScriptでimportできるようにするローダー
+              "css-loader",
+              // ベンダープレフィックスが必要なものに自動的に付与
+              "postcss-loader",
+              // SASSからCSSへのコンパイルに使用
+              {
+                loader: "sass-loader",
+                options: {
+                  api: "modern-compiler",
+                  implementation: require("sass"),
+                },
+              },
+            ],
           },
         ],
       },
