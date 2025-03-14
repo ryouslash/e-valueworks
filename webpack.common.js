@@ -68,6 +68,8 @@ module.exports = {
               // ベンダープレフィックスが必要なものに自動的に付与
               "postcss-loader",
               // SASSからCSSへのコンパイルに使用
+              // "sass-loader",
+              // 以下の書き方だとソースマップのファイル名は壊れる
               {
                 loader: "sass-loader",
                 options: {
@@ -87,6 +89,8 @@ module.exports = {
               // ベンダープレフィックスが必要なものに自動的に付与
               "postcss-loader",
               // SASSからCSSへのコンパイルに使用
+              // "sass-loader",
+              // 以下の書き方だとソースマップのファイル名は壊れる
               {
                 loader: "sass-loader",
                 options: {
