@@ -6,16 +6,23 @@ import PageOther from "@components/PageOther.vue";
 import PageTotal from "@components/PageTotal.vue";
 
 // モーダルの表示状態
-const showModal = ref(false);
+const showModal = ref(true);
+
+const buttonText = computed(() =>
+  showModal.value
+    ? "見積もりシミュレーターを閉じる"
+    : "見積もりシミュレーターを開く"
+);
 
 // 現在のページ番号
 const currentPage = ref(1);
 
 // 各ページのデータ
 const topPage = ref({
-  header: 1,
-  footer: 1,
-  sections: 3,
+  header: 0,
+  megaMenu: 0,
+  footer: 0,
+  sections: 0,
 });
 
 const subPage = ref({
@@ -27,9 +34,10 @@ const otherCosts = ref(0);
 // トップページの料金計算
 const topPagePrice = computed(() => {
   return (
-    topPage.value.header * 1000 +
-    topPage.value.footer * 1000 +
-    topPage.value.sections * 3000
+    topPage.value.header * 5000 +
+    topPage.value.megaMenu * 5000 +
+    topPage.value.footer * 5000 +
+    topPage.value.sections * 5000
   );
 });
 
@@ -60,63 +68,136 @@ const prevPage = () => {
 
 <template>
   <div class="simulator">
-    <p>ざっくりな費用感を掴みたい方は見積もりシミュレーターをご活用下さい。</p>
-    <button class="btn" @click="showModal = true">
-      見積もりシミュレーターを開く
-    </button>
+    <div class="simulator__btnBox">
+      <p>
+        <span class="u-inline-block">ざっくりな費用感を掴みたい方向けに</span>
+        <span class="u-inline-block"
+          >見積もりシミュレーターを用意しています。</span
+        >
+      </p>
+      <button @click="showModal = !showModal">
+        {{ buttonText }} <i class="fa-solid fa-calculator"></i>
+      </button>
+    </div>
 
-    <div v-if="showModal" class="modal-overlay">
-      <div class="modal-content">
-        <h2>料金シミュレーター</h2>
+    <div v-if="showModal" class="simulator__inner">
+      <h2>見積もりシミュレーター</h2>
 
-        <!-- ページコンポーネントの切り替え -->
-        <PageTopPage
-          v-if="currentPage === 1"
-          v-model="topPage"
-          :price="topPagePrice"
-        />
-        <PageSubPage
-          v-if="currentPage === 2"
-          v-model="subPage"
-          :price="subPagePrice"
-        />
-        <PageOther v-if="currentPage === 3" v-model="otherCosts" />
-        <PageTotal v-if="currentPage === 4" :total="totalPrice" />
+      <!-- ページコンポーネントの切り替え -->
+      <PageTopPage
+        v-if="currentPage === 1"
+        v-model="topPage"
+        :price="topPagePrice"
+      />
+      <PageSubPage
+        v-if="currentPage === 2"
+        v-model="subPage"
+        :price="subPagePrice"
+      />
+      <PageOther v-if="currentPage === 3" v-model="otherCosts" />
+      <PageTotal v-if="currentPage === 4" :total="totalPrice" />
 
-        <div class="buttons">
-          <button @click="prevPage" v-if="currentPage > 1">戻る</button>
-          <button @click="nextPage" v-if="currentPage < 4">次へ</button>
-          <button @click="showModal = false">閉じる</button>
-        </div>
+      <div class="simulator__btns">
+        <button @click="prevPage" v-if="currentPage > 1">戻る</button>
+        <button @click="nextPage" v-if="currentPage < 4">次へ</button>
+        <button @click="currentPage = 1" v-if="currentPage === 4">
+          最初からやり直す
+        </button>
       </div>
     </div>
   </div>
 </template>
 
+<style lang="scss">
+@use "@scss/foundation/variables.scss" as *;
+
+.simulator {
+  &__inner {
+    h3 {
+      margin-bottom: 1.5rem;
+      font-size: $fontM;
+    }
+  }
+}
+</style>
+
 <style scoped lang="scss">
+@use "@scss/foundation/variables.scss" as *;
+
 .simulator {
   margin-bottom: 8rem;
 
-  &:hover {
-    margin-top: 10rem;
+  &__btnBox {
+    position: relative;
+    z-index: 1;
+    padding: 6rem;
+    border: 0.2rem solid #f6f3c1;
+    background-image: url("@img/male-teacher.png");
+    background-size: auto 80%;
+    background-position: right 3rem bottom 0;
+    background-repeat: no-repeat;
+    text-align: center;
+    background-color: #fffef1;
+
+    > p {
+      margin-bottom: 3rem;
+      font-weight: bold;
+    }
+
+    > button {
+      position: relative;
+      top: 0;
+      right: 0;
+      padding: 1.5rem 4rem;
+      border: 0.1rem solid #f29949;
+      font-size: 2rem;
+      font-weight: bold;
+      color: #fff;
+      background-color: #f29949;
+      cursor: pointer;
+      appearance: none;
+      transition:
+        color 0.3s,
+        background-color 0.3s;
+
+      &:hover {
+        color: #f29949;
+        background-color: #ffffff;
+      }
+    }
   }
-}
 
-/* CSSは省略（元のコードをそのまま使用） */
-.btn {
-  padding: 1rem 2rem;
-  border: none;
-  border-radius: 2rem;
-  font-size: 2rem;
-  font-weight: bold;
-  color: #fff;
-  background-color: #f29949;
-  box-shadow: 0.3rem 0.5rem #b96921;
-  cursor: pointer;
-  appearance: none;
-}
+  &__inner {
+    padding: 3rem;
+    margin-top: 4rem;
+    background-color: #f4f4f4;
 
-.modal-overlay {
-  background-color: rgba(51, 51, 51, 0.6);
+    h2 {
+      font-size: clamp(2rem, 1.8rem + 0.625vw, 2.6rem);
+      font-weight: 700;
+      background-color: #98daec;
+      color: #ffffff;
+      padding: 1.5rem 1rem;
+      margin-bottom: 3rem;
+      text-align: center;
+      border-radius: 0.5rem;
+      text-shadow: 0.1rem 0.2rem 0.5rem rgba(112, 180, 199, 0.4980392157);
+    }
+  }
+
+  &__btns {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 4rem;
+
+    button {
+      padding: 0.5rem 1rem;
+      border: none;
+      background-color: #f29949;
+      color: #fff;
+      cursor: pointer;
+      appearance: none;
+    }
+  }
 }
 </style>

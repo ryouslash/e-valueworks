@@ -16,6 +16,7 @@ import {
   faChevronRight,
   faSackDollar,
   faMagnifyingGlass,
+  faCalculator,
 } from "@fortawesome/free-solid-svg-icons";
 import {
   faEnvelope,
@@ -52,7 +53,8 @@ $(function () {
     faChevronRight,
     faSackDollar,
     faHandPointRight,
-    faMagnifyingGlass
+    faMagnifyingGlass,
+    faCalculator
   );
 
   dom.i2svg();
