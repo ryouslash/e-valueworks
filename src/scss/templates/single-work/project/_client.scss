@@ -119,18 +119,4 @@
       left: -2rem;
     }
   }
-
-  &__siteImg {
-    opacity: 0;
-    transition:
-      opacity 0.5s,
-      transform 0.5s;
-    transform: translateY(2rem);
-    transition-delay: 0.5s;
-
-    &.is-show {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
 }

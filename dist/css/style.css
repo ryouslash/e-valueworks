@@ -3308,7 +3308,8 @@ body {
   text-align: center;
 }
 .p-price-maintenancePlan__tableRes {
-  overflow-x: scroll;
+  overflow-x: scroll !important;
+  overflow-y: hidden !important;
 }
 
 .p-about {
@@ -3819,16 +3820,6 @@ body {
   .p-single-work-client__tableBg {
     left: -2rem;
   }
-}
-.p-single-work-client__siteImg {
-  opacity: 0;
-  transition: opacity 0.5s, transform 0.5s;
-  transform: translateY(2rem);
-  transition-delay: 0.5s;
-}
-.p-single-work-client__siteImg.is-show {
-  opacity: 1;
-  transform: translateY(0);
 }
 
 .p-archive-work__items {

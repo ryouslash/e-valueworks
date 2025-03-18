@@ -63,6 +63,7 @@
   }
 
   &__tableRes {
-    overflow-x: scroll;
+    overflow-x: scroll !important;
+    overflow-y: hidden !important;
   }
 }

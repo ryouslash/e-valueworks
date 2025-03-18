@@ -7,7 +7,6 @@ module.exports = {
   entry: {
     main: ["/src/js/main.js", "./src/scss/style.scss"],
     top: "./src/js/top.js",
-    work: "./src/js/work.js",
     price: "./src/js/price.js",
     admin: ["./src/js/admin.js", "./src/scss/admin.scss"],
     "editor-style": "./src/scss/editor-style.scss",

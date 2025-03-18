@@ -4,6 +4,7 @@ import PageTopPage from "@components/PageTopPage.vue";
 import PageSubPage from "@components/PageSubPage.vue";
 import PageOther from "@components/PageOther.vue";
 import PageTotal from "@components/PageTotal.vue";
+import { height } from "@fortawesome/free-brands-svg-icons/fa42Group";
 
 // モーダルの表示状態
 const showModal = ref(true);
@@ -26,7 +27,12 @@ const topPage = ref({
 });
 
 const subPage = ref({
-  height: 1000,
+  height5000: 0,
+  height8000: 0,
+  height11000: 0,
+  height14000: 0,
+  height17000: 0,
+  height20000: 0,
 });
 
 const otherCosts = ref(0);
@@ -43,7 +49,14 @@ const topPagePrice = computed(() => {
 
 // 下層ページの料金計算
 const subPagePrice = computed(() => {
-  return subPage.value.height * 10;
+  return (
+    subPage.value.height5000 * 15000 +
+    subPage.value.height8000 * 20000 +
+    subPage.value.height11000 * 25000 +
+    subPage.value.height14000 * 30000 +
+    subPage.value.height17000 * 35000 +
+    subPage.value.height20000 * 40000
+  );
 });
 
 // 合計金額の計算
@@ -115,6 +128,47 @@ const prevPage = () => {
   &__inner {
     h3 {
       margin-bottom: 1.5rem;
+      font-size: $fontM;
+    }
+
+    .item {
+      display: flex;
+      margin-bottom: 0.5em;
+      padding-bottom: 0.5em;
+      border-bottom: 0.1rem dotted #333;
+
+      label {
+        width: 25%;
+        flex-shrink: 0;
+      }
+
+      input[type="checkbox"] {
+        width: 1.6rem;
+        height: 1.6rem;
+        border: 0.1rem solid red;
+        margin: 0;
+        vertical-align: middle;
+      }
+
+      input[type="number"] {
+        max-width: 10rem;
+        width: 100%;
+        padding-block: 0.1rem;
+        padding-inline: 0.2rem;
+      }
+
+      &__checkbox {
+        span {
+          margin-left: 1em;
+          font-size: 1.2rem;
+        }
+      }
+    }
+
+    .total {
+      margin-top: 6rem;
+      text-align: right;
+      font-weight: 700;
       font-size: $fontM;
     }
   }
@@ -193,6 +247,7 @@ const prevPage = () => {
     button {
       padding: 0.5rem 1rem;
       border: none;
+      font-size: 1.6rem;
       background-color: #f29949;
       color: #fff;
       cursor: pointer;

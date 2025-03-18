@@ -131,9 +131,9 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(function () {
   // タイピングの開始を1秒遅らせる
   setTimeout(function () {
     if (window.innerWidth <= 419) {
-      typing(".js-typing", "「早さ・正確さ・親身さ」\nが揃った\nコーディング代行事務所");
+      typing(".js-typing", "【高品質×低価格】\n技術で差をつける\nコーディング代行事務所");
     } else {
-      typing(".js-typing", "「早さ・正確さ・親身さ」が揃った\nコーディング代行事務所");
+      typing(".js-typing", "【高品質×低価格】技術で差をつける\nコーディング代行事務所");
     }
   }, 1000);
   var mainVisualText = document.querySelector(".p-top-mainVisual__text");
