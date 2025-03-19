@@ -180,10 +180,10 @@
               <span class="u-inline-block">JavaScript</span>
             </p>
             <p>
-              ライブラリ<br />
+              ライブラリ・フレームワーク<br />
               <span class="u-inline-block">jQuery</span> /
+              <span class="u-inline-block">Vue.js</span> /
               <span class="u-inline-block">React（学習中）</span> /
-              <span class="u-inline-block">Vue.js（学習中）</span> /
               <span class="u-inline-block">Laravel（学習中）</span>
             </p>
             <p>

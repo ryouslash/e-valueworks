@@ -1,10 +1,10 @@
 <script setup>
 import { ref, computed } from "vue";
-import PageTopPage from "@components/PageTopPage.vue";
-import PageSubPage from "@components/PageSubPage.vue";
-import PageOther from "@components/PageOther.vue";
-import PageTotal from "@components/PageTotal.vue";
-import { height } from "@fortawesome/free-brands-svg-icons/fa42Group";
+import TopPage from "@components/TopPage.vue";
+import SubPage from "@components/SubPage.vue";
+import WordPressImplement from "@components/WordPressImplement.vue";
+import OtherFunctions from "@components/OtherFunctions.vue";
+import TotalPrice from "@components/TotalPrice.vue";
 
 // モーダルの表示状態
 const showModal = ref(true);
@@ -35,13 +35,22 @@ const subPage = ref({
   height20000: 0,
 });
 
-const otherCosts = ref(0);
+const wordPressImplement = ref({
+  basic: 0,
+  customPost: 0,
+  visualEditor: 0,
+});
+
+const otherFunctions = ref({
+  jsAnimation: 0,
+  contactForm: 0,
+});
 
 // トップページの料金計算
 const topPagePrice = computed(() => {
   return (
     topPage.value.header * 5000 +
-    topPage.value.megaMenu * 5000 +
+    topPage.value.megaMenu * 3000 +
     topPage.value.footer * 5000 +
     topPage.value.sections * 5000
   );
@@ -59,14 +68,38 @@ const subPagePrice = computed(() => {
   );
 });
 
+// WordPress導入の料金計算
+const wordPressImplementPrice = computed(() => {
+  return (
+    wordPressImplement.value.basic * 20000 +
+    wordPressImplement.value.customPost * 10000 +
+    wordPressImplement.value.visualEditor * 3000
+  );
+});
+
+// その他の料金計算
+const otherFunctionsPrice = computed(() => {
+  return (
+    otherFunctions.value.jsAnimation *
+      (topPagePrice.value + subPagePrice.value) *
+      0.1 +
+    otherFunctions.value.contactForm * 5000
+  );
+});
+
 // 合計金額の計算
 const totalPrice = computed(() => {
-  return topPagePrice.value + subPagePrice.value + otherCosts.value;
+  return (
+    topPagePrice.value +
+    subPagePrice.value +
+    wordPressImplementPrice.value +
+    otherFunctionsPrice.value
+  );
 });
 
 // ページを進める
 const nextPage = () => {
-  if (currentPage.value < 4) {
+  if (currentPage.value < 5) {
     currentPage.value++;
   }
 };
@@ -76,6 +109,38 @@ const prevPage = () => {
   if (currentPage.value > 1) {
     currentPage.value--;
   }
+};
+
+const resetSimulator = () => {
+  // 各データを初期状態にリセット
+  topPage.value = {
+    header: 0,
+    megaMenu: 0,
+    footer: 0,
+    sections: 0,
+  };
+
+  subPage.value = {
+    height5000: 0,
+    height8000: 0,
+    height11000: 0,
+    height14000: 0,
+    height17000: 0,
+    height20000: 0,
+  };
+
+  wordPressImplement.value = {
+    basic: 0,
+    customPost: 0,
+    visualEditor: 0,
+  };
+
+  otherFunctions.value = {
+    jsAnimation: 0,
+    contactForm: 0,
+  };
+
+  currentPage.value = 1;
 };
 </script>
 
@@ -97,23 +162,40 @@ const prevPage = () => {
       <h2>見積もりシミュレーター</h2>
 
       <!-- ページコンポーネントの切り替え -->
-      <PageTopPage
+      <TopPage
         v-if="currentPage === 1"
         v-model="topPage"
         :price="topPagePrice"
       />
-      <PageSubPage
+      <SubPage
         v-if="currentPage === 2"
         v-model="subPage"
         :price="subPagePrice"
       />
-      <PageOther v-if="currentPage === 3" v-model="otherCosts" />
-      <PageTotal v-if="currentPage === 4" :total="totalPrice" />
+      <WordPressImplement
+        v-if="currentPage === 3"
+        v-model="wordPressImplement"
+        :price="wordPressImplementPrice"
+      />
+      <OtherFunctions
+        v-if="currentPage === 4"
+        v-model="otherFunctions"
+        :price="otherFunctionsPrice"
+      />
+      <TotalPrice
+        v-if="currentPage === 5"
+        :total="totalPrice"
+        :top-page-price="topPagePrice"
+        :sub-page="subPage"
+        :sub-page-price="subPagePrice"
+        :word-press-implement-price="wordPressImplementPrice"
+        :other-functions="otherFunctions"
+      />
 
       <div class="simulator__btns">
-        <button @click="prevPage" v-if="currentPage > 1">戻る</button>
-        <button @click="nextPage" v-if="currentPage < 4">次へ</button>
-        <button @click="currentPage = 1" v-if="currentPage === 4">
+        <button v-if="currentPage > 1" @click="prevPage">戻る</button>
+        <button v-if="currentPage < 5" @click="nextPage">次へ</button>
+        <button v-if="currentPage === 5" @click="resetSimulator">
           最初からやり直す
         </button>
       </div>
@@ -138,7 +220,7 @@ const prevPage = () => {
       border-bottom: 0.1rem dotted #333;
 
       label {
-        width: 25%;
+        width: 24rem;
         flex-shrink: 0;
       }
 
@@ -155,13 +237,6 @@ const prevPage = () => {
         width: 100%;
         padding-block: 0.1rem;
         padding-inline: 0.2rem;
-      }
-
-      &__checkbox {
-        span {
-          margin-left: 1em;
-          font-size: 1.2rem;
-        }
       }
     }
 
@@ -222,9 +297,33 @@ const prevPage = () => {
   }
 
   &__inner {
-    padding: 3rem;
+    position: relative;
+    z-index: 1;
+    padding: 6rem;
     margin-top: 4rem;
-    background-color: #f4f4f4;
+
+    &::before,
+    &::after {
+      position: absolute;
+      z-index: -1;
+      width: 10rem;
+      height: 100%;
+      border-top: 0.1rem solid $keyColor;
+      border-bottom: 0.1rem solid $keyColor;
+      content: "";
+    }
+
+    &::before {
+      top: 0;
+      left: 0;
+      border-left: 0.1rem solid $keyColor;
+    }
+
+    &::after {
+      bottom: 0;
+      right: 0;
+      border-right: 0.1rem solid $keyColor;
+    }
 
     h2 {
       font-size: clamp(2rem, 1.8rem + 0.625vw, 2.6rem);

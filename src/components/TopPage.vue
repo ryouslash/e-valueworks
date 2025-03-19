@@ -56,7 +56,6 @@ const footerValue = computed({
         :true-value="1"
         :false-value="0"
       />
-      <span>※ロゴだけなどシンプルなものはカウントなし</span>
     </div>
   </div>
 
@@ -94,7 +93,6 @@ const footerValue = computed({
         :true-value="1"
         :false-value="0"
       />
-      <span>※著作権表記だけなどシンプルなものはカウントなし</span>
     </div>
   </div>
   <p class="total">合計: {{ price }} 円</p>
