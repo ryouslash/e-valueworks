@@ -52,27 +52,29 @@ const emit = defineEmits(["update:modelValue"]);
     </div>
   </div>
 
-  <div class="item">
-    <label for="custom-post">カスタム投稿追加</label>
-    <input
-      id="custom-post"
-      v-model="customPostValue"
-      type="number"
-      min="0"
-      @input="customPostValue = Math.max(0, customPostValue)"
-    />
-  </div>
+  <template v-if="basicValue === 1">
+    <div class="item">
+      <label for="custom-post">カスタム投稿追加</label>
+      <input
+        id="custom-post"
+        v-model="customPostValue"
+        type="number"
+        min="0"
+        @input="customPostValue = Math.max(0, customPostValue)"
+      />
+    </div>
 
-  <div class="item">
-    <label for="visual-editor">固定ページビジュアル編集対応</label>
-    <input
-      id="visual-editor"
-      v-model="visualEditorValue"
-      type="number"
-      min="0"
-      @input="visualEditorValue = Math.max(0, visualEditorValue)"
-    />
-  </div>
+    <div class="item">
+      <label for="visual-editor">固定ページビジュアル編集対応</label>
+      <input
+        id="visual-editor"
+        v-model="visualEditorValue"
+        type="number"
+        min="0"
+        @input="visualEditorValue = Math.max(0, visualEditorValue)"
+      />
+    </div>
+  </template>
 
   <p class="total">合計: {{ price }} 円</p>
 </template>

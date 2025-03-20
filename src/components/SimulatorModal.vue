@@ -7,7 +7,7 @@ import OtherFunctions from "@components/OtherFunctions.vue";
 import TotalPrice from "@components/TotalPrice.vue";
 
 // モーダルの表示状態
-const showModal = ref(true);
+const showModal = ref(false);
 
 const buttonText = computed(() =>
   showModal.value
@@ -148,10 +148,7 @@ const resetSimulator = () => {
   <div class="simulator">
     <div class="simulator__btnBox">
       <p>
-        <span class="u-inline-block">ざっくりな費用感を掴みたい方向けに</span>
-        <span class="u-inline-block"
-          >見積もりシミュレーターを用意しています。</span
-        >
+        ざっくりな費用感を掴みたい方向けに<br />見積もりシミュレーターを用意しています。
       </p>
       <button @click="showModal = !showModal">
         {{ buttonText }} <i class="fa-solid fa-calculator"></i>
@@ -219,9 +216,17 @@ const resetSimulator = () => {
       padding-bottom: 0.5em;
       border-bottom: 0.1rem dotted #333;
 
+      @include mq-down(xs) {
+        flex-direction: column;
+      }
+
       label {
         width: 24rem;
         flex-shrink: 0;
+
+        @include mq-down(xs) {
+          margin-bottom: 0.8rem;
+        }
       }
 
       input[type="checkbox"] {
@@ -237,6 +242,10 @@ const resetSimulator = () => {
         width: 100%;
         padding-block: 0.1rem;
         padding-inline: 0.2rem;
+
+        @include mq-down(xs) {
+          max-width: 15rem;
+        }
       }
     }
 
@@ -259,7 +268,7 @@ const resetSimulator = () => {
   &__btnBox {
     position: relative;
     z-index: 1;
-    padding: 6rem;
+    padding: 6rem 3rem;
     border: 0.2rem solid #f6f3c1;
     background-image: url("@img/male-teacher.png");
     background-size: auto 80%;
@@ -268,9 +277,32 @@ const resetSimulator = () => {
     text-align: center;
     background-color: #fffef1;
 
+    @include mq-down() {
+      padding: 6rem 3rem 14rem;
+      background-size: auto 12rem;
+    }
+
+    @include mq-down(sm) {
+      padding: 4rem 2rem 12rem;
+      background-size: auto 10rem;
+    }
+
     > p {
       margin-bottom: 3rem;
       font-weight: bold;
+
+      @include mq-down(sm) {
+        font-size: 1.2rem;
+        font-size: clamp(1.2rem, 0.698rem + 1.5686vw, 1.6rem);
+      }
+
+      br {
+        display: none;
+
+        @include mq-down(lg) {
+          display: block;
+        }
+      }
     }
 
     > button {
@@ -289,6 +321,17 @@ const resetSimulator = () => {
         color 0.3s,
         background-color 0.3s;
 
+      @include mq-down(sm) {
+        padding: 1.5rem 2rem;
+        font-size: 1.8rem;
+      }
+
+      @include mq-down(xs) {
+        padding: 1.2rem 1.5rem;
+        font-size: 1.2rem;
+        font-size: clamp(1.2rem, 0.4471rem + 2.3529vw, 1.8rem);
+      }
+
       &:hover {
         color: #f29949;
         background-color: #ffffff;
@@ -301,28 +344,10 @@ const resetSimulator = () => {
     z-index: 1;
     padding: 6rem;
     margin-top: 4rem;
+    border: 0.2rem solid #ccc;
 
-    &::before,
-    &::after {
-      position: absolute;
-      z-index: -1;
-      width: 10rem;
-      height: 100%;
-      border-top: 0.1rem solid $keyColor;
-      border-bottom: 0.1rem solid $keyColor;
-      content: "";
-    }
-
-    &::before {
-      top: 0;
-      left: 0;
-      border-left: 0.1rem solid $keyColor;
-    }
-
-    &::after {
-      bottom: 0;
-      right: 0;
-      border-right: 0.1rem solid $keyColor;
+    @include mq-down(sm) {
+      padding: 4rem;
     }
 
     h2 {
