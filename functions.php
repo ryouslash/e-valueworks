@@ -40,12 +40,14 @@ function add_custom_scripts()
   // 共通スクリプト
   wp_enqueue_script('main', get_template_directory_uri() . '/dist/js/main.js', array('jquery'), filemtime(get_template_directory() . '/dist/js/main.js'), true);
 
-
-
   if (is_front_page()):
     wp_enqueue_script('top', esc_url(get_template_directory_uri()) . '/dist/js/top.js', array('main'), filemtime(get_template_directory() . '/dist/js/top.js'), true); // トップページ用スクリプト
 
   elseif (is_page('price')):
+    // wp_enqueue_script('vendors', esc_url(get_template_directory_uri()) . '/dist/js/vendors.js', array('main'), filemtime(get_template_directory() . '/dist/js/vendors.js'), true); 
+
+    // wp_enqueue_script('vue-main', esc_url(get_template_directory_uri()) . '/dist/js/vue-main.js', array('vendors'), filemtime(get_template_directory() . '/dist/js/vue-main.js'), true); 
+
     wp_enqueue_script('price', esc_url(get_template_directory_uri()) . '/dist/js/price.js', array('main'), filemtime(get_template_directory() . '/dist/js/price.js'), true); // 料金ページ用スクリプト
   endif;
 }

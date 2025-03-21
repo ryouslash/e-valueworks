@@ -6,6 +6,7 @@ const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 module.exports = {
   entry: {
     main: ["/src/js/main.js", "./src/scss/style.scss"],
+    "vue-main": "./src/vue-main.js",
     top: "./src/js/top.js",
     price: "./src/js/price.js",
     admin: ["./src/js/admin.js", "./src/scss/admin.scss"],
