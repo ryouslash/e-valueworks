@@ -45,7 +45,7 @@
   }
 
   &__title {
-    font-size: $fontXL;
+    font-size: clamp(1.9rem, 1.5286rem + 1.1607vw, 3.2rem);
     font-weight: 700;
     margin-bottom: 0.8em;
 

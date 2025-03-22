@@ -63,35 +63,19 @@ defineProps({
           </tr>
         </template>
 
-        <!-- 下層ページ（〜8,000px）の料金 -->
+        <!-- 下層ページ（〜10,000px）の料金 -->
         <template v-if="subPage.height8000 !== 0">
           <tr>
-            <td>下層ページ（〜8,000px）{{ subPage.height8000 }}頁</td>
-            <td>{{ (subPage.height8000 * 20000).toLocaleString() }}円</td>
+            <td>下層ページ（〜10,000px）{{ subPage.height10000 }}頁</td>
+            <td>{{ (subPage.height10000 * 20000).toLocaleString() }}円</td>
           </tr>
         </template>
 
-        <!-- 下層ページ（〜11,000px）の料金 -->
-        <template v-if="subPage.height11000 !== 0">
+        <!-- 下層ページ（〜15,000px）の料金 -->
+        <template v-if="subPage.height15000 !== 0">
           <tr>
-            <td>下層ページ（〜11,000px）{{ subPage.height11000 }}頁</td>
-            <td>{{ (subPage.height11000 * 25000).toLocaleString() }}円</td>
-          </tr>
-        </template>
-
-        <!-- 下層ページ（〜14,000px）の料金 -->
-        <template v-if="subPage.height14000 !== 0">
-          <tr>
-            <td>下層ページ（〜14,000px）{{ subPage.height14000 }}頁</td>
-            <td>{{ (subPage.height14000 * 30000).toLocaleString() }}円</td>
-          </tr>
-        </template>
-
-        <!-- 下層ページ（〜17,000px）の料金 -->
-        <template v-if="subPage.height17000 !== 0">
-          <tr>
-            <td>下層ページ（〜17,000px）{{ subPage.height17000 }}頁</td>
-            <td>{{ (subPage.height17000 * 35000).toLocaleString() }}円</td>
+            <td>下層ページ（〜15,000px）{{ subPage.height15000 }}頁</td>
+            <td>{{ (subPage.height15000 * 25000).toLocaleString() }}円</td>
           </tr>
         </template>
 
@@ -99,7 +83,7 @@ defineProps({
         <template v-if="subPage.height20000 !== 0">
           <tr>
             <td>下層ページ（〜20,000px）{{ subPage.height20000 }}頁</td>
-            <td>{{ (subPage.height20000 * 40000).toLocaleString() }}円</td>
+            <td>{{ (subPage.height20000 * 30000).toLocaleString() }}円</td>
           </tr>
         </template>
 

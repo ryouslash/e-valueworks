@@ -21,31 +21,17 @@ const height5000Value = computed({
   },
 });
 
-const height8000Value = computed({
-  get: () => props.modelValue.height8000,
+const height10000Value = computed({
+  get: () => props.modelValue.height10000,
   set: (value) => {
-    emit("update:modelValue", { ...props.modelValue, height8000: value });
+    emit("update:modelValue", { ...props.modelValue, height10000: value });
   },
 });
 
-const height11000Value = computed({
-  get: () => props.modelValue.height11000,
+const height15000Value = computed({
+  get: () => props.modelValue.height15000,
   set: (value) => {
-    emit("update:modelValue", { ...props.modelValue, height11000: value });
-  },
-});
-
-const height14000Value = computed({
-  get: () => props.modelValue.height14000,
-  set: (value) => {
-    emit("update:modelValue", { ...props.modelValue, height14000: value });
-  },
-});
-
-const height17000Value = computed({
-  get: () => props.modelValue.height17000,
-  set: (value) => {
-    emit("update:modelValue", { ...props.modelValue, height17000: value });
+    emit("update:modelValue", { ...props.modelValue, height15000: value });
   },
 });
 
@@ -72,46 +58,24 @@ const height20000Value = computed({
   </div>
 
   <div class="item">
-    <label for="height8000">下層ページ（〜8,000px）</label>
+    <label for="height10000">下層ページ（〜10,000px）</label>
     <input
-      id="height8000"
-      v-model="height8000Value"
+      id="height10000"
+      v-model="height10000Value"
       type="number"
       min="0"
-      @input="height8000Value = Math.max(0, height8000Value)"
+      @input="height10000Value = Math.max(0, height10000Value)"
     />
   </div>
 
   <div class="item">
-    <label for="height11000">下層ページ（〜11,000px）</label>
+    <label for="height15000">下層ページ（〜15,000px）</label>
     <input
-      id="height11000"
-      v-model="height11000Value"
+      id="height15000"
+      v-model="height15000Value"
       type="number"
       min="0"
-      @input="height11000Value = Math.max(0, height11000Value)"
-    />
-  </div>
-
-  <div class="item">
-    <label for="height14000">下層ページ（〜14,000px）</label>
-    <input
-      id="height14000"
-      v-model="height14000Value"
-      type="number"
-      min="0"
-      @input="height14000Value = Math.max(0, height14000Value)"
-    />
-  </div>
-
-  <div class="item">
-    <label for="height17000">下層ページ（〜17,000px）</label>
-    <input
-      id="height17000"
-      v-model="height17000Value"
-      type="number"
-      min="0"
-      @input="height17000Value = Math.max(0, height17000Value)"
+      @input="height15000Value = Math.max(0, height15000Value)"
     />
   </div>
 

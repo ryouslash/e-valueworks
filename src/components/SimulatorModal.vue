@@ -28,10 +28,8 @@ const topPage = ref({
 
 const subPage = ref({
   height5000: 0,
-  height8000: 0,
-  height11000: 0,
-  height14000: 0,
-  height17000: 0,
+  height10000: 0,
+  height15000: 0,
   height20000: 0,
 });
 
@@ -60,11 +58,9 @@ const topPagePrice = computed(() => {
 const subPagePrice = computed(() => {
   return (
     subPage.value.height5000 * 15000 +
-    subPage.value.height8000 * 20000 +
-    subPage.value.height11000 * 25000 +
-    subPage.value.height14000 * 30000 +
-    subPage.value.height17000 * 35000 +
-    subPage.value.height20000 * 40000
+    subPage.value.height10000 * 20000 +
+    subPage.value.height15000 * 25000 +
+    subPage.value.height20000 * 30000
   );
 });
 

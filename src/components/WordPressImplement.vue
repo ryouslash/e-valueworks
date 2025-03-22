@@ -52,7 +52,7 @@ const emit = defineEmits(["update:modelValue"]);
     </div>
   </div>
 
-  <template v-if="basicValue === 1">
+  <!-- <template v-if="basicValue === 1">
     <div class="item">
       <label for="custom-post">カスタム投稿追加</label>
       <input
@@ -74,7 +74,7 @@ const emit = defineEmits(["update:modelValue"]);
         @input="visualEditorValue = Math.max(0, visualEditorValue)"
       />
     </div>
-  </template>
+  </template> -->
 
   <p class="total">合計: {{ price }} 円</p>
 </template>
