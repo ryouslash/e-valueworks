@@ -105,6 +105,12 @@
               <?php endif; ?>
             </div>
 
+            <?php if (is_active_sidebar('single_top_widget')) : ?>
+              <div class="w-singleTop">
+                <?php dynamic_sidebar('single_top_widget'); ?>
+              </div>
+            <?php endif; ?>
+
             <div class="p-editorContent">
               <?php the_content(); ?>
             </div>
@@ -112,6 +118,12 @@
         <?php endif; ?>
 
         <?php get_template_part('template-parts/prevnextnavi'); ?>
+
+        <?php if (is_active_sidebar('single_bottom_widget')) : ?>
+          <div class="w-singleBottom">
+            <?php dynamic_sidebar('single_bottom_widget'); ?>
+          </div>
+        <?php endif; ?>
 
         <div class="p-single-relatedPosts">
           <h2>同じカテゴリーの記事を読む</h2>
@@ -169,6 +181,11 @@
         <?php get_template_part('template-parts/sidebar/latest-posts'); ?>
         <?php get_template_part('template-parts/sidebar/category'); ?>
         <?php get_template_part('template-parts/sidebar/tag'); ?>
+        <?php if (is_active_sidebar('fixed_sidebar_widget')) : ?>
+          <div class="w-fixedSidebar">
+            <?php dynamic_sidebar('fixed_sidebar_widget'); ?>
+          </div>
+        <?php endif; ?>
       </aside>
     </div>
   </div>

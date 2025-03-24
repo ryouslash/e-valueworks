@@ -115,7 +115,7 @@ defineProps({
           <tr>
             <td>お問い合わせフォーム</td>
             <td>
-              {{ (otherFunctions.contactForm * 5000).toLocaleString() }}円
+              {{ (otherFunctions.contactForm * 10000).toLocaleString() }}円
             </td>
           </tr>
         </template>

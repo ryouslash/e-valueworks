@@ -1,0 +1,18 @@
+@use "@scss/foundation/variables.scss" as *;
+
+.w-singleTop {
+  margin-top: 6rem;
+}
+
+.w-singleBottom {
+  margin-top: 3rem;
+}
+
+.w-fixedSidebar {
+  position: sticky;
+  top: 11rem;
+
+  @include mq-down(lg) {
+    display: none;
+  }
+}

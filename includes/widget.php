@@ -3,10 +3,26 @@
 function custom_widget_areas()
 {
   register_sidebar(array(
+    'name'          => '記事上ウィジェット',
+    'id'            => 'single_top_widget',
+    'description'   => '投稿記事の上に表示されるウィジェットエリア',
+    'before_widget' => '<div class="c-widget">',
+    'after_widget'  => '</div>',
+  ));
+
+  register_sidebar(array(
     'name'          => '記事下ウィジェット',
     'id'            => 'single_bottom_widget',
     'description'   => '投稿記事の下に表示されるウィジェットエリア',
-    'before_widget' => '<div class="c-widget %2$s">',
+    'before_widget' => '<div class="c-widget">',
+    'after_widget'  => '</div>',
+  ));
+
+  register_sidebar(array(
+    'name'          => '固定サイドバーウィジェット',
+    'id'            => 'fixed_sidebar_widget',
+    'description'   => '固定サイドバーに表示されるウィジェットエリア',
+    'before_widget' => '<div class="c-widget">',
     'after_widget'  => '</div>',
   ));
 }

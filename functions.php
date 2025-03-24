@@ -93,4 +93,6 @@ get_template_part('includes/contact-form7');
 
 get_template_part('includes/widget');
 
+get_template_part('includes/shortcode');
+
 get_template_part('includes/core-blocks-style');

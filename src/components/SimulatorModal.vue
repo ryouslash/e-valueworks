@@ -79,7 +79,7 @@ const otherFunctionsPrice = computed(() => {
     otherFunctions.value.jsAnimation *
       (topPagePrice.value + subPagePrice.value) *
       0.1 +
-    otherFunctions.value.contactForm * 5000
+    otherFunctions.value.contactForm * 10000
   );
 });
 
