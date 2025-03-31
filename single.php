@@ -181,11 +181,7 @@
         <?php get_template_part('template-parts/sidebar/latest-posts'); ?>
         <?php get_template_part('template-parts/sidebar/category'); ?>
         <?php get_template_part('template-parts/sidebar/tag'); ?>
-        <?php if (is_active_sidebar('fixed_sidebar_widget')) : ?>
-          <div class="w-fixedSidebar">
-            <?php dynamic_sidebar('fixed_sidebar_widget'); ?>
-          </div>
-        <?php endif; ?>
+        <div id="toc-app"></div>
       </aside>
     </div>
   </div>

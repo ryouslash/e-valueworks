@@ -17,13 +17,5 @@ function custom_widget_areas()
     'before_widget' => '<div class="c-widget">',
     'after_widget'  => '</div>',
   ));
-
-  register_sidebar(array(
-    'name'          => '固定サイドバーウィジェット（投稿ページ）',
-    'id'            => 'fixed_sidebar_widget',
-    'description'   => '固定サイドバーに表示されるウィジェットエリア',
-    'before_widget' => '<div class="c-widget">',
-    'after_widget'  => '</div>',
-  ));
 }
 add_action('widgets_init', 'custom_widget_areas');

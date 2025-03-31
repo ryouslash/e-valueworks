@@ -8,11 +8,3 @@
   margin-top: 3rem;
 }
 
-.w-fixedSidebar {
-  position: sticky;
-  top: 11rem;
-
-  @include mq-down(lg) {
-    display: none;
-  }
-}
