@@ -19,7 +19,7 @@ function custom_widget_areas()
   ));
 
   register_sidebar(array(
-    'name'          => '固定サイドバーウィジェット',
+    'name'          => '固定サイドバーウィジェット（投稿ページ）',
     'id'            => 'fixed_sidebar_widget',
     'description'   => '固定サイドバーに表示されるウィジェットエリア',
     'before_widget' => '<div class="c-widget">',

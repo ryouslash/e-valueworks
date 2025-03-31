@@ -16,17 +16,6 @@ module.exports = {
     //出力先
     filename: "js/[name].js",
     path: path.resolve(__dirname, "dist"),
-    //Asset Modules の出力先の指定
-    assetModuleFilename: (pathData) => {
-      const ext = path.extname(pathData.filename).replace(".", "");
-      if (/png|jpe?g|gif|svg/.test(ext)) {
-        return "img/[name][ext][query]";
-      }
-      if (/eot|ttf|woff|woff2/.test(ext)) {
-        return "fonts/[name][ext][query]";
-      }
-      return "[name][ext][query]";
-    },
   },
   externals: {
     jquery: "jQuery",
@@ -108,10 +97,18 @@ module.exports = {
       },
       //Asset Modules
       {
-        //対象とするアセットファイルの拡張子を正規表現で指定
-        test: /\.(png|jpe?g|gif|svg|eot|ttf|woff|woff2)$/i,
-        //いずれかの type を指定
+        test: /\.(png|jpe?g|gif|svg)$/i,
         type: "asset/resource",
+        generator: {
+          filename: "img/[name][ext][query]",
+        },
+      },
+      {
+        test: /\.(eot|ttf|woff|woff2)$/i,
+        type: "asset/resource",
+        generator: {
+          filename: "fonts/[name][ext][query]",
+        },
       },
     ],
   },
