@@ -4,7 +4,9 @@
 
 .t-single {
   .l-mainContent {
+    // Highlighting Code Blockでの不具合回避
     flex: initial;
+    width: 100%;
     max-width: calc(100% - 33rem);
 
     @include mq-down(lg) {
