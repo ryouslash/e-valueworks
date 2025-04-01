@@ -182,9 +182,7 @@
             <p>
               ライブラリ・フレームワーク<br />
               <span class="u-inline-block">jQuery</span> /
-              <span class="u-inline-block">Vue.js</span> /
-              <span class="u-inline-block">React（学習中）</span> /
-              <span class="u-inline-block">Laravel（学習中）</span>
+              <span class="u-inline-block">Vue.js</span>
             </p>
             <p>
               CMS<br />
@@ -193,7 +191,6 @@
             <p>
               タスクランナー・バンドルツール<br />
               <span class="u-inline-block">Webpack</span> /
-              <span class="u-inline-block">Vite</span> /
               <span class="u-inline-block">Gulp</span>
             </p>
           </dd>
