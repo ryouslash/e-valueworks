@@ -1,18 +1,6 @@
 @use "@scss/foundation/variables" as *;
 
 .c-pagination {
-  .wp-pagenavi {
-    margin-top: 6rem;
-
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1em;
-
-    @include mq-down(sm) {
-      justify-content: center;
-    }
-  }
-
   a {
     text-decoration: underline;
 
