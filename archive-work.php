@@ -1,3 +1,91 @@
+<?php
+$c_post     = 'work'; // カスタム投稿【work】
+$paged = get_query_var('paged') ?: get_query_var('page') ?: 1; // 現在のページ情報
+$tax_type01 = 'page'; // タクソノミー【page】
+$tax_type02 = 'price'; // タクソノミー【price】
+$tax_type03 = 'language'; // タクソノミー【language】
+$tax_type04 = 'specification'; // タクソノミー【specification】
+
+$search_args = array(
+  'post_type'      => $c_post, //カスタム投稿
+  'post_status'    => 'publish',
+  'posts_per_page' => 10,
+  'paged' => $paged
+);
+
+$tax_query_args = [];
+
+//カスタムタクソノミー【 page 】部分にあるチェックボックスの内容を取得
+$param_page_terms = array();
+if (! empty($_GET[$tax_type01])) {
+  foreach ($_GET[$tax_type01] as $value) {
+    $param_page_terms[] = htmlspecialchars($value, ENT_QUOTES, 'UTF-8');
+  }
+  $tax_query_args[] = array(
+    'taxonomy'         => $tax_type01,
+    'terms'            => $param_page_terms,
+    'include_children' => true,
+    'field'            => 'slug',
+    'operator'         => 'IN',
+  );
+}
+
+//カスタムタクソノミー【 price 】部分にあるチェックボックスの内容を取得
+$param_price_terms = array();
+if (! empty($_GET[$tax_type02])) {
+  foreach ($_GET[$tax_type02] as $value) {
+    $param_price_terms[] = htmlspecialchars($value, ENT_QUOTES, 'UTF-8');
+  }
+  $tax_query_args[] = array(
+    'taxonomy'         => $tax_type02,
+    'terms'            => $param_price_terms,
+    'include_children' => true,
+    'field'            => 'slug',
+    'operator'         => 'IN',
+  );
+}
+
+
+//カスタムタクソノミー【 language 】部分にあるチェックボックスの内容を取得
+$param_language_terms = array();
+if (! empty($_GET[$tax_type03])) {
+  foreach ($_GET[$tax_type03] as $value) {
+    $param_language_terms[] = htmlspecialchars($value, ENT_QUOTES, 'UTF-8');
+  }
+  $tax_query_args[] = array(
+    'taxonomy'         => $tax_type03,
+    'terms'            => $param_language_terms,
+    'include_children' => true,
+    'field'            => 'slug',
+    'operator'         => 'IN',
+  );
+}
+
+//カスタムタクソノミー【 specification 】部分にあるチェックボックスの内容を取得
+$param_specification_terms = array();
+if (! empty($_GET[$tax_type04])) {
+  foreach ($_GET[$tax_type04] as $value) {
+    $param_specification_terms[] = htmlspecialchars($value, ENT_QUOTES, 'UTF-8');
+  }
+  $tax_query_args[] = array(
+    'taxonomy'         => $tax_type04,
+    'terms'            => $param_specification_terms,
+    'include_children' => true,
+    'field'            => 'slug',
+    'operator'         => 'IN',
+  );
+}
+
+
+//カスタムタクソノミーそれぞれの情報をセットする
+if (! empty($_GET[$tax_type01]) || ! empty($_GET[$tax_type02]) || ! empty($_GET[$tax_type03]) || ! empty($_GET[$tax_type04])) {
+  $search_args['tax_query'] = array_merge(
+    array('relation' => 'AND'),
+    $tax_query_args
+  );
+};
+?>
+
 <?php get_header(); ?>
 
 
@@ -8,9 +96,6 @@
         <h1 class="c-title1">制作実績</h1>
 
         <div class="p-archive-work">
-
-          <?php get_template_part('template-parts/filtersearch'); ?>
-
           <div class="p-archive-work__search">
             <div class="p-archive-work__searchTitle"><i class="fa-solid fa-magnifying-glass"></i>絞り込み検索</div>
             <div class="p-archive-work__searchArea">
@@ -125,6 +210,7 @@
 
           <?php
           $new_query = new WP_Query($search_args);
+          $total_pages = $new_query->max_num_pages;
 
           if ($new_query->have_posts()): ?>
             <ul class="p-archive-work__items">
@@ -146,8 +232,32 @@
                     </h2>
                   </a>
                 </li>
-              <?php endwhile; ?>
+              <?php endwhile;
+              wp_reset_postdata(); ?>
             </ul>
+
+            <?php if ($total_pages > 1): ?>
+              <div class="c-pagination">
+                <!-- 制作実績一覧ページ -->
+                <?php
+                $base_url = get_pagenum_link(1);
+                // ?以降を削除してベースパスだけ取り出す
+                $base_url = strtok($base_url, '?');
+
+                echo paginate_links([
+                  'base' => trailingslashit($base_url) . 'page/%#%/',
+                  'format' => '',
+                  'current' => max(1, $paged),
+                  'total'   => $total_pages,
+                  'mid_size' => 1,
+                  'prev_text' => '&lt;',
+                  'next_text' => '&gt;',
+                  'add_args' => $_GET,
+                ]);
+                ?>
+              </div>
+            <?php endif; ?>
+
           <?php else: ?>
             <div class="p-archive-work__noItem">
               <p>実績がありません。</p>

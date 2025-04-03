@@ -1,11 +1,35 @@
 @use "@scss/foundation/variables" as *;
 
 .c-pagination {
+  margin-top: 3rem;
+  text-align: center;
+
+  span {
+    display: inline-block;
+    width: 2rem;
+    line-height: 2rem;
+    text-align: center;
+
+    &:not(.dots) {
+      background-color: $keyColor;
+      color: #fff;
+    }
+  }
+
   a {
-    text-decoration: underline;
+    display: inline-block;
+    border: 0.1rem solid $keyColor;
+    width: 1.8rem;
+    line-height: 1.8rem;
+    text-align: center;
+    color: $keyColor;
+    transition:
+      background-color 0.3s,
+      color 0.3s;
 
     &:hover {
-      text-decoration: none;
+      background-color: $keyColor;
+      color: #fff;
     }
   }
 }

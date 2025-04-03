@@ -14,8 +14,27 @@
       <main class="l-mainContent">
         <?php get_template_part('template-parts/postlist'); ?>
 
-        <?php get_template_part('template-parts/pagination'); ?>
+        <?php
+        $paged = get_query_var('paged') ?: get_query_var('page') ?: 1;
+        $total_pages = $wp_query->max_num_pages;
+        ?>
 
+        <?php if ($total_pages > 1): ?>
+          <div class="c-pagination">
+            <!-- 検索結果ページ -->
+            <?php
+            echo paginate_links([
+              'base'    => add_query_arg('paged', '%#%'),
+              'format'  => '',
+              'current' => max(1, $paged),
+              'total'   => $total_pages,
+              'mid_size' => 1,
+              'prev_text' => '&lt;',
+              'next_text' => '&gt;',
+            ]);
+            ?>
+          </div>
+        <?php endif; ?>
       </main>
       <?php get_sidebar(); ?>
     </div>
