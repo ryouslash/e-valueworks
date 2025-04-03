@@ -406,12 +406,6 @@
                 <dt class="p-top-price__sampleTitle">ライト（月20時間）</dt>
                 <dd class="p-top-price__sampleDetail">48,000円</dd>
               </div>
-              <div class="p-top-price__sample">
-                <dt class="p-top-price__sampleTitle">
-                  スタンダード（月30時間）
-                </dt>
-                <dd class="p-top-price__sampleDetail">65,000円</dd>
-              </div>
             </dl>
             <p class="p-top-price__hosoku">
               ※海外に恒久的施設（PE）を移しているため、消費税は頂いておりません。<br />※日給契約も可能です。
