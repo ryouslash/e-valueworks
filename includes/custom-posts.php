@@ -63,6 +63,17 @@ add_action('init', function () {
 });
 
 /**
+ * 制作実績ページのページネーションが正しく動作するようメインクエリのposts_per_pageをサブループの件数に合わせる
+ */
+function modify_work_archive_query($query)
+{
+  if (!is_admin() && $query->is_main_query() && is_post_type_archive('work')) {
+    $query->set('posts_per_page', 1);
+  }
+}
+add_action('pre_get_posts', 'modify_work_archive_query');
+
+/**
  * お知らせカテゴリーを選択していない場合、自動的に「お知らせ」がデフォルトタームとなるように設定
  */
 function set_default_term_for_news_category($post_id, $post)

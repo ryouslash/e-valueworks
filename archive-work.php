@@ -9,7 +9,8 @@ $tax_type04 = 'specification'; // タクソノミー【specification】
 $search_args = array(
   'post_type'      => $c_post, //カスタム投稿
   'post_status'    => 'publish',
-  'posts_per_page' => 10,
+  // includes>custom-posts.phpのmodify_work_archive_query($query)の中のposts_per_pageと数値を合わせる必要あり
+  'posts_per_page' => 1,
   'paged' => $paged
 );
 
@@ -211,6 +212,7 @@ if (! empty($_GET[$tax_type01]) || ! empty($_GET[$tax_type02]) || ! empty($_GET[
           <?php
           $new_query = new WP_Query($search_args);
           $total_pages = $new_query->max_num_pages;
+
 
           if ($new_query->have_posts()): ?>
             <ul class="p-archive-work__items">
