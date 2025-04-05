@@ -49,6 +49,16 @@ function add_custom_scripts()
     wp_enqueue_script('vue-main', esc_url(get_template_directory_uri()) . '/dist/js/vue-main.js', array('vendors'), filemtime(get_template_directory() . '/dist/js/vue-main.js'), true);
 
     wp_enqueue_script('price', esc_url(get_template_directory_uri()) . '/dist/js/price.js', array('main'), filemtime(get_template_directory() . '/dist/js/price.js'), true); // 料金ページ用スクリプト
+
+  elseif (is_post_type_archive('work')):
+    wp_enqueue_script('work', esc_url(get_template_directory_uri()) . '/dist/js/work.js', array('main'), filemtime(get_template_directory() . '/dist/js/work.js'), true);
+
+    // work.jsにAJAXの送信先URLとnonceを渡す
+    wp_localize_script('work', 'my_ajax', [
+      'url' => admin_url('admin-ajax.php'),
+      'nonce' => wp_create_nonce('my_ajax_nonce')
+    ]);
+
   endif;
 }
 add_action('wp_enqueue_scripts', 'add_custom_scripts');
@@ -96,3 +106,5 @@ get_template_part('includes/widget');
 get_template_part('includes/shortcode');
 
 get_template_part('includes/core-blocks-style');
+
+get_template_part('includes/ajax-handler');

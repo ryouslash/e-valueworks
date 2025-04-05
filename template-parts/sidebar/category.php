@@ -1,7 +1,15 @@
 <?php
 $categories = get_categories([
   'hide_empty' => 1, // 投稿が存在するカテゴリーのみ取得
-]); ?>
+]);
+
+usort($categories, function ($a, $b) {
+  // descriptionから数字を取得して比較
+  $a_description = (int) $a->description; // descriptionから数字を取得
+  $b_description = (int) $b->description; // descriptionから数字を取得
+  return $a_description - $b_description; // 数字順に並べる（昇順）
+}); ?>
+
 
 <?php if ($categories): ?>
   <div class="p-sidebarItem p-sidebarTaxonomy">

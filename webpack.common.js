@@ -9,6 +9,7 @@ module.exports = {
     "vue-main": "./src/vue-main.js",
     top: "./src/js/top.js",
     price: "./src/js/price.js",
+    work: "./src/js/work.js",
     admin: ["./src/js/admin.js", "./src/scss/admin.scss"],
     "editor-style": "./src/scss/editor-style.scss",
   },

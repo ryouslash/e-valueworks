@@ -1,16 +1,15 @@
 @use "@scss/foundation/variables" as *;
 
 .p-archive-work {
+  &__result {
+    margin-top: 6rem;
+  }
+
   &__items {
     display: flex;
     justify-content: flex-start;
     flex-wrap: wrap;
-    margin-top: 6rem;
     gap: 3rem;
-  }
-
-  &__noItem {
-    margin-top: 6rem;
   }
 
   &__item {
