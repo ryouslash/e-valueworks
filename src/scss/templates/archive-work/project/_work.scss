@@ -34,6 +34,30 @@
     }
   }
 
+  &__more {
+    margin-top: 3rem;
+    text-align: center;
+
+    button {
+      display: inline-block;
+      padding: 1rem 3rem;
+      margin: 0 auto;
+      border: none;
+      border-radius: 0.5rem;
+      font-weight: 600;
+      font-size: clamp(1.8rem, 1.6rem + 0.625vw, 2rem);
+      background-color: #f29949;
+      color: #fff;
+      transition: all 0.3s ease-in-out;
+      appearance: none;
+      cursor: pointer;
+
+      &:hover {
+        opacity: 0.9;
+      }
+    }
+  }
+
   &__siteImg {
     transition: opacity 0.5s;
   }

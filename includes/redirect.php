@@ -11,3 +11,19 @@ function redirect_date_archives_to_home()
   }
 }
 add_action('template_redirect', 'redirect_date_archives_to_home');
+
+/**
+ * 制作実績ページのページネーションは強制的にトップにリダイレクト（AJAX通信でのみ次のページ情報を表示させる）
+ */
+function redirect_extra_work_pages()
+{
+  if (
+    !wp_doing_ajax() &&
+    is_post_type_archive('work') &&
+    get_query_var('paged') > 1
+  ) {
+    wp_redirect(home_url('/work/'));
+    exit;
+  }
+}
+add_action('template_redirect', 'redirect_extra_work_pages');

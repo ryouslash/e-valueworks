@@ -206,7 +206,7 @@ if (! empty($_GET[$tax_type04])) {
 
           <?php
           $new_query = new WP_Query($search_args);
-          $total_pages = $new_query->max_num_pages;; ?>
+          $total_pages = $new_query->max_num_pages; ?>
           <div class="p-archive-work__result">
             <?php if ($new_query->have_posts()): ?>
               <ul class="p-archive-work__items">
@@ -231,6 +231,16 @@ if (! empty($_GET[$tax_type04])) {
                 <?php endwhile;
                 wp_reset_postdata(); ?>
               </ul>
+
+
+              <?php if ($total_pages > $paged) : ?>
+                <div class="p-archive-work__more js-load-more">
+                  <button data-page="1" data-max="<?php echo esc_attr($new_query->max_num_pages); ?>">
+                    もっと見る
+                  </button>
+                </div>
+              <?php endif; ?>
+
             <?php else: ?>
               <div class="p-archive-work__noItem">
                 <p>実績がありません。</p>
