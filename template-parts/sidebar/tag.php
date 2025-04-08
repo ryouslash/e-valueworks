@@ -1,4 +1,6 @@
-<?php
+<?php if (!defined('ABSPATH')) {
+  exit;
+};
 $tags = get_tags([
   'hide_empty' => 1, // 投稿が存在するタグのみ取得
 ]); ?>

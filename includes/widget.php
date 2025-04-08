@@ -1,4 +1,7 @@
 <?php
+if (!defined('ABSPATH')) {
+  exit;
+};
 
 function custom_widget_areas()
 {

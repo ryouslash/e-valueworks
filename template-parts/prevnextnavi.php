@@ -1,4 +1,7 @@
 <?php
+if (!defined('ABSPATH')) {
+  exit;
+};
 $previous_post = get_previous_post();
 $next_post = get_next_post();
 

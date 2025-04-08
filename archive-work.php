@@ -1,4 +1,8 @@
 <?php
+if (!defined('ABSPATH')) {
+  exit;
+};
+
 $paged = get_query_var('paged') ?: get_query_var('page') ?: 1; // 現在のページ情報
 $tax_type01 = 'scale'; // タクソノミー【scale】
 $tax_type02 = 'price'; // タクソノミー【price】
@@ -9,7 +13,7 @@ $tax_type04 = 'specification'; // タクソノミー【specification】
 $search_args = array(
   'post_type'      => 'work', //カスタム投稿
   'post_status'    => 'publish',
-  // ajax-handler.phpと数値を合わせる必要あり
+  // ajax-handler.php内2箇所、cutom-posts.php内1箇所と数値を合わせる必要あり
   'posts_per_page' => 10,
   'paged' => $paged
 );

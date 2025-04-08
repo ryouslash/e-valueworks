@@ -1,3 +1,9 @@
+<?php
+if (!defined('ABSPATH')) {
+  exit;
+}
+?>
+
 <footer class="l-footer">
   <div class="l-footer__inner">
     <?php if (!is_front_page()): ?>

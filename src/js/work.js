@@ -1,18 +1,22 @@
 import $ from "jquery";
 
-/*
- **AJAX通信処理
- */
 $(function () {
-  // サブミットボタンが押された場合の処理
+  initAjaxFormSubmit();
+  initAjaxLoadMore();
+});
+
+/**
+ * AJAX フィルターフォーム送信処理
+ */
+function initAjaxFormSubmit() {
   $(".js-ajax-form").on("submit", function (e) {
-    e.preventDefault(); // 通常の送信を止める
+    e.preventDefault();
     // ページ情報をリセット
     let page = 1;
-    const formData = $(this).serialize(); // チェックボックスなどの値を取得
+    const formData = $(this).serialize();
 
     $.ajax({
-      url: my_ajax.url, // WordPressから渡されたAJAX用URL
+      url: my_ajax.url,
       type: "POST",
       data:
         formData +
@@ -21,21 +25,25 @@ $(function () {
         "&page=" +
         page,
     }).done(function (res) {
-      $(".p-archive-work__result").html(res); // 結果を表示
+      $(".p-archive-work__result").html(res);
     });
   });
+}
 
-  // もっと見るボタンが押された場合の処理
+/**
+ * AJAX 「もっと見る」処理
+ */
+function initAjaxLoadMore() {
   $(document).on("click", ".js-load-more button", function () {
     const $btn = $(this);
     let page = parseInt($btn.data("page"));
     page++;
     $btn.data("page", page);
     const max = parseInt($btn.data("max"));
-    const formData = $(".js-ajax-form").serialize(); // チェックボックスなどの値を取得
+    const formData = $(".js-ajax-form").serialize();
 
     $.ajax({
-      url: my_ajax.url, // WordPressから渡されたAJAX用URL
+      url: my_ajax.url,
       type: "POST",
       data:
         formData +
@@ -44,11 +52,11 @@ $(function () {
         "&page=" +
         page,
     }).done(function (res) {
-      $(".p-archive-work__items").append(res); // 結果を表示
+      $(".p-archive-work__items").append(res);
 
       if (page >= max) {
         $btn.closest(".js-load-more").remove();
       }
     });
   });
-});
+}

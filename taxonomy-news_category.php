@@ -1,4 +1,8 @@
-<?php get_header(); ?>
+<?php
+if (!defined('ABSPATH')) {
+  exit;
+}
+get_header(); ?>
 
 <div class="l-content t-taxonomy-archive-news">
   <div class="l-container">

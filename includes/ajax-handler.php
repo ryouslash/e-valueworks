@@ -1,4 +1,8 @@
 <?php
+if (!defined('ABSPATH')) {
+  exit;
+};
+
 /*
 **絞り込み結果表示用ハンドラ
 */

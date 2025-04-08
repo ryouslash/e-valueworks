@@ -1,4 +1,7 @@
 <?php
+if (!defined('ABSPATH')) {
+  exit;
+};
 
 /**
  * Contact Form 7の自動pタグ無効

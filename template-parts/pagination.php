@@ -1,4 +1,7 @@
-<?php
+<?php if (!defined('ABSPATH')) {
+  exit;
+};
+
 $total_pages = $wp_query->max_num_pages;
 ?>
 <?php if ($total_pages > 1): ?>

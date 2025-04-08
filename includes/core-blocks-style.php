@@ -1,4 +1,8 @@
 <?php
+if (!defined('ABSPATH')) {
+  exit;
+};
+
 //コアブロックに独自スタイルの追加
 function custom_block_styles()
 {

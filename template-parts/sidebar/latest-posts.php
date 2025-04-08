@@ -1,4 +1,7 @@
 <?php
+if (!defined('ABSPATH')) {
+  exit;
+};
 
 $args = array(
   'post_type' => 'post',

@@ -31,7 +31,22 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 
 $(function () {
-  // Font awesome 読み込み
+  initFontAwesome();
+  initVwSetting();
+  initDrawerMenu();
+  initPageTopButton();
+  initAnchorScroll();
+  initFixCta();
+});
+
+$(window).on("load", function () {
+  setHeaderHeightVar();
+});
+
+/**
+ * Font awesome 読み込み
+ */
+function initFontAwesome() {
   library.add(
     faEnvelope,
     faHandshake,
@@ -56,25 +71,54 @@ $(function () {
     faMagnifyingGlass,
     faCalculator
   );
-
   dom.i2svg();
+}
 
-  // 100vwの調整
+/**
+ * viewportタグの書き換えロジック
+ */
+// function initViewport() {
+//   const FIXED_PC_WIDTH = 1300;
+//   const FIXED_SP_WIDTH = 420;
+
+//   const oldViewport = document.querySelector("#viewport");
+//   if (oldViewport) oldViewport.remove();
+
+//   let content = "width=device-width,initial-scale=1";
+
+//   if (window.innerWidth <= FIXED_SP_WIDTH) {
+//     // 420px以下は固定幅指定（iPhone SEなど）
+//     content = `width=${FIXED_SP_WIDTH}`;
+//   } else if (window.innerWidth <= 1299 && window.innerWidth >= 768) {
+//     // タブレット的な幅（任意で固定幅にしたい場合）
+//     content = `width=${FIXED_PC_WIDTH}`;
+//   }
+
+//   const meta = document.createElement("meta");
+//   meta.name = "viewport";
+//   meta.id = "viewport";
+//   meta.content = content;
+//   document.head.prepend(meta);
+// }
+
+/**
+ * 100vwの調整
+ */
+function initVwSetting() {
   function setVw() {
     let vw = $(window).width() / 100 + "px";
     $(":root").css("--vw", vw);
   }
+  setVw();
 
-  setVw(); // 初期ロード時に関数を実行
+  const debouncedSetVw = debounce(setVw, 200);
+  $(window).on("resize", debouncedSetVw);
+}
 
-  // debounceを使用して、resize時に実行を制限
-  const debouncedSetVw = debounce(setVw, 200); // 200ms待機後に実行
-
-  $(window).on("resize", function () {
-    // resize時に関数を実行
-    debouncedSetVw();
-  });
-
+/**
+ * ドロワーメニュー表示ロジック
+ */
+function initDrawerMenu() {
   const drawerBtn = document.querySelector(".l-header__drawerBtn");
   const drawerMenu = document.querySelector(".p-drawerMenu");
 
@@ -84,50 +128,13 @@ $(function () {
       drawerMenu.classList.toggle("is-show");
     });
   }
+}
 
-  $(window).on("load", function () {
-    const header = document.querySelector(".l-header");
-    const headerHeight = header.offsetHeight;
-    document.documentElement.style.setProperty(
-      "--headerHeight",
-      `${headerHeight}px`
-    );
-
-    // スムーススクロール
-    if (location.hash) {
-      let target = $(location.hash);
-      if (target.length) {
-        const header = document.querySelector(".l-header");
-        const headerHeight = header.offsetHeight;
-        let position = target.offset().top - headerHeight;
-        $("html, body").animate(
-          {
-            scrollTop: position,
-          },
-          0 // ページ読み込み時のスクロールは即時
-        );
-      }
-    }
-
-    $('a[href^="#"]').on("click", function (e) {
-      e.preventDefault();
-      let speed = 2000;
-      let href = $(this).attr("href");
-      let target = $(href === "#" || href === "" ? "html" : href);
-      let position = target.offset().top - headerHeight;
-
-      $("html, body").animate(
-        {
-          scrollTop: position,
-        },
-        speed,
-        "swing"
-      );
-    });
-  });
-
-  // ページトップボタンをスクロールしたところで表示
-  var pageTop = $(".c-pageTop");
+/**
+ * 少しスクロールしたところでページトップボタンを表示するロジック
+ */
+function initPageTopButton() {
+  let pageTop = $(".c-pageTop");
   $(window).on("scroll", function () {
     if ($(this).scrollTop() > 1000) {
       pageTop.addClass("is-show");
@@ -135,8 +142,26 @@ $(function () {
       pageTop.removeClass("is-show");
     }
   });
+}
 
-  // p-ficCta__leftをクリックすると、p-ficCtaにis-activeがつく
+/**
+ * スムースリンクの実装ロジック
+ */
+function initAnchorScroll() {
+  $('a[href^="#"]').on("click", function (e) {
+    e.preventDefault();
+    const headerHeight = document.querySelector(".l-header")?.offsetHeight || 0;
+    let href = $(this).attr("href");
+    let target = $(href === "#" || href === "" ? "html" : href);
+    let position = target.offset().top - headerHeight;
+    $("html, body").animate({ scrollTop: position }, 2000, "swing");
+  });
+}
+
+/**
+ * 固定CTAの実装ロジック
+ */
+function initFixCta() {
   let fixCtaLeft = document.querySelector(".p-fixCta__left");
   let fixCtaClose = document.querySelector(".p-fixCta__close");
 
@@ -157,4 +182,18 @@ $(function () {
       }
     });
   }
-});
+}
+
+/**
+ * ヘッダーの高さ取得ロジック
+ */
+function setHeaderHeightVar() {
+  const header = document.querySelector(".l-header");
+  if (header) {
+    const headerHeight = header.offsetHeight;
+    document.documentElement.style.setProperty(
+      "--headerHeight",
+      `${headerHeight}px`
+    );
+  }
+}

@@ -1,3 +1,6 @@
+<?php if (!defined('ABSPATH')) {
+  exit;
+}; ?>
 <div class="p-sidebarItem p-sidebarSearch">
   <div class="p-sidebarItem__title">記事を検索</div>
   <div class="p-sidebarSearch__form">

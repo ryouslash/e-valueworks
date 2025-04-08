@@ -1,7 +1,14 @@
 /* global wp */
-
 import $ from "jquery";
-$(function ($) {
+
+$(function () {
+  initTermThumbnailUploader();
+});
+
+/**
+ * サムネイル画像をアップローダーできるようにする処理・ロジック
+ */
+function initTermThumbnailUploader() {
   $(".term-thumbnail-upload").on("click", function (e) {
     e.preventDefault(); // デフォルトの動作を防ぐ
     let button = $(this);
@@ -23,4 +30,4 @@ $(function ($) {
       })
       .open();
   });
-});
+}

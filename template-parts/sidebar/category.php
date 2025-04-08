@@ -1,4 +1,8 @@
 <?php
+if (!defined('ABSPATH')) {
+  exit;
+};
+
 $categories = get_categories([
   'hide_empty' => 1, // 投稿が存在するカテゴリーのみ取得
 ]);

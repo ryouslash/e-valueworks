@@ -1,3 +1,7 @@
+<?php if (!defined('ABSPATH')) {
+  exit;
+}; ?>
+
 <div class="p-fixCta">
   <div class="p-fixCta__inner">
     <div class="p-fixCta__left">お問い合わせ・ご相談</div>

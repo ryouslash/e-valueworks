@@ -1,4 +1,7 @@
 <?php
+if (!defined('ABSPATH')) {
+  exit;
+};
 
 /**
  * アイキャッチ画像を使用可能にする

@@ -1,4 +1,8 @@
 <?php
+if (!defined('ABSPATH')) {
+  exit;
+};
+
 function render_googleAdsense()
 {
   // 出力バッファリング開始

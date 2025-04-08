@@ -1,3 +1,7 @@
+<?php if (!defined('ABSPATH')) {
+  exit;
+}; ?>
+
 <div class="p-postList">
   <?php if (have_posts()): ?>
     <ul class="p-postList__items">

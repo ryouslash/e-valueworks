@@ -1,5 +1,7 @@
 <?php
-
+if (!defined('ABSPATH')) {
+  exit;
+};
 /**
  * CSSファイルの読み込み
  */
