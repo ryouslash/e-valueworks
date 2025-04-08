@@ -48,7 +48,7 @@ const otherFunctions = ref({
 const topPagePrice = computed(() => {
   return (
     topPage.value.header * 5000 +
-    topPage.value.megaMenu * 3000 +
+    topPage.value.megaMenu * 5000 +
     topPage.value.footer * 5000 +
     topPage.value.sections * 5000
   );
@@ -118,10 +118,8 @@ const resetSimulator = () => {
 
   subPage.value = {
     height5000: 0,
-    height8000: 0,
-    height11000: 0,
-    height14000: 0,
-    height17000: 0,
+    height10000: 0,
+    height15000: 0,
     height20000: 0,
   };
 

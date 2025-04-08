@@ -59,8 +59,8 @@ const footerValue = computed({
     </div>
   </div>
 
-  <!--  <div class="item">
   <template v-if="headerValue === 1">
+    <div class="item">
       <label for="megaMenu">メガメニューの数</label>
       <input
         id="megaMenu"
@@ -70,7 +70,7 @@ const footerValue = computed({
         @input="megaMenuValue = Math.max(0, megaMenuValue)"
       />
     </div>
-  </template> -->
+  </template>
 
   <div class="item">
     <label for="section">セクションの数</label>
