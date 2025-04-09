@@ -1,10 +1,10 @@
 @use "@scss/foundation/variables.scss" as *;
 
 .l-container {
-  max-width: 120rem;
+  box-sizing: border-box;
+  max-width: 126rem;
   margin: 0 auto;
   padding: 0 3rem;
-  box-sizing: content-box;
 
   @include mq-down(sm) {
     padding: 0 2rem;
@@ -12,10 +12,10 @@
 }
 
 .l-slim-container {
-  max-width: 80rem;
+  box-sizing: border-box;
+  max-width: 86rem;
   margin: 0 auto;
   padding: 0 3rem;
-  box-sizing: content-box;
 
   @include mq-down(sm) {
     padding: 0 2rem;

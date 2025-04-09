@@ -32,6 +32,7 @@ import {
 
 $(function () {
   initFontAwesome();
+  initViewport();
   initVwSetting();
   initDrawerMenu();
   initPageTopButton();
@@ -75,31 +76,28 @@ function initFontAwesome() {
 }
 
 /**
- * viewportタグの書き換えロジック
+ * viewportタグの書き換えロジック（挙動がやや読めないため極力viewportのみに頼らない）
  */
-// function initViewport() {
-//   const FIXED_PC_WIDTH = 1300;
-//   const FIXED_SP_WIDTH = 420;
+function initViewport() {
+  const FIXED_SP_WIDTH = 420;
 
-//   const oldViewport = document.querySelector("#viewport");
-//   if (oldViewport) oldViewport.remove();
+  const oldViewport = document.querySelector("#viewport");
+  if (oldViewport) oldViewport.remove();
 
-//   let content = "width=device-width,initial-scale=1";
+  // 初期値を定義
+  let content = "width=device-width,initial-scale=1";
 
-//   if (window.innerWidth <= FIXED_SP_WIDTH) {
-//     // 420px以下は固定幅指定（iPhone SEなど）
-//     content = `width=${FIXED_SP_WIDTH}`;
-//   } else if (window.innerWidth <= 1299 && window.innerWidth >= 768) {
-//     // タブレット的な幅（任意で固定幅にしたい場合）
-//     content = `width=${FIXED_PC_WIDTH}`;
-//   }
+  if (window.innerWidth <= FIXED_SP_WIDTH) {
+    // 420px以下はwidth=420で固定
+    content = `width=${FIXED_SP_WIDTH}`;
+  }
 
-//   const meta = document.createElement("meta");
-//   meta.name = "viewport";
-//   meta.id = "viewport";
-//   meta.content = content;
-//   document.head.prepend(meta);
-// }
+  const meta = document.createElement("meta");
+  meta.name = "viewport";
+  meta.id = "viewport";
+  meta.content = content;
+  document.head.prepend(meta);
+}
 
 /**
  * 100vwの調整
