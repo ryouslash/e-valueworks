@@ -64,7 +64,7 @@ defineProps({
         </template>
 
         <!-- 下層ページ（〜10,000px）の料金 -->
-        <template v-if="subPage.height8000 !== 0">
+        <template v-if="subPage.height10000 !== 0">
           <tr>
             <td>下層ページ（〜10,000px）{{ subPage.height10000 }}頁</td>
             <td>{{ (subPage.height10000 * 20000).toLocaleString() }}円</td>
