@@ -1,46 +1,46 @@
 <script setup>
-import { computed } from "vue";
+  import { computed } from "vue";
 
-const props = defineProps({
-  modelValue: {
-    type: Object,
-    required: true,
-  },
-  price: {
-    type: Number,
-    required: true,
-  },
-});
+  const props = defineProps({
+    modelValue: {
+      type: Object,
+      required: true,
+    },
+    price: {
+      type: Number,
+      required: true,
+    },
+  });
 
-const emit = defineEmits(["update:modelValue"]);
+  const emit = defineEmits(["update:modelValue"]);
 
-const headerValue = computed({
-  get: () => props.modelValue.header,
-  set: (value) => {
-    emit("update:modelValue", { ...props.modelValue, header: value });
-  },
-});
+  const headerValue = computed({
+    get: () => props.modelValue.header,
+    set: (value) => {
+      emit("update:modelValue", { ...props.modelValue, header: value });
+    },
+  });
 
-const megaMenuValue = computed({
-  get: () => props.modelValue.megaMenu,
-  set: (value) => {
-    emit("update:modelValue", { ...props.modelValue, megaMenu: value });
-  },
-});
+  const megaMenuValue = computed({
+    get: () => props.modelValue.megaMenu,
+    set: (value) => {
+      emit("update:modelValue", { ...props.modelValue, megaMenu: value });
+    },
+  });
 
-const sectionsValue = computed({
-  get: () => props.modelValue.sections,
-  set: (value) => {
-    emit("update:modelValue", { ...props.modelValue, sections: value });
-  },
-});
+  const sectionsValue = computed({
+    get: () => props.modelValue.sections,
+    set: (value) => {
+      emit("update:modelValue", { ...props.modelValue, sections: value });
+    },
+  });
 
-const footerValue = computed({
-  get: () => props.modelValue.footer,
-  set: (value) => {
-    emit("update:modelValue", { ...props.modelValue, footer: value });
-  },
-});
+  const footerValue = computed({
+    get: () => props.modelValue.footer,
+    set: (value) => {
+      emit("update:modelValue", { ...props.modelValue, footer: value });
+    },
+  });
 </script>
 
 <template>
