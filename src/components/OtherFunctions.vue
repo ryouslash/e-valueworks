@@ -1,32 +1,32 @@
 <script setup>
-import { computed } from "vue";
+  import { computed } from "vue";
 
-const props = defineProps({
-  modelValue: {
-    type: Object,
-    required: true,
-  },
-  price: {
-    type: Number,
-    required: true,
-  },
-});
+  const props = defineProps({
+    modelValue: {
+      type: Object,
+      required: true,
+    },
+    price: {
+      type: Number,
+      required: true,
+    },
+  });
 
-const emit = defineEmits(["update:modelValue"]);
+  const emit = defineEmits(["update:modelValue"]);
 
-const jsAnimationValue = computed({
-  get: () => props.modelValue.jsAnimation,
-  set: (value) => {
-    emit("update:modelValue", { ...props.modelValue, jsAnimation: value });
-  },
-});
+  const jsAnimationValue = computed({
+    get: () => props.modelValue.jsAnimation,
+    set: (value) => {
+      emit("update:modelValue", { ...props.modelValue, jsAnimation: value });
+    },
+  });
 
-const contactFormValue = computed({
-  get: () => props.modelValue.contactForm,
-  set: (value) => {
-    emit("update:modelValue", { ...props.modelValue, contactForm: value });
-  },
-});
+  const contactFormValue = computed({
+    get: () => props.modelValue.contactForm,
+    set: (value) => {
+      emit("update:modelValue", { ...props.modelValue, contactForm: value });
+    },
+  });
 </script>
 
 <template>
@@ -62,8 +62,8 @@ const contactFormValue = computed({
 </template>
 
 <style scoped>
-input {
-  width: 100px;
-  padding: 0.3rem;
-}
+  input {
+    width: 100px;
+    padding: 0.3rem;
+  }
 </style>
