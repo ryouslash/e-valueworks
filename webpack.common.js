@@ -32,7 +32,14 @@ module.exports = {
         // JS用のローダー
         test: /\.js$/,
         exclude: /node_modules/,
-        use: ["babel-loader"],
+        use: [
+          {
+            loader: "babel-loader",
+            options: {
+              presets: ["@babel/preset-env"],
+            },
+          },
+        ],
       },
       {
         // SASS 用のローダー

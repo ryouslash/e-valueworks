@@ -1,39 +1,39 @@
 <script setup>
-  import { computed } from "vue";
+import { computed } from "vue";
 
-  const props = defineProps({
-    modelValue: {
-      type: Object,
-      required: true,
-    },
-    price: {
-      type: Number,
-      required: true,
-    },
-  });
+const props = defineProps({
+  modelValue: {
+    type: Object,
+    required: true,
+  },
+  price: {
+    type: Number,
+    required: true,
+  },
+});
 
-  const basicValue = computed({
-    get: () => props.modelValue.basic,
-    set: (value) => {
-      emit("update:modelValue", { ...props.modelValue, basic: value });
-    },
-  });
+const basicValue = computed({
+  get: () => props.modelValue.basic,
+  set: (value) => {
+    emit("update:modelValue", { ...props.modelValue, basic: value });
+  },
+});
 
-  const customPostValue = computed({
-    get: () => props.modelValue.customPost,
-    set: (value) => {
-      emit("update:modelValue", { ...props.modelValue, customPost: value });
-    },
-  });
+const customPostValue = computed({
+  get: () => props.modelValue.customPost,
+  set: (value) => {
+    emit("update:modelValue", { ...props.modelValue, customPost: value });
+  },
+});
 
-  const visualEditorValue = computed({
-    get: () => props.modelValue.visualEditor,
-    set: (value) => {
-      emit("update:modelValue", { ...props.modelValue, visualEditor: value });
-    },
-  });
+const visualEditorValue = computed({
+  get: () => props.modelValue.visualEditor,
+  set: (value) => {
+    emit("update:modelValue", { ...props.modelValue, visualEditor: value });
+  },
+});
 
-  const emit = defineEmits(["update:modelValue"]);
+const emit = defineEmits(["update:modelValue"]);
 </script>
 
 <template>

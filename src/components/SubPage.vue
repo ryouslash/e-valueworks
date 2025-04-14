@@ -1,46 +1,46 @@
 <script setup>
-  import { computed } from "vue";
+import { computed } from "vue";
 
-  const props = defineProps({
-    modelValue: {
-      type: Object,
-      required: true,
-    },
-    price: {
-      type: Number,
-      required: true,
-    },
-  });
+const props = defineProps({
+  modelValue: {
+    type: Object,
+    required: true,
+  },
+  price: {
+    type: Number,
+    required: true,
+  },
+});
 
-  const emit = defineEmits(["update:modelValue"]);
+const emit = defineEmits(["update:modelValue"]);
 
-  const height5000Value = computed({
-    get: () => props.modelValue.height5000,
-    set: (value) => {
-      emit("update:modelValue", { ...props.modelValue, height5000: value });
-    },
-  });
+const height5000Value = computed({
+  get: () => props.modelValue.height5000,
+  set: (value) => {
+    emit("update:modelValue", { ...props.modelValue, height5000: value });
+  },
+});
 
-  const height10000Value = computed({
-    get: () => props.modelValue.height10000,
-    set: (value) => {
-      emit("update:modelValue", { ...props.modelValue, height10000: value });
-    },
-  });
+const height10000Value = computed({
+  get: () => props.modelValue.height10000,
+  set: (value) => {
+    emit("update:modelValue", { ...props.modelValue, height10000: value });
+  },
+});
 
-  const height15000Value = computed({
-    get: () => props.modelValue.height15000,
-    set: (value) => {
-      emit("update:modelValue", { ...props.modelValue, height15000: value });
-    },
-  });
+const height15000Value = computed({
+  get: () => props.modelValue.height15000,
+  set: (value) => {
+    emit("update:modelValue", { ...props.modelValue, height15000: value });
+  },
+});
 
-  const height20000Value = computed({
-    get: () => props.modelValue.height20000,
-    set: (value) => {
-      emit("update:modelValue", { ...props.modelValue, height20000: value });
-    },
-  });
+const height20000Value = computed({
+  get: () => props.modelValue.height20000,
+  set: (value) => {
+    emit("update:modelValue", { ...props.modelValue, height20000: value });
+  },
+});
 </script>
 
 <template>

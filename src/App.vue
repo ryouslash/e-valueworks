@@ -1,15 +1,15 @@
 <script setup>
-  import { onMounted } from "vue";
-  import ScrollHint from "scroll-hint";
-  import SimulatorModal from "@components/SimulatorModal.vue";
+import { onMounted } from "vue";
+import ScrollHint from "scroll-hint";
+import SimulatorModal from "@components/SimulatorModal.vue";
 
-  onMounted(() => {
-    new ScrollHint(".js-scrollable", {
-      i18n: {
-        scrollable: "スクロールできます",
-      },
-    });
+onMounted(() => {
+  new ScrollHint(".js-scrollable", {
+    i18n: {
+      scrollable: "スクロールできます",
+    },
   });
+});
 </script>
 
 <template>

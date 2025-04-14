@@ -1,38 +1,38 @@
 <script setup>
-  import { onMounted, getCurrentInstance } from "vue";
+import { onMounted, getCurrentInstance } from "vue";
 
-  const { proxy } = getCurrentInstance();
+const { proxy } = getCurrentInstance();
 
-  onMounted(() => {
-    proxy.$initScrollHint();
-  });
+onMounted(() => {
+  proxy.$initScrollHint();
+});
 
-  defineProps({
-    total: {
-      type: Number,
-      required: true,
-    },
-    topPagePrice: {
-      type: Number,
-      required: true,
-    },
-    subPage: {
-      type: Object,
-      required: true,
-    },
-    subPagePrice: {
-      type: Object,
-      required: true,
-    },
-    wordPressImplementPrice: {
-      type: Number,
-      required: true,
-    },
-    otherFunctions: {
-      type: Object,
-      required: true,
-    },
-  });
+defineProps({
+  total: {
+    type: Number,
+    required: true,
+  },
+  topPagePrice: {
+    type: Number,
+    required: true,
+  },
+  subPage: {
+    type: Object,
+    required: true,
+  },
+  subPagePrice: {
+    type: Object,
+    required: true,
+  },
+  wordPressImplementPrice: {
+    type: Number,
+    required: true,
+  },
+  otherFunctions: {
+    type: Object,
+    required: true,
+  },
+});
 </script>
 
 <template>
@@ -134,28 +134,28 @@
 </template>
 
 <style scoped lang="scss">
-  table {
-    width: 100%;
-    min-width: 80rem;
-    border-collapse: collapse;
-    table-layout: fixed;
+table {
+  width: 100%;
+  min-width: 80rem;
+  border-collapse: collapse;
+  table-layout: fixed;
 
-    th,
-    td {
-      border: 0.1rem solid #ccc;
-      padding: 0.5em;
+  th,
+  td {
+    border: 0.1rem solid #ccc;
+    padding: 0.5em;
 
-      &.is-text-right {
-        text-align: right;
-      }
-
-      &.has-no-border {
-        border: none;
-      }
+    &.is-text-right {
+      text-align: right;
     }
 
-    th {
-      background-color: #eeeeee;
+    &.has-no-border {
+      border: none;
     }
   }
+
+  th {
+    background-color: #eeeeee;
+  }
+}
 </style>
