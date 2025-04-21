@@ -21,7 +21,7 @@ get_header(); ?>
   // 最終的に背景画像として表示するURLを決定
   if (empty($background_image_url)) {
     // 画像URLがない場合はデフォルト画像を使用
-    $background_image_url = esc_url(get_template_directory_uri() . '/dist/img/column.jpg');
+    $background_image_url = '/img/column.jpg';
   }
   ?>
   <div class="c-pageHeader" style="background-image: url('<?php echo esc_url($background_image_url); ?>');">
@@ -115,9 +115,12 @@ get_header(); ?>
               </div>
             <?php endif; ?>
 
-            <div class="p-editorContent">
-              <?php the_content(); ?>
-            </div>
+            <?php if (get_the_content()) : ?>
+              <div class="p-editorContent">
+                <?php the_content(); ?>
+              </div>
+            <?php endif; ?>
+
           <?php endwhile; ?>
         <?php endif; ?>
 

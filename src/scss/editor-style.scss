@@ -1,51 +1,27 @@
-@use "@scss/foundation/variables" as *;
+@use "@scss/object/project/editorcontent" as editor;
 
+//エディター側
 .editor-styles-wrapper {
-  &:not(pre) code {
-    color: #333333;
-    font-size: 0.9em;
-    letter-spacing: 0;
-    line-height: 1;
-    background: #f7f7f7;
-    border: 0.1rem solid rgba(0, 0, 0, 0.1);
-    border-radius: 0.2rem;
-    margin: 0 0.3em;
-    padding: 0.25em 0.5em;
+  @include editor.editorContent();
+
+  h1,
+  h2 {
+    font-size: 26px !important;
   }
 
-  .wp-block-quote {
-    position: relative;
-    padding: 3rem 1.5rem 1rem;
-    box-sizing: border-box;
-    background: #efefef;
-    color: #555;
-    border-left: 0.5rem solid #18c1f0;
+  h3,
+  h4 {
+    font-size: 20px !important;
+  }
 
-    &:before {
-      content: "";
-      display: inline-block;
-      width: 3rem;
-      height: 2rem;
-      position: absolute;
-      top: 1rem;
-      left: 1.5rem;
-      background-image: url("@img/quotation.svg");
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: bottom center;
-    }
+  h5,
+  h6 {
+    font-size: 16px;
+  }
 
-    p {
-      padding: 0;
-      margin: 1rem 0;
-      line-height: 1.7;
-    }
-
-    cite {
-      display: block;
-      text-align: right;
-      color: #888888;
-      font-size: 0.9em;
+  blockquote {
+    > :first-child {
+      margin: 0;
     }
   }
 }

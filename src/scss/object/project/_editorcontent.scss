@@ -1,66 +1,47 @@
 @use "@scss/foundation/variables" as *;
 
 // ブロック間の余白調整
-.p-editorContent {
+
+@mixin editorContent {
   > * {
-    clear: both;
     margin-bottom: 1em;
+  }
+
+  > *:not(p) {
+    clear: both;
   }
 
   > :first-child {
     margin-top: 0 !important;
   }
 
-  > :last-child,
-  dd > :last-child,
-  div > :last-child {
+  > :last-child {
     margin-bottom: 0 !important;
   }
 
+  h1,
   h2 {
+    margin: 2em 0 0.8em;
     font-size: $fontL;
   }
 
   h3 {
+    margin: 2em 0 0.8em;
     font-size: $fontM;
   }
 
-  ul,
-  ol {
-    padding-left: 1em;
-
-    li {
-      margin: 0.2em 0;
-
-      &::marker {
-        margin: 0;
-        padding: 0;
-      }
-
-      ul,
-      ol {
-        margin-left: 1em;
-        margin-top: 0.2em;
-      }
-
-      ul {
-        li {
-          list-style-type: circle;
-        }
-      }
-    }
+  h4 {
+    margin: 1.5em 0 1em;
+    font-size: $fontM;
   }
 
-  ul {
-    li {
-      list-style-type: disc;
-    }
+  h5,
+  h6 {
+    font-size: 1.6rem;
   }
 
-  ol {
-    li {
-      list-style-type: decimal;
-    }
+  p {
+    line-height: 1.4;
   }
 
   a {
@@ -70,7 +51,7 @@
     }
   }
 
-  &:not(pre) code {
+  &:not(pre) > code {
     color: #333333;
     font-size: 0.9em;
     letter-spacing: 0;
@@ -82,7 +63,7 @@
     padding: 0.25em 0.5em;
   }
 
-  .wp-block-quote {
+  blockquote {
     position: relative;
     padding: 3rem 1.5rem 1rem;
     box-sizing: border-box;
@@ -117,4 +98,114 @@
       font-size: 0.9em;
     }
   }
+
+  table {
+    border: none;
+    border-collapse: collapse;
+    border-spacing: 0;
+    line-height: 1.6;
+    max-width: 100%;
+    text-align: left;
+  }
+
+  dl {
+    dt {
+      font-weight: 900;
+    }
+
+    dd {
+      margin-left: 1em;
+    }
+  }
+
+  ul,
+  ol {
+    margin-left: 1em;
+
+    li {
+      margin: 0.2em 0;
+
+      &::marker {
+        margin: 0;
+        padding: 0;
+      }
+
+      ul {
+        li {
+          list-style-type: disc;
+        }
+      }
+
+      ol {
+        li {
+          list-style-type: decimal;
+        }
+      }
+    }
+  }
+
+  ul {
+    li {
+      list-style-type: disc;
+    }
+  }
+
+  ol {
+    li {
+      list-style-type: decimal;
+    }
+  }
+
+  pre {
+    overflow-x: auto;
+    padding: 0.5em;
+  }
+
+  sub,
+  sup {
+    font-size: 0.6em;
+  }
+
+  sup {
+    vertical-align: super;
+  }
+
+  img {
+    width: auto;
+    height: auto;
+  }
+
+  .alignleft {
+    float: left;
+  }
+
+  .alignright {
+    float: right;
+  }
+
+  .aligncenter {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+
+  .wp-caption {
+    max-width: 100%;
+    width: 100%;
+
+    img {
+      display: block;
+    }
+
+    .wp-caption-text {
+      margin-top: 1em;
+      font-size: 0.8em;
+      text-align: center;
+    }
+  }
+}
+
+//フロント側
+.p-editorContent {
+  @include editorContent();
 }
