@@ -3,6 +3,9 @@ if (!defined('ABSPATH')) {
   exit;
 };
 
+/**
+ * 独自のウィジェットエリアを追加
+ */
 function custom_widget_areas()
 {
   register_sidebar(array(

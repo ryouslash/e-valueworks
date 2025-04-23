@@ -49,7 +49,6 @@ function save_term_thumbnail($term_id)
     update_term_meta($term_id, 'term_thumbnail', esc_url($_POST['term_thumbnail']));
   }
 }
-
 add_action('created_category', 'save_term_thumbnail'); // 新しいカテゴリーが作成されたとき
 add_action('edited_category', 'save_term_thumbnail'); // 既存のカテゴリーが編集されたとき
 add_action('created_post_tag', 'save_term_thumbnail'); // 新しいタグが作成されたとき

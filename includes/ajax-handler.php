@@ -100,7 +100,6 @@ function filter_work_posts()
 
   wp_die(); // AJAX終了
 }
-
 add_action('wp_ajax_filter_work_posts', 'filter_work_posts');
 add_action('wp_ajax_nopriv_filter_work_posts', 'filter_work_posts');
 
@@ -183,6 +182,5 @@ function see_more_work()
 
   wp_die(); // AJAX終了
 }
-
 add_action('wp_ajax_see_more_work', 'see_more_work');
 add_action('wp_ajax_nopriv_see_more_work', 'see_more_work');

@@ -3,7 +3,8 @@ if (!defined('ABSPATH')) {
   exit;
 };
 
-add_action('init', function () {
+function add_custom_post()
+{
   /**
    * カスタム投稿タイプ「お知らせ」を追加
    */
@@ -63,7 +64,8 @@ add_action('init', function () {
     'hierarchical' => true,
     'show_in_rest' => true,
   ]);
-});
+}
+add_action('init', 'add_custom_post');
 
 /**
  * 制作実績ページのページネーションが正しく動作するようメインクエリのposts_per_pageをサブループの件数に合わせる

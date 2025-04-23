@@ -23,14 +23,15 @@ add_action('admin_enqueue_scripts', 'custom_admin_enqueue_styles');
 /**
  * エディター用の CSS 読み込み
  */
-add_action('after_setup_theme', function () {
-
+function add_custom_editor_styles()
+{
   // ブロックエディターをサポート
   add_theme_support('editor-styles');
 
   // 指定のファイルを読み込む
   add_editor_style('dist/css/editor-style.css');
-});
+}
+add_action('after_setup_theme', 'add_custom_editor_styles');
 
 /**
  * JSファイルの読み込み
@@ -76,21 +77,6 @@ function term_thumbnail_scripts($hook)
     wp_enqueue_script('term-thumbnail-script', get_template_directory_uri() . '/dist/js/admin.js', array('jquery'), false, true);
   }
 }
-
-/**
- *  固定ページのスラッグをbodyクラスに追加
- */
-function my_body_class($classes)
-{
-  if (is_page()) {
-    $page = get_post();
-    $classes[] = $page->post_name; // スラッグ名を追加
-    $classes[] = 'page-' . $page->post_name; // 'page-' プレフィックスを追加
-  }
-  return $classes;
-}
-add_filter('body_class', 'my_body_class');
-
 add_action('admin_enqueue_scripts', 'term_thumbnail_scripts');
 
 get_template_part('includes/basic-setting');
@@ -99,9 +85,7 @@ get_template_part('includes/redirect');
 
 get_template_part('includes/custom-posts');
 
-get_template_part('includes/taxonomy-fields');
-
-get_template_part('includes/contact-form7');
+get_template_part('includes/term-thumbnail');
 
 get_template_part('includes/widget');
 
