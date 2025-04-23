@@ -382,16 +382,16 @@ get_header(); ?>
             <dl class="p-top-price__samples">
               <div class="p-top-price__sample">
                 <dt class="p-top-price__sampleTitle">LP・トップページ</dt>
-                <dd class="p-top-price__sampleDetail">40.000円〜</dd>
+                <dd class="p-top-price__sampleDetail">44.000円〜</dd>
               </div>
               <div class="p-top-price__sample">
                 <dt class="p-top-price__sampleTitle">下層ページ</dt>
-                <dd class="p-top-price__sampleDetail">15.000円〜</dd>
+                <dd class="p-top-price__sampleDetail">16.500円〜</dd>
               </div>
             </dl>
 
             <p class="p-top-price__hosoku">
-              ※海外に恒久的施設（PE）を移しているため、消費税は頂いておりません。
+              ※消費税込みの料金です。
             </p>
           </div>
           <div class="p-top-price__planLower">
@@ -409,11 +409,11 @@ get_header(); ?>
             <dl class="p-top-price__samples">
               <div class="p-top-price__sample">
                 <dt class="p-top-price__sampleTitle">ライト（月20時間）</dt>
-                <dd class="p-top-price__sampleDetail">48,000円</dd>
+                <dd class="p-top-price__sampleDetail">52,800円</dd>
               </div>
             </dl>
             <p class="p-top-price__hosoku">
-              ※海外に恒久的施設（PE）を移しているため、消費税は頂いておりません。<br />※日給契約も可能です。
+              ※消費税込みの料金です。<br />※日給契約も可能です。
             </p>
           </div>
           <div class="p-top-price__planLower">
@@ -519,10 +519,7 @@ get_header(); ?>
                 <span class="u-inline-block">Microsoft Edge</span> /
                 <span class="u-inline-block">Mozilla Firefox</span> /
                 <span class="u-inline-block">Google Chrome（iOS）</span> /
-                <span class="u-inline-block">Safari（iOS）</span>の最新バージョンの表示確認をします。<br />Internet
-                Explorerに関しては日本国内における<a
-                  href="https://gs.statcounter.com/browser-market-share/all/japan/#monthly-202307-202407">最新のブラウザシェア</a>において0.1-0.4%程度のためサポート致しません。
-              </p>
+                <span class="u-inline-block">Safari（iOS）</span>の最新バージョンの表示確認をします。<br>また、<span class="u-inline-block">Mac OS</span> / <span class="u-inline-block">Windows</span> / <span class="u-inline-block">iOS</span> / <span class="u-inline-block">Android</span>の実機による表示確認を行います。
             </dd>
           </dl>
           <dl class="p-top-faq__list p-top-faq__list2">
@@ -544,7 +541,7 @@ get_header(); ?>
             </dt>
             <dd class="p-top-faq__answer">
               <p>
-                申し訳ございませんが、お打ち合わせはオンラインのみとなっております。
+                大阪府内であれば、対面でのお打ち合わせが可能です。大阪府外の場合は、オンラインでの対応とさせていただいております。
               </p>
             </dd>
           </dl>
