@@ -146,14 +146,30 @@ function initPageTopButton() {
  * スムースリンクの実装ロジック
  */
 function initAnchorScroll() {
+  // クリック時のスムーススクロール
   $('a[href^="#"]').on("click", function (e) {
     e.preventDefault();
-    const headerHeight = document.querySelector(".l-header")?.offsetHeight || 0;
-    let href = $(this).attr("href");
-    let target = $(href === "#" || href === "" ? "html" : href);
-    let position = target.offset().top - headerHeight;
-    $("html, body").animate({ scrollTop: position }, 2000, "swing");
+    const targetHash = $(this).attr("href");
+    scrollToHash(targetHash, true); // アニメーションあり
   });
+
+  // ページ読み込み後にhashがあればスクロール
+  if (location.hash) {
+    scrollToHash(location.hash, false); // アニメーションなし
+  }
+}
+
+function scrollToHash(hash, animate) {
+  const headerHeight = document.querySelector(".l-header")?.offsetHeight || 0;
+  const target = $(hash === "#" || hash === "" ? "html" : hash);
+  if (target.length) {
+    const position = target.offset().top - headerHeight;
+    if (animate) {
+      $("html, body").animate({ scrollTop: position }, 2000, "swing");
+    } else {
+      $("html, body").scrollTop(position);
+    }
+  }
 }
 
 /**

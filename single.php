@@ -48,7 +48,17 @@ get_header(); ?>
                 <?php the_title(); ?>
               </h1>
               <div class="c-postMetas">
-                <div class="c-postMetas__time"><time datetime="<?php the_time('Y-m-d'); ?>"><?php the_time('Y.m.d'); ?></time></div>
+                <div class="c-postMetas__time">
+                  <?php
+                  $published = get_the_time('Y-m-d');
+                  $modified  = get_the_modified_time('Y-m-d');
+                  ?>
+
+                  公開日：<time datetime="<?php echo esc_attr($published); ?>"><?php echo esc_html($published); ?></time>
+                  <?php if ($published !== $modified) : ?>
+                    / 更新日：<time datetime="<?php echo esc_attr($modified); ?>"><?php echo esc_html($modified); ?></time>
+                  <?php endif; ?>
+                </div>
                 <?php
                 $categories = get_the_category();
                 if ($categories):
@@ -192,7 +202,8 @@ get_header(); ?>
       </aside>
     </div>
   </div>
-
 </div>
-
 <?php get_footer(); ?>
+
+
+
