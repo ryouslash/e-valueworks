@@ -18,28 +18,39 @@ $(window).on("load scroll", function () {
  * タイピングアニメーションの初期化
  */
 function initTypingAnimation() {
+  const lang = document.documentElement.lang;
+
   const typing = (el, sentence) => {
-    [...sentence].forEach((char, index) => {
-      setTimeout(() => {
-        if (char === "\n") {
-          document.querySelector(el).innerHTML += "<br>";
-        } else {
-          document.querySelector(el).innerHTML += char;
-        }
-      }, 100 * index);
-    });
+    const target = document.querySelector(el);
+    if (!target) return;
+
+    if (lang === "en-US") {
+      [...sentence].forEach((char, index) => {
+        setTimeout(() => {
+          target.innerHTML += char === "\n" ? "<br>" : char;
+        }, 60 * index);
+      });
+    } else {
+      [...sentence].forEach((char, index) => {
+        setTimeout(() => {
+          target.innerHTML += char === "\n" ? "<br>" : char;
+        }, 100 * index);
+      });
+    }
   };
 
   setTimeout(() => {
-    if (window.innerWidth <= 419) {
+    if (lang === "en-US") {
       typing(
-        ".js-typing",
-        "魅せ方ひとつで、体験が変わる\nUXをデザインするコーディング"
+        ".js-typing--en",
+        "Coding that transforms experience\nthrough the power of UX."
       );
     } else {
       typing(
-        ".js-typing",
-        "魅せ方ひとつで、体験が変わる\nUXをデザインするコーディング"
+        ".js-typing--ja",
+        window.innerWidth <= 419
+          ? "魅せ方ひとつで、\n体験が変わる\nUXをデザインするコーディング"
+          : "魅せ方ひとつで、体験が変わる\nUXをデザインするコーディング"
       );
     }
   }, 1000);
@@ -51,14 +62,31 @@ function initTypingAnimation() {
 function initMainVisualFadeIn() {
   const mainVisualText = document.querySelector(".p-top-mainVisual__text");
   const mainVisualButton = document.querySelector(".p-top-mainVisual__buttons");
+  const lang = document.documentElement.lang;
 
-  setTimeout(() => {
-    mainVisualText.classList.add("is-show");
-  }, 4300);
+  if (lang === "en-US") {
+    setTimeout(() => {
+      mainVisualText.classList.add("is-show");
+    }, 4700);
 
-  setTimeout(() => {
-    mainVisualButton.classList.add("is-show");
-  }, 4800);
+    setTimeout(() => {
+      mainVisualButton.classList.add("is-show");
+    }, 5200);
+  } else {
+    setTimeout(
+      () => {
+        mainVisualText.classList.add("is-show");
+      },
+      window.innerWidth <= 419 ? 4400 : 4300
+    );
+
+    setTimeout(
+      () => {
+        mainVisualButton.classList.add("is-show");
+      },
+      window.innerWidth <= 419 ? 4900 : 4800
+    );
+  }
 }
 
 /**
@@ -76,7 +104,7 @@ function initNewsSlider() {
       items.eq(nextItem).addClass("is-slideIn");
       nextItem = (nextItem + 1) % items.length;
     }
-    setInterval(showNextItem, 5000);
+    setInterval(showNextItem, window.innerWidth <= 419 ? 5400 : 5300);
   } else {
     items.eq(0).addClass("is-slideIn");
   }

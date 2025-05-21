@@ -4,6 +4,26 @@ if (!defined('ABSPATH')) {
 };
 
 /**
+ * タイトルサポート
+ */
+function add_title_support()
+{
+  add_theme_support('title-tag');
+}
+add_action('init', 'add_title_support');
+
+
+/**
+ * タイトルの区切り線
+ */
+function my_document_title_separator($separator)
+{
+  $separator = '|';
+  return $separator;
+}
+add_filter("document_title_separator", "my_document_title_separator");
+
+/**
  * サムネイルサポート
  */
 function add_thumbnail_support()
