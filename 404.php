@@ -11,7 +11,7 @@ get_header(); ?>
         <div class="c-title1">
           <?php $locale = get_locale();
           if ('en_US' == $locale) { ?>
-            <span class="u-inline-block">The page you are looking for</span><span class="u-inline-block">could not be found.</span>
+            The page you are looking for could not be found.
           <?php } else { ?>
             <span class="u-inline-block">お探しのページが</span><span class="u-inline-block">見つかりませんでした。</span>
           <?php } ?>
