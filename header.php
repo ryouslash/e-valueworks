@@ -40,55 +40,48 @@ if (!defined('ABSPATH')) {
         $menu_name = 'global_nav';
         $locations = get_nav_menu_locations();
         $menu = wp_get_nav_menu_object($locations[$menu_name]);
-
         $menu_items = wp_get_nav_menu_items($menu->term_id);
         ?>
-        <ul class="p-gnav">
-          <?php foreach ($menu_items as $item): ?>
-            <li class="p-gnav__item">
-              <a href="<?php echo $item->url; ?>"><?php echo $item->title; ?><span><?php echo $item->description; ?></span></a>
-            </li>
-          <?php endforeach; ?>
-          <?php if (is_front_page()): ?>
-            <li class="p-gnav__item">
-              <a href="#contact">
-                <?php $locale = get_locale();
-                if ('en_US' == $locale) { ?>
-                  CONTACT
-                <?php } else { ?>
-                  お問い合わせ
-                <?php } ?>
-                <span>
-                  <?php $locale = get_locale();
-                  if ('en_US' == $locale) { ?>
-                    お問い合わせ
-                  <?php } else { ?>
-                    CONTACT
-                  <?php } ?>
-                </span>
-              </a>
-            </li>
-          <?php else: ?>
-            <li class="p-gnav__item">
-              <a href="<?php echo esc_url(home_url()); ?>/#contact">
-                <?php $locale = get_locale();
-                if ('en_US' == $locale) { ?>
-                  CONTACT
-                <?php } else { ?>
-                  お問い合わせ
-                <?php } ?>
-                <span>
-                  <?php $locale = get_locale();
-                  if ('en_US' == $locale) { ?>
-                    お問い合わせ
-                  <?php } else { ?>
-                    CONTACT
-                  <?php } ?>
-                </span>
-              </a>
-            </li>
-          <?php endif; ?>
-        </ul>
+        <?php if ($menu_items): ?>
+          <ul class="p-gnav">
+            <?php foreach ($menu_items as $item): ?>
+              <li class="p-gnav__item">
+                <a href="<?php echo $item->url; ?>"><?php echo $item->title; ?><span><?php echo $item->description; ?></span></a>
+              </li>
+            <?php endforeach; ?>
+            <?php if (is_front_page()): ?>
+              <?php $locale = get_locale();
+              if ('en_US' == $locale) { ?>
+                <li class="p-gnav__item">
+                  <a href="#contact">
+                    CONTACT<span>お問い合わせ</span>
+                  </a>
+                </li>
+              <?php } else { ?>
+                <li class="p-gnav__item">
+                  <a href="#contact">
+                    お問い合わせ<span>CONTACT</span>
+                  </a>
+                </li>
+              <?php } ?>
+            <?php else: ?>
+              <?php $locale = get_locale();
+              if ('en_US' == $locale) { ?>
+                <li class="p-gnav__item">
+                  <a href="<?php echo esc_url(home_url()); ?>#contact">
+                    CONTACT<span>お問い合わせ</span>
+                  </a>
+                </li>
+              <?php } else { ?>
+                <li class="p-gnav__item">
+                  <a href="<?php echo esc_url(home_url()); ?>#contact">
+                    お問い合わせ<span>CONTACT</span>
+                  </a>
+                </li>
+              <?php } ?>
+            <?php endif; ?>
+          </ul>
+        <?php endif; ?>
       </nav>
       <div class="l-header__drawerBtn">
         <i class="fa-solid fa-bars"></i>
@@ -97,14 +90,51 @@ if (!defined('ABSPATH')) {
     </div>
     <div class="p-drawerMenu">
       <div class="l-container">
-        <ul class="p-drawerMenu__items">
-          <?php foreach ($menu_items as $item): ?>
-            <li class="p-drawerMenu__item p-drawerMenu__item--home">
-              <a href="<?php echo $item->url; ?>"><?php echo $item->title; ?></a>
-              <span><?php echo $item->description; ?></span>
-            </li>
-          <?php endforeach; ?>
-        </ul>
+        <?php if ($menu_items): ?>
+          <ul class="p-drawerMenu__items">
+            <?php foreach ($menu_items as $item): ?>
+              <li class="p-drawerMenu__item">
+                <a href="<?php echo $item->url; ?>"><?php echo $item->title; ?></a>
+                <span><?php echo $item->description; ?></span>
+              </li>
+            <?php endforeach; ?>
+            <?php if (is_front_page()): ?>
+              <?php $locale = get_locale();
+              if ('en_US' == $locale) { ?>
+                <li class="p-drawerMenu__item">
+                  <a href="#contact">
+                    CONTACT
+                    <span>お問い合わせ</span>
+                  </a>
+                </li>
+              <?php } else { ?>
+                <li class="p-drawerMenu__item">
+                  <a href="#contact">
+                    お問い合わせ
+                    <span>CONTACT</span>
+                  </a>
+                </li>
+              <?php } ?>
+            <?php else: ?>
+              <?php $locale = get_locale();
+              if ('en_US' == $locale) { ?>
+                <li class="p-drawerMenu__item">
+                  <a href="<?php echo esc_url(home_url()); ?>#contact">
+                    CONTACT
+                    <span>お問い合わせ</span>
+                  </a>
+                </li>
+              <?php } else { ?>
+                <li class="p-drawerMenu__item">
+                  <a href="<?php echo esc_url(home_url()); ?>#contact">
+                    お問い合わせ
+                    <span>CONTACT</span>
+                  </a>
+                </li>
+              <?php } ?>
+            <?php endif; ?>
+          </ul>
+        <?php endif; ?>
       </div>
     </div>
   </header>

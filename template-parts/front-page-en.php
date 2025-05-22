@@ -404,7 +404,7 @@
 
   <section class="p-top-faq l-sectionPadding">
     <div class="l-container">
-      <h2 class="c-title1">Frequently Asked Questions</h2>
+      <h2 class="c-title1">FAQ</h2>
       <div class="p-top-faq__inner">
         <div class="p-top-faq__left">
           <img src="/img/man-with-green-tie.png" alt="Illustration of a man with a green tie" width="629" height="867" loading="lazy" />
@@ -478,4 +478,3 @@
   </section>
   <?php get_template_part('template-parts/fixcta'); ?>
 </main>
-

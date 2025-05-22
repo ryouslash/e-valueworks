@@ -160,7 +160,8 @@ function initAnchorScroll() {
 }
 
 function scrollToHash(hash, animate) {
-  const headerHeight = document.querySelector(".l-header")?.offsetHeight || 0;
+  const headerHeight =
+    document.querySelector(".l-header__inner")?.offsetHeight || 0;
   const target = $(hash === "#" || hash === "" ? "html" : hash);
   if (target.length) {
     const position = target.offset().top - headerHeight;

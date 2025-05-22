@@ -39,16 +39,20 @@
             <a href="<?php echo esc_url(home_url('#contact')); ?>"><i class="fa-regular fa-envelope"></i>メールで相談</a>
           <?php endif ?>
         </li>
-        <li class="p-fixCta__naviItem p-fixCta__naviItem--linkedIn">
-          <a href="https://www.linkedin.com/in/ryo-ikeda-48861a140/" target="_blank"><i class="fa-brands fa-linkedin"></i>
-            <?php $locale = get_locale();
-            if ('en_US' == $locale) { ?>
+        <?php $locale = get_locale();
+        if ('en_US' == $locale) { ?>
+          <li class="p-fixCta__naviItem p-fixCta__naviItem--linkedIn">
+            <a href="https://www.linkedin.com/in/ryo-ikeda-48861a140/" target="_blank"><i class="fa-brands fa-linkedin"></i>
               Contact via LinkedIn
-            <?php } else { ?>
-              LinkedInで相談
-            <?php } ?>
-          </a>
-        </li>
+            </a>
+          </li>
+        <?php } else { ?>
+          <li class="p-fixCta__naviItem p-fixCta__naviItem--chatwork">
+            <a href="https://www.chatwork.com/ryouslash" target="_blank"><img src="/img/cw_logomark_color.svg" alt="Chatwork アイコン" width="150" height="150" />
+              Chatworkで相談
+            </a>
+          </li>
+        <?php } ?>
       </ul>
       <div class="p-fixCta__close">
         <i class="fa-solid fa-xmark"></i>
