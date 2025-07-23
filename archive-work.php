@@ -4,6 +4,7 @@ if (!defined('ABSPATH')) {
 };
 
 $paged = get_query_var('paged') ?: get_query_var('page') ?: 1; // 現在のページ情報
+$lang = get_locale();
 $tax_type01 = 'scale'; // タクソノミー【scale】
 $tax_type02 = 'price'; // タクソノミー【price】
 $tax_type03 = 'language'; // タクソノミー【language】
@@ -15,7 +16,7 @@ $search_args = array(
   'post_status'    => 'publish',
   // ajax-handler.php内2箇所、cutom-posts.php内1箇所と数値を合わせる必要あり
   'posts_per_page' => 10,
-  'paged' => $paged
+  'paged' => $paged,
 );
 
 $tax_query = [];
@@ -96,40 +97,6 @@ if (! empty($_GET[$tax_type04])) {
                           <input type="checkbox" id="<?php echo esc_attr($term->slug); ?>" name="<?php echo $tax_type01; ?>[]" value="<?php echo esc_attr($term->slug); ?>" <?php echo $checked; ?>>
                           <label class="checkbox" for="<?php echo esc_attr($term->slug); ?>"><?php echo esc_html($term->name); ?></label>
                         <?php endforeach; ?>
-                      </dd>
-                    </dl>
-                  </li>
-                  <li class="p-archive-work__searchItem">
-                    <dl>
-                      <dt>価格帯</dt>
-                      <dd>
-                        <?php
-                        $price_terms = get_terms($tax_type02, array(
-                          'hide_empty' => false,
-                          'orderby' => 'term_id',  // ID順で並べる
-                          'order' => 'ASC'         // 昇順で並べる（降順にしたい場合は 'DESC' に変更）
-                        ));
-
-                        // descriptionに設定した数字で並べ替え
-                        usort($price_terms, function ($a, $b) {
-                          // descriptionから数字を取得して比較
-                          $a_description = (int) $a->description; // descriptionから数字を取得
-                          $b_description = (int) $b->description; // descriptionから数字を取得
-                          return $a_description - $b_description; // 数字順に並べる（昇順）
-                        });
-
-                        foreach ($price_terms as $term) :
-                          $checked = '';
-                          if (in_array($term->slug, $param_price_terms, true)) {
-                            $checked = 'checked';
-                          }
-                        ?>
-                          <input type="checkbox" id="<?php echo esc_attr($term->slug); ?>" name="<?php echo $tax_type02; ?>[]" value="<?php echo esc_attr($term->slug); ?>" <?php echo $checked; ?>>
-                          <label class="checkbox" for="<?php echo esc_attr($term->slug); ?>">
-                            <?php echo esc_html($term->name); ?>
-                          </label>
-                        <?php endforeach; ?>
-
                       </dd>
                     </dl>
                   </li>

@@ -403,11 +403,11 @@
             <dl class="p-top-price__samples">
               <div class="p-top-price__sample">
                 <dt class="p-top-price__sampleTitle">ライト（月20時間）</dt>
-                <dd class="p-top-price__sampleDetail">52,800円</dd>
+                <dd class="p-top-price__sampleDetail">66,000円</dd>
               </div>
             </dl>
             <p class="p-top-price__hosoku">
-              ※消費税込みの料金です。<br />※日給契約も可能です。
+              ※消費税込みの料金です。
             </p>
           </div>
           <div class="p-top-price__planLower">

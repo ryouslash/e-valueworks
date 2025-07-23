@@ -94,3 +94,5 @@ get_template_part('includes/shortcode');
 get_template_part('includes/core-blocks-style');
 
 get_template_part('includes/ajax-handler');
+
+get_template_part('includes/bogo');

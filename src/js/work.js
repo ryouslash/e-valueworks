@@ -6,6 +6,13 @@ $(function () {
 });
 
 /**
+ * 現在の言語スラッグを取得（htmlのlang属性から）
+ */
+function getCurrentLang() {
+  return document.documentElement.lang;
+}
+
+/**
  * AJAX フィルターフォーム送信処理
  */
 function initAjaxFormSubmit() {
@@ -23,7 +30,9 @@ function initAjaxFormSubmit() {
         "&action=filter_work_posts&nonce=" +
         my_ajax.nonce +
         "&page=" +
-        page,
+        page +
+        "&lang=" +
+        getCurrentLang(), // ← 言語情報を追加
     }).done(function (res) {
       $(".p-archive-work__result").html(res);
     });
@@ -50,7 +59,9 @@ function initAjaxLoadMore() {
         "&action=see_more_work&nonce=" +
         my_ajax.nonce +
         "&page=" +
-        page,
+        page +
+        "&lang=" +
+        getCurrentLang(),
     }).done(function (res) {
       $(".p-archive-work__items").append(res);
 

@@ -36,7 +36,14 @@
               <?php } ?>
             </a>
           <?php else: ?>
-            <a href="<?php echo esc_url(home_url('#contact')); ?>"><i class="fa-regular fa-envelope"></i>メールで相談</a>
+            <a href="<?php echo esc_url(home_url('#contact')); ?>"><i class="fa-regular fa-envelope"></i>
+              <?php $locale = get_locale();
+              if ('en_US' == $locale) { ?>
+                Contact via Form
+              <?php } else { ?>
+                メールで相談
+              <?php } ?>
+            </a>
           <?php endif ?>
         </li>
         <?php $locale = get_locale();

@@ -15,6 +15,10 @@ function filter_work_posts()
 
   // ページ番号
   $page = isset($_POST['page']) ? intval($_POST['page']) : 1; //ページ番号はAJAXから送信
+  $lang = isset($_POST['lang']) ? sanitize_text_field($_POST['lang']) : 'ja';
+  if (strpos($lang, '-') !== false) {
+    $lang = str_replace('-', '_', $lang);
+  }
   $tax_type01 = 'scale'; // タクソノミー【scale】
   $tax_type02 = 'price'; // タクソノミー【price】
   $tax_type03 = 'language'; // タクソノミー【language】
@@ -26,6 +30,8 @@ function filter_work_posts()
     // archive-work.phpと数値を合わせる必要あり
     'posts_per_page' => 10,
     'paged' => $page,
+    'suppress_filters' => false,
+    'lang' => $lang
   ];
 
   $tax_query = [];
@@ -45,6 +51,7 @@ function filter_work_posts()
         'field' => 'slug',
         // ターム間はOR検索
         'operator' => 'IN',
+
       ];
     }
   }
@@ -115,6 +122,10 @@ function see_more_work()
 
   // ページ番号
   $page = isset($_POST['page']) ? intval($_POST['page']) : 1; //ページ番号はAJAXから送信
+  $lang = isset($_POST['lang']) ? sanitize_text_field($_POST['lang']) : 'ja';
+  if (strpos($lang, '-') !== false) {
+    $lang = str_replace('-', '_', $lang);
+  }
   $tax_type01 = 'scale'; // タクソノミー【scale】
   $tax_type02 = 'price'; // タクソノミー【price】
   $tax_type03 = 'language'; // タクソノミー【language】
@@ -126,6 +137,8 @@ function see_more_work()
     // archive-work.phpと数値を合わせる必要あり
     'posts_per_page' => 10,
     'paged' => $page,
+    'suppress_filters' => false,
+    'lang' => $lang
   ];
 
   $tax_query = [];

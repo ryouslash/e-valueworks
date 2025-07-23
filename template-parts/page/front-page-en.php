@@ -30,6 +30,42 @@
     </div>
   </div>
 
+  <?php
+  $args = array(
+    'post_type' => 'news',
+    'posts_per_page' => 5,
+  );
+  $the_latest_query = new WP_Query($args);
+  ?>
+  <?php if ($the_latest_query->have_posts()): ?>
+    <div class="p-top-news">
+      <div class="l-container">
+        <ul class="p-top-news__items">
+          <?php while ($the_latest_query->have_posts()): $the_latest_query->the_post(); ?>
+            <li class="p-top-news__item">
+              <time class="p-top-news__time" datetime="<?php the_time('Y-m-d'); ?>"><?php the_time('Y/m/d'); ?></time>
+              <!-- 1つまで -->
+              <?php
+              $terms = get_the_terms(get_the_ID(), 'news_category');
+              if ($terms):
+              ?>
+                <div class="p-top-news__taxonomy">
+                  <?php foreach ($terms as $term): ?>
+                    <a href="<?php echo esc_url(get_term_link($term)); ?>"><?php echo esc_html($term->name); ?></a>
+                  <?php endforeach; ?>
+                </div>
+              <?php endif; ?>
+              <div class="p-top-news__title">
+                <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+              </div>
+            </li>
+          <?php endwhile; ?>
+        </ul>
+      </div>
+    </div>
+    <?php wp_reset_postdata(); ?>
+  <?php endif; ?>
+
   <section class="p-top-troubles">
     <div class="l-sectionPadding">
       <div class="l-container">
@@ -159,6 +195,48 @@
       </div>
     </div>
   </section>
+
+  <?php
+  $args = array(
+    'post_type' => 'work',
+    'posts_per_page' => 5,
+  );
+  $the_work_query = new WP_Query($args);
+  ?>
+  <?php if ($the_work_query->have_posts()): ?>
+    <section class="p-top-work l-sectionPadding">
+      <div class="l-container">
+        <h2 class="c-title1">制作実績</h2>
+        <div class="p-top-work__inner">
+          <p class="p-top-work__text">※以下は実績の一部です。</p>
+          <div class="p-top-work__slider">
+            <?php while ($the_work_query->have_posts()): $the_work_query->the_post(); ?>
+              <div class="p-top-work__slider-item">
+                <a href="<?php the_permalink(); ?>">
+                  <?php if (has_post_thumbnail()): ?>
+                    <figure class="p-top-work__photo">
+                      <?php the_post_thumbnail(); ?>
+                    </figure>
+                  <?php endif; ?>
+                  <?php
+                  $terms = get_the_terms(get_the_ID(), 'industry');
+                  if ($terms && !is_wp_error($terms)) : ?>
+                    <div class="p-archive-work__industry">
+                      <?php echo esc_html($terms[0]->name); ?>
+                    </div>
+                  <?php endif; ?>
+                  <div class="p-top-work__title">
+                    <?php the_title(); ?>
+                  </div>
+                </a>
+              </div>
+            <?php endwhile; ?>
+          </div>
+        </div>
+      </div>
+    </section>
+    <?php wp_reset_postdata(); ?>
+  <?php endif; ?>
 
   <section class="p-top-promise l-sectionPadding">
     <div class="l-container">

@@ -1,1 +1,360 @@
-.p-editorContent>*{margin-bottom:1em}.p-editorContent>:not(p){clear:both}.p-editorContent>:first-child{margin-top:0!important}.p-editorContent>:last-child{margin-bottom:0!important}.p-editorContent h1,.p-editorContent h2{font-size:clamp(2rem,1.8rem + .625vw,2.6rem);margin:2em 0 .8em}.p-editorContent h3{margin:2em 0 .8em}.p-editorContent h3,.p-editorContent h4{font-size:clamp(1.8rem,1.6rem + .625vw,2rem)}.p-editorContent h4{margin:1.5em 0 1em}.p-editorContent h5,.p-editorContent h6{font-size:1.6rem}.p-editorContent p{line-height:1.4}.p-editorContent a{text-decoration:underline}.p-editorContent a:hover{text-decoration:none}.p-editorContent:not(pre) code{background:#f7f7f7;border:.1rem solid rgba(0,0,0,.1);border-radius:.2rem;color:#333;font-size:.9em;letter-spacing:0;line-height:1;margin:0 .3em;padding:.25em .5em}.p-editorContent blockquote{background:#efefef;border-left:.5rem solid #18c1f0;box-sizing:border-box;color:#555;padding:3rem 1.5rem 1rem;position:relative}.p-editorContent blockquote:before{background-image:url(../img/quotation.svg);background-position:bottom;background-repeat:no-repeat;background-size:contain;content:"";display:inline-block;height:2rem;left:1.5rem;position:absolute;top:1rem;width:3rem}.p-editorContent blockquote p{line-height:1.7;margin:1rem 0;padding:0}.p-editorContent blockquote cite{color:#888;display:block;font-size:.9em;text-align:right}.p-editorContent table{border:none;border-collapse:collapse;border-spacing:0;line-height:1.6;max-width:100%;text-align:left}.p-editorContent dl dt{font-weight:900}.p-editorContent dl dd,.p-editorContent ol,.p-editorContent ul{margin-left:1em}.p-editorContent ol li,.p-editorContent ul li{margin:.2em 0}.p-editorContent ol li::marker,.p-editorContent ul li::marker{margin:0;padding:0}.p-editorContent ol li ul li,.p-editorContent ul li ul li{list-style-type:disc}.p-editorContent ol li ol li,.p-editorContent ul li ol li{list-style-type:decimal}.p-editorContent ul li{list-style-type:disc}.p-editorContent ol li{list-style-type:decimal}.p-editorContent pre{overflow-x:auto;padding:.5em}.p-editorContent sub,.p-editorContent sup{font-size:.6em}.p-editorContent sup{vertical-align:super}.p-editorContent img{height:auto;width:auto}.p-editorContent .alignleft{float:left}.p-editorContent .alignright{float:right}.p-editorContent .aligncenter{margin-left:auto;margin-right:auto;text-align:center}.p-editorContent .wp-caption{max-width:100%;width:100%}.p-editorContent .wp-caption img{display:block}.p-editorContent .wp-caption .wp-caption-text{font-size:.8em;margin-top:1em;text-align:center}.editor-styles-wrapper>*{margin-bottom:1em}.editor-styles-wrapper>:not(p){clear:both}.editor-styles-wrapper>:first-child{margin-top:0!important}.editor-styles-wrapper>:last-child{margin-bottom:0!important}.editor-styles-wrapper h1,.editor-styles-wrapper h2{font-size:clamp(2rem,1.8rem + .625vw,2.6rem);margin:2em 0 .8em}.editor-styles-wrapper h3{font-size:clamp(1.8rem,1.6rem + .625vw,2rem);margin:2em 0 .8em}.editor-styles-wrapper h4{font-size:clamp(1.8rem,1.6rem + .625vw,2rem);margin:1.5em 0 1em}.editor-styles-wrapper h5,.editor-styles-wrapper h6{font-size:1.6rem}.editor-styles-wrapper p{line-height:1.4}.editor-styles-wrapper a{text-decoration:underline}.editor-styles-wrapper a:hover{text-decoration:none}.editor-styles-wrapper:not(pre) code{background:#f7f7f7;border:.1rem solid rgba(0,0,0,.1);border-radius:.2rem;color:#333;font-size:.9em;letter-spacing:0;line-height:1;margin:0 .3em;padding:.25em .5em}.editor-styles-wrapper blockquote{background:#efefef;border-left:.5rem solid #18c1f0;box-sizing:border-box;color:#555;padding:3rem 1.5rem 1rem;position:relative}.editor-styles-wrapper blockquote:before{background-image:url(../img/quotation.svg);background-position:bottom;background-repeat:no-repeat;background-size:contain;content:"";display:inline-block;height:2rem;left:1.5rem;position:absolute;top:1rem;width:3rem}.editor-styles-wrapper blockquote p{line-height:1.7;margin:1rem 0;padding:0}.editor-styles-wrapper blockquote cite{color:#888;display:block;font-size:.9em;text-align:right}.editor-styles-wrapper table{border:none;border-collapse:collapse;border-spacing:0;line-height:1.6;max-width:100%;text-align:left}.editor-styles-wrapper dl dt{font-weight:900}.editor-styles-wrapper dl dd,.editor-styles-wrapper ol,.editor-styles-wrapper ul{margin-left:1em}.editor-styles-wrapper ol li,.editor-styles-wrapper ul li{margin:.2em 0}.editor-styles-wrapper ol li::marker,.editor-styles-wrapper ul li::marker{margin:0;padding:0}.editor-styles-wrapper ol li ul li,.editor-styles-wrapper ul li ul li{list-style-type:disc}.editor-styles-wrapper ol li ol li,.editor-styles-wrapper ul li ol li{list-style-type:decimal}.editor-styles-wrapper ul li{list-style-type:disc}.editor-styles-wrapper ol li{list-style-type:decimal}.editor-styles-wrapper pre{overflow-x:auto;padding:.5em}.editor-styles-wrapper sub,.editor-styles-wrapper sup{font-size:.6em}.editor-styles-wrapper sup{vertical-align:super}.editor-styles-wrapper img{height:auto;width:auto}.editor-styles-wrapper .alignleft{float:left}.editor-styles-wrapper .alignright{float:right}.editor-styles-wrapper .aligncenter{margin-left:auto;margin-right:auto;text-align:center}.editor-styles-wrapper .wp-caption{max-width:100%;width:100%}.editor-styles-wrapper .wp-caption img{display:block}.editor-styles-wrapper .wp-caption .wp-caption-text{font-size:.8em;margin-top:1em;text-align:center}.editor-styles-wrapper h1,.editor-styles-wrapper h2{font-size:26px!important}.editor-styles-wrapper h3,.editor-styles-wrapper h4{font-size:20px!important}.editor-styles-wrapper h5,.editor-styles-wrapper h6{font-size:16px}.editor-styles-wrapper blockquote>:first-child{margin:0}
+/*!***************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-4.use[3]!./src/scss/editor-style.scss ***!
+  \***************************************************************************************************************************************************************************************/
+.p-editorContent > * {
+  margin-bottom: 1em;
+}
+.p-editorContent > *:not(p) {
+  clear: both;
+}
+.p-editorContent > :first-child {
+  margin-top: 0 !important;
+}
+.p-editorContent > :last-child {
+  margin-bottom: 0 !important;
+}
+.p-editorContent h1,
+.p-editorContent h2 {
+  margin: 2em 0 0.8em;
+  font-size: clamp(2rem, 1.8rem + 0.625vw, 2.6rem);
+}
+.p-editorContent h3 {
+  margin: 2em 0 0.8em;
+  font-size: clamp(1.8rem, 1.6rem + 0.625vw, 2rem);
+}
+.p-editorContent h4 {
+  margin: 1.5em 0 1em;
+  font-size: clamp(1.8rem, 1.6rem + 0.625vw, 2rem);
+}
+.p-editorContent h5,
+.p-editorContent h6 {
+  font-size: 1.6rem;
+}
+.p-editorContent p {
+  line-height: 1.4;
+}
+.p-editorContent a {
+  text-decoration: underline;
+}
+.p-editorContent a:hover {
+  text-decoration: none;
+}
+.p-editorContent:not(pre) code {
+  color: #333333;
+  font-size: 0.9em;
+  letter-spacing: 0;
+  line-height: 1;
+  background: #f7f7f7;
+  border: 0.1rem solid rgba(0, 0, 0, 0.1);
+  border-radius: 0.2rem;
+  margin: 0 0.3em;
+  padding: 0.25em 0.5em;
+}
+.p-editorContent blockquote {
+  position: relative;
+  padding: 3rem 1.5rem 1rem;
+  box-sizing: border-box;
+  background: #efefef;
+  color: #555;
+  border-left: 0.5rem solid #18c1f0;
+}
+.p-editorContent blockquote:before {
+  content: "";
+  display: inline-block;
+  width: 3rem;
+  height: 2rem;
+  position: absolute;
+  top: 1rem;
+  left: 1.5rem;
+  background-image: url(../img/quotation.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom center;
+}
+.p-editorContent blockquote p {
+  padding: 0;
+  margin: 1rem 0;
+  line-height: 1.7;
+}
+.p-editorContent blockquote cite {
+  display: block;
+  text-align: right;
+  color: #888888;
+  font-size: 0.9em;
+}
+.p-editorContent table {
+  border: none;
+  border-collapse: collapse;
+  border-spacing: 0;
+  line-height: 1.6;
+  max-width: 100%;
+  text-align: left;
+}
+.p-editorContent dl dt {
+  font-weight: 900;
+}
+.p-editorContent dl dd {
+  margin-left: 1em;
+}
+.p-editorContent ul,
+.p-editorContent ol {
+  margin-left: 1em;
+}
+.p-editorContent ul li,
+.p-editorContent ol li {
+  margin: 0.2em 0;
+}
+.p-editorContent ul li::marker,
+.p-editorContent ol li::marker {
+  margin: 0;
+  padding: 0;
+}
+.p-editorContent ul li ul li,
+.p-editorContent ol li ul li {
+  list-style-type: disc;
+}
+.p-editorContent ul li ol li,
+.p-editorContent ol li ol li {
+  list-style-type: decimal;
+}
+.p-editorContent ul li {
+  list-style-type: disc;
+}
+.p-editorContent ol li {
+  list-style-type: decimal;
+}
+.p-editorContent pre {
+  overflow-x: auto;
+  padding: 0.5em;
+}
+.p-editorContent sub,
+.p-editorContent sup {
+  font-size: 0.6em;
+}
+.p-editorContent sup {
+  vertical-align: super;
+}
+.p-editorContent img {
+  width: auto;
+  height: auto;
+}
+.p-editorContent .alignleft {
+  float: left;
+}
+.p-editorContent .alignright {
+  float: right;
+}
+.p-editorContent .aligncenter {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+.p-editorContent .wp-caption {
+  max-width: 100%;
+  width: 100%;
+}
+.p-editorContent .wp-caption img {
+  display: block;
+}
+.p-editorContent .wp-caption .wp-caption-text {
+  margin-top: 1em;
+  font-size: 0.8em;
+  text-align: center;
+}
+
+.is-style-shadow img {
+  box-shadow: 0 0 4px #a9a9a9;
+}
+.is-style-shadow .wp-element-caption {
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.is-style-borderBottom > li {
+  padding: 0.5em 0;
+  border-bottom: 1px dotted #666666;
+}
+
+.is-style-point {
+  background-color: #fffce6;
+  padding: 2rem;
+  border: 0.2rem solid #feed6e;
+}
+
+.editor-styles-wrapper > * {
+  margin-bottom: 1em;
+}
+.editor-styles-wrapper > *:not(p) {
+  clear: both;
+}
+.editor-styles-wrapper > :first-child {
+  margin-top: 0 !important;
+}
+.editor-styles-wrapper > :last-child {
+  margin-bottom: 0 !important;
+}
+.editor-styles-wrapper h1,
+.editor-styles-wrapper h2 {
+  margin: 2em 0 0.8em;
+  font-size: clamp(2rem, 1.8rem + 0.625vw, 2.6rem);
+}
+.editor-styles-wrapper h3 {
+  margin: 2em 0 0.8em;
+  font-size: clamp(1.8rem, 1.6rem + 0.625vw, 2rem);
+}
+.editor-styles-wrapper h4 {
+  margin: 1.5em 0 1em;
+  font-size: clamp(1.8rem, 1.6rem + 0.625vw, 2rem);
+}
+.editor-styles-wrapper h5,
+.editor-styles-wrapper h6 {
+  font-size: 1.6rem;
+}
+.editor-styles-wrapper p {
+  line-height: 1.4;
+}
+.editor-styles-wrapper a {
+  text-decoration: underline;
+}
+.editor-styles-wrapper a:hover {
+  text-decoration: none;
+}
+.editor-styles-wrapper:not(pre) code {
+  color: #333333;
+  font-size: 0.9em;
+  letter-spacing: 0;
+  line-height: 1;
+  background: #f7f7f7;
+  border: 0.1rem solid rgba(0, 0, 0, 0.1);
+  border-radius: 0.2rem;
+  margin: 0 0.3em;
+  padding: 0.25em 0.5em;
+}
+.editor-styles-wrapper blockquote {
+  position: relative;
+  padding: 3rem 1.5rem 1rem;
+  box-sizing: border-box;
+  background: #efefef;
+  color: #555;
+  border-left: 0.5rem solid #18c1f0;
+}
+.editor-styles-wrapper blockquote:before {
+  content: "";
+  display: inline-block;
+  width: 3rem;
+  height: 2rem;
+  position: absolute;
+  top: 1rem;
+  left: 1.5rem;
+  background-image: url(../img/quotation.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom center;
+}
+.editor-styles-wrapper blockquote p {
+  padding: 0;
+  margin: 1rem 0;
+  line-height: 1.7;
+}
+.editor-styles-wrapper blockquote cite {
+  display: block;
+  text-align: right;
+  color: #888888;
+  font-size: 0.9em;
+}
+.editor-styles-wrapper table {
+  border: none;
+  border-collapse: collapse;
+  border-spacing: 0;
+  line-height: 1.6;
+  max-width: 100%;
+  text-align: left;
+}
+.editor-styles-wrapper dl dt {
+  font-weight: 900;
+}
+.editor-styles-wrapper dl dd {
+  margin-left: 1em;
+}
+.editor-styles-wrapper ul,
+.editor-styles-wrapper ol {
+  margin-left: 1em;
+}
+.editor-styles-wrapper ul li,
+.editor-styles-wrapper ol li {
+  margin: 0.2em 0;
+}
+.editor-styles-wrapper ul li::marker,
+.editor-styles-wrapper ol li::marker {
+  margin: 0;
+  padding: 0;
+}
+.editor-styles-wrapper ul li ul li,
+.editor-styles-wrapper ol li ul li {
+  list-style-type: disc;
+}
+.editor-styles-wrapper ul li ol li,
+.editor-styles-wrapper ol li ol li {
+  list-style-type: decimal;
+}
+.editor-styles-wrapper ul li {
+  list-style-type: disc;
+}
+.editor-styles-wrapper ol li {
+  list-style-type: decimal;
+}
+.editor-styles-wrapper pre {
+  overflow-x: auto;
+  padding: 0.5em;
+}
+.editor-styles-wrapper sub,
+.editor-styles-wrapper sup {
+  font-size: 0.6em;
+}
+.editor-styles-wrapper sup {
+  vertical-align: super;
+}
+.editor-styles-wrapper img {
+  width: auto;
+  height: auto;
+}
+.editor-styles-wrapper .alignleft {
+  float: left;
+}
+.editor-styles-wrapper .alignright {
+  float: right;
+}
+.editor-styles-wrapper .aligncenter {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+.editor-styles-wrapper .wp-caption {
+  max-width: 100%;
+  width: 100%;
+}
+.editor-styles-wrapper .wp-caption img {
+  display: block;
+}
+.editor-styles-wrapper .wp-caption .wp-caption-text {
+  margin-top: 1em;
+  font-size: 0.8em;
+  text-align: center;
+}
+.editor-styles-wrapper h1,
+.editor-styles-wrapper h2 {
+  font-size: 26px !important;
+}
+.editor-styles-wrapper h3,
+.editor-styles-wrapper h4 {
+  font-size: 20px !important;
+}
+.editor-styles-wrapper h5,
+.editor-styles-wrapper h6 {
+  font-size: 16px;
+}
+.editor-styles-wrapper blockquote > :first-child {
+  margin: 0;
+}
+
+/*# sourceMappingURL=editor-style.css.map*/
