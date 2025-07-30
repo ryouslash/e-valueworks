@@ -17,6 +17,7 @@ import {
   faSackDollar,
   faMagnifyingGlass,
   faCalculator,
+  faLanguage,
 } from "@fortawesome/free-solid-svg-icons";
 import {
   faEnvelope,
@@ -70,7 +71,8 @@ function initFontAwesome() {
     faSackDollar,
     faHandPointRight,
     faMagnifyingGlass,
-    faCalculator
+    faCalculator,
+    faLanguage
   );
   dom.i2svg();
 }

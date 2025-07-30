@@ -12,7 +12,7 @@ $the_latest_query = new WP_Query($args);
 
 <?php if ($the_latest_query->have_posts()): ?>
   <div class="p-sidebarItem p-sidebarLatestPosts">
-    <div class="p-sidebarItem__title">最新の投稿</div>
+    <div class="p-sidebarItem__title"><?php _e('最新の投稿', 'e-valueworks'); ?></div>
     <ul class="p-sidebarLatestPosts__items">
       <?php while ($the_latest_query->have_posts()): $the_latest_query->the_post(); ?>
         <li class="p-sidebarLatestPosts__item">

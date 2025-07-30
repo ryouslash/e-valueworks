@@ -41,18 +41,13 @@ get_header(); ?>
           <aside class="l-sidebar">
             <!-- 1つまで -->
             <div class="p-single-news-title">
-              <?php
-              if ($terms):
-              ?>
-                <div class="c-title1"><?php echo esc_html($terms[0]->name); ?></div>
-                <div class="c-subTitle">
-                  <?php
-                  $slug = esc_html(($terms[0]->slug));
-                  $formatted_slug = strtoupper(str_replace('-', ' ', $slug));
-                  echo $formatted_slug;
-                  ?>
-                </div>
-              <?php endif; ?>
+              <div class="c-title1"><?php echo mb_strtoupper(__('お知らせ', 'e-valueworks'), 'UTF-8'); ?></div>
+              <div class="c-subTitle">
+                <?php
+                $locale = get_locale();
+                echo ($locale === 'ja') ? 'NEWS' : 'お知らせ';
+                ?>
+              </div>
             </div>
           </aside>
         </div>

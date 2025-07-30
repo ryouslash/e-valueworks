@@ -6,17 +6,8 @@ if (!defined('ABSPATH')) {
 <html <?php language_attributes(); ?>>
 
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <meta name="viewport" id="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- meta description -->
-  <?php if (is_front_page()): ?>
-    <?php $locale = get_locale();
-    if ('en_US' == $locale) { ?>
-      <meta name="description" content="Coding that transforms experience through the power of UX.We offer flexible solutions to meet diverse needs, whether it's cost-effective, high-quality coding for individual projects or monthly contracts for site maintenance and updates.">
-    <?php } else { ?>
-      <meta name="description" content="魅せ方ひとつで、体験が変わる UXをデザインするコーディング。低価格・高品質なコーディングを案件単位で依頼したい方、ちょっとした改修作業を月額契約で外注したい方など様々なニーズにお応えします。">
-    <?php } ?>
-  <?php endif; ?>
   <?php wp_head(); ?>
 </head>
 

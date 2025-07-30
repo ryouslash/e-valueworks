@@ -16,19 +16,13 @@ get_header(); ?>
       <aside class="l-sidebar">
         <!-- 1つまで -->
         <div class="p-single-news-title">
-          <?php
-          $queried_object = get_queried_object();
-
-          if ($queried_object && is_tax('news_category')) {
-            // タクソノミーネーム
-            $taxonomy_name = esc_html($queried_object->name);
-            echo '<h1 class="c-title1">' . $taxonomy_name . '</h1>';
-
-            // タクソノミースラッグ（大文字でフォーマット）
-            $taxonomy_slug = strtoupper(str_replace('-', ' ', esc_html($queried_object->slug)));
-            echo '<div class="c-subTitle">' . $taxonomy_slug . '</div>';
-          }
-          ?>
+          <h1 class="c-title1"><?php echo mb_strtoupper(__('お知らせ', 'e-valueworks'), 'UTF-8'); ?></h1>
+          <div class="c-subTitle">
+            <?php
+            $locale = get_locale();
+            echo ($locale === 'ja') ? 'NEWS' : 'お知らせ';
+            ?>
+          </div>
         </div>
       </aside>
     </div>

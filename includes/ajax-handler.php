@@ -16,9 +16,11 @@ function filter_work_posts()
   // ページ番号
   $page = isset($_POST['page']) ? intval($_POST['page']) : 1; //ページ番号はAJAXから送信
   $lang = isset($_POST['lang']) ? sanitize_text_field($_POST['lang']) : 'ja';
+  // en-US → en_USに変更
   if (strpos($lang, '-') !== false) {
     $lang = str_replace('-', '_', $lang);
   }
+
   $tax_type01 = 'scale'; // タクソノミー【scale】
   $tax_type02 = 'price'; // タクソノミー【price】
   $tax_type03 = 'language'; // タクソノミー【language】
@@ -51,7 +53,6 @@ function filter_work_posts()
         'field' => 'slug',
         // ターム間はOR検索
         'operator' => 'IN',
-
       ];
     }
   }
@@ -78,9 +79,28 @@ function filter_work_posts()
             $terms = get_the_terms(get_the_ID(), 'industry');
             if ($terms && !is_wp_error($terms)) : ?>
               <div class="p-archive-work__industry">
-                <?php echo esc_html($terms[0]->name); ?>
+                <?php
+                $term = $terms[0];
+                $term_name = $term->name;
+
+                if ($lang === 'ja') {
+                  $display_term = $term_name;
+                } else {
+                  // 翻訳ファイル読み込み（念のため）
+                  Bogo_POMO::import($lang);
+
+                  // 翻訳キー（例：industry:18）
+                  $translation_key = $term->taxonomy . ':' . $term->term_id;
+
+                  // Bogo独自の翻訳メソッドで取得
+                  $display_term = Bogo_POMO::translate($translation_key, $term->taxonomy, $term_name);
+                }
+
+                echo esc_html($display_term);
+                ?>
               </div>
             <?php endif; ?>
+
             <h2 class="p-archive-work__title">
               <?php the_title(); ?>
             </h2>
@@ -94,14 +114,26 @@ function filter_work_posts()
     <?php if ($total_pages > 1) : ?>
       <div class="p-archive-work__more js-load-more">
         <button data-page="1" data-max="<?php echo esc_attr($total_pages); ?>">
-          もっと見る
+          <?php
+          switch_to_locale($lang);
+          $load_more_text = __('もっと見る', 'e-valueworks');
+          restore_previous_locale();
+          ?>
+          <?php echo esc_html($load_more_text); ?>
         </button>
       </div>
     <?php endif; ?>
 
   <?php else : ?>
     <div class="p-archive-work__noItem">
-      <p>実績がありません。</p>
+      <p>
+        <?php
+        switch_to_locale($lang);
+        $load_more_text = __('実績がありません。', 'e-valueworks');
+        restore_previous_locale();
+        ?>
+        <?php echo esc_html($load_more_text); ?>
+      </p>
     </div>
   <?php endif;
 
@@ -181,7 +213,25 @@ function see_more_work()
           $terms = get_the_terms(get_the_ID(), 'industry');
           if ($terms && !is_wp_error($terms)) : ?>
             <div class="p-archive-work__industry">
-              <?php echo esc_html($terms[0]->name); ?>
+              <?php
+              $term = $terms[0];
+              $term_name = $term->name;
+
+              if ($lang === 'ja') {
+                $display_term = $term_name;
+              } else {
+                // 翻訳ファイル読み込み（念のため）
+                Bogo_POMO::import($lang);
+
+                // 翻訳キー（例：industry:18）
+                $translation_key = $term->taxonomy . ':' . $term->term_id;
+
+                // Bogo独自の翻訳メソッドで取得
+                $display_term = Bogo_POMO::translate($translation_key, $term->taxonomy, $term_name);
+              }
+
+              echo esc_html($display_term);
+              ?>
             </div>
           <?php endif; ?>
           <h2 class="p-archive-work__title">

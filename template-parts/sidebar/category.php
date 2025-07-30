@@ -17,7 +17,7 @@ usort($categories, function ($a, $b) {
 
 <?php if ($categories): ?>
   <div class="p-sidebarItem p-sidebarTaxonomy">
-    <div class="p-sidebarItem__title">カテゴリー</div>
+    <div class="p-sidebarItem__title"><?php _e('カテゴリー', 'e-valueworks'); ?></div>
     <ul class="p-sidebarTaxonomy__items">
       <?php foreach ($categories as $category): ?>
         <li class="p-sidebarTaxonomy__item">

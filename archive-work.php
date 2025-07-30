@@ -56,22 +56,20 @@ if (! empty($_GET[$tax_type04])) {
 
 <?php get_header(); ?>
 
-
 <div class="l-content">
   <div class="l-container">
     <div class="l-content__inner">
       <main class="l-mainContent">
-        <h1 class="c-title1">制作実績</h1>
-
+        <h1 class="c-title1"><?php _e('制作実績', 'e-valueworks'); ?></h1>
         <div class="p-archive-work">
           <div class="p-archive-work__search">
-            <div class="p-archive-work__searchTitle"><i class="fa-solid fa-magnifying-glass"></i>絞り込み検索</div>
+            <div class="p-archive-work__searchTitle"><i class="fa-solid fa-magnifying-glass"></i><?php _e('絞り込み検索', 'e-valueworks'); ?></div>
             <div class="p-archive-work__searchArea">
               <form method="get" action="<?php echo esc_url(home_url('work')); ?>" class="js-ajax-form">
                 <ul class="p-archive-work__searchItems">
                   <li class="p-archive-work__searchItem">
                     <dl>
-                      <dt>ページ数</dt>
+                      <dt><?php _e('ページ数', 'e-valueworks'); ?></dt>
                       <dd>
                         <?php
                         $scale_terms = get_terms($tax_type01, array(
@@ -102,7 +100,7 @@ if (! empty($_GET[$tax_type04])) {
                   </li>
                   <li class="p-archive-work__searchItem">
                     <dl>
-                      <dt>使用言語・ツール</dt>
+                      <dt><?php _e('使用言語・ツール', 'e-valueworks'); ?></dt>
                       <dd>
                         <?php
                         $language_terms = get_terms($tax_type03, array(
@@ -136,7 +134,7 @@ if (! empty($_GET[$tax_type04])) {
                   </li>
                   <li class="p-archive-work__searchItem">
                     <dl>
-                      <dt>サイト仕様</dt>
+                      <dt><?php _e('サイト仕様', 'e-valueworks'); ?></dt>
                       <dd>
                         <?php
                         $specification_terms = get_terms($tax_type04, array(
@@ -169,7 +167,7 @@ if (! empty($_GET[$tax_type04])) {
                   </li>
                 </ul>
                 <div class="p-archive-work__searchBtns">
-                  <input type="submit" value="絞り込む">
+                  <input type="submit" value="<?php _e('絞り込む', 'e-valueworks'); ?>">
                 </div>
               </form>
             </div>
@@ -207,14 +205,14 @@ if (! empty($_GET[$tax_type04])) {
               <?php if ($total_pages > $paged) : ?>
                 <div class="p-archive-work__more js-load-more">
                   <button data-page="1" data-max="<?php echo esc_attr($new_query->max_num_pages); ?>">
-                    もっと見る
+                    <?php _e('もっと見る', 'e-valueworks'); ?>
                   </button>
                 </div>
               <?php endif; ?>
 
             <?php else: ?>
               <div class="p-archive-work__noItem">
-                <p>実績がありません。</p>
+                <p><?php _e('実績がありません。', 'e-valueworks'); ?></p>
               </div>
             <?php endif; ?>
           </div>

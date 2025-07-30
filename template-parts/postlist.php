@@ -69,9 +69,9 @@
   <?php else: ?>
     <div class="p-postList__noItem">
       <?php if (is_post_type_archive('news') || is_tax('news_category')): ?>
-        <p>お知らせがありません。</p>
+        <p><?php _e('お知らせがありません。', 'e-valueworks'); ?></p>
       <?php else: ?>
-        <p>投稿がありません。</p>
+        <p><?php _e('投稿がありません。', 'e-valueworks'); ?></p>
       <?php endif; ?>
     </div>
   <?php endif; ?>

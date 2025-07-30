@@ -6,7 +6,7 @@ $tags = get_tags([
 ]); ?>
 <?php if ($tags): ?>
   <div class="p-sidebarItem p-sidebarTag">
-    <div class="p-sidebarItem__title">タグ</div>
+    <div class="p-sidebarItem__title"><?php _e('タグ', 'e-valueworks'); ?></div>
     <ul class="p-sidebarTag__items">
       <?php foreach ($tags as $tag): ?>
         <li class="p-sidebarTag__item">

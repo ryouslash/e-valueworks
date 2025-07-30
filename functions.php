@@ -48,9 +48,7 @@ function add_custom_scripts()
 
   elseif (is_page('price')):
     wp_enqueue_script('vendors', esc_url(get_template_directory_uri()) . '/dist/js/vendors.js', array('main'), filemtime(get_template_directory() . '/dist/js/vendors.js'), true);
-
-    wp_enqueue_script('vue-main', esc_url(get_template_directory_uri()) . '/dist/js/vue-main.js', array('vendors'), filemtime(get_template_directory() . '/dist/js/vue-main.js'), true);
-
+    // wp_enqueue_script('vue-main', esc_url(get_template_directory_uri()) . '/dist/js/vue-main.js', array('vendors'), filemtime(get_template_directory() . '/dist/js/vue-main.js'), true);
     wp_enqueue_script('price', esc_url(get_template_directory_uri()) . '/dist/js/price.js', array('main'), filemtime(get_template_directory() . '/dist/js/price.js'), true); // 料金ページ用スクリプト
 
   elseif (is_post_type_archive('work')):
@@ -79,7 +77,87 @@ function term_thumbnail_scripts($hook)
 }
 add_action('admin_enqueue_scripts', 'term_thumbnail_scripts');
 
-get_template_part('includes/basic-setting');
+/**
+ * タイトルサポート
+ */
+function add_title_support()
+{
+  add_theme_support('title-tag');
+}
+add_action('init', 'add_title_support');
+
+/**
+ * サムネイルサポート
+ */
+function add_thumbnail_support()
+{
+  add_theme_support('post-thumbnails');
+}
+add_action('init', 'add_thumbnail_support');
+
+/**
+ * 抜粋文の文字数を設定
+ */
+function custom_excerpt_length($length)
+{
+  return 55;
+}
+add_filter('excerpt_length', 'custom_excerpt_length');
+
+/**
+ * 省略記号の変更
+ */
+function custom_excerpt_symbol($length)
+{
+  return '&hellip;';
+}
+add_filter('excerpt_more', 'custom_excerpt_symbol');
+
+/**
+ * サイト内検索の対象を投稿のみにする
+ */
+function custom_search_filter($query)
+{
+  if ($query->is_search) {
+    $query->set('post_type', 'post');
+  }
+  return $query;
+}
+add_filter('pre_get_posts', 'custom_search_filter');
+
+/**
+ *  固定ページのスラッグをbodyクラスに追加
+ */
+function my_body_class($classes)
+{
+  if (is_page()) {
+    $page = get_post();
+    $classes[] = $page->post_name; // スラッグ名を追加
+    $classes[] = 'page-' . $page->post_name; // 'page-' プレフィックスを追加
+  }
+  return $classes;
+}
+add_filter('body_class', 'my_body_class');
+
+/**
+ * ページネーション スクリーンリーダーテキストのタグ変更
+ */
+function change_navigation_markup($template)
+{
+  $template = str_replace('<h2 class="screen-reader-text">', '<span class="screen-reader-text">', $template);
+  $template = str_replace('</h2>', '</span>', $template);
+  return $template;
+}
+add_filter('navigation_markup_template', 'change_navigation_markup');
+
+/**
+ * 独自テキストドメインの追加
+ */
+function add_text_domain()
+{
+  load_theme_textdomain('e-valueworks', get_template_directory() . '/languages');
+}
+add_action('after_setup_theme', 'add_text_domain');
 
 get_template_part('includes/redirect');
 
@@ -89,10 +167,18 @@ get_template_part('includes/term-thumbnail');
 
 get_template_part('includes/widget');
 
+get_template_part('includes/menu');
+
 get_template_part('includes/shortcode');
 
 get_template_part('includes/core-blocks-style');
 
 get_template_part('includes/ajax-handler');
 
+get_template_part('includes/contact-form7');
+
 get_template_part('includes/bogo');
+
+get_template_part('includes/yoastseo');
+
+get_template_part('includes/breadcrumb');

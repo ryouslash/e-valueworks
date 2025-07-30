@@ -111,6 +111,7 @@
     }
     > dl {
       display: flex;
+      gap: 3rem;
 
       @include mq-down() {
         display: block;
@@ -118,7 +119,7 @@
 
       > dt {
         width: 100%;
-        max-width: 15rem;
+        max-width: 20rem;
         font-weight: 600;
 
         @include mq-down() {

@@ -13,7 +13,7 @@ get_header(); ?>
       <div class="c-pageHeader" style="background-image: url('<?php echo esc_url(get_template_directory_uri() . '/dist/img/column.jpg'); ?>');">
       <?php endif; ?>
       <div class="l-container">
-        <h1 class="c-pageHeader__title">お役立ちコラム</h1>
+        <h1 class="c-pageHeader__title"><?php __('お役立ちコラム', 'e-valueworks');  ?></h1>
       </div>
       </div>
 

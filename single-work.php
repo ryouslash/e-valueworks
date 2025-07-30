@@ -8,7 +8,7 @@ get_header(); ?>
   <div class="l-container">
     <div class="l-content__inner">
       <main class="l-mainContent">
-        <div class="c-title1">制作実績</div>
+        <div class="c-title1"><?php _e('制作実績', 'e-valueworks'); ?></div>
         <?php if (have_posts()): ?>
           <?php while (have_posts()): the_post(); ?>
 
@@ -49,7 +49,7 @@ get_header(); ?>
                         <div
                           class="p-single-work-client__tableItem p-single-work-client__tableItem--url">
                           <dt>URL</dt>
-                          <dd>公開準備中</dd>
+                          <dd><?php _e('公開準備中', 'e-valueworks'); ?></dd>
                         </div>
                       <?php endif; ?>
                       <?php
@@ -57,7 +57,7 @@ get_header(); ?>
                       ?>
                         <div
                           class="p-single-work-client__tableItem p-single-work-client__tableItem--page">
-                          <dt>ページ数</dt>
+                          <dt><?php _e('ページ数', 'e-valueworks'); ?></dt>
                           <dd><?php echo esc_html($pageNumber); ?></dd>
                         </div>
                       <?php endif; ?>
@@ -66,7 +66,7 @@ get_header(); ?>
                       ?>
                         <div
                           class="p-single-work-client__tableItem p-single-work-client__tableItem--price">
-                          <dt>見積もり金額</dt>
+                          <dt><?php _e('見積もり金額', 'e-valueworks'); ?></dt>
                           <dd><?php echo esc_html($estimatedAmount); ?></dd>
                         </div>
                       <?php endif; ?>
@@ -78,7 +78,7 @@ get_header(); ?>
                         });
                       ?>
                         <div class="p-single-work-client__tableItem p-single-work-client__tableItem--language">
-                          <dt>使用言語・ツール</dt>
+                          <dt><?php _e('使用言語・ツール', 'e-valueworks'); ?></dt>
                           <dd><?php
                               $post_language_names = array();
                               foreach ($post_language_terms as $term) {
@@ -97,7 +97,7 @@ get_header(); ?>
                         });
                       ?>
                         <div class="p-single-work-client__tableItem p-single-work-client__tableItem--specification">
-                          <dt>サイト仕様</dt>
+                          <dt><?php _e('サイト仕様', 'e-valueworks'); ?></dt>
                           <dd><?php
                               $post_specification_names = array();
                               foreach ($post_specification_terms as $term) {
@@ -110,7 +110,7 @@ get_header(); ?>
                       <?php if ($scope): ?>
                         <div
                           class="p-single-work-client__tableItem p-single-work-client__tableItem--scope">
-                          <dt>弊所スコープ</dt>
+                          <dt><?php _e('弊所スコープ', 'e-valueworks'); ?></dt>
                           <dd><?php echo esc_html($scope); ?></dd>
                         </div>
                       <?php endif; ?>
@@ -127,7 +127,7 @@ get_header(); ?>
                 </div>
               </div>
               <div class="c-button3">
-                <a href="<?php echo esc_url(home_url('work')); ?>">実績一覧へ戻る</a>
+                <a href="<?php echo esc_url(home_url('work')); ?>"><?php _e('実績一覧へ戻る', 'e-valueworks'); ?></a>
               </div>
             </div>
           <?php endwhile; ?>

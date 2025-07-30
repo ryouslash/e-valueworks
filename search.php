@@ -7,9 +7,9 @@ get_header(); ?>
 <div class="l-content t-search">
   <div class="c-pageHeader">
     <div class="l-container">
-      <span class="c-pageHeader__subTitle">お役立ちコラム</span>
+      <span class="c-pageHeader__subTitle"><?php _e('お役立ちコラム', 'e-valueworks');  ?></span>
       <h1 class="c-pageHeader__title">
-        検索ワード「<?php the_search_query(); ?>」
+        <?php _e('検索ワード', 'e-valueworks');  ?>「<?php the_search_query(); ?>」
       </h1>
     </div>
   </div>

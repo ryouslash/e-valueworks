@@ -1,0 +1,152 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2025-07-30 10:40+0900\n"
+"PO-Revision-Date: 2025-07-30 10:41+0900\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.6\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: 404.php:12
+msgid "お探しのページが見つかりませんでした。"
+msgstr "The page you are looking for could not be found."
+
+#: 404.php:18
+#, php-format
+msgid ""
+"申し訳ございませんが、<a href=\"%s\">こちらのリンク</a>からトップページにお戻"
+"り下さい。"
+msgstr ""
+"We’re sorry, but please return to the homepage from <a href=\"%s\">this "
+"link</a>."
+
+#: archive-news.php:19 includes/breadcrumb.php:12 includes/yoastseo.php:10
+#: includes/yoastseo.php:37 single-news.php:44 taxonomy-news_category.php:19
+msgid "お知らせ"
+msgstr "News"
+
+#: archive-work.php:63 includes/breadcrumb.php:9 includes/yoastseo.php:5
+#: includes/yoastseo.php:32 single-work.php:11
+msgid "制作実績"
+msgstr "Work"
+
+#: archive-work.php:66
+msgid "絞り込み検索"
+msgstr "Refine Search"
+
+#: archive-work.php:72 single-work.php:60
+msgid "ページ数"
+msgstr "Number of Pages"
+
+#: archive-work.php:103 single-work.php:81
+msgid "使用言語・ツール"
+msgstr "Languages / Tools"
+
+#: archive-work.php:137 single-work.php:100
+msgid "サイト仕様"
+msgstr "Site Specifications"
+
+#: archive-work.php:170
+msgid "絞り込む"
+msgstr "Search"
+
+#: archive-work.php:208 includes/ajax-handler.php:119
+msgid "もっと見る"
+msgstr "See more"
+
+#: archive-work.php:215 includes/ajax-handler.php:132
+msgid "実績がありません。"
+msgstr "No results found."
+
+#: includes/breadcrumb.php:16 includes/yoastseo.php:21 includes/yoastseo.php:42
+#: index.php:16 search.php:10
+msgid "お役立ちコラム"
+msgstr "Useful Tips Column"
+
+#: includes/yoastseo.php:16
+#, php-format
+msgid "検索結果: %s"
+msgstr "Search Results: %s"
+
+#: search.php:12
+msgid "検索ワード"
+msgstr "Search Keyword"
+
+#: single-work.php:52
+msgid "公開準備中"
+msgstr "Coming Soon"
+
+#: single-work.php:69
+msgid "見積もり金額"
+msgstr "Estimated Cost"
+
+#: single-work.php:113
+msgid "弊所スコープ"
+msgstr "Our Scope"
+
+#: single-work.php:130
+msgid "実績一覧へ戻る"
+msgstr "Back to Works List"
+
+#: template-parts/fixcta.php:8
+msgid "お問い合わせ・ご相談"
+msgstr "Contact Us & Consultation"
+
+#: template-parts/fixcta.php:14
+msgid "料金"
+msgstr "Price"
+
+#: template-parts/fixcta.php:21 template-parts/fixcta.php:25
+msgid "メールで相談"
+msgstr "Contact via Form"
+
+#: template-parts/fixcta.php:39
+msgid "LinkedInで相談"
+msgstr "Contact via LinkedIn"
+
+#: template-parts/postlist.php:72
+msgid "お知らせがありません。"
+msgstr "No results found."
+
+#: template-parts/postlist.php:74
+msgid "投稿がありません。"
+msgstr "No results found."
+
+#: template-parts/prevnextnavi.php:15
+msgid "前の投稿へ"
+msgstr "Previous Post"
+
+#: template-parts/prevnextnavi.php:24
+msgid "次の投稿へ"
+msgstr "Next Post"
+
+#: template-parts/sidebar/category.php:20
+msgid "カテゴリー"
+msgstr "Category"
+
+#: template-parts/sidebar/latest-posts.php:15
+msgid "最新の投稿"
+msgstr "Latest Posts"
+
+#: template-parts/sidebar/search.php:5
+msgid "記事を検索"
+msgstr "Search Articles"
+
+#: template-parts/sidebar/search.php:12
+msgid "キーワードを入力"
+msgstr "Enter Keyword"
+
+#: template-parts/sidebar/search.php:13
+msgid "検索"
+msgstr "Search"
+
+#: template-parts/sidebar/tag.php:9
+msgid "タグ"
+msgstr "Tags"

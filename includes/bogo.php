@@ -1,5 +1,8 @@
 
 <?php
+/**
+ * カスタム投稿タイプ対応
+ */
 function my_localizable_post_types($localizable)
 {
   $args = array(
