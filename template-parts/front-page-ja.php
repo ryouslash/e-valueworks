@@ -143,10 +143,6 @@
                 href="https://www.linkedin.com/in/ryo-ikeda-48861a140/"
                 target="_blank"
                 class="c-snslinks__link c-snslinks__linkedin"><i class="fa-brands fa-linkedin"></i></a>
-              <a
-                href="http://plusoneweb.net/"
-                target="_blank"
-                class="c-snslinks__link c-snslinks__blog"><i class="fa-solid fa-link"></i></a>
             </div>
           </dd>
         </dl>
@@ -180,15 +176,14 @@
             </p>
             <p>
               ライブラリ・フレームワーク<br />
-              <span class="u-inline-block">jQuery</span> /
-              <span class="u-inline-block">Vue.js</span>
+              <span class="u-inline-block">Bootstrap</span> / <span class="u-inline-block">jQuery</span> / <span class="u-inline-block">GSAP</span> / <span class="u-inline-block">Vue.js</span>
             </p>
             <p>
               CMS<br />
               <span class="u-inline-block">WordPress</span>
             </p>
             <p>
-              タスクランナー・バンドルツール<br />
+              タスクランナー・バンドラー<br />
               <span class="u-inline-block">Webpack</span> /
               <span class="u-inline-block">Gulp</span>
             </p>

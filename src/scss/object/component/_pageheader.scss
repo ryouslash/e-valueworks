@@ -14,6 +14,8 @@
   &__subTitle {
     position: relative;
     z-index: 2;
+    display: block;
+    margin-bottom: 0.5rem;
     font-size: $fontS;
     font-weight: 700;
     color: #ffffff;

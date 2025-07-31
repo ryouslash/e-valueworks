@@ -21,9 +21,12 @@ get_header(); ?>
     <?php endif; ?>>
 
     <div class="l-container">
-      <span class="c-pageHeader__subTitle">お役立ちコラム</span>
+      <span class="c-pageHeader__subTitle"><?php _e('お役立ちコラム', 'e-valueworks'); ?></span>
       <h1 class="c-pageHeader__title">
-        <?php wp_title(''); ?>
+        <?php
+        $term = get_queried_object();
+        echo esc_html($term->name);
+        ?>
       </h1>
     </div>
   </div>

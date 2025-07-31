@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2025-07-30 10:40+0900\n"
-"PO-Revision-Date: 2025-07-30 10:41+0900\n"
+"POT-Creation-Date: 2025-07-30 13:08+0900\n"
+"PO-Revision-Date: 2025-07-30 20:09+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -21,8 +21,8 @@ msgstr "The page you are looking for could not be found."
 #: 404.php:18
 #, php-format
 msgid ""
-"申し訳ございませんが、<a href=\"%s\">こちらのリンク</a>からトップページにお戻"
-"り下さい。"
+"申し訳ございませんが、<a href=\"%s\">こちらのリンク</a>からトップページに"
+"お戻り下さい。"
 msgstr ""
 "We’re sorry, but please return to the homepage from <a href=\"%s\">this "
 "link</a>."
@@ -65,12 +65,12 @@ msgstr "See more"
 msgid "実績がありません。"
 msgstr "No results found."
 
-#: includes/breadcrumb.php:16 includes/yoastseo.php:21 includes/yoastseo.php:42
-#: index.php:16 search.php:10
+#: archive.php:24 includes/breadcrumb.php:16 index.php:16 search.php:10
+#: single.php:29
 msgid "お役立ちコラム"
 msgstr "Useful Tips Column"
 
-#: includes/yoastseo.php:16
+#: includes/yoastseo.php:16 includes/yoastseo.php:43
 #, php-format
 msgid "検索結果: %s"
 msgstr "Search Results: %s"
@@ -95,6 +95,22 @@ msgstr "Our Scope"
 msgid "実績一覧へ戻る"
 msgstr "Back to Works List"
 
+#: single.php:57
+msgid "公開日："
+msgstr "Published on："
+
+#: single.php:59
+msgid "更新日："
+msgstr "Updated on："
+
+#: single.php:146
+msgid "同じカテゴリーの記事を読む"
+msgstr "Read more articles in this category"
+
+#: single.php:189
+msgid "同じカテゴリーの記事がありません。"
+msgstr "There are no other articles in this category."
+
 #: template-parts/fixcta.php:8
 msgid "お問い合わせ・ご相談"
 msgstr "Contact Us & Consultation"
@@ -113,11 +129,11 @@ msgstr "Contact via LinkedIn"
 
 #: template-parts/postlist.php:72
 msgid "お知らせがありません。"
-msgstr "No results found."
+msgstr "No news at the moment."
 
 #: template-parts/postlist.php:74
 msgid "投稿がありません。"
-msgstr "No results found."
+msgstr "No posts found."
 
 #: template-parts/prevnextnavi.php:15
 msgid "前の投稿へ"

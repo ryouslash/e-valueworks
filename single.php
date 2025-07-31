@@ -26,7 +26,7 @@ get_header(); ?>
   ?>
   <div class="c-pageHeader" style="background-image: url('<?php echo esc_url($background_image_url); ?>');">
     <div class="l-container">
-      <span class="c-pageHeader__subTitle">お役立ちコラム</span>
+      <span class="c-pageHeader__subTitle"><?php _e('お役立ちコラム', 'e-valueworks');  ?></span>
       <div class="c-pageHeader__title">
         <?php
         $categories = get_the_category($post->ID);
@@ -54,9 +54,9 @@ get_header(); ?>
                   $modified  = get_the_modified_time('Y-m-d');
                   ?>
 
-                  公開日：<time datetime="<?php echo esc_attr($published); ?>"><?php echo esc_html($published); ?></time>
+                  <?php _e('公開日：', 'e-valueworks');  ?><time datetime="<?php echo esc_attr($published); ?>"><?php echo esc_html($published); ?></time>
                   <?php if ($published !== $modified) : ?>
-                    / 更新日：<time datetime="<?php echo esc_attr($modified); ?>"><?php echo esc_html($modified); ?></time>
+                    / <?php _e('更新日：', 'e-valueworks');  ?><time datetime="<?php echo esc_attr($modified); ?>"><?php echo esc_html($modified); ?></time>
                   <?php endif; ?>
                 </div>
                 <?php
@@ -143,7 +143,7 @@ get_header(); ?>
         <?php endif; ?>
 
         <div class="p-single-relatedPosts">
-          <h2>同じカテゴリーの記事を読む</h2>
+          <h2><?php _e('同じカテゴリーの記事を読む', 'e-valueworks');  ?></h2>
 
           <?php
           // 現在の投稿IDを取得
@@ -186,7 +186,7 @@ get_header(); ?>
             </ul>
           <?php else: ?>
             <div class="p-single-relatedPosts__noItem">
-              <p>同じカテゴリーの記事がありません。</p>
+              <p><?php _e('同じカテゴリーの記事がありません。', 'e-valueworks');  ?></p>
             </div>
             <?php wp_reset_postdata(); ?>
           <?php endif; ?>
@@ -204,6 +204,3 @@ get_header(); ?>
   </div>
 </div>
 <?php get_footer(); ?>
-
-
-

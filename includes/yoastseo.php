@@ -17,10 +17,10 @@ function tr_yoast_pt_title($title)
     return mb_strtoupper($title, 'UTF-8') . ' | ' . get_bloginfo('name');
   }
 
-  if (is_home()) {
-    $title = mb_strtoupper(__('お役立ちコラム', 'e-valueworks'), 'UTF-8');
-    return $title . ' | ' . get_bloginfo('name');
-  }
+  // if (is_home()) {
+  //   $title = mb_strtoupper(__('お役立ちコラム', 'e-valueworks'), 'UTF-8');
+  //   return $title . ' | ' . get_bloginfo('name');
+  // }
 
   return $title;
 }
@@ -44,10 +44,10 @@ function tr_yoast_pt_og_title($og_title)
     return mb_strtoupper($og_title, 'UTF-8') . ' | ' . get_bloginfo('name');
   }
 
-  if (is_home()) {
-    $og_title = mb_strtoupper(__('お役立ちコラム', 'e-valueworks'), 'UTF-8');
-    return $og_title . ' | ' . get_bloginfo('name');
-  }
+  // if (is_home()) {
+  //   $og_title = mb_strtoupper(__('お役立ちコラム', 'e-valueworks'), 'UTF-8');
+  //   return $og_title . ' | ' . get_bloginfo('name');
+  // }
 
   return $og_title;
 }
