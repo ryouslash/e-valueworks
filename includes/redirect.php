@@ -30,3 +30,15 @@ function redirect_extra_work_pages()
   }
 }
 add_action('template_redirect', 'redirect_extra_work_pages');
+
+
+/**
+ * authorページは強制的に
+ */
+function redirect_author_archive() {
+  if (is_author()) {
+    wp_redirect(home_url('/404'));
+    exit;
+  }
+}
+add_action('template_redirect', 'redirect_author_archive');

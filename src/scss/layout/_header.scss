@@ -13,7 +13,12 @@
     position: fixed;
   }
 
-  &__inner {
+  &__upContent {
+    padding-top: 1rem;
+    text-align: right;
+  }
+
+  &__downContent {
     display: flex;
     justify-content: space-between;
     align-items: center;

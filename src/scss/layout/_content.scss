@@ -2,7 +2,7 @@
 
 .l-content {
   @include mq-down(lg) {
-    margin-top: 5.9rem;
+    margin-top: var(--headerHeight);
   }
 
   &__inner {

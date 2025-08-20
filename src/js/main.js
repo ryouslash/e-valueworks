@@ -17,7 +17,6 @@ import {
   faSackDollar,
   faMagnifyingGlass,
   faCalculator,
-  faLanguage,
 } from "@fortawesome/free-solid-svg-icons";
 import {
   faEnvelope,
@@ -39,6 +38,7 @@ $(function () {
   initPageTopButton();
   initAnchorScroll();
   initFixCta();
+  initLangSwitcher();
 });
 
 $(window).on("load", function () {
@@ -71,8 +71,7 @@ function initFontAwesome() {
     faSackDollar,
     faHandPointRight,
     faMagnifyingGlass,
-    faCalculator,
-    faLanguage
+    faCalculator
   );
   dom.i2svg();
 }
@@ -213,4 +212,48 @@ function setHeaderHeightVar() {
       `${headerHeight}px`
     );
   }
+}
+
+/**
+ * 言語切り替え処理
+ */
+function initLangSwitcher() {
+  const select = document.querySelector(".js-langSwitcher select");
+  if (!select) return;
+
+  const { pathname } = window.location;
+
+  // 現在のURLが /en/ から始まっているかどうかで選択
+  const currentLang = pathname.startsWith("/en/") ? "en" : "jp";
+
+  // option をループして初期選択＋無効化を設定
+  [...select.options].forEach((opt) => {
+    if (opt.value === currentLang) {
+      opt.selected = true;
+      opt.disabled = true; // 選択中の言語はクリックできない
+    } else {
+      opt.disabled = false;
+    }
+  });
+
+  select.addEventListener("change", (e) => {
+    const lang = e.target.value;
+    const { origin, pathname, search, hash } = window.location;
+
+    if (lang === "en") {
+      let newPath = pathname;
+      if (!newPath.startsWith("/en/")) {
+        newPath = "/en" + (newPath.startsWith("/") ? "" : "/") + newPath;
+      }
+      newPath = newPath.replace(/\/{2,}/g, "/");
+      const url = origin + newPath + search + hash;
+      window.location.assign(url);
+    } else {
+      // jp：/en を除去して同じページへ
+      let newPath = pathname.replace(/^\/en(\/|$)/, "/"); // 先頭の /en を外す
+      newPath = newPath.replace(/\/{2,}/g, "/"); // 二重スラッシュ正規化
+      const url = origin + newPath + search + hash; // クエリ/ハッシュ維持
+      window.location.assign(url);
+    }
+  });
 }

@@ -77,29 +77,29 @@
             </div>
             <div class="p-top-troubles__item">
               We want coding based on a CSS design<br
-                class="u-md--hide" />that is easy to maintain.
+                class="u-md--hide" /> that is easy to maintain.
             </div>
             <div class="p-top-troubles__item">
               We want complex<br
-                class="u-md--hide" />WordPress customization.
+                class="u-md--hide" /> WordPress customization.
             </div>
             <div class="p-top-troubles__item">
-              We want stylish and impactful <br
-                class="u-md--hide" />animations implemented.
+              We want stylish and impactful<br
+                class="u-md--hide" /> animations implemented.
             </div>
           </div>
           <div class="p-top-troubles__right">
             <div class="p-top-troubles__item">
-              We want to outsource site maintenance<br class="u-md--hide" />under a monthly contract.
+              We want to outsource site maintenance<br class="u-md--hide" /> under a monthly contract.
             </div>
             <div class="p-top-troubles__item">
-              We want to hire someone<br class="u-md--hide" />who’s knowledgeableabout domains, servers, and all things web.
+              We want to hire someone<br class="u-md--hide" /> with strong knowledge of domains, servers, and everything web-related.
             </div>
             <div class="p-top-troubles__item">
               We want to work with someone<br class="u-md--hide" /> who offers clear and simple pricing.
             </div>
             <div class="p-top-troubles__item">
-              We want outsourced coders to work<br class="u-md--hide" />with a sense of responsibility like in-house staff.
+              We want outsourced coders to work<br class="u-md--hide" /> with a sense of responsibility like in-house staff.
             </div>
           </div>
           <div class="p-top-troubles__center">

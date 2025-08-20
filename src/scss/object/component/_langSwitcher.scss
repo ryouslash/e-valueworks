@@ -1,0 +1,22 @@
+@use "@scss/foundation/variables" as *;
+
+.c-langSwitcher {
+  select {
+    background-color: #fff;
+
+    @supports (appearance: base-select) {
+      display: inline-block;
+      width: 20rem;
+      appearance: base-select;
+
+      &::picker(select) {
+        appearance: base-select;
+        border-color: $keyColor;
+        border-radius: 0.3rem;
+        margin: 0.5rem 0;
+        padding: 0.1rem 0.3rem;
+        box-shadow: 0.4rem 0.4rem $keyColor;
+      }
+    }
+  }
+}
