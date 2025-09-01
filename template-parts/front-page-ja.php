@@ -219,9 +219,9 @@
                     </figure>
                   <?php endif; ?>
                   <?php
-                  $terms = get_the_terms(get_the_ID(), 'industry');
+                  $terms = get_the_terms(get_the_ID(), 'site-type');
                   if ($terms && !is_wp_error($terms)) : ?>
-                    <div class="p-archive-work__industry">
+                    <div class="p-archive-work__site-type">
                       <?php echo esc_html($terms[0]->name); ?>
                     </div>
                   <?php endif; ?>

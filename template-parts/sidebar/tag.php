@@ -1,9 +1,32 @@
-<?php if (!defined('ABSPATH')) {
+<?php
+if (!defined('ABSPATH')) {
   exit;
-};
-$tags = get_tags([
-  'hide_empty' => 1, // 投稿が存在するタグのみ取得
-]); ?>
+}
+
+$current_locale = get_locale(); // 例: ja_JP, en_US
+
+// 現在の言語の記事IDを取得
+$post_ids = get_posts([
+  'post_type'      => 'post',
+  'posts_per_page' => -1,
+  'fields'         => 'ids',
+  'meta_query'     => [
+    [
+      'key'   => '_locale',
+      'value' => $current_locale,
+    ]
+  ]
+]);
+
+// その記事に紐づくタグを取得
+$tags = [];
+if ($post_ids) {
+  $tags = wp_get_object_terms($post_ids, 'post_tag', [
+    'hide_empty' => true,
+  ]);
+}
+?>
+
 <?php if ($tags): ?>
   <div class="p-sidebarItem p-sidebarTag">
     <div class="p-sidebarItem__title"><?php _e('タグ', 'e-valueworks'); ?></div>

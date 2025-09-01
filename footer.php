@@ -39,28 +39,6 @@ if (!defined('ABSPATH')) {
   <i class="fa-solid fa-chevron-up"></i>
 </a>
 
-<div class="c-languageSwitcher">
-  <?php
-  // 現在の言語
-  $locale = get_locale();
-  $domain = site_url();
-  // 現在のURLのパス（例：/work/）
-  $current_path = $_SERVER['REQUEST_URI'];
-  // 新しいリンク先を初期化
-  $switch_url = '';
-  if ($locale === 'ja') {
-    // ja → en：ドメイン直後に /en を追加
-    $switch_url = $domain . '/en' . $current_path;
-  } elseif ($locale === 'en_US') {
-    // 先頭が /en で始まっていて、その後がスラッシュ（/）か、何も続かずに終わる場合/に変更
-    $switch_url = $domain . preg_replace('#^/en(/|$)#', '/', $current_path);
-  }
-  ?>
-  <a href="<?php echo esc_url($switch_url); ?>" class="c-languageSwitcher__link">
-    <i class="fa-solid fa-language"></i>
-  </a>
-</div>
-
 <?php wp_footer(); ?>
 </body>
 

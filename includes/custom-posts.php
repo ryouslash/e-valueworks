@@ -35,8 +35,8 @@ function add_custom_post()
     'show_in_rest' => true,  // これでブロックエディターを有効化
   ]);
 
-  register_taxonomy('industry', 'work', [
-    'label' => '業種',
+  register_taxonomy('site-type', 'work', [
+    'label' => 'サイト種類',
     'hierarchical' => true,
     'show_in_rest' => true,
   ]);
@@ -54,13 +54,13 @@ function add_custom_post()
   ]);
 
   register_taxonomy('language', 'work', [
-    'label' => '使用言語・ツール',
+    'label' => '使用言語・CMS',
     'hierarchical' => true,
     'show_in_rest' => true,
   ]);
 
   register_taxonomy('specification', 'work', [
-    'label' => 'サイト仕様',
+    'label' => 'サイト仕様・機能',
     'hierarchical' => true,
     'show_in_rest' => true,
   ]);

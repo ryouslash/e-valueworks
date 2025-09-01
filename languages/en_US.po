@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2025-07-30 13:08+0900\n"
-"PO-Revision-Date: 2025-07-30 20:09+0900\n"
+"POT-Creation-Date: 2025-09-01 13:01+0900\n"
+"PO-Revision-Date: 2025-09-01 13:01+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -27,7 +27,7 @@ msgstr ""
 "We’re sorry, but please return to the homepage from <a href=\"%s\">this "
 "link</a>."
 
-#: archive-news.php:19 includes/breadcrumb.php:12 includes/yoastseo.php:10
+#: archive-news.php:19 includes/breadcrumb.php:13 includes/yoastseo.php:10
 #: includes/yoastseo.php:37 single-news.php:44 taxonomy-news_category.php:19
 msgid "お知らせ"
 msgstr "News"
@@ -45,13 +45,13 @@ msgstr "Refine Search"
 msgid "ページ数"
 msgstr "Number of Pages"
 
-#: archive-work.php:103 single-work.php:81
-msgid "使用言語・ツール"
-msgstr "Languages / Tools"
+#: archive-work.php:103
+msgid "使用言語・CMS"
+msgstr "Languages / CMS"
 
-#: archive-work.php:137 single-work.php:100
-msgid "サイト仕様"
-msgstr "Site Specifications"
+#: archive-work.php:137
+msgid "サイト仕様・機能"
+msgstr "Site Specifications / Functions"
 
 #: archive-work.php:170
 msgid "絞り込む"
@@ -65,8 +65,7 @@ msgstr "See more"
 msgid "実績がありません。"
 msgstr "No results found."
 
-#: archive.php:24 includes/breadcrumb.php:16 index.php:16 search.php:10
-#: single.php:29
+#: archive.php:24 index.php:16 search.php:10 single.php:29
 msgid "お役立ちコラム"
 msgstr "Useful Tips Column"
 
@@ -86,6 +85,14 @@ msgstr "Coming Soon"
 #: single-work.php:69
 msgid "見積もり金額"
 msgstr "Estimated Cost"
+
+#: single-work.php:81
+msgid "使用言語・ツール"
+msgstr "Languages / Tools"
+
+#: single-work.php:100
+msgid "サイト仕様"
+msgstr "Site Specifications"
 
 #: single-work.php:113
 msgid "弊所スコープ"

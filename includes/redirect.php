@@ -33,9 +33,10 @@ add_action('template_redirect', 'redirect_extra_work_pages');
 
 
 /**
- * authorページは強制的に
+ * authorページは強制的に404ページにリダイレクト
  */
-function redirect_author_archive() {
+function redirect_author_archive()
+{
   if (is_author()) {
     wp_redirect(home_url('/404'));
     exit;

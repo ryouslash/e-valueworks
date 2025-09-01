@@ -33,7 +33,7 @@ if (!defined('ABSPATH')) {
           <div class="c-langSwitcher js-langSwitcher">
             <select>
               <option value="jp">&#x1f1ef;&#x1f1f5; 日本語</option>
-              <option value="en">&#x1f1fa;&#x1f1f8; 英語</option>
+              <option value="en">&#x1f1fa;&#x1f1f8; ENGLISH</option>
             </select>
           </div>
         </div>

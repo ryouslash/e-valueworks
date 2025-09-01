@@ -23,8 +23,9 @@ function filter_work_posts()
 
   $tax_type01 = 'scale'; // タクソノミー【scale】
   $tax_type02 = 'price'; // タクソノミー【price】
-  $tax_type03 = 'language'; // タクソノミー【language】
-  $tax_type04 = 'specification'; // タクソノミー【specification】
+  $tax_type03 = 'site-type'; // タクソノミー【site-type】
+  $tax_type04 = 'language'; // タクソノミー【language】
+  $tax_type05 = 'specification'; // タクソノミー【specification】
 
   $args = [
     'post_type' => 'work',
@@ -39,7 +40,7 @@ function filter_work_posts()
   $tax_query = [];
 
   // 各タクソノミー名
-  $taxonomies = [$tax_type01, $tax_type02, $tax_type03, $tax_type04];
+  $taxonomies = [$tax_type01, $tax_type02, $tax_type03, $tax_type04, $tax_type05];
 
   foreach ($taxonomies as $tax) {
     if (!empty($_POST[$tax]) && is_array($_POST[$tax])) {
@@ -76,9 +77,9 @@ function filter_work_posts()
               <?php the_post_thumbnail(); ?>
             <?php endif; ?>
             <?php
-            $terms = get_the_terms(get_the_ID(), 'industry');
+            $terms = get_the_terms(get_the_ID(), 'site-type');
             if ($terms && !is_wp_error($terms)) : ?>
-              <div class="p-archive-work__industry">
+              <div class="p-archive-work__site-type">
                 <?php
                 $term = $terms[0];
                 $term_name = $term->name;
@@ -89,7 +90,7 @@ function filter_work_posts()
                   // 翻訳ファイル読み込み（念のため）
                   Bogo_POMO::import($lang);
 
-                  // 翻訳キー（例：industry:18）
+                  // 翻訳キー（例：site-type:18）
                   $translation_key = $term->taxonomy . ':' . $term->term_id;
 
                   // Bogo独自の翻訳メソッドで取得
@@ -160,8 +161,9 @@ function see_more_work()
   }
   $tax_type01 = 'scale'; // タクソノミー【scale】
   $tax_type02 = 'price'; // タクソノミー【price】
-  $tax_type03 = 'language'; // タクソノミー【language】
-  $tax_type04 = 'specification'; // タクソノミー【specification】
+  $tax_type03 = 'site-type'; // タクソノミー【site-type】
+  $tax_type04 = 'language'; // タクソノミー【language】
+  $tax_type05 = 'specification'; // タクソノミー【specification】
 
   $args = [
     'post_type' => 'work',
@@ -176,7 +178,7 @@ function see_more_work()
   $tax_query = [];
 
   // 各タクソノミー名
-  $taxonomies = [$tax_type01, $tax_type02, $tax_type03, $tax_type04];
+  $taxonomies = [$tax_type01, $tax_type02, $tax_type03, $tax_type04, $tax_type05];
 
   foreach ($taxonomies as $tax) {
     if (!empty($_POST[$tax]) && is_array($_POST[$tax])) {
@@ -210,9 +212,9 @@ function see_more_work()
             <?php the_post_thumbnail(); ?>
           <?php endif; ?>
           <?php
-          $terms = get_the_terms(get_the_ID(), 'industry');
+          $terms = get_the_terms(get_the_ID(), 'site-type');
           if ($terms && !is_wp_error($terms)) : ?>
-            <div class="p-archive-work__industry">
+            <div class="p-archive-work__site-type">
               <?php
               $term = $terms[0];
               $term_name = $term->name;
@@ -223,7 +225,7 @@ function see_more_work()
                 // 翻訳ファイル読み込み（念のため）
                 Bogo_POMO::import($lang);
 
-                // 翻訳キー（例：industry:18）
+                // 翻訳キー（例：site-type:18）
                 $translation_key = $term->taxonomy . ':' . $term->term_id;
 
                 // Bogo独自の翻訳メソッドで取得

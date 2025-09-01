@@ -7,8 +7,9 @@ $paged = get_query_var('paged') ?: get_query_var('page') ?: 1; // 現在のペ�
 $lang = get_locale();
 $tax_type01 = 'scale'; // タクソノミー【scale】
 $tax_type02 = 'price'; // タクソノミー【price】
-$tax_type03 = 'language'; // タクソノミー【language】
-$tax_type04 = 'specification'; // タクソノミー【specification】
+$tax_type03 = 'site-type'; // タクソノミー【language】
+$tax_type04 = 'language'; // タクソノミー【language】
+$tax_type05 = 'specification'; // タクソノミー【specification】
 
 // 初回読み込み時は通常のカスタム投稿10件を表示（絞り込み部分はAJAXハンドラーに切り分け）
 $search_args = array(
@@ -37,18 +38,26 @@ if (! empty($_GET[$tax_type02])) {
   }
 }
 
-//カスタムタクソノミー【 language 】部分にあるチェックボックスの内容を取得
-$param_language_terms = array();
+//カスタムタクソノミー【 site-type 】部分にあるチェックボックスの内容を取得
+$param_price_terms = array();
 if (! empty($_GET[$tax_type03])) {
   foreach ($_GET[$tax_type03] as $value) {
+    $param_price_terms[] = htmlspecialchars($value, ENT_QUOTES, 'UTF-8');
+  }
+}
+
+//カスタムタクソノミー【 language 】部分にあるチェックボックスの内容を取得
+$param_language_terms = array();
+if (! empty($_GET[$tax_type04])) {
+  foreach ($_GET[$tax_type04] as $value) {
     $param_language_terms[] = htmlspecialchars($value, ENT_QUOTES, 'UTF-8');
   }
 }
 
 //カスタムタクソノミー【 specification 】部分にあるチェックボックスの内容を取得
 $param_specification_terms = array();
-if (! empty($_GET[$tax_type04])) {
-  foreach ($_GET[$tax_type04] as $value) {
+if (! empty($_GET[$tax_type05])) {
+  foreach ($_GET[$tax_type05] as $value) {
     $param_specification_terms[] = htmlspecialchars($value, ENT_QUOTES, 'UTF-8');
   }
 }
@@ -100,7 +109,7 @@ if (! empty($_GET[$tax_type04])) {
                   </li>
                   <li class="p-archive-work__searchItem">
                     <dl>
-                      <dt><?php _e('使用言語・ツール', 'e-valueworks'); ?></dt>
+                      <dt><?php _e('サイト種類', 'e-valueworks'); ?></dt>
                       <dd>
                         <?php
                         $language_terms = get_terms($tax_type03, array(
@@ -128,16 +137,49 @@ if (! empty($_GET[$tax_type04])) {
                             <?php echo esc_html($term->name); ?>
                           </label>
                         <?php endforeach; ?>
+                      </dd>
+                    </dl>
+                  </li>
+                  <li class="p-archive-work__searchItem">
+                    <dl>
+                      <dt><?php _e('使用言語・CMS', 'e-valueworks'); ?></dt>
+                      <dd>
+                        <?php
+                        $language_terms = get_terms($tax_type04, array(
+                          'hide_empty' => false,
+                          'orderby' => 'term_id',  // ID順で並べる
+                          'order' => 'ASC'         // 昇順で並べる（降順にしたい場合は 'DESC' に変更）
+                        ));
+
+                        // descriptionに設定した数字で並べ替え
+                        usort($language_terms, function ($a, $b) {
+                          // descriptionから数字を取得して比較
+                          $a_description = (int) $a->description; // descriptionから数字を取得
+                          $b_description = (int) $b->description; // descriptionから数字を取得
+                          return $a_description - $b_description; // 数字順に並べる（昇順）
+                        });
+
+                        foreach ($language_terms as $term) :
+                          $checked = '';
+                          if (in_array($term->slug, $param_language_terms, true)) {
+                            $checked = 'checked';
+                          }
+                        ?>
+                          <input type="checkbox" id="<?php echo esc_attr($term->slug); ?>" name="<?php echo $tax_type04; ?>[]" value="<?php echo esc_attr($term->slug); ?>" <?php echo $checked; ?>>
+                          <label class="checkbox" for="<?php echo esc_attr($term->slug); ?>">
+                            <?php echo esc_html($term->name); ?>
+                          </label>
+                        <?php endforeach; ?>
 
                       </dd>
                     </dl>
                   </li>
                   <li class="p-archive-work__searchItem">
                     <dl>
-                      <dt><?php _e('サイト仕様', 'e-valueworks'); ?></dt>
+                      <dt><?php _e('サイト仕様・機能', 'e-valueworks'); ?></dt>
                       <dd>
                         <?php
-                        $specification_terms = get_terms($tax_type04, array(
+                        $specification_terms = get_terms($tax_type05, array(
                           'hide_empty' => false,
                           'orderby' => 'term_id',  // ID順で並べる
                           'order' => 'ASC'         // 昇順に並べる（降順の場合は 'DESC'）
@@ -158,7 +200,7 @@ if (! empty($_GET[$tax_type04])) {
                             $checked = 'checked';
                           }
                         ?>
-                          <input type="checkbox" id="<?php echo esc_attr($term->slug); ?>" name="<?php echo $tax_type04; ?>[]" value="<?php echo esc_attr($term->slug); ?>" <?php echo $checked; ?>>
+                          <input type="checkbox" id="<?php echo esc_attr($term->slug); ?>" name="<?php echo $tax_type05; ?>[]" value="<?php echo esc_attr($term->slug); ?>" <?php echo $checked; ?>>
                           <label class="checkbox" for="<?php echo esc_attr($term->slug); ?>"><?php echo esc_html($term->name); ?></label>
                         <?php endforeach; ?>
 
@@ -186,9 +228,9 @@ if (! empty($_GET[$tax_type04])) {
                         <?php the_post_thumbnail(); ?>
                       <?php endif; ?>
                       <?php
-                      $terms = get_the_terms(get_the_ID(), 'industry');
+                      $terms = get_the_terms(get_the_ID(), 'site-type');
                       if ($terms && !is_wp_error($terms)) : ?>
-                        <div class="p-archive-work__industry">
+                        <div class="p-archive-work__site-type">
                           <?php echo esc_html($terms[0]->name); ?>
                         </div>
                       <?php endif; ?>

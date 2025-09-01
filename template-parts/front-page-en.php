@@ -214,9 +214,9 @@
                     </figure>
                   <?php endif; ?>
                   <?php
-                  $terms = get_the_terms(get_the_ID(), 'industry');
+                  $terms = get_the_terms(get_the_ID(), 'site-type');
                   if ($terms && !is_wp_error($terms)) : ?>
-                    <div class="p-archive-work__industry">
+                    <div class="p-archive-work__site-type">
                       <?php echo esc_html($terms[0]->name); ?>
                     </div>
                   <?php endif; ?>
@@ -237,7 +237,7 @@
     <div class="l-container">
       <div class="p-top-promise__inner">
         <div class="p-top-promise__fixed">
-          <h2 class="c-title1">Four Promises to Clients</h2>
+          <h2 class="c-title1">4 Promises to Clients</h2>
           <div class="p-top-promise__items">
             <dl class="p-top-promise__item is-active">
               <dt class="p-top-promise__title">

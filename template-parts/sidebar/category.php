@@ -3,16 +3,34 @@ if (!defined('ABSPATH')) {
   exit;
 };
 
-$categories = get_categories([
-  'hide_empty' => 1, // 投稿が存在するカテゴリーのみ取得
+$current_locale = get_locale(); // 例: ja_JP, en_US
+
+// 現在の言語の記事を取得（IDだけ）
+$post_ids = get_posts([
+  'post_type'      => 'post',
+  'posts_per_page' => -1,
+  'fields'         => 'ids',
+  'meta_query'     => [
+    [
+      'key'   => '_locale',
+      'value' => $current_locale,
+    ]
+  ]
 ]);
 
-usort($categories, function ($a, $b) {
-  // descriptionから数字を取得して比較
-  $a_description = (int) $a->description; // descriptionから数字を取得
-  $b_description = (int) $b->description; // descriptionから数字を取得
-  return $a_description - $b_description; // 数字順に並べる（昇順）
-}); ?>
+$categories = [];
+if ($post_ids) {
+  $categories = wp_get_object_terms($post_ids, 'category', [
+    'hide_empty' => true,
+  ]);
+
+  // description の数字順でソート
+  usort($categories, function ($a, $b) {
+    $a_description = (int) $a->description;
+    $b_description = (int) $b->description;
+    return $a_description - $b_description;
+  });
+} ?>
 
 
 <?php if ($categories): ?>

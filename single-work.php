@@ -22,9 +22,9 @@ get_header(); ?>
                     <?php the_content(); ?>
                   </div>
                   <?php
-                  $terms = get_the_terms(get_the_ID(), 'industry');
+                  $terms = get_the_terms(get_the_ID(), 'site-type');
                   if ($terms && !is_wp_error($terms)) : ?>
-                    <div class="p-single-work-client__industry">
+                    <div class="p-single-work-client__site-type">
                       <?php echo esc_html($terms[0]->name); ?>
                     </div>
                   <?php endif; ?>

@@ -155,9 +155,11 @@ function initAnchorScroll() {
   });
 
   // ページ読み込み後にhashがあればスクロール
-  if (location.hash) {
-    scrollToHash(location.hash, false); // アニメーションなし
-  }
+  $(window).on("load", function () {
+    if (location.hash) {
+      scrollToHash(location.hash, false); // ヘッダー分を引いた正しい位置へ
+    }
+  });
 }
 
 function scrollToHash(hash, animate) {
