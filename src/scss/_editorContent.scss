@@ -1,0 +1,178 @@
+// ブロックエディターの余白等の調整を行うファイル（各種ブロックのスタイルはblock.scssで行う）
+@use "@scss/block" as *;
+@use "@scss/foundation/variables" as *;
+
+@mixin editorContent {
+  > * {
+    margin-bottom: 1.5em;
+    clear: both;
+  }
+
+  > :first-child {
+    margin-top: 0 !important;
+  }
+
+  div > :first-child {
+    margin-top: 0 !important;
+  }
+
+  > :last-child {
+    margin-bottom: 0 !important;
+  }
+
+  div > :last-child,
+  dd > :last-child {
+    margin-bottom: 0 !important;
+  }
+
+  .is-layout-flow > * {
+    margin-block-start: 1.5em;
+    margin-block-end: 0;
+  }
+
+  .is-layout-flow > :first-child {
+    margin-block-start: 0em;
+  }
+
+  p {
+    line-height: 1.6;
+  }
+
+  a {
+    text-decoration: underline;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  ul,
+  ol {
+    margin-left: 1em;
+
+    li {
+      margin: 0.2em 0;
+
+      &::marker {
+        margin: 0;
+        padding: 0;
+      }
+
+      ul {
+        li {
+          list-style-type: disc;
+        }
+      }
+
+      ol {
+        li {
+          list-style-type: decimal;
+        }
+      }
+    }
+  }
+
+  ul {
+    li {
+      list-style-type: disc;
+    }
+  }
+
+  ol {
+    li {
+      list-style-type: decimal;
+    }
+  }
+
+  img {
+    max-width: 100%;
+    width: auto;
+    height: auto;
+  }
+
+  dl {
+    dt {
+      font-weight: 900;
+    }
+
+    dd {
+      margin-left: 1em;
+    }
+  }
+
+  pre {
+    overflow-x: auto;
+    padding: 0.5em;
+  }
+
+  sub,
+  sup {
+    font-size: 0.6em;
+  }
+
+  sup {
+    vertical-align: super;
+  }
+
+  &:not(pre) code {
+    color: #333333;
+    font-size: 0.9em;
+    letter-spacing: 0;
+    line-height: 1;
+    background: #f7f7f7;
+    border: 0.1rem solid rgba(0, 0, 0, 0.1);
+    border-radius: 0.2rem;
+    margin: 0 0.3em;
+    padding: 0.25em 0.5em;
+  }
+
+  table {
+    border: none;
+    border-collapse: collapse;
+    border-spacing: 0;
+    line-height: 1.6;
+    max-width: 100%;
+    text-align: left;
+  }
+
+  .alignleft {
+    float: left;
+  }
+
+  .alignright {
+    float: right;
+  }
+
+  .aligncenter {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+
+  @include block();
+}
+
+.p-editorContent {
+  h1,
+  h2 {
+    margin: 2em 0 0.8em;
+    font-size: $fontL;
+  }
+
+  h3 {
+    margin: 2em 0 0.8em;
+    font-size: $fontM;
+  }
+
+  h4 {
+    margin: 1.5em 0 1em;
+    font-size: $fontM;
+  }
+
+  h5,
+  h6 {
+    font-size: 1.6rem;
+  }
+
+  @include editorContent();
+}

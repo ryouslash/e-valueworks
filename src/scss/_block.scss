@@ -1,0 +1,99 @@
+@use "@scss/foundation/variables" as *;
+
+@mixin block {
+  .wp-block {
+    clear: both;
+  }
+
+  // 段落ブロック
+  .wp-block-paragraph {
+    &.is-style-point {
+      background-color: #fffce6;
+      padding: 2rem;
+      border: 0.2rem solid #feed6e;
+    }
+  }
+
+  // 画像ブロック
+  .wp-block-image {
+    &:after {
+      display: block;
+      height: 0;
+      visibility: hidden;
+      clear: both;
+      content: "";
+    }
+
+    &.is-style-shadow {
+      img {
+        box-shadow: 0 0 4px #a9a9a9;
+      }
+
+      .wp-element-caption {
+        text-align: center;
+        font-size: 1.2rem;
+      }
+    }
+  }
+
+  // リストブロック
+  .wp-block-list {
+    &.is-style-borderBottom {
+      > li {
+        padding: 0.5em 0;
+        border-bottom: 1px dotted #666666;
+      }
+    }
+  }
+
+  // 引用ブロック
+  .wp-block-quote {
+    box-sizing: border-box;
+    position: relative;
+    border-left: 0.5rem solid #18c1f0;
+    padding: 4rem 3rem 3rem;
+    background: #efefef;
+    color: #555;
+
+    @include mq-down(sm) {
+      padding: 4rem 2rem 2rem;
+    }
+
+    &:before {
+      position: absolute;
+      top: 1rem;
+      left: 1.5rem;
+      display: inline-block;
+      width: 3rem;
+      height: 2rem;
+      background-image: url("@img/quotation.svg");
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: bottom center;
+      content: "";
+    }
+
+    p {
+      padding: 0;
+      line-height: 1.7;
+    }
+
+    cite {
+      display: block;
+      text-align: right;
+      color: #888888;
+      font-size: 0.9em;
+    }
+  }
+
+  .wp-block-column > *,
+  .wp-block-cover__inner-container > *,
+  .wp-block-group__inner-container > *,
+  .wp-block-media-text__content > * {
+    margin-bottom: 1.5em;
+  }
+
+  .wp-block-column > :last-child {
+    margin-top: 0 !important;
+  }
+}

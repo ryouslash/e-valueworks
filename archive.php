@@ -17,7 +17,7 @@ get_header(); ?>
     if ($background_image_url): ?>
     style="background-image: url('<?php echo esc_url($background_image_url); ?>');"
     <?php else: ?>
-    style="background-image: url('<?php echo esc_url(get_template_directory_uri() . '/dist/img/column.jpg'); ?>');"
+    style="background-image: url('/img/column.jpg'); ?>');"
     <?php endif; ?>>
 
     <div class="l-container">

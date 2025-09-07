@@ -4,7 +4,7 @@ if (!defined('ABSPATH')) {
 }
 get_header(); ?>
 
-<div class="l-content t-taxonomy-archive-news">
+<div class="l-content p-taxonomy-archive-news">
   <div class="l-container">
     <div class="l-content__inner">
       <main class="l-mainContent">
@@ -30,3 +30,4 @@ get_header(); ?>
 </div>
 
 <?php get_footer(); ?>
+

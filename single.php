@@ -4,7 +4,7 @@ if (!defined('ABSPATH')) {
 }
 get_header(); ?>
 
-<div class="l-content t-single">
+<div class="l-content p-single">
   <?php
   // 投稿が属する最初のカテゴリーのIDを取得
   $categories = get_the_category($post->ID);

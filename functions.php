@@ -96,6 +96,15 @@ function add_thumbnail_support()
 add_action('init', 'add_thumbnail_support');
 
 /**
+ * グローバルスタイル設定サポート
+ */
+function add_appearanceTools_support()
+{
+  add_theme_support('appearance-tools');
+}
+add_action('init', 'add_appearanceTools_support');
+
+/**
  * 抜粋文の文字数を設定
  */
 function custom_excerpt_length($length)

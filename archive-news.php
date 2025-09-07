@@ -4,7 +4,7 @@ if (!defined('ABSPATH')) {
 }
 get_header(); ?>
 
-<div class="l-content t-archive-news">
+<div class="l-content p-archive-news">
   <div class="l-container">
     <div class="l-content__inner">
       <main class="l-mainContent">

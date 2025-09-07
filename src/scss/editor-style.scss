@@ -1,10 +1,15 @@
-@use "@scss/object/project/editorcontent" as editor;
-@use "@scss/blocks";
+@use "@scss/editorcontent" as *;
 
-//エディター側
 .editor-styles-wrapper {
-  @include editor.editorContent();
+  @include editorContent();
 
+  //タイトルの調整
+  .editor-post-title .editor-post-title__input,
+  h1.editor-post-title__input {
+    padding: 35px 0;
+  }
+
+  //見出しサイズの調整(フロント側ではreset.cssを読み込んでいるため1rem=10で計算されるが、エディター側では16のままのため。)
   h1,
   h2 {
     font-size: 26px !important;
@@ -18,11 +23,5 @@
   h5,
   h6 {
     font-size: 16px;
-  }
-
-  blockquote {
-    > :first-child {
-      margin: 0;
-    }
   }
 }

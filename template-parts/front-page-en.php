@@ -12,7 +12,10 @@
           <li>
             <i class="fa-solid fa-check"></i>
             Monthly contract-based renovation and website management services
-            etc
+          </li>
+          <li>
+            <i class="fa-solid fa-check"></i>
+            Websites with complex visual effects etc
           </li>
         </ul>
         <p>We can meet a variety of needs.</p>

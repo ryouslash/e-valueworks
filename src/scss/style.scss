@@ -13,11 +13,10 @@
 /*
  * object
  */
-
 // component
 @use "@scss/object/component";
 
-// project（全ページ共通）
+// project
 @use "@scss/object/project";
 
 // utility
@@ -26,51 +25,30 @@
 /*
  * pages
  */
-
-// top
-@use "@scss/pages/top";
-
-// 404
-@use "@scss/pages/error";
-
-// price
-@use "@scss/pages/price";
-
-// about
-@use "@scss/pages/about";
+@use "@scss/page-top";
+@use "@scss/page-price";
+@use "@scss/page-about";
+@use "@scss/page-404";
 
 /*
  * templates（固定ページ、投稿、カスタム投稿、アーカイブ）
  */
-
-// page
-@use "@scss/templates/page";
-
-// single
-@use "@scss/templates/single";
-
-// search
-@use "@scss/templates/search";
-
-//single-news
-@use "@scss/templates/single-news";
-
-//archive-news
-@use "@scss/templates/archive-news";
-
-// taxonomy-archive-news
-@use "@scss/templates/taxonomy-archive-news";
-
-//single-work
-@use "@scss/templates/single-work";
-
-//archive-work
-@use "@scss/templates/archive-work";
+@use "@scss/template-single";
+@use "@scss/template-page";
+@use "@scss/template-single-news";
+@use "@scss/template-taxonomy-archive-news";
+@use "@scss/template-archive-news";
+@use "@scss/template-single-work";
+@use "@scss/template-archive-work";
+@use "@scss/template-search";
 
 /*
- * blocks
+ * ブロックエディター調整用
  */
-@use "@scss/blocks";
+@use "@scss/editorContent";
+@use "@scss/block";
 
-//
+/*
+ * ウィジェットエリア調整用
+ */
 @use "@scss/widgetArea";

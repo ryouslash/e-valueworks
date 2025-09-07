@@ -78,7 +78,7 @@ get_header(); ?>
                         });
                       ?>
                         <div class="p-single-work-client__tableItem p-single-work-client__tableItem--language">
-                          <dt><?php _e('使用言語・ツール', 'e-valueworks'); ?></dt>
+                          <dt><?php _e('使用言語・CMS', 'e-valueworks'); ?></dt>
                           <dd><?php
                               $post_language_names = array();
                               foreach ($post_language_terms as $term) {
@@ -97,7 +97,7 @@ get_header(); ?>
                         });
                       ?>
                         <div class="p-single-work-client__tableItem p-single-work-client__tableItem--specification">
-                          <dt><?php _e('サイト仕様', 'e-valueworks'); ?></dt>
+                          <dt><?php _e('サイト仕様・機能', 'e-valueworks'); ?></dt>
                           <dd><?php
                               $post_specification_names = array();
                               foreach ($post_specification_terms as $term) {

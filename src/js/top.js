@@ -2,8 +2,9 @@ import $ from "jquery";
 import "slick-carousel/slick/slick.min.js";
 
 $(function () {
-  initTypingAnimation();
-  initMainVisualFadeIn();
+  initTypingAnimation().then(() => {
+    initMainVisualFadeIn();
+  });
   initNewsSlider();
   initWorkSlider();
   initFaqToggle();
@@ -20,40 +21,42 @@ $(window).on("load scroll", function () {
 function initTypingAnimation() {
   const lang = document.documentElement.lang;
 
-  const typing = (el, sentence) => {
-    const target = document.querySelector(el);
-    if (!target) return;
+  return new Promise((resolve) => {
+    // 1秒待ってからスタート
+    setTimeout(() => {
+      const typing = (el, sentence, delay) => {
+        const target = document.querySelector(el);
 
-    if (lang === "en-US") {
-      [...sentence].forEach((char, index) => {
-        setTimeout(() => {
-          target.innerHTML += char === "\n" ? "<br>" : char;
-        }, 60 * index);
-      });
-    } else {
-      [...sentence].forEach((char, index) => {
-        setTimeout(() => {
-          target.innerHTML += char === "\n" ? "<br>" : char;
-        }, 100 * index);
-      });
-    }
-  };
+        if (!target) {
+          resolve();
+          return;
+        }
 
-  setTimeout(() => {
-    if (lang === "en-US") {
-      typing(
-        ".js-typing--en",
-        "Coding that transforms experience\nthrough the power of UX."
-      );
-    } else {
-      typing(
-        ".js-typing--ja",
-        window.innerWidth <= 419
-          ? "魅せ方ひとつで、\n体験が変わる\nUXをデザインするコーディング"
-          : "魅せ方ひとつで、体験が変わる\nUXをデザインするコーディング"
-      );
-    }
-  }, 1000);
+        [...sentence].forEach((char, index) => {
+          setTimeout(() => {
+            target.innerHTML += char === "\n" ? "<br>" : char;
+            if (index === sentence.length - 1) {
+              resolve(); // 最後の文字で完了
+            }
+          }, delay * index);
+        });
+      };
+
+      if (lang === "en-US") {
+        typing(
+          ".js-typing--en",
+          "Fast Response & Careful Finish!\nReliable Coding You Can Trust",
+          60
+        );
+      } else {
+        typing(
+          ".js-typing--ja",
+          "迅速対応・丁寧仕上げ！\n安心して任せられるコーディング代行",
+          100
+        );
+      }
+    }, 1000);
+  });
 }
 
 /**
@@ -62,31 +65,14 @@ function initTypingAnimation() {
 function initMainVisualFadeIn() {
   const mainVisualText = document.querySelector(".p-top-mainVisual__text");
   const mainVisualButton = document.querySelector(".p-top-mainVisual__buttons");
-  const lang = document.documentElement.lang;
 
-  if (lang === "en-US") {
-    setTimeout(() => {
-      mainVisualText.classList.add("is-show");
-    }, 4700);
+  setTimeout(() => {
+    mainVisualText.classList.add("is-show");
+  }, 500);
 
-    setTimeout(() => {
-      mainVisualButton.classList.add("is-show");
-    }, 5200);
-  } else {
-    setTimeout(
-      () => {
-        mainVisualText.classList.add("is-show");
-      },
-      window.innerWidth <= 419 ? 4400 : 4300
-    );
-
-    setTimeout(
-      () => {
-        mainVisualButton.classList.add("is-show");
-      },
-      window.innerWidth <= 419 ? 4900 : 4800
-    );
-  }
+  setTimeout(() => {
+    mainVisualButton.classList.add("is-show");
+  }, 1000);
 }
 
 /**

@@ -6,7 +6,7 @@ get_header(); ?>
 
 <?php if (have_posts()): ?>
   <?php while (have_posts()) : the_post(); ?>
-    <div class="l-content t-single-news">
+    <div class="l-content p-single-news">
       <div class="l-container">
         <div class="l-content__inner">
           <main class="l-mainContent">

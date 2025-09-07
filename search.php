@@ -4,7 +4,7 @@ if (!defined('ABSPATH')) {
 }
 get_header(); ?>
 
-<div class="l-content t-search">
+<div class="l-content p-search">
   <div class="c-pageHeader">
     <div class="l-container">
       <span class="c-pageHeader__subTitle"><?php _e('お役立ちコラム', 'e-valueworks');  ?></span>

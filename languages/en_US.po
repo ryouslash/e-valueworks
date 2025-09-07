@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2025-09-01 13:01+0900\n"
-"PO-Revision-Date: 2025-09-01 13:01+0900\n"
+"POT-Creation-Date: 2025-09-01 18:50+0900\n"
+"PO-Revision-Date: 2025-09-01 18:51+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -32,36 +32,40 @@ msgstr ""
 msgid "お知らせ"
 msgstr "News"
 
-#: archive-work.php:63 includes/breadcrumb.php:9 includes/yoastseo.php:5
+#: archive-work.php:72 includes/breadcrumb.php:9 includes/yoastseo.php:5
 #: includes/yoastseo.php:32 single-work.php:11
 msgid "制作実績"
 msgstr "Work"
 
-#: archive-work.php:66
+#: archive-work.php:75
 msgid "絞り込み検索"
 msgstr "Refine Search"
 
-#: archive-work.php:72 single-work.php:60
+#: archive-work.php:81 single-work.php:60
 msgid "ページ数"
 msgstr "Number of Pages"
 
-#: archive-work.php:103
+#: archive-work.php:112
+msgid "サイト種類"
+msgstr "Site Type"
+
+#: archive-work.php:145 single-work.php:81
 msgid "使用言語・CMS"
 msgstr "Languages / CMS"
 
-#: archive-work.php:137
+#: archive-work.php:179 single-work.php:100
 msgid "サイト仕様・機能"
 msgstr "Site Specifications / Functions"
 
-#: archive-work.php:170
+#: archive-work.php:212
 msgid "絞り込む"
 msgstr "Search"
 
-#: archive-work.php:208 includes/ajax-handler.php:119
+#: archive-work.php:250 includes/ajax-handler.php:120
 msgid "もっと見る"
 msgstr "See more"
 
-#: archive-work.php:215 includes/ajax-handler.php:132
+#: archive-work.php:257 includes/ajax-handler.php:133
 msgid "実績がありません。"
 msgstr "No results found."
 
@@ -85,14 +89,6 @@ msgstr "Coming Soon"
 #: single-work.php:69
 msgid "見積もり金額"
 msgstr "Estimated Cost"
-
-#: single-work.php:81
-msgid "使用言語・ツール"
-msgstr "Languages / Tools"
-
-#: single-work.php:100
-msgid "サイト仕様"
-msgstr "Site Specifications"
 
 #: single-work.php:113
 msgid "弊所スコープ"
@@ -150,7 +146,7 @@ msgstr "Previous Post"
 msgid "次の投稿へ"
 msgstr "Next Post"
 
-#: template-parts/sidebar/category.php:20
+#: template-parts/sidebar/category.php:38
 msgid "カテゴリー"
 msgstr "Category"
 
@@ -170,6 +166,12 @@ msgstr "Enter Keyword"
 msgid "検索"
 msgstr "Search"
 
-#: template-parts/sidebar/tag.php:9
+#: template-parts/sidebar/tag.php:32
 msgid "タグ"
 msgstr "Tags"
+
+#~ msgid "使用言語・ツール"
+#~ msgstr "Languages / Tools"
+
+#~ msgid "サイト仕様"
+#~ msgstr "Site Specifications"
